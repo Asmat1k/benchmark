@@ -28,7 +28,20 @@ Before implementing:
 
 Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
 
-## 3. Surgical Changes
+## 3. Self-Documenting Code
+
+**Code explains itself. Comments are a last resort.**
+
+- Don't write comments. Express intent through names, structure, and functions.
+- Rename instead of explaining: `d` → `elapsedDays`, `check()` → `isSessionExpired()`.
+- Replace magic numbers with named constants.
+- No comments that restate the code, mark sections, or narrate changes ("added X", "fixed Y").
+- Don't delete existing comments in code you didn't write (see Surgical Changes).
+- The only exception: a non-obvious *why* that no name can carry (a workaround for a specific bug, a hard external constraint).
+
+Keep it to one line.
+
+## 4. Surgical Changes
 
 **Touch only what you must. Clean up only your own mess.**
 
@@ -44,7 +57,7 @@ When your changes create orphans:
 
 The test: Every changed line should trace directly to the user's request.
 
-## 4. Goal-Driven Execution
+## 5. Goal-Driven Execution
 
 **Define success criteria. Loop until verified.**
 
