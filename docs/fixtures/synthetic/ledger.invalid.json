@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "series_id": "synthetic-series",
+  "attempts": [
+    {
+      "block_id": "synthetic-block",
+      "session_id": "synthetic-session",
+      "attempt_id": "example",
+      "profile": "r20p0",
+      "order_index": 0,
+      "seed": 1,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison",
+      "modes": [
+        "WS",
+        "WT-D"
+      ]
+    }
+  ]
+}

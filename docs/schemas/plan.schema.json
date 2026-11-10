@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "plan v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "protocol_version": {
+      "const": 1
+    },
+    "master_seed": {
+      "const": 20261108
+    },
+    "required_modes": {
+      "const": [
+        "WS",
+        "WT-S"
+      ]
+    },
+    "optional_mode": {
+      "const": "WT-D"
+    },
+    "frame_bytes": {
+      "const": 256
+    },
+    "interval_ms": {
+      "const": 50
+    },
+    "warmup_slots": {
+      "const": 200
+    },
+    "measurement_slots": {
+      "const": 1200
+    },
+    "min_pause_ms": {
+      "const": 5000
+    },
+    "empty_queue_ms": {
+      "const": 1000
+    },
+    "stabilization_timeout_ms": {
+      "const": 30000
+    },
+    "queue_limit_bytes": {
+      "const": 1048576
+    },
+    "preliminary_blocks_per_profile": {
+      "const": 20
+    },
+    "sessions": {
+      "const": 4
+    },
+    "pilot_min_blocks_per_profile": {
+      "const": 5
+    },
+    "bootstrap_replicates": {
+      "const": 10000
+    }
+  },
+  "required": [
+    "schema_version",
+    "protocol_version",
+    "master_seed",
+    "required_modes",
+    "optional_mode",
+    "frame_bytes",
+    "interval_ms",
+    "warmup_slots",
+    "measurement_slots",
+    "min_pause_ms",
+    "empty_queue_ms",
+    "stabilization_timeout_ms",
+    "queue_limit_bytes",
+    "preliminary_blocks_per_profile",
+    "sessions",
+    "pilot_min_blocks_per_profile",
+    "bootstrap_replicates"
+  ],
+  "additionalProperties": false
+}

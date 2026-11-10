@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "thresholds v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "preliminary": {
+      "const": true
+    },
+    "deadline_ms": {
+      "const": 100
+    },
+    "horizon_ms": {
+      "const": 5000
+    },
+    "practical_ms": {
+      "const": 5
+    },
+    "fullness_tolerance_pp": {
+      "const": 1
+    },
+    "max_uncompleted_pct": {
+      "const": 1
+    },
+    "aa_q_margin_ms": {
+      "const": 2
+    },
+    "aa_s_margin_pp": {
+      "const": 1
+    },
+    "calibration_margin_ms": {
+      "const": 2
+    },
+    "rate_min_mbit_s": {
+      "const": 9
+    },
+    "rate_max_mbit_s": {
+      "const": 11
+    },
+    "max_timer_step_ms": {
+      "const": 0.1
+    },
+    "max_timer_p99_ms": {
+      "const": 0.1
+    },
+    "max_lag_p99_ms": {
+      "const": 5
+    },
+    "max_cpu_pct_exclusive": {
+      "const": 70
+    },
+    "max_throttling_pct_exclusive": {
+      "const": 1
+    },
+    "frequency_hz": {
+      "const": 20
+    },
+    "frequency_margin_hz": {
+      "const": 0.1
+    },
+    "reserve_hz": {
+      "const": 100
+    }
+  },
+  "required": [
+    "schema_version",
+    "preliminary",
+    "deadline_ms",
+    "horizon_ms",
+    "practical_ms",
+    "fullness_tolerance_pp",
+    "max_uncompleted_pct",
+    "aa_q_margin_ms",
+    "aa_s_margin_pp",
+    "calibration_margin_ms",
+    "rate_min_mbit_s",
+    "rate_max_mbit_s",
+    "max_timer_step_ms",
+    "max_timer_p99_ms",
+    "max_lag_p99_ms",
+    "max_cpu_pct_exclusive",
+    "max_throttling_pct_exclusive",
+    "frequency_hz",
+    "frequency_margin_hz",
+    "reserve_hz"
+  ],
+  "additionalProperties": false
+}

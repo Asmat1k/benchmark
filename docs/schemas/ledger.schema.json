@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ledger v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "series_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "attempts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "block_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "session_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "attempt_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "profile": {
+            "enum": [
+              "r20p0",
+              "r20p1",
+              "r80p0",
+              "r80p1"
+            ]
+          },
+          "order_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "modes": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "WS",
+                "WT-S",
+                "WT-D"
+              ]
+            },
+            "minItems": 2,
+            "maxItems": 3
+          },
+          "seed": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "status": {
+            "enum": [
+              "planned",
+              "complete",
+              "quarantined",
+              "stopped"
+            ]
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "replacement_of": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "design": {
+            "enum": [
+              "comparison",
+              "aa",
+              "monitoring"
+            ]
+          },
+          "monitoring_order": {
+            "enum": [
+              [
+                "on",
+                "off"
+              ],
+              [
+                "off",
+                "on"
+              ]
+            ]
+          }
+        },
+        "required": [
+          "block_id",
+          "session_id",
+          "attempt_id",
+          "profile",
+          "order_index",
+          "modes",
+          "seed",
+          "status",
+          "reason",
+          "replacement_of",
+          "design"
+        ],
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "design": {
+                  "const": "comparison"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "modes": {
+                  "uniqueItems": true,
+                  "allOf": [
+                    {
+                      "contains": {
+                        "const": "WS"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "WT-S"
+                      }
+                    }
+                  ]
+                }
+              },
+              "not": {
+                "required": [
+                  "monitoring_order"
+                ]
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "design": {
+                  "const": "aa"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "modes": {
+                  "enum": [
+                    [
+                      "WS",
+                      "WS"
+                    ],
+                    [
+                      "WT-S",
+                      "WT-S"
+                    ],
+                    [
+                      "WT-D",
+                      "WT-D"
+                    ]
+                  ]
+                }
+              },
+              "not": {
+                "required": [
+                  "monitoring_order"
+                ]
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "design": {
+                  "const": "monitoring"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "modes": {
+                  "enum": [
+                    [
+                      "WS",
+                      "WS"
+                    ],
+                    [
+                      "WT-S",
+                      "WT-S"
+                    ],
+                    [
+                      "WT-D",
+                      "WT-D"
+                    ]
+                  ]
+                }
+              },
+              "required": [
+                "monitoring_order"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "series_id",
+    "attempts"
+  ],
+  "additionalProperties": false
+}

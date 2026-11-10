@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "protocol_version": 1,
+  "master_seed": 20261108,
+  "required_modes": [
+    "WS",
+    "WT-S"
+  ],
+  "optional_mode": "WT-D",
+  "frame_bytes": 256,
+  "interval_ms": 50,
+  "warmup_slots": 200,
+  "measurement_slots": 1200,
+  "min_pause_ms": 5000,
+  "empty_queue_ms": 1000,
+  "stabilization_timeout_ms": 30000,
+  "queue_limit_bytes": 1048576,
+  "preliminary_blocks_per_profile": 20,
+  "sessions": 4,
+  "pilot_min_blocks_per_profile": 5,
+  "bootstrap_replicates": 10000
+}
