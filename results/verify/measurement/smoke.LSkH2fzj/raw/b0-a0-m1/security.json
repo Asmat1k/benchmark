@@ -1,0 +1,17 @@
+{
+  "leaf_der_sha256": "197afa9aaa485bd08db6bf9d32ab170b3ad82e1fc98bfe6b49885ceb8269421a",
+  "ca_sha256": "E2:71:BC:AC:29:59:A4:D1:49:EE:70:10:49:0B:9A:EE:86:4C:C1:82:0E:C5:54:02:ED:50:35:DA:E4:0B:5A:D9",
+  "chromium": "140.0.7339.16",
+  "secure_context": true,
+  "endpoint": "https://bench.test:8443/",
+  "tls": {
+    "issuer": "Local bench CA",
+    "protocol": "TLS 1.3",
+    "subjectName": "bench.test",
+    "validFrom": 1794404723,
+    "validTo": 1795527923
+  },
+  "args": "chromium",
+  "negotiation": "server-1  | 2026/11/11 13:47:01 failed to sufficiently increase receive buffer size (was: 208 kiB, wanted: 7168 kiB, got: 416 kiB). See https://github.com/quic-go/quic-go/wiki/UDP-Buffer-Sizes for details.\nserver-1  | 2026/11/11 13:47:09 peer HTTP/3 SETTINGS=&{EnableDatagrams:true EnableExtendedConnect:false Other:map[1:65536 6:16384 7:100 16765559:1 727725890:1 51759301902:959775994]} server additional SETTINGS=map[727725890:1]\nserver-1  | 2026/11/11 13:47:09 WT request=CONNECT http=webtransport alpn=h3 quic=v1 datagrams=true draft-response=draft02\nserver-1  | 2026/11/11 13:47:14 WT stream: stream reset, but failed to convert stream error 386759528: error code outside of expected range\n",
+  "leaf": "-----BEGIN CERTIFICATE-----\nMIIBWzCCAQGgAwIBAgIBAjAKBggqhkjOPQQDAjAZMRcwFQYDVQQDEw5Mb2NhbCBi\nZW5jaCBDQTAeFw0yNjExMTExMzQ1MjNaFw0yNjExMjQxMzQ1MjNaMBUxEzARBgNV\nBAMTCmJlbmNoLnRlc3QwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATAOWyDP8g3\n58KyvQQxGPSqpzG9n3eE6IF2tmq3dH6vDmMtldwLHjl3jwrG428Cm587s+S5Kzun\nwI2O6HnIJR/xoz4wPDAOBgNVHQ8BAf8EBAMCB4AwEwYDVR0lBAwwCgYIKwYBBQUH\nAwEwFQYDVR0RBA4wDIIKYmVuY2gudGVzdDAKBggqhkjOPQQDAgNIADBFAiBB/YXk\nuM3UOtUeomDluOpkdvyL2v0BrZ9U/7p+ObxOTwIhAJswBxa2T82DYylMueemHcbx\n6ASum2QQY4nc2hamkwl5\n-----END CERTIFICATE-----\n"
+}

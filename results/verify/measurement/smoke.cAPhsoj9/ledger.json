@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "series_id": "smoke.cAPhsoj9",
+  "attempts": [
+    {
+      "block_id": "b0",
+      "session_id": "s0",
+      "attempt_id": "b0-a0",
+      "profile": "baseline",
+      "order_index": 0,
+      "modes": [
+        "WS",
+        "WT-S"
+      ],
+      "seed": 5936409127869732557,
+      "status": "stopped",
+      "reason": "incomplete_log: quarantine/wswt-d3-wswt-measure-975q1opo",
+      "replacement_of": null,
+      "design": "comparison"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+test_r1_contradictions_after_rehash (test_measurement.MeasurementTests.test_r1_contradictions_after_rehash) ... ok
+test_r1_valid_loss_late_disconnect (test_measurement.MeasurementTests.test_r1_valid_loss_late_disconnect) ... ok
+test_r2_sampler_stops_and_missing_interval (test_measurement.MeasurementTests.test_r2_sampler_stops_and_missing_interval) ... ok
+test_r3_series_context_and_after_readback (test_measurement.MeasurementTests.test_r3_series_context_and_after_readback) ... ok
+test_r4_admission_and_queue_order (test_measurement.MeasurementTests.test_r4_admission_and_queue_order) ... ok
+test_r4_two_replacements_exclude_executed_blocks (test_measurement.MeasurementTests.test_r4_two_replacements_exclude_executed_blocks) ... ok
+test_r5_evidence_and_normal_replacement (test_measurement.MeasurementTests.test_r5_evidence_and_normal_replacement) ... ok
+test_r5_publication_failure_is_replaceable_but_log_loss_stops (test_measurement.MeasurementTests.test_r5_publication_failure_is_replaceable_but_log_loss_stops) ... ok
+test_r6_recovery_and_shared_lock (test_measurement.MeasurementTests.test_r6_recovery_and_shared_lock) ... ok
+test_r7_baseline_and_no_false_smoke_success (test_measurement.MeasurementTests.test_r7_baseline_and_no_false_smoke_success) ... ok
+test_schedule_reproducible_balanced_and_disjoint (test_measurement.MeasurementTests.test_schedule_reproducible_balanced_and_disjoint) ... ok
+test_valid_raw (test_measurement.MeasurementTests.test_valid_raw) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 1.601s
+
+OK
+r20p0 998284632204955664 15442956207050968066 b1-a0-m0 30

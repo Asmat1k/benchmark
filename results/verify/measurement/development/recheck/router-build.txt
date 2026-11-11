@@ -1,0 +1,59 @@
+ Image wswt-bench-router:dev Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 557B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile.router
+#2 transferring dockerfile: 1.21kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/debian:bookworm-slim@sha256:ec8534cda2cb30f29f44f23e135297af7a1496f2990fd8e4e84aa36b081a757a
+#3 DONE 1.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 91B 0.0s done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 3.10kB done
+#5 DONE 0.0s
+
+#6 [compiler 1/4] FROM docker.io/library/debian:bookworm-slim@sha256:ec8534cda2cb30f29f44f23e135297af7a1496f2990fd8e4e84aa36b081a757a
+#6 resolve docker.io/library/debian:bookworm-slim@sha256:ec8534cda2cb30f29f44f23e135297af7a1496f2990fd8e4e84aa36b081a757a 0.0s done
+#6 DONE 0.0s
+
+#7 [stage-1 2/5] RUN apt-get -o Acquire::Retries=4 update && apt-get -o Acquire::Retries=4 install -y --no-install-recommends ethtool tcpdump libmnl0 libelf1 libcap2 iptables jq && rm -rf /var/lib/apt/lists/*
+#7 CACHED
+
+#8 [compiler 4/4] RUN curl -fsSLO https://www.kernel.org/pub/linux/utils/net/iproute2/iproute2-6.15.0.tar.xz && echo '8041854a882583ad5263466736c9c8c68c74b1a35754ab770d23343f947528fb  iproute2-6.15.0.tar.xz' | sha256sum -c - && tar xf iproute2-6.15.0.tar.xz && cd iproute2-6.15.0 && ./configure && make -j2 && make DESTDIR=/opt/router install
+#8 CACHED
+
+#9 [stage-1 3/5] COPY --from=compiler /opt/router/sbin/ip /opt/router/sbin/tc /usr/local/sbin/
+#9 CACHED
+
+#10 [compiler 2/4] RUN apt-get -o Acquire::Retries=4 update && apt-get -o Acquire::Retries=4 install -y --no-install-recommends build-essential pkg-config flex bison libmnl-dev libelf-dev libcap-dev curl ca-certificates xz-utils
+#10 CACHED
+
+#11 [compiler 3/4] WORKDIR /tmp
+#11 CACHED
+
+#12 [stage-1 4/5] COPY docker/check-seed.sh /usr/local/bin/check-seed
+#12 CACHED
+
+#13 [stage-1 5/5] COPY docker/network.sh /usr/local/bin/network
+#13 DONE 0.0s
+
+#14 exporting to image
+#14 exporting layers 0.0s done
+#14 exporting manifest sha256:2988870f31ae1f84767694c2cb40c0fc24b1f6c53c6507bf0958524bd08cea6e done
+#14 exporting config sha256:737d5370f8345819f47c0d8345a089ff25737261e6ca3422af005ad66bae542d done
+#14 exporting attestation manifest sha256:89fe0b9e07cf4461ce6439ae1b0bc25ab3e1b007fba78efdf0da5f5156976e30
+#14 exporting attestation manifest sha256:89fe0b9e07cf4461ce6439ae1b0bc25ab3e1b007fba78efdf0da5f5156976e30 done
+#14 exporting manifest list sha256:ed3e8ebeb9689ad2ea7d7db2cef4d65c601a4d3dd46690618414e972768d289f done
+#14 naming to docker.io/library/wswt-bench-router:dev done
+#14 unpacking to docker.io/library/wswt-bench-router:dev done
+#14 DONE 0.1s
+
+#15 resolving provenance for metadata file
+#15 DONE 0.0s
+ Image wswt-bench-router:dev Built 

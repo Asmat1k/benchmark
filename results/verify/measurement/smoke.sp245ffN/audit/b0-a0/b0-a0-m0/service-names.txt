@@ -1,0 +1,3 @@
+"/wswt-d3-wswt-measure-eghveuaa-browser-1"
+"/wswt-d3-wswt-measure-eghveuaa-router-1"
+"/wswt-d3-wswt-measure-eghveuaa-server-1"

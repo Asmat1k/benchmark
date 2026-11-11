@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "protocol_version": 1,
+  "series": "smoke",
+  "series_id": "smoke.OWQv8a3D",
+  "run_id": "b0-a0-m1",
+  "mode": "WT-S",
+  "nonce": "9033910383278176966",
+  "forward_seed": 10503751330433130799,
+  "reverse_seed": 17224145789013385855,
+  "block_id": "b0",
+  "session_id": "s0",
+  "attempt_id": "b0-a0",
+  "profile": "baseline",
+  "order_index": 0,
+  "replacement_of": null,
+  "started_utc": "2026-11-11T14:19:59Z",
+  "ended_utc": "2026-11-11T14:20:32.918788Z",
+  "commit": "3338f5431ac230561a7c094f319c4975e458c786",
+  "dirty": true,
+  "protocol_sha256": "b8b088ef646a7e82e7853243320870cc48e3e453d8baefa9cbae9c2e37302705",
+  "config_sha256": "0714d56eeaf76d91ff35794eca5acc08a62e16a263b0ff23dfe6742d8a4f6b84",
+  "schedule_sha256": "4f5c4e1cb0eb70df85f24ed26fecad043726a3c27a5384304b1619610f069fc5",
+  "technical_valid": true,
+  "reason": null,
+  "environment": {
+    "path": "environment.json",
+    "sha256": "58577645ee0fb4a9733f315f1be86d1bb28e79ec4faa83b75f49e9cb67327d84"
+  },
+  "provenance": {
+    "path": "provenance.json",
+    "sha256": "de9009fb6d07166adc5d6f86010449b9dc720a798455cb8f21936224dc7b8e8b"
+  },
+  "security": {
+    "path": "security.json",
+    "sha256": "6469f98130d297974474487bec31ab5b7073a71c834f41feb9dbb6bb6ac46a8d"
+  },
+  "network_before": {
+    "path": "network_before.json",
+    "sha256": "795a31447e51e112fbc7b3bd263a7bd151f89348e1d599d0c00c283bb8d74025"
+  },
+  "network_after": {
+    "path": "network_after.json",
+    "sha256": "3096f2bacecb3c50d42ad22f82b38e71b23c72e14591f6bc20c420950d536aca"
+  }
+}

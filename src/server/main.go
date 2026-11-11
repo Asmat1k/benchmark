@@ -1,8 +1,10 @@
 package main
 
 import (
+	"bench/echo"
 	"bench/transports"
 	"crypto/tls"
+	"encoding/json"
 	"flag"
 	"github.com/quic-go/quic-go"
 	"github.com/quic-go/quic-go/http3"
@@ -10,7 +12,10 @@ import (
 	"log"
 	"net"
 	"net/http"
+	"os"
+	"os/signal"
 	"path/filepath"
+	"syscall"
 	"time"
 )
 
@@ -32,6 +37,22 @@ func main() {
 	addr := flag.String("addr", ":8443", "listen address")
 	certs := flag.String("certs", "/certs/good", "leaf directory")
 	flag.Parse()
+	snapshots := make(chan os.Signal, 1)
+	signal.Notify(snapshots, syscall.SIGUSR1)
+	go func() {
+		for range snapshots {
+			data, err := json.Marshal(echo.Snapshot())
+			if err == nil {
+				err = os.WriteFile("/tmp/counters.partial", data, 0644)
+			}
+			if err == nil {
+				err = os.Rename("/tmp/counters.partial", "/tmp/counters.json")
+			}
+			if err != nil {
+				log.Print(err)
+			}
+		}
+	}()
 	cert, err := tls.LoadX509KeyPair(filepath.Join(*certs, "cert.pem"), filepath.Join(*certs, "key.pem"))
 	if err != nil {
 		log.Fatal(err)

@@ -1,0 +1,3 @@
+"/wswt-d3-wswt-measure-cyjes50e-browser-1"
+"/wswt-d3-wswt-measure-cyjes50e-router-1"
+"/wswt-d3-wswt-measure-cyjes50e-server-1"

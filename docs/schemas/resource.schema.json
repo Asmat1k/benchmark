@@ -36,6 +36,14 @@
     "oom": {
       "type": "integer",
       "minimum": 0
+    },
+    "sample_index": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "end_usec": {
+      "type": "integer",
+      "minimum": 0
     }
   },
   "required": [
@@ -46,7 +54,9 @@
     "cpu_usage_usec",
     "throttled_usec",
     "memory_current",
-    "oom"
+    "oom",
+    "sample_index",
+    "end_usec"
   ],
   "additionalProperties": false
 }

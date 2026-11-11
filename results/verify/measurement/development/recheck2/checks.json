@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "checks": [
+    {
+      "id": "linux-regressions-e2e",
+      "mandatory": true,
+      "expected": 19,
+      "actual": 19,
+      "units": "tests",
+      "tolerance": 0,
+      "status": "passed",
+      "reason": null,
+      "utc": "2026-11-11T14:24:53.526483Z",
+      "evidence": [
+        {
+          "path": "final-tests.txt",
+          "sha256": "30a8863d1f144f2f284818ef2c29d3df81d6e33d6334f5c42c63aa8c2b0bfba5"
+        }
+      ]
+    },
+    {
+      "id": "macos-regressions-e2e",
+      "mandatory": true,
+      "expected": 19,
+      "actual": 19,
+      "units": "tests",
+      "tolerance": 0,
+      "status": "passed",
+      "reason": null,
+      "utc": "2026-11-11T14:24:53.528044Z",
+      "evidence": [
+        {
+          "path": "host-tests.txt",
+          "sha256": "18eda3ad9a593a01f39df261064458c6f4e12ef637fc5492215cae271671a903"
+        }
+      ]
+    },
+    {
+      "id": "D0-schemas",
+      "mandatory": true,
+      "expected": 12,
+      "actual": 12,
+      "units": "schemas",
+      "tolerance": 0,
+      "status": "passed",
+      "reason": null,
+      "utc": "2026-11-11T14:24:53.528337Z",
+      "evidence": [
+        {
+          "path": "final-tests.txt",
+          "sha256": "30a8863d1f144f2f284818ef2c29d3df81d6e33d6334f5c42c63aa8c2b0bfba5"
+        }
+      ]
+    },
+    {
+      "id": "lock-entrypoint-baseline-smoke",
+      "mandatory": true,
+      "expected": 2,
+      "actual": 2,
+      "units": "runs",
+      "tolerance": 0,
+      "status": "passed",
+      "reason": null,
+      "utc": "2026-11-11T14:24:53.528830Z",
+      "evidence": [
+        {
+          "path": "smoke.txt",
+          "sha256": "6ad02e6895ae406e2b5be967ee85e618593fc3e3b87bd4a0dc11da91141b484a"
+        }
+      ]
+    },
+    {
+      "id": "host-docker-mutual-exclusion",
+      "mandatory": true,
+      "expected": 2,
+      "actual": 2,
+      "units": "busy_exit_code",
+      "tolerance": 0,
+      "status": "passed",
+      "reason": null,
+      "utc": "2026-11-11T14:24:53.529346Z",
+      "evidence": [
+        {
+          "path": "cross-host-lock.txt",
+          "sha256": "9acd3e12fbb4839d1c585171cacdec7e87a065502d49ec8cfff5030189b50ff1"
+        }
+      ]
+    },
+    {
+      "id": "experimental-acceptance",
+      "mandatory": true,
+      "expected": "passed",
+      "actual": null,
+      "units": "status",
+      "tolerance": null,
+      "status": "not_run",
+      "reason": "deferred_by_user",
+      "utc": "2026-11-11T14:24:53.529788Z",
+      "evidence": []
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "checks": [
+    {
+      "id": "client-tests",
+      "mandatory": true,
+      "expected": 9,
+      "actual": 9,
+      "units": "tests",
+      "tolerance": 0,
+      "status": "passed",
+      "reason": null,
+      "utc": "2026-11-11T13:48:46.132870Z",
+      "evidence": [
+        {
+          "path": "client-build.txt",
+          "sha256": "e973367824adc18cdeaa75618b1ff721d859fba7195de1cae53f851ebd425b37"
+        }
+      ]
+    },
+    {
+      "id": "python-tests",
+      "mandatory": true,
+      "expected": 5,
+      "actual": 5,
+      "units": "tests",
+      "tolerance": 0,
+      "status": "passed",
+      "reason": null,
+      "utc": "2026-11-11T13:48:46.137092Z",
+      "evidence": [
+        {
+          "path": "python-tests.txt",
+          "sha256": "8d02234df5643d281475149713f9f70147b9e6618d0d343dd259302889ff520e"
+        }
+      ]
+    },
+    {
+      "id": "server-build",
+      "mandatory": true,
+      "expected": 0,
+      "actual": 0,
+      "units": "exit_code",
+      "tolerance": 0,
+      "status": "passed",
+      "reason": null,
+      "utc": "2026-11-11T13:48:46.137384Z",
+      "evidence": [
+        {
+          "path": "server-build.txt",
+          "sha256": "40311526e988a865a225b7dd0d9cf947354fcbe710ffd6ec7d8c3070282dc44e"
+        }
+      ]
+    },
+    {
+      "id": "short-smoke",
+      "mandatory": true,
+      "expected": 2,
+      "actual": 2,
+      "units": "published_runs",
+      "tolerance": 0,
+      "status": "passed",
+      "reason": null,
+      "utc": "2026-11-11T13:48:46.137640Z",
+      "evidence": [
+        {
+          "path": "smoke.txt",
+          "sha256": "ec58866334d9ac6b2bca1f1ada5c85c412d381fa66f54b7e0088211b3a95323d"
+        }
+      ]
+    },
+    {
+      "id": "experimental-measurement-acceptance",
+      "mandatory": true,
+      "expected": "passed",
+      "actual": null,
+      "units": "status",
+      "tolerance": null,
+      "status": "not_run",
+      "reason": "deferred_by_user",
+      "utc": "2026-11-11T13:48:46.137931Z",
+      "evidence": []
+    }
+  ]
+}

@@ -39,8 +39,10 @@ router)
     exec sleep infinity
     ;;
 profile)
+    if [ "$2" = baseline ]; then delay=0; loss=0; else
     delay=$(jq -er --arg id "$2" '.profiles[] | select(.id==$id) | .egress_delay_ms' /profiles.json)
     loss=$(jq -er --arg id "$2" '.profiles[] | select(.id==$id) | .egress_loss_pct' /profiles.json)
+    fi
     rate=$(jq -er .rate_mbit_s /profiles.json)
     limit=$(jq -er .limit_packets /profiles.json)
     jq -e '.mtu==1500 and .jitter_ms==0 and .correlation_pct==0' /profiles.json >/dev/null
@@ -55,8 +57,8 @@ profile)
         printf '%s %s\n' "$addr" "$readback"
         echo "$readback" | jq -e --argjson delay "$delay" --argjson loss "$loss" --argjson rate "$rate" --argjson limit "$limit" '
           any(.[]; .kind=="netem" and .root and (.options |
-            .limit==$limit and .delay.delay==$delay/1000 and
-            .delay.jitter==0 and .delay.correlation==0 and
+            .limit==$limit and (.delay.delay // 0)==$delay/1000 and
+            (.delay.jitter // 0)==0 and (.delay.correlation // 0)==0 and
             (."loss-random".loss // 0)==$loss/100 and (."loss-random".correlation // 0)==0 and
             .rate.rate==$rate*125000))
         ' >/dev/null

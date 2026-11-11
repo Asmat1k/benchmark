@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "series_id": "smoke.BLyX9ycT",
+  "attempts": [
+    {
+      "block_id": "b0",
+      "session_id": "s0",
+      "attempt_id": "b0-a0",
+      "profile": "baseline",
+      "order_index": 0,
+      "modes": [
+        "WT-S",
+        "WS"
+      ],
+      "seed": 7811841652191636987,
+      "status": "complete",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    }
+  ]
+}

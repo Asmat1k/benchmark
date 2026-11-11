@@ -10,3 +10,11 @@ archive:
 
 cleanup:
 	sh docker/cleanup.sh "$(RUN_DIR)"
+
+.PHONY: measurement-smoke
+measurement-smoke:
+	sh docker/measurement-smoke.sh
+
+.PHONY: measure
+measure:
+	sh docker/measure.sh "$(SERIES_DIR)" "$(RUN_INDEX)"

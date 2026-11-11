@@ -21,6 +21,8 @@ func WebSocket(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	defer conn.CloseNow()
+	echo.Active.Add(1)
+	defer echo.Active.Add(-1)
 	conn.SetReadLimit(protocol.Size)
 	log.Printf("WSS upgrade=101 http=%s alpn=%s tls=%x resumed=%t", r.Proto, r.TLS.NegotiatedProtocol, r.TLS.Version, r.TLS.DidResume)
 	for ready := false; ; ready = true {
@@ -28,12 +30,16 @@ func WebSocket(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			return
 		}
+		counts := echo.Receive(p, ready)
 		reply, err := echo.Reply(p, ready)
+		counts.Valid(kind == websocket.MessageBinary && err == nil)
 		if kind != websocket.MessageBinary || err != nil {
 			conn.Close(websocket.StatusProtocolError, "invalid message")
 			return
 		}
-		if conn.Write(context.Background(), websocket.MessageBinary, reply) != nil {
+		err = conn.Write(context.Background(), websocket.MessageBinary, reply)
+		counts.Written(err == nil)
+		if err != nil {
 			return
 		}
 	}

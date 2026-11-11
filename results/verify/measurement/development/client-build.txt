@@ -1,0 +1,125 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [client 1/6] FROM docker.io/library/node:22.18.0-bookworm@sha256:05a8ca7db7ad22dff0ba1a78d108658c0f4c788e583bd7809ab8d7a32d8cbc86
+#1 resolve docker.io/library/node:22.18.0-bookworm@sha256:05a8ca7db7ad22dff0ba1a78d108658c0f4c788e583bd7809ab8d7a32d8cbc86 done
+#1 DONE 0.0s
+
+#2 [client 2/6] WORKDIR /client
+#2 CACHED
+
+#3 [client 3/6] COPY src/client/package*.json ./
+#3 CACHED
+
+#4 [internal] load build definition from Dockerfile.server
+#4 transferring dockerfile: 991B done
+#4 DONE 0.0s
+
+#5 [internal] load metadata for docker.io/library/node:22.18.0-bookworm@sha256:05a8ca7db7ad22dff0ba1a78d108658c0f4c788e583bd7809ab8d7a32d8cbc86
+#5 DONE 0.0s
+
+#6 [internal] load .dockerignore
+#6 transferring context: 91B done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 19.10kB done
+#7 DONE 0.0s
+
+#8 [client 3/6] COPY src/client/package*.json ./
+#8 CACHED
+
+#9 [client 4/6] RUN npm ci
+#9 CACHED
+
+#10 [client 5/6] COPY src/client ./
+#10 DONE 0.0s
+
+#11 [client 6/6] RUN npm run build && npm test && cp index.html dist/
+#11 0.349 
+#11 0.349 > bench-client@1.0.0 build
+#11 0.349 > tsc
+#11 0.349 
+#11 3.636 
+#11 3.636 > bench-client@1.0.0 test
+#11 3.636 > node --test test.mjs
+#11 3.636 
+#11 3.680 TAP version 13
+#11 4.049 # Subtest: stream chunks 1,255
+#11 4.049 ok 1 - stream chunks 1,255
+#11 4.049   ---
+#11 4.049   duration_ms: 20.1305
+#11 4.049   type: 'test'
+#11 4.049   ...
+#11 4.050 # Subtest: stream chunks 255,1
+#11 4.051 ok 2 - stream chunks 255,1
+#11 4.051   ---
+#11 4.051   duration_ms: 2.868709
+#11 4.051   type: 'test'
+#11 4.051   ...
+#11 4.052 # Subtest: stream chunks 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+#11 4.054 ok 3 - stream chunks 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+#11 4.054   ---
+#11 4.054   duration_ms: 12.553208
+#11 4.054   type: 'test'
+#11 4.054   ...
+#11 4.055 # Subtest: stream chunks 768
+#11 4.056 ok 4 - stream chunks 768
+#11 4.056   ---
+#11 4.056   duration_ms: 0.310542
+#11 4.056   type: 'test'
+#11 4.056   ...
+#11 4.058 # Subtest: partial EOF and corruption
+#11 4.058 ok 5 - partial EOF and corruption
+#11 4.059   ---
+#11 4.059   duration_ms: 1.10025
+#11 4.059   type: 'test'
+#11 4.059   ...
+#11 4.061 # Subtest: inclusive personal deadlines and first valid complete echo
+#11 4.061 ok 6 - inclusive personal deadlines and first valid complete echo
+#11 4.062   ---
+#11 4.062   duration_ms: 3.970125
+#11 4.062   type: 'test'
+#11 4.062   ...
+#11 4.063 # Subtest: 1200 planned slots survive missed wake, backlog, API errors and disconnect
+#11 4.064 ok 7 - 1200 planned slots survive missed wake, backlog, API errors and disconnect
+#11 4.064   ---
+#11 4.064   duration_ms: 168.738458
+#11 4.064   type: 'test'
+#11 4.064   ...
+#11 4.065 # Subtest: timer diagnostics with injected step, stalled and reversing clocks
+#11 4.066 ok 8 - timer diagnostics with injected step, stalled and reversing clocks
+#11 4.066   ---
+#11 4.066   duration_ms: 0.235208
+#11 4.066   type: 'test'
+#11 4.066   ...
+#11 4.067 # Subtest: synthetic lossless warmup and measurement preserve phases and all IDs
+#11 4.067 ok 9 - synthetic lossless warmup and measurement preserve phases and all IDs
+#11 4.068   ---
+#11 4.068   duration_ms: 122.548667
+#11 4.068   type: 'test'
+#11 4.068   ...
+#11 4.075 1..9
+#11 4.075 # tests 9
+#11 4.075 # suites 0
+#11 4.075 # pass 9
+#11 4.075 # fail 0
+#11 4.075 # cancelled 0
+#11 4.075 # skipped 0
+#11 4.075 # todo 0
+#11 4.075 # duration_ms 406.067375
+#11 DONE 4.1s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 0.8s done
+#12 exporting manifest sha256:20e543ee1c4a081c38b4fdebc56cc6fde46419e01c4d217c86216d76b3ba5e64
+#12 exporting manifest sha256:20e543ee1c4a081c38b4fdebc56cc6fde46419e01c4d217c86216d76b3ba5e64 done
+#12 exporting config sha256:4117d35abf1a2d8d06faaf3e10c03a4791f548af3adfff8d4d0221cb303ffde1 done
+#12 exporting attestation manifest sha256:329580288724b2caf4c9dd13b54bbf85780f0fe92901b1d91016fb39cd308a90 done
+#12 exporting manifest list sha256:eb3624a59c7bd29b6dc8f6fd054270049a1cb41eff24b1cf0d7e462750dfa189 done
+#12 naming to docker.io/library/wswt-d3-client-check:dev done
+#12 unpacking to docker.io/library/wswt-d3-client-check:dev
+#12 unpacking to docker.io/library/wswt-d3-client-check:dev 0.5s done
+#12 DONE 1.3s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/wp710iyxsz7gwtj64h6utqj67

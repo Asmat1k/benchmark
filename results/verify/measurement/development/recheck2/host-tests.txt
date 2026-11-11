@@ -1,0 +1,64 @@
+test_r1_contradictions_after_rehash (test_measurement.MeasurementTests.test_r1_contradictions_after_rehash) ... ok
+test_r1_valid_loss_late_disconnect (test_measurement.MeasurementTests.test_r1_valid_loss_late_disconnect) ... ok
+test_r2_sampler_stops_and_missing_interval (test_measurement.MeasurementTests.test_r2_sampler_stops_and_missing_interval) ... ok
+test_r3_series_context_and_after_readback (test_measurement.MeasurementTests.test_r3_series_context_and_after_readback) ... ok
+test_r4_admission_and_queue_order (test_measurement.MeasurementTests.test_r4_admission_and_queue_order) ... ok
+test_r4_two_replacements_exclude_executed_blocks (test_measurement.MeasurementTests.test_r4_two_replacements_exclude_executed_blocks) ... /opt/anaconda3/lib/python3.11/contextlib.py:144: ResourceWarning: unclosed file <_io.TextIOWrapper name=5 encoding='UTF-8'>
+  next(self.gen)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/anaconda3/lib/python3.11/contextlib.py:144: ResourceWarning: unclosed file <_io.TextIOWrapper name=5 encoding='UTF-8'>
+  next(self.gen)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_r5_evidence_and_normal_replacement (test_measurement.MeasurementTests.test_r5_evidence_and_normal_replacement) ... /opt/anaconda3/lib/python3.11/contextlib.py:191: ResourceWarning: unclosed file <_io.TextIOWrapper name=5 encoding='UTF-8'>
+  exc.__traceback__ = traceback
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/anaconda3/lib/python3.11/contextlib.py:191: ResourceWarning: unclosed file <_io.TextIOWrapper name=5 encoding='UTF-8'>
+  exc.__traceback__ = traceback
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/anaconda3/lib/python3.11/contextlib.py:144: ResourceWarning: unclosed file <_io.TextIOWrapper name=5 encoding='UTF-8'>
+  next(self.gen)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/anaconda3/lib/python3.11/contextlib.py:144: ResourceWarning: unclosed file <_io.TextIOWrapper name=5 encoding='UTF-8'>
+  next(self.gen)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_r5_publication_failure_is_replaceable_but_log_loss_stops (test_measurement.MeasurementTests.test_r5_publication_failure_is_replaceable_but_log_loss_stops) ... /opt/anaconda3/lib/python3.11/contextlib.py:144: ResourceWarning: unclosed file <_io.TextIOWrapper name=5 encoding='UTF-8'>
+  next(self.gen)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/anaconda3/lib/python3.11/contextlib.py:191: ResourceWarning: unclosed file <_io.TextIOWrapper name=5 encoding='UTF-8'>
+  exc.__traceback__ = traceback
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_r6_recovery_and_shared_lock (test_measurement.MeasurementTests.test_r6_recovery_and_shared_lock) ... /opt/anaconda3/lib/python3.11/traceback.py:237: ResourceWarning: unclosed file <_io.TextIOWrapper name=7 encoding='UTF-8'>
+  tb.tb_frame.clear()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/anaconda3/lib/python3.11/contextlib.py:144: ResourceWarning: unclosed file <_io.TextIOWrapper name=5 encoding='UTF-8'>
+  next(self.gen)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/anaconda3/lib/python3.11/contextlib.py:167: ResourceWarning: unclosed file <_io.TextIOWrapper name=5 encoding='UTF-8'>
+  exc.__traceback__ = traceback
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/anaconda3/lib/python3.11/contextlib.py:167: ResourceWarning: unclosed file <_io.TextIOWrapper name=5 encoding='UTF-8'>
+  exc.__traceback__ = traceback
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/anaconda3/lib/python3.11/contextlib.py:144: ResourceWarning: unclosed file <_io.TextIOWrapper name=5 encoding='UTF-8'>
+  next(self.gen)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_r7_baseline_and_no_false_smoke_success (test_measurement.MeasurementTests.test_r7_baseline_and_no_false_smoke_success) ... ok
+test_schedule_reproducible_balanced_and_disjoint (test_measurement.MeasurementTests.test_schedule_reproducible_balanced_and_disjoint) ... ok
+test_valid_raw (test_measurement.MeasurementTests.test_valid_raw) ... ok
+test_actual_cleanup_exit3_then_relative_cli (test_recovery.RecoveryTests.test_actual_cleanup_exit3_then_relative_cli) ... ok
+test_complete_clock_violation_keeps_replacement_route (test_recovery.RecoveryTests.test_complete_clock_violation_keeps_replacement_route) ... ok
+test_foreign_identity_refused_before_mutation (test_recovery.RecoveryTests.test_foreign_identity_refused_before_mutation) ... ok
+test_hard_exit_releases_lock_and_symlink_cli_recovers (test_recovery.RecoveryTests.test_hard_exit_releases_lock_and_symlink_cli_recovers) ... ok
+test_live_owner_blocks_actual_cli (test_recovery.RecoveryTests.test_live_owner_blocks_actual_cli) ... ok
+test_missing_journal_and_expiry_take_actual_stop_cleanup (test_recovery.RecoveryTests.test_missing_journal_and_expiry_take_actual_stop_cleanup) ... ok
+test_published_environment_provenance_conflicts (test_recovery.RecoveryTests.test_published_environment_provenance_conflicts) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 15.263s
+
+OK
+r20p0 998284632204955664 15442956207050968066 b1-a0-m0 30

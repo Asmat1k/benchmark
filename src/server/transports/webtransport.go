@@ -17,20 +17,25 @@ func StreamEcho(s io.ReadWriter) error {
 		if _, err := io.ReadFull(s, p); err != nil {
 			return err
 		}
+		counts := echo.Receive(p, ready)
 		reply, err := echo.Reply(p, ready)
+		counts.Valid(err == nil)
 		if err != nil {
 			return err
 		}
 		for len(reply) > 0 {
 			n, err := s.Write(reply)
 			if err != nil {
+				counts.Written(false)
 				return err
 			}
 			if n == 0 {
+				counts.Written(false)
 				return io.ErrShortWrite
 			}
 			reply = reply[n:]
 		}
+		counts.Written(true)
 		size = protocol.Size
 	}
 }
@@ -42,6 +47,8 @@ func WebTransport(server *wt.Server) http.HandlerFunc {
 			log.Printf("WT upgrade: %v", err)
 			return
 		}
+		echo.Active.Add(1)
+		defer echo.Active.Add(-1)
 		defer session.CloseWithError(0, "finished")
 		state := session.ConnectionState()
 		log.Printf("peer HTTP/3 SETTINGS=%+v server additional SETTINGS=%v", w.(http3.Hijacker).Connection().Settings(), server.H3.AdditionalSettings)
@@ -52,8 +59,15 @@ func WebTransport(server *wt.Server) http.HandlerFunc {
 				if err != nil {
 					return
 				}
+				counts := echo.Receive(p, ready)
 				reply, err := echo.Reply(p, ready)
-				if err != nil || session.SendDatagram(reply) != nil {
+				counts.Valid(err == nil)
+				if err != nil {
+					return
+				}
+				err = session.SendDatagram(reply)
+				counts.Written(err == nil)
+				if err != nil {
 					return
 				}
 			}
