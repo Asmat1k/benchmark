@@ -1,17 +1,17 @@
-FROM node:22.18.0-bookworm AS client
+FROM node:22.18.0-bookworm@sha256:05a8ca7db7ad22dff0ba1a78d108658c0f4c788e583bd7809ab8d7a32d8cbc86 AS client
 WORKDIR /client
 COPY src/client/package*.json ./
 RUN npm ci
 COPY src/client ./
 RUN npm run build && npm test && cp index.html dist/
-FROM golang:1.24.6-bookworm AS compiler
+FROM golang:1.24.6-bookworm@sha256:97b2dc9975299f62ff2d1f262b6b5aad2f35da43471ec379fdf164a7e0110e59 AS compiler
 WORKDIR /src
 COPY src/server/go.* ./
 RUN go mod download
 COPY src/server ./
 RUN go test -mod=readonly ./... && CGO_ENABLED=0 go build -mod=readonly -o /bench . && CGO_ENABLED=0 go build -o /testcert ./cmd/testcert
 RUN go version -m /bench > /server-build.txt && sha256sum /bench /testcert go.mod go.sum >> /server-build.txt
-FROM debian:bookworm-slim
+FROM debian:bookworm-slim@sha256:ec8534cda2cb30f29f44f23e135297af7a1496f2990fd8e4e84aa36b081a757a
 COPY --from=compiler /server-build.txt /server-build.txt
 COPY --from=client /client/dist /page
 COPY --from=compiler /bench /testcert /usr/local/bin/

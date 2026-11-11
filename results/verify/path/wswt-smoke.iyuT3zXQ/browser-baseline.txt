@@ -1,0 +1,30 @@
+rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+page.goto: Timeout 6000ms exceeded.
+Call log:
+  - navigating to "https://bench.test:8443/", waiting until "load"
+
+    at /runner/dist/main.js:28:16 {
+  name: 'TimeoutError'
+}
+
+Node.js v22.18.0
+ Container wswt-d2-wswt-smoke-iyut3zxq-browser-1 Stopping 
+ Container wswt-d2-wswt-smoke-iyut3zxq-router-1 Stopping 
+ Container wswt-d2-wswt-smoke-iyut3zxq-server-1 Stopping 
+ Container wswt-d2-wswt-smoke-iyut3zxq-browser-1 Stopped 
+ Container wswt-d2-wswt-smoke-iyut3zxq-browser-1 Removing 
+ Container wswt-d2-wswt-smoke-iyut3zxq-server-1 Stopped 
+ Container wswt-d2-wswt-smoke-iyut3zxq-server-1 Removing 
+ Container wswt-d2-wswt-smoke-iyut3zxq-router-1 Stopped 
+ Container wswt-d2-wswt-smoke-iyut3zxq-router-1 Removing 
+ Container wswt-d2-wswt-smoke-iyut3zxq-browser-1 Removed 
+ Container wswt-d2-wswt-smoke-iyut3zxq-router-1 Removed 
+ Container wswt-d2-wswt-smoke-iyut3zxq-server-1 Removed 
+ Network wswt-d2-wswt-smoke-iyut3zxq_browser_net Removing 
+ Network wswt-d2-wswt-smoke-iyut3zxq_server_net Removing 
+ Network wswt-d2-wswt-smoke-iyut3zxq_browser_net Removed 
+ Network wswt-d2-wswt-smoke-iyut3zxq_server_net Removed 

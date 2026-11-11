@@ -1,0 +1,219 @@
+tcpdump: data link type LINUX_SLL2
+tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
+listening on any, link-type LINUX_SLL2 (Linux cooked v2), snapshot length 262144 bytes
+08:44:59.583277 to_browser In  IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [S], seq 542415223, win 64240, options [mss 1460,sackOK,TS val 3175936436 ecr 0,nop,wscale 7], length 0
+08:44:59.583289 to_server Out IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [S], seq 542415223, win 64240, options [mss 1460,sackOK,TS val 3175936436 ecr 0,nop,wscale 7], length 0
+08:44:59.583320 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57744: Flags [S.], seq 3889457601, ack 542415224, win 65160, options [mss 1460,sackOK,TS val 1011083087 ecr 3175936436,nop,wscale 7], length 0
+08:44:59.583322 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57744: Flags [S.], seq 3889457601, ack 542415224, win 65160, options [mss 1460,sackOK,TS val 1011083087 ecr 3175936436,nop,wscale 7], length 0
+08:44:59.583330 to_browser In  IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [.], ack 1, win 502, options [nop,nop,TS val 3175936436 ecr 1011083087], length 0
+08:44:59.583331 to_server Out IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [.], ack 1, win 502, options [nop,nop,TS val 3175936436 ecr 1011083087], length 0
+08:44:59.584483 to_browser In  IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [.], seq 1:1449, ack 1, win 502, options [nop,nop,TS val 3175936437 ecr 1011083087], length 1448
+08:44:59.584486 to_server Out IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [.], seq 1:1449, ack 1, win 502, options [nop,nop,TS val 3175936437 ecr 1011083087], length 1448
+08:44:59.584486 to_browser In  IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [P.], seq 1449:1785, ack 1, win 502, options [nop,nop,TS val 3175936437 ecr 1011083087], length 336
+08:44:59.584487 to_server Out IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [P.], seq 1449:1785, ack 1, win 502, options [nop,nop,TS val 3175936437 ecr 1011083087], length 336
+08:44:59.584492 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57744: Flags [.], ack 1449, win 532, options [nop,nop,TS val 1011083088 ecr 3175936437], length 0
+08:44:59.584493 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57744: Flags [.], ack 1449, win 532, options [nop,nop,TS val 1011083088 ecr 3175936437], length 0
+08:44:59.584493 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57744: Flags [.], ack 1785, win 555, options [nop,nop,TS val 1011083088 ecr 3175936437], length 0
+08:44:59.584494 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57744: Flags [.], ack 1785, win 555, options [nop,nop,TS val 1011083088 ecr 3175936437], length 0
+08:44:59.586114 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57744: Flags [.], seq 1:1449, ack 1785, win 555, options [nop,nop,TS val 1011083090 ecr 3175936437], length 1448
+08:44:59.586116 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57744: Flags [.], seq 1:1449, ack 1785, win 555, options [nop,nop,TS val 1011083090 ecr 3175936437], length 1448
+08:44:59.586116 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57744: Flags [P.], seq 1449:1809, ack 1785, win 555, options [nop,nop,TS val 1011083090 ecr 3175936437], length 360
+08:44:59.586116 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57744: Flags [P.], seq 1449:1809, ack 1785, win 555, options [nop,nop,TS val 1011083090 ecr 3175936437], length 360
+08:44:59.586122 to_browser In  IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [.], ack 1449, win 525, options [nop,nop,TS val 3175936439 ecr 1011083090], length 0
+08:44:59.586123 to_server Out IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [.], ack 1449, win 525, options [nop,nop,TS val 3175936439 ecr 1011083090], length 0
+08:44:59.586123 to_browser In  IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [.], ack 1809, win 548, options [nop,nop,TS val 3175936439 ecr 1011083090], length 0
+08:44:59.586123 to_server Out IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [.], ack 1809, win 548, options [nop,nop,TS val 3175936439 ecr 1011083090], length 0
+08:44:59.591806 to_browser In  IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [P.], seq 1785:1849, ack 1809, win 548, options [nop,nop,TS val 3175936445 ecr 1011083090], length 64
+08:44:59.591812 to_server Out IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [P.], seq 1785:1849, ack 1809, win 548, options [nop,nop,TS val 3175936445 ecr 1011083090], length 64
+08:44:59.592100 to_browser In  IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [P.], seq 1849:2507, ack 1809, win 548, options [nop,nop,TS val 3175936445 ecr 1011083090], length 658
+08:44:59.592102 to_server Out IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [P.], seq 1849:2507, ack 1809, win 548, options [nop,nop,TS val 3175936445 ecr 1011083090], length 658
+08:44:59.592139 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57744: Flags [.], ack 2507, win 577, options [nop,nop,TS val 1011083096 ecr 3175936445], length 0
+08:44:59.592142 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57744: Flags [.], ack 2507, win 577, options [nop,nop,TS val 1011083096 ecr 3175936445], length 0
+08:44:59.592644 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57744: Flags [P.], seq 1809:2209, ack 2507, win 577, options [nop,nop,TS val 1011083097 ecr 3175936445], length 400
+08:44:59.592646 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57744: Flags [P.], seq 1809:2209, ack 2507, win 577, options [nop,nop,TS val 1011083097 ecr 3175936445], length 400
+08:44:59.599762 to_browser In  IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [P.], seq 2507:3060, ack 2209, win 570, options [nop,nop,TS val 3175936453 ecr 1011083097], length 553
+08:44:59.599771 to_server Out IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [P.], seq 2507:3060, ack 2209, win 570, options [nop,nop,TS val 3175936453 ecr 1011083097], length 553
+08:44:59.600061 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57744: Flags [.], seq 2209:3657, ack 3060, win 600, options [nop,nop,TS val 1011083104 ecr 3175936453], length 1448
+08:44:59.600064 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57744: Flags [.], seq 2209:3657, ack 3060, win 600, options [nop,nop,TS val 1011083104 ecr 3175936453], length 1448
+08:44:59.600065 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57744: Flags [P.], seq 3657:4603, ack 3060, win 600, options [nop,nop,TS val 1011083104 ecr 3175936453], length 946
+08:44:59.600065 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57744: Flags [P.], seq 3657:4603, ack 3060, win 600, options [nop,nop,TS val 1011083104 ecr 3175936453], length 946
+08:44:59.600070 to_browser In  IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [.], ack 4603, win 616, options [nop,nop,TS val 3175936453 ecr 1011083104], length 0
+08:44:59.600070 to_server Out IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [.], ack 4603, win 616, options [nop,nop,TS val 3175936453 ecr 1011083104], length 0
+08:44:59.600075 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57744: Flags [P.], seq 4603:5400, ack 3060, win 600, options [nop,nop,TS val 1011083104 ecr 3175936453], length 797
+08:44:59.600075 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57744: Flags [P.], seq 4603:5400, ack 3060, win 600, options [nop,nop,TS val 1011083104 ecr 3175936453], length 797
+08:44:59.605736 to_browser In  IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [P.], seq 3060:3624, ack 5400, win 616, options [nop,nop,TS val 3175936459 ecr 1011083104], length 564
+08:44:59.605742 to_server Out IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [P.], seq 3060:3624, ack 5400, win 616, options [nop,nop,TS val 3175936459 ecr 1011083104], length 564
+08:44:59.605925 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57744: Flags [.], seq 5400:6848, ack 3624, win 623, options [nop,nop,TS val 1011083110 ecr 3175936459], length 1448
+08:44:59.605932 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57744: Flags [.], seq 5400:6848, ack 3624, win 623, options [nop,nop,TS val 1011083110 ecr 3175936459], length 1448
+08:44:59.605932 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57744: Flags [P.], seq 6848:6964, ack 3624, win 623, options [nop,nop,TS val 1011083110 ecr 3175936459], length 116
+08:44:59.605933 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57744: Flags [P.], seq 6848:6964, ack 3624, win 623, options [nop,nop,TS val 1011083110 ecr 3175936459], length 116
+08:44:59.605945 to_browser In  IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [.], ack 6964, win 621, options [nop,nop,TS val 3175936459 ecr 1011083110], length 0
+08:44:59.605946 to_server Out IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [.], ack 6964, win 621, options [nop,nop,TS val 3175936459 ecr 1011083110], length 0
+08:44:59.686535 to_browser In  IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [S], seq 2454928137, win 64240, options [mss 1460,sackOK,TS val 3175936539 ecr 0,nop,wscale 7], length 0
+08:44:59.686542 to_server Out IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [S], seq 2454928137, win 64240, options [mss 1460,sackOK,TS val 3175936539 ecr 0,nop,wscale 7], length 0
+08:44:59.686554 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [S.], seq 2504889453, ack 2454928138, win 65160, options [mss 1460,sackOK,TS val 1011083190 ecr 3175936539,nop,wscale 7], length 0
+08:44:59.686556 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [S.], seq 2504889453, ack 2454928138, win 65160, options [mss 1460,sackOK,TS val 1011083190 ecr 3175936539,nop,wscale 7], length 0
+08:44:59.686569 to_browser In  IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [.], ack 1, win 502, options [nop,nop,TS val 3175936539 ecr 1011083190], length 0
+08:44:59.686573 to_server Out IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [.], ack 1, win 502, options [nop,nop,TS val 3175936539 ecr 1011083190], length 0
+08:44:59.686861 to_browser In  IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [.], seq 1:1449, ack 1, win 502, options [nop,nop,TS val 3175936540 ecr 1011083190], length 1448
+08:44:59.686863 to_server Out IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [.], seq 1:1449, ack 1, win 502, options [nop,nop,TS val 3175936540 ecr 1011083190], length 1448
+08:44:59.686863 to_browser In  IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [P.], seq 1449:1741, ack 1, win 502, options [nop,nop,TS val 3175936540 ecr 1011083190], length 292
+08:44:59.686863 to_server Out IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [P.], seq 1449:1741, ack 1, win 502, options [nop,nop,TS val 3175936540 ecr 1011083190], length 292
+08:44:59.686873 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [.], ack 1449, win 532, options [nop,nop,TS val 1011083191 ecr 3175936540], length 0
+08:44:59.686874 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [.], ack 1449, win 532, options [nop,nop,TS val 1011083191 ecr 3175936540], length 0
+08:44:59.686874 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [.], ack 1741, win 555, options [nop,nop,TS val 1011083191 ecr 3175936540], length 0
+08:44:59.686874 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [.], ack 1741, win 555, options [nop,nop,TS val 1011083191 ecr 3175936540], length 0
+08:44:59.687362 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [.], seq 1:1449, ack 1741, win 555, options [nop,nop,TS val 1011083191 ecr 3175936540], length 1448
+08:44:59.687365 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [.], seq 1:1449, ack 1741, win 555, options [nop,nop,TS val 1011083191 ecr 3175936540], length 1448
+08:44:59.687365 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [P.], seq 1449:1809, ack 1741, win 555, options [nop,nop,TS val 1011083191 ecr 3175936540], length 360
+08:44:59.687366 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [P.], seq 1449:1809, ack 1741, win 555, options [nop,nop,TS val 1011083191 ecr 3175936540], length 360
+08:44:59.687376 to_browser In  IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [.], ack 1449, win 525, options [nop,nop,TS val 3175936540 ecr 1011083191], length 0
+08:44:59.687377 to_server Out IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [.], ack 1449, win 525, options [nop,nop,TS val 3175936540 ecr 1011083191], length 0
+08:44:59.687377 to_browser In  IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [.], ack 1809, win 548, options [nop,nop,TS val 3175936540 ecr 1011083191], length 0
+08:44:59.687378 to_server Out IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [.], ack 1809, win 548, options [nop,nop,TS val 3175936540 ecr 1011083191], length 0
+08:44:59.687732 to_browser In  IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [P.], seq 1741:1805, ack 1809, win 548, options [nop,nop,TS val 3175936541 ecr 1011083191], length 64
+08:44:59.687737 to_server Out IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [P.], seq 1741:1805, ack 1809, win 548, options [nop,nop,TS val 3175936541 ecr 1011083191], length 64
+08:44:59.688212 to_browser In  IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [P.], seq 1805:2327, ack 1809, win 548, options [nop,nop,TS val 3175936541 ecr 1011083191], length 522
+08:44:59.688213 to_server Out IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [P.], seq 1805:2327, ack 1809, win 548, options [nop,nop,TS val 3175936541 ecr 1011083191], length 522
+08:44:59.688229 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [.], ack 2327, win 577, options [nop,nop,TS val 1011083192 ecr 3175936541], length 0
+08:44:59.688231 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [.], ack 2327, win 577, options [nop,nop,TS val 1011083192 ecr 3175936541], length 0
+08:44:59.688362 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [P.], seq 1809:1997, ack 2327, win 577, options [nop,nop,TS val 1011083192 ecr 3175936541], length 188
+08:44:59.688364 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [P.], seq 1809:1997, ack 2327, win 577, options [nop,nop,TS val 1011083192 ecr 3175936541], length 188
+08:44:59.690402 to_browser In  IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [P.], seq 2327:2360, ack 1997, win 570, options [nop,nop,TS val 3175936543 ecr 1011083192], length 33
+08:44:59.690405 to_server Out IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [P.], seq 2327:2360, ack 1997, win 570, options [nop,nop,TS val 3175936543 ecr 1011083192], length 33
+08:44:59.690463 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [P.], seq 1997:2024, ack 2360, win 577, options [nop,nop,TS val 1011083194 ecr 3175936543], length 27
+08:44:59.690466 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [P.], seq 1997:2024, ack 2360, win 577, options [nop,nop,TS val 1011083194 ecr 3175936543], length 27
+08:44:59.690907 to_browser In  IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [P.], seq 2360:2646, ack 2024, win 570, options [nop,nop,TS val 3175936544 ecr 1011083194], length 286
+08:44:59.690909 to_server Out IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [P.], seq 2360:2646, ack 2024, win 570, options [nop,nop,TS val 3175936544 ecr 1011083194], length 286
+08:44:59.691387 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [P.], seq 2024:2306, ack 2646, win 600, options [nop,nop,TS val 1011083195 ecr 3175936544], length 282
+08:44:59.691389 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [P.], seq 2024:2306, ack 2646, win 600, options [nop,nop,TS val 1011083195 ecr 3175936544], length 282
+08:44:59.691685 to_browser In  IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [P.], seq 2646:2932, ack 2306, win 593, options [nop,nop,TS val 3175936545 ecr 1011083195], length 286
+08:44:59.691687 to_server Out IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [P.], seq 2646:2932, ack 2306, win 593, options [nop,nop,TS val 3175936545 ecr 1011083195], length 286
+08:44:59.691731 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [P.], seq 2306:2588, ack 2932, win 623, options [nop,nop,TS val 1011083196 ecr 3175936545], length 282
+08:44:59.691734 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [P.], seq 2306:2588, ack 2932, win 623, options [nop,nop,TS val 1011083196 ecr 3175936545], length 282
+08:44:59.691986 to_browser In  IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [P.], seq 2932:3218, ack 2588, win 616, options [nop,nop,TS val 3175936545 ecr 1011083196], length 286
+08:44:59.691988 to_server Out IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [P.], seq 2932:3218, ack 2588, win 616, options [nop,nop,TS val 3175936545 ecr 1011083196], length 286
+08:44:59.692019 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [P.], seq 2588:2870, ack 3218, win 627, options [nop,nop,TS val 1011083196 ecr 3175936545], length 282
+08:44:59.692020 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [P.], seq 2588:2870, ack 3218, win 627, options [nop,nop,TS val 1011083196 ecr 3175936545], length 282
+08:44:59.692477 to_browser In  IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [P.], seq 3218:3246, ack 2870, win 627, options [nop,nop,TS val 3175936545 ecr 1011083196], length 28
+08:44:59.692479 to_server Out IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [P.], seq 3218:3246, ack 2870, win 627, options [nop,nop,TS val 3175936545 ecr 1011083196], length 28
+08:44:59.692560 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [P.], seq 2870:2894, ack 3246, win 627, options [nop,nop,TS val 1011083196 ecr 3175936545], length 24
+08:44:59.692562 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [P.], seq 2870:2894, ack 3246, win 627, options [nop,nop,TS val 1011083196 ecr 3175936545], length 24
+08:44:59.692577 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [P.], seq 2894:2918, ack 3246, win 627, options [nop,nop,TS val 1011083196 ecr 3175936545], length 24
+08:44:59.692577 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [P.], seq 2894:2918, ack 3246, win 627, options [nop,nop,TS val 1011083196 ecr 3175936545], length 24
+08:44:59.692588 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [F.], seq 2918, ack 3246, win 627, options [nop,nop,TS val 1011083196 ecr 3175936545], length 0
+08:44:59.692589 to_browser In  IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [.], ack 2918, win 627, options [nop,nop,TS val 3175936545 ecr 1011083196], length 0
+08:44:59.692589 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [F.], seq 2918, ack 3246, win 627, options [nop,nop,TS val 1011083196 ecr 3175936545], length 0
+08:44:59.692591 to_server Out IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [.], ack 2918, win 627, options [nop,nop,TS val 3175936545 ecr 1011083196], length 0
+08:44:59.692631 to_browser In  IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [F.], seq 3246, ack 2919, win 627, options [nop,nop,TS val 3175936546 ecr 1011083196], length 0
+08:44:59.692632 to_server Out IP 172.28.10.10.57754 > 172.28.20.10.8443: Flags [F.], seq 3246, ack 2919, win 627, options [nop,nop,TS val 3175936546 ecr 1011083196], length 0
+08:44:59.692650 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [.], ack 3247, win 627, options [nop,nop,TS val 1011083197 ecr 3175936546], length 0
+08:44:59.692655 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57754: Flags [.], ack 3247, win 627, options [nop,nop,TS val 1011083197 ecr 3175936546], length 0
+08:44:59.698043 to_browser In  IP 172.28.10.10.60715 > 172.28.20.10.8443: UDP, length 1250
+08:44:59.698056 to_server Out IP 172.28.10.10.60715 > 172.28.20.10.8443: UDP, length 1250
+08:44:59.699409 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 1200
+08:44:59.699413 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 1200
+08:44:59.699704 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 33
+08:44:59.699707 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 33
+08:44:59.700262 to_browser In  IP 172.28.10.10.60715 > 172.28.20.10.8443: UDP, length 158
+08:44:59.700264 to_server Out IP 172.28.10.10.60715 > 172.28.20.10.8443: UDP, length 158
+08:44:59.700515 to_browser In  IP 172.28.10.10.60715 > 172.28.20.10.8443: UDP, length 190
+08:44:59.700516 to_server Out IP 172.28.10.10.60715 > 172.28.20.10.8443: UDP, length 190
+08:44:59.700838 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 118
+08:44:59.700841 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 118
+08:44:59.700969 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 83
+08:44:59.700971 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 83
+08:44:59.701315 to_browser In  IP 172.28.10.10.60715 > 172.28.20.10.8443: UDP, length 27
+08:44:59.701318 to_server Out IP 172.28.10.10.60715 > 172.28.20.10.8443: UDP, length 27
+08:44:59.702018 to_browser In  IP 172.28.10.10.60715 > 172.28.20.10.8443: UDP, length 27
+08:44:59.702020 to_server Out IP 172.28.10.10.60715 > 172.28.20.10.8443: UDP, length 27
+08:44:59.702486 to_browser In  IP 172.28.10.10.60715 > 172.28.20.10.8443: UDP, length 30
+08:44:59.702488 to_server Out IP 172.28.10.10.60715 > 172.28.20.10.8443: UDP, length 30
+08:44:59.702523 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 24
+08:44:59.702524 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 24
+08:44:59.702536 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 24
+08:44:59.702537 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 24
+08:44:59.702870 to_browser In  IP 172.28.10.10.60715 > 172.28.20.10.8443: UDP, length 286
+08:44:59.702872 to_server Out IP 172.28.10.10.60715 > 172.28.20.10.8443: UDP, length 286
+08:44:59.702958 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 283
+08:44:59.702960 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 283
+08:44:59.703127 to_browser In  IP 172.28.10.10.60715 > 172.28.20.10.8443: UDP, length 287
+08:44:59.703128 to_server Out IP 172.28.10.10.60715 > 172.28.20.10.8443: UDP, length 287
+08:44:59.703192 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 284
+08:44:59.703193 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 284
+08:44:59.703371 to_browser In  IP 172.28.10.10.60715 > 172.28.20.10.8443: UDP, length 287
+08:44:59.703372 to_server Out IP 172.28.10.10.60715 > 172.28.20.10.8443: UDP, length 287
+08:44:59.703443 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 284
+08:44:59.703445 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 284
+08:44:59.703634 to_browser In  IP 172.28.10.10.60715 > 172.28.20.10.8443: UDP, length 31
+08:44:59.703636 to_server Out IP 172.28.10.10.60715 > 172.28.20.10.8443: UDP, length 31
+08:44:59.703740 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 58
+08:44:59.703742 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 58
+08:44:59.713023 to_browser In  IP 172.28.10.10.36336 > 172.28.20.10.8443: UDP, length 1250
+08:44:59.713031 to_server Out IP 172.28.10.10.36336 > 172.28.20.10.8443: UDP, length 1250
+08:44:59.713827 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.36336: UDP, length 1200
+08:44:59.713836 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.36336: UDP, length 1200
+08:44:59.714184 to_browser In  IP 172.28.10.10.36336 > 172.28.20.10.8443: UDP, length 157
+08:44:59.714188 to_server Out IP 172.28.10.10.36336 > 172.28.20.10.8443: UDP, length 157
+08:44:59.714254 to_browser In  IP 172.28.10.10.36336 > 172.28.20.10.8443: UDP, length 182
+08:44:59.714255 to_server Out IP 172.28.10.10.36336 > 172.28.20.10.8443: UDP, length 182
+08:44:59.714361 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.36336: UDP, length 118
+08:44:59.714364 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.36336: UDP, length 118
+08:44:59.714575 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.36336: UDP, length 83
+08:44:59.714578 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.36336: UDP, length 83
+08:44:59.714807 to_browser In  IP 172.28.10.10.36336 > 172.28.20.10.8443: UDP, length 27
+08:44:59.714810 to_server Out IP 172.28.10.10.36336 > 172.28.20.10.8443: UDP, length 27
+08:44:59.715347 to_browser In  IP 172.28.10.10.36336 > 172.28.20.10.8443: UDP, length 29
+08:44:59.715349 to_server Out IP 172.28.10.10.36336 > 172.28.20.10.8443: UDP, length 29
+08:44:59.715386 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.36336: UDP, length 25
+08:44:59.715387 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.36336: UDP, length 25
+08:44:59.715692 to_browser In  IP 172.28.10.10.36336 > 172.28.20.10.8443: UDP, length 285
+08:44:59.715694 to_server Out IP 172.28.10.10.36336 > 172.28.20.10.8443: UDP, length 285
+08:44:59.715724 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.36336: UDP, length 24
+08:44:59.715725 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.36336: UDP, length 24
+08:44:59.715747 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.36336: UDP, length 279
+08:44:59.715748 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.36336: UDP, length 279
+08:44:59.715876 to_browser In  IP 172.28.10.10.36336 > 172.28.20.10.8443: UDP, length 285
+08:44:59.715877 to_server Out IP 172.28.10.10.36336 > 172.28.20.10.8443: UDP, length 285
+08:44:59.715902 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.36336: UDP, length 279
+08:44:59.715902 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.36336: UDP, length 279
+08:44:59.715986 to_browser In  IP 172.28.10.10.36336 > 172.28.20.10.8443: UDP, length 285
+08:44:59.715987 to_server Out IP 172.28.10.10.36336 > 172.28.20.10.8443: UDP, length 285
+08:44:59.716004 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.36336: UDP, length 24
+08:44:59.716005 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.36336: UDP, length 24
+08:44:59.716011 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.36336: UDP, length 279
+08:44:59.716011 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.36336: UDP, length 279
+08:44:59.716376 to_browser In  IP 172.28.10.10.36336 > 172.28.20.10.8443: UDP, length 40
+08:44:59.716378 to_server Out IP 172.28.10.10.36336 > 172.28.20.10.8443: UDP, length 40
+08:44:59.732264 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 53
+08:44:59.732272 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 53
+08:44:59.732423 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 53
+08:44:59.732425 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 53
+08:44:59.741684 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.36336: UDP, length 25
+08:44:59.741691 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.36336: UDP, length 25
+08:44:59.790423 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 53
+08:44:59.790457 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 53
+08:44:59.791729 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 53
+08:44:59.791735 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 53
+08:44:59.901117 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 53
+08:44:59.901126 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 53
+08:44:59.901145 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 53
+08:44:59.901146 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 53
+08:45:00.122590 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 53
+08:45:00.122628 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 53
+08:45:00.123677 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 53
+08:45:00.123680 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.60715: UDP, length 53
+08:45:00.146222 to_browser In  IP 172.28.10.10.40207 > 172.28.20.10.8443: UDP, length 1250
+08:45:00.146227 to_server Out IP 172.28.10.10.40207 > 172.28.20.10.8443: UDP, length 1250
+08:45:00.146973 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.40207: UDP, length 1200
+08:45:00.146979 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.40207: UDP, length 1200
+08:45:00.146997 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.40207: UDP, length 33
+08:45:00.146999 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.40207: UDP, length 33
+08:45:00.147190 to_browser In  IP 172.28.10.10.40207 > 172.28.20.10.8443: UDP, length 1250
+08:45:00.147192 to_server Out IP 172.28.10.10.40207 > 172.28.20.10.8443: UDP, length 1250
+08:45:00.189316 to_browser In  IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [F.], seq 3624, ack 6964, win 621, options [nop,nop,TS val 3175937042 ecr 1011083110], length 0
+08:45:00.189323 to_server Out IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [F.], seq 3624, ack 6964, win 621, options [nop,nop,TS val 3175937042 ecr 1011083110], length 0
+08:45:00.189419 to_server In  IP 172.28.20.10.8443 > 172.28.10.10.57744: Flags [P.], seq 6964:6988, ack 3625, win 623, options [nop,nop,TS val 1011083693 ecr 3175937042], length 24
+08:45:00.189421 to_browser Out IP 172.28.20.10.8443 > 172.28.10.10.57744: Flags [P.], seq 6964:6988, ack 3625, win 623, options [nop,nop,TS val 1011083693 ecr 3175937042], length 24
+08:45:00.189434 to_browser In  IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [R], seq 542418848, win 0, length 0
+08:45:00.189435 to_server Out IP 172.28.10.10.57744 > 172.28.20.10.8443: Flags [R], seq 542418848, win 0, length 0

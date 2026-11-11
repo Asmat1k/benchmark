@@ -1,0 +1,9 @@
+tcpdump: data link type LINUX_SLL2
+tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
+listening on any, link-type LINUX_SLL2 (Linux cooked v2), snapshot length 262144 bytes
+08:39:16.726999 eth0  M   IP6 fe80::c68:38ff:fec3:28b8 > ff02::16: HBH ICMP6, multicast listener report v2, 1 group record(s), length 28
+08:39:17.365406 eth0  Out IP 172.28.10.10.60384 > 172.28.20.10.8443: Flags [S], seq 3327317203, win 64240, options [mss 1460,sackOK,TS val 3175594219 ecr 0,nop,wscale 7], length 0
+
+2 packets captured
+2 packets received by filter
+0 packets dropped by kernel
