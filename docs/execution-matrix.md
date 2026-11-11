@@ -5,7 +5,7 @@
 | Волна | Артефакт | Реализация | Экспериментальная проверка | Причина |
 |---|---|---|---|---|
 | D0 | Контракты, схемы, конфигурации и примеры | завершена | not_run | deferred_by_user |
-| D1 | WS/WT-S, TLS, echo | не начата | not_run | deferred_by_user |
+| D1 | WS/WT-S, TLS, echo | завершена | not_run | deferred_by_user |
 | D2 | Контейнеры, locks, маршруты и ресурсы | не начата | not_run | deferred_by_user |
 | D3 | Измеритель и raw | не начата | not_run | deferred_by_user |
 | D4 | Анализ, статистика и графики | не начата | not_run | deferred_by_user |

@@ -1,0 +1,6 @@
+.git
+.agents
+build
+results
+**/node_modules
+**/dist

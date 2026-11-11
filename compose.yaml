@@ -1,0 +1,27 @@
+services:
+  server:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.server
+    image: wswt-bench-server:dev
+    init: true
+    volumes:
+      - ${BENCH_TLS_DIR:-./build/tls}/server:/certs:ro
+    networks:
+      diagnostic:
+        aliases: [bench.test]
+  browser:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.browser
+    image: wswt-bench-browser:dev
+    init: true
+    shm_size: 1gb
+    security_opt:
+      - seccomp=docker/chromium-seccomp.json
+    volumes:
+      - ${BENCH_TLS_DIR:-./build/tls}/public:/trust:ro
+    networks: [diagnostic]
+networks:
+  diagnostic:
+    internal: true

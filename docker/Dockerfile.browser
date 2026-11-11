@@ -1,0 +1,9 @@
+FROM mcr.microsoft.com/playwright:v1.55.0-noble
+RUN apt-get update && apt-get install -y --no-install-recommends libnss3-tools && rm -rf /var/lib/apt/lists/*
+WORKDIR /runner
+COPY src/runner/package*.json ./
+RUN npm ci
+COPY src/runner ./
+RUN npm run build
+COPY docker/browser.sh /usr/local/bin/bench-browser
+ENTRYPOINT ["sh","/usr/local/bin/bench-browser"]
