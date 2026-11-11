@@ -1,0 +1,6 @@
+{
+  "purpose": "D4 known-answer analysis only; no network experiment",
+  "environment_template": "results/verify/measurement/smoke.OWQv8a3D",
+  "generated_slots": true,
+  "n_per_profile": 2
+}

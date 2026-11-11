@@ -8,7 +8,7 @@
 | D1 | WS/WT-S, TLS, echo | завершена | not_run | deferred_by_user |
 | D2 | Контейнеры, locks, маршруты и ресурсы | завершена | not_run | deferred_by_user |
 | D3 | Измеритель и raw | завершена | not_run | deferred_by_user |
-| D4 | Анализ, статистика и графики | не начата | not_run | deferred_by_user |
+| D4 | Анализ, статистика и графики | завершена | not_run | deferred_by_user |
 | D5 | Команды calibration, A/A, monitoring, pilot, power, freeze, main | не начата | not_run | deferred_by_user |
 | D6 | Независимая интеграция и передача | не начата | not_run | deferred_by_user |
 

@@ -1,0 +1,2 @@
+sh docker/analyze.sh "build/d4-recheck-series"
+/series/derived

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "checks": [
+    {
+      "id": "development-R4a-normal-CLI",
+      "mandatory": true,
+      "expected": 1,
+      "actual": 1,
+      "units": "regression",
+      "tolerance": 0,
+      "status": "passed",
+      "reason": null,
+      "utc": "2026-11-11T19:24:21.636490Z",
+      "evidence": [
+        {
+          "path": "r4a-tests.txt",
+          "sha256": "5e20bdd0973f39d60104c81ca5d858316ae87a4845b731a4ca85999355d80ee3"
+        },
+        {
+          "path": "source-hashes.json",
+          "sha256": "066cc3130bc78986cd507ec05fe0c586dc7ba79e0ee079e69abcc8155bae748a"
+        }
+      ]
+    },
+    {
+      "id": "development-R1-R3-guards",
+      "mandatory": true,
+      "expected": 2,
+      "actual": 2,
+      "units": "tests",
+      "tolerance": 0,
+      "status": "passed",
+      "reason": null,
+      "utc": "2026-11-11T19:24:21.636490Z",
+      "evidence": [
+        {
+          "path": "identity-plan-tests.txt",
+          "sha256": "c0aa875f0966f215568b65480080e166f3da301d30a5d2a9b6d7c1a3041d2dd1"
+        }
+      ]
+    },
+    {
+      "id": "experimental-acceptance",
+      "mandatory": true,
+      "expected": "passed",
+      "actual": null,
+      "units": "gate",
+      "tolerance": null,
+      "status": "not_run",
+      "reason": "deferred_by_user",
+      "utc": "2026-11-11T19:24:21.636490Z",
+      "evidence": []
+    }
+  ]
+}

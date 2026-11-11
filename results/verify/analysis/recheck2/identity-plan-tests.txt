@@ -1,0 +1,7 @@
+test_r1_swapped_and_duplicated_directory_contents_cli (test_analysis.SeriesTests.test_r1_swapped_and_duplicated_directory_contents_cli) ... ok
+test_r3_truncated_series_against_signed_plan_cli (test_analysis.SeriesTests.test_r3_truncated_series_against_signed_plan_cli) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 4.038s
+
+OK

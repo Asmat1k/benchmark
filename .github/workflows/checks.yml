@@ -1,0 +1,21 @@
+name: Contract and analysis checks
+on: [push, pull_request]
+jobs:
+  offline:
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build locked analyzer
+        run: docker build -f docker/Dockerfile.analyzer -t wswt-bench-analyzer:dev .
+      - name: Validate schemas and fixtures
+        run: docker run --rm --network none -v "$PWD:/bench" -w /bench wswt-bench-analyzer:dev python docs/fixtures/synthetic/validate.py
+      - name: Verify synthetic statistical references and CLI
+        run: make analysis-test
+      - name: Record network smoke as not run
+        run: |
+          mkdir -p build/ci
+          printf '{"schema_version":1,"checks":[{"id":"network-smoke","mandatory":true,"expected":"passed","actual":null,"units":"scenario","tolerance":0,"status":"not_run","reason":"network_smoke_requires_authorized_host","utc":"%s","evidence":[]}]}\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > build/ci/smoke.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ci-status
+          path: build/ci/

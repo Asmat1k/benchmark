@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "checks": [
+    {
+      "id": "development-analysis-references",
+      "mandatory": true,
+      "expected": 10,
+      "actual": 10,
+      "units": "tests",
+      "tolerance": {
+        "finite_absolute": 1e-10,
+        "counts_ranks_decisions_indices": "exact"
+      },
+      "status": "passed",
+      "reason": null,
+      "utc": "2026-11-11T14:48:45.265996Z",
+      "evidence": [
+        {
+          "path": "tests.txt",
+          "sha256": "141f4bdd4a15df3f37cec44888b542ed2d3a201ab75399997455a3338dc0a466"
+        }
+      ]
+    },
+    {
+      "id": "development-d3-d4-regressions",
+      "mandatory": true,
+      "expected": 29,
+      "actual": 29,
+      "units": "tests",
+      "tolerance": 0,
+      "status": "passed",
+      "reason": null,
+      "utc": "2026-11-11T14:48:45.265996Z",
+      "evidence": [
+        {
+          "path": "all-tests.txt",
+          "sha256": "30c81e9b82e86c21a0e9d82b1e036fa42e95232c5c495b2d0655795e6367e567"
+        }
+      ]
+    },
+    {
+      "id": "development-schema-fixtures",
+      "mandatory": true,
+      "expected": 12,
+      "actual": 12,
+      "units": "schemas",
+      "tolerance": 0,
+      "status": "passed",
+      "reason": null,
+      "utc": "2026-11-11T14:48:45.265996Z",
+      "evidence": [
+        {
+          "path": "schemas.txt",
+          "sha256": "e37f83194ab8e29b1a2c2d85f39e00cf6ef9b34046ece4627c7df002fd696055"
+        }
+      ]
+    },
+    {
+      "id": "development-make-analyze",
+      "mandatory": true,
+      "expected": 0,
+      "actual": 0,
+      "units": "exit_code",
+      "tolerance": 0,
+      "status": "passed",
+      "reason": null,
+      "utc": "2026-11-11T14:48:45.265996Z",
+      "evidence": [
+        {
+          "path": "make-analyze.txt",
+          "sha256": "6c0988e5aaabb77d1d7014f377dfe52f837bcd3461e51b74d9086ef63c46f4ea"
+        },
+        {
+          "path": "synthetic-derived/analysis.json",
+          "sha256": "881195f2c0f1929648c9f8e80a372127401ffafe9b9923606f5b8f6f446575de"
+        }
+      ]
+    },
+    {
+      "id": "development-export-replay",
+      "mandatory": true,
+      "expected": {
+        "runs": 24,
+        "pairs": 8,
+        "profiles": 4,
+        "measurement_slots": 28800,
+        "completed": 28752,
+        "formats": 24
+      },
+      "actual": {
+        "runs": 24,
+        "pairs": 8,
+        "profiles": 4,
+        "measurement_slots": 28800,
+        "completed": 28752,
+        "formats": 24
+      },
+      "units": "synthetic_artifacts",
+      "tolerance": 0,
+      "status": "passed",
+      "reason": null,
+      "utc": "2026-11-11T14:48:45.265996Z",
+      "evidence": [
+        {
+          "path": "export-check.txt",
+          "sha256": "139f582cd68816a8fe07b4bcc05e5eb6646d0334f5f2ac2b00206d4d46c9438b"
+        },
+        {
+          "path": "synthetic-derived/SHA256SUMS",
+          "sha256": "1f2ad1fe50ab047557bbe919f582f8c483039e3f6277321d8fc8f7ee78af0457"
+        },
+        {
+          "path": "analyzer-runtime.json",
+          "sha256": "243b7cd1ee1fb1f80962dfe4c9765aba7c112e30d0ba0894224440d46534964a"
+        }
+      ]
+    },
+    {
+      "id": "experimental-acceptance",
+      "mandatory": true,
+      "expected": "passed",
+      "actual": null,
+      "units": "gate",
+      "tolerance": null,
+      "status": "not_run",
+      "reason": "deferred_by_user",
+      "utc": "2026-11-11T14:48:45.265996Z",
+      "evidence": []
+    }
+  ]
+}

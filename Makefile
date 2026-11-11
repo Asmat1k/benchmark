@@ -18,3 +18,10 @@ measurement-smoke:
 .PHONY: measure
 measure:
 	sh docker/measure.sh "$(SERIES_DIR)" "$(RUN_INDEX)"
+
+.PHONY: analyze analysis-test
+analyze:
+	sh docker/analyze.sh "$(SERIES)"
+
+analysis-test:
+	docker run --rm --network none -e PYTHONDONTWRITEBYTECODE=1 -e MPLCONFIGDIR=/tmp/matplotlib -v "$(CURDIR):/bench" -w /bench wswt-bench-analyzer:dev python -m unittest discover -s src/analysis -p 'test_analysis*.py' -v

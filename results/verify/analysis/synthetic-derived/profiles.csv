@@ -1,0 +1,5 @@
+profile,n,theta_ms,p_raw,p_Holm,CI95_low_ms,CI95_high_ms,CI9875_low_ms,CI9875_high_ms,mean_delta_S_pp,delta_S_low_pp,delta_S_high_pp,statistical_decision,practical_decision,completeness_gate,validity_gate,useful_gain
+r20p0,2,-10.0,0.5,1.0,-inf,inf,-inf,inf,-0.5,-0.5,-0.5,not_reject,uncertain,passed,passed,NA
+r20p1,2,-10.0,0.5,1.0,-inf,inf,-inf,inf,-0.5,-0.5,-0.5,not_reject,uncertain,passed,passed,NA
+r80p0,2,-10.0,0.5,1.0,-inf,inf,-inf,inf,-0.5,-0.5,-0.5,not_reject,uncertain,passed,passed,NA
+r80p1,2,-10.0,0.5,1.0,-inf,inf,-inf,inf,-0.5,-0.5,-0.5,not_reject,uncertain,passed,passed,NA
