@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "checks": [
+    {
+      "id": "acceptance-host",
+      "mandatory": true,
+      "expected": "offline tests pass",
+      "actual": "OK",
+      "units": "development test suite",
+      "tolerance": null,
+      "status": "passed",
+      "reason": null,
+      "utc": "2026-11-11T19:49:16.215984Z",
+      "evidence": [
+        {
+          "path": "results/verify/acceptance/development/tests-host.txt",
+          "sha256": "0cf32197cef1eb677ed0c5ef77539f5c1d6742618b6c2a993f247e05146ee4fe"
+        }
+      ]
+    },
+    {
+      "id": "acceptance-locked-final",
+      "mandatory": true,
+      "expected": "offline tests pass",
+      "actual": "OK",
+      "units": "development test suite",
+      "tolerance": null,
+      "status": "passed",
+      "reason": null,
+      "utc": "2026-11-11T19:49:16.216290Z",
+      "evidence": [
+        {
+          "path": "results/verify/acceptance/development/final-acceptance.txt",
+          "sha256": "31f640d87127c339a5979b8c7359222001d4b5c578619c95d4d65a9fde0fa4e8"
+        }
+      ]
+    },
+    {
+      "id": "d3-d5-combined",
+      "mandatory": true,
+      "expected": "offline tests pass",
+      "actual": "r20p0 998284632204955664 15442956207050968066 b1-a0-m0 30",
+      "units": "development test suite",
+      "tolerance": null,
+      "status": "passed",
+      "reason": null,
+      "utc": "2026-11-11T19:49:16.216751Z",
+      "evidence": [
+        {
+          "path": "results/verify/acceptance/development/final-locked.txt",
+          "sha256": "4c2fcb414ae8ef26b7dc48751964967f59d9cb366ab07bc938ccc5887fe24d7a"
+        }
+      ]
+    },
+    {
+      "id": "schemas",
+      "mandatory": true,
+      "expected": "offline tests pass",
+      "actual": "Validated 12 schemas, configs and synthetic examples",
+      "units": "development test suite",
+      "tolerance": null,
+      "status": "passed",
+      "reason": null,
+      "utc": "2026-11-11T19:49:16.217010Z",
+      "evidence": [
+        {
+          "path": "results/verify/acceptance/development/schemas.txt",
+          "sha256": "e37f83194ab8e29b1a2c2d85f39e00cf6ef9b34046ece4627c7df002fd696055"
+        }
+      ]
+    },
+    {
+      "id": "experimental-gates",
+      "mandatory": true,
+      "expected": "real experimental acceptance",
+      "actual": null,
+      "units": "experiment",
+      "tolerance": null,
+      "status": "not_run",
+      "reason": "deferred_by_user",
+      "utc": "2026-11-11T19:49:16.217149Z",
+      "evidence": []
+    }
+  ]
+}

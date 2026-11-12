@@ -7,8 +7,13 @@ from raw import binding, digest, json, now, publish, read, require, rows, write
 
 def run_spec(directory, index, partial):
     schedule = read(directory/"schedule.json")
+    from admission import phase_path
+    phase_path(directory,schedule)
     run = schedule["runs"][index]
-    require(index >= 0 and schedule["series"] in ("smoke","verify","diagnostic"), "series requires admission")
+    require(index >= 0, "negative run index")
+    if schedule["series"] in ("pilot","main") or any(b["design"] != "comparison" for b in schedule["blocks"]):
+        from admission import admit
+        admit(directory)
     require(directory.name == schedule["series_id"], "directory mismatch")
     require(not (directory/"STOP").exists(), "series stopped")
     attempt = next(a for a in read(directory/"ledger.json")["attempts"] if a["attempt_id"] == run["attempt_id"])
@@ -27,6 +32,7 @@ def run_spec(directory, index, partial):
           dict(warmup_slots=1 if smoke else plan["warmup_slots"],
                measurement_slots=3 if smoke else plan["measurement_slots"],interval_ms=plan["interval_ms"],
                queue_limit_bytes=plan["queue_limit_bytes"],deadline_ms=thresholds["deadline_ms"],horizon_ms=thresholds["horizon_ms"]))
+    (partial/"monitoring-mode").write_text(run.get("monitoring","on"))
     print(run["profile"],run["forward_seed"],run["reverse_seed"],run["run_id"],30 if smoke else 90)
 
 

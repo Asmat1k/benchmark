@@ -39,13 +39,18 @@ def require(condition, reason):
         raise ValueError(reason)
 
 
-def validate_raw(folder, schedule_file, config_root=ROOT / "configs"):
+def validate_hashes(folder):
     checksums = {}
     for line in (folder / "SHA256SUMS").read_text().splitlines():
         sha, name = line.split("  ", 1)
         require(Path(name).name == name and name not in checksums, "invalid checksum entry")
         checksums[name] = sha
     require(checksums == {f.name: digest(f) for f in folder.iterdir() if f.name != "SHA256SUMS"}, "hash mismatch")
+    return checksums
+
+
+def validate_raw(folder, schedule_file, config_root=ROOT / "configs"):
+    checksums=validate_hashes(folder)
     manifest = read(folder / "manifest.json")
     snapshot = folder / "schedule.json"
     require(manifest["schedule_sha256"] == digest(snapshot if snapshot.exists() else schedule_file), "schedule hash")
@@ -176,6 +181,17 @@ def validate_raw(folder, schedule_file, config_root=ROOT / "configs"):
         require(len(queues) == 2 and all(q["backlog"] == 0 and q["qlen"] == 0 for q in queues), "queues not empty")
     from resources import validate_resources
     validate_resources(groups["resource"], read(folder / "resource-window.json"))
+    if run.get("monitoring") == "off":
+        block = next(b for b in schedule["blocks"] if b["attempt_id"] == run["attempt_id"])
+        require(block["design"] == "monitoring", "monitoring off outside on/off design")
+        window = read(folder/"monitoring-window.json")
+        require(window["monitoring"] == "off" and window["resource_metrics_available"] is False and
+                window["unobserved_start_usec"] < window["unobserved_end_usec"] <=
+                read(folder/"resource-window.json")["start_usec"], "off observation window")
+        for role in ("browser","server","router"):
+            require((folder/f"{role}-oom-before.txt").read_bytes() == (folder/f"{role}-oom-after.txt").read_bytes(), "resources OOM during off window")
+            baseline = rows(folder/f"{role}-baseline.jsonl")
+            require(baseline and all(r["oom"] == 0 for r in baseline), "missing off baseline/OOM")
     resource = groups["resource"]
     require({r["role"] for r in resource} == {"server","browser","router"} and not any(r["oom"] for r in resource), "resources/OOM")
     for phase, name in enumerate(("warmup", "measurement")):

@@ -271,6 +271,31 @@
     "repeat_fullness_pp": {
       "type": "number",
       "minimum": 0
+    },
+    "kind": {
+      "const": "real"
+    },
+    "source_hashes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      }
+    },
+    "leaf_pem": {
+      "type": "string",
+      "minLength": 1
+    },
+    "series_end_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "aa_shift_algorithm": {
+      "const": "paired side2-side1; linear p95 absolute shifts"
     }
   },
   "required": [
@@ -283,7 +308,13 @@
     "blocks_per_profile",
     "include_wt_d",
     "repeat_effect_ms",
-    "repeat_fullness_pp"
+    "repeat_fullness_pp",
+    "kind",
+    "source_hashes",
+    "leaf_pem",
+    "series_end_utc",
+    "rationale",
+    "aa_shift_algorithm"
   ],
   "additionalProperties": false
 }

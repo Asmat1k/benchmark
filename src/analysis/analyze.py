@@ -71,7 +71,7 @@ def run_identity(folder, run):
     return manifest
 
 
-def validate_series(directory):
+def validate_series(directory, design="comparison"):
     for name in ("STOP", "PENDING_REPLACEMENT", "replacement.json"):
         require(not (directory/name).exists(), f"series blocked: {name}")
     schedule = read(directory/"schedule.json")
@@ -88,7 +88,7 @@ def validate_series(directory):
     require(len(schedule["blocks"]) == len(attempts), "schedule ledger length")
     for a,b in zip(attempts, schedule["blocks"]):
         require({k:v for k,v in a.items() if k != "status"} == {k:v for k,v in b.items() if k != "status"}, "schedule ledger mismatch")
-        require(a["design"] == "comparison", "analyze requires comparison design")
+        require(a["design"] == design, "unexpected series design")
         require(a["status"] in ("complete", "quarantined"), "incomplete series")
         require(all(Path(a[k]).name == a[k] for k in ("attempt_id", "block_id", "session_id")), "unsafe identity")
     run_ids = [r["run_id"] for r in schedule["runs"]]
@@ -98,7 +98,7 @@ def validate_series(directory):
             "pair metadata/seed mismatch")
     active = [a for a in attempts if a["status"] == "complete"]
     require(active and len({a["block_id"] for a in active}) == len(active), "duplicate active block")
-    require(len({tuple(sorted(a["modes"])) for a in active}) == 1, "inconsistent modes")
+    require(design != "comparison" or len({tuple(sorted(a["modes"])) for a in active}) == 1, "inconsistent modes")
     if (directory/"queue.json").exists():
         require(read(directory/"queue.json") == [], "unfinished queue")
     audit = []

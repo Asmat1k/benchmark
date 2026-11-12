@@ -10,3 +10,5 @@
 Калибровка, A/A, monitoring on/off, экспериментальный pilot, freeze и main отложены. Перед экспериментами требуется отдельная приёмка среды, описанная в [объёме разработки](docs/development-scope.md).
 
 После завершения измерений `make analyze SERIES=path/to/series` проверяет целостность и создаёт таблицы, статистический JSON, индексы bootstrap и PNG/SVG/PDF в `SERIES/derived/`. `make analysis-test` проверяет анализ только на синтетических данных. Точные команды воспроизведения, форматы и ограничения приведены в [описании анализа](docs/analysis.md#синтетическое-воспроизведение).
+
+Будущие calibration/A/A/monitoring/pilot/power/verify/freeze/main реализованы в [модулях и интерфейсах D5](docs/experiments.md). `make acceptance-test` проверяет их offline на fixtures и stub executor. Отложенные экспериментальные серии сейчас не запускались; `configs/freeze.json` отсутствует. Проверки синтетики не открывают реальный admission.

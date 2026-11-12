@@ -40,8 +40,8 @@ def make_schedule(series, series_id, blocks=20, sessions=4, datagrams=False, bas
 def block_runs(schedule, block, index):
     for j, mode in enumerate(block["modes"]):
         base = (schedule["series"], schedule["series_id"])
-        draw = lambda branch: int(seeds(*base, branch, index, j).bit_generator.random_raw())
-        yield dict(run_id=f"{block['attempt_id']}-m{j}", mode=mode,
+        draw = lambda branch: int(seeds(*base, branch, index, 0 if block["design"] == "monitoring" and branch in (1,2) else j).bit_generator.random_raw())
+        yield dict(**({"monitoring":block["monitoring_order"][j]} if block["design"] == "monitoring" else {}), run_id=f"{block['attempt_id']}-m{j}", mode=mode,
                    nonce=str(draw(3)), forward_seed=draw(1), reverse_seed=draw(2),
                    **{k: block[k] for k in ("block_id", "session_id", "attempt_id",
                                             "profile", "order_index", "replacement_of")})

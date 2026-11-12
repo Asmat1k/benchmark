@@ -1,0 +1,22 @@
+test_memory_controller_deep_once_then_actual_fast_record_context (test_controller.ControllerTests.test_memory_controller_deep_once_then_actual_fast_record_context) ... ERROR
+test_real_cli_forged_integrity_refuses_next_record_and_boot (test_controller.ControllerTests.test_real_cli_forged_integrity_refuses_next_record_and_boot) ... ok
+
+======================================================================
+ERROR: test_memory_controller_deep_once_then_actual_fast_record_context (test_controller.ControllerTests.test_memory_controller_deep_once_then_actual_fast_record_context)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/bench/src/analysis/test_controller.py", line 59, in test_memory_controller_deep_once_then_actual_fast_record_context
+    verification=self.verification_fixture()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/bench/src/analysis/test_acceptance.py", line 283, in verification_fixture
+    paths['calibration']=str(self.produce('calibration',self.collection('calibration',self.calibration_fixture())))
+                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/bench/src/analysis/test_acceptance.py", line 78, in calibration_fixture
+    echo[key]=dict(collection_id='latency-'+key,sent=10000,frame_bytes=256,frequency_hz=100,rtt_ms=[value]*count,**self.probe(count,value))
+                                                                                                                   ^^^^^^^^^^
+AttributeError: 'ControllerTests' object has no attribute 'probe'
+
+----------------------------------------------------------------------
+Ran 2 tests in 2.959s
+
+FAILED (errors=1)

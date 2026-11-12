@@ -1,0 +1,6 @@
+test_initial_copied_admission_commit_mismatch_refuses_ready (test_controller.ControllerTests.test_initial_copied_admission_commit_mismatch_refuses_ready) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.129s
+
+OK

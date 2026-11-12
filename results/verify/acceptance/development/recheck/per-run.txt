@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/bench/build/d5-r7-synthetic/per_run.py", line 38, in <module>
+    original(target,kind='synthetic');original(target,kind='synthetic')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/bench/src/analysis/admission.py", line 355, in admit
+    require((directory/'SYNTHETIC.json').exists() and not directory.resolve().is_relative_to(Path('results').resolve()), 'synthetic admission isolated fixtures only')
+  File "/bench/src/analysis/raw.py", line 39, in require
+    raise ValueError(reason)
+ValueError: synthetic admission isolated fixtures only

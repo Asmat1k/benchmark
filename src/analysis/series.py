@@ -61,6 +61,16 @@ def context_snapshot(partial):
 
 def bind_context(directory, partial):
     context = context_snapshot(partial)
+    if (directory / "admission.json").exists():
+        from admission import admit, checked
+        admission = admit(directory)
+        require(context == read(checked(admission["environment"])), "admitted environment differs from actual run")
+        if "freeze" in admission:
+            import hashlib
+            import ssl
+            frozen = read(checked(admission["freeze"]))
+            leaf_hash = hashlib.sha256(ssl.PEM_cert_to_DER_cert(context["leaf"])).hexdigest()
+            require(leaf_hash == frozen["bindings"]["leaf_der"]["sha256"], "mounted leaf differs from freeze")
     path = directory / "context.json"
     if path.exists():
         require(context == read(path), "environment changed: series context")

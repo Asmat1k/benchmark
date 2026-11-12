@@ -1,7 +1,7 @@
 set -eu
 series_dir=$1
 index=$2
-case "$series_dir" in results/verify/measurement/*|results/verify/diagnostic/*|results/verify/raw/*) ;; *) exit 2 ;; esac
+case "$series_dir" in results/verify/measurement/*|results/verify/diagnostic/*|results/verify/raw/*|results/pilot/*|results/main/*) ;; *) exit 2 ;; esac
 case "$series_dir" in *..*|*[!A-Za-z0-9_./-]*) exit 2 ;; esac
 case "$index" in ''|*[!0-9]*) exit 2 ;; esac
 test -f "$series_dir/schedule.json"
@@ -13,6 +13,11 @@ project="wswt-d3-$(basename "$work" | tr '[:upper:].' '[:lower:]-')"
 run_dir="$series_dir/$project.partial"
 compose() { docker compose -p "$project" "$@"; }
 analyze() {
+    if [ -n "${BENCH_CONTROLLER_RESPONSE:-}" ] && [ "$1" = src/analysis/record.py ]; then
+        . docker/controller-client.sh
+        controller_request "{\"action\":\"$2\",\"index\":$4,\"partial\":\"$5\"}"
+        return $?
+    fi
     docker run --rm --network none -v "$PWD:/bench" -w /bench wswt-bench-analyzer:dev python -B "$@"
 }
 . docker/measurement-cleanup.sh
@@ -42,11 +47,14 @@ if [ -z "${SERIES_TLS_DIR:-}" ]; then
 fi
 date -u +%Y-%m-%dT%H:%M:%SZ > "$run_dir/started"
 git rev-parse HEAD > "$run_dir/commit"
-git status --porcelain > "$run_dir/dirty"
+git status --porcelain -- Makefile compose.yaml src docker docs/schemas docs/protocol.md configs/plan.json configs/profiles.json configs/thresholds.json > "$run_dir/dirty"
 cp "$BENCH_TLS_DIR/server/good/cert.pem" "$run_dir/leaf.pem"
 uname -a >"$run_dir/host.txt"
 docker info --format '{"kernel":"{{.KernelVersion}}","platform":"{{.Architecture}}","engine":"{{.ServerVersion}}","cpus":{{.NCPU}},"mem":{{.MemTotal}}}' > "$run_dir/vm.json"
 stage=network
+if [ -n "${BENCH_CONTROLLER_RESPONSE:-}" ]; then
+    sh docker/check-release.sh "${BENCH_CONTROLLER_COMMIT:-}"
+fi
 compose up -d --no-build router server browser
 . docker/links.sh
 setup_links
@@ -77,7 +85,7 @@ capture before
 for role in browser server router; do
     compose cp docker/sample.sh "$role:/tmp/sample.sh"
     compose cp docker/check-sample.sh "$role:/tmp/check-sample.sh"
-    compose exec -d -e ROLE="$role" -e RUN_ID="$run_id" "$role" sh -c 'sh /tmp/sample.sh >/tmp/resources.jsonl 2>/tmp/resources-error.txt'
+    compose exec -d -e ROLE="$role" -e RUN_ID="$run_id" "$role" sh -c 'echo $$ >/tmp/sampler.pid; exec sh /tmp/sample.sh >/tmp/resources.jsonl 2>/tmp/resources-error.txt'
 done
 compose cp "$run_dir/run.json" browser:/tmp/run.json
 sleep 3
@@ -86,10 +94,28 @@ for role in browser server router; do
     compose exec -T "$role" cat /tmp/resources.jsonl > "$run_dir/$role-baseline.jsonl"
 done
 compose exec -T router awk '{printf "%.0f\n", $1*1000000}' /proc/uptime > "$run_dir/resource-start"
+monitoring=$(cat "$run_dir/monitoring-mode")
+if [ "$monitoring" = off ]; then
+    cp "$run_dir/resource-start" "$run_dir/unobserved-start"
+    for role in browser server router; do
+        compose exec -T "$role" sh -c 'kill $(cat /tmp/sampler.pid); cat /sys/fs/cgroup/memory.events' > "$run_dir/$role-oom-before.txt"
+    done
+fi
 stage=browser
 compose exec -T -e BENCH_TIMEOUT="$run_timeout" browser sh /usr/local/bin/bench-browser measure
 compose cp browser:/tmp/page.json "$run_dir/page.json"
 compose cp browser:/tmp/security.json "$run_dir/security.json"
+if [ "$monitoring" = off ]; then
+    compose exec -T router awk '{printf "%.0f\n", $1*1000000}' /proc/uptime > "$run_dir/unobserved-end"
+    printf '{"monitoring":"off","unobserved_start_usec":%s,"unobserved_end_usec":%s,"resource_metrics_available":false}\n' "$(cat "$run_dir/unobserved-start")" "$(cat "$run_dir/unobserved-end")" > "$run_dir/monitoring-window.json"
+    for role in browser server router; do
+        compose exec -T "$role" cat /sys/fs/cgroup/memory.events > "$run_dir/$role-oom-after.txt"
+        cmp "$run_dir/$role-oom-before.txt" "$run_dir/$role-oom-after.txt"
+        compose exec -d -e ROLE="$role" -e RUN_ID="$run_id" "$role" sh -c 'echo $$ >/tmp/sampler.pid; exec sh /tmp/sample.sh >/tmp/resources.jsonl 2>/tmp/resources-error.txt'
+    done
+    sleep 2
+    compose exec -T router awk '{printf "%.0f\n", $1*1000000}' /proc/uptime > "$run_dir/resource-start"
+fi
 capture after
 compose exec -T server cat /certs/good/cert.pem > "$run_dir/leaf.pem"
 context
