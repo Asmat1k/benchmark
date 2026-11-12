@@ -1,0 +1,21 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "-e",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "-v",
+    "/Users/dobrov/Desktop/Code/ITMO/benchmark:/bench",
+    "-w",
+    "/bench",
+    "wswt-bench-analyzer:dev",
+    "python",
+    "-B",
+    "results/verify/integration/development/recheck2/probe-published-partial.py"
+  ],
+  "exit": 0,
+  "seconds": 0.6190511669992702
+}

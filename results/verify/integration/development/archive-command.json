@@ -1,0 +1,8 @@
+{
+  "command": "make archive; independently SHA256 check; docker image load",
+  "archive": "results/archives/images-3d14ad084227dc48dc7265865bc6b2920e1fa48e8766c0eb095cdcd6952c5771.tar",
+  "sha256": "3d14ad084227dc48dc7265865bc6b2920e1fa48e8766c0eb095cdcd6952c5771",
+  "size": 1202116096,
+  "exit": 0,
+  "seconds": 44.56874308398983
+}

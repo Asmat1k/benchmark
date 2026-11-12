@@ -1,0 +1,25 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "-e",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "-e",
+    "MPLCONFIGDIR=/tmp/matplotlib",
+    "-v",
+    "/Users/dobrov/Desktop/Code/ITMO/benchmark:/bench",
+    "-v",
+    "/tmp/d6-suite.py:/tmp/d6-suite.py:ro",
+    "-w",
+    "/bench",
+    "wswt-bench-analyzer:dev",
+    "python",
+    "-B",
+    "/tmp/d6-suite.py"
+  ],
+  "exit": 0,
+  "seconds": 240.41014679100772
+}

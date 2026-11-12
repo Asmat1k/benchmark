@@ -1,17 +1,20 @@
 import argparse
 from pathlib import Path
 
-from series import advance, bind_context, queue
+from series import advance, bind_context, validate_context, queue
 from raw import binding, digest, json, now, publish, read, require, rows, write
 
 
-def run_spec(directory, index, partial):
+def runnable_run(directory, index, partial):
     schedule = read(directory/"schedule.json")
     from admission import phase_path
     phase_path(directory,schedule)
+    require(0 <= index < len(schedule["runs"]), "invalid run index")
     run = schedule["runs"][index]
-    require(index >= 0, "negative run index")
-    if schedule["series"] in ("pilot","main") or any(b["design"] != "comparison" for b in schedule["blocks"]):
+    require(partial.absolute().parent == directory.absolute() and partial.suffix == ".partial" and
+            partial.is_dir() and not partial.is_symlink() and partial.resolve().parent == directory.resolve(),
+            "invalid staging directory")
+    if (directory/"admission.json").exists() or schedule["series"] in ("pilot","main") or any(b["design"] != "comparison" for b in schedule["blocks"]):
         from admission import admit
         admit(directory)
     require(directory.name == schedule["series_id"], "directory mismatch")
@@ -24,6 +27,24 @@ def run_spec(directory, index, partial):
     members = [r for r in schedule["runs"] if r["attempt_id"] == run["attempt_id"]]
     pending = [r for r in members if not (directory/"raw"/r["run_id"]).exists()]
     require(pending and run == pending[0], "run outside scheduled mode order")
+    return schedule, run
+
+
+def prepared_run(directory, index, partial):
+    schedule, run = runnable_run(directory, index, partial)
+    spec = read(partial/"run.json")
+    require(all(spec.get(k) == run[k] for k in ("run_id","nonce","mode")), "partial run mismatch")
+    require(read(partial/"schedule.json") == schedule, "partial schedule mismatch")
+    return schedule, run
+
+
+def bind_run_context(directory, index, partial):
+    prepared_run(directory, index, partial)
+    bind_context(directory, partial)
+
+
+def run_spec(directory, index, partial):
+    schedule, run = runnable_run(directory, index, partial)
     plan, thresholds = read(Path("configs/plan.json")), read(Path("configs/thresholds.json"))
     smoke = schedule["series"] == "smoke"
     require(not (directory/"raw"/run["run_id"]).exists(), "immutable run already exists")
@@ -38,8 +59,9 @@ def run_spec(directory, index, partial):
 
 def complete(directory, index, partial):
     schedule_file = directory/"schedule.json"
-    schedule = read(schedule_file)
-    run = schedule["runs"][index]
+    schedule, run = prepared_run(directory, index, partial)
+    context = validate_context(directory, partial)
+    require(read(partial/"context.json") == context == read(directory/"context.json"), "publication context mismatch")
     raw = directory/"raw"
     raw.mkdir(exist_ok=True)
     spec = read(partial/"run.json")
@@ -97,6 +119,6 @@ if __name__ == "__main__":
     p.add_argument("partial",type=Path)
     args=p.parse_args()
     if args.action == "context":
-        bind_context(args.directory, args.partial)
+        bind_run_context(args.directory, args.index, args.partial)
     else:
         (run_spec if args.action=="prepare" else complete)(args.directory,args.index,args.partial)

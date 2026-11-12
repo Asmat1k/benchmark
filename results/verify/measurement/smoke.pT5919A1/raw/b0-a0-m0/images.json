@@ -1,0 +1,7 @@
+[
+{"id":"sha256:ae134275d21e0d6147d99ed3a9428e02a051b2c1d73631b39131265bc4f4c1de","role":"/wswt-d3-wswt-measure-lwdlijit-browser-1","cpu":2000000000,"memory":3221225472,"shm":1073741824}
+,
+{"id":"sha256:5290f094738cd0078d6cf88bfd023001566bdaa57a377388583bd03fceb97ac6","role":"/wswt-d3-wswt-measure-lwdlijit-router-1","cpu":1000000000,"memory":536870912,"shm":67108864}
+,
+{"id":"sha256:03000ea3de28d5f5d3d86fe4bf872622e11a450460cee1b0e29f8fded61dee22","role":"/wswt-d3-wswt-measure-lwdlijit-server-1","cpu":2000000000,"memory":1073741824,"shm":67108864}
+]

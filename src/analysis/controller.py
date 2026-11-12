@@ -23,13 +23,12 @@ def dispatch(directory, request, kind):
         pending=[i for i,r in enumerate(schedule['runs']) if r['attempt_id']==remaining[0] and not (directory/'raw'/r['run_id']).exists()]
         require(pending, 'no pending member')
         return 0,str(pending[0])
-    from record import run_spec, complete
-    from series import bind_context
-    partial=Path(request['partial']).resolve()
-    require(partial.is_relative_to(directory.resolve()), 'foreign partial directory')
+    from record import run_spec, complete, bind_run_context
+    partial=Path(request['partial'])
+    require(partial.resolve().is_relative_to(directory.resolve()), 'foreign partial directory')
     with contextlib.redirect_stdout(io.StringIO()) as output:
         if action=='prepare': run_spec(directory,request['index'],partial)
-        elif action=='context': bind_context(directory,partial)
+        elif action=='context': bind_run_context(directory,request['index'],partial)
         elif action=='complete': complete(directory,request['index'],partial)
         else: raise ValueError('unknown controller action')
     return 0,output.getvalue().strip()

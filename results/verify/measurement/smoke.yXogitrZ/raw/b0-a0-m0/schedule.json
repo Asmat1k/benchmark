@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "series": "smoke",
+  "series_id": "smoke.yXogitrZ",
+  "master_seed": 20261108,
+  "blocks": [
+    {
+      "block_id": "b0",
+      "session_id": "s0",
+      "attempt_id": "b0-a0",
+      "profile": "baseline",
+      "order_index": 0,
+      "modes": [
+        "WT-S",
+        "WS"
+      ],
+      "seed": 11757964127435395997,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "b0-a0-m0",
+      "mode": "WT-S",
+      "nonce": "3716902573185555343",
+      "forward_seed": 15915988274941964872,
+      "reverse_seed": 15374808418969248611,
+      "block_id": "b0",
+      "session_id": "s0",
+      "attempt_id": "b0-a0",
+      "profile": "baseline",
+      "order_index": 0,
+      "replacement_of": null
+    },
+    {
+      "run_id": "b0-a0-m1",
+      "mode": "WS",
+      "nonce": "6316030399308694925",
+      "forward_seed": 4209234036014644991,
+      "reverse_seed": 291441838427611166,
+      "block_id": "b0",
+      "session_id": "s0",
+      "attempt_id": "b0-a0",
+      "profile": "baseline",
+      "order_index": 0,
+      "replacement_of": null
+    }
+  ]
+}

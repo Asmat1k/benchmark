@@ -1,0 +1,7 @@
+prior source manifest type dict
+source manifest {"Makefile": "3044e488bc259bc3e3d0bbc5c6796fbd7696c375edbffbd38d7321202cf4330f", "compose.yaml": "f7d625c308ce9a5a702a17f3df449991d43d544307936b092340eb392c0c52fa", "configs/plan.json": "772856aa5fd42
+Traceback (most recent call last):
+  File "/tmp/driver.py", line 16, in <module>
+    assert report['source_hashes']==sources(),phase
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: aa

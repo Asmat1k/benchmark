@@ -1,0 +1,8 @@
+{
+  "command": [
+    "make",
+    "analysis-test"
+  ],
+  "exit": 0,
+  "seconds": 137.73270883399528
+}

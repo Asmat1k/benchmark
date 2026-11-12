@@ -1,0 +1,14 @@
+{
+  "source_files": 103,
+  "source_changes_since_R1": 4,
+  "source_stable": true,
+  "shell_syntax_exit": 0,
+  "diff_check_exit": 0,
+  "checks_schema_passed": true,
+  "experimental_status": "not_run",
+  "experimental_reason": "deferred_by_user",
+  "kind": "development",
+  "prior_manifests": "v1 and v2 preserved as historical snapshots; original handoff texts preserved beside their successor evidence",
+  "archive_note": "3b8036 intermediate; 5f5ff8 final current source; all tar local, not in Git",
+  "cleanup_preserved_original_qdrant": true
+}

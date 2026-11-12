@@ -1,0 +1,4 @@
+Loaded image: wswt-bench-server:dev
+Loaded image: wswt-bench-browser:dev
+Loaded image: wswt-bench-router:dev
+Loaded image: wswt-bench-analyzer:dev

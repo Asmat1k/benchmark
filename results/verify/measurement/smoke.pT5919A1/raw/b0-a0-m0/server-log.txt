@@ -1,0 +1,2 @@
+server-1  | 2026/11/12 18:43:23 failed to sufficiently increase receive buffer size (was: 208 kiB, wanted: 7168 kiB, got: 416 kiB). See https://github.com/quic-go/quic-go/wiki/UDP-Buffer-Sizes for details.
+server-1  | 2026/11/12 18:43:36 WSS upgrade=101 http=HTTP/1.1 alpn=http/1.1 tls=304 resumed=false

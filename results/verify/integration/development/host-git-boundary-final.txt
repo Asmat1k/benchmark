@@ -1,0 +1,6 @@
+test_r3_git_inventory_without_container_git (test_acceptance.AcceptanceTests.test_r3_git_inventory_without_container_git) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 1.703s
+
+OK

@@ -1,0 +1,26 @@
+{
+  "src/analysis/controller.py": {
+    "previous": "a8cf70da36e42fd616287ea714f5931cc129394796d2cacf2e2130100c9290f8",
+    "current": "114daddbb02181337316cdcf28fbaadca9292456dd35757de6f4bd42bc179f70"
+  },
+  "src/analysis/record.py": {
+    "previous": "d0be7036840bc5720083691613681199630c2c64b8144db5b52939b6cae81570",
+    "current": "070e7782fa378c0b9416a5f0bc7f4d396b4363329e627cc77143d4df0ed7eeeb"
+  },
+  "src/analysis/series.py": {
+    "previous": "26b348b0b8c2264297760538eaf27b1133e5707dd863ad47106b43d6ca9c8cec",
+    "current": "974e9cbf40fe46cc33be9862c1ac6a70335a581850934599b2b0039c69c9fdf2"
+  },
+  "src/analysis/test_controller.py": {
+    "previous": "a2d1e098093d345d3fe2f38625314021ea0307fdc9b29c1efc9c949a4deada28",
+    "current": "f8f065e59187e1d3becfb97c6e410f99872a55e2718865e0a2e5a5b8659afd9d"
+  },
+  "src/analysis/test_measurement.py": {
+    "previous": "383983e9d8a6c9587b4ad4a3424232943b2db13ae9a26830c77777196f0441a4",
+    "current": "5c7197ef5fdb232ce15ef94e3e9f515d3583d2ebbb27c9fa672ee77fe4780c1e"
+  },
+  "src/analysis/test_recovery.py": {
+    "previous": "50d8d3cf9b4e908f7e9c291f824a89c15c37311ef6cd063b0a472d5914818f8d",
+    "current": "e168e7cf00a9e5c5440a27480ba1c74c3c691bf3a0d7205125ccd5d477a3a158"
+  }
+}

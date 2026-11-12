@@ -59,9 +59,13 @@ def context_snapshot(partial):
     return context
 
 
-def bind_context(directory, partial):
+def validate_context(directory, partial):
+    from admission import phase_path
+    schedule = read(directory/"schedule.json")
+    phase_path(directory, schedule)
+    require(not (directory/"STOP").exists(), "series stopped")
     context = context_snapshot(partial)
-    if (directory / "admission.json").exists():
+    if (directory / "admission.json").exists() or schedule["series"] in ("pilot","main") or any(b["design"] != "comparison" for b in schedule["blocks"]):
         from admission import admit, checked
         admission = admit(directory)
         require(context == read(checked(admission["environment"])), "admitted environment differs from actual run")
@@ -74,8 +78,13 @@ def bind_context(directory, partial):
     path = directory / "context.json"
     if path.exists():
         require(context == read(path), "environment changed: series context")
-    else:
-        write(path, context)
+    return context
+
+
+def bind_context(directory, partial):
+    context = validate_context(directory, partial)
+    if not (directory / "context.json").exists():
+        write(directory / "context.json", context)
     write(partial / "context.json", context)
 
 

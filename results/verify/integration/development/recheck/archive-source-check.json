@@ -1,0 +1,12 @@
+{
+  "exit": 0,
+  "files": {
+    "controller.py": "114daddbb02181337316cdcf28fbaadca9292456dd35757de6f4bd42bc179f70",
+    "record.py": "070e7782fa378c0b9416a5f0bc7f4d396b4363329e627cc77143d4df0ed7eeeb",
+    "series.py": "974e9cbf40fe46cc33be9862c1ac6a70335a581850934599b2b0039c69c9fdf2",
+    "test_controller.py": "f8f065e59187e1d3becfb97c6e410f99872a55e2718865e0a2e5a5b8659afd9d",
+    "test_measurement.py": "5c7197ef5fdb232ce15ef94e3e9f515d3583d2ebbb27c9fa672ee77fe4780c1e",
+    "test_recovery.py": "e168e7cf00a9e5c5440a27480ba1c74c3c691bf3a0d7205125ccd5d477a3a158"
+  },
+  "actual_image_sources_match_checkout": true
+}

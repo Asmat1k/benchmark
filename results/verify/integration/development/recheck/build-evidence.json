@@ -1,0 +1,26 @@
+[
+  {
+    "tag": "wswt-bench-server:dev",
+    "image_id": "sha256:03000ea3de28d5f5d3d86fe4bf872622e11a450460cee1b0e29f8fded61dee22",
+    "os": "linux",
+    "architecture": "arm64"
+  },
+  {
+    "tag": "wswt-bench-browser:dev",
+    "image_id": "sha256:ae134275d21e0d6147d99ed3a9428e02a051b2c1d73631b39131265bc4f4c1de",
+    "os": "linux",
+    "architecture": "arm64"
+  },
+  {
+    "tag": "wswt-bench-router:dev",
+    "image_id": "sha256:5290f094738cd0078d6cf88bfd023001566bdaa57a377388583bd03fceb97ac6",
+    "os": "linux",
+    "architecture": "arm64"
+  },
+  {
+    "tag": "wswt-bench-analyzer:dev",
+    "image_id": "sha256:91acbc7776e3ed6fbbb04797c4cf3ab3b42ca1093374ef889b3a8b8fbde15a97",
+    "os": "linux",
+    "architecture": "arm64"
+  }
+]

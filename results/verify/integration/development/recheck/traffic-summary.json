@@ -1,0 +1,22 @@
+{
+  "iteration": "D6-R1",
+  "scenarios": [
+    {
+      "mode": "WS",
+      "wall_seconds": 36.628195,
+      "measurement_slots": 3,
+      "warmup_slots": 1,
+      "exact_echo_bytes": 256
+    },
+    {
+      "mode": "WT-S",
+      "wall_seconds": 37.736364,
+      "measurement_slots": 3,
+      "warmup_slots": 1,
+      "exact_echo_bytes": 256
+    }
+  ],
+  "wall_upper_bound_seconds": 78.75057604200265,
+  "analyzer_jobs_finished_before_traffic": true,
+  "path_tls_not_repeated": true
+}

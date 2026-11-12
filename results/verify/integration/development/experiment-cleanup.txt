@@ -1,0 +1,5 @@
+{"mode": "boot", "measure_exit": 1, "exit": 2, "seconds": 1.1040598749968922, "controller_reaped": true, "fifo_removed": true, "network_marker": false}
+{"mode": "request", "measure_exit": 1, "exit": 2, "seconds": 1.10858895801357, "controller_reaped": true, "fifo_removed": true, "network_marker": false}
+{"mode": "measure", "measure_exit": 1, "exit": 1, "seconds": 1.2141247499966994, "controller_reaped": true, "fifo_removed": true, "network_marker": true}
+{"mode": "measure", "measure_exit": 3, "exit": 2, "seconds": 1.2201220830029342, "controller_reaped": true, "fifo_removed": true, "network_marker": true}
+Actual experiment.sh cleanup passed; only external Docker/release/measurement dependencies stubbed in isolated temporary copy; no validator patched and no real series.

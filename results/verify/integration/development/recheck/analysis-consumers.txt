@@ -1,0 +1,38 @@
+docker run --rm --network none -e PYTHONDONTWRITEBYTECODE=1 -e MPLCONFIGDIR=/tmp/matplotlib -v "/Users/dobrov/Desktop/Code/ITMO/benchmark:/bench" -w /bench wswt-bench-analyzer:dev python -m unittest discover -s src/analysis -p 'test_analysis*.py' -v
+test_integrity_refuses_series_and_pair_mutations (test_analysis.SeriesTests.test_integrity_refuses_series_and_pair_mutations) ... ok
+test_normal_cli_and_offline_reproduction (test_analysis.SeriesTests.test_normal_cli_and_offline_reproduction) ... /usr/local/lib/python3.12/site-packages/matplotlib/_fontconfig_pattern.py:64: PyparsingDeprecationWarning: 'oneOf' deprecated - use 'one_of'
+  prop = Group((name + Suppress("=") + comma_separated(value)) | oneOf(_CONSTANTS))
+/usr/local/lib/python3.12/site-packages/matplotlib/_fontconfig_pattern.py:85: PyparsingDeprecationWarning: 'parseString' deprecated - use 'parse_string'
+  parse = parser.parseString(pattern)
+/usr/local/lib/python3.12/site-packages/matplotlib/_fontconfig_pattern.py:89: PyparsingDeprecationWarning: 'resetCache' deprecated - use 'reset_cache'
+  parser.resetCache()
+/usr/local/lib/python3.12/site-packages/matplotlib/_mathtext.py:45: PyparsingDeprecationWarning: 'enablePackrat' deprecated - use 'enable_packrat'
+  ParserElement.enablePackrat()
+In /usr/local/lib/python3.12/site-packages/matplotlib/mpl-data/stylelib/classic.mplstyle: 'parseString' deprecated - use 'parse_string'
+In /usr/local/lib/python3.12/site-packages/matplotlib/mpl-data/stylelib/classic.mplstyle: 'resetCache' deprecated - use 'reset_cache'
+/usr/local/lib/python3.12/site-packages/matplotlib/_fontconfig_pattern.py:85: PyparsingDeprecationWarning: 'parseString' deprecated - use 'parse_string'
+  parse = parser.parseString(pattern)
+/usr/local/lib/python3.12/site-packages/matplotlib/_fontconfig_pattern.py:89: PyparsingDeprecationWarning: 'resetCache' deprecated - use 'reset_cache'
+  parser.resetCache()
+ok
+test_null_profiles_and_mixed_release_are_not_silently_removed (test_analysis.SeriesTests.test_null_profiles_and_mixed_release_are_not_silently_removed) ... ok
+test_r1_swapped_and_duplicated_directory_contents_cli (test_analysis.SeriesTests.test_r1_swapped_and_duplicated_directory_contents_cli) ... ok
+test_r2_scheduler_miss_with_null_queue_cli (test_analysis.SeriesTests.test_r2_scheduler_miss_with_null_queue_cli) ... ok
+test_r3_truncated_series_against_signed_plan_cli (test_analysis.SeriesTests.test_r3_truncated_series_against_signed_plan_cli) ... ok
+test_r4_partial_old_block_can_be_archived_cli (test_analysis.SeriesTests.test_r4_partial_old_block_can_be_archived_cli) ... ok
+test_r4a_hash_corrupted_schedule_diagnose_replace_analyze_cli (test_analysis.SeriesTests.test_r4a_hash_corrupted_schedule_diagnose_replace_analyze_cli) ... ok
+test_r5_replacement_execution_order_and_old_snapshots_cli (test_analysis.SeriesTests.test_r5_replacement_execution_order_and_old_snapshots_cli) ... ok
+test_r6_smoke_cannot_enter_comparison_cli (test_analysis.SeriesTests.test_r6_smoke_cannot_enter_comparison_cli) ... ok
+test_real_raw_validation (test_analysis.SeriesTests.test_real_raw_validation) ... ok
+test_whole_block_audit_and_replacement (test_analysis.SeriesTests.test_whole_block_audit_and_replacement) ... ok
+test_all_prespecified_references (test_analysis.StatisticalTests.test_all_prespecified_references) ... ok
+test_bootstrap_preserves_blocks_and_replay (test_analysis.StatisticalTests.test_bootstrap_preserves_blocks_and_replay) ... ok
+test_decision_thresholds_and_barriers (test_analysis.StatisticalTests.test_decision_thresholds_and_barriers) ... ok
+test_exact_sign_enumeration_and_rank_coverage (test_analysis.StatisticalTests.test_exact_sign_enumeration_and_rank_coverage) ... ok
+test_metrics_deadlines_penalty_and_diagnostics (test_analysis.StatisticalTests.test_metrics_deadlines_penalty_and_diagnostics) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 136.136s
+
+OK
+R4a normal CLI: diagnose hash/hash mismatch -> replace -> analyze accepted; post-proof source/evidence, identity, independent archive, transaction, sibling and rehashed active snapshot mutations rejected without changing derived.

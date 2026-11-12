@@ -1,0 +1,15 @@
+context 1  it(directory)
+  File "/bench/src/analysis/admission.py", line 386, in admit
+    require(trusted or initial or _DEEP>0, 'trusted controller admission or full initial validation required')
+  File "/bench/src/analysis/raw.py", line 39, in require
+    raise ValueError(reason)
+ValueError: trusted controller admission or full initial validation required
+
+complete 1  it(directory)
+  File "/bench/src/analysis/admission.py", line 386, in admit
+    require(trusted or initial or _DEEP>0, 'trusted controller admission or full initial validation required')
+  File "/bench/src/analysis/raw.py", line 39, in require
+    raise ValueError(reason)
+ValueError: trusted controller admission or full initial validation required
+
+published False ledger planned no_admission True STOP True

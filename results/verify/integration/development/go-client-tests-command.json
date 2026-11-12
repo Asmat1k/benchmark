@@ -1,0 +1,63 @@
+[
+  {
+    "command": [
+      "docker",
+      "build",
+      "--target",
+      "compiler",
+      "-f",
+      "docker/Dockerfile.server",
+      "-t",
+      "wswt-d6-go-test:dev",
+      "."
+    ],
+    "exit": 0,
+    "seconds": 10.260030459001428
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "--rm",
+      "--network",
+      "none",
+      "wswt-d6-go-test:dev",
+      "go",
+      "test",
+      "-count=1",
+      "-mod=readonly",
+      "./..."
+    ],
+    "exit": 0,
+    "seconds": 3.915864375012461
+  },
+  {
+    "command": [
+      "docker",
+      "build",
+      "--target",
+      "client",
+      "-f",
+      "docker/Dockerfile.server",
+      "-t",
+      "wswt-d6-client-test:dev",
+      "."
+    ],
+    "exit": 0,
+    "seconds": 0.6664707910094876
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "--rm",
+      "--network",
+      "none",
+      "wswt-d6-client-test:dev",
+      "npm",
+      "test"
+    ],
+    "exit": 0,
+    "seconds": 0.7830972090014257
+  }
+]

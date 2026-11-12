@@ -1,0 +1,23 @@
+{
+  "offline_install": {
+    "command": "docker run --rm --network none wswt-bench-analyzer:dev sh -ec: 21 wheel hashes; clean venv pip install --no-index --require-hashes; pip check; imports",
+    "exit": 0,
+    "seconds": null
+  },
+  "host_git_final": {
+    "command": "RUN_DOCKER_BOUNDARY=1 /opt/anaconda3/bin/python3 -B -m unittest discover -s src/analysis -p test_acceptance.py -k test_r3_git -v",
+    "exit": 0,
+    "test_seconds": 1.703
+  },
+  "experiment_cleanup": {
+    "command": "python3 -B results/verify/integration/development/experiment-cleanup-driver.py",
+    "exit": 0,
+    "per_case_seconds": "see experiment-cleanup.txt"
+  },
+  "shell_syntax": {
+    "command": "sh -n docker/*.sh individually",
+    "exit": 0,
+    "seconds": null
+  },
+  "duration_note": "null means wall timing was not instrumented; no estimate substituted"
+}

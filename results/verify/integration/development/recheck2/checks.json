@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "checks": [
+    {
+      "id": "development-D6-R2-staging-R1-controller-D3",
+      "mandatory": true,
+      "expected": "passed development check",
+      "actual": true,
+      "units": "check group",
+      "tolerance": null,
+      "status": "passed",
+      "reason": null,
+      "utc": "2026-11-12T18:58:59.734262Z",
+      "evidence": [
+        {
+          "path": "targeted-final.txt",
+          "sha256": "81212f286e73367e732190279987ed7649ac9e68bf92127af8a80caed3590e61"
+        },
+        {
+          "path": "targeted-final-command.json",
+          "sha256": "07dfe0c4f0173b2213554682f644e1a724ef2f1586d60cd7f0012d0cdca96e26"
+        }
+      ]
+    },
+    {
+      "id": "development-D6-R2-immutable-raw-consumers",
+      "mandatory": true,
+      "expected": "passed development check",
+      "actual": true,
+      "units": "check group",
+      "tolerance": null,
+      "status": "passed",
+      "reason": null,
+      "utc": "2026-11-12T18:58:59.734262Z",
+      "evidence": [
+        {
+          "path": "analysis-consumers.txt",
+          "sha256": "88d7e177a934dcadeedbdba189c6ddc946edaf0588be65dc2df3a5c10f7459ef"
+        },
+        {
+          "path": "reviewer-probe.txt",
+          "sha256": "50985e7a75e1c8fe5e747fb3cea740f84a5f7ce49443bc78b9f5d548ef192b89"
+        }
+      ]
+    },
+    {
+      "id": "development-D6-R2-final-build-archive",
+      "mandatory": true,
+      "expected": "passed development check",
+      "actual": true,
+      "units": "check group",
+      "tolerance": null,
+      "status": "passed",
+      "reason": null,
+      "utc": "2026-11-12T18:58:59.734262Z",
+      "evidence": [
+        {
+          "path": "final-build-archive-command.json",
+          "sha256": "dbbbb445eee2f0b49046f61b5f21ed39dee9d5476977d36db0e46b9ca13c3c55"
+        },
+        {
+          "path": "final-build-evidence.json",
+          "sha256": "34484a93305da8ab6caeda5c46443705454cf44e76516b2ea959b93f2acce533"
+        },
+        {
+          "path": "final-images-after-load.json",
+          "sha256": "59f2d89b0e10cf39837c64a39d8613a4b076ae83a7f033a74f9c96e82b02d896"
+        },
+        {
+          "path": "final-archive-source-check.json",
+          "sha256": "d530084070dd80934a512f0b7845074d06f6628534ae1547553c4bfccc5d7458"
+        }
+      ]
+    },
+    {
+      "id": "development-D6-R2-short-smoke",
+      "mandatory": true,
+      "expected": "passed development check",
+      "actual": true,
+      "units": "check group",
+      "tolerance": null,
+      "status": "passed",
+      "reason": null,
+      "utc": "2026-11-12T18:58:59.734262Z",
+      "evidence": [
+        {
+          "path": "measurement-smoke-command.json",
+          "sha256": "8ca2c9e6089f25746f26e12cadd97acc6023c2ce378b032e6128a981e61b6987"
+        },
+        {
+          "path": "traffic-summary.json",
+          "sha256": "ebd03afe46fcf97f947f11d2eb2bd44ca04305a6cf98c8ea1cac7a9746f526ae"
+        }
+      ]
+    },
+    {
+      "id": "development-D6-R2-cleanup",
+      "mandatory": true,
+      "expected": "passed development check",
+      "actual": true,
+      "units": "check group",
+      "tolerance": null,
+      "status": "passed",
+      "reason": null,
+      "utc": "2026-11-12T18:58:59.734262Z",
+      "evidence": [
+        {
+          "path": "final-state.json",
+          "sha256": "73d209ee525d9682ffbc0c654006f50f61d962b5bc00b4d786b24a335d71c930"
+        },
+        {
+          "path": "lock-after-smoke.txt",
+          "sha256": "6286231e773c563dcf4085eaa469bd929f2c080f5e1147f63934c13875dcf12b"
+        }
+      ]
+    },
+    {
+      "id": "development-D6-R2-sources",
+      "mandatory": true,
+      "expected": "passed development check",
+      "actual": true,
+      "units": "check group",
+      "tolerance": null,
+      "status": "passed",
+      "reason": null,
+      "utc": "2026-11-12T18:58:59.734262Z",
+      "evidence": [
+        {
+          "path": "source-hashes.json",
+          "sha256": "2d26712c347cbf85ea09999f7fd1874f8dba7ffa60063b177bc6301984c8a674"
+        },
+        {
+          "path": "source-delta-from-r1.json",
+          "sha256": "b0022baf26f49090e9e3d3efbd54e4b8921f493eacfc40fc6845da5a049d3f35"
+        }
+      ]
+    }
+  ]
+}

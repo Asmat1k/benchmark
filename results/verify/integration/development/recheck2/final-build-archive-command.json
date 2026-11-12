@@ -1,0 +1,32 @@
+[
+  {
+    "command": [
+      "make",
+      "build"
+    ],
+    "exit": 0,
+    "seconds": 6.442918166998425
+  },
+  {
+    "command": [
+      "make",
+      "archive"
+    ],
+    "exit": 0,
+    "seconds": 22.31076187499275
+  },
+  {
+    "command": [
+      "docker",
+      "image",
+      "load",
+      "-i",
+      "results/archives/images-5f5ff8671e526102bd3ab52fce16beae38857c264f0eaaafa36ae6a03fc0d5c7.tar"
+    ],
+    "exit": 0,
+    "seconds": 11.777819499999168,
+    "archive": "results/archives/images-5f5ff8671e526102bd3ab52fce16beae38857c264f0eaaafa36ae6a03fc0d5c7.tar",
+    "sha256": "5f5ff8671e526102bd3ab52fce16beae38857c264f0eaaafa36ae6a03fc0d5c7",
+    "bytes": 1202168320
+  }
+]

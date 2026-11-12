@@ -1,0 +1,28 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "-e",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "-e",
+    "PYTHONPATH=src/analysis",
+    "-v",
+    "/Users/dobrov/Desktop/Code/ITMO/benchmark:/bench",
+    "-w",
+    "/bench",
+    "wswt-bench-analyzer:dev",
+    "python",
+    "-B",
+    "-m",
+    "unittest",
+    "test_controller",
+    "test_measurement",
+    "test_recovery",
+    "-v"
+  ],
+  "exit": 0,
+  "seconds": 90.95334495800489
+}

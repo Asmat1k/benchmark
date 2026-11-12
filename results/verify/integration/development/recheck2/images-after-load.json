@@ -1,0 +1,253 @@
+[
+    {
+        "Id": "sha256:4f781f64dd014baf4e8e94718eb26775e69940950820d2a44282612bddf90792",
+        "RepoTags": [
+            "wswt-bench-server:dev"
+        ],
+        "RepoDigests": [
+            "wswt-bench-server@sha256:4f781f64dd014baf4e8e94718eb26775e69940950820d2a44282612bddf90792"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-11T13:42:56.75279968Z",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Entrypoint": [
+                "bench"
+            ],
+            "Labels": {
+                "com.docker.compose.project": "benchmark",
+                "com.docker.compose.service": "server",
+                "com.docker.compose.version": "5.3.1"
+            }
+        },
+        "Architecture": "arm64",
+        "Os": "linux",
+        "Size": 36880009,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:c96c411090da09187c55ab267826b3903b542b5c03f1cafa912d60e060e7850c",
+                "sha256:14ba5ffa2c7a47452ef5b5f5256223d7c7be05abfcb4e9248860cceb2b56cfa1",
+                "sha256:70b689f5f97f3b6445f27cc2c45a6cd294f3b7ec45db672883eb7e9388490adf",
+                "sha256:f57e12ab6c4a17afd41e2fd1c8e948d1eea9c27a246e2b35fc971dd99b332d26"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-12T18:52:13.092835919Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:4f781f64dd014baf4e8e94718eb26775e69940950820d2a44282612bddf90792",
+            "size": 856,
+            "annotations": {
+                "io.containerd.image.name": "docker.io/library/wswt-bench-server:dev",
+                "org.opencontainers.image.ref.name": "dev"
+            }
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "rv6g8riaa0f4ebrbm6rd55mbf",
+                    "CreatedAt": "2026-11-12T18:51:27.266230134Z"
+                }
+            ]
+        }
+    },
+    {
+        "Id": "sha256:0e616a975c0a10b008c6dcd51d8f36fb181394da559ac1a0066e24dca737cadc",
+        "RepoTags": [
+            "wswt-bench-browser:dev"
+        ],
+        "RepoDigests": [
+            "wswt-bench-browser@sha256:0e616a975c0a10b008c6dcd51d8f36fb181394da559ac1a0066e24dca737cadc"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-12T18:18:24.28702105Z",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "LC_ALL=C.UTF-8",
+                "PLAYWRIGHT_BROWSERS_PATH=/ms-playwright"
+            ],
+            "Entrypoint": [
+                "sh",
+                "/usr/local/bin/bench-browser"
+            ],
+            "WorkingDir": "/runner",
+            "Labels": {
+                "com.docker.compose.project": "benchmark",
+                "com.docker.compose.service": "browser",
+                "com.docker.compose.version": "5.3.1",
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "Architecture": "arm64",
+        "Os": "linux",
+        "Size": 911958911,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:9c15b6bd680f4a96c4bef1053356e5b8c571567bb4f7d62c7c135efa18a4cfcc",
+                "sha256:3d6c61ab8d3b5f1a4f66e70aee9269f298504ccf9c4ea02487c7724720c97d4c",
+                "sha256:e47932731b7464a273d20e0221f47ab61d35833449ca4497bb616d6541890d9a",
+                "sha256:b942048381fdbf4b672c9c09c4711581347036de8990f2cb08f556e6b8427f23",
+                "sha256:518aac2cb3d567861c4b1721c2c32419dc66ea4b1f74e5efdb9a2e6910afe1fa",
+                "sha256:62ffe1065377ac171787e87e00dee1178dc4a93665ca7c7cd754cde8531ede7e",
+                "sha256:4bab54b65077faa59176805fda9b41e9948a6ee187ed9e6539caaca83d0c0b3b",
+                "sha256:b17163c693473b27d707a8239eaafffc98f3c5cbcae54f23033a75519ca2ec15",
+                "sha256:17342d40a900f019bfc9198ef96a80d2a491eec8e180c9dac2c66dd35c9149ce",
+                "sha256:e81727c445dd52a07de7c64589ef7d2c5f554d0c267ff9ffe76f26fbb757241a",
+                "sha256:4cf307e458bce3e7a2f5e15d36e16bc038e9081102774b22247b06d0876c4156"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-12T18:52:13.093289294Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:0e616a975c0a10b008c6dcd51d8f36fb181394da559ac1a0066e24dca737cadc",
+            "size": 856,
+            "annotations": {
+                "io.containerd.image.name": "docker.io/library/wswt-bench-browser:dev",
+                "org.opencontainers.image.ref.name": "dev"
+            }
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "r4a6j14i1obxnwdsns2a4cw7l",
+                    "CreatedAt": "2026-11-12T18:51:26.722208842Z"
+                }
+            ]
+        }
+    },
+    {
+        "Id": "sha256:7bf2ff32a920c99c3971b02e0b9181beb59799adf256b9812dfe814852267d3e",
+        "RepoTags": [
+            "wswt-bench-router:dev"
+        ],
+        "RepoDigests": [
+            "wswt-bench-router@sha256:7bf2ff32a920c99c3971b02e0b9181beb59799adf256b9812dfe814852267d3e"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-11T13:57:29.701536667Z",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Entrypoint": [
+                "sh",
+                "/usr/local/bin/network"
+            ],
+            "Labels": {
+                "com.docker.compose.project": "benchmark",
+                "com.docker.compose.service": "router",
+                "com.docker.compose.version": "5.3.1"
+            }
+        },
+        "Architecture": "arm64",
+        "Os": "linux",
+        "Size": 33280234,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:c96c411090da09187c55ab267826b3903b542b5c03f1cafa912d60e060e7850c",
+                "sha256:a0155f819e0cbea219b7038beaf5602716a7e51f6092c7d4549b1650069ddf41",
+                "sha256:d200fa134e9b3a46db792e6700eaf92f9706556a14069b96f0c95bc81f46753b",
+                "sha256:451f848ec7ddf8dadd3fd0afe64e705bcdc47d17becabedc61ac075a39cb3621",
+                "sha256:345137a739214b12c978c200b20d6f2edca46c11a01f92e99ec9a1f6db9ba6da"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-12T18:52:13.093829211Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:7bf2ff32a920c99c3971b02e0b9181beb59799adf256b9812dfe814852267d3e",
+            "size": 856,
+            "annotations": {
+                "io.containerd.image.name": "docker.io/library/wswt-bench-router:dev",
+                "org.opencontainers.image.ref.name": "dev"
+            }
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "xly0sevf1hvtdgudk7qr2cixc",
+                    "CreatedAt": "2026-11-12T18:51:27.069423426Z"
+                }
+            ]
+        }
+    },
+    {
+        "Id": "sha256:7c4256c9fa32bade96bf9fd4d1cfa1a13e7eef290e032a9d698df79f6352776b",
+        "RepoTags": [
+            "wswt-bench-analyzer:dev"
+        ],
+        "RepoDigests": [
+            "wswt-bench-analyzer@sha256:7c4256c9fa32bade96bf9fd4d1cfa1a13e7eef290e032a9d698df79f6352776b"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-12T18:51:27.137768676Z",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+                "PYTHON_VERSION=3.12.11",
+                "PYTHON_SHA256=c30bb24b7f1e9a19b11b55a546434f74e739bb4c271a3e3a80ff4380d49f7adb",
+                "MPLBACKEND=Agg"
+            ],
+            "Cmd": [
+                "python3"
+            ],
+            "WorkingDir": "/analysis",
+            "Labels": {
+                "com.docker.compose.project": "benchmark",
+                "com.docker.compose.service": "analyzer",
+                "com.docker.compose.version": "5.3.1"
+            }
+        },
+        "Architecture": "arm64",
+        "Os": "linux",
+        "Size": 248082924,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:3e5d01a55aea2c9ea64c3cfef2bb870df4b01c7e206103a970d4c3dc6caed96b",
+                "sha256:62750a0d4afa47971eda307d875c99fc4a7292beb47970df9c18647609d86e88",
+                "sha256:3603fa54c00d0cb83e3070b70cd08bc24ca60844986408ade6c1b80ef7b0f532",
+                "sha256:4882eb1c66d54726bda0140b368f4388ceca8351cdcc6d10fe29bdcddb0b6f59",
+                "sha256:4930f74d1c65da56a61b481f0a62700cc2528c9730b44656c54d69557d453538",
+                "sha256:3cb2f52b6bd922a36898b31c665b885df83b612cff6dead06faa2490853641c8",
+                "sha256:70b00b7c945fab388ac7c3744cd2d55921b21896967d49363a9e27f48a150702",
+                "sha256:dcf7801e7a2b5fd290cbe672b91723e04319aae266122991a6bcfb12357fbbb3",
+                "sha256:c634dd6c347e9f4bae447d3afc074ab74269619871125c8b546dc5382902866b"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-12T18:52:13.094295461Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:7c4256c9fa32bade96bf9fd4d1cfa1a13e7eef290e032a9d698df79f6352776b",
+            "size": 856,
+            "annotations": {
+                "io.containerd.image.name": "docker.io/library/wswt-bench-analyzer:dev",
+                "org.opencontainers.image.ref.name": "dev"
+            }
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "2nidb3cfg7i2ss2kmvw43e7ut",
+                    "CreatedAt": "2026-11-12T18:51:27.363456968Z"
+                }
+            ]
+        }
+    }
+]

@@ -1,0 +1,6 @@
+{
+  "command": "make measurement-smoke",
+  "exit": 0,
+  "seconds": 82.56103070899553,
+  "reason": "R2 changed staging address guard; actual relative controller requests separately verified by targeted-final; all analyzer jobs completed"
+}

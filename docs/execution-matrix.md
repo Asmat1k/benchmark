@@ -10,7 +10,7 @@
 | D3 | Измеритель и raw | завершена | not_run | deferred_by_user |
 | D4 | Анализ, статистика и графики | завершена | not_run | deferred_by_user |
 | D5 | Команды calibration, A/A, monitoring, pilot, power, freeze, main | завершена | not_run | deferred_by_user |
-| D6 | Независимая интеграция и передача | не начата | not_run | deferred_by_user |
+| D6 | Независимая интеграция и передача | завершена | not_run | deferred_by_user |
 
 | Отложенная проверка | Экспериментальная проверка | Причина |
 |---|---|---|
@@ -22,3 +22,5 @@
 | Официальный pilot и оценка мощности | not_run | deferred_by_user |
 | Final verify, freeze и воспроизведение экспериментального пакета | not_run | deferred_by_user |
 | Основная серия | not_run | deferred_by_user |
+
+Интеграция D6 выполнена в разрешённом объёме разработки; независимая приёмка и SHA фиксируются отдельно в [передаче](handoffs/dev-wave-6.md). Экспериментальная волна 6 плана остаётся отложенной.

@@ -1,0 +1,21 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "-e",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "-v",
+    "/Users/dobrov/Desktop/Code/ITMO/benchmark:/bench",
+    "-w",
+    "/bench",
+    "wswt-bench-analyzer:dev",
+    "python",
+    "-B",
+    "results/verify/integration/development/recheck/probe-direct-record.py"
+  ],
+  "exit": 0,
+  "seconds": 0.81966733300942
+}

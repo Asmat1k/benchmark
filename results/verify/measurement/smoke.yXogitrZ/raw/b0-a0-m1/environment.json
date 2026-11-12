@@ -1,0 +1,33 @@
+{
+  "host": "Darwin dobrov.local 25.5.0 Darwin Kernel Version 25.5.0: Mon Apr 27 20:38:56 PDT 2026; root:xnu-12377.121.6~2/RELEASE_ARM64_T6000 arm64\n",
+  "vm": {
+    "kernel": "6.12.76-linuxkit",
+    "platform": "aarch64",
+    "engine": "29.6.2",
+    "cpus": 2,
+    "mem": 4109484032
+  },
+  "limits": [
+    {
+      "id": "sha256:25ce4c7e0b7a8184e4949b8d1f3158a85a406f6067310b6ea61a63a4816fe883",
+      "role": "/wswt-d3-wswt-measure-rhv2bqs0-browser-1",
+      "cpu": 2000000000,
+      "memory": 3221225472,
+      "shm": 1073741824
+    },
+    {
+      "id": "sha256:20129ac43ed0d839cd19fa06e92d7f1e5b49d4a454fa93ac945396020ced9953",
+      "role": "/wswt-d3-wswt-measure-rhv2bqs0-router-1",
+      "cpu": 1000000000,
+      "memory": 536870912,
+      "shm": 67108864
+    },
+    {
+      "id": "sha256:adf808e974625a91c041d673aa14a122c9ca935a84dc039f5fa2eb164252c920",
+      "role": "/wswt-d3-wswt-measure-rhv2bqs0-server-1",
+      "cpu": 2000000000,
+      "memory": 1073741824,
+      "shm": 67108864
+    }
+  ]
+}

@@ -9,7 +9,7 @@ from pathlib import Path
 
 from raw import digest, read, rows, validate_raw, write
 from record import complete
-from test_measurement import fixture, rehash
+from test_measurement import fixture, rehash, pending_publication
 from violation import diagnose
 
 
@@ -54,6 +54,7 @@ analyze() { "$3" -B "$@"; }
         partial=self.directory/"collector.partial"
         self.folder.rename(partial)
         (partial/"SHA256SUMS").unlink()
+        pending_publication(self.directory, partial)
         write(partial/"page.json",dict(slots=rows(partial/"warmup.jsonl")+rows(partial/"slots.jsonl"),events=rows(partial/"events.jsonl")))
         for when in ("before","after"):
             snapshot=read(partial/f"network_{when}.json")

@@ -1,0 +1,8 @@
+test_r1_swapped_and_duplicated_directory_contents_cli (test_analysis.SeriesTests.test_r1_swapped_and_duplicated_directory_contents_cli) ... ok
+test_r4a_hash_corrupted_schedule_diagnose_replace_analyze_cli (test_analysis.SeriesTests.test_r4a_hash_corrupted_schedule_diagnose_replace_analyze_cli) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 35.684s
+
+OK
+R4a normal CLI: diagnose hash/hash mismatch -> replace -> analyze accepted; post-proof source/evidence, identity, independent archive, transaction, sibling and rehashed active snapshot mutations rejected without changing derived.

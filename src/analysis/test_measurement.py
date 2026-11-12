@@ -59,6 +59,17 @@ def fixture(directory):
     return read(directory / "schedule.json")
 
 
+def pending_publication(directory, partial):
+    schedule = read(directory/"schedule.json")
+    schedule["series_id"] = directory.name
+    write(directory/"schedule.json", schedule)
+    write(partial/"schedule.json", schedule)
+    ledger = read(directory/"ledger.json")
+    ledger["series_id"] = directory.name
+    ledger["attempts"][0]["status"] = "planned"
+    write(directory/"ledger.json", ledger)
+
+
 class MeasurementTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
@@ -158,7 +169,7 @@ class MeasurementTests(unittest.TestCase):
 
     def test_r4_admission_and_queue_order(self):
         self.schedule["series_id"]=self.directory.name
-        partial=self.directory/"partial"; partial.mkdir()
+        partial=self.directory/"member.partial"; partial.mkdir()
         for series in ("pilot", "main"):
             forbidden=dict(self.schedule,series=series)
             write(self.directory/"schedule.json",forbidden)
@@ -228,6 +239,7 @@ class MeasurementTests(unittest.TestCase):
         partial = self.directory / "collector.partial"
         self.folder.rename(partial)
         (partial / "SHA256SUMS").unlink()
+        pending_publication(self.directory, partial)
         write(partial / "page.json", dict(slots=rows(partial/"warmup.jsonl")+rows(partial/"slots.jsonl"),events=rows(partial/"events.jsonl")))
         for when in ("before","after"):
             snapshot=read(partial/f"network_{when}.json")
