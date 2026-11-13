@@ -1,5 +1,7 @@
 # Этап 2: фиксированный релиз и среда
 
+Статус: обязательное обновление release-state после окончательного коммита ещё ожидается; этап 2 пока не объявляется завершённым.
+
 Дата: 13 ноября 2026. Входной HEAD проверен фактически: `4c4293359a7c21834fb3cf198c15f01ab5c93464`, main, исходное дерево чистое. Прочитаны AGENTS.md, передача этапа 1, методика независимых единиц, browser bandwidth, protocol/verification/experiments и код конфигурации, допуска, сборки, сертификатов. Этапы 3–7 не запускались.
 
 ## Принятые пользователем решения
@@ -100,3 +102,18 @@ REPORT_MAP содержит реальные отчёты, ENVIRONMENT — фа�
 Qualification нового sender — последующая отдельная пользовательская команда, **не выполнена здесь**: `caffeinate -ims sh docker/sender-diagnostic.sh qualification`, около 5–6 минут; три passed v2 + неизменные source/ENV/seals и полное покрытие ресурсов. Затем bandwidth всех трёх режимов (schedule **--datagrams**, measure 0/1/2, 5–10 минут) → один новый UDP calibration raw (30–35 минут) → offline bandwidth bound/review → новый package и block report. Все работы с неизвестным/возможным runtime>5 минут запускает пользователь, включая полный научный расчёт, если его время нельзя обоснованно ограничить. Точный трёхрежимный рецепт есть в уточнении [browser-bandwidth-stage1.md](browser-bandwidth-stage1.md); review/расчёт — [docker/calibration.md](../../docker/calibration.md).
 
 Далее generator всех трёх режимов, A/A/monitoring с --datagrams, pilot/power и дальнейшие gates относятся к своим последующим этапам. Разрешение main, freeze, мощность и практические итоги здесь не утверждаются. Этап 2 останавливается на подготовленном релизе; обязательных пользовательских запусков для самой сборки/архива больше нет. Передача этапу 3 не является его выполнением.
+
+## Осталось после автоматической ошибки разрешений
+
+После коммита передачи 490cc10 два запроса штатного `sh docker/release-state.sh` отклонены автоматической проверкой с технической ошибкой `Bad Request`. Команды не выполнялись; это не заключение о небезопасности. Старый snapshot не обновлялся и не выдаётся за актуальный. `build/stage2-final-state.json` также ещё не создан. Сборка, архив, TLS и адресные тесты выполнены; обязательный последний шаг остаётся открытым.
+
+После сохранения этого уточнения коммитом пользователь выполняет из корня репозитория:
+
+```sh
+sh docker/release-state.sh
+docker run --rm --network none -e PYTHONDONTWRITEBYTECODE=1 -e PYTHONPATH=src/analysis -v "$PWD:/bench:ro" -w /bench wswt-bench-analyzer:dev python -B -c 'from admission import release; print(release())'
+sh docker/check-release.sh "$(git rev-parse HEAD)"
+git status --short
+```
+
+Ожидается менее минуты. Файл build/release-state.json должен содержать фактический HEAD; release() должен вывести тот же SHA без ошибки source inventory; check-release exit0, git status пуст. Пока результат не получен, этап 2 остаётся открытым. Новых сборок или экспериментов для этого не нужно.
