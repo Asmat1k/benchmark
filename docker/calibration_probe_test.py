@@ -15,6 +15,7 @@ class EchoClock:
         self.pending = []
         self.received = []
         self.waits = 0
+        self.timeouts = []
 
     def __enter__(self):
         return self
@@ -35,6 +36,7 @@ class EchoClock:
         return frame
 
     def select(self, readers, writers, errors, timeout):
+        self.timeouts.append((len(self.sent), timeout))
         self.waits += 1
         deadline = self.now + round(timeout * 1e9)
         if self.waits in (5, 8):
@@ -58,6 +60,8 @@ class PacingTest(unittest.TestCase):
                 contextlib.redirect_stdout(output):
             probe.send('unused', False, 'offline-pacing')
         result = json.loads(output.getvalue())
+        self.assertTrue(all(timeout <= probe.MAX_ECHO_WAIT_NS / 1e9
+                            for count, timeout in clock.timeouts if count < 10000))
         rows = result['sent_records']
         self.assertEqual([r['id'] for r in rows], list(range(10000)))
         self.assertEqual([r['t_plan_ms'] for r in rows], [i*10 for i in range(10000)])
