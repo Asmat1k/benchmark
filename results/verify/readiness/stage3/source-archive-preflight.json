@@ -1,0 +1,13 @@
+{
+  "utc": "2026-11-13T16:40:23.600951+00:00",
+  "head": "f7772cca12efd9bb75055551b87743344fb08a4d",
+  "source_count": 134,
+  "stage2_source_inventory_equal": true,
+  "current_source_bytes_equal": true,
+  "archive": {
+    "path": "results/archives/images-05a30d9c5e341462c167a548a5942bc377e5c48de2aee0badb5db3301203a11e.tar",
+    "sha256": "05a30d9c5e341462c167a548a5942bc377e5c48de2aee0badb5db3301203a11e",
+    "size": 1202140160
+  },
+  "freeze_exists": false
+}

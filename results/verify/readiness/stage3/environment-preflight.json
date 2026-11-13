@@ -1,0 +1,145 @@
+{
+  "utc": "2026-11-13T16:40:51.660330+00:00",
+  "images": [
+    {
+      "tag": "wswt-bench-server:dev",
+      "image_id": "sha256:c2c60585a64d04e8dd7dd6a674625c0aec44cdc385561c8864dab734fbf19c44",
+      "os": "linux",
+      "architecture": "arm64"
+    },
+    {
+      "tag": "wswt-bench-browser:dev",
+      "image_id": "sha256:356b2e1af8773aaf688f3c4e03bbfa73b2c835d88be0a76278030cf55d1c1641",
+      "os": "linux",
+      "architecture": "arm64"
+    },
+    {
+      "tag": "wswt-bench-router:dev",
+      "image_id": "sha256:d78a80d31724881c1adaa57005fae37f4f23e0013945dac759d7ee1f76b6b74d",
+      "os": "linux",
+      "architecture": "arm64"
+    },
+    {
+      "tag": "wswt-bench-analyzer:dev",
+      "image_id": "sha256:9e263785dc135db52a216bc358c38218cf3d98f178a9981a365ca79cda7cbd62",
+      "os": "linux",
+      "architecture": "arm64"
+    }
+  ],
+  "vm": {
+    "cpu": 2,
+    "memory": 4109484032,
+    "arch": "aarch64"
+  },
+  "networks": [
+    {
+      "name": "ai-grepa_ai-grepa",
+      "ipam": {
+        "Driver": "default",
+        "Options": null,
+        "Config": [
+          {
+            "Subnet": "172.19.0.0/16",
+            "Gateway": "172.19.0.1"
+          }
+        ]
+      }
+    },
+    {
+      "name": "bridge",
+      "ipam": {
+        "Driver": "default",
+        "Options": null,
+        "Config": [
+          {
+            "Subnet": "172.17.0.0/16",
+            "Gateway": "172.17.0.1"
+          }
+        ]
+      }
+    },
+    {
+      "name": "host",
+      "ipam": {
+        "Driver": "default",
+        "Options": null,
+        "Config": null
+      }
+    },
+    {
+      "name": "kind",
+      "ipam": {
+        "Driver": "default",
+        "Options": {},
+        "Config": [
+          {
+            "Subnet": "fc00:f853:ccd:e793::/64",
+            "Gateway": "fc00:f853:ccd:e793::1"
+          },
+          {
+            "Subnet": "172.18.0.0/16",
+            "Gateway": "172.18.0.1"
+          }
+        ]
+      }
+    },
+    {
+      "name": "mkd2-astra182_default",
+      "ipam": {
+        "Driver": "default",
+        "Options": null,
+        "Config": [
+          {
+            "Subnet": "172.20.0.0/16",
+            "Gateway": "172.20.0.1"
+          }
+        ]
+      }
+    },
+    {
+      "name": "none",
+      "ipam": {
+        "Driver": "default",
+        "Options": null,
+        "Config": null
+      }
+    },
+    {
+      "name": "transport-lab_back",
+      "ipam": {
+        "Driver": "default",
+        "Options": null,
+        "Config": [
+          {
+            "Subnet": "10.77.2.0/24",
+            "Gateway": "10.77.2.254"
+          }
+        ]
+      }
+    },
+    {
+      "name": "transport-lab_front",
+      "ipam": {
+        "Driver": "default",
+        "Options": null,
+        "Config": [
+          {
+            "Subnet": "10.77.1.0/24",
+            "Gateway": "10.77.1.254"
+          }
+        ]
+      }
+    }
+  ],
+  "containers": "ai-grepa-qdrant-1 Up 30 hours (unhealthy)\n",
+  "lock_probe": {
+    "command": "series.py hold with EOF",
+    "stdout": "locked\n",
+    "exit": 0
+  },
+  "vm_disk": "Filesystem      Size  Used Avail Use% Mounted on\noverlay          63G   23G   37G  38% /\n",
+  "power": "Now drawing from 'Battery Power'\n -InternalBattery-0 (id=22282339)\t100%; discharging; 9:02 remaining present: true\n",
+  "host_disk": "Filesystem      Size    Used   Avail Capacity iused ifree %iused  Mounted on\n/dev/disk3s5   460Gi   316Gi   118Gi    73%    7.0M  1.2G    1%   /System/Volumes/Data\n",
+  "host_arch": "arm64\n",
+  "tls": "notBefore=Nov 13 16:22:37 2026 GMT\nnotAfter=Nov 26 16:22:37 2026 GMT\nsha256 Fingerprint=FC:2A:5F:4D:7B:C0:FC:E8:61:BA:EE:92:07:C8:2F:F8:6B:F5:02:FD:A4:19:CF:45:C7:3E:35:59:D1:A5:6D:18\n"
+}
