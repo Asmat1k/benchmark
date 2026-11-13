@@ -1,0 +1,10 @@
+{
+  "files": [
+    {
+      "path": "results/archives/images-05a30d9c5e341462c167a548a5942bc377e5c48de2aee0badb5db3301203a11e.tar",
+      "sha256": "05a30d9c5e341462c167a548a5942bc377e5c48de2aee0badb5db3301203a11e",
+      "bytes": 1202140160
+    }
+  ],
+  "reason": "Existing immutable image archive retained at original path; not duplicated in compact evidence package"
+}
