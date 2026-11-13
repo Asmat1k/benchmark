@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "preliminary": true,
+  "preliminary": false,
   "deadline_ms": 100,
   "horizon_ms": 5000,
   "practical_ms": 5,

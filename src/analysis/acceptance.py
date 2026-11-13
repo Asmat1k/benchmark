@@ -64,6 +64,14 @@ def calibration(data):
         k = int(candidates[2*binom.cdf(candidates-1,n,.5) <= .025][-1])
         intervals[key] = [ordered[k-1],ordered[n-k]] if k else [-math.inf,math.inf]
         diagnostics[key] = dependence(probe['rtt_ms'])
+    block_result = None
+    block_uncertain = False
+    if data.get('method') is not None:
+        from calibration_blocks import METHOD, intervals as block_intervals
+        require(data['method'] == METHOD, 'unknown calibration method')
+        intervals, block_diagnostics, block_result, block_uncertain = block_intervals(data['echo'], data['trace_review'])
+        block_result['dependence'] = block_diagnostics
+    require(data.get('kind') != 'real' or block_result is not None, 'real calibration requires approved block method')
     shifts = {}
     passed = True
     for profile in PROFILES:
@@ -84,10 +92,11 @@ def calibration(data):
         entered, dropped = egress['entered_ids'], egress['dropped_ids']
         require(len(entered) == len(set(entered)) and len(dropped) == len(set(dropped)) and
                 set(dropped) <= set(entered), 'egress ID denominator')
-        interval = exact_binomial(len(dropped), len(entered))
+        interval = exact_binomial(len(dropped), len(entered), 1-.01/8 if block_result else .99)
         p = .01 if egress['profile'].endswith('p1') else 0.
         okay = (len(dropped) == 0) if p == 0 else interval[0] <= p <= interval[1]
-        loss.append(dict(identity=list(identity), CI99=interval, count=len(entered), drops=len(dropped), passed=okay))
+        loss.append(dict(identity=list(identity), **({'interval':interval} if block_result else {'CI99':interval}),
+                         confidence=1-.01/8 if block_result else .99, count=len(entered), drops=len(dropped), passed=okay))
         passed &= okay
     for profile in PROFILES:
         for when in ('before','after'):
@@ -115,20 +124,23 @@ def calibration(data):
     require(0 <= data['trace_review']['main_bandwidth_fraction'], 'negative bandwidth fraction')
     passed &= data['trace_review']['main_bandwidth_fraction'] < .1
     uncertain = not data['trace_review']['independent_units'] or any(d['suspect'] for d in diagnostics.values())
+    if block_result is not None:
+        uncertain = block_uncertain
     sender_passed = all(v['status']=='passed' for v in sender.values())
     return dict(status='failed' if not sender_passed else 'inconclusive' if uncertain else 'passed' if passed else 'failed',
-                sender_criteria_version=policy()['version'], sender_quality=sender,
+                sender_criteria_version=policy()['version'], sender_quality=sender, block_inference=block_result,
                 intervals=intervals, shifts=shifts, dependence=diagnostics, loss=loss,
                 saturation=data['saturation'], expected_echo_loss=.0199,
                 survivor_bias='RTT intervals condition on returned echoes; loss0 and traces required')
 
 
-def generator_gate(data):
+def generator_gate(data, include_wt_d=False):
     if any('mode' in r for r in data):
         require(sorted((r.get('mode', ''), r['frequency_hz']) for r in data) ==
-                [('WS',20),('WS',100),('WT-S',20),('WT-S',100)], 'both modes at 20/100 Hz required')
+                sorted((mode,hz) for mode in (MODES if include_wt_d else MODES[:2]) for hz in (20,100)), 'both modes and approved WT-D at 20/100 Hz required')
     else:
         require({r['frequency_hz'] for r in data} == {20,100} and len(data) == 2, '20/100 Hz runs required')
+    require(not include_wt_d or all('mode' in r for r in data), 'approved WT-D mode attribution required')
     passed = True
     for run in data:
         slots=run['slots']

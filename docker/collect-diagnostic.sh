@@ -13,9 +13,11 @@ for frequency in $frequencies; do
     if [ "$gate" = timer ]; then
         analyze src/analysis/schedule.py smoke "$directory" --blocks 1 --sessions 1 --baseline --timer
     else
-        analyze src/analysis/schedule.py diagnostic "$directory" --blocks 1 --sessions 1 --baseline --generator-hz "$frequency"
+        analyze src/analysis/schedule.py diagnostic "$directory" --blocks 1 --sessions 1 --baseline --datagrams --generator-hz "$frequency"
     fi
-    for index in 0 1; do sh docker/measure.sh "$directory" "$index"; done
+    indexes="0 1"
+    if [ "$gate" = generator ]; then indexes="0 1 2"; fi
+    for index in $indexes; do sh docker/measure.sh "$directory" "$index"; done
     dirs="$dirs $directory"
 done
 case "$gate" in timer) environment="$directory/context.json" ;; generator) environment=$2 ;; esac

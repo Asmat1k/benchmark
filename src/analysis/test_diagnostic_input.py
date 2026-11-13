@@ -28,10 +28,12 @@ class DiagnosticInputTests(unittest.TestCase):
             run = schedule["runs"][0]
             folder = directory/"raw"/run["run_id"]
             context = read(folder/"context.json")
+            context["bindings"]["docs/protocol.md"]=digest(Path("docs/protocol.md"))
             context["config"]={name:read(Path("configs")/f"{name}.json") for name in ("plan","thresholds","profiles")}
             write(folder/"config.json",context["config"])
             manifest=read(folder/"manifest.json")
             manifest["config_sha256"]=digest(folder/"config.json")
+            manifest["protocol_sha256"]=digest(Path("docs/protocol.md"))
             write(folder/"manifest.json",manifest)
             write(folder/"context.json",context)
             write(directory/"context.json",context)
@@ -77,6 +79,10 @@ class DiagnosticInputTests(unittest.TestCase):
             self.assertEqual(generator_gate(both_modes)["status"], "passed")
             with self.assertRaisesRegex(ValueError, "both modes"):
                 generator_gate(both_modes[:2])
+            all_modes = [dict(run, mode=mode) for mode in ("WS","WT-S","WT-D") for run in runs]
+            self.assertEqual(generator_gate(all_modes, include_wt_d=True)["status"], "passed")
+            with self.assertRaisesRegex(ValueError, "WT-D"):
+                generator_gate(both_modes, include_wt_d=True)
             save_rows("backlog.jsonl", backlog[:-1])
             with self.assertRaisesRegex(ValueError, "router sampling coverage"):
                 generator_run(folder, 100)

@@ -183,7 +183,7 @@ def evaluate(action, data):
         result=simulate(values,directory.name) if action=='power' else dict(status='passed',effects=values,blocks={p:len(v) for p,v in values.items()})
         result['coverage']=sorted({r['mode'] for r in selected})
     else:
-        result=calibration(data) if action=='calibrate' else generator_gate(data['runs']) if action=='generator' else dict(status='passed' if timer_gate(data) else 'failed',timer=data)
+        result=calibration(data) if action=='calibrate' else generator_gate(data['runs'], include_wt_d=data.get('kind')=='real') if action=='generator' else dict(status='passed' if timer_gate(data) else 'failed',timer=data)
     return result,evidence
 
 
@@ -260,6 +260,7 @@ def main():
             schedule=make_schedule('pilot',args.output.name,args.blocks,4,args.datagrams)
         else:
             schedule=paired_schedule(args.phase,args.output.name,args.datagrams,args.blocks)
+        require({r['mode'] for r in schedule['runs']} == {'WS','WT-S','WT-D'}, 'approved modes include WT-D')
         args.output.parent.mkdir(parents=True,exist_ok=True)
         with tempfile.TemporaryDirectory(prefix='.prepare-',dir=args.output.parent) as workspace:
             staged=Path(workspace)/args.output.name

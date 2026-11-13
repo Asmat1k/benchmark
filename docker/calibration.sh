@@ -41,6 +41,7 @@ for attempt in 1 2 3 4 5 6 7 8 9 10; do [ ! -s "$work/status" ] || break; sleep 
 test "$(cat "$work/status")" = locked
 date -u +%FT%TZ > "$run_dir/started"
 git rev-parse HEAD > "$run_dir/commit"
+analyze docker/calibration_report.py plan "$run_dir"
 compose up -d --no-build router browser server
 . docker/links.sh
 setup_links

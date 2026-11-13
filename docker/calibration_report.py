@@ -89,6 +89,15 @@ def rate(directory, direction, loss):
                 offered_bytes=int(rows[4])-int(rows[1]), forwarded_bytes=last['bytes']-first['bytes'])
 
 
+def collection_plan():
+    from raw import read
+    names = ['baseline-before'] + [f'{p}-before' for p in PROFILES] + [f'{p}-latency' for p in PROFILES] + [f'{p}-after' for p in PROFILES] + ['baseline-after']
+    names += [f'saturation-{loss}-{direction}' for loss in (0,1) for direction in ('forward','reverse')]
+    return dict(method=read(Path('configs/plan.json'))['calibration'],
+                collections=[dict(name=name, forward_seed=20261110+2*i, reverse_seed=20261111+2*i)
+                             for i,name in enumerate(names)])
+
+
 def package(directory, review_path, env_path):
     from admission import ref, sources
     from raw import read, write
@@ -96,7 +105,10 @@ def package(directory, review_path, env_path):
     for entry in read(directory/'captured.json'):
         from admission import checked
         checked(entry)
+    require(read(directory/'collection-plan.json') == collection_plan(), 'calibration preregistered plan mismatch')
     review = read(review_path)
+    require(all(isinstance(review.get('assumptions', {}).get(k), str) and review['assumptions'][k].strip()
+                for k in ('stationarity', 'short_memory', 'bernoulli_loss')), 'process assumptions rationale required')
     require(review['collection_id']==directory.name and review['reviewer'] and review['rationale'].strip(),
             'collection-specific independent trace review required')
     require(read(directory/'context-before.json')==read(directory/'context-after.json')==read(env_path),
@@ -123,7 +135,8 @@ def package(directory, review_path, env_path):
         for direction in ('forward','reverse'):
             path=directory/f'saturation-{loss}-{direction}'
             saturation.append(rate(path, direction, loss/100))
-    values=dict(echo=echo, egress=egress, saturation=saturation, trace_review=review['trace_review'])
+    from calibration_blocks import METHOD
+    values=dict(method=METHOD, echo=echo, egress=egress, saturation=saturation, trace_review=review['trace_review'])
     common=dict(kind='real', gate='calibration', collection_id=directory.name, environment=ref(env_path), source_hashes=original)
     evidence=[ref(p) for p in sorted(directory.rglob('*')) if p.is_file()] + [ref(review_path)]
     output=directory/'publication'
@@ -136,7 +149,10 @@ def package(directory, review_path, env_path):
 
 
 if __name__=='__main__':
-    if sys.argv[1]=='context':
+    if sys.argv[1]=='plan':
+        from raw import write
+        write(Path(sys.argv[2])/'collection-plan.json', collection_plan())
+    elif sys.argv[1]=='context':
         from admission import sources
         from series import context_snapshot
         from raw import write

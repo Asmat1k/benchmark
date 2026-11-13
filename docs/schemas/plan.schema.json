@@ -56,6 +56,26 @@
     },
     "bootstrap_replicates": {
       "const": 10000
+    },
+    "include_wt_d": {
+      "const": true
+    },
+    "calibration": {
+      "const": {
+        "method": "circular-block-medians-v1",
+        "block_slots": [
+          100,
+          200,
+          500
+        ],
+        "replicates": 20000,
+        "latency_alpha": 0.04,
+        "loss_alpha": 0.01,
+        "seed": 20261113
+      }
+    },
+    "main_budget_seconds": {
+      "const": 54000
     }
   },
   "required": [
@@ -75,7 +95,10 @@
     "preliminary_blocks_per_profile",
     "sessions",
     "pilot_min_blocks_per_profile",
-    "bootstrap_replicates"
+    "bootstrap_replicates",
+    "include_wt_d",
+    "calibration",
+    "main_budget_seconds"
   ],
   "additionalProperties": false
 }

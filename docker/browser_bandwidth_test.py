@@ -16,7 +16,7 @@ class BandwidthTest(unittest.TestCase):
             diagnostic, calibration = root/'diagnostic', root/'calibration'
             diagnostic.mkdir()
             calibration.mkdir()
-            schedule = make_schedule('diagnostic', diagnostic.name, 1, 1, baseline=True)
+            schedule = make_schedule('diagnostic', diagnostic.name, 1, 1, datagrams=True, baseline=True)
             schedule['generator_hz'] = 20
             (diagnostic/'schedule.json').write_text(json.dumps(schedule))
             (diagnostic/'ledger.json').write_text(json.dumps(dict(schema_version=1, series_id=diagnostic.name,
@@ -61,11 +61,11 @@ class BandwidthTest(unittest.TestCase):
                     for loss,rate in ((0,10),(.01,9)) for d in ('forward','reverse')]
         for offered, status in ((.899999,'passed'),(.9,'failed'),(.900001,'failed')):
             loads = [dict(mode=m, rates=[dict(direction=d, mbit_s_upper=offered)
-                                        for d in ('forward','reverse')]) for m in ('WS','WT-S')]
+                                        for d in ('forward','reverse')]) for m in ('WS','WT-S','WT-D')]
             result = fractions(loads, capacity)
             self.assertEqual(result['status'], status)
             self.assertAlmostEqual(result['main_bandwidth_fraction'], offered/9)
-        with self.assertRaisesRegex(ValueError, 'both ordinary'): fractions(loads[:1], capacity)
+        with self.assertRaisesRegex(ValueError, 'all approved'): fractions(loads[:1], capacity)
         with self.assertRaisesRegex(ValueError, 'coverage'): fractions(loads, capacity[:2])
         capacity[0]['forwarded_bytes'] = 0
         with self.assertRaisesRegex(ValueError, 'outside'): fractions(loads, capacity)

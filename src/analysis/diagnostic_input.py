@@ -66,7 +66,7 @@ def observations(gate, evidence, environment, hashes):
                 not (directory/"SYNTHETIC.json").exists(), "diagnostic environment")
         schedule = read(schedule_path)
         phase = "smoke" if gate == "timer" else "diagnostic"
-        expected = make_schedule(phase, directory.name, blocks=1, sessions=1, baseline=True)
+        expected = make_schedule(phase, directory.name, blocks=1, sessions=1, datagrams=gate=="generator", baseline=True)
         if gate == "timer":
             expected["collect_timer"] = True
         else:

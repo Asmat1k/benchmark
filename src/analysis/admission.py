@@ -261,6 +261,8 @@ def validate_freeze(value, remaining=None, recalculate=True):
     from schedule import block_runs, PROFILES
     require(schedule['series']=='main' and all(b['design']=='comparison' for b in schedule['blocks']), 'main comparison schedule required')
     require(schedule['runs']==[r for i,b in enumerate(schedule['blocks']) for r in block_runs(schedule,b,i)], 'main schedule derivation')
+    require(value['include_wt_d'] is True, 'approved modes include WT-D')
+    require(80*len(schedule['runs']) <= read(Path('configs/plan.json'))['main_budget_seconds'], 'main minimum duration exceeds budget')
     modes={'WS','WT-S','WT-D'} if value['include_wt_d'] else {'WS','WT-S'}
     require(all(set(b['modes'])==modes and len(b['modes'])==len(modes) for b in schedule['blocks']), 'WT-D frozen decision mismatch')
     require(set(b['profile'] for b in schedule['blocks'])==set(PROFILES) and all(sum(b['profile']==p for b in schedule['blocks'])==value['blocks_per_profile'] for p in PROFILES), 'frozen main block counts')
@@ -412,7 +414,9 @@ def admit(directory, kind=None, validate_completion=True, initial=False):
     require(phase in ('aa','monitoring','pilot','main'), 'unknown admitted phase')
     require(schedule['series'] == (phase if phase in ('pilot','main') else 'verify'), 'admitted phase mismatch')
     require(all(b['design']==('comparison' if phase in ('pilot','main') else phase) for b in schedule['blocks']), 'admitted design mismatch')
-    if kind=='real': accepted_schedule(original,phase)
+    if kind=='real':
+        accepted_schedule(original,phase)
+        require({r['mode'] for r in original['runs']} == {'WS','WT-S','WT-D'}, 'approved modes include WT-D')
     required = GATES if phase in ('pilot','main') else GATES[:8] if phase == 'aa' else GATES[:9]
     verification=verify(checked(admission['verify']),env,final=phase=='main',required=required,kind=kind,recalculate=recalculate)
     modes=set(original['blocks'][0]['modes'])

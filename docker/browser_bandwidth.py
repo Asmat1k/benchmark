@@ -45,7 +45,7 @@ def load_rates(folder):
 
 
 def fractions(loads, capacity):
-    require({r['mode'] for r in loads}=={'WS','WT-S'} and len(loads)==2, 'both ordinary browser modes required')
+    require({r['mode'] for r in loads}=={'WS','WT-S','WT-D'} and len(loads)==3, 'all approved browser modes required')
     require(len(capacity)==4 and {(c['loss'], c['direction']) for c in capacity}==
             {(loss, d) for loss in (0,.01) for d in ('forward','reverse')}, 'capacity coverage')
     ratios = []
@@ -68,7 +68,7 @@ def fractions(loads, capacity):
 def package(directory, calibration):
     hashes = sources()
     schedule = read(directory/'schedule.json')
-    expected = make_schedule('diagnostic', directory.name, 1, 1, baseline=True)
+    expected = make_schedule('diagnostic', directory.name, 1, 1, datagrams=True, baseline=True)
     expected['generator_hz'] = 20
     require(schedule==expected, 'ordinary baseline diagnostic schedule required')
     require(not (directory/'STOP').exists() and read(directory/'ledger.json')==

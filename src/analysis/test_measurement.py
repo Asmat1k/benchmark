@@ -42,6 +42,7 @@ def fixture(directory):
         write(folder/"config.json", {name:read(Path("configs")/f"{name}.json") for name in ("plan","thresholds","profiles")})
         manifest=read(folder/"manifest.json")
         manifest["config_sha256"]=digest(folder/"config.json")
+        manifest["protocol_sha256"]=digest(Path("docs/protocol.md"))
         write(folder/"manifest.json",manifest)
         for name in ("network_before", "network_after"):
             snapshot = read(folder / f"{name}.json")
@@ -91,7 +92,7 @@ class MeasurementTests(unittest.TestCase):
         self.validate()
         latest = Path("results/verify/measurement/smoke.BLyX9ycT")
         for folder in (latest / "raw").iterdir():
-            with self.assertRaisesRegex(ValueError, "config mismatch"):
+            with self.assertRaisesRegex(ValueError, "protocol/config hash|config mismatch"):
                 validate_raw(folder, latest / "schedule.json")
 
     def test_r1_contradictions_after_rehash(self):

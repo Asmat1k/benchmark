@@ -8,6 +8,8 @@
 
 Saturation подаёт UDP payload 1200 байт с интервалом 800 мкс. Единица скорости — байты, снятые с netem на выходе (skb, включая Ethernet), за измеренное центральное окно 61 с по uptime VM. Одновременно берётся разность rx_bytes входного veth. Проверить airtime нагрузки по probe.json, обе границы очереди по window.txt, стабильное состояние после дренирования и ожидаемую очередь при намеренном насыщении. В скорости не учитываются FCS, preamble и межкадровый интервал.
 
+Методика этого релиза — [circular-block-medians-v1](../docs/readiness/calibration-blocks-stage2.md). collection-plan.json сохраняется до запуска сети и проверяется packager. В review дополнительно обязательны assumptions.stationarity/short_memory/bernoulli_loss (непустые обоснования) и trace_review.stationarity_reviewed/short_memory_reviewed/bernoulli_loss_reviewed (boolean).
+
 После независимого просмотра pcap, прочитанных настроек и очередей подготовить JSON с collection_id (имя каталога), reviewer, текстом rationale и trace_review с полями из docs/experiments.md. В обосновании указать анализ MTU, offload, фоновых кадров, вторичных потерь, единиц независимости, задержек у выживших и числовой расчёт main_bandwidth_fraction по отдельному наблюдению обычной нагрузки. Не устанавливать флаг независимости только по отсутствию автокорреляции. Сохранить JSON и использованные дополнительные первичные свидетельства в каталоге сбора. Для решения применить команды (пути от корня):
 
 ```sh

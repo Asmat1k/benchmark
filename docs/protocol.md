@@ -33,3 +33,7 @@ ID образуют nonce, phase и seq, sequence начинается с 0 в �
 Четыре профиля в configs/profiles.json задают для каждого egress delay 10/40 мс, loss 0/1%, rate 10 Мбит/с, limit 1000 пакетов. RTT содержит baseline и суммарную добавку двух egress. MTU 1500, jitter и correlation 0. Направления имеют разные seeds. Сверяют readback qdisc, routes, MTU и выключенных GRO/GSO/TSO/LRO, forwarding-off обязан нарушать оба пути. При отсутствии kernel seed run останавливается.
 
 Целевой бюджет VM 8 vCPU, 12 GiB RAM, 30 GiB свободного диска. Browser 2 CPU/3 GiB/shm 1 GiB/init, server 2 CPU/1 GiB, router 1 CPU/512 MiB, analyzer отдельно 2 CPU/2 GiB. Используется одна native linux/amd64 или arm64. Фактическое железо, питание, состояние фона, OS/VMM/kernel, cgroups и диск заносят при обследовании. Базовые версии и условия их замены заданы в §2.1 утверждённого плана.
+
+## Фиксация этапа 2
+
+Включены WS, WT-S и WT-D. Для calibration применяется согласованный circular-block-medians-v1 из configs/plan.json: один полный сбор, исходная разность медиан RTT, блоки 1/2/5 с и семейная поправка; предпосылки и правила inconclusive описаны в [методике этапа 2](readiness/calibration-blocks-stage2.md). Численные допуски сохранены. preliminary=false означает фиксацию параметров до новых source-bound сборов; freeze и экспериментальный допуск этим не выдаются. Main ограничен 15 часами; n60 с тремя режимами не помещается даже без overhead.

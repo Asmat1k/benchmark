@@ -18,5 +18,19 @@
   "preliminary_blocks_per_profile": 20,
   "sessions": 4,
   "pilot_min_blocks_per_profile": 5,
-  "bootstrap_replicates": 10000
+  "bootstrap_replicates": 10000,
+  "include_wt_d": true,
+  "calibration": {
+    "method": "circular-block-medians-v1",
+    "block_slots": [
+      100,
+      200,
+      500
+    ],
+    "replicates": 20000,
+    "latency_alpha": 0.04,
+    "loss_alpha": 0.01,
+    "seed": 20261113
+  },
+  "main_budget_seconds": 54000
 }

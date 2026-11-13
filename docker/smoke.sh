@@ -1,9 +1,10 @@
 set -eu
-BENCH_TLS_DIR=$(mktemp -d "${TMPDIR:-/tmp}/wswt-smoke.XXXXXXXX")
+smoke_work=$(mktemp -d "${TMPDIR:-/tmp}/wswt-smoke.XXXXXXXX")
+BENCH_TLS_DIR=${SERIES_TLS_DIR:-$smoke_work}
 export BENCH_TLS_DIR
-project="wswt-d2-$(basename "$BENCH_TLS_DIR" | tr '[:upper:].' '[:lower:]-')"
+project="wswt-d2-$(basename "$smoke_work" | tr '[:upper:].' '[:lower:]-')"
 compose() { docker compose -p "$project" "$@"; }
-run_dir="results/verify/path/$(basename "$BENCH_TLS_DIR")"
+run_dir="results/verify/path/$(basename "$smoke_work")"
 mkdir -p "$run_dir"
 echo "$project" > "$run_dir/project"
 cleanup() {
@@ -19,7 +20,11 @@ cleanup() {
 }
 trap cleanup EXIT
 trap 'exit 130' INT TERM
-docker run --rm --network none -v "$BENCH_TLS_DIR:/out" --entrypoint testcert wswt-bench-server:dev /out
+if [ -z "${SERIES_TLS_DIR:-}" ]; then
+    docker run --rm --network none -v "$BENCH_TLS_DIR:/out" --entrypoint testcert wswt-bench-server:dev /out
+else
+    test -f "$BENCH_TLS_DIR/server/good/cert.pem"
+fi
 compose up -d --no-build router browser server
 . docker/links.sh
 setup_links
