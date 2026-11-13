@@ -10,6 +10,7 @@ PORT = 29543
 FRAME_BYTES = 256
 PERIOD_NS = 10_000_000
 COUNT = 10_000
+MIN_ECHO_GAP_NS = 2_500_000
 
 
 def collection_tag(collection_id):
@@ -51,6 +52,8 @@ def send(peer, saturation, collection_id):
         start = time.monotonic_ns()
         for number in range(count):
             due = start + period * number
+            if not saturation and sent:
+                due = max(due, sent[-1] + MIN_ECHO_GAP_NS)
             while (remaining := due - time.monotonic_ns()) > 0:
                 if select.select([sock], [], [], remaining / 1e9)[0]:
                     replies.append(receive(sock, sent, size, tag))
