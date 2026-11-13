@@ -1,0 +1,27 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "-e",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "-v",
+    "/Users/dobrov/Desktop/Code/ITMO/benchmark:/bench:ro",
+    "-w",
+    "/bench",
+    "wswt-bench-analyzer:dev",
+    "python",
+    "-B",
+    "-c",
+    "import sys,ssl,hashlib;from pathlib import Path;sys.path.insert(0,\"src/analysis\");from smoke import check_smoke;from admission import validate_gate;from raw import read;d=Path(\"results/verify/diagnostic/timer-timer.gJl7zPBv\");check_smoke(d);r=read(Path(str(d)+\"-report/report.json\"));validate_gate(r);leaf=Path(\"build/series-tls.PMYktiWa/server/good/cert.pem\").read_text();assert read(d/\"context.json\")[\"leaf\"]==leaf;print(\"certificate_sha256\",hashlib.sha256(ssl.PEM_cert_to_DER_cert(leaf)).hexdigest());print(\"timer\",{k:r[\"result\"][\"timer\"][k] for k in (\"count\",\"monotonic\",\"step_ms\",\"p99_overhead_ms\")});print(\"ledger\",[a[\"status\"] for a in read(d/\"ledger.json\")[\"attempts\"]]);assert not (d/\"STOP\").exists();assert not list(d.glob(\"*.partial\"));print(\"WS/WT-S raw exact echoes, hashes, schemas and timer passed\")"
+  ],
+  "cwd": "/Users/dobrov/Desktop/Code/ITMO/benchmark",
+  "start_utc": "2026-11-13T11:01:41.125003+00:00",
+  "duration_s": 1.591,
+  "exit_code": 0,
+  "head": "d1573e82d7b61d01fb9df88f52469f256031f1d3",
+  "log": "results/verify/readiness/host/step4-validation.txt",
+  "sha256": "4d4f25e0c049db5905d05e07a2675692ce6b62f15b406f6befc70d3160cdc68b"
+}

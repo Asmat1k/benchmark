@@ -1,0 +1,21 @@
+{
+  "command": [
+    "docker",
+    "compose",
+    "-p",
+    "wswt-readiness-timer",
+    "-f",
+    "compose.yaml",
+    "-f",
+    "build/browser.yml",
+    "build",
+    "browser"
+  ],
+  "cwd": "/Users/dobrov/Desktop/Code/ITMO/benchmark/build/readiness-timer",
+  "start_utc": "2026-11-12T19:35:31.956256+00:00",
+  "duration_s": 6.524,
+  "exit_code": 0,
+  "head": "aeda8e1d36bc5bc87042a6e497eefaf84213397e",
+  "log": "results/verify/readiness/host/timer-browser-build.txt",
+  "sha256": "38026d792291b7f6b05bf21de139bf8d8e87562e461c28614e4644a4aa63b49b"
+}

@@ -1,0 +1,87 @@
+ProductName:		macOS
+ProductVersion:		26.5.1
+BuildVersion:		25F80
+Darwin dobrov.local 25.5.0 Darwin Kernel Version 25.5.0: Mon Apr 27 20:38:56 PDT 2026; root:xnu-12377.121.6~2/RELEASE_ARM64_T6000 arm64
+hw.model: MacBookPro18,3
+hw.memsize: 17179869184
+hw.physicalcpu: 8
+hw.logicalcpu: 8
+Now drawing from 'Battery Power'
+ -InternalBattery-0 (id=22282339)	36%; discharging; 0:48 remaining present: true
+Battery Power:
+ Sleep On Power Button 1
+ lowpowermode         0
+ standby              1
+ ttyskeepawake        1
+ hibernatemode        3
+ powernap             1
+ hibernatefile        /var/vm/sleepimage
+ displaysleep         10
+ womp                 0
+ networkoversleep     0
+ sleep                1
+ lessbright           1
+ tcpkeepalive         1
+ disksleep            10
+AC Power:
+ Sleep On Power Button 1
+ lowpowermode         0
+ standby              1
+ ttyskeepawake        1
+ hibernatemode        3
+ powernap             1
+ hibernatefile        /var/vm/sleepimage
+ displaysleep         20
+ womp                 1
+ networkoversleep     0
+ sleep                1
+ tcpkeepalive         1
+ disksleep            10
+Filesystem      Size    Used   Avail Capacity iused ifree %iused  Mounted on
+/dev/disk3s5   460Gi   312Gi   117Gi    73%    6.9M  1.2G    1%   /System/Volumes/Data
+Client:
+ Version:           29.6.2
+ API version:       1.55
+ Go version:        go1.26.5
+ Git commit:        dfc4efb
+ Built:             Thu Jul 16 16:11:17 2026
+ OS/Arch:           darwin/arm64
+ Context:           desktop-linux
+
+Server: Docker Desktop 4.85.0 (235549)
+ Engine:
+  Version:          29.6.2
+  API version:      1.55 (minimum version 1.40)
+  Go version:       go1.26.5
+  Git commit:       3d80467
+  Built:            Thu Jul 16 16:13:03 2026
+  OS/Arch:          linux/arm64
+  Experimental:     false
+ containerd:
+  Version:          v2.2.5
+  GitCommit:        e53c7c1516c3b2bff98eb76f1f4117477e6f4e66
+ runc:
+  Version:          1.3.6
+  GitCommit:        v1.3.6-0-g491b69ba
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
+Docker Compose version v5.3.1
+"6.12.76-linuxkit" aarch64 2 4109484032
+CONTAINER ID   IMAGE                     COMMAND                  CREATED              STATUS                   PORTS                                         NAMES
+993ff7c8ac41   wswt-bench-analyzer:dev   "python -B -m unitte…"   About a minute ago   Up About a minute                                                      focused_yonath
+16479141bedd   qdrant/qdrant:v1.18.3     "./entrypoint.sh"        3 months ago         Up 9 hours (unhealthy)   0.0.0.0:6333->6333/tcp, [::]:6333->6333/tcp   ai-grepa-qdrant-1
+TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
+Images          27        2         8.228GB   1.624GB (19%)
+Containers      2         2         45.06kB   0B (0%)
+Local Volumes   3         1         3.035GB   6.875kB (0%)
+Build Cache     302       0         14.08GB   9.425GB
+NETWORK ID     NAME                    DRIVER    SCOPE
+19502ad00bbf   ai-grepa_ai-grepa       bridge    local
+8d97a7b2c963   bridge                  bridge    local
+569815353d03   host                    host      local
+0cdc48c7195e   kind                    bridge    local
+cf90586b975d   mkd2-astra182_default   bridge    local
+e7d6880bc241   none                    null      local
+42c7ab4fa5c7   transport-lab_back      bridge    local
+bd27d1e8f911   transport-lab_front     bridge    local

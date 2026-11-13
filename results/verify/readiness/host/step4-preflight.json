@@ -1,0 +1,14 @@
+{
+  "command": [
+    "sh",
+    "-ec",
+    "git rev-parse HEAD; git status --short; docker version; docker ps -a --format \"{{.ID}} {{.Names}} {{.Image}}\"; docker network ls; docker image inspect --format \"{{.RepoTags}} {{.Id}} {{.Architecture}}\" wswt-bench-server:dev wswt-bench-browser:dev wswt-bench-router:dev wswt-bench-analyzer:dev; openssl x509 -in build/series-tls.PMYktiWa/server/good/cert.pem -noout -dates -fingerprint -sha256; df -h ."
+  ],
+  "cwd": "/Users/dobrov/Desktop/Code/ITMO/benchmark",
+  "start_utc": "2026-11-13T10:59:15.038826+00:00",
+  "duration_s": 0.456,
+  "exit_code": 0,
+  "head": "d1573e82d7b61d01fb9df88f52469f256031f1d3",
+  "log": "results/verify/readiness/host/step4-preflight.txt",
+  "sha256": "89ed2bb461a1012076df1048fda9992a4e8a497f69483f7a42c5d099754809a9"
+}

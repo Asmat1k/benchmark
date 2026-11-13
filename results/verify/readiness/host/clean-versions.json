@@ -1,0 +1,14 @@
+{
+  "command": [
+    "sh",
+    "-ec",
+    "docker image inspect --format \"{{.Os}}/{{.Architecture}} {{.RepoTags}} {{.Id}}\" wswt-readiness-server:d6 wswt-readiness-browser:d6 wswt-readiness-router:d6 wswt-readiness-analyzer:d6; docker run --rm --network none --entrypoint cat wswt-readiness-server:d6 /server-build.txt; docker run --rm --network none --entrypoint sh wswt-readiness-browser:d6 -ec \"node -v; npm -v; npx --no-install playwright --version; /ms-playwright/chromium-1187/chrome-linux/chrome --version\"; docker run --rm --network none --entrypoint sh wswt-readiness-router:d6 -ec \"tc -V; ip -V\"; docker run --rm --network none wswt-readiness-analyzer:d6 sh -ec \"python -V; pip check; cd /wheelhouse; sha256sum -c SHA256SUMS; python /analysis/check_environment.py /tmp\""
+  ],
+  "cwd": "/Users/dobrov/Desktop/Code/ITMO/benchmark",
+  "start_utc": "2026-11-12T19:30:47.006842+00:00",
+  "duration_s": 5.653,
+  "exit_code": 0,
+  "head": "aeda8e1d36bc5bc87042a6e497eefaf84213397e",
+  "log": "results/verify/readiness/host/clean-versions.txt",
+  "sha256": "d1fca4410b7700c2695d3808398cbd21a9114aa3cf81fe131963d23b848bbf92"
+}

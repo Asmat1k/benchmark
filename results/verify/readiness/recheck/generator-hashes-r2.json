@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "shasum",
+    "-a",
+    "256",
+    "-c",
+    "results/verify/readiness/generator-dev/R2-SHA256SUMS"
+  ],
+  "commit": "aeda8e1d36bc5bc87042a6e497eefaf84213397e",
+  "utc": "2026-11-13T08:18:15.254715+00:00",
+  "duration_s": 0.06485604197951034,
+  "exit_code": 0,
+  "env": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+  "evidence": "results/verify/readiness/recheck/generator-hashes-r2.txt",
+  "sha256": "3d04ba1f82e40cf319d94aa587f8866660ffeee5fd37f8e572378a8b94ce5d17",
+  "configs": {
+    "configs/plan.json": "772856aa5fd42bb39a3ceb3b9ee315ddbd72fec295fc998024e7ac85bf8b6ea0",
+    "configs/profiles.json": "289470a71afa865106cfb55926dc56754997380817f94b4d28debe58a7e99e9d",
+    "configs/thresholds.json": "606414d94573ca6b59c3bd59937c8345ae2c4441737e1842f6a90693f297847c"
+  }
+}

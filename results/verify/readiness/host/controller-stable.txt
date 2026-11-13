@@ -1,0 +1,98 @@
+test_all_direct_record_actions_refuse_unadmitted_and_stopped_without_mutation (test_controller.ControllerTests.test_all_direct_record_actions_refuse_unadmitted_and_stopped_without_mutation) ... ERROR
+test_controller_context_complete_guard_and_authorised_publication (test_controller.ControllerTests.test_controller_context_complete_guard_and_authorised_publication) ... ERROR
+test_direct_record_staging_cannot_modify_published_raw (test_controller.ControllerTests.test_direct_record_staging_cannot_modify_published_raw) ... ERROR
+test_direct_smoke_and_diagnostic_cli_publication_remain_available (test_controller.ControllerTests.test_direct_smoke_and_diagnostic_cli_publication_remain_available) ... ERROR
+test_initial_copied_admission_commit_mismatch_refuses_ready (test_controller.ControllerTests.test_initial_copied_admission_commit_mismatch_refuses_ready) ... ok
+test_memory_controller_deep_once_then_actual_fast_record_context (test_controller.ControllerTests.test_memory_controller_deep_once_then_actual_fast_record_context) ... ERROR
+test_real_cli_forged_integrity_refuses_next_record_and_boot (test_controller.ControllerTests.test_real_cli_forged_integrity_refuses_next_record_and_boot) ... ERROR
+
+======================================================================
+ERROR: test_all_direct_record_actions_refuse_unadmitted_and_stopped_without_mutation (test_controller.ControllerTests.test_all_direct_record_actions_refuse_unadmitted_and_stopped_without_mutation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/bench/src/analysis/test_controller.py", line 161, in test_all_direct_record_actions_refuse_unadmitted_and_stopped_without_mutation
+    make_fixture(directory,schedule=schedule)
+  File "/bench/src/analysis/synthetic.py", line 35, in make_fixture
+    shutil.copyfile(SOURCE/"context.json",directory/"context.json")
+  File "/usr/local/lib/python3.12/shutil.py", line 260, in copyfile
+    with open(src, 'rb') as fsrc:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'results/verify/measurement/smoke.OWQv8a3D/context.json'
+
+======================================================================
+ERROR: test_controller_context_complete_guard_and_authorised_publication (test_controller.ControllerTests.test_controller_context_complete_guard_and_authorised_publication)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/bench/src/analysis/test_controller.py", line 177, in test_controller_context_complete_guard_and_authorised_publication
+    verification=self.verification_fixture()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/bench/src/analysis/test_acceptance.py", line 379, in verification_fixture
+    shutil.copyfile(SOURCE/'context.json',self.env)
+  File "/usr/local/lib/python3.12/shutil.py", line 260, in copyfile
+    with open(src, 'rb') as fsrc:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'results/verify/measurement/smoke.OWQv8a3D/context.json'
+
+======================================================================
+ERROR: test_direct_record_staging_cannot_modify_published_raw (test_controller.ControllerTests.test_direct_record_staging_cannot_modify_published_raw)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/bench/src/analysis/test_controller.py", line 262, in test_direct_record_staging_cannot_modify_published_raw
+    shutil.copytree(source,directory)
+  File "/usr/local/lib/python3.12/shutil.py", line 598, in copytree
+    with os.scandir(src) as itr:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'results/verify/measurement/smoke.pT5919A1'
+
+======================================================================
+ERROR: test_direct_smoke_and_diagnostic_cli_publication_remain_available (test_controller.ControllerTests.test_direct_smoke_and_diagnostic_cli_publication_remain_available)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/bench/src/analysis/test_controller.py", line 245, in test_direct_smoke_and_diagnostic_cli_publication_remain_available
+    make_fixture(directory,schedule=schedule)
+  File "/bench/src/analysis/synthetic.py", line 35, in make_fixture
+    shutil.copyfile(SOURCE/"context.json",directory/"context.json")
+  File "/usr/local/lib/python3.12/shutil.py", line 260, in copyfile
+    with open(src, 'rb') as fsrc:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'results/verify/measurement/smoke.OWQv8a3D/context.json'
+
+======================================================================
+ERROR: test_memory_controller_deep_once_then_actual_fast_record_context (test_controller.ControllerTests.test_memory_controller_deep_once_then_actual_fast_record_context)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/bench/src/analysis/test_controller.py", line 76, in test_memory_controller_deep_once_then_actual_fast_record_context
+    verification=self.verification_fixture()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/bench/src/analysis/test_acceptance.py", line 379, in verification_fixture
+    shutil.copyfile(SOURCE/'context.json',self.env)
+  File "/usr/local/lib/python3.12/shutil.py", line 260, in copyfile
+    with open(src, 'rb') as fsrc:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'results/verify/measurement/smoke.OWQv8a3D/context.json'
+
+======================================================================
+ERROR: test_real_cli_forged_integrity_refuses_next_record_and_boot (test_controller.ControllerTests.test_real_cli_forged_integrity_refuses_next_record_and_boot)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/bench/src/analysis/test_controller.py", line 59, in test_real_cli_forged_integrity_refuses_next_record_and_boot
+    write(path,dict(kind='real',gate=gate,status='passed',source_hashes=sources(),environment=ref(environment),result=dict(status='passed'),evidence=[ref(evidence)],integrity=dict(files={str(evidence.resolve()):ref(evidence)['sha256']},trees={})))
+                                                                                              ^^^^^^^^^^^^^^^^
+  File "/bench/src/analysis/admission.py", line 46, in ref
+    return dict(path=str(path),sha256=digest(path))
+                                      ^^^^^^^^^^^^
+  File "/bench/src/analysis/raw.py", line 26, in digest
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+                          ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/pathlib.py", line 1019, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'results/verify/measurement/smoke.OWQv8a3D/context.json'
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.330s
+
+FAILED (errors=6)

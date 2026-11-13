@@ -1,0 +1,62 @@
+ Image wswt-readiness-browser:timer Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 623B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile.browser
+#2 transferring dockerfile: 475B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for mcr.microsoft.com/playwright:v1.55.0-noble@sha256:7e20a8225950eb93a9d306a917b05d822a68a67333973e254f1b0cd86c0f3742
+#3 DONE 0.6s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 91B done
+#4 DONE 0.0s
+
+#5 [1/8] FROM mcr.microsoft.com/playwright:v1.55.0-noble@sha256:7e20a8225950eb93a9d306a917b05d822a68a67333973e254f1b0cd86c0f3742
+#5 resolve mcr.microsoft.com/playwright:v1.55.0-noble@sha256:7e20a8225950eb93a9d306a917b05d822a68a67333973e254f1b0cd86c0f3742 done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 11.44kB done
+#6 DONE 0.0s
+
+#7 [4/8] COPY src/runner/package*.json ./
+#7 CACHED
+
+#8 [3/8] WORKDIR /runner
+#8 CACHED
+
+#9 [2/8] RUN apt-get update && apt-get install -y --no-install-recommends libnss3-tools && rm -rf /var/lib/apt/lists/*
+#9 CACHED
+
+#10 [5/8] RUN npm ci
+#10 CACHED
+
+#11 [6/8] COPY src/runner ./
+#11 DONE 0.1s
+
+#12 [7/8] RUN npm run build
+#12 0.460 
+#12 0.460 > bench-runner@1.0.0 build
+#12 0.460 > tsc
+#12 0.460 
+#12 DONE 4.5s
+
+#13 [8/8] COPY docker/browser.sh /usr/local/bin/bench-browser
+#13 DONE 0.0s
+
+#14 exporting to image
+#14 exporting layers 0.1s done
+#14 exporting manifest sha256:b64499f686440868afc6d40ed5371668908381448a1bae4e101e01f69d8ad2c6 done
+#14 exporting config sha256:b96c6bbde986f7733f867d96f6e28c8bc5516ec58077cd76679da936a9227194 done
+#14 exporting attestation manifest sha256:dc62383c112d2c27c68fbbb7727ded4762f671639924b260836b42f0612b3571 done
+#14 exporting manifest list sha256:edc03ed4fdb281f46099c6d4d9a4f01078610231d8d594dc6e9c72686546dc72 done
+#14 naming to docker.io/library/wswt-readiness-browser:timer done
+#14 unpacking to docker.io/library/wswt-readiness-browser:timer 0.0s done
+#14 DONE 0.2s
+
+#15 resolving provenance for metadata file
+#15 DONE 0.0s
+ Image wswt-readiness-browser:timer Built 

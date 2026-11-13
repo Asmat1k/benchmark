@@ -1,0 +1,10 @@
+test_all_prespecified_references (test_analysis.StatisticalTests.test_all_prespecified_references) ... ok
+test_bootstrap_preserves_blocks_and_replay (test_analysis.StatisticalTests.test_bootstrap_preserves_blocks_and_replay) ... ok
+test_decision_thresholds_and_barriers (test_analysis.StatisticalTests.test_decision_thresholds_and_barriers) ... ok
+test_exact_sign_enumeration_and_rank_coverage (test_analysis.StatisticalTests.test_exact_sign_enumeration_and_rank_coverage) ... ok
+test_metrics_deadlines_penalty_and_diagnostics (test_analysis.StatisticalTests.test_metrics_deadlines_penalty_and_diagnostics) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.239s
+
+OK

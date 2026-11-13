@@ -1,0 +1,14 @@
+context 1   line 386, in admit
+    require(trusted or initial or _DEEP>0, 'trusted controller admission or full initial validation required')
+  File "/Users/dobrov/Desktop/Code/ITMO/benchmark/build/readiness-exec/src/analysis/raw.py", line 39, in require
+    raise ValueError(reason)
+ValueError: trusted controller admission or full initial validation required
+
+complete 1   line 386, in admit
+    require(trusted or initial or _DEEP>0, 'trusted controller admission or full initial validation required')
+  File "/Users/dobrov/Desktop/Code/ITMO/benchmark/build/readiness-exec/src/analysis/raw.py", line 39, in require
+    raise ValueError(reason)
+ValueError: trusted controller admission or full initial validation required
+
+published False ledger planned no_admission True STOP True
+prepare exit 1 published raw changed False

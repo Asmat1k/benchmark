@@ -1,0 +1,35 @@
+{
+  "head": "aeda8e1d36bc5bc87042a6e497eefaf84213397e",
+  "source_hashes": {
+    "src/analysis/admission.py": "f85aef613efb679c04d5ec4aa4554cb0cde691cddae7b464eb86f156ff07151c",
+    "src/analysis/collection.py": "6a7fa0135802a48f411ccef66ec9016bae4487c5dde30cd47b99c0bf4f892f66",
+    "src/analysis/experiments.py": "7a7f608e1c255234b72eeeabcdeb08cc3db5a874c7a91759cd4e85552dd6456f",
+    "src/analysis/test_acceptance.py": "2b658abea36a46133ae8f3e86678708dbd29271f4d809126a27b05016149bf7d",
+    "docs/experiments.md": "38dcea15b9c3dbced9ed08169f9340ec88a486f8a9428eb273c9c0cd7376177e"
+  },
+  "config": {
+    "configs/plan.json": "772856aa5fd42bb39a3ceb3b9ee315ddbd72fec295fc998024e7ac85bf8b6ea0",
+    "configs/profiles.json": "289470a71afa865106cfb55926dc56754997380817f94b4d28debe58a7e99e9d",
+    "configs/thresholds.json": "606414d94573ca6b59c3bd59937c8345ae2c4441737e1842f6a90693f297847c"
+  },
+  "argv": [
+    "/opt/anaconda3/bin/python3",
+    "-B",
+    "-m",
+    "unittest",
+    "-v",
+    "test_acceptance.AcceptanceTests.test_reproduction_checks_alone_cannot_publish_report",
+    "test_acceptance.AcceptanceTests.test_reproduction_repeat_tolerances_and_incomplete_profiles",
+    "test_acceptance.AcceptanceTests.test_preserved_numeric_null_completeness_and_exit_states",
+    "test_acceptance.AcceptanceTests.test_prepare_validates_reproduction_before_publishing",
+    "test_acceptance.AcceptanceTests.test_prepared_series_publication_can_resume_interrupted_link",
+    "test_acceptance.AcceptanceTests.test_frozen_schedule_survives_replacements_and_rejects_aliases",
+    "test_release_guard"
+  ],
+  "env": "host Darwin arm64; PYTHONPATH=src/analysis; MPLCONFIGDIR=/tmp/wswt-admission-mpl",
+  "utc": "2026-11-13T08:17:49.870101+00:00",
+  "elapsed_s": 10.793,
+  "exit_code": 0,
+  "evidence": "results/verify/readiness/admission-dev/suite-3.txt",
+  "sha256": "eccd32e1c8ed8cf8a17c8094227c8b065bec48b3b7cb3eb71377c12133f6385c"
+}

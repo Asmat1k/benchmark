@@ -1,0 +1,26 @@
+{
+  "command": [
+    "env",
+    "RUN_DOCKER_BOUNDARY=1",
+    "PYTHONPATH=src/analysis",
+    "/opt/anaconda3/bin/python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "src/analysis",
+    "-p",
+    "test_acceptance.py",
+    "-k",
+    "test_r3_git",
+    "-v"
+  ],
+  "cwd": "/Users/dobrov/Desktop/Code/ITMO/benchmark/build/readiness-exec",
+  "start_utc": "2026-11-12T19:30:04.250326+00:00",
+  "duration_s": 4.304,
+  "exit_code": 0,
+  "head": "aeda8e1d36bc5bc87042a6e497eefaf84213397e",
+  "log": "results/verify/readiness/host/host-boundary.txt",
+  "sha256": "7e022e7cfefaaba76713cacc6caafb45cd4983d14d213bf6c50c52623b4012b4"
+}

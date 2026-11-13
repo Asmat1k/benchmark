@@ -1,0 +1,33 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "-e",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "-e",
+    "PYTHONPATH=src/analysis",
+    "-v",
+    "/Users/dobrov/Desktop/Code/ITMO/benchmark/build/readiness-final:/bench:ro",
+    "--tmpfs",
+    "/bench/build",
+    "-w",
+    "/bench",
+    "wswt-bench-analyzer:dev",
+    "python",
+    "-B",
+    "-m",
+    "unittest",
+    "test_controller",
+    "-v"
+  ],
+  "cwd": "/Users/dobrov/Desktop/Code/ITMO/benchmark",
+  "start_utc": "2026-11-13T08:20:07.961521+00:00",
+  "duration_s": 87.643,
+  "exit_code": 0,
+  "head": "d1573e82d7b61d01fb9df88f52469f256031f1d3",
+  "log": "results/verify/readiness/host/controller-fixtures.txt",
+  "sha256": "9dcdb99167d380227b330c35ab5fd7462b9d3d31f566e67a9e5bbd1fda28a29b"
+}

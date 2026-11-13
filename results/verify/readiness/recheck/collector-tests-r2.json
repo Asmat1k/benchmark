@@ -1,0 +1,26 @@
+{
+  "argv": [
+    "env",
+    "PYTHONPATH=src/analysis:docker",
+    "/opt/anaconda3/bin/python3",
+    "-B",
+    "-m",
+    "unittest",
+    "-v",
+    "calibration_test",
+    "test_diagnostic_input",
+    "test_acceptance.AcceptanceTests.test_r2_timer_primary_and_cli"
+  ],
+  "commit": "aeda8e1d36bc5bc87042a6e497eefaf84213397e",
+  "utc": "2026-11-13T08:18:15.439460+00:00",
+  "duration_s": 3.340600249997806,
+  "exit_code": 0,
+  "env": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+  "evidence": "results/verify/readiness/recheck/collector-tests-r2.txt",
+  "sha256": "79a251e4186e6f06798c2af70ab2a897e5e218f7b6c012edb000c2215ee0c5d4",
+  "configs": {
+    "configs/plan.json": "772856aa5fd42bb39a3ceb3b9ee315ddbd72fec295fc998024e7ac85bf8b6ea0",
+    "configs/profiles.json": "289470a71afa865106cfb55926dc56754997380817f94b4d28debe58a7e99e9d",
+    "configs/thresholds.json": "606414d94573ca6b59c3bd59937c8345ae2c4441737e1842f6a90693f297847c"
+  }
+}

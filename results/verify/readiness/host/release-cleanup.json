@@ -1,0 +1,14 @@
+{
+  "command": [
+    "sh",
+    "-ec",
+    "docker ps -a --format \"{{.Names}} {{.Image}}\"; docker network ls --format \"{{.Name}}\"; docker run --rm --network none -v \"$PWD/build/readiness-release/build:/locks\" wswt-bench-analyzer:dev python -c \"import fcntl; h=open(\\\"/locks/measurement.flock\\\",\\\"a+\\\"); fcntl.flock(h,fcntl.LOCK_EX|fcntl.LOCK_NB); print(\\\"lock available\\\")\"; git rev-parse HEAD; git status --short --branch; git diff --cached --stat; test ! -e configs/freeze.json; test ! -d results/main; test ! -d results/pilot"
+  ],
+  "cwd": "/Users/dobrov/Desktop/Code/ITMO/benchmark",
+  "start_utc": "2026-11-13T08:24:04.814400+00:00",
+  "duration_s": 0.52,
+  "exit_code": 0,
+  "head": "d1573e82d7b61d01fb9df88f52469f256031f1d3",
+  "log": "results/verify/readiness/host/release-cleanup.txt",
+  "sha256": "be799e21571ca10abe5f5ec3cfbc4a0ceda749b5bd8a6ec245ec0f36ba77158c"
+}

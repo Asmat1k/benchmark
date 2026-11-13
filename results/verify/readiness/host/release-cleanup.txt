@@ -1,0 +1,17 @@
+ai-grepa-qdrant-1 qdrant/qdrant:v1.18.3
+ai-grepa_ai-grepa
+bridge
+host
+kind
+mkd2-astra182_default
+none
+transport-lab_back
+transport-lab_front
+lock available
+d1573e82d7b61d01fb9df88f52469f256031f1d3
+## main...origin/main [ahead 4]
+?? .agents/plan/
+?? docs/readiness/
+?? results/verify/diagnostic/
+?? results/verify/path/wswt-smoke.mPWE7sYw/
+?? results/verify/readiness/

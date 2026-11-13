@@ -1,0 +1,16 @@
+{
+  "command": [
+    "shasum",
+    "-a",
+    "256",
+    "-c",
+    "results/verify/integration/development/recheck2/SHA256SUMS"
+  ],
+  "cwd": "/Users/dobrov/Desktop/Code/ITMO/benchmark/build/readiness-d6",
+  "start_utc": "2026-11-12T19:29:06.179256+00:00",
+  "duration_s": 0.346,
+  "exit_code": 0,
+  "head": "aeda8e1d36bc5bc87042a6e497eefaf84213397e",
+  "log": "results/verify/readiness/host/d6-manifest.txt",
+  "sha256": "75e0773feffd3f8a4131374d1f7e2786a8c5523cb20a050d567d7e7d3f6aecca"
+}

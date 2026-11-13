@@ -1,0 +1,17 @@
+{
+  "command": [
+    "env",
+    "PYTHONPATH=src/analysis",
+    "MPLCONFIGDIR=/tmp/wswt-admission-review-mpl",
+    "/opt/anaconda3/bin/python3",
+    "-B",
+    "results/verify/readiness/admission-review/probe.py"
+  ],
+  "cwd": "/Users/dobrov/Desktop/Code/ITMO/benchmark",
+  "start_utc": "2026-11-13T08:20:07.567294+00:00",
+  "duration_s": 1.358,
+  "exit_code": 0,
+  "head": "aeda8e1d36bc5bc87042a6e497eefaf84213397e",
+  "log": "results/verify/readiness/host/admission-review-probe.txt",
+  "sha256": "b2a7d0d47929eec8c541bf8ad10574a05e26dc32aeae133681a5f84c71c81ba1"
+}

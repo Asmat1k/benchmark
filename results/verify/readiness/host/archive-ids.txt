@@ -1,0 +1,4 @@
+linux/arm64 [wswt-bench-server:dev] sha256:adf808e974625a91c041d673aa14a122c9ca935a84dc039f5fa2eb164252c920
+linux/arm64 [wswt-bench-browser:dev] sha256:25ce4c7e0b7a8184e4949b8d1f3158a85a406f6067310b6ea61a63a4816fe883
+linux/arm64 [wswt-bench-router:dev] sha256:20129ac43ed0d839cd19fa06e92d7f1e5b49d4a454fa93ac945396020ced9953
+linux/arm64 [wswt-bench-analyzer:dev] sha256:33e92fa2d825270cd3aff606d56e54d9672ebc8615476f1f375312e8d81a0f92

@@ -1,0 +1,13 @@
+test_power_complete_protocol (test_acceptance.AcceptanceTests.test_power_complete_protocol) ... ok
+test_preserved_executor_pause_and_direct_freeze_refusal (test_acceptance.AcceptanceTests.test_preserved_executor_pause_and_direct_freeze_refusal) ... ok
+test_preserved_numeric_null_completeness_and_exit_states (test_acceptance.AcceptanceTests.test_preserved_numeric_null_completeness_and_exit_states) ... ok
+test_r10_contiguous_balanced_random_sessions (test_acceptance.AcceptanceTests.test_r10_contiguous_balanced_random_sessions) ... ok
+test_r1_persisted_aa_monitoring_roundtrip (test_acceptance.AcceptanceTests.test_r1_persisted_aa_monitoring_roundtrip) ... ok
+test_r1_persisted_calibration_roundtrip_and_tamper (test_acceptance.AcceptanceTests.test_r1_persisted_calibration_roundtrip_and_tamper) ... ok
+test_r2_primary_subject_trace_coverage_and_synthetic_rejection (test_acceptance.AcceptanceTests.test_r2_primary_subject_trace_coverage_and_synthetic_rejection) ... ok
+test_r2_timer_primary_and_cli (test_acceptance.AcceptanceTests.test_r2_timer_primary_and_cli) ... ok
+test_r2a_r5a_r8a_r11_publication_and_shallow_integrity (test_acceptance.AcceptanceTests.test_r2a_r5a_r8a_r11_publication_and_shallow_integrity) ... ok
+test_r3_git_inventory_without_container_git (test_acceptance.AcceptanceTests.test_r3_git_inventory_without_container_git) ... skipped 'host git boundary tested separately'
+test_r4_r6_r7_actual_replacement_to_persisted_reports (test_acceptance.AcceptanceTests.test_r4_r6_r7_actual_replacement_to_persisted_reports) ... R7 retained fixture /bench/build/d5-r7-synthetic/fixture-fsd015us
+R7 phase aa start
+R7 phase aa replacement files ready

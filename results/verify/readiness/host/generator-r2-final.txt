@@ -1,0 +1,10 @@
+test_generator_observations_and_incomplete_queue_window (test_diagnostic_input.DiagnosticInputTests.test_generator_observations_and_incomplete_queue_window) ... ok
+test_only_baseline_diagnostic_can_override_interval (test_diagnostic_input.DiagnosticInputTests.test_only_baseline_diagnostic_can_override_interval) ... ok
+test_published_context_and_run_identity (test_diagnostic_input.DiagnosticInputTests.test_published_context_and_run_identity) ... ok
+test_r2_timer_primary_and_cli (test_acceptance.AcceptanceTests.test_r2_timer_primary_and_cli) ... ok
+test_r8_generator_true_100hz_and_nonnegative (test_acceptance.AcceptanceTests.test_r8_generator_true_100hz_and_nonnegative) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 1.987s
+
+OK

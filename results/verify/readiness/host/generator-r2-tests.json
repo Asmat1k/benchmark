@@ -1,0 +1,21 @@
+{
+  "command": [
+    "env",
+    "PYTHONPATH=src/analysis",
+    "/opt/anaconda3/bin/python3",
+    "-B",
+    "-m",
+    "unittest",
+    "-v",
+    "test_diagnostic_input",
+    "test_acceptance.AcceptanceTests.test_r2_timer_primary_and_cli",
+    "test_acceptance.AcceptanceTests.test_r8_generator_true_100hz_and_nonnegative"
+  ],
+  "cwd": "/Users/dobrov/Desktop/Code/ITMO/benchmark",
+  "start_utc": "2026-11-13T08:17:02.021717+00:00",
+  "duration_s": 3.774,
+  "exit_code": 1,
+  "head": "aeda8e1d36bc5bc87042a6e497eefaf84213397e",
+  "log": "results/verify/readiness/host/generator-r2-tests.txt",
+  "sha256": "512c53058fbf752e9eac453758ed2a27daeeb76feea83e96376a8bad7444437d"
+}

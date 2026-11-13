@@ -1,0 +1,19 @@
+{
+  "command": [
+    "docker",
+    "image",
+    "rm",
+    "wswt-readiness-server:d6",
+    "wswt-readiness-browser:d6",
+    "wswt-readiness-router:d6",
+    "wswt-readiness-analyzer:d6",
+    "wswt-readiness-browser:timer"
+  ],
+  "cwd": "/Users/dobrov/Desktop/Code/ITMO/benchmark",
+  "start_utc": "2026-11-13T08:24:45.749901+00:00",
+  "duration_s": 0.468,
+  "exit_code": 0,
+  "head": "d1573e82d7b61d01fb9df88f52469f256031f1d3",
+  "log": "results/verify/readiness/host/remove-review-tags.txt",
+  "sha256": "25a858cab4ac740d4b7179aab458b73edf3dfd9c347b7935eb8f1d9479be2b4d"
+}

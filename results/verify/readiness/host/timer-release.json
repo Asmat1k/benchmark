@@ -1,0 +1,17 @@
+{
+  "command": [
+    "env",
+    "COMPOSE_FILE=compose.yaml:build/browser.yml",
+    "SERIES_TLS_DIR=/Users/dobrov/Desktop/Code/ITMO/benchmark/build/readiness-timer/build/readiness-tls",
+    "sh",
+    "docker/collect-diagnostic.sh",
+    "timer"
+  ],
+  "cwd": "/Users/dobrov/Desktop/Code/ITMO/benchmark/build/readiness-release",
+  "start_utc": "2026-11-13T08:21:59.849687+00:00",
+  "duration_s": 67.38,
+  "exit_code": 0,
+  "head": "d1573e82d7b61d01fb9df88f52469f256031f1d3",
+  "log": "results/verify/readiness/host/timer-release.txt",
+  "sha256": "fa15ce11bd0f023037b1a063dc3240180753a09739441890218d7d0fc1d408ff"
+}

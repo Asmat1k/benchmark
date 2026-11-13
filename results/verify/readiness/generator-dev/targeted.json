@@ -1,0 +1,87 @@
+{
+  "records": [
+    {
+      "command": [
+        "/opt/anaconda3/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_diagnostic_input",
+        "test_measurement",
+        "test_recovery"
+      ],
+      "utc": "2026-11-12T19:31:27.081317+00:00",
+      "duration_s": 8.815746375010349,
+      "exit_code": 1,
+      "evidence": "results/verify/readiness/generator-dev/targeted-0.txt",
+      "sha256": "c0f93ef791ad685e703f0e3353beaa4034a463eb922ab99addf5fa53ea46b29c"
+    },
+    {
+      "command": [
+        "sh",
+        "-n",
+        "docker/collect-diagnostic.sh"
+      ],
+      "utc": "2026-11-12T19:31:35.898845+00:00",
+      "duration_s": 0.019114041002467275,
+      "exit_code": 0,
+      "evidence": "results/verify/readiness/generator-dev/targeted-1.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "sh",
+        "-n",
+        "docker/measure.sh"
+      ],
+      "utc": "2026-11-12T19:31:35.918743+00:00",
+      "duration_s": 0.017729416998918168,
+      "exit_code": 0,
+      "evidence": "results/verify/readiness/generator-dev/targeted-2.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "sh",
+        "-n",
+        "docker/sample-backlog.sh"
+      ],
+      "utc": "2026-11-12T19:31:35.937181+00:00",
+      "duration_s": 0.02072454200242646,
+      "exit_code": 0,
+      "evidence": "results/verify/readiness/generator-dev/targeted-3.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "utc": "2026-11-12T19:31:35.959101+00:00",
+      "duration_s": 0.04960479200235568,
+      "exit_code": 0,
+      "evidence": "results/verify/readiness/generator-dev/targeted-4.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "head": "aeda8e1d36bc5bc87042a6e497eefaf84213397e",
+  "environment": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+  "config_sha256": {
+    "configs/plan.json": "772856aa5fd42bb39a3ceb3b9ee315ddbd72fec295fc998024e7ac85bf8b6ea0",
+    "configs/profiles.json": "289470a71afa865106cfb55926dc56754997380817f94b4d28debe58a7e99e9d",
+    "configs/thresholds.json": "606414d94573ca6b59c3bd59937c8345ae2c4441737e1842f6a90693f297847c"
+  },
+  "source_sha256": {
+    "src/analysis/raw.py": "1674b8e01994896dc403705e4d80c25040f07cfaa4233dce0159d763f8785819",
+    "src/analysis/record.py": "1a2781b08aec5e80eb0c843d832797e7f95a1e7ea25387419e8312be7e2ab89a",
+    "src/analysis/schedule.py": "cd49d7655984fefa56a7362eb6644ecce4f057e506aeba366772f731f30143cb",
+    "src/analysis/diagnostic_input.py": "4c8aec44c74705144cb3931425ad92a5c65b7c7d23f2768c8889a15e03371cd2",
+    "src/analysis/test_diagnostic_input.py": "59df7139a4dad2de0262c14ba23def1780b253687fdeb6309a28009b49e7c47f",
+    "src/runner/measure.ts": "a1b31b12741d6c8abb2baf88ddde140e35681e144504d75890017c12f52cf3f6",
+    "docker/measure.sh": "2dcac36b3539d6f4cc73c5c727022f9d5793669cf39b6e9104ea3b876fcc711e",
+    "docker/collect-diagnostic.sh": "89d7edd0585fb950992d52da367409f959500ec5cb1a83ec0bed1995281c7bb6",
+    "docker/sample-backlog.sh": "d77f9e176f2ccb7dfb8f5d7e0d46c69b5f25d2638e5da8488065bdaeaea2d7bc"
+  }
+}

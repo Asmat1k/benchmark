@@ -1,0 +1,11 @@
+src/analysis/raw.py: OK
+src/analysis/record.py: OK
+src/analysis/schedule.py: OK
+src/analysis/diagnostic_input.py: OK
+src/analysis/test_diagnostic_input.py: OK
+src/runner/measure.ts: OK
+docker/measure.sh: OK
+docker/collect-diagnostic.sh: OK
+docker/sample-backlog.sh: OK
+src/analysis/acceptance.py: OK
+src/analysis/collection.py: OK

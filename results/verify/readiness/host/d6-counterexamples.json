@@ -1,0 +1,14 @@
+{
+  "command": [
+    "sh",
+    "-ec",
+    "/opt/anaconda3/bin/python3 -B docs/reviews/ws-wt-bench/dev-wave-6/probe-direct-record.py; /opt/anaconda3/bin/python3 -B docs/reviews/ws-wt-bench/dev-wave-6/probe-published-partial.py"
+  ],
+  "cwd": "/Users/dobrov/Desktop/Code/ITMO/benchmark/build/readiness-exec",
+  "start_utc": "2026-11-12T19:31:39.646968+00:00",
+  "duration_s": 1.964,
+  "exit_code": 0,
+  "head": "aeda8e1d36bc5bc87042a6e497eefaf84213397e",
+  "log": "results/verify/readiness/host/d6-counterexamples.txt",
+  "sha256": "f9dd0d9ca69d5f7e2888acb0ab48eb626b72cc53f252f34f5f1f75a09be5fd2e"
+}

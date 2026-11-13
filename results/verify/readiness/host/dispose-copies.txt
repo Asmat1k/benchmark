@@ -1,0 +1,6 @@
+Removed verified temporary copy readiness-d6
+Removed verified temporary copy readiness-exec
+Removed verified temporary copy readiness-final
+Removed verified temporary copy readiness-timer
+Removed verified temporary copy readiness-timer-r2
+Removed verified temporary copy readiness-release

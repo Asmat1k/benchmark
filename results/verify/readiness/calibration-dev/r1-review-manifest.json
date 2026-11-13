@@ -1,0 +1,46 @@
+{
+  "commit": "aeda8e1d36bc5bc87042a6e497eefaf84213397e",
+  "environment": {
+    "host": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "python": "3.15.0"
+  },
+  "config": {
+    "configs/plan.json": "772856aa5fd42bb39a3ceb3b9ee315ddbd72fec295fc998024e7ac85bf8b6ea0",
+    "configs/profiles.json": "289470a71afa865106cfb55926dc56754997380817f94b4d28debe58a7e99e9d",
+    "configs/thresholds.json": "606414d94573ca6b59c3bd59937c8345ae2c4441737e1842f6a90693f297847c"
+  },
+  "sources": {
+    "docker/calibration.md": "d07ce451b6b0d7dadff0a1e5edcaba0bdc1acb19a416b6dd716ccbcc6e1d2997",
+    "docker/calibration.sh": "3d8484a539158df25de7347cce66c45011a1b8288a5891d8ae3f78f4fea1860f",
+    "docker/calibration_probe.py": "9a843039a0b5215fab132a134a06f44370e84bbadb525313bba3ded36c4598ae",
+    "docker/calibration_report.py": "f826684bf567dcc358d1d4ed4c5c7f92dee17c389a93138c2171128db271e9ae",
+    "docker/calibration_test.py": "19081f39ef9b6a50b1f2be3a7b9a08cf2020fe5cdfc96b7f684107129618ec5d"
+  },
+  "commands": [
+    {
+      "command": [
+        "sh",
+        "-n",
+        "docker/calibration.sh"
+      ],
+      "utc": "2026-11-13T08:15:31.652983+00:00",
+      "duration_s": 0.009256332996301353,
+      "exit_code": 0,
+      "path": "results/verify/readiness/calibration-dev/r1-syntax.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "docker/calibration_test.py",
+        "-v"
+      ],
+      "utc": "2026-11-13T08:15:31.662842+00:00",
+      "duration_s": 0.24262766700121574,
+      "exit_code": 0,
+      "path": "results/verify/readiness/calibration-dev/r1-separate-collections.log",
+      "sha256": "b28928b1b91533b05b20e15b07d050a7c26693d2d083a511cf11855367276933"
+    }
+  ]
+}

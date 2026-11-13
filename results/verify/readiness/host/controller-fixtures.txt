@@ -1,0 +1,12 @@
+test_all_direct_record_actions_refuse_unadmitted_and_stopped_without_mutation (test_controller.ControllerTests.test_all_direct_record_actions_refuse_unadmitted_and_stopped_without_mutation) ... ok
+test_controller_context_complete_guard_and_authorised_publication (test_controller.ControllerTests.test_controller_context_complete_guard_and_authorised_publication) ... ok
+test_direct_record_staging_cannot_modify_published_raw (test_controller.ControllerTests.test_direct_record_staging_cannot_modify_published_raw) ... ok
+test_direct_smoke_and_diagnostic_cli_publication_remain_available (test_controller.ControllerTests.test_direct_smoke_and_diagnostic_cli_publication_remain_available) ... ok
+test_initial_copied_admission_commit_mismatch_refuses_ready (test_controller.ControllerTests.test_initial_copied_admission_commit_mismatch_refuses_ready) ... ok
+test_memory_controller_deep_once_then_actual_fast_record_context (test_controller.ControllerTests.test_memory_controller_deep_once_then_actual_fast_record_context) ... ok
+test_real_cli_forged_integrity_refuses_next_record_and_boot (test_controller.ControllerTests.test_real_cli_forged_integrity_refuses_next_record_and_boot) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 86.636s
+
+OK

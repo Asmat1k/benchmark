@@ -1,0 +1,16 @@
+{
+  "command": [
+    "shasum",
+    "-a",
+    "256",
+    "-c",
+    "images-5f5ff8671e526102bd3ab52fce16beae38857c264f0eaaafa36ae6a03fc0d5c7.tar.sha256"
+  ],
+  "cwd": "/Users/dobrov/Desktop/Code/ITMO/benchmark/results/archives",
+  "start_utc": "2026-11-12T19:27:54.590726+00:00",
+  "duration_s": 4.17,
+  "exit_code": 0,
+  "head": "aeda8e1d36bc5bc87042a6e497eefaf84213397e",
+  "log": "results/verify/readiness/host/archive-check.txt",
+  "sha256": "2f48267d591e8a077f05e7c3668f879871a85c4f19cb3c1261e6ad478ed876d2"
+}

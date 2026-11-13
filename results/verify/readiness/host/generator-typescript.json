@@ -1,0 +1,23 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "-v",
+    "/Users/dobrov/Desktop/Code/ITMO/benchmark/src/runner/measure.ts:/runner/measure.ts:ro",
+    "--entrypoint",
+    "npm",
+    "wswt-bench-browser:dev",
+    "run",
+    "build"
+  ],
+  "cwd": "/Users/dobrov/Desktop/Code/ITMO/benchmark",
+  "start_utc": "2026-11-12T19:32:39.700379+00:00",
+  "duration_s": 11.549,
+  "exit_code": 0,
+  "head": "aeda8e1d36bc5bc87042a6e497eefaf84213397e",
+  "log": "results/verify/readiness/host/generator-typescript.txt",
+  "sha256": "f3512ab7c309dcd73dcc759695c022d23cc222a76f71daad90d2f0d1d8d29471"
+}
