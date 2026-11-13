@@ -49,6 +49,16 @@ def validate_hashes(folder):
     return checksums
 
 
+def diagnostic_interval(schedule, default):
+    frequency = schedule.get("generator_hz")
+    if frequency is None:
+        return default
+    require(schedule["series"] == "diagnostic" and frequency in (20, 100) and
+            all(block["profile"] == "baseline" and block["design"] == "comparison" for block in schedule["blocks"]),
+            "generator frequency requires a baseline diagnostic schedule")
+    return 1000 // frequency
+
+
 def validate_raw(folder, schedule_file, config_root=ROOT / "configs"):
     checksums=validate_hashes(folder)
     manifest = read(folder / "manifest.json")
@@ -91,7 +101,7 @@ def validate_raw(folder, schedule_file, config_root=ROOT / "configs"):
             spec["nonce"] == manifest["nonce"] and spec["mode"] == manifest["mode"] and
             spec["deadline_ms"] == config["thresholds"]["deadline_ms"] and
             spec["horizon_ms"] == config["thresholds"]["horizon_ms"] and
-            spec["interval_ms"] == config["plan"]["interval_ms"] and
+            spec["interval_ms"] == diagnostic_interval(schedule, config["plan"]["interval_ms"]) and
             spec["queue_limit_bytes"] == config["plan"]["queue_limit_bytes"], "run parameters")
     groups = {name: [read(folder / (name + ".json"))] for name in ("manifest","server","checks","completion")}
     groups.update(slot=rows(folder/"warmup.jsonl")+rows(folder/"slots.jsonl"),

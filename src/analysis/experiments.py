@@ -1,5 +1,7 @@
 import argparse
 import json
+import os
+import tempfile
 import subprocess
 from pathlib import Path
 
@@ -67,6 +69,72 @@ def pilot_data(directory, data):
     return values,selected
 
 
+def reproduction_comparison(data):
+    import csv
+    from datetime import datetime
+    from acceptance import dependence
+    from admission import deep_validation, validate_freeze
+    from analyze import compute
+
+    with deep_validation():
+        frozen=validate_freeze(read(checked(data['freeze'])),remaining=0)
+    require(data['kind']=='real' and data['environment']==frozen['bindings']['environment'], 'reproduction release environment')
+    pilot=read(checked(frozen['bindings']['pilot']))
+    require(data['reference_schedule']==read(checked(pilot['evidence'][0]))['schedule'], 'reference must be frozen pilot')
+    frozen_at=datetime.fromisoformat(frozen['frozen_utc'].replace('Z','+00:00'))
+    series={}
+    ids=[]
+    for label in ('reference','repeat'):
+        schedule_path=checked(data[label+'_schedule'])
+        directory=schedule_path.parent
+        require(schedule_path.name=='schedule.json', 'actual pilot schedule required')
+        schedule=read(schedule_path)
+        admission=read(directory/'admission.json')
+        require(schedule['series']=='pilot' and admission['phase']=='pilot' and admission['release_commit']==frozen['release_commit'], 'repeat requires admitted pilot design on frozen release')
+        ids.append(schedule['series_id'])
+        require(len(set(ids))==len(ids), 'repeat must have a separate series identity')
+        with deep_validation():
+            _,selected,_=completed_series(directory,'comparison',dict(data,environment=admission['environment']))
+        for run in selected:
+            manifest=read(directory/'raw'/run['run_id']/'manifest.json')
+            field='ended_utc' if label=='reference' else 'started_utc'
+            stamp=datetime.fromisoformat(manifest[field].replace('Z','+00:00'))
+            require(stamp<=frozen_at if label=='reference' else stamp>=frozen_at, 'repeat must follow freeze and reference must precede it')
+        require({r['mode'] for r in selected}==set(pilot['result']['coverage']), 'repeat mode coverage')
+        with tempfile.TemporaryDirectory() as tmp:
+            output=Path(tmp)
+            compute(directory,output)
+            profiles=read(output/'analysis.json')['profiles']
+            with (output/'pairs.csv').open() as stream:
+                pairs=list(csv.DictReader(stream))
+        for profile in profiles:
+            blocks=[b for b in pairs if b['profile']==profile['profile']]
+            profile['effect_drift']=dependence([float(b['D_ms']) for b in blocks]) if profile['latency_available'] else None
+            profile['fullness_drift']=dependence([float(b['delta_S_pp']) for b in blocks])
+        series[label]=profiles
+    return compare_reproduction_profiles(series['reference'],series['repeat'],frozen)
+
+
+def compare_reproduction_profiles(reference,repeat,frozen):
+    require([p['profile'] for p in reference]==list(PROFILES) and
+            [p['profile'] for p in repeat]==list(PROFILES), 'repeat four-profile membership')
+    comparisons=[]
+    for original,new in zip(reference,repeat):
+        require(original['profile']==new['profile'] and original['n']==new['n']>=5, 'repeat pilot profile/block counts')
+        effect_shift=None
+        if original['theta_ms'] is not None and new['theta_ms'] is not None:
+            effect_shift=new['theta_ms']-original['theta_ms']
+        fullness_shift=new['fullness']['estimate']-original['fullness']['estimate']
+        within=(effect_shift is not None and abs(effect_shift)<=frozen['repeat_effect_ms'] and
+                abs(fullness_shift)<=frozen['repeat_fullness_pp'])
+        complete=all(p['completeness_gate']=='passed' for p in (original,new))
+        comparisons.append(dict(profile=new['profile'],reference=original,repeat=new,
+                                effect_shift_ms=effect_shift,fullness_shift_pp=fullness_shift,
+                                status='failed' if not complete else 'passed' if within else 'inconclusive'))
+    statuses={p['status'] for p in comparisons}
+    return dict(status='failed' if 'failed' in statuses else 'inconclusive' if 'inconclusive' in statuses else 'passed',profiles=comparisons)
+
+
 def execute(directory, executor=None):
     admit(directory)
     from series import queue
@@ -126,6 +194,22 @@ def report(gate, result, evidence, kind, environment):
                 utc=now(),source_hashes=sources(),environment=ref(environment),evidence=[ref(p) for p in evidence])
 
 
+def publish_prepared(staged,destination,phase):
+    if not destination.exists():
+        staged.rename(destination)
+        return
+    require(phase=='main' and not destination.is_symlink(), 'immutable series directory exists')
+    names={p.name for p in destination.iterdir()}
+    require(names in ({'schedule.json'},{'schedule.json','ledger.json'}), 'immutable series directory exists')
+    require(not (destination/'schedule.json').is_symlink() and read(destination/'schedule.json')==read(staged/'schedule.json'), 'existing schedule differs from freeze')
+    ledger=destination/'ledger.json'
+    if 'ledger.json' in names:
+        require(not ledger.is_symlink() and ledger.read_bytes()==(staged/'ledger.json').read_bytes(), 'existing ledger differs from initial ledger')
+    else:
+        os.link(staged/'ledger.json',ledger)
+    os.link(staged/'admission.json',destination/'admission.json')
+
+
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('action',choices=('calibrate','generator','timer','aa','monitoring','pilot','power','verify','freeze','prepare','execute','next','import-checks'))
@@ -163,7 +247,7 @@ def main():
         return execute(args.output)
     if action=='prepare':
         require(args.phase and args.environment and args.verify, 'phase/environment/verify required')
-        require(not args.output.exists() or args.phase=='main' and set(p.name for p in args.output.iterdir())=={'schedule.json'}, 'immutable series directory exists')
+        require(not args.output.exists() or args.phase=='main' and set(p.name for p in args.output.iterdir()) in ({'schedule.json'},{'schedule.json','ledger.json'}), 'immutable series directory exists')
         required=GATES if args.phase in ('pilot','main') else GATES[:8] if args.phase=='aa' else GATES[:9]
         verify(args.verify,args.environment,final=args.phase=='main',required=required)
         require(args.kind=='real', 'synthetic evidence cannot admit real series')
@@ -176,15 +260,29 @@ def main():
             schedule=make_schedule('pilot',args.output.name,args.blocks,4,args.datagrams)
         else:
             schedule=paired_schedule(args.phase,args.output.name,args.datagrams,args.blocks)
-        args.output.mkdir(parents=True,exist_ok=True)
-        if not (args.output/'schedule.json').exists(): write(args.output/'schedule.json',schedule)
-        write(args.output/'ledger.json',dict(schema_version=1,series_id=args.output.name,attempts=schedule['blocks']))
-        original = checked(read(args.freeze)['bindings']['schedule']) if args.phase=='main' else args.output/'schedule-original.json'
-        if args.phase!='main': write(original,schedule)
-        write(args.output/'admission.json',dict(kind='real',phase=args.phase,schedule=ref(original),
-            source_hashes=sources(),release_commit=__import__('admission').release(),environment=ref(args.environment),verify=ref(args.verify),
-            **({'freeze':ref(args.freeze),'reproduction':ref(args.reproduction)} if args.freeze else {})))
-        admit(args.output,initial=True)
+        args.output.parent.mkdir(parents=True,exist_ok=True)
+        with tempfile.TemporaryDirectory(prefix='.prepare-',dir=args.output.parent) as workspace:
+            staged=Path(workspace)/args.output.name
+            staged.mkdir()
+            write(staged/'schedule.json',schedule)
+            write(staged/'ledger.json',dict(schema_version=1,series_id=args.output.name,attempts=schedule['blocks']))
+            if args.phase=='main':
+                original=checked(read(args.freeze)['bindings']['schedule'])
+                from admission import separate_frozen_schedule
+                separate_frozen_schedule(original,args.output)
+            else:
+                original=staged/'schedule-original.json'
+                write(original,schedule)
+            admission=dict(kind='real',phase=args.phase,schedule=ref(original),source_hashes=sources(),
+                           release_commit=__import__('admission').release(),environment=ref(args.environment),verify=ref(args.verify))
+            if args.phase=='main':
+                admission.update(freeze=ref(args.freeze),reproduction=ref(args.reproduction))
+            write(staged/'admission.json',admission)
+            admit(staged,initial=True)
+            if args.phase!='main':
+                admission['schedule']['path']=str(args.output/'schedule-original.json')
+                write(staged/'admission.json',admission)
+            publish_prepared(staged,args.output,args.phase)
         return 0
     require(not args.output.exists(), 'immutable output exists')
     args.output.parent.mkdir(parents=True,exist_ok=True)

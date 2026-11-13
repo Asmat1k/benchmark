@@ -89,7 +89,7 @@ def evidence_closure(paths):
                     if not target.is_absolute() and not target.exists(): target=path.parent/target
                     require(target.exists() and digest(target)==value['sha256'], 'closure evidence hash')
                     pending.append(target.resolve())
-                    if target.name=='schedule.json':
+                    if target.name=='schedule.json' and read(target).get('series')!='main':
                         directory=target.parent.resolve()
                         members=sorted(p.resolve() for p in directory.rglob('*') if p.is_file() and 'derived' not in p.relative_to(directory).parts)
                         trees[str(directory)]=[str(p) for p in members]
@@ -145,7 +145,7 @@ def aggregate(reports, environment, final=False, kind="real"):
     for gate in GATES:
         if gate not in reports:
             checks.append(dict(id=gate,mandatory=True,expected='passed real evidence',actual=None,units='gate',
-                               tolerance=None,status='not_run',reason='deferred_by_user',utc=now(),evidence=[]))
+                               tolerance=None,status='not_run',reason='gate_report_not_provided',utc=now(),evidence=[]))
             continue
         path = Path(reports[gate])
         report = read(path)
@@ -231,6 +231,12 @@ def experiment_reports(bindings, modes, environment, kind='real', recalculate=Tr
     return reports
 
 
+def separate_frozen_schedule(original,directory):
+    current=directory/'schedule.json'
+    require(original.resolve()!=current.resolve() and not (current.exists() and original.samefile(current)),
+            'freeze must bind a separate immutable schedule')
+
+
 def validate_freeze(value, remaining=None, recalculate=True):
     schema=read(Path('docs/schemas/freeze.schema.json'))
     Draft202012Validator(schema,format_checker=FormatChecker()).validate(value)
@@ -242,7 +248,9 @@ def validate_freeze(value, remaining=None, recalculate=True):
     require(value['release_commit']==release() and value['dirty'] is False, 'release mismatch')
     require(value['blocks_per_profile'] in (20,30,40,60), 'fixed main sample size required')
     require(value['repeat_effect_ms'] >= 2 and value['repeat_fullness_pp'] >= 1, 'repeat tolerance floors')
-    schedule=read(checked(value['bindings']['schedule']))
+    schedule_path=checked(value['bindings']['schedule'])
+    schedule=read(schedule_path)
+    separate_frozen_schedule(schedule_path,Path('results/main')/schedule['series_id'])
     minimum_runs=len(schedule['runs']) if remaining is None else remaining
     leaf_hash=leaf_covers(Path(value['leaf_pem']),value['series_end_utc'],minimum_runs*80)
     require(digest(checked(value['bindings']['leaf_der']))==leaf_hash, 'leaf DER binding mismatch')
@@ -418,10 +426,12 @@ def admit(directory, kind=None, validate_completion=True, initial=False):
         schema=read(Path('docs/schemas/freeze.schema.json'))
         Draft202012Validator(schema,format_checker=FormatChecker()).validate(frozen)
         for value in frozen['bindings'].values(): checked(value)
+        separate_frozen_schedule(checked(admission['schedule']),directory)
         require(frozen['bindings']['schedule']==admission['schedule'], 'frozen schedule mismatch')
         require(frozen['bindings']['verify']==admission['verify'] and frozen['bindings']['environment']==admission['environment'], 'freeze/verify mismatch')
         leaf_covers(Path(frozen['leaf_pem']),frozen['series_end_utc'])
         reproduction=read(checked(admission['reproduction']))
         require(reproduction['kind']=='real' and reproduction['gate']=='reproduction' and reproduction['status']=='passed' and reproduction['source_hashes']==sources() and reproduction['environment']==admission['environment'], 'independent reproduction required')
+        require(reproduction['result'].get('freeze')==admission['freeze'], 'reproduction belongs to another freeze')
         validate_gate(reproduction,recalculate=recalculate)
     return admission

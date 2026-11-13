@@ -93,6 +93,11 @@ for role in browser server router; do
     compose exec -T "$role" sh /tmp/check-sample.sh fresh >/dev/null
     compose exec -T "$role" cat /tmp/resources.jsonl > "$run_dir/$role-baseline.jsonl"
 done
+if [ -f "$run_dir/collect-backlog" ]; then
+    compose cp docker/sample-backlog.sh router:/tmp/sample-backlog.sh
+    compose exec -d router sh -c 'exec sh /tmp/sample-backlog.sh >/tmp/backlog.jsonl'
+    sleep 1
+fi
 compose exec -T router awk '{printf "%.0f\n", $1*1000000}' /proc/uptime > "$run_dir/resource-start"
 monitoring=$(cat "$run_dir/monitoring-mode")
 if [ "$monitoring" = off ]; then
@@ -102,7 +107,10 @@ if [ "$monitoring" = off ]; then
     done
 fi
 stage=browser
-compose exec -T -e BENCH_TIMEOUT="$run_timeout" browser sh /usr/local/bin/bench-browser measure
+timer=no
+if [ -f "$run_dir/collect-timer" ]; then timer=yes; fi
+compose exec -T -e BENCH_TIMER="$timer" -e BENCH_TIMEOUT="$run_timeout" browser sh /usr/local/bin/bench-browser measure
+if [ "$timer" = yes ]; then compose cp browser:/tmp/clock-samples.json "$run_dir/clock-samples.json"; fi
 compose cp browser:/tmp/page.json "$run_dir/page.json"
 compose cp browser:/tmp/security.json "$run_dir/security.json"
 if [ "$monitoring" = off ]; then
@@ -157,6 +165,10 @@ for role in browser server router; do
     compose exec -T "$role" cat /tmp/resources.jsonl >> "$run_dir/resources.jsonl"
 done
 printf '{"start_usec":%s,"end_usec":%s}\n' "$(cat "$run_dir/resource-start")" "$resource_end" > "$run_dir/resource-window.json"
+if [ -f "$run_dir/collect-backlog" ]; then
+    sleep 1
+    compose exec -T router cat /tmp/backlog.jsonl > "$run_dir/backlog.jsonl"
+fi
 compose down --timeout 2
 stage=publication
 analyze src/analysis/record.py complete "$series_dir" "$index" "$run_dir"

@@ -12,6 +12,14 @@ try {
   const control = await browser.newBrowserCDPSession();
   const commandLine = await control.send("Browser.getBrowserCommandLine");
   await control.detach();
+  if (process.env.BENCH_TIMER === "yes") {
+    const samples = await page.evaluate(() => {
+      const timestamps = new Float64Array(100001);
+      for (let i = 0; i < timestamps.length; i++) timestamps[i] = performance.now();
+      return Array.from(timestamps);
+    });
+    writeFileSync("/tmp/clock-samples.json", JSON.stringify(samples));
+  }
   const result = await page.evaluate(([spec,pin]) =>
     (globalThis as unknown as {measure:(s:unknown,p:string)=>Promise<unknown>}).measure(spec,pin), [run,pins.good]);
   writeFileSync("/tmp/page.json", JSON.stringify(result));

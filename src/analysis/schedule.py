@@ -75,8 +75,18 @@ if __name__ == "__main__":
     p.add_argument("--sessions", type=int, default=4)
     p.add_argument("--datagrams", action="store_true")
     p.add_argument("--baseline", action="store_true")
+    p.add_argument("--generator-hz", type=int, choices=(20, 100))
+    p.add_argument("--timer", action="store_true")
     args = p.parse_args()
     schedule = make_schedule(args.series, args.directory.name, args.blocks, args.sessions, args.datagrams, args.baseline)
+    if args.generator_hz:
+        if args.series != "diagnostic" or not args.baseline:
+            p.error("--generator-hz requires diagnostic --baseline")
+        schedule["generator_hz"] = args.generator_hz
+    if args.timer:
+        if args.series != "smoke" or not args.baseline:
+            p.error("--timer requires smoke --baseline")
+        schedule["collect_timer"] = True
     args.directory.mkdir(parents=True, exist_ok=True)
     with (args.directory / "schedule.json").open("x") as output:
         json.dump(schedule, output, indent=2)

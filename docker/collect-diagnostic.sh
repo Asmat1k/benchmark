@@ -1,0 +1,25 @@
+set -eu
+gate=$1
+: "${SERIES_TLS_DIR:?persistent series TLS directory required}"
+case "$gate" in timer) frequencies=timer ;; generator) frequencies="20 100"; test -f "$2" ;; *) exit 2 ;; esac
+mkdir -p results/verify/diagnostic
+analyze() {
+    docker run --rm --network none -v "$PWD:/bench" -w /bench wswt-bench-analyzer:dev python -B "$@"
+}
+dirs=""
+for frequency in $frequencies; do
+    directory=$(mktemp -d "results/verify/diagnostic/$gate-$frequency.XXXXXXXX")
+    echo "$directory"
+    if [ "$gate" = timer ]; then
+        analyze src/analysis/schedule.py smoke "$directory" --blocks 1 --sessions 1 --baseline --timer
+    else
+        analyze src/analysis/schedule.py diagnostic "$directory" --blocks 1 --sessions 1 --baseline --generator-hz "$frequency"
+    fi
+    for index in 0 1; do sh docker/measure.sh "$directory" "$index"; done
+    dirs="$dirs $directory"
+done
+case "$gate" in timer) environment="$directory/context.json" ;; generator) environment=$2 ;; esac
+output="results/verify/diagnostic/$(basename "$directory")-report"
+analyze src/analysis/diagnostic_input.py "$gate" "$environment" "$output" $dirs
+echo "$output/report.json"
+analyze src/analysis/experiments.py "$gate" --kind real --input "$output/input.json" --environment "$environment" --output "$output/report.json"

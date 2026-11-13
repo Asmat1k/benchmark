@@ -119,7 +119,11 @@ def calibration(data):
 
 
 def generator_gate(data):
-    require({r['frequency_hz'] for r in data} == {20,100} and len(data) == 2, '20/100 Hz runs required')
+    if any('mode' in r for r in data):
+        require(sorted((r.get('mode', ''), r['frequency_hz']) for r in data) ==
+                [('WS',20),('WS',100),('WT-S',20),('WT-S',100)], 'both modes at 20/100 Hz required')
+    else:
+        require({r['frequency_hz'] for r in data} == {20,100} and len(data) == 2, '20/100 Hz runs required')
     passed = True
     for run in data:
         slots=run['slots']

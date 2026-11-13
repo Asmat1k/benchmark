@@ -2,7 +2,7 @@ import argparse
 from pathlib import Path
 
 from series import advance, bind_context, validate_context, queue
-from raw import binding, digest, json, now, publish, read, require, rows, write
+from raw import diagnostic_interval, binding, digest, json, now, publish, read, require, rows, write
 
 
 def runnable_run(directory, index, partial):
@@ -51,8 +51,15 @@ def run_spec(directory, index, partial):
     (partial/"schedule.json").write_bytes((directory/"schedule.json").read_bytes())
     write(partial/"run.json", {k:run[k] for k in ("run_id","nonce","mode")} |
           dict(warmup_slots=1 if smoke else plan["warmup_slots"],
-               measurement_slots=3 if smoke else plan["measurement_slots"],interval_ms=plan["interval_ms"],
+               measurement_slots=3 if smoke else plan["measurement_slots"],interval_ms=diagnostic_interval(schedule, plan["interval_ms"]),
                queue_limit_bytes=plan["queue_limit_bytes"],deadline_ms=thresholds["deadline_ms"],horizon_ms=thresholds["horizon_ms"]))
+    if smoke and schedule.get("collect_timer") and index == 0:
+        (partial/"collect-timer").touch()
+    if schedule.get("generator_hz"):
+        (partial/"collect-backlog").touch()
+    if (partial/"collect-timer").exists() or (partial/"collect-backlog").exists():
+        from admission import sources
+        write(partial/"collection-sources.json", sources())
     (partial/"monitoring-mode").write_text(run.get("monitoring","on"))
     print(run["profile"],run["forward_seed"],run["reverse_seed"],run["run_id"],30 if smoke else 90)
 

@@ -154,6 +154,106 @@ class AcceptanceTests(unittest.TestCase):
         wrong=read(trace); wrong['collection_id']='another'; write(trace,wrong)
         with self.assertRaises(ValueError): imported(data)
 
+    def test_reproduction_repeat_tolerances_and_incomplete_profiles(self):
+        from experiments import compare_reproduction_profiles
+        frozen=dict(repeat_effect_ms=2,repeat_fullness_pp=1)
+        reference=[dict(profile=p,n=5,theta_ms=0,fullness=dict(estimate=0),completeness_gate='passed') for p in PROFILES]
+        repeat=copy.deepcopy(reference)
+        row=repeat[0]
+        row['theta_ms']=-2
+        row['fullness']['estimate']=1
+        compare=lambda: compare_reproduction_profiles(reference,repeat,frozen)['status']
+        self.assertEqual(compare(),'passed')
+        row['theta_ms']=-2.001
+        self.assertEqual(compare(),'inconclusive')
+        row['theta_ms']=0
+        row['fullness']['estimate']=1.001
+        self.assertEqual(compare(),'inconclusive')
+        row['theta_ms']=None
+        row['fullness']['estimate']=0
+        self.assertEqual(compare(),'inconclusive')
+        row['completeness_gate']='failed'
+        self.assertEqual(compare(),'failed')
+        row['n']=6
+        with self.assertRaisesRegex(ValueError,'block counts'): compare()
+        with self.assertRaisesRegex(ValueError,'four-profile'): compare_reproduction_profiles([],[],frozen)
+
+    def test_frozen_schedule_survives_replacements_and_rejects_aliases(self):
+        from admission import separate_frozen_schedule
+        from schedule import replace_block
+        directory=self.root/'main-id'
+        directory.mkdir()
+        schedule=make_schedule('main',directory.name,20,4)
+        original=self.root/'frozen-plan.json'
+        current=directory/'schedule.json'
+        write(original,schedule)
+        write(current,schedule)
+        separate_frozen_schedule(original,directory)
+        frozen=ref(original)
+        remaining=[b['attempt_id'] for b in schedule['blocks'][1:]]
+        replace_block(schedule,schedule['blocks'][0]['attempt_id'],'path',remaining)
+        write(current,schedule)
+        self.assertEqual(ref(original),frozen)
+        self.assertNotEqual(read(original),read(current))
+        alias=self.root/'alias.json'
+        os.link(current,alias)
+        for bad in (current,alias):
+            with self.assertRaisesRegex(ValueError,'separate immutable'):
+                separate_frozen_schedule(bad,directory)
+
+    def test_prepare_validates_reproduction_before_publishing(self):
+        from experiments import main
+        from unittest.mock import patch
+        directory=self.root/'main-id'
+        schedule=make_schedule('main',directory.name,20,4)
+        original=self.root/'frozen-plan.json'
+        write(original,schedule)
+        freeze=self.root/'freeze.json'
+        write(freeze,dict(bindings=dict(schedule=ref(original))))
+        receipt=self.root/'reproduction.json'
+        args=['experiments.py','prepare','--phase','main','--kind','real','--output',str(directory),
+              '--freeze',str(freeze),'--reproduction',str(receipt),'--environment',str(self.env),'--verify',str(self.env)]
+        with patch('sys.argv',args), patch('experiments.verify'):
+            with patch('admission.release',return_value='0'*40):
+                for preseeded in (False,True):
+                    if preseeded:
+                        directory.mkdir()
+                        write(directory/'schedule.json',schedule)
+                    for attempt in range(2):
+                        with self.assertRaises(FileNotFoundError): main()
+                        self.assertEqual(directory.exists(),preseeded)
+                        if preseeded: self.assertEqual(set(directory.iterdir()),{directory/'schedule.json'})
+                    self.assertFalse(list(self.root.glob('.prepare-*')))
+                write(receipt,{})
+                with self.assertRaisesRegex(ValueError,'synthetic environment'):
+                    main()
+                self.assertEqual(set(directory.iterdir()),{directory/'schedule.json'})
+
+    def test_prepared_series_publication_can_resume_interrupted_link(self):
+        from experiments import publish_prepared
+        staged=self.root/'staged'
+        dest=self.root/'dest'
+        staged.mkdir()
+        dest.mkdir()
+        for name in ('schedule','ledger','admission'):
+            write(staged/(name+'.json'),dict(name=name))
+        for name in ('schedule','ledger'):
+            shutil.copy(staged/(name+'.json'),dest)
+        publish_prepared(staged,dest,'main')
+        self.assertEqual(read(dest/'admission.json'),dict(name='admission'))
+        with self.assertRaisesRegex(ValueError,'immutable'): publish_prepared(staged,dest,'main')
+
+    def test_reproduction_checks_alone_cannot_publish_report(self):
+        path=self.primary('reproduction')
+        data=read(path)
+        data.update(author_id='author',executor_id='reviewer')
+        write(path,data)
+        output=self.root/'report.json'
+        result=self.cli('import-checks','--input',path,'--output',output,'--environment',self.env)
+        self.assertNotEqual(result.returncode,0)
+        self.assertIn('freeze',result.stdout)
+        self.assertFalse(output.exists())
+
     def test_r2_timer_primary_and_cli(self):
         path=self.timer(); output=self.root/'timer-report.json'
         result=self.cli('timer','--input',path,'--output',output,'--environment',self.env)
@@ -385,7 +485,7 @@ class AcceptanceTests(unittest.TestCase):
         self.assertEqual(equivalence(pairs,'aa','all-null')['status'],'inconclusive')
         empty,code=aggregate({},self.env,kind='synthetic')
         self.assertEqual(code,2)
-        self.assertTrue(all(c['status']=='not_run' and c['reason']=='deferred_by_user' for c in empty['document']['checks']))
+        self.assertTrue(all(c['status']=='not_run' and c['reason']=='gate_report_not_provided' for c in empty['document']['checks']))
         path=self.primary('build'); data=read(path)
         document=data['document']; document['checks'][0]['status']='failed'; document['checks'][0]['actual']=False
         from admission import validate_checks
