@@ -16,6 +16,7 @@ class EchoClock:
         self.received = []
         self.waits = 0
         self.timeouts = []
+        self.poll_cost_ns = probe.MIN_ECHO_GAP_NS // 10
 
     def __enter__(self):
         return self
@@ -37,6 +38,8 @@ class EchoClock:
 
     def select(self, readers, writers, errors, timeout):
         self.timeouts.append((len(self.sent), timeout))
+        if timeout == 0:
+            self.now += self.poll_cost_ns
         self.waits += 1
         deadline = self.now + round(timeout * 1e9)
         if self.waits in (5, 8):

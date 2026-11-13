@@ -11,7 +11,7 @@ FRAME_BYTES = 256
 PERIOD_NS = 10_000_000
 COUNT = 10_000
 MIN_ECHO_GAP_NS = 2_500_000
-MAX_ECHO_WAIT_NS = 1_000_000
+MAX_ECHO_WAIT_NS = 0
 
 
 def collection_tag(collection_id):
