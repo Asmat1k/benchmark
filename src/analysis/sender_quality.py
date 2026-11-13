@@ -1,5 +1,6 @@
 import json
 import math
+from decimal import Decimal
 from pathlib import Path
 
 
@@ -20,6 +21,8 @@ def percentile(values, fraction):
 
 
 def window_peak(times, width):
+    times = [Decimal(str(time)) for time in times]
+    width = Decimal(str(width))
     left = 0
     peak = 0
     for right, time in enumerate(times):

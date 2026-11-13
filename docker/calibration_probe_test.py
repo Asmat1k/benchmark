@@ -76,6 +76,11 @@ class PacingTest(unittest.TestCase):
         self.assertLessEqual(window_peak([t/1e6 for t in times], 10), 4)
         self.assertEqual(window_peak([0, 2.5, 5, 7.5, 10], 10), 4)
         self.assertEqual(window_peak([0, 2.5, 5, 7.5, 9.999999], 10), 5)
+        for offset_ns in (1, 123457, 55123457, 50000123457):
+            times = [(offset_ns+i*probe.MIN_ECHO_GAP_NS)/1e6 for i in range(10)]
+            self.assertEqual(window_peak(times, 10), 4)
+            self.assertEqual(window_peak([offset_ns/1e6, (offset_ns+9_999_999)/1e6], 10), 2)
+            self.assertEqual(window_peak([offset_ns/1e6, (offset_ns+10_000_000)/1e6], 10), 1)
 
 
 if __name__ == '__main__':
