@@ -5,6 +5,7 @@ from scipy.stats import beta, binom
 
 from inference import bootstrap, nearest_rank, rank_interval
 from raw import require
+from sender_quality import evaluate, policy
 from schedule import MODES, PROFILES, block_runs, make_schedule, seeds
 
 
@@ -35,12 +36,12 @@ def timer_gate(timer):
 
 
 
-def probe_records(probe):
+def probe_records(probe, enforce_timing=True):
     sent,reply=probe['sent_records'],probe['reply_records']
     require(len(sent)==10000 and len({r['id'] for r in sent})==10000, 'complete 10000 probe IDs required')
-    start=sent[0]['t_plan_ms']
-    for i,row in enumerate(sent):
-        require(row['t_plan_ms']==start+i*10 and row['t_plan_ms']<=row['t_send_ms']<row['t_plan_ms']+10, '100Hz probe grid/send')
+    quality = evaluate(sent, 10000)
+    if enforce_timing:
+        require(quality['status'] == 'passed', 'UDP sender v2: '+ '; '.join(quality['reasons']))
     require(len({r['id'] for r in reply})==len(reply) and {r['id'] for r in reply}<={r['id'] for r in sent}, 'probe reply IDs')
     require(all(math.isfinite(r['rtt_ms']) and r['rtt_ms']>=0 for r in reply), 'probe RTT')
     return {r['id'] for r in sent},{r['id'] for r in reply}
@@ -48,11 +49,12 @@ def probe_records(probe):
 
 def calibration(data):
     require(set(data['echo']) == {'before', 'after', *PROFILES}, 'calibration membership')
-    intervals, diagnostics = {}, {}
+    intervals, diagnostics, sender = {}, {}, {}
     for key, probe in data['echo'].items():
         require(probe['sent'] == 10000 and probe['frame_bytes'] == 256 and probe['frequency_hz'] == 100,
                 'calibration probe contract')
-        probe_records(probe)
+        probe_records(probe, enforce_timing=False)
+        sender[key] = evaluate(probe['sent_records'], 10000)
         require(probe['rtt_ms']==[r['rtt_ms'] for r in probe['reply_records']], 'survivor RTT correspondence')
         require(0 < len(probe['rtt_ms']) <= probe['sent'], 'echo survivor count')
         require(all(v >= 0 and math.isfinite(v) for v in probe['rtt_ms']), 'invalid RTT')
@@ -92,7 +94,8 @@ def calibration(data):
             forward=next(e for e in data['egress'] if (e['profile'],e['when'],e['direction'])==(profile,when,'forward'))
             reverse=next(e for e in data['egress'] if (e['profile'],e['when'],e['direction'])==(profile,when,'reverse'))
             require(forward['collection_id']==reverse['collection_id'], 'egress paired collection')
-            sent,returned=probe_records(forward['probe'])
+            sent,returned=probe_records(forward['probe'], enforce_timing=False)
+            sender[f'{profile}-{when}'] = evaluate(forward['probe']['sent_records'], 10000)
             require(set(forward['entered_ids'])==sent, 'forward ingress probe completeness')
             require(set(reverse['entered_ids'])==sent-set(forward['dropped_ids']), 'reverse denominator must be actually delivered forward IDs')
             require(returned==set(reverse['entered_ids'])-set(reverse['dropped_ids']), 'impossible echo survivors/counters')
@@ -112,7 +115,9 @@ def calibration(data):
     require(0 <= data['trace_review']['main_bandwidth_fraction'], 'negative bandwidth fraction')
     passed &= data['trace_review']['main_bandwidth_fraction'] < .1
     uncertain = not data['trace_review']['independent_units'] or any(d['suspect'] for d in diagnostics.values())
-    return dict(status='inconclusive' if uncertain else 'passed' if passed else 'failed',
+    sender_passed = all(v['status']=='passed' for v in sender.values())
+    return dict(status='failed' if not sender_passed else 'inconclusive' if uncertain else 'passed' if passed else 'failed',
+                sender_criteria_version=policy()['version'], sender_quality=sender,
                 intervals=intervals, shifts=shifts, dependence=diagnostics, loss=loss,
                 saturation=data['saturation'], expected_echo_loss=.0199,
                 survivor_bias='RTT intervals condition on returned echoes; loss0 and traces required')

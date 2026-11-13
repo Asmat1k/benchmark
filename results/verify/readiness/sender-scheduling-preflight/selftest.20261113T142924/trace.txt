@@ -1,0 +1,180 @@
+# tracer: nop
+#
+# entries-in-buffer/entries-written: 168/168   #P:2
+#
+#                                _-----=> irqs-off/BH-disabled
+#                               / _----=> need-resched
+#                              | / _---=> hardirq/softirq
+#                              || / _--=> preempt-depth
+#                              ||| / _-=> migrate-disable
+#                              |||| /     delay
+#           TASK-PID     CPU#  |||||  TIMESTAMP  FUNCTION
+#              | |         |   |||||     |         |
+          python-37997   [000] ..... 96569.405880: tracing_mark_write: sender-trace-ready
+          <idle>-0       [000] d.h.. 96569.421396: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 96569.421399: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 96569.421405: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] d.... 96569.421434: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 96569.444280: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 96569.444289: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 96569.444303: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] d.... 96569.444329: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 96569.464468: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 96569.464471: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 96569.464475: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] d.... 96569.464500: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 96569.485565: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 96569.485570: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 96569.485578: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] d.... 96569.485617: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 96569.507712: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 96569.507720: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 96569.507727: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] d.... 96569.507798: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 96569.530747: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 96569.530756: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 96569.530764: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] d.... 96569.530835: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+            runc-38016   [000] d.h.. 96569.550888: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+            runc-38016   [000] d.h.. 96569.550891: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+            runc-38014   [000] d.... 96569.550899: sched_switch: prev_comm=runc prev_pid=38014 prev_prio=120 prev_state=S ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] d.... 96569.550968: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=runc next_pid=38016 next_prio=120
+   runc:[2:INIT]-38024   [000] dNh.. 96569.571012: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+   runc:[2:INIT]-38024   [000] dNh.. 96569.571014: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+         rcuos/0-19      [001] d.... 96569.571039: sched_switch: prev_comm=rcuos/0 prev_pid=19 prev_prio=120 prev_state=S ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [001] d.... 96569.571081: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [001] d.h.. 96569.591760: sched_waking: comm=python pid=37922 prio=120 target_cpu=001
+          <idle>-0       [000] dNH.. 96569.591773: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 96569.591779: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] ..... 96569.592090: sys_pselect6(n: 0, inp: 0, outp: 0, exp: 0, tsp: fffff7b4df68, sig: 0)
+          python-37922   [000] d.... 96569.592097: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 96569.597501: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 96569.597507: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 96569.597513: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] ..... 96569.597516: sys_pselect6 -> 0x0
+          python-37922   [000] ..... 96569.597654: sys_pselect6(n: 0, inp: 0, outp: 0, exp: 0, tsp: fffff7b4dfc8, sig: 0)
+          python-37922   [000] d.... 96569.597659: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 96569.603535: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 96569.603539: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 96569.603555: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] ..... 96569.603557: sys_pselect6 -> 0x0
+          python-37922   [000] ..... 96569.603621: sys_pselect6(n: 0, inp: 0, outp: 0, exp: 0, tsp: fffff7b4dfc8, sig: 0)
+          python-37922   [000] d.... 96569.603623: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 96569.609938: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 96569.609945: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 96569.609949: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] ..... 96569.609952: sys_pselect6 -> 0x0
+          python-37922   [000] ..... 96569.610084: sys_pselect6(n: 0, inp: 0, outp: 0, exp: 0, tsp: fffff7b4dfc8, sig: 0)
+          python-37922   [000] d.... 96569.610090: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 96569.615532: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 96569.615534: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 96569.615538: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] ..... 96569.615540: sys_pselect6 -> 0x0
+          python-37922   [000] ..... 96569.615685: sys_pselect6(n: 0, inp: 0, outp: 0, exp: 0, tsp: fffff7b4dfc8, sig: 0)
+          python-37922   [000] d.... 96569.615690: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 96569.621586: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 96569.621589: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 96569.621592: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] ..... 96569.621593: sys_pselect6 -> 0x0
+          python-37922   [000] ..... 96569.621650: sys_pselect6(n: 0, inp: 0, outp: 0, exp: 0, tsp: fffff7b4dfc8, sig: 0)
+          python-37922   [000] d.... 96569.621652: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 96569.627983: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 96569.627986: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 96569.628014: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] ..... 96569.628031: sys_pselect6 -> 0x0
+          python-37922   [000] ..... 96569.628086: sys_pselect6(n: 0, inp: 0, outp: 0, exp: 0, tsp: fffff7b4dfc8, sig: 0)
+          python-37922   [000] d.... 96569.628088: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 96569.634431: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 96569.634435: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 96569.634439: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] ..... 96569.634441: sys_pselect6 -> 0x0
+          python-37922   [000] ..... 96569.634509: sys_pselect6(n: 0, inp: 0, outp: 0, exp: 0, tsp: fffff7b4dfc8, sig: 0)
+          python-37922   [000] d.... 96569.634530: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 96569.640836: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 96569.640839: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 96569.640842: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] ..... 96569.640843: sys_pselect6 -> 0x0
+          python-37922   [000] ..... 96569.640883: sys_pselect6(n: 0, inp: 0, outp: 0, exp: 0, tsp: fffff7b4dfc8, sig: 0)
+          python-37922   [000] d.... 96569.640885: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 96569.647226: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 96569.647231: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 96569.647235: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] ..... 96569.647237: sys_pselect6 -> 0x0
+          python-37922   [000] ..... 96569.647349: sys_pselect6(n: 0, inp: 0, outp: 0, exp: 0, tsp: fffff7b4dfc8, sig: 0)
+          python-37922   [000] d.... 96569.647351: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 96569.652647: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 96569.652649: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 96569.652653: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] ..... 96569.652654: sys_pselect6 -> 0x0
+          python-37922   [000] ..... 96569.652716: sys_pselect6(n: 0, inp: 0, outp: 0, exp: 0, tsp: fffff7b4dfc8, sig: 0)
+          python-37922   [000] d.... 96569.652718: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 96569.658671: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 96569.658675: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 96569.658678: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] ..... 96569.658681: sys_pselect6 -> 0x0
+          python-37922   [000] ..... 96569.658768: sys_pselect6(n: 0, inp: 0, outp: 0, exp: 0, tsp: fffff7b4dfc8, sig: 0)
+          python-37922   [000] d.... 96569.658770: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] dNh.. 96569.664811: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 96569.664812: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+          python-37997   [000] d.... 96569.664917: sched_switch: prev_comm=python prev_pid=37997 prev_prio=120 prev_state=S ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] ..... 96569.664919: sys_pselect6 -> 0x0
+          python-37922   [000] ..... 96569.665021: sys_pselect6(n: 0, inp: 0, outp: 0, exp: 0, tsp: fffff7b4dfc8, sig: 0)
+          python-37922   [000] d.... 96569.665023: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=rcu_sched next_pid=17 next_prio=120
+          <idle>-0       [000] d.h.. 96569.670307: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 96569.670310: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 96569.670314: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] ..... 96569.670316: sys_pselect6 -> 0x0
+          python-37922   [000] ..... 96569.670398: sys_pselect6(n: 0, inp: 0, outp: 0, exp: 0, tsp: fffff7b4dfc8, sig: 0)
+          python-37922   [000] d.... 96569.670402: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 96569.676761: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 96569.676764: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 96569.676768: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] ..... 96569.676770: sys_pselect6 -> 0x0
+          python-37922   [000] ..... 96569.676896: sys_pselect6(n: 0, inp: 0, outp: 0, exp: 0, tsp: fffff7b4dfc8, sig: 0)
+          python-37922   [000] d.... 96569.676902: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 96569.683253: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 96569.683256: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 96569.683260: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] ..... 96569.683261: sys_pselect6 -> 0x0
+          python-37922   [000] ..... 96569.683306: sys_pselect6(n: 0, inp: 0, outp: 0, exp: 0, tsp: fffff7b4dfc8, sig: 0)
+          python-37922   [000] d.... 96569.683308: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 96569.689653: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 96569.689657: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 96569.689662: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] ..... 96569.689664: sys_pselect6 -> 0x0
+          python-37922   [000] ..... 96569.689745: sys_pselect6(n: 0, inp: 0, outp: 0, exp: 0, tsp: fffff7b4dfc8, sig: 0)
+          python-37922   [000] d.... 96569.689764: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 96569.696081: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 96569.696085: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 96569.696088: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] ..... 96569.696090: sys_pselect6 -> 0x0
+          python-37922   [000] ..... 96569.696160: sys_pselect6(n: 0, inp: 0, outp: 0, exp: 0, tsp: fffff7b4dfc8, sig: 0)
+          python-37922   [000] d.... 96569.696163: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 96569.702520: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 96569.702524: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 96569.702529: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] ..... 96569.702531: sys_pselect6 -> 0x0
+          python-37922   [000] ..... 96569.702643: sys_pselect6(n: 0, inp: 0, outp: 0, exp: 0, tsp: fffff7b4dfc8, sig: 0)
+          python-37922   [000] d.... 96569.702646: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 96569.708968: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 96569.708971: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 96569.708975: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] ..... 96569.708976: sys_pselect6 -> 0x0
+          python-37922   [000] ..... 96569.709055: sys_pselect6(n: 0, inp: 0, outp: 0, exp: 0, tsp: fffff7b4dfc8, sig: 0)
+          python-37922   [000] d.... 96569.709057: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 96569.715412: sched_waking: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 96569.715415: sched_wakeup: comm=python pid=37922 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 96569.715421: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] ..... 96569.715422: sys_pselect6 -> 0x0
+          python-37922   [000] ..... 96569.715652: sys_sendto(fd: 3, buff: ffff8f8f5480, len: 100, flags: 0, addr: 0, addr_len: 0)
+          python-37922   [000] ..... 96569.715656: sys_sendto -> 0x100
+          python-37922   [000] ..... 96569.715684: sys_recvfrom(fd: 4, ubuf: aaaac634a450, size: ffff, flags: 0, addr: 0, addr_len: 0)
+          python-37922   [000] ..... 96569.715687: sys_recvfrom -> 0x100
+          python-37922   [000] d.... 96569.716124: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=R ==> next_comm=rcu_sched next_pid=17 next_prio=120
+          python-37997   [000] d.... 96569.716151: sched_switch: prev_comm=python prev_pid=37997 prev_prio=120 prev_state=S ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] d.... 96569.717020: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=R ==> next_comm=initd next_pid=94 next_prio=120
+           initd-94      [000] d.... 96569.717025: sched_switch: prev_comm=initd prev_pid=94 prev_prio=120 prev_state=S ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] d.... 96569.720682: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=R+ ==> next_comm=kworker/0:0 next_pid=34311 next_prio=120
+     kworker/0:0-34311   [000] d.... 96569.720750: sched_switch: prev_comm=kworker/0:0 prev_pid=34311 prev_prio=120 prev_state=I ==> next_comm=python next_pid=37922 next_prio=120
+          python-37922   [000] d.... 96569.721388: sched_switch: prev_comm=python prev_pid=37922 prev_prio=120 prev_state=Z ==> next_comm=containerd-shim next_pid=37797 next_prio=120
+          python-37997   [000] ..... 96569.771563: tracing_mark_write: sender-trace-stop

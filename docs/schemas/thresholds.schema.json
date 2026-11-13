@@ -7,7 +7,7 @@
       "const": 1
     },
     "preliminary": {
-      "const": true
+      "type": "boolean"
     },
     "deadline_ms": {
       "const": 100
@@ -62,6 +62,15 @@
     },
     "reserve_hz": {
       "const": 100
+    },
+    "udp_sender": {
+      "const": {
+        "version": "udp-sender-v2",
+        "max_late_pct": 1,
+        "max_lag_ms": 50,
+        "burst_window_ms": 10,
+        "max_burst_packets": 4
+      }
     }
   },
   "required": [
@@ -84,7 +93,8 @@
     "max_throttling_pct_exclusive",
     "frequency_hz",
     "frequency_margin_hz",
-    "reserve_hz"
+    "reserve_hz",
+    "udp_sender"
   ],
   "additionalProperties": false
 }

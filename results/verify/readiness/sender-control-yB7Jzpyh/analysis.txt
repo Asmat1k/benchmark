@@ -1,0 +1,79 @@
+{
+  "baseline-control": {
+    "lag_ms": {
+      "n": 1500,
+      "p50": 1.5297129999999015,
+      "p99": 7.804380999999921,
+      "max": 39.96333799999957
+    },
+    "late_slots": 11,
+    "early_slots": 0,
+    "rtt_ms": {
+      "n": 1500,
+      "p50": 0.944917,
+      "p99": 7.017667,
+      "max": 49.176958
+    },
+    "send_ids": 1500,
+    "reply_ids": 1500,
+    "replies": 1500,
+    "send_duration_s": 14.991079632000002,
+    "cpu_s": null,
+    "arp": {
+      "server": 0,
+      "browser": 0
+    },
+    "resources": {
+      "browser": {
+        "cpu_delta": {
+          "usage_usec": 593025,
+          "user_usec": 314868,
+          "system_usec": 278158,
+          "nice_usec": 0,
+          "nr_periods": 0,
+          "nr_throttled": 0,
+          "throttled_usec": 0,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        },
+        "cpu_max": "max 100000",
+        "memory_peak_sampled": 17440768,
+        "memory_events_delta": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "vm_busy_fraction": 0.03429764390098422,
+        "vm_available_kib_min": 3106356
+      },
+      "server": {
+        "cpu_delta": {
+          "usage_usec": 233285,
+          "user_usec": 115925,
+          "system_usec": 117359,
+          "nice_usec": 0,
+          "nr_periods": 0,
+          "nr_throttled": 0,
+          "throttled_usec": 0,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        },
+        "cpu_max": "max 100000",
+        "memory_peak_sampled": 11350016,
+        "memory_events_delta": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "vm_busy_fraction": 0.039630512514898686,
+        "vm_available_kib_min": 3106356
+      }
+    }
+  }
+}

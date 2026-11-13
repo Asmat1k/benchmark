@@ -1,0 +1,2 @@
+{"BlockIO":"0B / 0B","CPUPerc":"0.00%","Container":"95ba5852ade584c948224f185dfd7af794e15ec8888f9334fe5b34e1b63410ab","ID":"95ba5852ade5","MemPerc":"0.40%","MemUsage":"15.62MiB / 3.827GiB","Name":"flamboyant_engelbart","NetIO":"0B / 0B","PIDs":"1"}
+{"BlockIO":"665MB / 17.8MB","CPUPerc":"0.05%","Container":"16479141beddf1af7cf2b66e2e1e631fe0cd16b857180fd70804e3486a1057a6","ID":"16479141bedd","MemPerc":"4.13%","MemUsage":"161.9MiB / 3.827GiB","Name":"ai-grepa-qdrant-1","NetIO":"27MB / 4.44MB","PIDs":"25"}

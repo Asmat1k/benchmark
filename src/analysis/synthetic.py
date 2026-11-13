@@ -32,9 +32,11 @@ def make_fixture(directory, blocks=1, datagrams=True, schedule=None, execution_o
     write(directory/"queue.json",[])
     write(directory/"SYNTHETIC.json",dict(purpose="D4 known-answer analysis only; no network experiment",
         environment_template=str(SOURCE), generated_slots=True, n_per_profile=blocks))
-    shutil.copyfile(SOURCE/"context.json",directory/"context.json")
     template = SOURCE/"raw/b0-a0-m0"
-    config = read(template/"config.json")
+    config = {name:read(Path("configs")/f"{name}.json") for name in ("plan","thresholds","profiles")}
+    context = read(SOURCE/"context.json")
+    context["config"] = config
+    write(directory/"context.json",context)
     active = [r["run_id"] for r in schedule["runs"] if next(b["status"] for b in schedule["blocks"] if b["attempt_id"] == r["attempt_id"]) != "quarantined"]
     execution_order = execution_order or active
     if sorted(execution_order) != sorted(active):
@@ -46,8 +48,11 @@ def make_fixture(directory, blocks=1, datagrams=True, schedule=None, execution_o
             continue
         folder = directory/"raw"/run["run_id"]
         shutil.copytree(template,folder)
+        write(folder/"context.json",context)
+        write(folder/"config.json",config)
         write(folder/"schedule.json",schedule)
         manifest = read(folder/"manifest.json")
+        manifest["config_sha256"] = digest(folder/"config.json")
         manifest.update(run,series=schedule["series"],series_id=schedule["series_id"],schedule_sha256=digest(folder/"schedule.json"))
         moment = start+timedelta(seconds=90*execution_order.index(run["run_id"]))
         manifest.update(started_utc=moment.isoformat().replace("+00:00","Z"),ended_utc=(moment+timedelta(seconds=80)).isoformat().replace("+00:00","Z"))

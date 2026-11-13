@@ -1,0 +1,10 @@
+Fri Nov 13 14:29:31 UTC 2026
+uid=501(dobrov) gid=20(staff) groups=20(staff),12(everyone),61(localaccounts),79(_appserverusr),80(admin),81(_appserveradm),702(com.apple.sharepoint.group.2),701(com.apple.sharepoint.group.1),33(_appstore),98(_lpadmin),100(_lpoperator),204(_developer),250(_analyticsusers),395(com.apple.access_ftp),398(com.apple.access_screensharing),399(com.apple.access_ssh),400(com.apple.access_remote_ae)
+System Integrity Protection status: enabled.
+dtrace: system integrity protection is on, some features will not be available
+dtrace: failed to initialize dtrace: DTrace requires additional privileges
+xcode-select: error: tool 'xctrace' requires Xcode, but active developer directory '/Library/Developer/CommandLineTools' is a command line tools instance
+ktrace: failed to get kernel tracing information: Too many levels of remote in path
+sudo: a password is required
+71990 50541 /Applications/Docker.app/Contents/MacOS/com.docker.virtualization
+71991     1 /System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine

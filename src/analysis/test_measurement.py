@@ -39,6 +39,10 @@ def fixture(directory):
     for source in (SOURCE / "raw").iterdir():
         folder = directory / "raw" / source.name
         shutil.copytree(source, folder)
+        write(folder/"config.json", {name:read(Path("configs")/f"{name}.json") for name in ("plan","thresholds","profiles")})
+        manifest=read(folder/"manifest.json")
+        manifest["config_sha256"]=digest(folder/"config.json")
+        write(folder/"manifest.json",manifest)
         for name in ("network_before", "network_after"):
             snapshot = read(folder / f"{name}.json")
             snapshot["endpoints"] = dict(browser=settings, server=settings)
@@ -87,7 +91,8 @@ class MeasurementTests(unittest.TestCase):
         self.validate()
         latest = Path("results/verify/measurement/smoke.BLyX9ycT")
         for folder in (latest / "raw").iterdir():
-            validate_raw(folder, latest / "schedule.json")
+            with self.assertRaisesRegex(ValueError, "config mismatch"):
+                validate_raw(folder, latest / "schedule.json")
 
     def test_r1_contradictions_after_rehash(self):
         cases = [("events.jsonl", lambda x: []),

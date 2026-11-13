@@ -1,0 +1,33 @@
+{
+  "images": [
+    {
+      "id": "sha256:edc03ed4fdb281f46099c6d4d9a4f01078610231d8d594dc6e9c72686546dc72",
+      "role": "/wswt-d3-wswt-measure-bw8j9mav-browser-1",
+      "cpu": 2000000000,
+      "memory": 3221225472,
+      "shm": 1073741824
+    },
+    {
+      "id": "sha256:20129ac43ed0d839cd19fa06e92d7f1e5b49d4a454fa93ac945396020ced9953",
+      "role": "/wswt-d3-wswt-measure-bw8j9mav-router-1",
+      "cpu": 1000000000,
+      "memory": 536870912,
+      "shm": 67108864
+    },
+    {
+      "id": "sha256:adf808e974625a91c041d673aa14a122c9ca935a84dc039f5fa2eb164252c920",
+      "role": "/wswt-d3-wswt-measure-bw8j9mav-server-1",
+      "cpu": 2000000000,
+      "memory": 1073741824,
+      "shm": 67108864
+    }
+  ],
+  "lock_hashes": {
+    "docker/images.lock.json": "7d811b1c26b9db00465871d1d1f15a2ec67adc8d22fc8e0deacd8fce8e25cedc",
+    "src/client/package-lock.json": "85d2b0ddd22ec7a8fc82222b1a8ea1246d68ed1564c2600f530b6aa7d11acb96",
+    "src/runner/package-lock.json": "b4f3d56e4a78682ed6e695f596698b5f43cf67ac79b4ff6312048129e149a276",
+    "src/server/go.sum": "5ef75ca6ac2a3b78b08688aa3e25a45829549f8b28ca626a60bc11faa59b3735",
+    "src/analysis/requirements.txt": "24d26fbbe7bd385eeb01b999bb7c47f53384d605f5ef70ca424f390e08a0a3db"
+  },
+  "build": "/bench: go1.24.6\n\tpath\tbench\n\tmod\tbench\t(devel)\t\n\tdep\tgithub.com/coder/websocket\tv1.8.14\th1:9L0p0iKiNOibykf283eHkKUHHrpG7f65OE3BhhO7v9g=\n\tdep\tgithub.com/quic-go/qpack\tv0.5.1\th1:giqksBPnT/HDtZ6VhtFKgoLOWmlyo9Ei6u9PqzIMbhI=\n\tdep\tgithub.com/quic-go/quic-go\tv0.53.0\th1:QHX46sISpG2S03dPeZBgVIZp8dGagIaiu2FiVYvpCZI=\n\tdep\tgithub.com/quic-go/webtransport-go\tv0.9.0\th1:jgys+7/wm6JarGDrW+lD/r9BGqBAmqY/ssklE09bA70=\n\tdep\tgolang.org/x/crypto\tv0.26.0\th1:RrRspgV4mU+YwB4FYnuBoKsUapNIL5cohGAmSH3azsw=\n\tdep\tgolang.org/x/net\tv0.28.0\th1:a9JDOJc5GMUJ0+UDqmLT86WiEy7iWyIhz8gz8E4e5hE=\n\tdep\tgolang.org/x/sys\tv0.23.0\th1:YfKFowiIMvtgl1UERQoTPPToxltDeZfbj4H7dVUCwmM=\n\tdep\tgolang.org/x/text\tv0.17.0\th1:XtiM5bkSOt+ewxlOE/aE/AKEHibwj/6gvWMl9Rsh0Qc=\n\tbuild\t-buildmode=exe\n\tbuild\t-compiler=gc\n\tbuild\tCGO_ENABLED=0\n\tbuild\tGOARCH=arm64\n\tbuild\tGOOS=linux\n\tbuild\tGOARM64=v8.0\n8aee0fb6815a0b45c4e059f35a8203fb6dae4ebc744b438e825d0dd2ff9c77d1  /bench\n6f299586dcfb760451d68b4583cf25bb215ba8e9baf92e9184f117414ec92fc2  /testcert\nf4a2628eb97b3054fad4028353f504c72410b29ec3ab3f515d120ebd51db83e1  go.mod\n5ef75ca6ac2a3b78b08688aa3e25a45829549f8b28ca626a60bc11faa59b3735  go.sum\n"
+}

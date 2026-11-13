@@ -1,0 +1,2 @@
+{"BlockIO":"0B / 0B","CPUPerc":"0.00%","Container":"0665de3c08b15c04b90591b20fcfd6dcaa26be0b8c3bec1a4c86cc56e949f03f","ID":"0665de3c08b1","MemPerc":"0.40%","MemUsage":"15.62MiB / 3.827GiB","Name":"amazing_ptolemy","NetIO":"0B / 0B","PIDs":"1"}
+{"BlockIO":"665MB / 17.8MB","CPUPerc":"0.05%","Container":"16479141beddf1af7cf2b66e2e1e631fe0cd16b857180fd70804e3486a1057a6","ID":"16479141bedd","MemPerc":"4.13%","MemUsage":"161.7MiB / 3.827GiB","Name":"ai-grepa-qdrant-1","NetIO":"27MB / 4.46MB","PIDs":"25"}

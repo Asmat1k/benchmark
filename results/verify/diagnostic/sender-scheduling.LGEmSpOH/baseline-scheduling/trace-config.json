@@ -1,0 +1,16 @@
+{
+  "events": {
+    "sched/sched_switch": "prev_pid == 40723 || next_pid == 40723",
+    "sched/sched_wakeup": "pid == 40723",
+    "sched/sched_waking": "pid == 40723",
+    "syscalls/sys_enter_pselect6": "common_pid == 40723",
+    "syscalls/sys_exit_pselect6": "common_pid == 40723",
+    "syscalls/sys_enter_recvfrom": "common_pid == 40723",
+    "syscalls/sys_exit_recvfrom": "common_pid == 40723",
+    "syscalls/sys_enter_sendto": "common_pid == 40723",
+    "syscalls/sys_exit_sendto": "common_pid == 40723"
+  },
+  "clock": "local global counter uptime perf [mono] mono_raw boot tai\n",
+  "buffer_kb_per_cpu": 8192,
+  "overwrite": false
+}

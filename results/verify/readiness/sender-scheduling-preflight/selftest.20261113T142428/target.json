@@ -1,0 +1,14 @@
+{
+  "host_tid": 35414,
+  "status": "Name:\tpython\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t35414\nNgid:\t0\nPid:\t35414\nPPid:\t35288\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t0 \nNStgid:\t35414\t31\nNSpid:\t35414\t31\nNSpgid:\t35414\t31\nNSsid:\t35414\t31\nKthread:\t0\nVmPeak:\t   20600 kB\nVmSize:\t   20536 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   15216 kB\nVmRSS:\t   15216 kB\nRssAnon:\t    6472 kB\nRssFile:\t    8744 kB\nRssShmem:\t       0 kB\nVmData:\t    6912 kB\nVmStk:\t     132 kB\nVmExe:\t       4 kB\nVmLib:\t   11144 kB\nVmPTE:\t      80 kB\nVmSwap:\t       0 kB\nHugetlbPages:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffff\nThreads:\t1\nSigQ:\t0/15667\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000001001000\nSigCgt:\t0000000000000002\nCapInh:\t0000000000000000\nCapPrm:\t0000000000000000\nCapEff:\t0000000000000000\nCapBnd:\t0000000000000000\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t2\nSeccomp_filters:\t1\nSpeculation_Store_Bypass:\tvulnerable\nSpeculationIndirectBranch:\tunknown\nCpus_allowed:\t3\nCpus_allowed_list:\t0-1\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t51\nnonvoluntary_ctxt_switches:\t109\n",
+  "cmdline": [
+    "python",
+    "-B",
+    "/diagnostic/sender_scheduling_probe.py",
+    "selftest",
+    "sender-selftest-957",
+    "/tmp/sender-ready",
+    "/tmp/sender-go",
+    ""
+  ]
+}

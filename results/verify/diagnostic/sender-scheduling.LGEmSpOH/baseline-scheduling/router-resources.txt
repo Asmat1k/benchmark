@@ -1,0 +1,399 @@
+96753.42
+[{"kind":"noqueue","handle":"0:","dev":"lo","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth0","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth1","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8032:","dev":"to_browser","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261116,"ecn":false,"gap":0},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8031:","dev":"to_server","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261115,"ecn":false,"gap":0},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0}]
+usage_usec 248172
+user_usec 206299
+system_usec 41872
+nice_usec 0
+nr_periods 21
+nr_throttled 0
+throttled_usec 0
+nr_bursts 0
+burst_usec 0
+3465216
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+oom_group_kill 0
+snapshot-end
+96754.43
+[{"kind":"noqueue","handle":"0:","dev":"lo","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth0","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth1","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8032:","dev":"to_browser","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261116,"ecn":false,"gap":0},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8031:","dev":"to_server","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261115,"ecn":false,"gap":0},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0}]
+usage_usec 249681
+user_usec 206299
+system_usec 43381
+nice_usec 0
+nr_periods 23
+nr_throttled 0
+throttled_usec 0
+nr_bursts 0
+burst_usec 0
+3674112
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+oom_group_kill 0
+snapshot-end
+96755.43
+[{"kind":"noqueue","handle":"0:","dev":"lo","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth0","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth1","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8032:","dev":"to_browser","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261116,"ecn":false,"gap":0},"bytes":8642,"packets":29,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8031:","dev":"to_server","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261115,"ecn":false,"gap":0},"bytes":8642,"packets":29,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0}]
+usage_usec 254763
+user_usec 206299
+system_usec 48463
+nice_usec 0
+nr_periods 25
+nr_throttled 0
+throttled_usec 0
+nr_bursts 0
+burst_usec 0
+3383296
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+oom_group_kill 0
+snapshot-end
+96756.44
+[{"kind":"noqueue","handle":"0:","dev":"lo","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth0","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth1","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8032:","dev":"to_browser","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261116,"ecn":false,"gap":0},"bytes":38740,"packets":130,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8031:","dev":"to_server","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261115,"ecn":false,"gap":0},"bytes":38740,"packets":130,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0}]
+usage_usec 263762
+user_usec 208180
+system_usec 55582
+nice_usec 0
+nr_periods 27
+nr_throttled 0
+throttled_usec 0
+nr_bursts 0
+burst_usec 0
+3620864
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+oom_group_kill 0
+snapshot-end
+96757.45
+[{"kind":"noqueue","handle":"0:","dev":"lo","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth0","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth1","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8032:","dev":"to_browser","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261116,"ecn":false,"gap":0},"bytes":68838,"packets":231,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8031:","dev":"to_server","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261115,"ecn":false,"gap":0},"bytes":68838,"packets":231,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0}]
+usage_usec 270189
+user_usec 208180
+system_usec 62008
+nice_usec 0
+nr_periods 29
+nr_throttled 0
+throttled_usec 0
+nr_bursts 0
+burst_usec 0
+3428352
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+oom_group_kill 0
+snapshot-end
+96758.46
+[{"kind":"noqueue","handle":"0:","dev":"lo","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth0","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth1","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8032:","dev":"to_browser","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261116,"ecn":false,"gap":0},"bytes":98638,"packets":331,"drops":0,"overlimits":0,"requeues":0,"backlog":298,"qlen":1},{"kind":"netem","handle":"8031:","dev":"to_server","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261115,"ecn":false,"gap":0},"bytes":98936,"packets":332,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0}]
+usage_usec 278690
+user_usec 209269
+system_usec 69421
+nice_usec 0
+nr_periods 33
+nr_throttled 0
+throttled_usec 0
+nr_bursts 0
+burst_usec 0
+3383296
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+oom_group_kill 0
+snapshot-end
+96759.47
+[{"kind":"noqueue","handle":"0:","dev":"lo","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth0","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth1","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8032:","dev":"to_browser","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261116,"ecn":false,"gap":0},"bytes":128736,"packets":432,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8031:","dev":"to_server","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261115,"ecn":false,"gap":0},"bytes":128736,"packets":432,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0}]
+usage_usec 282917
+user_usec 210167
+system_usec 72750
+nice_usec 0
+nr_periods 35
+nr_throttled 0
+throttled_usec 0
+nr_bursts 0
+burst_usec 0
+3571712
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+oom_group_kill 0
+snapshot-end
+96760.47
+[{"kind":"noqueue","handle":"0:","dev":"lo","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth0","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth1","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8032:","dev":"to_browser","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261116,"ecn":false,"gap":0},"bytes":158834,"packets":533,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8031:","dev":"to_server","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261115,"ecn":false,"gap":0},"bytes":158834,"packets":533,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0}]
+usage_usec 289734
+user_usec 212000
+system_usec 77733
+nice_usec 0
+nr_periods 39
+nr_throttled 0
+throttled_usec 0
+nr_bursts 0
+burst_usec 0
+3461120
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+oom_group_kill 0
+snapshot-end
+96761.48
+[{"kind":"noqueue","handle":"0:","dev":"lo","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth0","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth1","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8032:","dev":"to_browser","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261116,"ecn":false,"gap":0},"bytes":188932,"packets":634,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8031:","dev":"to_server","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261115,"ecn":false,"gap":0},"bytes":188932,"packets":634,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0}]
+usage_usec 296378
+user_usec 213432
+system_usec 82945
+nice_usec 0
+nr_periods 42
+nr_throttled 0
+throttled_usec 0
+nr_bursts 0
+burst_usec 0
+3559424
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+oom_group_kill 0
+snapshot-end
+96762.49
+[{"kind":"noqueue","handle":"0:","dev":"lo","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth0","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth1","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8032:","dev":"to_browser","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261116,"ecn":false,"gap":0},"bytes":218732,"packets":734,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8031:","dev":"to_server","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261115,"ecn":false,"gap":0},"bytes":218732,"packets":734,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0}]
+usage_usec 302827
+user_usec 213700
+system_usec 89126
+nice_usec 0
+nr_periods 46
+nr_throttled 0
+throttled_usec 0
+nr_bursts 0
+burst_usec 0
+3563520
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+oom_group_kill 0
+snapshot-end
+96763.50
+[{"kind":"noqueue","handle":"0:","dev":"lo","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth0","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth1","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8032:","dev":"to_browser","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261116,"ecn":false,"gap":0},"bytes":249128,"packets":836,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8031:","dev":"to_server","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261115,"ecn":false,"gap":0},"bytes":249128,"packets":836,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0}]
+usage_usec 313825
+user_usec 213700
+system_usec 100124
+nice_usec 0
+nr_periods 50
+nr_throttled 0
+throttled_usec 0
+nr_bursts 0
+burst_usec 0
+3424256
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+oom_group_kill 0
+snapshot-end
+96764.51
+[{"kind":"noqueue","handle":"0:","dev":"lo","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth0","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth1","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8032:","dev":"to_browser","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261116,"ecn":false,"gap":0},"bytes":279226,"packets":937,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8031:","dev":"to_server","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261115,"ecn":false,"gap":0},"bytes":279226,"packets":937,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0}]
+usage_usec 324174
+user_usec 214765
+system_usec 109408
+nice_usec 0
+nr_periods 53
+nr_throttled 0
+throttled_usec 0
+nr_bursts 0
+burst_usec 0
+3547136
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+oom_group_kill 0
+snapshot-end
+96765.52
+[{"kind":"noqueue","handle":"0:","dev":"lo","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth0","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth1","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8032:","dev":"to_browser","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261116,"ecn":false,"gap":0},"bytes":309324,"packets":1038,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8031:","dev":"to_server","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261115,"ecn":false,"gap":0},"bytes":309324,"packets":1038,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0}]
+usage_usec 330840
+user_usec 215501
+system_usec 115338
+nice_usec 0
+nr_periods 57
+nr_throttled 0
+throttled_usec 0
+nr_bursts 0
+burst_usec 0
+3534848
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+oom_group_kill 0
+snapshot-end
+96766.53
+[{"kind":"noqueue","handle":"0:","dev":"lo","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth0","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth1","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8032:","dev":"to_browser","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261116,"ecn":false,"gap":0},"bytes":339124,"packets":1138,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8031:","dev":"to_server","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261115,"ecn":false,"gap":0},"bytes":339124,"packets":1138,"drops":0,"overlimits":0,"requeues":0,"backlog":298,"qlen":1}]
+usage_usec 338440
+user_usec 218512
+system_usec 119927
+nice_usec 0
+nr_periods 59
+nr_throttled 0
+throttled_usec 0
+nr_bursts 0
+burst_usec 0
+3584000
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+oom_group_kill 0
+snapshot-end
+96767.54
+[{"kind":"noqueue","handle":"0:","dev":"lo","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth0","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth1","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8032:","dev":"to_browser","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261116,"ecn":false,"gap":0},"bytes":369222,"packets":1239,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8031:","dev":"to_server","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261115,"ecn":false,"gap":0},"bytes":369222,"packets":1239,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0}]
+usage_usec 345996
+user_usec 218791
+system_usec 127204
+nice_usec 0
+nr_periods 61
+nr_throttled 0
+throttled_usec 0
+nr_bursts 0
+burst_usec 0
+4018176
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+oom_group_kill 0
+snapshot-end
+96768.54
+[{"kind":"noqueue","handle":"0:","dev":"lo","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth0","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth1","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8032:","dev":"to_browser","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261116,"ecn":false,"gap":0},"bytes":399320,"packets":1340,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8031:","dev":"to_server","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261115,"ecn":false,"gap":0},"bytes":399320,"packets":1340,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0}]
+usage_usec 357391
+user_usec 221193
+system_usec 136197
+nice_usec 0
+nr_periods 63
+nr_throttled 0
+throttled_usec 0
+nr_bursts 0
+burst_usec 0
+3719168
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+oom_group_kill 0
+snapshot-end
+96769.55
+[{"kind":"noqueue","handle":"0:","dev":"lo","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth0","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth1","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8032:","dev":"to_browser","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261116,"ecn":false,"gap":0},"bytes":429418,"packets":1441,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8031:","dev":"to_server","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261115,"ecn":false,"gap":0},"bytes":429418,"packets":1441,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0}]
+usage_usec 361179
+user_usec 221193
+system_usec 139985
+nice_usec 0
+nr_periods 65
+nr_throttled 0
+throttled_usec 0
+nr_bursts 0
+burst_usec 0
+3723264
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+oom_group_kill 0
+snapshot-end
+96770.56
+[{"kind":"noqueue","handle":"0:","dev":"lo","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth0","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth1","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8032:","dev":"to_browser","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261116,"ecn":false,"gap":0},"bytes":447000,"packets":1500,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8031:","dev":"to_server","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261115,"ecn":false,"gap":0},"bytes":447000,"packets":1500,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0}]
+usage_usec 366441
+user_usec 222116
+system_usec 144324
+nice_usec 0
+nr_periods 69
+nr_throttled 0
+throttled_usec 0
+nr_bursts 0
+burst_usec 0
+3923968
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+oom_group_kill 0
+snapshot-end
+96771.57
+[{"kind":"noqueue","handle":"0:","dev":"lo","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth0","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth1","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8032:","dev":"to_browser","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261116,"ecn":false,"gap":0},"bytes":447000,"packets":1500,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8031:","dev":"to_server","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261115,"ecn":false,"gap":0},"bytes":447000,"packets":1500,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0}]
+usage_usec 372864
+user_usec 223308
+system_usec 149555
+nice_usec 0
+nr_periods 71
+nr_throttled 0
+throttled_usec 0
+nr_bursts 0
+burst_usec 0
+3825664
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+oom_group_kill 0
+snapshot-end
+96772.57
+[{"kind":"noqueue","handle":"0:","dev":"lo","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth0","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth1","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8032:","dev":"to_browser","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261116,"ecn":false,"gap":0},"bytes":447000,"packets":1500,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8031:","dev":"to_server","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261115,"ecn":false,"gap":0},"bytes":447000,"packets":1500,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0}]
+usage_usec 374956
+user_usec 223334
+system_usec 151621
+nice_usec 0
+nr_periods 75
+nr_throttled 0
+throttled_usec 0
+nr_bursts 0
+burst_usec 0
+3735552
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+oom_group_kill 0
+snapshot-end
+96773.58
+[{"kind":"noqueue","handle":"0:","dev":"lo","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth0","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"noqueue","handle":"0:","dev":"eth1","root":true,"refcnt":2,"options":{},"bytes":0,"packets":0,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8032:","dev":"to_browser","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261116,"ecn":false,"gap":0},"bytes":447000,"packets":1500,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0},{"kind":"netem","handle":"8031:","dev":"to_server","root":true,"refcnt":3,"options":{"limit":1000,"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261115,"ecn":false,"gap":0},"bytes":447000,"packets":1500,"drops":0,"overlimits":0,"requeues":0,"backlog":0,"qlen":0}]
+usage_usec 388319
+user_usec 226860
+system_usec 161459
+nice_usec 0
+nr_periods 77
+nr_throttled 0
+throttled_usec 0
+nr_bursts 0
+burst_usec 0
+4161536
+low 0
+high 0
+max 0
+oom 0
+oom_kill 0
+oom_group_kill 0
+snapshot-end

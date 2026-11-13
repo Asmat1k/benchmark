@@ -1,0 +1,166 @@
+[
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/baseline-control/browser-resources.jsonl",
+    "sha256": "6eea8113fc8c63468a05f3e26874f3d6db845e0c4c2644a0899e4623129e1419"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/baseline-control/browser.log",
+    "sha256": "69380912a835c22a96e142d29d1b35c756a49165ce720913b4197c58cb673dd2"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/baseline-control/browser.pcap",
+    "sha256": "ca700d84eaaf3249dbe603d00bb024d511e41c7e968fced460615c8677bc4923"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/baseline-control/probe.json",
+    "sha256": "fea5eb0df41fca85db80f4e93e7b6502a0b2ff647752812c5d33026dd88664e3"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/baseline-control/profile.txt",
+    "sha256": "2ce2989d9da27ad6ded32dd1aad1e7ff22ca67be2cd7c60e3b9a48f69b09e8fe"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/baseline-control/qdisc-after.json",
+    "sha256": "cfeab5e5093a669ae359f3acf1854156e3048464be0330584bb5c5721337489d"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/baseline-control/qdisc-before.json",
+    "sha256": "33c6a5676376ab9db1715983d7123052f1e4c775a3066f58064684d15e99ab73"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/baseline-control/router-resources.txt",
+    "sha256": "56d3600fa9f9ba016ec4cd09625d9d22a3c9d85a6de3299a972923c8ac84a567"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/baseline-control/server-resources.jsonl",
+    "sha256": "fb2ecf2faf10d3961ee455d2f853ace09efe9a91941c0357189454b93dc05be4"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/baseline-control/server.log",
+    "sha256": "32a7ec27ff8452489457c8c7df42a5ff71d2cc58e48380f7e99809bb6dd8cdce"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/baseline-control/server.pcap",
+    "sha256": "d3fd6960966ead4eb138aad7b87336192d39a7cb561bdf3dd7338f93436c9975"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/browser-neighbors-after.json",
+    "sha256": "9b629b74fe82a119125c1952310bc614a037a94e85c041438f1b77cbafac89ec"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/browser-neighbors.json",
+    "sha256": "9b629b74fe82a119125c1952310bc614a037a94e85c041438f1b77cbafac89ec"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/browser-route.txt",
+    "sha256": "4ef09f4c3a50ebfc0b899ea7b4f88917f8f4997e14f22543b50c1fe30fb61813"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/collector.sh",
+    "sha256": "e517880776c3951ee4648417ef0662ea8ee6fa8501d08b7eeb0da650123c8578"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/commands.log",
+    "sha256": "43dca2104781751bd46192f9cb6cda4e6cd8f82578a50c9eb48aae37fea7e39f"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/commit",
+    "sha256": "4e2d4d7d9850d963b6901a88cf105d7cff7f0f00da10a91271066a590992eecf"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/containers-before.txt",
+    "sha256": "3aa04f6f6bade40bf5cffa311b51768696d8efac129db2d3d7b1722787bae844"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/docker-info.json",
+    "sha256": "748de0330c5a5d85e9756027748f6b0435677d8ff7788dd54074d2740db0d115"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/ended",
+    "sha256": "ed779b8c243c87d7e4c5053a39228354c6d86d728d8ca4528730ebae3a552454"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/exit",
+    "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/host-memory-after.txt",
+    "sha256": "cb2ec91cddfb98dcba5179e3534bf7d6edd71ffa01c73951cb8258e7025c06c5"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/host-memory-before.txt",
+    "sha256": "511e60dfbb508d3c259cb9c31dc945b0929b4fee8d62791d08a4d0641a62e5fb"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/host-resources.txt",
+    "sha256": "af8bdd0f7a972939b602a220dcb67fb5d2bd05581d8f0b54062f687a1919eee5"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/host.txt",
+    "sha256": "edeff736ee5a6d1043ddc6c5d9b35550cd89b702733520c9f252dcc90a191a34"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/idle-resources.jsonl",
+    "sha256": "8c9d9fb50eaa537dc7a40457c1f7e72d535382d462fd706d0a8d7a6abe773e38"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/inspect.json",
+    "sha256": "0421cc7238ef53daf107fbfb3402f1267ea6477a690aa820500345351a6e780d"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/plan.md",
+    "sha256": "e3f5f16c9d843e3103f00828758a2a35fe1624f4a69be156d00eba876eed91aa"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/router-browser-neighbors-after.json",
+    "sha256": "56b8e90095943e69747271779c271fb93421b7c16984ed5e952d4e49b4610387"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/router-browser-neighbors.json",
+    "sha256": "56b8e90095943e69747271779c271fb93421b7c16984ed5e952d4e49b4610387"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/router-links.txt",
+    "sha256": "439f74e7d789d85516b539b2fd8771d01ec789199eaeb7ba9aee3fb964b28f0b"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/router-server-neighbors-after.json",
+    "sha256": "6b5116bb011fe4a6950cfc688c4c14430977738bd97a9381620a2912af41b1df"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/router-server-neighbors.json",
+    "sha256": "6b5116bb011fe4a6950cfc688c4c14430977738bd97a9381620a2912af41b1df"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/server-neighbors-after.json",
+    "sha256": "776af902629fc190cda78ef7ec3a7436956b502c0a8c5b3345355423d949026d"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/server-neighbors.json",
+    "sha256": "776af902629fc190cda78ef7ec3a7436956b502c0a8c5b3345355423d949026d"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/server-route.txt",
+    "sha256": "472456cbab08d9d07afb0887d82644eaa54b5f1a17bf3c8c1f90f95cd70b969b"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/sources-after.json",
+    "sha256": "eb79aec5ad13f3b2961cabb903d8cbcc200e2cae4e7084962748662da8f30b2b"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/sources-before.json",
+    "sha256": "eb79aec5ad13f3b2961cabb903d8cbcc200e2cae4e7084962748662da8f30b2b"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/started",
+    "sha256": "08d4c359edfca217bd501838e1fc62d04729b670f81d333eb8ec04c8525ed64d"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/stats-after.jsonl",
+    "sha256": "a275dda9ae888660d3986e7250f7138cdf2d09b316e2ccacb7f0961b9bc09f16"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/stats-before.jsonl",
+    "sha256": "4337547445869106d9f64913962240999a03c2558b0da94dec3231c9791a9d57"
+  }
+]

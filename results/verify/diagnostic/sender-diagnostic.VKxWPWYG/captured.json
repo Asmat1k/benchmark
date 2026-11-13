@@ -1,0 +1,90 @@
+[
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.VKxWPWYG/collector.sh",
+    "sha256": "6fc052a4d34c6a4c30617a462c89a761c1d23802ce8355961fe1b856da1cf4a7"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.VKxWPWYG/commands.log",
+    "sha256": "c2f89a9170f0ece5283687989356a377ba6ed97ae409ffb25172687ded9f3391"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.VKxWPWYG/docker-info.json",
+    "sha256": "90d7846106fc37c3fdae5931c96088def3d5e5b4780206777cf1747c51da49ef"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.VKxWPWYG/ended",
+    "sha256": "e902307631f223a1aa5cc674c0d5f30fb132bd7794609454e65557153c599875"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.VKxWPWYG/exit",
+    "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.VKxWPWYG/plan.md",
+    "sha256": "b85ce538a65588413eac9e8fab1cd58be18ce8156481541b9fd776a3bc88eb3c"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.VKxWPWYG/sources/compose.yaml",
+    "sha256": "f7d625c308ce9a5a702a17f3df449991d43d544307936b092340eb392c0c52fa"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.VKxWPWYG/sources/configs/profiles.json",
+    "sha256": "289470a71afa865106cfb55926dc56754997380817f94b4d28debe58a7e99e9d"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.VKxWPWYG/sources/configs/thresholds.json",
+    "sha256": "ff50c32843bee6f2bd491bfbb1b394d19df6c9411f1bfae929089e15fc025cfe"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.VKxWPWYG/sources/docker/calibration-neighbors.sh",
+    "sha256": "87e8cb08c3f24912b9586f6acc6e65990498bc32fe5401bdb37b208dfb0e87b1"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.VKxWPWYG/sources/docker/calibration_probe.py",
+    "sha256": "9a843039a0b5215fab132a134a06f44370e84bbadb525313bba3ded36c4598ae"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.VKxWPWYG/sources/docker/links.sh",
+    "sha256": "ed64272624b9f3b074a1984688f2431bb3ec42fc14fb47222581321de8f0def2"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.VKxWPWYG/sources/docker/network.sh",
+    "sha256": "bc35d625f232b43c458960ba7d912cc4c2fb7be3353b8a009a81a152b4f3300b"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.VKxWPWYG/sources/docker/sender-diagnostic.sh",
+    "sha256": "6fc052a4d34c6a4c30617a462c89a761c1d23802ce8355961fe1b856da1cf4a7"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.VKxWPWYG/sources/docker/sender_diagnostic_plain.py",
+    "sha256": "355219c056e73bab87c233e4c845f18e7f7b840f3443c5b1267cbe8c87bfc3fc"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.VKxWPWYG/sources/docker/sender_diagnostic_probe.py",
+    "sha256": "bc38cf302bf3cd4a5f14ae835383f4e59f5acab280696c79dc28b79b5c6cc0cb"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.VKxWPWYG/sources/docker/sender_diagnostic_resources.py",
+    "sha256": "eb59345a7d3c3d5f046de9a9415eccf23953256f2d3901aafdcfb4746567dd04"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.VKxWPWYG/sources/docker/sender_qualification_probe.py",
+    "sha256": "3a63562690500d9f22ecd917d4a2ec1f5edfc56b10eb54f5d286587c948137f0"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.VKxWPWYG/sources/src/analysis/sender_quality.py",
+    "sha256": "ca2d674b2f27316390c8790bbe2325e94030d56ce395f6a2716930d1792d4623"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.VKxWPWYG/sources-after.json",
+    "sha256": "aba685e727c7d3d7613aa1ad46126f4780f80bf358e03694bd408694410645a6"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.VKxWPWYG/sources-before.json",
+    "sha256": "aba685e727c7d3d7613aa1ad46126f4780f80bf358e03694bd408694410645a6"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.VKxWPWYG/started",
+    "sha256": "e902307631f223a1aa5cc674c0d5f30fb132bd7794609454e65557153c599875"
+  }
+]

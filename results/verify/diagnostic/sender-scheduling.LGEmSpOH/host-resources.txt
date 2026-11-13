@@ -1,0 +1,3 @@
+hw.ncpu: 8
+hw.memsize: 17179869184
+vm.loadavg: { 3.36 3.65 4.25 }

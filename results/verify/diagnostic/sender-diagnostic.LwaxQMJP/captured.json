@@ -1,0 +1,214 @@
+[
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/baseline-q1/browser-resources.jsonl",
+    "sha256": "8a424e35274222b0784fe8c9a61ab49af4ec9f592dd5ac123f87ce38914fbe11"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/baseline-q1/browser.interrupted.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/baseline-q1/browser.interrupted.pcap",
+    "sha256": "06af2bec9521a1f229d28ff6e2c17747f757643fbaeabbb01c8816cf9a801afc"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/baseline-q1/browser.log",
+    "sha256": "3e8ad83bde78ae2f24eef6d665b0a26db6cb17c077892904ba5d651fc68f3546"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/baseline-q1/browser.pcap",
+    "sha256": "06af2bec9521a1f229d28ff6e2c17747f757643fbaeabbb01c8816cf9a801afc"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/baseline-q1/probe.json",
+    "sha256": "167bd358d80c155b1506a310dd0bc6e01835de133bd5c6dcf289eea2001c4e35"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/baseline-q1/profile.txt",
+    "sha256": "cbe51df362630e890d279fedccebc1fdb20dc388242bb0756faad92cb7933a85"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/baseline-q1/qdisc-after.json",
+    "sha256": "c3ce5071effccb7f1f75f258b9ee4ad305bf87fe229c9175268c500b4622fdcc"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/baseline-q1/qdisc-before.json",
+    "sha256": "9e504ac32b1a6cac4687d472385598ef0f23498dfde4d1f865324cf5eeca9674"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/baseline-q1/router-resources.txt",
+    "sha256": "79071445394bf86444c3f44a8fb922469ef3eb92b6ac46d2b62c3f1e6a223706"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/baseline-q1/sender-quality.json",
+    "sha256": "de9f2b44befbf3ac6865725f4555cfbbe85aa2a0ae911ebe06580deadc8d40c5"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/baseline-q1/server-resources.jsonl",
+    "sha256": "4e7510037bdf7c389613fd25f0677563e9d2951c87f55ac539da7ed5c38afabd"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/baseline-q1/server.interrupted.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/baseline-q1/server.interrupted.pcap",
+    "sha256": "1648f9839dfaeeeeac9b78cdfd608e210cdddfa50886049c597ddf761eb8d47a"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/baseline-q1/server.log",
+    "sha256": "a2a6a4f7c461b097996df80bb375862cdc9c4ee2198bf5df4a8c6136eedd8c06"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/baseline-q1/server.pcap",
+    "sha256": "1648f9839dfaeeeeac9b78cdfd608e210cdddfa50886049c597ddf761eb8d47a"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/browser-neighbors.json",
+    "sha256": "6ce25c99cdad1ccbfffba000c8a384b79f9d19e8c413728b3fc7458b00d8b064"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/browser-route.txt",
+    "sha256": "4ef09f4c3a50ebfc0b899ea7b4f88917f8f4997e14f22543b50c1fe30fb61813"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/collector.sh",
+    "sha256": "6fc052a4d34c6a4c30617a462c89a761c1d23802ce8355961fe1b856da1cf4a7"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/commands.log",
+    "sha256": "b123804f76b4624d41735569546e2f2ba82829d59d302e97a9b7045a55b43be7"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/commit",
+    "sha256": "4e2d4d7d9850d963b6901a88cf105d7cff7f0f00da10a91271066a590992eecf"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/containers-before.txt",
+    "sha256": "ca7a9c47859272958049ab501310bef4fbddfe085e0d07ae12a0ab82a951c0af"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/docker-info.json",
+    "sha256": "808f6d06557c0f36a46256d0710b8f751e058ecdbc6ade3d75f45237245e0718"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/ended",
+    "sha256": "dd243cce9eed860df2aa88eceea78ea9cc6533082e6d246e6e3d85b52319e3c6"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/exit",
+    "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/host-memory-before.txt",
+    "sha256": "5476a0fe487f320263d4676858998315b61ba54ec24a1bc03ce00bc35bda3d5d"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/host-resources.txt",
+    "sha256": "deb76165d50091286fa61b22c3a8c170577c7b47df859a10a68e4238679bb1a0"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/host.txt",
+    "sha256": "edeff736ee5a6d1043ddc6c5d9b35550cd89b702733520c9f252dcc90a191a34"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/idle-resources.jsonl",
+    "sha256": "77cba30863a500bde993d6262fdbf3c4e7afaae524937ac3df3dda766ae81c53"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/inspect.json",
+    "sha256": "8df42541bc75dd4b743d2f66ae35b74b033517207ac9c3778465fef2813f104c"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/plan.md",
+    "sha256": "b85ce538a65588413eac9e8fab1cd58be18ce8156481541b9fd776a3bc88eb3c"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/router-browser-neighbors.json",
+    "sha256": "40528ecfdd0d00ceffa08a1e3342bfced753eae113643399d686e7b07e4986bc"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/router-links.txt",
+    "sha256": "439f74e7d789d85516b539b2fd8771d01ec789199eaeb7ba9aee3fb964b28f0b"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/router-server-neighbors.json",
+    "sha256": "8b0c51dace676047a8cf3bb4d9fd0506be41bf5d3494f80f59fbc99e0df2e5e8"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/server-neighbors.json",
+    "sha256": "565491765f96462f4175d4da836b83066ef1e3e90d51d90f575ca8176d5ddfe6"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/server-route.txt",
+    "sha256": "472456cbab08d9d07afb0887d82644eaa54b5f1a17bf3c8c1f90f95cd70b969b"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/sources/compose.yaml",
+    "sha256": "f7d625c308ce9a5a702a17f3df449991d43d544307936b092340eb392c0c52fa"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/sources/configs/profiles.json",
+    "sha256": "289470a71afa865106cfb55926dc56754997380817f94b4d28debe58a7e99e9d"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/sources/configs/thresholds.json",
+    "sha256": "ff50c32843bee6f2bd491bfbb1b394d19df6c9411f1bfae929089e15fc025cfe"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/sources/docker/calibration-neighbors.sh",
+    "sha256": "87e8cb08c3f24912b9586f6acc6e65990498bc32fe5401bdb37b208dfb0e87b1"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/sources/docker/calibration_probe.py",
+    "sha256": "9a843039a0b5215fab132a134a06f44370e84bbadb525313bba3ded36c4598ae"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/sources/docker/links.sh",
+    "sha256": "ed64272624b9f3b074a1984688f2431bb3ec42fc14fb47222581321de8f0def2"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/sources/docker/network.sh",
+    "sha256": "bc35d625f232b43c458960ba7d912cc4c2fb7be3353b8a009a81a152b4f3300b"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/sources/docker/sender-diagnostic.sh",
+    "sha256": "6fc052a4d34c6a4c30617a462c89a761c1d23802ce8355961fe1b856da1cf4a7"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/sources/docker/sender_diagnostic_plain.py",
+    "sha256": "355219c056e73bab87c233e4c845f18e7f7b840f3443c5b1267cbe8c87bfc3fc"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/sources/docker/sender_diagnostic_probe.py",
+    "sha256": "bc38cf302bf3cd4a5f14ae835383f4e59f5acab280696c79dc28b79b5c6cc0cb"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/sources/docker/sender_diagnostic_resources.py",
+    "sha256": "eb59345a7d3c3d5f046de9a9415eccf23953256f2d3901aafdcfb4746567dd04"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/sources/docker/sender_qualification_probe.py",
+    "sha256": "3a63562690500d9f22ecd917d4a2ec1f5edfc56b10eb54f5d286587c948137f0"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/sources/src/analysis/sender_quality.py",
+    "sha256": "ca2d674b2f27316390c8790bbe2325e94030d56ce395f6a2716930d1792d4623"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/sources-after.json",
+    "sha256": "aba685e727c7d3d7613aa1ad46126f4780f80bf358e03694bd408694410645a6"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/sources-before.json",
+    "sha256": "aba685e727c7d3d7613aa1ad46126f4780f80bf358e03694bd408694410645a6"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/started",
+    "sha256": "6dc0a878979ef4e0757423dcc5f6ae68e5bb89d8175f784ffc618e7b8785c235"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.LwaxQMJP/stats-before.jsonl",
+    "sha256": "a65846ead354850b9681223a650549c2ec4ae548dabd35dcacedd61f50c41310"
+  }
+]

@@ -376,7 +376,9 @@ class AcceptanceTests(unittest.TestCase):
 
     def verification_fixture(self):
         from synthetic import SOURCE
-        shutil.copyfile(SOURCE/'context.json',self.env)
+        context=read(SOURCE/'context.json')
+        context['config']={name:read(Path('configs')/f'{name}.json') for name in ('plan','thresholds','profiles')}
+        write(self.env,context)
         write(self.root/'SYNTHETIC.json',dict(kind='synthetic'))
         paths={gate:str(self.produce(gate,self.primary(gate))) for gate in PRIMARY_IDS if gate!='reproduction'}
         paths['timer']=str(self.produce('timer',self.timer()))

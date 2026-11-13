@@ -1,0 +1,42 @@
+[
+  {
+    "path": "results/verify/readiness/sender-control-yB7Jzpyh/analysis.json",
+    "sha256": "722ff249397cfebb626c563e32670d90db95c000a7ecff854d4f990c05b9c5fa"
+  },
+  {
+    "path": "results/verify/readiness/sender-control-yB7Jzpyh/analysis.txt",
+    "sha256": "a28ccf04050ce9f4275131da0436838485280c973b1df6601ff8a25830a3989b"
+  },
+  {
+    "path": "results/verify/readiness/sender-control-yB7Jzpyh/check-resources.py",
+    "sha256": "633b5047dceafd6aa890e9c4efe0eaf4f9419baff0777d09dd16372c49cb4ba9"
+  },
+  {
+    "path": "results/verify/readiness/sender-control-yB7Jzpyh/commands.txt",
+    "sha256": "941a719fdeeb2c39af06a7f70cc2ee9537abb36d049ab4b22a745f8d9df18a5b"
+  },
+  {
+    "path": "results/verify/readiness/sender-control-yB7Jzpyh/integrity.json",
+    "sha256": "8e3343d6dede209f2fda8cad12de03416ce4d8de0df299d21bdc299ad4c6e137"
+  },
+  {
+    "path": "results/verify/readiness/sender-control-yB7Jzpyh/late-slots.json",
+    "sha256": "e137b16f5e79fa381b7e9673dbc60e2ccfc79f43c8946252be398150d0b0f6da"
+  },
+  {
+    "path": "results/verify/readiness/sender-control-yB7Jzpyh/resource-checks.json",
+    "sha256": "bec27ce8bf1ccdd037bb4dd5033eba65eb620bb6aef5b39e4566dd4e55ca11c2"
+  },
+  {
+    "path": "results/verify/readiness/sender-control-yB7Jzpyh/resource-checks.txt",
+    "sha256": "bec27ce8bf1ccdd037bb4dd5033eba65eb620bb6aef5b39e4566dd4e55ca11c2"
+  },
+  {
+    "path": "docs/readiness/sender-control-yB7Jzpyh.md",
+    "sha256": "0dc1d9d608c87bf9c9d3d73c7be805e9805e51a465ce711cac386ce86154b391"
+  },
+  {
+    "path": "results/verify/diagnostic/sender-diagnostic.yB7Jzpyh/captured.json",
+    "sha256": "b7f4006bcb15e58be798f8acfafdc3ba62b737be71b693f440d52f0bb7b8c917"
+  }
+]

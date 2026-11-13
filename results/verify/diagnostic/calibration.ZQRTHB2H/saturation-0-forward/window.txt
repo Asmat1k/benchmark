@@ -1,0 +1,6 @@
+85895.34
+49808612
+{"kind":"netem","handle":"8025:","dev":"to_server","root":true,"refcnt":3,"options":{"limit":1000,"delay":{"delay":0.01,"jitter":0,"correlation":0},"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261138,"ecn":false,"gap":0},"bytes":48018810,"packets":144641,"drops":959,"overlimits":0,"requeues":0,"backlog":1240758,"qlen":999}
+85956.37
+144563318
+{"kind":"netem","handle":"8025:","dev":"to_server","root":true,"refcnt":3,"options":{"limit":1000,"delay":{"delay":0.01,"jitter":0,"correlation":0},"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261138,"ecn":false,"gap":0},"bytes":124314996,"packets":206074,"drops":15829,"overlimits":0,"requeues":0,"backlog":1242000,"qlen":1000}

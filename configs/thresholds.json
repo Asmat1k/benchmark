@@ -18,5 +18,12 @@
   "max_throttling_pct_exclusive": 1,
   "frequency_hz": 20,
   "frequency_margin_hz": 0.1,
-  "reserve_hz": 100
+  "reserve_hz": 100,
+  "udp_sender": {
+    "version": "udp-sender-v2",
+    "max_late_pct": 1,
+    "max_lag_ms": 50,
+    "burst_window_ms": 10,
+    "max_burst_packets": 4
+  }
 }

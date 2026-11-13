@@ -1,0 +1,3 @@
+"/wswt-d3-wswt-measure-uz0yapix-browser-1"
+"/wswt-d3-wswt-measure-uz0yapix-router-1"
+"/wswt-d3-wswt-measure-uz0yapix-server-1"

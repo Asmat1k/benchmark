@@ -1,0 +1,10 @@
+test_mapping_failure_stops_before_other_endpoint (calibration_neighbors_test.CalibrationNeighbors.test_mapping_failure_stops_before_other_endpoint) ... ok
+test_permanent_mappings_use_peer_mac_and_namespace (calibration_neighbors_test.CalibrationNeighbors.test_permanent_mappings_use_peer_mac_and_namespace) ... ok
+test_actual_directional_losses (calibration_test.Calibration.test_actual_directional_losses) ... ok
+test_latency_collection_cannot_supply_loss (calibration_test.Calibration.test_latency_collection_cannot_supply_loss) ... ok
+test_saturation_window (calibration_test.Calibration.test_saturation_window) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 1.560s
+
+OK

@@ -1,0 +1,986 @@
+[
+  {
+    "id": 47,
+    "lag_ms": 17.102082999999993,
+    "preceding_events": [
+      {
+        "kind": "select",
+        "timeout_ns": 8225083,
+        "ready": true,
+        "before": {
+          "wall_ns": 93168901836710,
+          "cpu_ns": 67985505,
+          "schedstat": [
+            67370048,
+            10985952,
+            230
+          ],
+          "voluntary": 182,
+          "involuntary": 117,
+          "maxrss_kib": 14564
+        },
+        "after": {
+          "wall_ns": 93168902689502,
+          "cpu_ns": 68106922,
+          "schedstat": [
+            67428965,
+            10985952,
+            231
+          ],
+          "voluntary": 183,
+          "involuntary": 117,
+          "maxrss_kib": 14564
+        }
+      },
+      {
+        "kind": "receive",
+        "id": 46,
+        "before": {
+          "wall_ns": 93168902726669,
+          "cpu_ns": 68143256,
+          "schedstat": [
+            67527299,
+            10985952,
+            231
+          ],
+          "voluntary": 183,
+          "involuntary": 117,
+          "maxrss_kib": 14564
+        },
+        "after": {
+          "wall_ns": 93168902772752,
+          "cpu_ns": 68189339,
+          "schedstat": [
+            67573340,
+            10985952,
+            231
+          ],
+          "voluntary": 183,
+          "involuntary": 117,
+          "maxrss_kib": 14564
+        }
+      },
+      {
+        "kind": "select",
+        "timeout_ns": 7245167,
+        "ready": false,
+        "before": {
+          "wall_ns": 93168902815460,
+          "cpu_ns": 68232089,
+          "schedstat": [
+            67616424,
+            10985952,
+            231
+          ],
+          "voluntary": 183,
+          "involuntary": 117,
+          "maxrss_kib": 14564
+        },
+        "after": {
+          "wall_ns": 93168926947794,
+          "cpu_ns": 68520630,
+          "schedstat": [
+            67727090,
+            10985952,
+            232
+          ],
+          "voluntary": 184,
+          "involuntary": 117,
+          "maxrss_kib": 14564
+        }
+      }
+    ],
+    "send": {
+      "kind": "send",
+      "before": {
+        "wall_ns": 93168927187794,
+        "cpu_ns": 68758839,
+        "schedstat": [
+          68119548,
+          10985952,
+          232
+        ],
+        "voluntary": 184,
+        "involuntary": 117,
+        "maxrss_kib": 14564
+      },
+      "after": {
+        "wall_ns": 93168927292835,
+        "cpu_ns": 68863714,
+        "schedstat": [
+          68240090,
+          10985952,
+          232
+        ],
+        "voluntary": 184,
+        "involuntary": 117,
+        "maxrss_kib": 14564
+      }
+    }
+  },
+  {
+    "id": 320,
+    "lag_ms": 12.619293000000198,
+    "preceding_events": [
+      {
+        "kind": "select",
+        "timeout_ns": 7536665,
+        "ready": true,
+        "before": {
+          "wall_ns": 93171632532378,
+          "cpu_ns": 385473305,
+          "schedstat": [
+            384850515,
+            25337075,
+            790
+          ],
+          "voluntary": 723,
+          "involuntary": 136,
+          "maxrss_kib": 16228
+        },
+        "after": {
+          "wall_ns": 93171634943670,
+          "cpu_ns": 385645847,
+          "schedstat": [
+            384927307,
+            25337075,
+            791
+          ],
+          "voluntary": 724,
+          "involuntary": 136,
+          "maxrss_kib": 16228
+        }
+      },
+      {
+        "kind": "receive",
+        "id": 319,
+        "before": {
+          "wall_ns": 93171634996212,
+          "cpu_ns": 385697305,
+          "schedstat": [
+            385070890,
+            25337075,
+            791
+          ],
+          "voluntary": 724,
+          "involuntary": 136,
+          "maxrss_kib": 16228
+        },
+        "after": {
+          "wall_ns": 93171635087003,
+          "cpu_ns": 385788180,
+          "schedstat": [
+            385161473,
+            25337075,
+            791
+          ],
+          "voluntary": 724,
+          "involuntary": 136,
+          "maxrss_kib": 16228
+        }
+      },
+      {
+        "kind": "select",
+        "timeout_ns": 4942624,
+        "ready": false,
+        "before": {
+          "wall_ns": 93171635124212,
+          "cpu_ns": 385825180,
+          "schedstat": [
+            385203598,
+            25337075,
+            791
+          ],
+          "voluntary": 724,
+          "involuntary": 136,
+          "maxrss_kib": 16228
+        },
+        "after": {
+          "wall_ns": 93171652611128,
+          "cpu_ns": 386329555,
+          "schedstat": [
+            385375515,
+            25337075,
+            792
+          ],
+          "voluntary": 725,
+          "involuntary": 136,
+          "maxrss_kib": 16228
+        }
+      }
+    ],
+    "send": {
+      "kind": "send",
+      "before": {
+        "wall_ns": 93171652690712,
+        "cpu_ns": 386406389,
+        "schedstat": [
+          385781473,
+          25337075,
+          792
+        ],
+        "voluntary": 725,
+        "involuntary": 136,
+        "maxrss_kib": 16228
+      },
+      "after": {
+        "wall_ns": 93171653332003,
+        "cpu_ns": 387048805,
+        "schedstat": [
+          386361765,
+          25337075,
+          792
+        ],
+        "voluntary": 725,
+        "involuntary": 136,
+        "maxrss_kib": 16228
+      }
+    }
+  },
+  {
+    "id": 325,
+    "lag_ms": 10.307835000000068,
+    "preceding_events": [
+      {
+        "kind": "select",
+        "timeout_ns": 5672874,
+        "ready": true,
+        "before": {
+          "wall_ns": 93171684412087,
+          "cpu_ns": 389301221,
+          "schedstat": [
+            388662722,
+            25363784,
+            799
+          ],
+          "voluntary": 732,
+          "involuntary": 136,
+          "maxrss_kib": 16228
+        },
+        "after": {
+          "wall_ns": 93171685170587,
+          "cpu_ns": 389390304,
+          "schedstat": [
+            388742431,
+            25363784,
+            800
+          ],
+          "voluntary": 733,
+          "involuntary": 136,
+          "maxrss_kib": 16228
+        }
+      },
+      {
+        "kind": "receive",
+        "id": 324,
+        "before": {
+          "wall_ns": 93171685215337,
+          "cpu_ns": 389434596,
+          "schedstat": [
+            388810889,
+            25363784,
+            800
+          ],
+          "voluntary": 733,
+          "involuntary": 136,
+          "maxrss_kib": 16228
+        },
+        "after": {
+          "wall_ns": 93171685275837,
+          "cpu_ns": 389495138,
+          "schedstat": [
+            388872806,
+            25363784,
+            800
+          ],
+          "voluntary": 733,
+          "involuntary": 136,
+          "maxrss_kib": 16228
+        }
+      },
+      {
+        "kind": "select",
+        "timeout_ns": 4753207,
+        "ready": false,
+        "before": {
+          "wall_ns": 93171685312295,
+          "cpu_ns": 389531554,
+          "schedstat": [
+            388910722,
+            25363784,
+            800
+          ],
+          "voluntary": 733,
+          "involuntary": 136,
+          "maxrss_kib": 16228
+        },
+        "after": {
+          "wall_ns": 93171700286962,
+          "cpu_ns": 398438888,
+          "schedstat": [
+            397652472,
+            25363784,
+            801
+          ],
+          "voluntary": 734,
+          "involuntary": 136,
+          "maxrss_kib": 16228
+        }
+      }
+    ],
+    "send": {
+      "kind": "send",
+      "before": {
+        "wall_ns": 93171700388337,
+        "cpu_ns": 398536054,
+        "schedstat": [
+          397904556,
+          25363784,
+          801
+        ],
+        "voluntary": 734,
+        "involuntary": 136,
+        "maxrss_kib": 16228
+      },
+      "after": {
+        "wall_ns": 93171700529253,
+        "cpu_ns": 398676929,
+        "schedstat": [
+          398054472,
+          25363784,
+          801
+        ],
+        "voluntary": 734,
+        "involuntary": 136,
+        "maxrss_kib": 16228
+      }
+    }
+  },
+  {
+    "id": 343,
+    "lag_ms": 13.680835000000116,
+    "preceding_events": [
+      {
+        "kind": "select",
+        "timeout_ns": 6434457,
+        "ready": true,
+        "before": {
+          "wall_ns": 93171863628253,
+          "cpu_ns": 417591264,
+          "schedstat": [
+            416975474,
+            25487867,
+            833
+          ],
+          "voluntary": 765,
+          "involuntary": 137,
+          "maxrss_kib": 16356
+        },
+        "after": {
+          "wall_ns": 93171864640420,
+          "cpu_ns": 417680097,
+          "schedstat": [
+            417030432,
+            25487867,
+            834
+          ],
+          "voluntary": 766,
+          "involuntary": 137,
+          "maxrss_kib": 16356
+        }
+      },
+      {
+        "kind": "receive",
+        "id": 342,
+        "before": {
+          "wall_ns": 93171864675837,
+          "cpu_ns": 417715139,
+          "schedstat": [
+            417098765,
+            25487867,
+            834
+          ],
+          "voluntary": 766,
+          "involuntary": 137,
+          "maxrss_kib": 16356
+        },
+        "after": {
+          "wall_ns": 93171864724462,
+          "cpu_ns": 417763847,
+          "schedstat": [
+            417147307,
+            25487867,
+            834
+          ],
+          "voluntary": 766,
+          "involuntary": 137,
+          "maxrss_kib": 16356
+        }
+      },
+      {
+        "kind": "select",
+        "timeout_ns": 5305624,
+        "ready": false,
+        "before": {
+          "wall_ns": 93171864753587,
+          "cpu_ns": 417792930,
+          "schedstat": [
+            417178098,
+            25487867,
+            834
+          ],
+          "voluntary": 766,
+          "involuntary": 137,
+          "maxrss_kib": 16356
+        },
+        "after": {
+          "wall_ns": 93171883659753,
+          "cpu_ns": 418247180,
+          "schedstat": [
+            417325640,
+            25487867,
+            835
+          ],
+          "voluntary": 767,
+          "involuntary": 137,
+          "maxrss_kib": 16356
+        }
+      }
+    ],
+    "send": {
+      "kind": "send",
+      "before": {
+        "wall_ns": 93171883751753,
+        "cpu_ns": 418335680,
+        "schedstat": [
+          417712057,
+          25487867,
+          835
+        ],
+        "voluntary": 767,
+        "involuntary": 137,
+        "maxrss_kib": 16356
+      },
+      "after": {
+        "wall_ns": 93171883933837,
+        "cpu_ns": 418517680,
+        "schedstat": [
+          417894515,
+          25487867,
+          835
+        ],
+        "voluntary": 767,
+        "involuntary": 137,
+        "maxrss_kib": 16356
+      }
+    }
+  },
+  {
+    "id": 353,
+    "lag_ms": 14.264876000000186,
+    "preceding_events": [
+      {
+        "kind": "select",
+        "timeout_ns": 3751124,
+        "ready": true,
+        "before": {
+          "wall_ns": 93171966315212,
+          "cpu_ns": 433504013,
+          "schedstat": [
+            432883347,
+            25487867,
+            851
+          ],
+          "voluntary": 783,
+          "involuntary": 137,
+          "maxrss_kib": 16356
+        },
+        "after": {
+          "wall_ns": 93171967294795,
+          "cpu_ns": 433689138,
+          "schedstat": [
+            432986347,
+            25487867,
+            852
+          ],
+          "voluntary": 784,
+          "involuntary": 137,
+          "maxrss_kib": 16356
+        }
+      },
+      {
+        "kind": "receive",
+        "id": 352,
+        "before": {
+          "wall_ns": 93171967334503,
+          "cpu_ns": 433727471,
+          "schedstat": [
+            433111181,
+            25487867,
+            852
+          ],
+          "voluntary": 784,
+          "involuntary": 137,
+          "maxrss_kib": 16356
+        },
+        "after": {
+          "wall_ns": 93171967378420,
+          "cpu_ns": 433771513,
+          "schedstat": [
+            433158431,
+            25487867,
+            852
+          ],
+          "voluntary": 784,
+          "involuntary": 137,
+          "maxrss_kib": 16356
+        }
+      },
+      {
+        "kind": "select",
+        "timeout_ns": 2650582,
+        "ready": false,
+        "before": {
+          "wall_ns": 93171967404462,
+          "cpu_ns": 433797388,
+          "schedstat": [
+            433187139,
+            25487867,
+            852
+          ],
+          "voluntary": 784,
+          "involuntary": 137,
+          "maxrss_kib": 16356
+        },
+        "after": {
+          "wall_ns": 93171984235628,
+          "cpu_ns": 434186221,
+          "schedstat": [
+            433368889,
+            25487867,
+            853
+          ],
+          "voluntary": 785,
+          "involuntary": 137,
+          "maxrss_kib": 16356
+        }
+      }
+    ],
+    "send": {
+      "kind": "send",
+      "before": {
+        "wall_ns": 93171984340587,
+        "cpu_ns": 434289429,
+        "schedstat": [
+          433659555,
+          25487867,
+          853
+        ],
+        "voluntary": 785,
+        "involuntary": 137,
+        "maxrss_kib": 16356
+      },
+      "after": {
+        "wall_ns": 93171984448712,
+        "cpu_ns": 434397429,
+        "schedstat": [
+          433777097,
+          25487867,
+          853
+        ],
+        "voluntary": 785,
+        "involuntary": 137,
+        "maxrss_kib": 16356
+      }
+    }
+  },
+  {
+    "id": 395,
+    "lag_ms": 23.460459999999784,
+    "preceding_events": [
+      {
+        "kind": "select",
+        "timeout_ns": 9631623,
+        "ready": true,
+        "before": {
+          "wall_ns": 93172380433212,
+          "cpu_ns": 488953423,
+          "schedstat": [
+            488334050,
+            29151202,
+            938
+          ],
+          "voluntary": 866,
+          "involuntary": 141,
+          "maxrss_kib": 16612
+        },
+        "after": {
+          "wall_ns": 93172381128754,
+          "cpu_ns": 489041215,
+          "schedstat": [
+            488382758,
+            29151202,
+            939
+          ],
+          "voluntary": 867,
+          "involuntary": 141,
+          "maxrss_kib": 16612
+        }
+      },
+      {
+        "kind": "receive",
+        "id": 394,
+        "before": {
+          "wall_ns": 93172381160087,
+          "cpu_ns": 489072298,
+          "schedstat": [
+            488456466,
+            29151202,
+            939
+          ],
+          "voluntary": 867,
+          "involuntary": 141,
+          "maxrss_kib": 16612
+        },
+        "after": {
+          "wall_ns": 93172381218587,
+          "cpu_ns": 489130840,
+          "schedstat": [
+            488512133,
+            29151202,
+            939
+          ],
+          "voluntary": 867,
+          "involuntary": 141,
+          "maxrss_kib": 16612
+        }
+      },
+      {
+        "kind": "select",
+        "timeout_ns": 8812290,
+        "ready": false,
+        "before": {
+          "wall_ns": 93172381246504,
+          "cpu_ns": 489158715,
+          "schedstat": [
+            488544341,
+            29151202,
+            939
+          ],
+          "voluntary": 867,
+          "involuntary": 141,
+          "maxrss_kib": 16612
+        },
+        "after": {
+          "wall_ns": 93172413462587,
+          "cpu_ns": 489576090,
+          "schedstat": [
+            488781883,
+            29151202,
+            940
+          ],
+          "voluntary": 868,
+          "involuntary": 141,
+          "maxrss_kib": 16612
+        }
+      }
+    ],
+    "send": {
+      "kind": "send",
+      "before": {
+        "wall_ns": 93172413541254,
+        "cpu_ns": 489652757,
+        "schedstat": [
+          489017633,
+          29151202,
+          940
+        ],
+        "voluntary": 868,
+        "involuntary": 141,
+        "maxrss_kib": 16612
+      },
+      "after": {
+        "wall_ns": 93172413644420,
+        "cpu_ns": 489756048,
+        "schedstat": [
+          489135925,
+          29151202,
+          940
+        ],
+        "voluntary": 868,
+        "involuntary": 141,
+        "maxrss_kib": 16612
+      }
+    }
+  },
+  {
+    "id": 396,
+    "lag_ms": 13.625709999999799,
+    "preceding_events": [],
+    "send": {
+      "kind": "send",
+      "before": {
+        "wall_ns": 93172413687629,
+        "cpu_ns": 489799132,
+        "schedstat": [
+          489181133,
+          29151202,
+          940
+        ],
+        "voluntary": 868,
+        "involuntary": 141,
+        "maxrss_kib": 16612
+      },
+      "after": {
+        "wall_ns": 93172413725879,
+        "cpu_ns": 489837382,
+        "schedstat": [
+          489220591,
+          29151202,
+          940
+        ],
+        "voluntary": 868,
+        "involuntary": 141,
+        "maxrss_kib": 16612
+      }
+    }
+  },
+  {
+    "id": 1169,
+    "lag_ms": 10.478214000000662,
+    "preceding_events": [
+      {
+        "kind": "select",
+        "timeout_ns": 5127411,
+        "ready": true,
+        "before": {
+          "wall_ns": 93180124961466,
+          "cpu_ns": 1358929731,
+          "schedstat": [
+            1358287857,
+            41463122,
+            2490
+          ],
+          "voluntary": 2397,
+          "involuntary": 162,
+          "maxrss_kib": 21348
+        },
+        "after": {
+          "wall_ns": 93180125813341,
+          "cpu_ns": 1359021189,
+          "schedstat": [
+            1358372857,
+            41463122,
+            2491
+          ],
+          "voluntary": 2398,
+          "involuntary": 162,
+          "maxrss_kib": 21348
+        }
+      },
+      {
+        "kind": "receive",
+        "id": 1168,
+        "before": {
+          "wall_ns": 93180125855966,
+          "cpu_ns": 1359063481,
+          "schedstat": [
+            1358439316,
+            41463122,
+            2491
+          ],
+          "voluntary": 2398,
+          "involuntary": 162,
+          "maxrss_kib": 21348
+        },
+        "after": {
+          "wall_ns": 93180125905424,
+          "cpu_ns": 1359112939,
+          "schedstat": [
+            1358490774,
+            41463122,
+            2491
+          ],
+          "voluntary": 2398,
+          "involuntary": 162,
+          "maxrss_kib": 21348
+        }
+      },
+      {
+        "kind": "select",
+        "timeout_ns": 4124036,
+        "ready": false,
+        "before": {
+          "wall_ns": 93180125949924,
+          "cpu_ns": 1359157439,
+          "schedstat": [
+            1358528066,
+            41463122,
+            2491
+          ],
+          "voluntary": 2398,
+          "involuntary": 162,
+          "maxrss_kib": 21348
+        },
+        "after": {
+          "wall_ns": 93180140464966,
+          "cpu_ns": 1359569981,
+          "schedstat": [
+            1358649107,
+            41556330,
+            2492
+          ],
+          "voluntary": 2399,
+          "involuntary": 162,
+          "maxrss_kib": 21348
+        }
+      }
+    ],
+    "send": {
+      "kind": "send",
+      "before": {
+        "wall_ns": 93180140545716,
+        "cpu_ns": 1359647314,
+        "schedstat": [
+          1359026149,
+          41556330,
+          2492
+        ],
+        "voluntary": 2399,
+        "involuntary": 162,
+        "maxrss_kib": 21348
+      },
+      "after": {
+        "wall_ns": 93180141608841,
+        "cpu_ns": 1360711148,
+        "schedstat": [
+          1360018066,
+          41556330,
+          2492
+        ],
+        "voluntary": 2399,
+        "involuntary": 162,
+        "maxrss_kib": 21348
+      }
+    }
+  },
+  {
+    "id": 1250,
+    "lag_ms": 11.157631000000038,
+    "preceding_events": [
+      {
+        "kind": "select",
+        "timeout_ns": 8549453,
+        "ready": true,
+        "before": {
+          "wall_ns": 93180931512008,
+          "cpu_ns": 1419124146,
+          "schedstat": [
+            1418508689,
+            55458164,
+            2657
+          ],
+          "voluntary": 2557,
+          "involuntary": 169,
+          "maxrss_kib": 21860
+        },
+        "after": {
+          "wall_ns": 93180932789508,
+          "cpu_ns": 1419207479,
+          "schedstat": [
+            1418560939,
+            55458164,
+            2658
+          ],
+          "voluntary": 2558,
+          "involuntary": 169,
+          "maxrss_kib": 21860
+        }
+      },
+      {
+        "kind": "receive",
+        "id": 1249,
+        "before": {
+          "wall_ns": 93180932822799,
+          "cpu_ns": 1419240187,
+          "schedstat": [
+            1418624397,
+            55458164,
+            2658
+          ],
+          "voluntary": 2558,
+          "involuntary": 169,
+          "maxrss_kib": 21860
+        },
+        "after": {
+          "wall_ns": 93180932879924,
+          "cpu_ns": 1419297271,
+          "schedstat": [
+            1418680980,
+            55458164,
+            2658
+          ],
+          "voluntary": 2558,
+          "involuntary": 169,
+          "maxrss_kib": 21860
+        }
+      },
+      {
+        "kind": "select",
+        "timeout_ns": 7148494,
+        "ready": false,
+        "before": {
+          "wall_ns": 93180932955466,
+          "cpu_ns": 1419373021,
+          "schedstat": [
+            1418713314,
+            55458164,
+            2658
+          ],
+          "voluntary": 2558,
+          "involuntary": 169,
+          "maxrss_kib": 21860
+        },
+        "after": {
+          "wall_ns": 93180951158299,
+          "cpu_ns": 1422283688,
+          "schedstat": [
+            1421558814,
+            55458164,
+            2659
+          ],
+          "voluntary": 2559,
+          "involuntary": 169,
+          "maxrss_kib": 21860
+        }
+      }
+    ],
+    "send": {
+      "kind": "send",
+      "before": {
+        "wall_ns": 93180951238174,
+        "cpu_ns": 1422361438,
+        "schedstat": [
+          1421727814,
+          55458164,
+          2659
+        ],
+        "voluntary": 2559,
+        "involuntary": 169,
+        "maxrss_kib": 21860
+      },
+      "after": {
+        "wall_ns": 93180951335591,
+        "cpu_ns": 1422458813,
+        "schedstat": [
+          1421839231,
+          55458164,
+          2659
+        ],
+        "voluntary": 2559,
+        "involuntary": 169,
+        "maxrss_kib": 21860
+      }
+    }
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "series_id": "timer-timer.gJl7zPBv",
+  "attempts": [
+    {
+      "block_id": "b0",
+      "session_id": "s0",
+      "attempt_id": "b0-a0",
+      "profile": "baseline",
+      "order_index": 0,
+      "modes": [
+        "WS",
+        "WT-S"
+      ],
+      "seed": 3725339804174525306,
+      "status": "complete",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    }
+  ]
+}

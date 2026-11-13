@@ -1,0 +1,12 @@
+{
+  "docker/calibration_probe.py": "9a843039a0b5215fab132a134a06f44370e84bbadb525313bba3ded36c4598ae",
+  "docker/sender_diagnostic_probe.py": "bc38cf302bf3cd4a5f14ae835383f4e59f5acab280696c79dc28b79b5c6cc0cb",
+  "docker/sender_diagnostic_resources.py": "d0994cae6901eb2f701bb92523c434b7d243a60780fdecaae40309c386de2806",
+  "docker/sender-diagnostic.sh": "a8a7042a67751cb8f439403bdbd4041e9339a10026b9971907496311da0d35c8",
+  "docker/links.sh": "ed64272624b9f3b074a1984688f2431bb3ec42fc14fb47222581321de8f0def2",
+  "docker/calibration-neighbors.sh": "87e8cb08c3f24912b9586f6acc6e65990498bc32fe5401bdb37b208dfb0e87b1",
+  "docker/network.sh": "bc35d625f232b43c458960ba7d912cc4c2fb7be3353b8a009a81a152b4f3300b",
+  "compose.yaml": "f7d625c308ce9a5a702a17f3df449991d43d544307936b092340eb392c0c52fa",
+  "configs/profiles.json": "289470a71afa865106cfb55926dc56754997380817f94b4d28debe58a7e99e9d",
+  "results/verify/readiness/sender-diagnostic/plan.md": "57e912b13df39a396f2684d47074166b9414bb4b364b1c75bf419da2f2ca69ef"
+}

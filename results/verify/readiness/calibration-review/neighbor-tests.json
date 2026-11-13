@@ -1,0 +1,26 @@
+{
+  "command": [
+    "/opt/anaconda3/bin/python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "docker",
+    "-p",
+    "calibration*test.py",
+    "-v"
+  ],
+  "utc": "2026-11-13T13:26:11.041168+00:00",
+  "duration_s": 1.7204326249775477,
+  "exit_code": 0,
+  "syntax_exit_code": 0,
+  "source_hashes": {
+    "docker/calibration.sh": "76e054cedc937af1601e2b4a2d2304e62f865b3d15fbc1fa841647bde2af2671",
+    "docker/calibration-neighbors.sh": "87e8cb08c3f24912b9586f6acc6e65990498bc32fe5401bdb37b208dfb0e87b1",
+    "docker/calibration_neighbors_test.py": "74556c68c62279cf094a652e8d984d0c3ad7901374eaac26597d91fad95e00e3",
+    "docker/calibration.md": "62ca10ae0b957bba3a4a763fba4256c91ccadcbfdc5c0fb06a337c299fa788fe",
+    "docs/readiness/calibration-fix.md": "5ce4c4932c8e49f8079d80f2d002464033a8517780a20a77240abf33fd96999f"
+  },
+  "sha256": "eeef5fd645656ba2473e8ffab59db5c938b00a7faf2395306b3c9731606dd73f"
+}

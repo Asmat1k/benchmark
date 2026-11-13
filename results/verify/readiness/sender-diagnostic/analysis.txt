@@ -1,0 +1,434 @@
+{
+  "baseline-before": {
+    "lag_ms": {
+      "n": 1500,
+      "p50": 1.7720420000000559,
+      "p99": 8.758422999999311,
+      "max": 23.460459999999784
+    },
+    "late_slots": 9,
+    "early_slots": 0,
+    "rtt_ms": {
+      "n": 1500,
+      "p50": 1.156,
+      "p99": 7.252625,
+      "max": 13.357083
+    },
+    "send_ids": 1500,
+    "reply_ids": 1500,
+    "replies": 1500,
+    "send_duration_s": 14.990775049,
+    "cpu_s": 1.707757135,
+    "arp": {
+      "server": 0,
+      "browser": 0
+    },
+    "send": {
+      "wall_ms": {
+        "n": 1500,
+        "p50": 0.11075,
+        "p99": 1.370916,
+        "max": 9.988916
+      },
+      "cpu_ms": {
+        "n": 1500,
+        "p50": 0.110583,
+        "p99": 1.372083,
+        "max": 9.993833
+      },
+      "runnable_wait_ms": {
+        "n": 1500,
+        "p50": 0.0,
+        "p99": 0.0,
+        "max": 0.502667
+      }
+    },
+    "select": {
+      "wall_ms": {
+        "n": 2974,
+        "p50": 3.338625,
+        "p99": 14.009834,
+        "max": 2007.755375
+      },
+      "cpu_ms": {
+        "n": 2974,
+        "p50": 0.173083,
+        "p99": 2.910667,
+        "max": 8.907334
+      },
+      "runnable_wait_ms": {
+        "n": 2974,
+        "p50": 0.0,
+        "p99": 0.2465,
+        "max": 7.464167
+      },
+      "timeout_overshoot_ms": {
+        "n": 2974,
+        "p50": -0.144243,
+        "p99": 6.733959,
+        "max": 23.403793
+      },
+      "over_10ms_beyond_timeout": 8
+    },
+    "receive": {
+      "wall_ms": {
+        "n": 1500,
+        "p50": 0.052958,
+        "p99": 0.726042,
+        "max": 3.85925
+      },
+      "cpu_ms": {
+        "n": 1500,
+        "p50": 0.053041,
+        "p99": 0.726292,
+        "max": 3.860667
+      },
+      "runnable_wait_ms": {
+        "n": 1500,
+        "p50": 0.0,
+        "p99": 0.0,
+        "max": 2.0035
+      }
+    },
+    "resources": {
+      "browser": {
+        "cpu_delta": {
+          "usage_usec": 1797293,
+          "user_usec": 1108114,
+          "system_usec": 689178,
+          "nice_usec": 0,
+          "nr_periods": 0,
+          "nr_throttled": 0,
+          "throttled_usec": 0,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        },
+        "cpu_max": "max 100000",
+        "memory_peak_sampled": 31903744,
+        "memory_events_delta": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "vm_busy_fraction": 0.06340144230769229,
+        "vm_available_kib_min": 3089024
+      },
+      "server": {
+        "cpu_delta": {
+          "usage_usec": 266075,
+          "user_usec": 147017,
+          "system_usec": 119058,
+          "nice_usec": 0,
+          "nr_periods": 0,
+          "nr_throttled": 0,
+          "throttled_usec": 0,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        },
+        "cpu_max": "max 100000",
+        "memory_peak_sampled": 11501568,
+        "memory_events_delta": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "vm_busy_fraction": 0.06576576576576576,
+        "vm_available_kib_min": 3096312
+      }
+    }
+  },
+  "baseline-repeat": {
+    "lag_ms": {
+      "n": 1500,
+      "p50": 1.8435859999999593,
+      "p99": 9.969668000000183,
+      "max": 26.247964000000138
+    },
+    "late_slots": 15,
+    "early_slots": 0,
+    "rtt_ms": {
+      "n": 1500,
+      "p50": 1.1755,
+      "p99": 6.895541,
+      "max": 20.449167
+    },
+    "send_ids": 1500,
+    "reply_ids": 1500,
+    "replies": 1500,
+    "send_duration_s": 14.99249734,
+    "cpu_s": 1.855459212,
+    "arp": {
+      "server": 0,
+      "browser": 0
+    },
+    "send": {
+      "wall_ms": {
+        "n": 1500,
+        "p50": 0.114625,
+        "p99": 1.622083,
+        "max": 6.76275
+      },
+      "cpu_ms": {
+        "n": 1500,
+        "p50": 0.11475,
+        "p99": 1.648958,
+        "max": 6.774417
+      },
+      "runnable_wait_ms": {
+        "n": 1500,
+        "p50": 0.0,
+        "p99": 0.0,
+        "max": 0.382375
+      }
+    },
+    "select": {
+      "wall_ms": {
+        "n": 2967,
+        "p50": 3.011833,
+        "p99": 13.616958,
+        "max": 2003.877626
+      },
+      "cpu_ms": {
+        "n": 2967,
+        "p50": 0.181333,
+        "p99": 2.627583,
+        "max": 13.393375
+      },
+      "runnable_wait_ms": {
+        "n": 2967,
+        "p50": 0.0,
+        "p99": 0.280334,
+        "max": 5.372583
+      },
+      "timeout_overshoot_ms": {
+        "n": 2967,
+        "p50": -0.775372,
+        "p99": 7.177586,
+        "max": 26.151006
+      },
+      "over_10ms_beyond_timeout": 11
+    },
+    "receive": {
+      "wall_ms": {
+        "n": 1500,
+        "p50": 0.051542,
+        "p99": 0.670958,
+        "max": 7.836
+      },
+      "cpu_ms": {
+        "n": 1500,
+        "p50": 0.0515,
+        "p99": 0.671834,
+        "max": 7.838125
+      },
+      "runnable_wait_ms": {
+        "n": 1500,
+        "p50": 0.0,
+        "p99": 0.0,
+        "max": 0.016833
+      }
+    },
+    "resources": {
+      "browser": {
+        "cpu_delta": {
+          "usage_usec": 1960777,
+          "user_usec": 1231719,
+          "system_usec": 729058,
+          "nice_usec": 0,
+          "nr_periods": 0,
+          "nr_throttled": 0,
+          "throttled_usec": 0,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        },
+        "cpu_max": "max 100000",
+        "memory_peak_sampled": 27217920,
+        "memory_events_delta": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "vm_busy_fraction": 0.07284172661870503,
+        "vm_available_kib_min": 3093696
+      },
+      "server": {
+        "cpu_delta": {
+          "usage_usec": 271196,
+          "user_usec": 126588,
+          "system_usec": 144609,
+          "nice_usec": 0,
+          "nr_periods": 0,
+          "nr_throttled": 0,
+          "throttled_usec": 0,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        },
+        "cpu_max": "max 100000",
+        "memory_peak_sampled": 11333632,
+        "memory_events_delta": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "vm_busy_fraction": 0.07415190633443414,
+        "vm_available_kib_min": 3098740
+      }
+    }
+  },
+  "r80p0-response": {
+    "lag_ms": {
+      "n": 1500,
+      "p50": 1.6848340000000235,
+      "p99": 13.907208999999966,
+      "max": 32.5350840000001
+    },
+    "late_slots": 28,
+    "early_slots": 0,
+    "rtt_ms": {
+      "n": 1500,
+      "p50": 82.311708,
+      "p99": 98.8955,
+      "max": 132.183542
+    },
+    "send_ids": 1500,
+    "reply_ids": 1500,
+    "replies": 1500,
+    "send_duration_s": 14.990714299,
+    "cpu_s": 1.73622745,
+    "arp": {
+      "server": 0,
+      "browser": 0
+    },
+    "send": {
+      "wall_ms": {
+        "n": 1500,
+        "p50": 0.094,
+        "p99": 1.569666,
+        "max": 6.319584
+      },
+      "cpu_ms": {
+        "n": 1500,
+        "p50": 0.093917,
+        "p99": 1.521667,
+        "max": 6.320791
+      },
+      "runnable_wait_ms": {
+        "n": 1500,
+        "p50": 0.0,
+        "p99": 0.0,
+        "max": 1.35
+      }
+    },
+    "select": {
+      "wall_ms": {
+        "n": 2850,
+        "p50": 4.655166,
+        "p99": 15.596208,
+        "max": 1923.428376
+      },
+      "cpu_ms": {
+        "n": 2850,
+        "p50": 0.188333,
+        "p99": 3.008292,
+        "max": 13.678084
+      },
+      "runnable_wait_ms": {
+        "n": 2850,
+        "p50": 0.0,
+        "p99": 1.135958,
+        "max": 17.701875
+      },
+      "timeout_overshoot_ms": {
+        "n": 2850,
+        "p50": 0.210214,
+        "p99": 8.52817,
+        "max": 32.420501
+      },
+      "over_10ms_beyond_timeout": 22
+    },
+    "receive": {
+      "wall_ms": {
+        "n": 1500,
+        "p50": 0.057125,
+        "p99": 0.497208,
+        "max": 5.483
+      },
+      "cpu_ms": {
+        "n": 1500,
+        "p50": 0.056875,
+        "p99": 0.552916,
+        "max": 5.484042
+      },
+      "runnable_wait_ms": {
+        "n": 1500,
+        "p50": 0.0,
+        "p99": 0.0,
+        "max": 0.185958
+      }
+    },
+    "resources": {
+      "browser": {
+        "cpu_delta": {
+          "usage_usec": 1827768,
+          "user_usec": 1210463,
+          "system_usec": 617305,
+          "nice_usec": 0,
+          "nr_periods": 0,
+          "nr_throttled": 0,
+          "throttled_usec": 0,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        },
+        "cpu_max": "max 100000",
+        "memory_peak_sampled": 27553792,
+        "memory_events_delta": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "vm_busy_fraction": 0.06931886678722121,
+        "vm_available_kib_min": 3104520
+      },
+      "server": {
+        "cpu_delta": {
+          "usage_usec": 335557,
+          "user_usec": 160095,
+          "system_usec": 175463,
+          "nice_usec": 0,
+          "nr_periods": 0,
+          "nr_throttled": 0,
+          "throttled_usec": 0,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        },
+        "cpu_max": "max 100000",
+        "memory_peak_sampled": 11374592,
+        "memory_events_delta": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "vm_busy_fraction": 0.07071922961179655,
+        "vm_available_kib_min": 3104736
+      }
+    }
+  }
+}

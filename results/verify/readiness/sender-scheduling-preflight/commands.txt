@@ -1,0 +1,20 @@
+Из корня репозитория. Проверки возможностей выполнялись без UDP и без IP-сети в helper-контейнерах.
+
+id
+csrutil status
+dtrace -l -n 'sched:::off-cpu'
+xctrace list templates
+ktrace info
+sudo -n true
+ps -axo pid,ppid,comm
+
+docker run --rm --network none --cap-drop ALL wswt-bench-analyzer:dev sh -c 'uname -a; id; cat /proc/sys/kernel/perf_event_paranoid; ls -la /sys/kernel/tracing; for tool in perf trace-cmd bpftrace strace; do command -v "$tool" || true; done'
+docker run --rm --network none --privileged --pid host wswt-bench-analyzer:dev sh -c 'mkdir /tmp/trace; mount -t tracefs tracefs /tmp/trace; cat /tmp/trace/available_tracers /tmp/trace/trace_clock; for event in sched/sched_switch sched/sched_wakeup sched/sched_waking syscalls/sys_enter_pselect6 syscalls/sys_exit_pselect6 syscalls/sys_enter_select; do test -f /tmp/trace/events/$event/format && echo available:$event || echo absent:$event; done; umount /tmp/trace'
+
+sh -n docker/sender-scheduling.sh docker/sender-scheduling-selftest.sh
+PYTHONPATH=docker python3 -B -m unittest docker/sender_scheduling_check_test.py
+sh docker/sender-scheduling-selftest.sh
+BENCH_TLS_DIR="$PWD/build/series-tls.PMYktiWa" docker compose config --quiet
+
+Единственный будущий UDP-запуск, НЕ выполнялся:
+SERIES_TLS_DIR="$PWD/build/series-tls.PMYktiWa" sh docker/sender-scheduling.sh

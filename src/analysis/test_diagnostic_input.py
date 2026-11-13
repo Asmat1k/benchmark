@@ -5,7 +5,7 @@ from pathlib import Path
 
 from acceptance import generator_gate
 from diagnostic_input import diagnostic_raw, generator_run
-from raw import diagnostic_interval, read, write
+from raw import diagnostic_interval, digest, read, write
 
 
 class DiagnosticInputTests(unittest.TestCase):
@@ -28,6 +28,13 @@ class DiagnosticInputTests(unittest.TestCase):
             run = schedule["runs"][0]
             folder = directory/"raw"/run["run_id"]
             context = read(folder/"context.json")
+            context["config"]={name:read(Path("configs")/f"{name}.json") for name in ("plan","thresholds","profiles")}
+            write(folder/"config.json",context["config"])
+            manifest=read(folder/"manifest.json")
+            manifest["config_sha256"]=digest(folder/"config.json")
+            write(folder/"manifest.json",manifest)
+            write(folder/"context.json",context)
+            write(directory/"context.json",context)
             write(folder/"collection-sources.json", {"collector":"fixed"})
             rehash(folder)
             self.assertEqual(diagnostic_raw(directory,run,schedule,context,{"collector":"fixed"}), folder)

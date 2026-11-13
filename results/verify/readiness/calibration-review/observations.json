@@ -1,0 +1,1138 @@
+{
+  "utc": "2026-11-13T11:39:40.839149+00:00",
+  "integrity": [
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/baseline-after/browser.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/baseline-after/browser.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/baseline-after/probe.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/baseline-after/profile.txt",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/baseline-after/qdisc-after.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/baseline-after/qdisc-before.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/baseline-after/server.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/baseline-after/server.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/baseline-before/browser.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/baseline-before/browser.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/baseline-before/probe.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/baseline-before/profile.txt",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/baseline-before/qdisc-after.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/baseline-before/qdisc-before.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/baseline-before/server.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/baseline-before/server.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/browser-route.txt",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/commit",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/context-after.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/context-before.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/host.txt",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/leaf.pem",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/limits.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p0-after/browser.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p0-after/browser.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p0-after/probe.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p0-after/profile.txt",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p0-after/qdisc-after.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p0-after/qdisc-before.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p0-after/server.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p0-after/server.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p0-before/browser.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p0-before/browser.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p0-before/probe.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p0-before/profile.txt",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p0-before/qdisc-after.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p0-before/qdisc-before.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p0-before/server.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p0-before/server.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p0-latency/browser.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p0-latency/browser.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p0-latency/probe.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p0-latency/profile.txt",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p0-latency/qdisc-after.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p0-latency/qdisc-before.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p0-latency/server.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p0-latency/server.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p1-after/browser.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p1-after/browser.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p1-after/probe.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p1-after/profile.txt",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p1-after/qdisc-after.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p1-after/qdisc-before.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p1-after/server.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p1-after/server.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p1-before/browser.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p1-before/browser.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p1-before/probe.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p1-before/profile.txt",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p1-before/qdisc-after.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p1-before/qdisc-before.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p1-before/server.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p1-before/server.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p1-latency/browser.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p1-latency/browser.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p1-latency/probe.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p1-latency/profile.txt",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p1-latency/qdisc-after.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p1-latency/qdisc-before.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p1-latency/server.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r20p1-latency/server.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p0-after/browser.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p0-after/browser.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p0-after/probe.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p0-after/profile.txt",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p0-after/qdisc-after.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p0-after/qdisc-before.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p0-after/server.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p0-after/server.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p0-before/browser.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p0-before/browser.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p0-before/probe.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p0-before/profile.txt",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p0-before/qdisc-after.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p0-before/qdisc-before.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p0-before/server.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p0-before/server.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p0-latency/browser.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p0-latency/browser.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p0-latency/probe.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p0-latency/profile.txt",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p0-latency/qdisc-after.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p0-latency/qdisc-before.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p0-latency/server.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p0-latency/server.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p1-after/browser.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p1-after/browser.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p1-after/probe.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p1-after/profile.txt",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p1-after/qdisc-after.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p1-after/qdisc-before.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p1-after/server.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p1-after/server.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p1-before/browser.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p1-before/browser.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p1-before/probe.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p1-before/profile.txt",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p1-before/qdisc-after.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p1-before/qdisc-before.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p1-before/server.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p1-before/server.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p1-latency/browser.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p1-latency/browser.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p1-latency/probe.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p1-latency/profile.txt",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p1-latency/qdisc-after.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p1-latency/qdisc-before.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p1-latency/server.log",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/r80p1-latency/server.pcap",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/router-links.txt",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/saturation-0-forward/probe.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/saturation-0-forward/profile.txt",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/saturation-0-forward/qdisc-stable.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/saturation-0-forward/window.txt",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/saturation-0-reverse/probe.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/saturation-0-reverse/profile.txt",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/saturation-0-reverse/qdisc-stable.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/saturation-0-reverse/window.txt",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/saturation-1-forward/probe.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/saturation-1-forward/profile.txt",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/saturation-1-forward/qdisc-stable.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/saturation-1-forward/window.txt",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/saturation-1-reverse/probe.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/saturation-1-reverse/profile.txt",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/saturation-1-reverse/qdisc-stable.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/saturation-1-reverse/window.txt",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/server-route.txt",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/sources-after.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/sources-before.json",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/started",
+      "passed": true
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ZQRTHB2H/vm.json",
+      "passed": true
+    }
+  ],
+  "echo": {
+    "r20p1-after": {
+      "sent": 10000,
+      "replies": 9791,
+      "median_ms": 21.612791,
+      "p99_ms": 30.5457664,
+      "dependence": {
+        "lag1": 0.5575746110906586,
+        "linear_trend_per_unit": -1.7282539116993257e-05,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "late_slots": 32,
+      "max_lag_ms": 32.603611999998975,
+      "grid_error": "100Hz probe grid/send",
+      "directions": [
+        {
+          "direction": "forward",
+          "entered": 10000,
+          "dropped": 124,
+          "CI99": [
+            0.009732163198154745,
+            0.015542605606329873
+          ]
+        },
+        {
+          "direction": "reverse",
+          "entered": 9876,
+          "dropped": 85,
+          "CI99": [
+            0.006399103543069507,
+            0.011301026704982923
+          ]
+        }
+      ],
+      "capture_logs": {
+        "browser.log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10006 packets captured\n19803 packets received by filter\n0 packets dropped by kernel\n",
+        "server.log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n9881 packets captured\n19762 packets received by filter\n0 packets dropped by kernel\n"
+      }
+    },
+    "r80p1-before": {
+      "sent": 10000,
+      "replies": 9776,
+      "median_ms": 81.68014600000001,
+      "p99_ms": 91.11922899999999,
+      "dependence": {
+        "lag1": 0.3695797786959231,
+        "linear_trend_per_unit": -9.598036964390869e-06,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "late_slots": 51,
+      "max_lag_ms": 52.28235699999641,
+      "grid_error": "100Hz probe grid/send",
+      "directions": [
+        {
+          "direction": "forward",
+          "entered": 10000,
+          "dropped": 114,
+          "CI99": [
+            0.008848577372561717,
+            0.014427616713596039
+          ]
+        },
+        {
+          "direction": "reverse",
+          "entered": 9886,
+          "dropped": 110,
+          "CI99": [
+            0.008594711365434876,
+            0.014141134514954305
+          ]
+        }
+      ],
+      "capture_logs": {
+        "browser.log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10006 packets captured\n19788 packets received by filter\n0 packets dropped by kernel\n",
+        "server.log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n9892 packets captured\n19784 packets received by filter\n0 packets dropped by kernel\n"
+      }
+    },
+    "r80p1-after": {
+      "sent": 10000,
+      "replies": 9817,
+      "median_ms": 81.616333,
+      "p99_ms": 89.17891472000001,
+      "dependence": {
+        "lag1": 0.2253716098251973,
+        "linear_trend_per_unit": 2.900514925485193e-05,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "late_slots": 24,
+      "max_lag_ms": 30.802572999993572,
+      "grid_error": "100Hz probe grid/send",
+      "directions": [
+        {
+          "direction": "forward",
+          "entered": 10000,
+          "dropped": 92,
+          "CI99": [
+            0.006924794995180345,
+            0.01195478395981353
+          ]
+        },
+        {
+          "direction": "reverse",
+          "entered": 9908,
+          "dropped": 91,
+          "CI99": [
+            0.0069016816016342596,
+            0.011951427275087209
+          ]
+        }
+      ],
+      "capture_logs": {
+        "browser.log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10005 packets captured\n19827 packets received by filter\n0 packets dropped by kernel\n",
+        "server.log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n9914 packets captured\n19828 packets received by filter\n0 packets dropped by kernel\n"
+      }
+    },
+    "r20p1-before": {
+      "sent": 10000,
+      "replies": 9810,
+      "median_ms": 21.7379795,
+      "p99_ms": 36.37959374999999,
+      "dependence": {
+        "lag1": 0.7093279179756801,
+        "linear_trend_per_unit": 7.195385658874847e-05,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "late_slots": 83,
+      "max_lag_ms": 44.88761400000658,
+      "grid_error": "100Hz probe grid/send",
+      "directions_error": "endpoint loss differs from tc drops",
+      "capture_logs": {
+        "browser.log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10007 packets captured\n19824 packets received by filter\n0 packets dropped by kernel\n",
+        "server.log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n9907 packets captured\n19812 packets received by filter\n0 packets dropped by kernel\n"
+      }
+    },
+    "r80p0-after": {
+      "sent": 10000,
+      "replies": 10000,
+      "median_ms": 81.6634585,
+      "p99_ms": 91.59452524,
+      "dependence": {
+        "lag1": 0.2977239277030898,
+        "linear_trend_per_unit": -1.677488400516705e-05,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "late_slots": 34,
+      "max_lag_ms": 28.994638000000123,
+      "grid_error": "100Hz probe grid/send",
+      "directions": [
+        {
+          "direction": "forward",
+          "entered": 10000,
+          "dropped": 0,
+          "CI99": [
+            0.0,
+            0.0005296914006061454
+          ]
+        },
+        {
+          "direction": "reverse",
+          "entered": 10000,
+          "dropped": 0,
+          "CI99": [
+            0.0,
+            0.0005296914006061454
+          ]
+        }
+      ],
+      "capture_logs": {
+        "browser.log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10004 packets captured\n20008 packets received by filter\n0 packets dropped by kernel\n",
+        "server.log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10006 packets captured\n20012 packets received by filter\n0 packets dropped by kernel\n"
+      }
+    },
+    "baseline-before": {
+      "sent": 10000,
+      "replies": 10000,
+      "median_ms": 0.976812,
+      "p99_ms": 6.971887170000001,
+      "dependence": {
+        "lag1": 0.42749223024399335,
+        "linear_trend_per_unit": 2.1529146436689288e-07,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "late_slots": 77,
+      "max_lag_ms": 58.28799500000605,
+      "grid_error": "100Hz probe grid/send",
+      "directions": [
+        {
+          "direction": "forward",
+          "entered": 10000,
+          "dropped": 0,
+          "CI99": [
+            0.0,
+            0.0005296914006061454
+          ]
+        },
+        {
+          "direction": "reverse",
+          "entered": 10000,
+          "dropped": 0,
+          "CI99": [
+            0.0,
+            0.0005296914006061454
+          ]
+        }
+      ],
+      "capture_logs": {
+        "browser.log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10006 packets captured\n20012 packets received by filter\n0 packets dropped by kernel\n",
+        "server.log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10009 packets captured\n20018 packets received by filter\n0 packets dropped by kernel\n"
+      }
+    },
+    "r20p0-after": {
+      "sent": 10000,
+      "replies": 10000,
+      "median_ms": 21.610187500000002,
+      "p99_ms": 29.535855000000005,
+      "dependence": {
+        "lag1": 0.49648239560320434,
+        "linear_trend_per_unit": -4.273303527624974e-06,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "late_slots": 34,
+      "max_lag_ms": 28.152592999998888,
+      "grid_error": "100Hz probe grid/send",
+      "directions": [
+        {
+          "direction": "forward",
+          "entered": 10000,
+          "dropped": 0,
+          "CI99": [
+            0.0,
+            0.0005296914006061454
+          ]
+        },
+        {
+          "direction": "reverse",
+          "entered": 10000,
+          "dropped": 0,
+          "CI99": [
+            0.0,
+            0.0005296914006061454
+          ]
+        }
+      ],
+      "capture_logs": {
+        "browser.log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10006 packets captured\n20012 packets received by filter\n0 packets dropped by kernel\n",
+        "server.log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10006 packets captured\n20012 packets received by filter\n0 packets dropped by kernel\n"
+      }
+    },
+    "r20p1-latency": {
+      "sent": 10000,
+      "replies": 9751,
+      "median_ms": 21.647,
+      "p99_ms": 38.4244165,
+      "dependence": {
+        "lag1": 0.7533191518777562,
+        "linear_trend_per_unit": 2.8747002664290722e-05,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "late_slots": 104,
+      "max_lag_ms": 135.26969400000235,
+      "grid_error": "100Hz probe grid/send",
+      "directions": [
+        {
+          "direction": "forward",
+          "entered": 10000,
+          "dropped": 138,
+          "CI99": [
+            0.010977059341313052,
+            0.017095799741416173
+          ]
+        },
+        {
+          "direction": "reverse",
+          "entered": 9862,
+          "dropped": 111,
+          "CI99": [
+            0.008704793401314772,
+            0.014289002542667824
+          ]
+        }
+      ],
+      "capture_logs": {
+        "browser.log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10005 packets captured\n19761 packets received by filter\n0 packets dropped by kernel\n",
+        "server.log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n9867 packets captured\n19734 packets received by filter\n0 packets dropped by kernel\n"
+      }
+    },
+    "r20p0-latency": {
+      "sent": 10000,
+      "replies": 10000,
+      "median_ms": 21.7301455,
+      "p99_ms": 29.66369226,
+      "dependence": {
+        "lag1": 0.4871786107147534,
+        "linear_trend_per_unit": 6.665132098421894e-05,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "late_slots": 28,
+      "max_lag_ms": 59.02071100000467,
+      "grid_error": "100Hz probe grid/send",
+      "directions": [
+        {
+          "direction": "forward",
+          "entered": 10000,
+          "dropped": 0,
+          "CI99": [
+            0.0,
+            0.0005296914006061454
+          ]
+        },
+        {
+          "direction": "reverse",
+          "entered": 10000,
+          "dropped": 0,
+          "CI99": [
+            0.0,
+            0.0005296914006061454
+          ]
+        }
+      ],
+      "capture_logs": {
+        "browser.log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10004 packets captured\n20008 packets received by filter\n0 packets dropped by kernel\n",
+        "server.log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10004 packets captured\n20008 packets received by filter\n0 packets dropped by kernel\n"
+      }
+    },
+    "r80p0-before": {
+      "sent": 10000,
+      "replies": 10000,
+      "median_ms": 81.634375,
+      "p99_ms": 89.64687142000001,
+      "dependence": {
+        "lag1": 0.5416633695640498,
+        "linear_trend_per_unit": -2.9376756547640417e-05,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "late_slots": 30,
+      "max_lag_ms": 68.60491199999524,
+      "grid_error": "100Hz probe grid/send",
+      "directions": [
+        {
+          "direction": "forward",
+          "entered": 10000,
+          "dropped": 0,
+          "CI99": [
+            0.0,
+            0.0005296914006061454
+          ]
+        },
+        {
+          "direction": "reverse",
+          "entered": 10000,
+          "dropped": 0,
+          "CI99": [
+            0.0,
+            0.0005296914006061454
+          ]
+        }
+      ],
+      "capture_logs": {
+        "browser.log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10008 packets captured\n20016 packets received by filter\n0 packets dropped by kernel\n",
+        "server.log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10005 packets captured\n20010 packets received by filter\n0 packets dropped by kernel\n"
+      }
+    },
+    "r80p0-latency": {
+      "sent": 10000,
+      "replies": 10000,
+      "median_ms": 81.80039550000001,
+      "p99_ms": 102.50010375000001,
+      "dependence": {
+        "lag1": 0.747931898337032,
+        "linear_trend_per_unit": -0.0002966661111717867,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "late_slots": 150,
+      "max_lag_ms": 121.30213300000105,
+      "grid_error": "100Hz probe grid/send",
+      "directions": [
+        {
+          "direction": "forward",
+          "entered": 10000,
+          "dropped": 0,
+          "CI99": [
+            0.0,
+            0.0005296914006061454
+          ]
+        },
+        {
+          "direction": "reverse",
+          "entered": 10000,
+          "dropped": 0,
+          "CI99": [
+            0.0,
+            0.0005296914006061454
+          ]
+        }
+      ],
+      "capture_logs": {
+        "browser.log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10005 packets captured\n20010 packets received by filter\n0 packets dropped by kernel\n",
+        "server.log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10006 packets captured\n20012 packets received by filter\n0 packets dropped by kernel\n"
+      }
+    },
+    "baseline-after": {
+      "sent": 10000,
+      "replies": 10000,
+      "median_ms": 0.9352914999999999,
+      "p99_ms": 5.571437830000006,
+      "dependence": {
+        "lag1": 0.07331811189566136,
+        "linear_trend_per_unit": 1.1464805648333805e-05,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "late_slots": 30,
+      "max_lag_ms": 28.639334999999846,
+      "grid_error": "100Hz probe grid/send",
+      "directions": [
+        {
+          "direction": "forward",
+          "entered": 10000,
+          "dropped": 0,
+          "CI99": [
+            0.0,
+            0.0005296914006061454
+          ]
+        },
+        {
+          "direction": "reverse",
+          "entered": 10000,
+          "dropped": 0,
+          "CI99": [
+            0.0,
+            0.0005296914006061454
+          ]
+        }
+      ],
+      "capture_logs": {
+        "browser.log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10005 packets captured\n20010 packets received by filter\n0 packets dropped by kernel\n",
+        "server.log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10006 packets captured\n20012 packets received by filter\n0 packets dropped by kernel\n"
+      }
+    },
+    "r20p0-before": {
+      "sent": 10000,
+      "replies": 10000,
+      "median_ms": 21.697499999999998,
+      "p99_ms": 29.138048420000004,
+      "dependence": {
+        "lag1": 0.47970795668200655,
+        "linear_trend_per_unit": -2.2489199958110397e-05,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "late_slots": 20,
+      "max_lag_ms": 29.462530999997398,
+      "grid_error": "100Hz probe grid/send",
+      "directions": [
+        {
+          "direction": "forward",
+          "entered": 10000,
+          "dropped": 0,
+          "CI99": [
+            0.0,
+            0.0005296914006061454
+          ]
+        },
+        {
+          "direction": "reverse",
+          "entered": 10000,
+          "dropped": 0,
+          "CI99": [
+            0.0,
+            0.0005296914006061454
+          ]
+        }
+      ],
+      "capture_logs": {
+        "browser.log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10004 packets captured\n20008 packets received by filter\n0 packets dropped by kernel\n",
+        "server.log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10008 packets captured\n20016 packets received by filter\n0 packets dropped by kernel\n"
+      }
+    },
+    "r80p1-latency": {
+      "sent": 10000,
+      "replies": 9791,
+      "median_ms": 81.680916,
+      "p99_ms": 92.51525860000002,
+      "dependence": {
+        "lag1": 0.4935582748826873,
+        "linear_trend_per_unit": 8.666198755462651e-05,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "late_slots": 59,
+      "max_lag_ms": 62.645235000003595,
+      "grid_error": "100Hz probe grid/send",
+      "directions": [
+        {
+          "direction": "forward",
+          "entered": 10000,
+          "dropped": 107,
+          "CI99": [
+            0.008233232254988322,
+            0.013643996869111337
+          ]
+        },
+        {
+          "direction": "reverse",
+          "entered": 9893,
+          "dropped": 102,
+          "CI99": [
+            0.007879870977106898,
+            0.013223820906774679
+          ]
+        }
+      ],
+      "capture_logs": {
+        "browser.log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10005 packets captured\n19801 packets received by filter\n0 packets dropped by kernel\n",
+        "server.log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n9898 packets captured\n19796 packets received by filter\n0 packets dropped by kernel\n"
+      }
+    }
+  },
+  "saturation": {
+    "saturation-0-forward": {
+      "direction": "forward",
+      "loss": 0.0,
+      "duration_s": 61.029999999998836,
+      "accounting_level": "router netem dequeued skb bytes including Ethernet header; offered veth ingress rx_bytes",
+      "offered_bytes": 94754706,
+      "forwarded_bytes": 76296186,
+      "mbit_s": 10.00113858758007
+    },
+    "saturation-1-forward": {
+      "direction": "forward",
+      "loss": 0.01,
+      "duration_s": 61.05000000000291,
+      "accounting_level": "router netem dequeued skb bytes including Ethernet header; offered veth ingress rx_bytes",
+      "offered_bytes": 94773378,
+      "forwarded_bytes": 76301154,
+      "mbit_s": 9.998513218672741
+    },
+    "saturation-0-reverse": {
+      "direction": "reverse",
+      "loss": 0.0,
+      "duration_s": 61.04000000000815,
+      "accounting_level": "router netem dequeued skb bytes including Ethernet header; offered veth ingress rx_bytes",
+      "offered_bytes": 94768410,
+      "forwarded_bytes": 76309806,
+      "mbit_s": 10.001285190037983
+    },
+    "saturation-1-reverse": {
+      "direction": "reverse",
+      "loss": 0.01,
+      "duration_s": 61.029999999998836,
+      "accounting_level": "router netem dequeued skb bytes including Ethernet header; offered veth ingress rx_bytes",
+      "offered_bytes": 94763442,
+      "forwarded_bytes": 76302354,
+      "mbit_s": 10.001947107979873
+    }
+  },
+  "contexts_equal": true,
+  "sources_equal": true
+}

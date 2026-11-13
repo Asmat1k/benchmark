@@ -1,0 +1,27 @@
+{
+  "new": {
+    "files": 41,
+    "mismatches": []
+  },
+  "old": {
+    "files": 141,
+    "mismatches": []
+  },
+  "previous_analysis": {
+    "files": 30,
+    "mismatches": []
+  },
+  "source_before_after_equal": true,
+  "current_sources_match": {
+    "docker/calibration_probe.py": true,
+    "docker/sender_diagnostic_probe.py": true,
+    "docker/sender_diagnostic_plain.py": true,
+    "docker/sender_diagnostic_resources.py": true,
+    "docker/sender-diagnostic.sh": true,
+    "docker/links.sh": true,
+    "docker/calibration-neighbors.sh": true,
+    "docker/network.sh": true,
+    "compose.yaml": true,
+    "configs/profiles.json": true
+  }
+}

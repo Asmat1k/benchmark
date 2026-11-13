@@ -1,0 +1,7 @@
+[
+{"id":"sha256:2dd747a3374efbfd55501adafa660afe469d9247f76115f321904fc9fac68fb4","role":"/wswt-d3-wswt-measure-6kbdsu20-browser-1","cpu":2000000000,"memory":3221225472,"shm":1073741824}
+,
+{"id":"sha256:fe38820a8f6d7f0142b94690ca7ae2b306d3bcee132337a801222450c0a23261","role":"/wswt-d3-wswt-measure-6kbdsu20-router-1","cpu":1000000000,"memory":536870912,"shm":67108864}
+,
+{"id":"sha256:99ba039b63bd44522e9a1b473cfc5b541026f86cffef51580bbf3457223c1801","role":"/wswt-d3-wswt-measure-6kbdsu20-server-1","cpu":2000000000,"memory":1073741824,"shm":67108864}
+]

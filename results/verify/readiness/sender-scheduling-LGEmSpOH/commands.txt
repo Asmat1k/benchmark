@@ -1,0 +1,6 @@
+Offline only; no UDP measurements or Docker resource changes.
+python3 -B results/verify/readiness/sender-scheduling-LGEmSpOH/analyze.py results/verify/diagnostic/sender-scheduling.LGEmSpOH
+python3 -B results/verify/readiness/sender-scheduling-LGEmSpOH/check-resources.py
+python3 -B results/verify/readiness/sender-scheduling-LGEmSpOH/trace-analysis.py
+sh -n docker/sender-scheduling.sh
+Raw trace-check.json was read, not regenerated in raw. Trace matching/coverage/loss/integrity independently recomputed by trace-analysis.py; outputs stay in readiness.

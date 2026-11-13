@@ -1,0 +1,3 @@
+"/wswt-d3-wswt-measure-95uksxjo-browser-1"
+"/wswt-d3-wswt-measure-95uksxjo-router-1"
+"/wswt-d3-wswt-measure-95uksxjo-server-1"
