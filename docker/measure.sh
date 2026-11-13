@@ -82,6 +82,11 @@ capture() {
     done
 }
 capture before
+if [ -f "$run_dir/collect-backlog" ]; then
+    compose cp docker/sample-backlog.sh router:/tmp/sample-backlog.sh
+    compose exec -d router sh -c 'exec sh /tmp/sample-backlog.sh >/tmp/backlog.jsonl'
+    sleep 1
+fi
 for role in browser server router; do
     compose cp docker/sample.sh "$role:/tmp/sample.sh"
     compose cp docker/check-sample.sh "$role:/tmp/check-sample.sh"
@@ -93,11 +98,6 @@ for role in browser server router; do
     compose exec -T "$role" sh /tmp/check-sample.sh fresh >/dev/null
     compose exec -T "$role" cat /tmp/resources.jsonl > "$run_dir/$role-baseline.jsonl"
 done
-if [ -f "$run_dir/collect-backlog" ]; then
-    compose cp docker/sample-backlog.sh router:/tmp/sample-backlog.sh
-    compose exec -d router sh -c 'exec sh /tmp/sample-backlog.sh >/tmp/backlog.jsonl'
-    sleep 1
-fi
 compose exec -T router awk '{printf "%.0f\n", $1*1000000}' /proc/uptime > "$run_dir/resource-start"
 monitoring=$(cat "$run_dir/monitoring-mode")
 if [ "$monitoring" = off ]; then

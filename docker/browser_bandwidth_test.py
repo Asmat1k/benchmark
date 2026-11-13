@@ -1,6 +1,7 @@
 import copy
 import json
 from pathlib import Path
+import subprocess
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -10,6 +11,37 @@ from schedule import make_schedule
 
 
 class BandwidthTest(unittest.TestCase):
+    def test_cpu_baseline_includes_enabled_backlog_observer(self):
+        collector = Path('docker/measure.sh').read_text()
+        setup = collector.split('capture before\n', 1)[1].split(' > "$run_dir/resource-start"', 1)[0]
+        setup = setup.rsplit('\ncompose exec -T router awk', 1)[0]
+        for enabled in (False, True):
+            with self.subTest(backlog=enabled), tempfile.TemporaryDirectory() as tmp:
+                directory = Path(tmp)
+                if enabled:
+                    (directory/'collect-backlog').touch()
+                script = '''set -eu
+run_dir=$1
+run_id=baseline-test
+backlog=0
+sleep() { :; }
+compose() {
+    if [ "$1 $2 $3" = 'exec -d router' ]; then
+        case "$*" in *sample-backlog.sh*) backlog=1 ;; esac
+    fi
+    case "$*" in
+        *'cat /tmp/resources.jsonl'*)
+            cpu=10000
+            if [ "$3" = router ] && [ "$backlog" = 1 ]; then cpu=50000; fi
+            printf '{"cpu_usage_usec":%s,"interval_usec":1000000}\\n' "$cpu"
+            ;;
+    esac
+}
+'''
+                subprocess.run(['sh', '-c', script+setup, 'baseline-test', str(directory)], check=True)
+                row = json.loads((directory/'router-baseline.jsonl').read_text())
+                self.assertEqual(row['cpu_usage_usec'], 50000 if enabled else 10000)
+
     def test_package_rejects_foreign_sources_and_environment(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
