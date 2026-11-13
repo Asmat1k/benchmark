@@ -1,0 +1,28 @@
+test_block_envelope_and_source_slot_ids (test_calibration_blocks.CalibrationBlocksTests.test_block_envelope_and_source_slot_ids) ... ok
+test_bootstrap_keeps_blocks_missingness_and_seed (test_calibration_blocks.CalibrationBlocksTests.test_bootstrap_keeps_blocks_missingness_and_seed) ... ok
+test_diagnostics_use_time_order_and_reject_slow_process (test_calibration_blocks.CalibrationBlocksTests.test_diagnostics_use_time_order_and_reject_slow_process) ... FAIL
+test_fixed_contract_joint_loss_family_and_legacy_guard (test_calibration_blocks.CalibrationBlocksTests.test_fixed_contract_joint_loss_family_and_legacy_guard) ... ok
+test_long_dependence_and_drift_remain_inconclusive (test_calibration_blocks.CalibrationBlocksTests.test_long_dependence_and_drift_remain_inconclusive) ... ok
+test_independence_flag_cannot_override_ordered_rtt_dependence (test_calibration_dependence.CalibrationDependenceTest.test_independence_flag_cannot_override_ordered_rtt_dependence) ... ok
+test_counters_include_both_directions_and_all_run_bytes (browser_bandwidth_test.BandwidthTest.test_counters_include_both_directions_and_all_run_bytes) ... ok
+test_directional_conservative_denominator_and_strict_boundary (browser_bandwidth_test.BandwidthTest.test_directional_conservative_denominator_and_strict_boundary) ... ok
+test_package_rejects_foreign_sources_and_environment (browser_bandwidth_test.BandwidthTest.test_package_rejects_foreign_sources_and_environment) ... ok
+test_boolean_states_preserve_numeric_contract (test_threshold_contract.ThresholdContractTest.test_boolean_states_preserve_numeric_contract) ... ok
+test_freeze_still_requires_final_thresholds (test_threshold_contract.ThresholdContractTest.test_freeze_still_requires_final_thresholds) ... ok
+test_raw_accepts_both_states_with_matching_config_and_hashes (test_threshold_contract.ThresholdContractTest.test_raw_accepts_both_states_with_matching_config_and_hashes) ... ok
+test_actual_directional_losses (calibration_test.Calibration.test_actual_directional_losses) ... ok
+test_latency_collection_cannot_supply_loss (calibration_test.Calibration.test_latency_collection_cannot_supply_loss) ... ok
+test_saturation_window (calibration_test.Calibration.test_saturation_window) ... ok
+
+======================================================================
+FAIL: test_diagnostics_use_time_order_and_reject_slow_process (test_calibration_blocks.CalibrationBlocksTests.test_diagnostics_use_time_order_and_reject_slow_process)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/bench/src/analysis/test_calibration_blocks.py", line 57, in test_diagnostics_use_time_order_and_reject_slow_process
+    self.assertFalse(process_diagnostics(values)['suspect'])
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 15 tests in 43.173s
+
+FAILED (failures=1)

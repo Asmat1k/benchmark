@@ -1,0 +1,193 @@
+{
+  "utc": "2026-11-13T16:10:48.134849+00:00",
+  "checks": [
+    {
+      "command": [
+        "sysctl",
+        "-n",
+        "hw.memsize",
+        "hw.ncpu"
+      ],
+      "exit": 0,
+      "seconds": 0.008628999989014119,
+      "stdout": "17179869184\n8\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "version",
+        "--format",
+        "{{json .}}"
+      ],
+      "exit": 0,
+      "seconds": 0.11551379199954681,
+      "stdout": "{\"Client\":{\"Version\":\"29.6.2\",\"ApiVersion\":\"1.55\",\"DefaultAPIVersion\":\"1.55\",\"GitCommit\":\"dfc4efb\",\"GoVersion\":\"go1.26.5\",\"Os\":\"darwin\",\"Arch\":\"arm64\",\"BuildTime\":\"Thu Jul 16 16:11:17 2026\",\"Context\":\"desktop-linux\"},\"Server\":{\"Platform\":{\"Name\":\"Docker Desktop 4.85.0 (235549)\"},\"Version\":\"29.6.2\",\"ApiVersion\":\"1.55\",\"MinAPIVersion\":\"1.40\",\"Os\":\"linux\",\"Arch\":\"arm64\",\"Components\":[{\"Name\":\"Engine\",\"Version\":\"29.6.2\",\"Details\":{\"ApiVersion\":\"1.55\",\"Arch\":\"arm64\",\"BuildTime\":\"Thu Jul 16 16:13:03 2026\",\"Experimental\":\"false\",\"GitCommit\":\"3d80467\",\"GoVersion\":\"go1.26.5\",\"KernelVersion\":\"6.12.76-linuxkit\",\"MinAPIVersion\":\"1.40\",\"Module\":\"github.com/moby/moby/v2\",\"ModuleVersion\":\"v2.0.0+unknown\",\"Os\":\"linux\"}},{\"Name\":\"containerd\",\"Version\":\"v2.2.5\",\"Details\":{\"GitCommit\":\"e53c7c1516c3b2bff98eb76f1f4117477e6f4e66\"}},{\"Name\":\"runc\",\"Version\":\"1.3.6\",\"Details\":{\"GitCommit\":\"v1.3.6-0-g491b69ba\"}},{\"Name\":\"docker-init\",\"Version\":\"0.19.0\",\"Details\":{\"GitCommit\":\"de40ad0\"}}],\"GitCommit\":\"3d80467\",\"GoVersion\":\"go1.26.5\",\"KernelVersion\":\"6.12.76-linuxkit\",\"BuildTime\":\"2026-07-16T16:13:03.000000000+00:00\"}}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "version"
+      ],
+      "exit": 0,
+      "seconds": 0.0658512499940116,
+      "stdout": "Docker Compose version v5.3.1\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "info",
+        "--format",
+        "{\"kernel\":\"{{.KernelVersion}}\",\"platform\":\"{{.Architecture}}\",\"engine\":\"{{.ServerVersion}}\",\"cpus\":{{.NCPU}},\"mem\":{{.MemTotal}}}"
+      ],
+      "exit": 0,
+      "seconds": 0.1765291669871658,
+      "stdout": "{\"kernel\":\"6.12.76-linuxkit\",\"platform\":\"aarch64\",\"engine\":\"29.6.2\",\"cpus\":2,\"mem\":4109484032}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "ps",
+        "-a",
+        "--format",
+        "{{json .}}"
+      ],
+      "exit": 0,
+      "seconds": 0.03418487499584444,
+      "stdout": "{\"Command\":\"\\\"./entrypoint.sh\\\"\",\"CreatedAt\":\"2026-08-04 17:32:12 +0300 MSK\",\"HealthStatus\":\"unhealthy\",\"ID\":\"16479141bedd\",\"Image\":\"qdrant/qdrant:v1.18.3\",\"Labels\":\"com.docker.compose.config-hash=e4c68393a29af800a64024da000da56c4e99cdd8434cde7b4f48fd8b2f579865,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.image=sha256:0bd98fa7977f1e75694779359ca4e212822e5a71334e28421182f72f209d5286,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=/Users/dobrov/IdeaProjects/ai-grepa/docker-compose.yml,com.docker.compose.project.working_dir=/Users/dobrov/IdeaProjects/ai-grepa,com.docker.compose.project=ai-grepa,com.docker.compose.service=qdrant,com.docker.compose.version=5.3.1,desktop.docker.io/ports.scheme=v2,desktop.docker.io/ports/6333/tcp=:6333,org.opencontainers.image.description=Official Qdrant image,org.opencontainers.image.documentation=https://qdrant.com/docs,org.opencontainers.image.source=https://github.com/qdrant/qdrant,org.opencontainers.image.title=Qdrant,org.opencontainers.image.url=https://qdrant.com/,org.opencontainers.image.vendor=Qdrant,org.opencontainers.image.version=v1.18.3\",\"LocalVolumes\":\"1\",\"Mounts\":\"ai-grepa_qdran…\",\"Names\":\"ai-grepa-qdrant-1\",\"Networks\":\"ai-grepa_ai-grepa\",\"Platform\":{\"architecture\":\"arm64\",\"os\":\"linux\"},\"Ports\":\"0.0.0.0:6333-\\u003e6333/tcp, [::]:6333-\\u003e6333/tcp\",\"RunningFor\":\"3 months ago\",\"Size\":\"24.6kB (virtual 208MB)\",\"State\":\"running\",\"Status\":\"Up 30 hours (unhealthy)\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "network",
+        "inspect",
+        "ai-grepa_ai-grepa",
+        "bridge",
+        "kind",
+        "mkd2-astra182_default",
+        "transport-lab_back",
+        "transport-lab_front"
+      ],
+      "exit": 0,
+      "seconds": 0.028439375018933788,
+      "stdout": "[\n    {\n        \"Name\": \"ai-grepa_ai-grepa\",\n        \"Id\": \"19502ad00bbfbb5500bf2c81268cad5c92f41857c66aacc4250f040f1f1a06a2\",\n        \"Created\": \"2026-08-04T14:32:12.232115555Z\",\n        \"Scope\": \"local\",\n        \"Driver\": \"bridge\",\n        \"EnableIPv4\": true,\n        \"EnableIPv6\": false,\n        \"IPAM\": {\n            \"Driver\": \"default\",\n            \"Options\": null,\n            \"Config\": [\n                {\n                    \"Subnet\": \"172.19.0.0/16\",\n                    \"Gateway\": \"172.19.0.1\"\n                }\n            ]\n        },\n        \"Internal\": false,\n        \"Attachable\": false,\n        \"Ingress\": false,\n        \"ConfigFrom\": {\n            \"Network\": \"\"\n        },\n        \"ConfigOnly\": false,\n        \"Options\": {\n            \"com.docker.network.enable_ipv4\": \"true\",\n            \"com.docker.network.enable_ipv6\": \"false\"\n        },\n        \"Labels\": {\n            \"com.docker.compose.config-hash\": \"102ea9cfe64e3f8ad6b711a2cd376e025bfe545c5545c8ed4afd23a3767ab52d\",\n            \"com.docker.compose.network\": \"ai-grepa\",\n            \"com.docker.compose.project\": \"ai-grepa\",\n            \"com.docker.compose.version\": \"5.3.1\"\n        },\n        \"Containers\": {\n            \"16479141beddf1af7cf2b66e2e1e631fe0cd16b857180fd70804e3486a1057a6\": {\n                \"Name\": \"ai-grepa-qdrant-1\",\n                \"EndpointID\": \"3aa49c4ed3dc6c1eb1c0dc2ba54976d318fb26360f4c87ca31e67a2ccdd52dfe\",\n                \"MacAddress\": \"26:7f:76:57:44:e2\",\n                \"IPv4Address\": \"172.19.0.2/16\",\n                \"IPv6Address\": \"\"\n            }\n        },\n        \"Status\": {\n            \"IPAM\": {\n                \"Subnets\": {\n                    \"172.19.0.0/16\": {\n                        \"IPsInUse\": 4,\n                        \"DynamicIPsAvailable\": 65532\n                    }\n                }\n            }\n        }\n    },\n    {\n        \"Name\": \"bridge\",\n        \"Id\": \"8d97a7b2c963f9bd935d50381cced96d8cd892ab42f89606e02653d5a452cd87\",\n        \"Created\": \"2026-11-12T10:32:18.458912042Z\",\n        \"Scope\": \"local\",\n        \"Driver\": \"bridge\",\n        \"EnableIPv4\": true,\n        \"EnableIPv6\": false,\n        \"IPAM\": {\n            \"Driver\": \"default\",\n            \"Options\": null,\n            \"Config\": [\n                {\n                    \"Subnet\": \"172.17.0.0/16\",\n                    \"Gateway\": \"172.17.0.1\"\n                }\n            ]\n        },\n        \"Internal\": false,\n        \"Attachable\": false,\n        \"Ingress\": false,\n        \"ConfigFrom\": {\n            \"Network\": \"\"\n        },\n        \"ConfigOnly\": false,\n        \"Options\": {\n            \"com.docker.network.bridge.default_bridge\": \"true\",\n            \"com.docker.network.bridge.enable_icc\": \"true\",\n            \"com.docker.network.bridge.enable_ip_masquerade\": \"true\",\n            \"com.docker.network.bridge.host_binding_ipv4\": \"0.0.0.0\",\n            \"com.docker.network.bridge.name\": \"docker0\",\n            \"com.docker.network.driver.mtu\": \"65535\"\n        },\n        \"Labels\": {},\n        \"Containers\": {},\n        \"Status\": {\n            \"IPAM\": {\n                \"Subnets\": {\n                    \"172.17.0.0/16\": {\n                        \"IPsInUse\": 3,\n                        \"DynamicIPsAvailable\": 65533\n                    }\n                }\n            }\n        }\n    },\n    {\n        \"Name\": \"kind\",\n        \"Id\": \"0cdc48c7195e689b866b93943a32692612dec7ab9edf6c62af901b32303e01b5\",\n        \"Created\": \"2026-08-04T09:54:42.302682179Z\",\n        \"Scope\": \"local\",\n        \"Driver\": \"bridge\",\n        \"EnableIPv4\": true,\n        \"EnableIPv6\": true,\n        \"IPAM\": {\n            \"Driver\": \"default\",\n            \"Options\": {},\n            \"Config\": [\n                {\n                    \"Subnet\": \"fc00:f853:ccd:e793::/64\",\n                    \"Gateway\": \"fc00:f853:ccd:e793::1\"\n                },\n                {\n                    \"Subnet\": \"172.18.0.0/16\",\n                    \"Gateway\": \"172.18.0.1\"\n                }\n            ]\n        },\n        \"Internal\": false,\n        \"Attachable\": false,\n        \"Ingress\": false,\n        \"ConfigFrom\": {\n            \"Network\": \"\"\n        },\n        \"ConfigOnly\": false,\n        \"Options\": {\n            \"com.docker.network.bridge.enable_ip_masquerade\": \"true\",\n            \"com.docker.network.driver.mtu\": \"65535\",\n            \"com.docker.network.enable_ipv4\": \"true\"\n        },\n        \"Labels\": {},\n        \"Containers\": {},\n        \"Status\": {\n            \"IPAM\": {\n                \"Subnets\": {\n                    \"172.18.0.0/16\": {\n                        \"IPsInUse\": 3,\n                        \"DynamicIPsAvailable\": 65533\n                    },\n                    \"fc00:f853:ccd:e793::/64\": {\n                        \"IPsInUse\": 2,\n                        \"DynamicIPsAvailable\": 18446744073709551614\n                    }\n                }\n            }\n        }\n    },\n    {\n        \"Name\": \"mkd2-astra182_default\",\n        \"Id\": \"cf90586b975dbbcba5913d694765108b4c4501afee0e8ac87d72575460567354\",\n        \"Created\": \"2026-10-29T17:33:20.053147005Z\",\n        \"Scope\": \"local\",\n        \"Driver\": \"bridge\",\n        \"EnableIPv4\": true,\n        \"EnableIPv6\": false,\n        \"IPAM\": {\n            \"Driver\": \"default\",\n            \"Options\": null,\n            \"Config\": [\n                {\n                    \"Subnet\": \"172.20.0.0/16\",\n                    \"Gateway\": \"172.20.0.1\"\n                }\n            ]\n        },\n        \"Internal\": false,\n        \"Attachable\": false,\n        \"Ingress\": false,\n        \"ConfigFrom\": {\n            \"Network\": \"\"\n        },\n        \"ConfigOnly\": false,\n        \"Options\": {\n            \"com.docker.network.enable_ipv4\": \"true\",\n            \"com.docker.network.enable_ipv6\": \"false\"\n        },\n        \"Labels\": {\n            \"com.docker.compose.config-hash\": \"cba3816f202da65d4d7cacf45feefcdebb49c3e4bc06ca3c72e7edf39e50660b\",\n            \"com.docker.compose.network\": \"default\",\n            \"com.docker.compose.project\": \"mkd2-astra182\",\n            \"com.docker.compose.version\": \"5.3.1\"\n        },\n        \"Containers\": {},\n        \"Status\": {\n            \"IPAM\": {\n                \"Subnets\": {\n                    \"172.20.0.0/16\": {\n                        \"IPsInUse\": 3,\n                        \"DynamicIPsAvailable\": 65533\n                    }\n                }\n            }\n        }\n    },\n    {\n        \"Name\": \"transport-lab_back\",\n        \"Id\": \"42c7ab4fa5c7b15316c19c15740408ba882e2a8ad26ee3a03187014c0d1664b3\",\n        \"Created\": \"2026-11-08T16:15:08.020306589Z\",\n        \"Scope\": \"local\",\n        \"Driver\": \"bridge\",\n        \"EnableIPv4\": true,\n        \"EnableIPv6\": false,\n        \"IPAM\": {\n            \"Driver\": \"default\",\n            \"Options\": null,\n            \"Config\": [\n                {\n                    \"Subnet\": \"10.77.2.0/24\",\n                    \"Gateway\": \"10.77.2.254\"\n                }\n            ]\n        },\n        \"Internal\": true,\n        \"Attachable\": false,\n        \"Ingress\": false,\n        \"ConfigFrom\": {\n            \"Network\": \"\"\n        },\n        \"ConfigOnly\": false,\n        \"Options\": {\n            \"com.docker.network.enable_ipv4\": \"true\",\n            \"com.docker.network.enable_ipv6\": \"false\"\n        },\n        \"Labels\": {\n            \"com.docker.compose.config-hash\": \"875df3fb008ec2d7f6bbeb60d29e5488d41688e913843c9dbf5ca1237c5e7c1a\",\n            \"com.docker.compose.network\": \"back\",\n            \"com.docker.compose.project\": \"transport-lab\",\n            \"com.docker.compose.version\": \"5.3.1\"\n        },\n        \"Containers\": {},\n        \"Status\": {\n            \"IPAM\": {\n                \"Subnets\": {\n                    \"10.77.2.0/24\": {\n                        \"IPsInUse\": 3,\n                        \"DynamicIPsAvailable\": 253\n                    }\n                }\n            }\n        }\n    },\n    {\n        \"Name\": \"transport-lab_front\",\n        \"Id\": \"bd27d1e8f91110afd70f867782eff8a221f7849b86699378faa95e4471301446\",\n        \"Created\": \"2026-11-08T16:15:08.010139922Z\",\n        \"Scope\": \"local\",\n        \"Driver\": \"bridge\",\n        \"EnableIPv4\": true,\n        \"EnableIPv6\": false,\n        \"IPAM\": {\n            \"Driver\": \"default\",\n            \"Options\": null,\n            \"Config\": [\n                {\n                    \"Subnet\": \"10.77.1.0/24\",\n                    \"Gateway\": \"10.77.1.254\"\n                }\n            ]\n        },\n        \"Internal\": true,\n        \"Attachable\": false,\n        \"Ingress\": false,\n        \"ConfigFrom\": {\n            \"Network\": \"\"\n        },\n        \"ConfigOnly\": false,\n        \"Options\": {\n            \"com.docker.network.enable_ipv4\": \"true\",\n            \"com.docker.network.enable_ipv6\": \"false\"\n        },\n        \"Labels\": {\n            \"com.docker.compose.config-hash\": \"5632f87645b6cbff349d6ea76bfb94b5339386ca2bbef0f2cd29af5786962fd6\",\n            \"com.docker.compose.network\": \"front\",\n            \"com.docker.compose.project\": \"transport-lab\",\n            \"com.docker.compose.version\": \"5.3.1\"\n        },\n        \"Containers\": {},\n        \"Status\": {\n            \"IPAM\": {\n                \"Subnets\": {\n                    \"10.77.1.0/24\": {\n                        \"IPsInUse\": 3,\n                        \"DynamicIPsAvailable\": 253\n                    }\n                }\n            }\n        }\n    }\n]\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "wswt-bench-server:dev",
+        "wswt-bench-browser:dev",
+        "wswt-bench-router:dev",
+        "wswt-bench-analyzer:dev",
+        "--format",
+        "{\"tag\":{{json .RepoTags}},\"id\":\"{{.Id}}\",\"os\":\"{{.Os}}\",\"architecture\":\"{{.Architecture}}\",\"created\":\"{{.Created}}\"}"
+      ],
+      "exit": 0,
+      "seconds": 0.07501066598342732,
+      "stdout": "{\"tag\":[\"wswt-bench-server:dev\"],\"id\":\"sha256:99ba039b63bd44522e9a1b473cfc5b541026f86cffef51580bbf3457223c1801\",\"os\":\"linux\",\"architecture\":\"arm64\",\"created\":\"2026-11-12T19:29:47.871446963Z\"}\n{\"tag\":[\"wswt-bench-browser:dev\"],\"id\":\"sha256:2dd747a3374efbfd55501adafa660afe469d9247f76115f321904fc9fac68fb4\",\"os\":\"linux\",\"architecture\":\"arm64\",\"created\":\"2026-11-12T19:35:38.150727375Z\"}\n{\"tag\":[\"wswt-bench-router:dev\"],\"id\":\"sha256:fe38820a8f6d7f0142b94690ca7ae2b306d3bcee132337a801222450c0a23261\",\"os\":\"linux\",\"architecture\":\"arm64\",\"created\":\"2026-11-12T19:30:00.879572636Z\"}\n{\"tag\":[\"wswt-bench-analyzer:dev\"],\"id\":\"sha256:bff8e12f1583e16593d03f9911f31232fe69661c92b1686a9fbc35d6a8dfed22\",\"os\":\"linux\",\"architecture\":\"arm64\",\"created\":\"2026-11-13T10:55:53.309490636Z\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "-i",
+        "-v",
+        "/Users/dobrov/Desktop/Code/ITMO/benchmark:/bench",
+        "-w",
+        "/bench",
+        "wswt-bench-analyzer:dev",
+        "python",
+        "-B",
+        "src/analysis/series.py",
+        "hold"
+      ],
+      "exit": 0,
+      "seconds": 0.5279355829989072,
+      "stdout": "locked\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "wswt-bench-analyzer:dev",
+        "sh",
+        "-ec",
+        "df -h /; python -c \"import sys,numpy,scipy,pandas,matplotlib,seaborn; print(sys.version); print(numpy.__version__,scipy.__version__,pandas.__version__,matplotlib.__version__,seaborn.__version__)\"; pip check"
+      ],
+      "exit": 0,
+      "seconds": 1.3811292920145206,
+      "stdout": "Filesystem      Size  Used Avail Use% Mounted on\noverlay          63G   23G   37G  38% /\n3.12.11 (main, Sep 30 2025, 00:41:12) [GCC 12.2.0]\n2.2.6 1.15.3 2.3.2 3.10.5 0.13.2\nNo broken requirements found.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--entrypoint",
+        "sh",
+        "wswt-bench-server:dev",
+        "-ec",
+        "cat /server-build.txt; sha256sum /usr/local/bin/bench /usr/local/bin/testcert"
+      ],
+      "exit": 0,
+      "seconds": 0.19517862499924377,
+      "stdout": "/bench: go1.24.6\n\tpath\tbench\n\tmod\tbench\t(devel)\t\n\tdep\tgithub.com/coder/websocket\tv1.8.14\th1:9L0p0iKiNOibykf283eHkKUHHrpG7f65OE3BhhO7v9g=\n\tdep\tgithub.com/quic-go/qpack\tv0.5.1\th1:giqksBPnT/HDtZ6VhtFKgoLOWmlyo9Ei6u9PqzIMbhI=\n\tdep\tgithub.com/quic-go/quic-go\tv0.53.0\th1:QHX46sISpG2S03dPeZBgVIZp8dGagIaiu2FiVYvpCZI=\n\tdep\tgithub.com/quic-go/webtransport-go\tv0.9.0\th1:jgys+7/wm6JarGDrW+lD/r9BGqBAmqY/ssklE09bA70=\n\tdep\tgolang.org/x/crypto\tv0.26.0\th1:RrRspgV4mU+YwB4FYnuBoKsUapNIL5cohGAmSH3azsw=\n\tdep\tgolang.org/x/net\tv0.28.0\th1:a9JDOJc5GMUJ0+UDqmLT86WiEy7iWyIhz8gz8E4e5hE=\n\tdep\tgolang.org/x/sys\tv0.23.0\th1:YfKFowiIMvtgl1UERQoTPPToxltDeZfbj4H7dVUCwmM=\n\tdep\tgolang.org/x/text\tv0.17.0\th1:XtiM5bkSOt+ewxlOE/aE/AKEHibwj/6gvWMl9Rsh0Qc=\n\tbuild\t-buildmode=exe\n\tbuild\t-compiler=gc\n\tbuild\tCGO_ENABLED=0\n\tbuild\tGOARCH=arm64\n\tbuild\tGOOS=linux\n\tbuild\tGOARM64=v8.0\n8aee0fb6815a0b45c4e059f35a8203fb6dae4ebc744b438e825d0dd2ff9c77d1  /bench\n6f299586dcfb760451d68b4583cf25bb215ba8e9baf92e9184f117414ec92fc2  /testcert\nf4a2628eb97b3054fad4028353f504c72410b29ec3ab3f515d120ebd51db83e1  go.mod\n5ef75ca6ac2a3b78b08688aa3e25a45829549f8b28ca626a60bc11faa59b3735  go.sum\n8aee0fb6815a0b45c4e059f35a8203fb6dae4ebc744b438e825d0dd2ff9c77d1  /usr/local/bin/bench\n6f299586dcfb760451d68b4583cf25bb215ba8e9baf92e9184f117414ec92fc2  /usr/local/bin/testcert\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--entrypoint",
+        "sh",
+        "wswt-bench-browser:dev",
+        "-ec",
+        "node --version; npm --version; ./node_modules/.bin/playwright --version; /ms-playwright/chromium-1187/chrome-linux/chrome --version"
+      ],
+      "exit": 0,
+      "seconds": 0.7333887080021668,
+      "stdout": "v22.18.0\n10.9.3\nVersion 1.55.0\nChromium 140.0.7339.16 \n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--entrypoint",
+        "sh",
+        "wswt-bench-router:dev",
+        "-ec",
+        "tc -V; ip -V"
+      ],
+      "exit": 0,
+      "seconds": 0.13848558298195712,
+      "stdout": "tc utility, iproute2-6.15.0\nip utility, iproute2-6.15.0\n",
+      "stderr": ""
+    }
+  ]
+}

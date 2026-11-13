@@ -1,0 +1,18 @@
+[
+  {
+    "command": [
+      "make",
+      "build"
+    ],
+    "exit": 0,
+    "seconds": 5.504335874982644
+  },
+  {
+    "command": [
+      "make",
+      "archive"
+    ],
+    "exit": 0,
+    "seconds": 23.2948105839896
+  }
+]

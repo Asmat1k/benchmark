@@ -1,0 +1,259 @@
+sh docker/build.sh
+ Image wswt-bench-analyzer:dev Building 
+ Image wswt-bench-server:dev Building 
+ Image wswt-bench-browser:dev Building 
+ Image wswt-bench-router:dev Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.98kB done
+#1 DONE 0.0s
+
+#2 [browser internal] load build definition from Dockerfile.browser
+#2 transferring dockerfile: 475B done
+#2 DONE 0.0s
+
+#3 [analyzer internal] load build definition from Dockerfile.analyzer
+#3 transferring dockerfile: 597B done
+#3 DONE 0.0s
+
+#4 [router internal] load build definition from Dockerfile.router
+#4 transferring dockerfile: 1.21kB done
+#4 DONE 0.0s
+
+#5 [server internal] load build definition from Dockerfile.server
+#5 transferring dockerfile: 991B done
+#5 DONE 0.0s
+
+#6 [browser internal] load metadata for mcr.microsoft.com/playwright:v1.55.0-noble@sha256:7e20a8225950eb93a9d306a917b05d822a68a67333973e254f1b0cd86c0f3742
+#6 DONE 0.0s
+
+#7 [server internal] load .dockerignore
+#7 transferring context: 91B done
+#7 DONE 0.0s
+
+#8 [analyzer internal] load metadata for docker.io/library/python:3.12.11-slim-bookworm@sha256:9bb659dc6d5218917236f3711e866a5634bb4c2f208de9d4533aa4863f57c1d3
+#8 DONE 0.0s
+
+#9 [router internal] load metadata for docker.io/library/debian:bookworm-slim@sha256:ec8534cda2cb30f29f44f23e135297af7a1496f2990fd8e4e84aa36b081a757a
+#9 DONE 0.0s
+
+#10 [server internal] load metadata for docker.io/library/node:22.18.0-bookworm@sha256:05a8ca7db7ad22dff0ba1a78d108658c0f4c788e583bd7809ab8d7a32d8cbc86
+#10 DONE 0.0s
+
+#11 [server internal] load metadata for docker.io/library/golang:1.24.6-bookworm@sha256:97b2dc9975299f62ff2d1f262b6b5aad2f35da43471ec379fdf164a7e0110e59
+#11 DONE 0.0s
+
+#12 [browser internal] load build context
+#12 transferring context: 11.44kB 0.0s done
+#12 DONE 0.0s
+
+#13 [router internal] load build context
+#13 transferring context: 3.10kB 0.0s done
+#13 DONE 0.0s
+
+#14 [browser 1/8] FROM mcr.microsoft.com/playwright:v1.55.0-noble@sha256:7e20a8225950eb93a9d306a917b05d822a68a67333973e254f1b0cd86c0f3742
+#14 resolve mcr.microsoft.com/playwright:v1.55.0-noble@sha256:7e20a8225950eb93a9d306a917b05d822a68a67333973e254f1b0cd86c0f3742 0.0s done
+#14 DONE 0.0s
+
+#15 [analyzer 1/6] FROM docker.io/library/python:3.12.11-slim-bookworm@sha256:9bb659dc6d5218917236f3711e866a5634bb4c2f208de9d4533aa4863f57c1d3
+#15 resolve docker.io/library/python:3.12.11-slim-bookworm@sha256:9bb659dc6d5218917236f3711e866a5634bb4c2f208de9d4533aa4863f57c1d3 0.0s done
+#15 DONE 0.0s
+
+#16 [analyzer internal] load build context
+#16 transferring context: 324.16kB 0.0s done
+#16 DONE 0.0s
+
+#17 [server compiler 1/7] FROM docker.io/library/golang:1.24.6-bookworm@sha256:97b2dc9975299f62ff2d1f262b6b5aad2f35da43471ec379fdf164a7e0110e59
+#17 resolve docker.io/library/golang:1.24.6-bookworm@sha256:97b2dc9975299f62ff2d1f262b6b5aad2f35da43471ec379fdf164a7e0110e59 0.0s done
+#17 DONE 0.0s
+
+#18 [router compiler 1/4] FROM docker.io/library/debian:bookworm-slim@sha256:ec8534cda2cb30f29f44f23e135297af7a1496f2990fd8e4e84aa36b081a757a
+#18 resolve docker.io/library/debian:bookworm-slim@sha256:ec8534cda2cb30f29f44f23e135297af7a1496f2990fd8e4e84aa36b081a757a 0.0s done
+#18 DONE 0.0s
+
+#19 [server client 1/6] FROM docker.io/library/node:22.18.0-bookworm@sha256:05a8ca7db7ad22dff0ba1a78d108658c0f4c788e583bd7809ab8d7a32d8cbc86
+#19 resolve docker.io/library/node:22.18.0-bookworm@sha256:05a8ca7db7ad22dff0ba1a78d108658c0f4c788e583bd7809ab8d7a32d8cbc86 0.0s done
+#19 DONE 0.0s
+
+#20 [server internal] load build context
+#20 transferring context: 1.28kB done
+#20 DONE 0.0s
+
+#21 [router stage-1 2/5] RUN apt-get -o Acquire::Retries=4 update && apt-get -o Acquire::Retries=4 install -y --no-install-recommends ethtool tcpdump libmnl0 libelf1 libcap2 iptables jq && rm -rf /var/lib/apt/lists/*
+#21 CACHED
+
+#22 [router compiler 3/4] WORKDIR /tmp
+#22 CACHED
+
+#23 [router stage-1 3/5] COPY --from=compiler /opt/router/sbin/ip /opt/router/sbin/tc /usr/local/sbin/
+#23 CACHED
+
+#24 [router compiler 4/4] RUN curl -fsSLO https://www.kernel.org/pub/linux/utils/net/iproute2/iproute2-6.15.0.tar.xz && echo '8041854a882583ad5263466736c9c8c68c74b1a35754ab770d23343f947528fb  iproute2-6.15.0.tar.xz' | sha256sum -c - && tar xf iproute2-6.15.0.tar.xz && cd iproute2-6.15.0 && ./configure && make -j2 && make DESTDIR=/opt/router install
+#24 CACHED
+
+#25 [router stage-1 4/5] COPY docker/check-seed.sh /usr/local/bin/check-seed
+#25 CACHED
+
+#26 [router compiler 2/4] RUN apt-get -o Acquire::Retries=4 update && apt-get -o Acquire::Retries=4 install -y --no-install-recommends build-essential pkg-config flex bison libmnl-dev libelf-dev libcap-dev curl ca-certificates xz-utils
+#26 CACHED
+
+#27 [router stage-1 5/5] COPY docker/network.sh /usr/local/bin/network
+#27 CACHED
+
+#28 [analyzer 3/6] COPY src/analysis/requirements.txt ./
+#28 CACHED
+
+#29 [analyzer 4/6] RUN pip download --no-cache-dir --require-hashes --only-binary=:all: -r requirements.txt -d /wheelhouse && cd /wheelhouse && sha256sum *.whl > SHA256SUMS
+#29 CACHED
+
+#30 [analyzer 2/6] WORKDIR /analysis
+#30 CACHED
+
+#31 [analyzer 5/6] RUN --network=none cd /wheelhouse && sha256sum -c SHA256SUMS && pip install --no-index --find-links=/wheelhouse --require-hashes --only-binary=:all: -r /analysis/requirements.txt && pip check
+#31 CACHED
+
+#32 [browser 6/8] COPY src/runner ./
+#32 CACHED
+
+#33 [browser 4/8] COPY src/runner/package*.json ./
+#33 CACHED
+
+#34 [browser 7/8] RUN npm run build
+#34 CACHED
+
+#35 [browser 5/8] RUN npm ci
+#35 CACHED
+
+#36 [browser 2/8] RUN apt-get update && apt-get install -y --no-install-recommends libnss3-tools && rm -rf /var/lib/apt/lists/*
+#36 CACHED
+
+#37 [browser 3/8] WORKDIR /runner
+#37 CACHED
+
+#38 [browser 8/8] COPY docker/browser.sh /usr/local/bin/bench-browser
+#38 CACHED
+
+#39 [router] exporting to image
+#39 exporting layers done
+#39 exporting manifest sha256:c7ae5c2e490cd2861290aa89d7487e5658d316ad25e4f7fdda8fc29574472fca done
+#39 exporting config sha256:f7a2701c51ca9d71b1e8a0f733c0ebf3e0dc84076cdf8ce74a38eaf907329863 done
+#39 exporting attestation manifest sha256:6ef5cab5e2cdf1cc0fd29ee709820c6cb94ff7922370f781e28995ccfa364256 0.0s done
+#39 exporting manifest list sha256:d78a80d31724881c1adaa57005fae37f4f23e0013945dac759d7ee1f76b6b74d done
+#39 naming to docker.io/library/wswt-bench-router:dev done
+#39 unpacking to docker.io/library/wswt-bench-router:dev done
+#39 DONE 0.1s
+
+#40 [analyzer 6/6] COPY src/analysis/ ./
+#40 DONE 0.1s
+
+#41 [server client 4/6] RUN npm ci
+#41 CACHED
+
+#42 [server stage-2 2/4] COPY --from=compiler /server-build.txt /server-build.txt
+#42 CACHED
+
+#43 [server stage-2 3/4] COPY --from=client /client/dist /page
+#43 CACHED
+
+#44 [server compiler 4/7] RUN go mod download
+#44 CACHED
+
+#45 [server compiler 2/7] WORKDIR /src
+#45 CACHED
+
+#46 [server client 3/6] COPY src/client/package*.json ./
+#46 CACHED
+
+#47 [server compiler 6/7] RUN go test -mod=readonly ./... && CGO_ENABLED=0 go build -mod=readonly -o /bench . && CGO_ENABLED=0 go build -o /testcert ./cmd/testcert
+#47 CACHED
+
+#48 [server client 5/6] COPY src/client ./
+#48 CACHED
+
+#49 [server compiler 5/7] COPY src/server ./
+#49 CACHED
+
+#50 [server client 2/6] WORKDIR /client
+#50 CACHED
+
+#51 [server client 6/6] RUN npm run build && npm test && cp index.html dist/
+#51 CACHED
+
+#52 [server compiler 7/7] RUN go version -m /bench > /server-build.txt && sha256sum /bench /testcert go.mod go.sum >> /server-build.txt
+#52 CACHED
+
+#53 [server compiler 3/7] COPY src/server/go.* ./
+#53 CACHED
+
+#54 [server stage-2 4/4] COPY --from=compiler /bench /testcert /usr/local/bin/
+#54 CACHED
+
+#55 [analyzer] exporting to image
+#55 ...
+
+#56 [browser] exporting to image
+#56 exporting layers done
+#56 exporting manifest sha256:a0b4a5a9d5dda6d2402ece98e41e8171fb01c48064485a26d37e5e7ff24e261f done
+#56 exporting config sha256:590fd8f7aa9e1ff5080d3a4ccf67ad9acbc14c8151a38b26deb30e7e301a5de7 done
+#56 exporting attestation manifest sha256:79b940d7452eabf18c7bfad1f01e0e3377f683ef8216588c22c6ab0ea54ce6ca 0.0s done
+#56 exporting manifest list sha256:356b2e1af8773aaf688f3c4e03bbfa73b2c835d88be0a76278030cf55d1c1641 0.0s done
+#56 naming to docker.io/library/wswt-bench-browser:dev done
+#56 unpacking to docker.io/library/wswt-bench-browser:dev 0.0s done
+#56 DONE 0.2s
+
+#57 [server] exporting to image
+#57 exporting layers done
+#57 exporting manifest sha256:8327f72b2e16a3568627638a8469cb295f9ef0ff09fcbb49a57b73d82d86dd5e done
+#57 exporting config sha256:65d12e8ac2e801a5a60c0e45301e8ba48bb51b4bba1b590b3f2b93cb1ba1c7e9 done
+#57 exporting attestation manifest sha256:39b465be177457eb6f403d65a91ace7181ba04a40b4f170dbc4f2e4e1f8c211f 0.0s done
+#57 exporting manifest list sha256:c2c60585a64d04e8dd7dd6a674625c0aec44cdc385561c8864dab734fbf19c44 0.0s done
+#57 naming to docker.io/library/wswt-bench-server:dev done
+#57 unpacking to docker.io/library/wswt-bench-server:dev done
+#57 DONE 0.1s
+
+#58 [router] resolving provenance for metadata file
+#58 DONE 0.0s
+
+#55 [analyzer] exporting to image
+#55 exporting layers 0.1s done
+#55 exporting manifest sha256:3e4671618d613b2c46ad16b787b4152f9ed09766bc7939c8e672d711c20189ff 0.0s done
+#55 exporting config sha256:956dc93d586bb90f19d40063effa9a665dd4f44d1a79857cef1e4115d2a19dfd done
+#55 exporting attestation manifest sha256:abc333d7306ae490f7910bf70a9f1ca036384a2ef8478b31c8076f579761ff9f 0.0s done
+#55 exporting manifest list sha256:9e263785dc135db52a216bc358c38218cf3d98f178a9981a365ca79cda7cbd62
+#55 exporting manifest list sha256:9e263785dc135db52a216bc358c38218cf3d98f178a9981a365ca79cda7cbd62 done
+#55 naming to docker.io/library/wswt-bench-analyzer:dev done
+#55 unpacking to docker.io/library/wswt-bench-analyzer:dev 0.0s done
+#55 DONE 0.1s
+
+#59 [browser] resolving provenance for metadata file
+#59 DONE 0.0s
+
+#60 [server] resolving provenance for metadata file
+#60 DONE 0.0s
+
+#61 [analyzer] resolving provenance for metadata file
+#61 DONE 0.0s
+ Image wswt-bench-analyzer:dev Built 
+ Image wswt-bench-browser:dev Built 
+ Image wswt-bench-router:dev Built 
+ Image wswt-bench-server:dev Built 
+attrs-26.1.0-py3-none-any.whl: OK
+contourpy-1.4.0-cp312-cp312-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl: OK
+cycler-0.12.1-py3-none-any.whl: OK
+fonttools-4.68.0-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl: OK
+jsonschema-4.25.1-py3-none-any.whl: OK
+jsonschema_specifications-2025.9.1-py3-none-any.whl: OK
+kiwisolver-1.5.1-cp312-cp312-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl: OK
+matplotlib-3.10.5-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl: OK
+numpy-2.2.6-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl: OK
+packaging-26.3-py3-none-any.whl: OK
+pandas-2.3.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl: OK
+pillow-13.0.0-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl: OK
+pyparsing-3.3.3-py3-none-any.whl: OK
+python_dateutil-4.0.0-py3-none-any.whl: OK
+pytz-2026.6-py2.py3-none-any.whl: OK
+referencing-0.37.0-py3-none-any.whl: OK
+rpds_py-2026.9.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl: OK
+scipy-1.15.3-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl: OK
+seaborn-0.13.2-py3-none-any.whl: OK
+typing_extensions-4.16.0-py3-none-any.whl: OK
+tzdata-2026.6-py2.py3-none-any.whl: OK

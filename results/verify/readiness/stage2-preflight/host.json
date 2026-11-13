@@ -1,0 +1,121 @@
+{
+  "utc": "2026-11-13T16:10:10.996248+00:00",
+  "checks": [
+    {
+      "command": [
+        "date",
+        "-u",
+        "+%Y-%m-%dT%H:%M:%SZ"
+      ],
+      "exit": 0,
+      "seconds": 0.011058500007493421,
+      "stdout": "2026-11-13T16:10:10Z\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "sw_vers"
+      ],
+      "exit": 0,
+      "seconds": 0.026797750004334375,
+      "stdout": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "uname",
+        "-a"
+      ],
+      "exit": 0,
+      "seconds": 0.016237375006312504,
+      "stdout": "Darwin dobrov.local 25.5.0 Darwin Kernel Version 25.5.0: Mon Apr 27 20:38:56 PDT 2026; root:xnu-12377.121.6~2/RELEASE_ARM64_T6000 arm64\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "df",
+        "-h",
+        "."
+      ],
+      "exit": 0,
+      "seconds": 0.011303708015475422,
+      "stdout": "Filesystem      Size    Used   Avail Capacity iused ifree %iused  Mounted on\n/dev/disk3s5   460Gi   314Gi   120Gi    73%    7.0M  1.3G    1%   /System/Volumes/Data\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "pmset",
+        "-g",
+        "batt"
+      ],
+      "exit": 0,
+      "seconds": 0.01299187500262633,
+      "stdout": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=22282339)\t100%; charged; 0:00 remaining present: true\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "pmset",
+        "-g",
+        "custom"
+      ],
+      "exit": 0,
+      "seconds": 0.011361667013261467,
+      "stdout": "AC Power:\n Sleep On Power Button 1\n lowpowermode         0\n standby              1\n ttyskeepawake        1\n hibernatemode        3\n powernap             1\n hibernatefile        /var/vm/sleepimage\n displaysleep         20\n womp                 1\n networkoversleep     0\n sleep                1\n tcpkeepalive         1\n disksleep            10\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "pmset",
+        "-g",
+        "assertions"
+      ],
+      "exit": 0,
+      "seconds": 0.020487083005718887,
+      "stdout": "2026-11-13 19:10:10 +0300 \nAssertion status system-wide:\n   BackgroundTask                 0\n   ApplePushServiceTask           0\n   UserIsActive                   1\n   PreventUserIdleDisplaySleep    0\n   SoftwareUpdateTask             0\n   PreventSystemSleep             0\n   ExternalMedia                  0\n   InternalPreventDisplaySleep    1\n   PreventUserIdleSystemSleep     1\n   NetworkClientActive            0\nListed by owning process:\n   pid 399(WindowServer): [0x00028eb400098e16] 00:00:00 UserIsActive named: \"com.apple.iohideventsystem.queue.tickle serviceID:10000fdfc service:AppleMultitouchDevice product:Apple Internal Keyboard / Trackpad eventType:11\"  \n\tTimeout will fire in 1199 secs Action=TimeoutActionRelease\n   pid 96350(ChatGPT): [0x0002fe2d000184e1] 00:02:20 NoIdleSleepAssertion named: \"Electron\"  \n   pid 526(mds_stores): [0x0002feb9000b84f2] 00:00:00 BackgroundTask named: \"com.apple.metadata.mds_stores.power\"  \n   pid 340(powerd): [0x00028eb400018e17] 07:57:57 PreventUserIdleSystemSleep named: \"Powerd - Prevent sleep while display is on\"  \n   pid 340(powerd): [0x0002fde700108480] 00:00:34 InternalPreventDisplaySleep named: \"com.apple.powermanagement.delayDisplayOff\"  \n\tTimeout will fire in 266 secs Action=TimeoutActionTurnOff\nKernel Assertions: 0x100=MAGICWAKE\n   id=557  level=255 0x100=MAGICWAKE creat=09.11.2026, 23:02  mod=13.11.2026, 11:56 description=en0 owner=IOSkywalkNetworkBSDClient\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "openssl",
+        "x509",
+        "-in",
+        "build/series-tls.PMYktiWa/server/good/cert.pem",
+        "-noout",
+        "-dates",
+        "-subject",
+        "-issuer",
+        "-ext",
+        "subjectAltName",
+        "-fingerprint",
+        "-sha256"
+      ],
+      "exit": 0,
+      "seconds": 0.03622033298597671,
+      "stdout": "notBefore=Nov 13 10:56:43 2026 GMT\nnotAfter=Nov 26 10:56:43 2026 GMT\nsubject=CN=bench.test\nissuer=CN=Local bench CA\nX509v3 Subject Alternative Name: \n    DNS:bench.test\nsha256 Fingerprint=71:09:29:2E:7D:11:46:6C:68:79:47:A0:BF:74:74:6A:ED:45:37:6B:C5:7C:13:B1:E0:6A:0F:5B:B1:6E:AE:59\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0,
+      "seconds": 0.03942083302536048,
+      "stdout": "4c4293359a7c21834fb3cf198c15f01ab5c93464\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--short"
+      ],
+      "exit": 0,
+      "seconds": 0.09417716600000858,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}
