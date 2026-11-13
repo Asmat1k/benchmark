@@ -1,0 +1,74 @@
+{
+  "collection_id": "primary-real-01-build",
+  "gate": "build",
+  "id": "locked-install",
+  "actual": true,
+  "scope": "stage2 build reused after exact 134-source and actual image-ID comparison; cached steps disclosed",
+  "command": "make build (stage2); current sources() and D3 context image IDs",
+  "observations": {
+    "installation_contracts": [
+      "npm ci",
+      "go test -mod=readonly",
+      "--require-hashes",
+      "pip check"
+    ],
+    "sources_equal": true,
+    "actual_image_ids": [
+      {
+        "role": "browser",
+        "id": "sha256:356b2e1af8773aaf688f3c4e03bbfa73b2c835d88be0a76278030cf55d1c1641",
+        "cpu": 2000000000,
+        "memory": 3221225472,
+        "shm": 1073741824
+      },
+      {
+        "role": "router",
+        "id": "sha256:d78a80d31724881c1adaa57005fae37f4f23e0013945dac759d7ee1f76b6b74d",
+        "cpu": 1000000000,
+        "memory": 536870912,
+        "shm": 67108864
+      },
+      {
+        "role": "server",
+        "id": "sha256:c2c60585a64d04e8dd7dd6a674625c0aec44cdc385561c8864dab734fbf19c44",
+        "cpu": 2000000000,
+        "memory": 1073741824,
+        "shm": 67108864
+      }
+    ]
+  },
+  "files": [
+    {
+      "path": "results/verify/readiness/stage2-preflight/release-build.txt",
+      "sha256": "01c206c8d5f6c0920b5fee90ac6ac6f93aba339ffa960267b55e0bcfe757360d"
+    },
+    {
+      "path": "results/verify/readiness/stage2-preflight/release-build-archive.json",
+      "sha256": "5b7c5ee907cb45ebfd7a3c707a58c978f8608de82ef71f7854e99628318ebf88"
+    },
+    {
+      "path": "results/verify/readiness/stage2-preflight/release-evidence.json",
+      "sha256": "e60858a2951fa0126aec68170064257e1a9cf8cbe44999a8b2b8dd005b1a2ad6"
+    },
+    {
+      "path": "docker/Dockerfile.server",
+      "sha256": "8e8036189ffe938585b5ce8cf69feb0dd11fdc44554b3448f541550244f664a5"
+    },
+    {
+      "path": "docker/Dockerfile.browser",
+      "sha256": "473f8ff26ab6c755b869ad982d08dbdd7e0ce6bab57d84629cfb4c5b54662827"
+    },
+    {
+      "path": "docker/Dockerfile.analyzer",
+      "sha256": "57bfbee24b43c9daac8c891666dcd2bda08c5a40f213c8f6756f7a6b37ee61e4"
+    }
+  ],
+  "preparer": {
+    "path": "docs/readiness/stage3-primary.py",
+    "sha256": "3f5d0a776c9a02fbd1b2d0adc8db7efe2decce9f8d13b355dd7ca332e68edf24"
+  },
+  "source_inventory": {
+    "path": "results/verify/readiness/stage3/source-inventory.json",
+    "sha256": "71efbe891b780d73946b9e7cea0f38f54c28b65253557c9133159d26a7f91830"
+  }
+}

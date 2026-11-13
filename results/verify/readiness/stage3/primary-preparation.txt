@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/bench/docs/readiness/stage3-primary.py", line 206, in <module>
+    prepare(args.smoke, args.timer_report, args.output)
+  File "/bench/docs/readiness/stage3-primary.py", line 34, in prepare
+    folders = [diagnostic_raw(directory, run, schedule, environment, hashes) for run in schedule['runs']]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/bench/src/analysis/diagnostic_input.py", line 53, in diagnostic_raw
+    read(folder/"collection-sources.json")==hashes, "foreign diagnostic sources")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/bench/src/analysis/raw.py", line 18, in read
+    return json.loads(path.read_text())
+                      ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'results/verify/diagnostic/timer-timer.2ST8NYBU/raw/b0-a0-m1/collection-sources.json'

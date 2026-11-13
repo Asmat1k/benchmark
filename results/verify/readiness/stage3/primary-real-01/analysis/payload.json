@@ -1,0 +1,256 @@
+{
+  "gate": "analysis",
+  "collection_id": "primary-real-01-analysis",
+  "document": {
+    "schema_version": 1,
+    "checks": [
+      {
+        "id": "metrics-boundaries",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "offline numerical known-answer fixture, no network performance claim",
+        "utc": "2026-11-13T18:34:14.506635Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage3/primary-real-01/analysis/metrics-boundaries.json",
+            "sha256": "45faded4df092d914eae7a3abc84d31036a380472d6dcbf576e7c79a100a7d37"
+          }
+        ]
+      },
+      {
+        "id": "full-n-sign",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "offline numerical known-answer fixture, no network performance claim",
+        "utc": "2026-11-13T18:34:14.509228Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage3/primary-real-01/analysis/full-n-sign.json",
+            "sha256": "97bb707f2cbc03d733ce1bed38bdefc36f5aef822c390b608de0b36e66c1754b"
+          }
+        ]
+      },
+      {
+        "id": "holm4",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "offline numerical known-answer fixture, no network performance claim",
+        "utc": "2026-11-13T18:34:14.511701Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage3/primary-real-01/analysis/holm4.json",
+            "sha256": "a69bc2dff442e4112ad66a3b7e78adad871c598298db63855caa135d5b36edc8"
+          }
+        ]
+      },
+      {
+        "id": "rank-intervals",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "offline numerical known-answer fixture, no network performance claim",
+        "utc": "2026-11-13T18:34:14.516857Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage3/primary-real-01/analysis/rank-intervals.json",
+            "sha256": "e58f9bfb2f79634297b0cc07403fed82bcc90526ab49940f22eac876b233cf4b"
+          }
+        ]
+      },
+      {
+        "id": "paired-bootstrap",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "offline numerical known-answer fixture, no network performance claim",
+        "utc": "2026-11-13T18:34:14.526600Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage3/primary-real-01/analysis/paired-bootstrap.json",
+            "sha256": "18deaa0752140d4117786d4fea84615d880cdd3054529339325853dc1fbe2454"
+          }
+        ]
+      },
+      {
+        "id": "offline-reference",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "offline numerical known-answer fixture, no network performance claim",
+        "utc": "2026-11-13T18:34:14.528710Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage3/primary-real-01/analysis/offline-reference.json",
+            "sha256": "01dbbc7a5c50189f5e64134cdfd0a38ca661889e7212e00bdc00c467f7a6e3e4"
+          }
+        ]
+      },
+      {
+        "id": "null-family",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "new temporary SYNTHETIC fixture with current protocol/context; original failures retained",
+        "utc": "2026-11-13T18:34:14.530917Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage3/primary-real-01/analysis/null-family.json",
+            "sha256": "698fe7d37e95fd49cb5f37b3134badebbb15936eebd6d8cf978bb9a44a6b5028"
+          }
+        ]
+      }
+    ]
+  },
+  "observations": {
+    "metrics-boundaries": {
+      "collection_id": "primary-real-01-analysis",
+      "id": "metrics-boundaries",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "offline numerical known-answer fixture, no network performance claim",
+      "utc": "2026-11-13T18:34:14.506635Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage3/primary-real-01/analysis/metrics-boundaries.json",
+          "sha256": "45faded4df092d914eae7a3abc84d31036a380472d6dcbf576e7c79a100a7d37"
+        }
+      ]
+    },
+    "full-n-sign": {
+      "collection_id": "primary-real-01-analysis",
+      "id": "full-n-sign",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "offline numerical known-answer fixture, no network performance claim",
+      "utc": "2026-11-13T18:34:14.509228Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage3/primary-real-01/analysis/full-n-sign.json",
+          "sha256": "97bb707f2cbc03d733ce1bed38bdefc36f5aef822c390b608de0b36e66c1754b"
+        }
+      ]
+    },
+    "holm4": {
+      "collection_id": "primary-real-01-analysis",
+      "id": "holm4",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "offline numerical known-answer fixture, no network performance claim",
+      "utc": "2026-11-13T18:34:14.511701Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage3/primary-real-01/analysis/holm4.json",
+          "sha256": "a69bc2dff442e4112ad66a3b7e78adad871c598298db63855caa135d5b36edc8"
+        }
+      ]
+    },
+    "rank-intervals": {
+      "collection_id": "primary-real-01-analysis",
+      "id": "rank-intervals",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "offline numerical known-answer fixture, no network performance claim",
+      "utc": "2026-11-13T18:34:14.516857Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage3/primary-real-01/analysis/rank-intervals.json",
+          "sha256": "e58f9bfb2f79634297b0cc07403fed82bcc90526ab49940f22eac876b233cf4b"
+        }
+      ]
+    },
+    "paired-bootstrap": {
+      "collection_id": "primary-real-01-analysis",
+      "id": "paired-bootstrap",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "offline numerical known-answer fixture, no network performance claim",
+      "utc": "2026-11-13T18:34:14.526600Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage3/primary-real-01/analysis/paired-bootstrap.json",
+          "sha256": "18deaa0752140d4117786d4fea84615d880cdd3054529339325853dc1fbe2454"
+        }
+      ]
+    },
+    "offline-reference": {
+      "collection_id": "primary-real-01-analysis",
+      "id": "offline-reference",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "offline numerical known-answer fixture, no network performance claim",
+      "utc": "2026-11-13T18:34:14.528710Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage3/primary-real-01/analysis/offline-reference.json",
+          "sha256": "01dbbc7a5c50189f5e64134cdfd0a38ca661889e7212e00bdc00c467f7a6e3e4"
+        }
+      ]
+    },
+    "null-family": {
+      "collection_id": "primary-real-01-analysis",
+      "id": "null-family",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "new temporary SYNTHETIC fixture with current protocol/context; original failures retained",
+      "utc": "2026-11-13T18:34:14.530917Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage3/primary-real-01/analysis/null-family.json",
+          "sha256": "698fe7d37e95fd49cb5f37b3134badebbb15936eebd6d8cf978bb9a44a6b5028"
+        }
+      ]
+    }
+  }
+}

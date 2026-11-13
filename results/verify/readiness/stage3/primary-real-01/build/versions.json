@@ -1,0 +1,50 @@
+{
+  "collection_id": "primary-real-01-build",
+  "gate": "build",
+  "id": "versions",
+  "actual": true,
+  "scope": "current browser runtime plus unchanged image package inventory",
+  "command": "smoke main.js; stage2 check_environment.py/dpkg-query",
+  "observations": {
+    "browser": {
+      "utc": "2026-11-13T18:29:57.532Z",
+      "version": "140.0.7339.16",
+      "node": "v22.18.0",
+      "npm": "10.9.3",
+      "typescript": "5.9.2",
+      "typesNode": "22.18.0",
+      "playwright": "1.55.0",
+      "executable": "/ms-playwright/chromium-1187/chrome-linux/chrome",
+      "secureContext": true,
+      "leaf": "fc2a5f4d7bc0fce861baee9207c82ff86bf502fda419cf45c73e3559d1a56d18",
+      "ca": "df8a2418fc75515f8ca5e9ce8d242f1ab93c77e4fe5412b62c8d8a2653dfce27"
+    },
+    "python": "3.12.11 (main, Sep 30 2025, 00:41:12) [GCC 12.2.0] 2.2.6 1.15.3 2.3.2 3.10.5 0.13.2"
+  },
+  "files": [
+    {
+      "path": "results/verify/path/wswt-smoke.wXwojaYN/browser.txt",
+      "sha256": "f355fa086d41527b24f4043c78ebadeae5033d8ada0275f43f8cf591f7f0a906"
+    },
+    {
+      "path": "results/verify/path/wswt-smoke.wXwojaYN/build.txt",
+      "sha256": "fc6381a140f692b4845dfb52c98b28e793c4d98794b67ee1c1f46648387c3c6a"
+    },
+    {
+      "path": "results/verify/readiness/stage2-preflight/release-python.txt",
+      "sha256": "3645220d5b09611c39855984f80b5dde170fa5e98416df2367b6388ed1f1efbb"
+    },
+    {
+      "path": "results/verify/readiness/stage2-preflight/release-os-packages.txt",
+      "sha256": "e785bd2543015b0656c0a03cbc3fe0cb7f1339226e80ad16a57725438a27e853"
+    }
+  ],
+  "preparer": {
+    "path": "docs/readiness/stage3-primary.py",
+    "sha256": "3f5d0a776c9a02fbd1b2d0adc8db7efe2decce9f8d13b355dd7ca332e68edf24"
+  },
+  "source_inventory": {
+    "path": "results/verify/readiness/stage3/source-inventory.json",
+    "sha256": "71efbe891b780d73946b9e7cea0f38f54c28b65253557c9133159d26a7f91830"
+  }
+}

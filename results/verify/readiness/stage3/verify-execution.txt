@@ -1,0 +1,2 @@
+sh docker/acceptance.sh verify --kind real --input results/verify/readiness/stage3/REPORT_MAP.json --environment results/verify/diagnostic/timer-timer.2ST8NYBU/context.json --output results/verify/readiness/stage3/verify-partial-real.json
+make: *** [verify] Error 2

@@ -1,0 +1,10 @@
+{
+  "command": [
+    "make",
+    "verify",
+    "ARGS=--kind real --input results/verify/readiness/stage3/REPORT_MAP.json --environment results/verify/diagnostic/timer-timer.2ST8NYBU/context.json --output results/verify/readiness/stage3/verify-partial-real.json"
+  ],
+  "seconds": 6.170881624973845,
+  "exit": 2,
+  "expected_exit": 2
+}

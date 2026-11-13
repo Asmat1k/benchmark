@@ -1,0 +1,3 @@
+"/wswt-d3-wswt-measure-tvuzukyh-browser-1"
+"/wswt-d3-wswt-measure-tvuzukyh-router-1"
+"/wswt-d3-wswt-measure-tvuzukyh-server-1"

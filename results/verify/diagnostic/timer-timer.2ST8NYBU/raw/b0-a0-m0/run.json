@@ -1,0 +1,11 @@
+{
+  "run_id": "b0-a0-m0",
+  "nonce": "3199041700262725231",
+  "mode": "WT-S",
+  "warmup_slots": 1,
+  "measurement_slots": 3,
+  "interval_ms": 50,
+  "queue_limit_bytes": 1048576,
+  "deadline_ms": 100,
+  "horizon_ms": 5000
+}
