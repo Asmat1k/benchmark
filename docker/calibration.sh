@@ -44,6 +44,7 @@ git rev-parse HEAD > "$run_dir/commit"
 compose up -d --no-build router browser server
 . docker/links.sh
 setup_links
+. docker/calibration-neighbors.sh
 context() {
     uname -a > "$run_dir/host.txt"
     docker info --format '{"kernel":"{{.KernelVersion}}","platform":"{{.Architecture}}","engine":"{{.ServerVersion}}","cpus":{{.NCPU}},"mem":{{.MemTotal}}}' > "$run_dir/vm.json"
