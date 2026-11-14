@@ -96,7 +96,7 @@ compose cp "$run_dir/run.json" browser:/tmp/run.json
 quiet_cpu() {
     quiet_prefix=$1
     docker run --rm --network none wswt-bench-analyzer:dev awk '{printf "%.0f\n", $1*1000000}' /proc/uptime > "$run_dir/$quiet_prefix-marker" || return 1
-    sleep 4 || return 1
+    sleep 6 || return 1
     for role in browser server router; do
         compose exec -T "$role" cat /tmp/resources.jsonl > "$run_dir/$quiet_prefix-$role.jsonl" || return 1
     done

@@ -6,9 +6,9 @@ from stabilization_cpu import compare, quiet_summary
 
 class QuietCpuTests(unittest.TestCase):
     def records(self):
-        return [dict(schema_version=1,run_id="quiet-test",throttled_usec=0,memory_current=1000,role=role,sample_index=i-1,end_usec=i*1000000+500000,interval_usec=1000000,
-                     cpu_usage_usec=5000,oom=0,cpu_start_lower_usec=i*1000000-500000,
-                     cpu_end_upper_usec=i*1000000+510000)
+        return [dict(schema_version=1,run_id="quiet-test",throttled_usec=0,memory_current=1000,role=role,sample_index=i-1,end_usec=i*1500000,interval_usec=1500000,
+                     cpu_usage_usec=5000,oom=0,cpu_start_lower_usec=(i-1)*1500000,
+                     cpu_end_upper_usec=i*1500000+10000)
                 for role in ('browser','server','router') for i in range(1,6)]
 
     def test_complete_brackets_exclude_observer_but_retain_raw(self):
@@ -31,7 +31,7 @@ class QuietCpuTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'insufficient complete'):
             quiet_summary(rows,1000000)
         rows = self.records()
-        rows[2]['cpu_end_upper_usec']=4500000
+        rows[2]['cpu_end_upper_usec']=6500000
         with self.assertRaisesRegex(ValueError,'insufficient complete'):
             quiet_summary(rows,1000000)
 
