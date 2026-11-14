@@ -4,8 +4,12 @@ gate=$1
 case "$gate" in timer) frequencies=timer ;; generator) frequencies="20 100"; test -f "$2" ;; *) exit 2 ;; esac
 mkdir -p results/verify/diagnostic
 analyze() {
-    docker run --rm --network none -v "$PWD:/bench" -w /bench wswt-bench-analyzer:dev python -B "$@"
+    docker run --rm --network none -v "$PWD:/bench" -v "$PWD:$PWD" -w /bench wswt-bench-analyzer:dev python -B "$@"
 }
+if [ "$gate" = generator ]; then
+    : "${BENCH_GENERATOR_ADMISSION:?source-bound diagnostic generator admission required}"
+    analyze src/analysis/browser_admission.py check "$BENCH_GENERATOR_ADMISSION" "$2"
+fi
 dirs=""
 for frequency in $frequencies; do
     directory=$(mktemp -d "results/verify/diagnostic/$gate-$frequency.XXXXXXXX")
