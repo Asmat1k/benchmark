@@ -18,7 +18,7 @@ analyze() {
         controller_request "{\"action\":\"$2\",\"index\":$4,\"partial\":\"$5\"}"
         return $?
     fi
-    docker run --rm --network none -v "$PWD:/bench" -w /bench wswt-bench-analyzer:dev python -B "$@"
+    docker run --rm --network none -v "$PWD:/bench" -v "$PWD:$PWD" -w /bench wswt-bench-analyzer:dev python -B "$@"
 }
 . docker/measurement-cleanup.sh
 trap cleanup EXIT
@@ -145,20 +145,34 @@ attempt=0
 while [ "$(date +%s)" -lt "$deadline" ]; do
     attempt=$((attempt + 1))
     stable=1
+    queues_empty=1
+    cpu_recovered=true
     compose exec -T router sh -c 'for i in 0 1 2 3 4 5 6 7 8 9 10; do
       snapshot=$(tc -s -j qdisc show)
       printf "%s\n" "$snapshot"
       printf "%s\n" "$snapshot" | jq -e "[.[] | select(.kind==\"netem\")] | length==2 and all(.[]; .backlog==0 and .qlen==0)" >/dev/null || exit 1
       [ "$i" = 10 ] || sleep .1
-    done' > "$run_dir/stabilization-$attempt-queues.jsonl" || stable=0
-    quiet_cpu "stabilization-$attempt" || stable=0
-    analyze src/analysis/stabilization_cpu.py "$run_dir" baseline "stabilization-$attempt" > "$run_dir/stabilization-$attempt-comparison.json" || stable=0
+    done' > "$run_dir/stabilization-$attempt-queues.jsonl" || { stable=0; queues_empty=0; }
+    if [ -f "$run_dir/observe-cpu-recovery" ]; then
+        quiet_cpu "stabilization-$attempt"
+    else
+        quiet_cpu "stabilization-$attempt" || stable=0
+    fi
+    analyze src/analysis/stabilization_cpu.py "$run_dir" baseline "stabilization-$attempt" > "$run_dir/stabilization-$attempt-comparison.json" || { stable=0; cpu_recovered=false; }
     [ "$(date +%s)" -le "$deadline" ] || stable=0
     test "$stable" != 1 || break
+    if [ -f "$run_dir/observe-cpu-recovery" ] && [ "$queues_empty" = 1 ]; then break; fi
 done
-test "$stable" = 1
+test "$(date +%s)" -le "$deadline"
+if [ -f "$run_dir/observe-cpu-recovery" ]; then
+    test "$queues_empty" = 1
+else
+    test "$stable" = 1
+fi
 compose exec -T router tc -s -j qdisc show > "$run_dir/qdisc-stable.json"
-printf '{"stable":true,"empty_queue_window_ms":1000,"cpu_baseline_comparison":"matched_quiet_bracketed_per_role_ceil_percent","wait_limit_s":30}\n' > "$run_dir/stabilization.json"
+stable_json=false
+if [ "$stable" = 1 ]; then stable_json=true; fi
+printf '{"stable":%s,"cpu_recovered":%s,"attempts":%s,"empty_queue_window_ms":1000,"cpu_baseline_comparison":"matched_quiet_bracketed_per_role_ceil_percent","wait_limit_s":30}\n' "$stable_json" "$cpu_recovered" "$attempt" > "$run_dir/stabilization.json"
 compose exec -T router awk '{printf "%.0f\n", $1*1000000}' /proc/uptime > "$run_dir/resource-end"
 resource_end=$(cat "$run_dir/resource-end")
 for role in browser server router; do

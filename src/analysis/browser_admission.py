@@ -9,7 +9,10 @@ POLICY = dict(sample="fixed-planned-sample-all-outcomes", violations="report-n-m
               missing="unknown-no-rtt-imputation", lag="observed-no-subtraction",
               scope="diagnostic-generator-only-no-main-admission")
 ADMISSION_SOURCE_CHANGES = {"src/analysis/browser_admission.py", "src/analysis/test_browser_admission.py",
-                            "docker/collect-diagnostic.sh"}
+                            "docker/collect-diagnostic.sh", "docs/protocol.md", "configs/plan.json",
+                            "docs/schemas/plan.schema.json", "docker/measure.sh", "docker/experiment.sh",
+                            "src/analysis/raw.py", "src/analysis/record.py", "src/analysis/test_stabilization_cpu.py",
+                            "src/analysis/test_diagnostic_input.py"}
 LIMITATIONS = ["historical-udp-calibration-failed", "vm-2vcpu-4109484032-bytes",
                "scheduler-backlog-unresolved", "100hz-reserve-separate-from-20hz-main"]
 

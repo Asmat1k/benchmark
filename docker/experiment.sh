@@ -10,7 +10,7 @@ controller_work=$(mktemp -d "${TMPDIR:-/tmp}/wswt-controller.XXXXXXXX")
 mkfifo "$controller_work/input"
 BENCH_CONTROLLER_RESPONSE="$controller_work/output"
 export BENCH_CONTROLLER_RESPONSE
-docker run --rm -i --network none -e PYTHONDONTWRITEBYTECODE=1 -v "$PWD:/bench" -w /bench wswt-bench-analyzer:dev python -B src/analysis/controller.py "$series_dir" < "$controller_work/input" > "$BENCH_CONTROLLER_RESPONSE" &
+docker run --rm -i --network none -e PYTHONDONTWRITEBYTECODE=1 -v "$PWD:/bench" -v "$PWD:$PWD" -w /bench wswt-bench-analyzer:dev python -B src/analysis/controller.py "$series_dir" < "$controller_work/input" > "$BENCH_CONTROLLER_RESPONSE" &
 BENCH_CONTROLLER_PID=$!
 export BENCH_CONTROLLER_PID
 exec 8> "$controller_work/input"

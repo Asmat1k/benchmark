@@ -57,6 +57,8 @@ def run_spec(directory, index, partial):
         (partial/"collect-timer").touch()
     if schedule.get("generator_hz"):
         (partial/"collect-backlog").touch()
+    if plan.get("execution_policy") == "finite-browser-study-v1":
+        (partial/"observe-cpu-recovery").touch()
     if (partial/"collect-timer").exists() or (partial/"collect-backlog").exists():
         from admission import sources
         write(partial/"collection-sources.json", sources())

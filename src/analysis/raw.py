@@ -49,6 +49,35 @@ def validate_hashes(folder):
     return checksums
 
 
+def validate_stabilization(folder, plan):
+    stabilization = read(folder/"stabilization.json")
+    require(stabilization["empty_queue_window_ms"] >= 1000 and stabilization["wait_limit_s"] <= 30,
+            "stabilization bounds")
+    queues = [q for q in read(folder/"qdisc-stable.json") if q["kind"] == "netem"]
+    require(len(queues) == 2 and all(q["backlog"] == 0 and q["qlen"] == 0 for q in queues), "queues not empty")
+    if plan.get("execution_policy") != "finite-browser-study-v1":
+        require(stabilization["stable"], "stabilization")
+        return
+    from stabilization_cpu import compare, quiet_summary
+    attempt = stabilization["attempts"]
+    require(isinstance(attempt, int) and attempt >= 1, "stabilization attempt")
+    summaries = []
+    for prefix in ("baseline", f"stabilization-{attempt}"):
+        records = [r for role in ("browser", "server", "router") for r in rows(folder/f"{prefix}-{role}.jsonl")]
+        summary = quiet_summary(records, int((folder/f"{prefix}-marker").read_text()))
+        require(summary == read(folder/f"{prefix}-cpu.json"), "stabilization CPU primary correspondence")
+        summaries.append(summary)
+    comparison = compare(*summaries)
+    require(comparison == read(folder/f"stabilization-{attempt}-comparison.json"), "stabilization comparison correspondence")
+    recovered = comparison["status"] == "passed"
+    require(stabilization["stable"] is recovered and stabilization["cpu_recovered"] is recovered,
+            "stabilization CPU observation mismatch")
+    snapshots = rows(folder/f"stabilization-{attempt}-queues.jsonl")
+    require(len(snapshots) == 11 and all(len([q for q in snapshot if q["kind"] == "netem"]) == 2 and
+            all(q["backlog"] == q["qlen"] == 0 for q in snapshot if q["kind"] == "netem")
+            for snapshot in snapshots), "stabilization empty queue window")
+
+
 def diagnostic_interval(schedule, default):
     frequency = schedule.get("generator_hz")
     if frequency is None:
@@ -184,11 +213,7 @@ def validate_raw(folder, schedule_file, config_root=ROOT / "configs"):
     require(counters["active"] == 0, "server not idle")
     require(all(groups["server"][0][p] == counters[p] for p in ("warmup", "measurement")), "schema/server snapshot")
     if (folder / "schedule.json").exists():
-        stabilization = read(folder / "stabilization.json")
-        require(stabilization["stable"] and stabilization["empty_queue_window_ms"] >= 1000 and
-                stabilization["wait_limit_s"] <= 30, "stabilization")
-        queues = [q for q in read(folder / "qdisc-stable.json") if q["kind"] == "netem"]
-        require(len(queues) == 2 and all(q["backlog"] == 0 and q["qlen"] == 0 for q in queues), "queues not empty")
+        validate_stabilization(folder, config["plan"])
     from resources import validate_resources
     validate_resources(groups["resource"], read(folder / "resource-window.json"))
     if run.get("monitoring") == "off":

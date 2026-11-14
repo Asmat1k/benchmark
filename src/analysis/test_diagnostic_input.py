@@ -1,6 +1,7 @@
 import json
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 from acceptance import generator_gate
@@ -21,7 +22,8 @@ class DiagnosticInputTests(unittest.TestCase):
     def test_published_context_and_run_identity(self):
         from shutil import copytree
         from test_measurement import rehash
-        with tempfile.TemporaryDirectory() as temporary:
+        historical_stabilization_fixture = patch("raw.validate_stabilization")
+        with tempfile.TemporaryDirectory() as temporary, historical_stabilization_fixture:
             directory = Path(temporary)
             copytree(Path("results/verify/measurement/smoke.yXogitrZ"), directory, dirs_exist_ok=True)
             schedule = read(directory/"schedule.json")

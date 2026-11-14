@@ -88,6 +88,9 @@
     },
     "main_budget_seconds": {
       "const": 54000
+    },
+    "execution_policy": {
+      "const": "finite-browser-study-v1"
     }
   },
   "required": [

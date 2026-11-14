@@ -14,7 +14,7 @@ os.chdir(ROOT)
 BASE = Path('results/verify/readiness/browser-generator-v1')
 BASE.mkdir(parents=True, exist_ok=True)
 execution = Path(tempfile.mkdtemp(prefix='execution.', dir=BASE))
-ENV = Path('results/verify/diagnostic/timer-timer.JHhehRVV/context.json')
+ENV = Path(sys.argv[1]) if len(sys.argv) > 1 else Path('results/verify/diagnostic/timer-timer.JHhehRVV/context.json')
 FAILED = Path('results/verify/readiness/stage4/practical-v1/full-calibration/calibration-sFWOAzbo-report.json')
 POLICY = Path('docs/readiness/browser-generator-policy-v1.md')
 DECISION = execution/'admission.json'

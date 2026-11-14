@@ -1,6 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 1,
+  "execution_policy": "finite-browser-study-v1",
   "master_seed": 20261108,
   "required_modes": [
     "WS",

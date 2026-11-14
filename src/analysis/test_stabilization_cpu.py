@@ -75,3 +75,45 @@ class QuietCpuTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+class RetainedStabilizationTests(unittest.TestCase):
+    def test_cpu_failure_is_retained_only_under_explicit_policy(self):
+        import json
+        import tempfile
+        from pathlib import Path
+        from raw import read, validate_stabilization, write
+        with tempfile.TemporaryDirectory() as temporary:
+            folder = Path(temporary)
+            summaries = []
+            for prefix in ('baseline', 'stabilization-1'):
+                records = QuietCpuTests().records()
+                if prefix != 'baseline':
+                    for row in records:
+                        if row['role'] == 'router': row['cpu_usage_usec'] = 25000
+                (folder/f'{prefix}-marker').write_text('1000000')
+                for role in ('browser','server','router'):
+                    (folder/f'{prefix}-{role}.jsonl').write_text(''.join(json.dumps(r)+'\n' for r in records if r['role']==role))
+                summary = quiet_summary(records,1000000)
+                write(folder/f'{prefix}-cpu.json',summary)
+                summaries.append(summary)
+            write(folder/'stabilization-1-comparison.json',compare(*summaries))
+            queues = [dict(kind='netem',backlog=0,qlen=0) for _ in range(2)]
+            write(folder/'qdisc-stable.json',queues)
+            (folder/'stabilization-1-queues.jsonl').write_text((json.dumps(queues)+'\n')*11)
+            state = dict(stable=False,cpu_recovered=False,attempts=1,empty_queue_window_ms=1000,wait_limit_s=30)
+            write(folder/'stabilization.json',state)
+            with self.assertRaisesRegex(ValueError,'stabilization'):
+                validate_stabilization(folder,{})
+            policy = dict(execution_policy='finite-browser-study-v1')
+            validate_stabilization(folder,policy)
+            write(folder/'stabilization.json',dict(state,stable=True,cpu_recovered=True))
+            with self.assertRaisesRegex(ValueError,'observation mismatch'):
+                validate_stabilization(folder,policy)
+            write(folder/'stabilization.json',state)
+            write(folder/'qdisc-stable.json',[dict(kind='netem',backlog=256,qlen=1)]*2)
+            with self.assertRaisesRegex(ValueError,'queues not empty'):
+                validate_stabilization(folder,policy)
+            write(folder/'qdisc-stable.json',queues)
+            (folder/'stabilization-1-router.jsonl').write_text('')
+            with self.assertRaisesRegex(ValueError,'incomplete resource roles'):
+                validate_stabilization(folder,policy)
