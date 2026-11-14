@@ -44,6 +44,14 @@
     "end_usec": {
       "type": "integer",
       "minimum": 0
+    },
+    "cpu_start_lower_usec": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "cpu_end_upper_usec": {
+      "type": "integer",
+      "minimum": 0
     }
   },
   "required": [
@@ -58,5 +66,13 @@
     "sample_index",
     "end_usec"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "dependentRequired": {
+    "cpu_start_lower_usec": [
+      "cpu_end_upper_usec"
+    ],
+    "cpu_end_upper_usec": [
+      "cpu_start_lower_usec"
+    ]
+  }
 }

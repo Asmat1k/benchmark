@@ -25,6 +25,8 @@ run_dir=$1
 run_id=baseline-test
 backlog=0
 sleep() { :; }
+docker() { printf "1000000\\n"; }
+analyze() { :; }
 compose() {
     if [ "$1 $2 $3" = 'exec -d router' ]; then
         case "$*" in *sample-backlog.sh*) backlog=1 ;; esac
@@ -39,7 +41,7 @@ compose() {
 }
 '''
                 subprocess.run(['sh', '-c', script+setup, 'baseline-test', str(directory)], check=True)
-                row = json.loads((directory/'router-baseline.jsonl').read_text())
+                row = json.loads((directory/'baseline-router.jsonl').read_text())
                 self.assertEqual(row['cpu_usage_usec'], 50000 if enabled else 10000)
 
     def test_package_rejects_foreign_sources_and_environment(self):

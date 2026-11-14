@@ -93,11 +93,19 @@ for role in browser server router; do
     compose exec -d -e ROLE="$role" -e RUN_ID="$run_id" "$role" sh -c 'echo $$ >/tmp/sampler.pid; exec sh /tmp/sample.sh >/tmp/resources.jsonl 2>/tmp/resources-error.txt'
 done
 compose cp "$run_dir/run.json" browser:/tmp/run.json
-sleep 3
-for role in browser server router; do
-    compose exec -T "$role" sh /tmp/check-sample.sh fresh >/dev/null
-    compose exec -T "$role" cat /tmp/resources.jsonl > "$run_dir/$role-baseline.jsonl"
-done
+quiet_cpu() {
+    quiet_prefix=$1
+    docker run --rm --network none wswt-bench-analyzer:dev awk '{printf "%.0f\n", $1*1000000}' /proc/uptime > "$run_dir/$quiet_prefix-marker" || return 1
+    sleep 4 || return 1
+    for role in browser server router; do
+        compose exec -T "$role" cat /tmp/resources.jsonl > "$run_dir/$quiet_prefix-$role.jsonl" || return 1
+    done
+    quiet_exit=0
+    analyze src/analysis/stabilization_cpu.py "$run_dir" "$quiet_prefix" 2> "$run_dir/$quiet_prefix-selector.stderr.log" || quiet_exit=$?
+    printf "%s\n" "$quiet_exit" > "$run_dir/$quiet_prefix-selector.exit"
+    return "$quiet_exit"
+}
+quiet_cpu baseline
 compose exec -T router awk '{printf "%.0f\n", $1*1000000}' /proc/uptime > "$run_dir/resource-start"
 monitoring=$(cat "$run_dir/monitoring-mode")
 if [ "$monitoring" = off ]; then
@@ -133,31 +141,24 @@ compose exec -T server sh -c 'kill -USR1 $(cat /proc/1/task/1/children); timeout
 stage=stabilization
 deadline=$(($(date +%s) + 30))
 stable=0
+attempt=0
 while [ "$(date +%s)" -lt "$deadline" ]; do
+    attempt=$((attempt + 1))
     stable=1
     compose exec -T router sh -c 'for i in 0 1 2 3 4 5 6 7 8 9 10; do
-      tc -s -j qdisc show | jq -e "[.[] | select(.kind==\"netem\")] | length==2 and all(.[]; .backlog==0 and .qlen==0)" >/dev/null || exit 1
+      snapshot=$(tc -s -j qdisc show)
+      printf "%s\n" "$snapshot"
+      printf "%s\n" "$snapshot" | jq -e "[.[] | select(.kind==\"netem\")] | length==2 and all(.[]; .backlog==0 and .qlen==0)" >/dev/null || exit 1
       [ "$i" = 10 ] || sleep .1
-    done' || stable=0
-    sleep 2
-    for role in browser server router; do
-        compose exec -T "$role" sh /tmp/check-sample.sh fresh > "$run_dir/$role-idle.jsonl" || stable=0
-        awk -F '[:,]' '{
-          for (i=1;i<NF;i++) {
-            if ($i=="\"cpu_usage_usec\"") cpu=$(i+1)
-            if ($i=="\"interval_usec\"") interval=$(i+1)
-          }
-          if (interval<=0) exit 1
-          pct=int(100*cpu/interval+0.999999)
-          if (FILENAME==ARGV[1]) {if(pct>peak)peak=pct} else if (pct>peak) exit 1
-        }' "$run_dir/$role-baseline.jsonl" "$run_dir/$role-idle.jsonl" || stable=0
-    done
+    done' > "$run_dir/stabilization-$attempt-queues.jsonl" || stable=0
+    quiet_cpu "stabilization-$attempt" || stable=0
+    analyze src/analysis/stabilization_cpu.py "$run_dir" baseline "stabilization-$attempt" > "$run_dir/stabilization-$attempt-comparison.json" || stable=0
     [ "$(date +%s)" -le "$deadline" ] || stable=0
     test "$stable" != 1 || break
 done
 test "$stable" = 1
 compose exec -T router tc -s -j qdisc show > "$run_dir/qdisc-stable.json"
-printf '{"stable":true,"empty_queue_window_ms":1000,"cpu_baseline_comparison":"per_role_ceil_percent","wait_limit_s":30}\n' > "$run_dir/stabilization.json"
+printf '{"stable":true,"empty_queue_window_ms":1000,"cpu_baseline_comparison":"matched_quiet_bracketed_per_role_ceil_percent","wait_limit_s":30}\n' > "$run_dir/stabilization.json"
 compose exec -T router awk '{printf "%.0f\n", $1*1000000}' /proc/uptime > "$run_dir/resource-end"
 resource_end=$(cat "$run_dir/resource-end")
 for role in browser server router; do

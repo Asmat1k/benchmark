@@ -12,6 +12,9 @@ def validate_resources(records, window):
             if previous is not None:
                 require(sample["end_usec"] - previous == sample["interval_usec"], "incomplete resource gap")
             require(sample["oom"] == 0, "resources OOM")
+            if 'cpu_start_lower_usec' in sample or 'cpu_end_upper_usec' in sample:
+                require(0 <= sample['cpu_start_lower_usec'] <= sample['end_usec']-sample['interval_usec'] and
+                        sample['cpu_end_upper_usec'] >= sample['end_usec']+10000, 'invalid CPU snapshot brackets')
             previous = sample["end_usec"]
         require(samples[0]["end_usec"] - samples[0]["interval_usec"] <= window["start_usec"] and
                 samples[-1]["end_usec"] >= window["end_usec"], "incomplete resource coverage")
