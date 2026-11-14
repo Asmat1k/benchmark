@@ -60,7 +60,8 @@ def process_diagnostics(values):
 
 def intervals(echo, review):
     configured = read(Path('configs/plan.json'))['calibration']
-    require(configured == dict(method=METHOD, block_slots=list(BLOCK_SLOTS), replicates=REPLICATES,
+    from calibration_observed import CONTRACT as observed_contract
+    require(configured == observed_contract or configured == dict(method=METHOD, block_slots=list(BLOCK_SLOTS), replicates=REPLICATES,
                               latency_alpha=LATENCY_ALPHA, loss_alpha=LOSS_ALPHA, seed=SEED),
             'fixed calibration method contract')
     require(all(type(review.get(key)) is bool for key in ('stationarity_reviewed', 'short_memory_reviewed', 'bernoulli_loss_reviewed')),

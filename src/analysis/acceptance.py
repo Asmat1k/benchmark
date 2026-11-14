@@ -48,36 +48,45 @@ def probe_records(probe, enforce_timing=True):
 
 
 def calibration(data):
+    from calibration_observed import METHOD as OBSERVED_METHOD, observed_intervals, sender_check, loss_fidelity
+    observed = data.get('method') == OBSERVED_METHOD
     require(set(data['echo']) == {'before', 'after', *PROFILES}, 'calibration membership')
     intervals, diagnostics, sender = {}, {}, {}
     for key, probe in data['echo'].items():
         require(probe['sent'] == 10000 and probe['frame_bytes'] == 256 and probe['frequency_hz'] == 100,
                 'calibration probe contract')
         probe_records(probe, enforce_timing=False)
-        sender[key] = evaluate(probe['sent_records'], 10000)
+        sender[key] = sender_check(probe, key.endswith('p1')) if observed else evaluate(probe['sent_records'], 10000)
         require(probe['rtt_ms']==[r['rtt_ms'] for r in probe['reply_records']], 'survivor RTT correspondence')
         require(0 < len(probe['rtt_ms']) <= probe['sent'], 'echo survivor count')
         require(all(v >= 0 and math.isfinite(v) for v in probe['rtt_ms']), 'invalid RTT')
-        ordered = sorted(probe['rtt_ms'])
-        n = len(ordered)
-        candidates = np.arange((n+1)//2+1)
-        k = int(candidates[2*binom.cdf(candidates-1,n,.5) <= .025][-1])
-        intervals[key] = [ordered[k-1],ordered[n-k]] if k else [-math.inf,math.inf]
-        diagnostics[key] = dependence(probe['rtt_ms'])
+        if not observed:
+            ordered = sorted(probe['rtt_ms'])
+            n = len(ordered)
+            candidates = np.arange((n+1)//2+1)
+            k = int(candidates[2*binom.cdf(candidates-1,n,.5) <= .025][-1])
+            intervals[key] = [ordered[k-1],ordered[n-k]] if k else [-math.inf,math.inf]
+            diagnostics[key] = dependence(probe['rtt_ms'])
     block_result = None
     block_uncertain = False
-    if data.get('method') is not None:
+    if observed:
+        intervals, diagnostics, observed_result = observed_intervals(data['echo'], data['trace_review'])
+    elif data.get('method') is not None:
         from calibration_blocks import METHOD, intervals as block_intervals
         require(data['method'] == METHOD, 'unknown calibration method')
         intervals, block_diagnostics, block_result, block_uncertain = block_intervals(data['echo'], data['trace_review'])
         block_result['dependence'] = block_diagnostics
-    require(data.get('kind') != 'real' or block_result is not None, 'real calibration requires approved block method')
+    require(data.get('kind') != 'real' or block_result is not None or observed, 'real calibration requires approved block method')
     shifts = {}
     passed = True
     for profile in PROFILES:
         target = 20 if profile.startswith('r20') else 80
         shifts[profile] = {}
         for base in ('before', 'after'):
+            if observed and None in intervals[profile]+intervals[base]:
+                shifts[profile][base] = [None,None]
+                passed = False
+                continue
             low, high = intervals[profile][0]-intervals[base][1], intervals[profile][1]-intervals[base][0]
             shifts[profile][base] = [low, high]
             passed &= target-2 <= low <= high <= target+2
@@ -92,19 +101,23 @@ def calibration(data):
         entered, dropped = egress['entered_ids'], egress['dropped_ids']
         require(len(entered) == len(set(entered)) and len(dropped) == len(set(dropped)) and
                 set(dropped) <= set(entered), 'egress ID denominator')
-        interval = exact_binomial(len(dropped), len(entered), 1-.01/8 if block_result else .99)
+        require(len(entered) > 0, 'empty egress denominator')
+        interval = None if observed else exact_binomial(len(dropped), len(entered), 1-.01/8 if block_result else .99)
         p = .01 if egress['profile'].endswith('p1') else 0.
-        okay = (len(dropped) == 0) if p == 0 else interval[0] <= p <= interval[1]
-        loss.append(dict(identity=list(identity), **({'interval':interval} if block_result else {'CI99':interval}),
-                         confidence=1-.01/8 if block_result else .99, count=len(entered), drops=len(dropped), passed=okay))
+        okay = (len(dropped) == 0) if p == 0 else (loss_fidelity(len(dropped), len(entered), p) if observed else interval[0] <= p <= interval[1])
+        loss.append(dict(identity=list(identity), **(dict(observed_fraction=len(dropped)/len(entered), tolerance_pp=.5) if observed else dict(interval=interval, confidence=1-.01/8) if block_result else dict(CI99=interval, confidence=.99)),
+                         count=len(entered), drops=len(dropped), dropped_ids=dropped, passed=okay))
         passed &= okay
     for profile in PROFILES:
         for when in ('before','after'):
             forward=next(e for e in data['egress'] if (e['profile'],e['when'],e['direction'])==(profile,when,'forward'))
             reverse=next(e for e in data['egress'] if (e['profile'],e['when'],e['direction'])==(profile,when,'reverse'))
             require(forward['collection_id']==reverse['collection_id'], 'egress paired collection')
+            if observed:
+                require((forward['probe']['sent'], forward['probe']['frame_bytes'], forward['probe']['frequency_hz']) ==
+                        (10000,256,100), 'calibration loss probe contract')
             sent,returned=probe_records(forward['probe'], enforce_timing=False)
-            sender[f'{profile}-{when}'] = evaluate(forward['probe']['sent_records'], 10000)
+            sender[f'{profile}-{when}'] = sender_check(forward['probe'], profile.endswith('p1')) if observed else evaluate(forward['probe']['sent_records'], 10000)
             require(set(forward['entered_ids'])==sent, 'forward ingress probe completeness')
             require(set(reverse['entered_ids'])==sent-set(forward['dropped_ids']), 'reverse denominator must be actually delivered forward IDs')
             require(returned==set(reverse['entered_ids'])-set(reverse['dropped_ids']), 'impossible echo survivors/counters')
@@ -126,9 +139,13 @@ def calibration(data):
     uncertain = not data['trace_review']['independent_units'] or any(d['suspect'] for d in diagnostics.values())
     if block_result is not None:
         uncertain = block_uncertain
+    if observed:
+        uncertain = False
+        passed &= observed_result['complete_windows']
     sender_passed = all(v['status']=='passed' for v in sender.values())
     return dict(status='failed' if not sender_passed else 'inconclusive' if uncertain else 'passed' if passed else 'failed',
-                sender_criteria_version=policy()['version'], sender_quality=sender, block_inference=block_result,
+                sender_criteria_version=OBSERVED_METHOD if observed else policy()['version'], sender_quality=sender, block_inference=block_result,
+                observed_profile=observed_result if observed else None,
                 intervals=intervals, shifts=shifts, dependence=diagnostics, loss=loss,
                 saturation=data['saturation'], expected_echo_loss=.0199,
                 survivor_bias='RTT intervals condition on returned echoes; loss0 and traces required')

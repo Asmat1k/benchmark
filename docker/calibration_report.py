@@ -107,8 +107,13 @@ def package(directory, review_path, env_path):
         checked(entry)
     require(read(directory/'collection-plan.json') == collection_plan(), 'calibration preregistered plan mismatch')
     review = read(review_path)
-    require(all(isinstance(review.get('assumptions', {}).get(k), str) and review['assumptions'][k].strip()
-                for k in ('stationarity', 'short_memory', 'bernoulli_loss')), 'process assumptions rationale required')
+    method = read(directory/'collection-plan.json')['method']['method']
+    from calibration_observed import METHOD as OBSERVED_METHOD
+    if method == OBSERVED_METHOD:
+        require(review.get('trace_review', {}).get('observed_period_reviewed') is True, 'explicit observed-period review required')
+    else:
+        require(all(isinstance(review.get('assumptions', {}).get(k), str) and review['assumptions'][k].strip()
+                    for k in ('stationarity', 'short_memory', 'bernoulli_loss')), 'process assumptions rationale required')
     require(review['collection_id']==directory.name and review['reviewer'] and review['rationale'].strip(),
             'collection-specific independent trace review required')
     require(read(directory/'context-before.json')==read(directory/'context-after.json')==read(env_path),
@@ -135,8 +140,7 @@ def package(directory, review_path, env_path):
         for direction in ('forward','reverse'):
             path=directory/f'saturation-{loss}-{direction}'
             saturation.append(rate(path, direction, loss/100))
-    from calibration_blocks import METHOD
-    values=dict(method=METHOD, echo=echo, egress=egress, saturation=saturation, trace_review=review['trace_review'])
+    values=dict(method=method, echo=echo, egress=egress, saturation=saturation, trace_review=review['trace_review'])
     common=dict(kind='real', gate='calibration', collection_id=directory.name, environment=ref(env_path), source_hashes=original)
     evidence=[ref(p) for p in sorted(directory.rglob('*')) if p.is_file()] + [ref(review_path)]
     output=directory/'publication'

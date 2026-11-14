@@ -20,6 +20,41 @@ def capture(path, source, destination, ids):
 
 
 class Calibration(unittest.TestCase):
+    def test_observed_package_requires_saved_plan_and_explicit_review(self):
+        from unittest.mock import patch
+        import calibration_report
+        from calibration_observed import METHOD
+        with tempfile.TemporaryDirectory() as tmp:
+            directory = Path(tmp)/'collection'
+            directory.mkdir()
+            (directory/'exit').write_text('0')
+            review = dict(collection_id='collection', reviewer='independent unit fixture', rationale='synthetic packaging test',
+                          trace_review=dict(observed_period_reviewed=True))
+            plan = calibration_report.collection_plan()
+            def read(path):
+                path = Path(path)
+                if path.name == 'captured.json': return []
+                if path.name == 'collection-plan.json': return plan
+                if path.name == 'review.json': return review
+                if path.name == 'probe.json': return dict(collection_id=path.parent.name)
+                if path.name.startswith('context-') or path.name in ('ENV.json','sources-before.json','sources-after.json'): return {}
+                raise AssertionError(path)
+            with patch('raw.read',side_effect=read), patch('calibration_report.collection_plan',return_value=plan), \
+                    patch('admission.sources',return_value={}), patch('admission.ref',side_effect=lambda p: dict(path=str(p),sha256='a'*64)), \
+                    patch('calibration_report.directions',return_value=[dict(direction='forward'),dict(direction='reverse')]), \
+                    patch('calibration_report.rate',return_value={}):
+                review['trace_review']['observed_period_reviewed'] = False
+                with self.assertRaisesRegex(ValueError,'explicit observed-period review'):
+                    calibration_report.package(directory,Path('review.json'),Path('ENV.json'))
+                review['trace_review']['observed_period_reviewed'] = True
+                calibration_report.package(directory,Path('review.json'),Path('ENV.json'))
+            payload = json.loads((directory/'publication/primary.json').read_text())
+            self.assertEqual(payload['values']['method'],METHOD)
+            self.assertTrue(payload['values']['trace_review']['observed_period_reviewed'])
+            self.assertEqual(len(payload['values']['echo']),6)
+            self.assertEqual(len(payload['values']['egress']),16)
+            self.assertEqual(len(payload['values']['saturation']),4)
+
     def test_actual_directional_losses(self):
         with tempfile.TemporaryDirectory() as tmp:
             directory=Path(tmp)

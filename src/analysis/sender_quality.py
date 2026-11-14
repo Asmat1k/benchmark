@@ -32,7 +32,7 @@ def window_peak(times, width):
     return peak
 
 
-def evaluate(records, expected_count):
+def evaluate(records, expected_count, enforce_max_lag=True):
     limits = policy()
     require(isinstance(expected_count, int) and expected_count >= 2 and len(records) == expected_count,
             'UDP sender incomplete send records')
@@ -63,7 +63,7 @@ def evaluate(records, expected_count):
     reasons = []
     if metrics['late_pct'] > limits['max_late_pct']:
         reasons.append(f"late slots {metrics['late_pct']:.6g}% > {limits['max_late_pct']}%")
-    if max(lags) > limits['max_lag_ms']:
+    if enforce_max_lag and max(lags) > limits['max_lag_ms']:
         reasons.append(f"maximum lag {max(lags):.6g} ms > {limits['max_lag_ms']} ms")
     if metrics['peak_packets_window'] > limits['max_burst_packets']:
         reasons.append(f"burst {metrics['peak_packets_window']} packets/{limits['burst_window_ms']} ms > {limits['max_burst_packets']}")
