@@ -90,5 +90,29 @@ class PacingTest(unittest.TestCase):
             self.assertEqual(window_peak([offset_ns/1e6, (offset_ns+10_000_000)/1e6], 10), 1)
 
 
+    def test_echo_pins_lowest_allowed_cpu_before_timeline(self):
+        clock = EchoClock()
+        with patch('os.sched_getaffinity', return_value={3, 7}) as allowed, \
+                patch('os.sched_setaffinity') as pin, \
+                patch.object(probe.socket, 'socket', return_value=clock), \
+                patch.object(probe.time, 'monotonic_ns', side_effect=RuntimeError('timeline boundary')):
+            with self.assertRaisesRegex(RuntimeError, 'timeline boundary'):
+                probe.send('unused', False, 'offline-affinity')
+        allowed.assert_called_once_with(0)
+        pin.assert_called_once_with(0, {3})
+
+    def test_saturation_retains_cpu_affinity(self):
+        clock = EchoClock()
+        with patch('os.sched_getaffinity') as allowed, \
+                patch('os.sched_setaffinity') as pin, \
+                patch.object(probe.socket, 'socket', return_value=clock), \
+                patch('builtins.open', return_value=io.StringIO('1.0 0.0')) , \
+                patch.object(probe.time, 'monotonic_ns', side_effect=RuntimeError('timeline boundary')):
+            with self.assertRaisesRegex(RuntimeError, 'timeline boundary'):
+                probe.send('unused', True, 'offline-saturation-affinity')
+        allowed.assert_not_called()
+        pin.assert_not_called()
+
+
 if __name__ == '__main__':
     unittest.main()

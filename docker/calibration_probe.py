@@ -1,5 +1,6 @@
 import hashlib
 import json
+import os
 import select
 import socket
 import struct
@@ -42,6 +43,9 @@ def receive(sock, sent, size, tag):
 
 
 def send(peer, saturation, collection_id):
+    if not saturation:
+        sender_cpu = min(os.sched_getaffinity(0))
+        os.sched_setaffinity(0, {sender_cpu})
     tag = collection_tag(collection_id)
     period = 800_000 if saturation else PERIOD_NS
     count = 90_000 if saturation else COUNT
