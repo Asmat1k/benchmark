@@ -1,3 +1,0 @@
-"/wswt-d3-wswt-measure-975q1opo-browser-1"
-"/wswt-d3-wswt-measure-975q1opo-router-1"
-"/wswt-d3-wswt-measure-975q1opo-server-1"

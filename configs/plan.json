@@ -3,10 +3,7 @@
   "protocol_version": 1,
   "execution_policy": "finite-browser-study-v1",
   "master_seed": 20261108,
-  "required_modes": [
-    "WS",
-    "WT-S"
-  ],
+  "required_modes": ["WS", "WT-S"],
   "optional_mode": "WT-D",
   "frame_bytes": 256,
   "interval_ms": 50,

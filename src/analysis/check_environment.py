@@ -15,4 +15,11 @@ for extension in ("png", "svg", "pdf"):
     plt.savefig(path)
     if not path.stat().st_size:
         raise ValueError(f"empty figure: {path}")
-print(sys.version, np.__version__, scipy.__version__, pd.__version__, plt.matplotlib.__version__, sns.__version__)
+print(
+    sys.version,
+    np.__version__,
+    scipy.__version__,
+    pd.__version__,
+    plt.matplotlib.__version__,
+    sns.__version__,
+)

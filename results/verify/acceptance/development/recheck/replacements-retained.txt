@@ -1,7 +1,0 @@
-test_r4_r6_r7_actual_replacement_to_persisted_reports (test_acceptance.AcceptanceTests.test_r4_r6_r7_actual_replacement_to_persisted_reports) ... R7 retained fixture /bench/build/d5-r7-synthetic/fixture-9l51pfgl
-R7 phase aa start
-R7 phase aa replacement files ready
-R7 phase aa persisted report passed
-R7 phase aa passed
-R7 phase monitoring start
-R7 phase monitoring replacement files ready

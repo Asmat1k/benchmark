@@ -1,3 +1,0 @@
-"/wswt-d3-wswt-measure-1yd0ohtb-browser-1"
-"/wswt-d3-wswt-measure-1yd0ohtb-router-1"
-"/wswt-d3-wswt-measure-1yd0ohtb-server-1"

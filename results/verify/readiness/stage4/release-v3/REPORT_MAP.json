@@ -1,8 +1,0 @@
-{
-  "build": "results/verify/readiness/stage4/release-v3/reports/build.json",
-  "tls": "results/verify/readiness/stage4/release-v3/reports/tls.json",
-  "path": "results/verify/readiness/stage4/release-v3/reports/path.json",
-  "raw": "results/verify/readiness/stage4/release-v3/reports/raw.json",
-  "analysis": "results/verify/readiness/stage4/release-v3/reports/analysis.json",
-  "timer": "results/verify/readiness/stage4/release-v3/timer-original-env/report.json"
-}

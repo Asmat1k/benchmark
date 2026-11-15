@@ -1,5 +1,8 @@
 set -eu
-test "$(docker info --format '{{.Architecture}}')" = aarch64 || { echo "This lock requires native arm64" >&2; exit 1; }
+test "$(docker info --format '{{.Architecture}}')" = aarch64 || {
+  echo "This lock requires native arm64" >&2
+  exit 1
+}
 docker compose --profile analysis build
 mkdir -p build/figures build/wheelhouse
 roles="wswt-bench-server:dev wswt-bench-browser:dev wswt-bench-router:dev wswt-bench-analyzer:dev"

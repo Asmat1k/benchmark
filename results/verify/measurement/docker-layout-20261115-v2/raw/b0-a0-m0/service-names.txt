@@ -1,3 +1,0 @@
-"/wswt-d3-wswt-measure-lxkdlkli-browser-1"
-"/wswt-d3-wswt-measure-lxkdlkli-router-1"
-"/wswt-d3-wswt-measure-lxkdlkli-server-1"

@@ -1,8 +1,0 @@
-fresh synthetic prerequisites
-aa publication start 14.0
-aa publication and immutable readback passed 268.7
-aa counter check passed
-monitoring publication start 270.19
-monitoring publication and immutable readback passed 509.16
-monitoring counter check passed
-pilot publication start 530.98

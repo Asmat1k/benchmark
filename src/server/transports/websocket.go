@@ -11,6 +11,7 @@ import (
 
 const Origin = "https://bench.test:8443"
 
+// WebSocket accepts and echoes WebSocket messages.
 func WebSocket(w http.ResponseWriter, r *http.Request) {
 	if r.Header.Get("Origin") != Origin {
 		http.Error(w, "origin", http.StatusForbidden)

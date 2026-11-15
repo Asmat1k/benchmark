@@ -21,6 +21,7 @@ import (
 
 type noDelayListener struct{ *net.TCPListener }
 
+// Accept accepts a connection and enables TCP no-delay.
 func (l noDelayListener) Accept() (net.Conn, error) {
 	c, err := l.AcceptTCP()
 	if err != nil {
@@ -33,12 +34,14 @@ func (l noDelayListener) Accept() (net.Conn, error) {
 	return c, nil
 }
 
+// main runs the program entry point.
 func main() {
 	addr := flag.String("addr", ":8443", "listen address")
 	certs := flag.String("certs", "/certs/good", "leaf directory")
 	flag.Parse()
 	snapshots := make(chan os.Signal, 1)
 	signal.Notify(snapshots, syscall.SIGUSR1)
+	// Persist counter snapshots when a signal is received.
 	go func() {
 		for range snapshots {
 			data, err := json.Marshal(echo.Snapshot())
@@ -76,10 +79,12 @@ func main() {
 		MaxIncomingUniStreams:          16,
 	}
 	server := wt.Server{
-		H3:          http3.Server{Addr: *addr, TLSConfig: h3, Handler: qm, QUICConfig: quicConfig},
+		H3: http3.Server{Addr: *addr, TLSConfig: h3, Handler: qm, QUICConfig: quicConfig},
+		// Accept only the configured benchmark origin.
 		CheckOrigin: func(r *http.Request) bool { return r.Header.Get("Origin") == transports.Origin },
 	}
 	qm.HandleFunc("/wt", transports.WebTransport(&server))
+	// Serve WebTransport requests in the background.
 	go func() { log.Fatal(server.ListenAndServe()) }()
 	mux := http.NewServeMux()
 	mux.HandleFunc("/ws", transports.WebSocket)

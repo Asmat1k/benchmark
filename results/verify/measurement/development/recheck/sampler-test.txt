@@ -1,2 +1,0 @@
-{"schema_version":1,"run_id":"synthetic","role":"router","sample_index":1,"end_usec":38904410000,"interval_usec":1010000,"cpu_usage_usec":5119,"throttled_usec":0,"memory_current":2441216,"oom":0}
-stopped-sampler-rejected

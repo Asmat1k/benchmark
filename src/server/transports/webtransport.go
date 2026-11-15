@@ -10,6 +10,7 @@ import (
 	"net/http"
 )
 
+// StreamEcho reads and echoes stream frames.
 func StreamEcho(s io.ReadWriter) error {
 	size := len("READY")
 	for ready := false; ; ready = true {
@@ -40,7 +41,9 @@ func StreamEcho(s io.ReadWriter) error {
 	}
 }
 
+// WebTransport returns the WebTransport request handler.
 func WebTransport(server *wt.Server) http.HandlerFunc {
+	// Handle the incoming WebTransport request.
 	return func(w http.ResponseWriter, r *http.Request) {
 		session, err := server.Upgrade(w, r)
 		if err != nil {
@@ -76,6 +79,7 @@ func WebTransport(server *wt.Server) http.HandlerFunc {
 		if err != nil {
 			return
 		}
+		// Close the session if an extra stream is accepted.
 		go func() {
 			if _, err := session.AcceptStream(session.Context()); err == nil {
 				session.CloseWithError(1, "extra stream")

@@ -1,4 +1,0 @@
-ledger.invalid.json $.attempts[0].modes ['WS', 'WT-D'] does not contain items matching the given schema
-manifest.invalid.json $.series 'main' is not one of ['smoke', 'diagnostic', 'verify']
-slot.invalid.json $.nonce 18446744073709551615 is not of type 'string'
-Validated 14 schemas, configs and synthetic examples

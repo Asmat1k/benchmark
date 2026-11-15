@@ -5,3 +5,4 @@ RUN pip download --no-cache-dir --require-hashes --only-binary=:all: -r requirem
 RUN --network=none cd /wheelhouse && sha256sum -c SHA256SUMS && pip install --no-index --find-links=/wheelhouse --require-hashes --only-binary=:all: -r /analysis/requirements.txt && pip check
 COPY src/analysis/ ./
 ENV MPLBACKEND=Agg
+ENV PYTHONPATH=/bench/src/analysis:/analysis

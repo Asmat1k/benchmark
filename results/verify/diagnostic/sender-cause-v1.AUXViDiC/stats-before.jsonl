@@ -1,2 +1,0 @@
-{"BlockIO":"0B / 0B","CPUPerc":"0.00%","Container":"e2eb67a160fabbb531442139ff7cace8228314ad71e168d7e361180a3827593c","ID":"e2eb67a160fa","MemPerc":"0.40%","MemUsage":"15.61MiB / 3.827GiB","Name":"clever_shtern","NetIO":"0B / 0B","PIDs":"1"}
-{"BlockIO":"666MB / 28MB","CPUPerc":"0.65%","Container":"16479141beddf1af7cf2b66e2e1e631fe0cd16b857180fd70804e3486a1057a6","ID":"16479141bedd","MemPerc":"4.07%","MemUsage":"159.5MiB / 3.827GiB","Name":"ai-grepa-qdrant-1","NetIO":"27MB / 4.48MB","PIDs":"25"}

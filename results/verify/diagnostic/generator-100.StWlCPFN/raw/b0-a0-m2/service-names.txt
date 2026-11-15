@@ -1,3 +1,0 @@
-"/wswt-d3-wswt-measure-qobbzcn7-browser-1"
-"/wswt-d3-wswt-measure-qobbzcn7-router-1"
-"/wswt-d3-wswt-measure-qobbzcn7-server-1"

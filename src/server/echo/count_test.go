@@ -4,6 +4,7 @@ import (
 	"testing"
 )
 
+// TestPhaseCounters checks counters across measurement phases.
 func TestPhaseCounters(t *testing.T) {
 	before := Snapshot()
 	if Receive([]byte("READY"), false) != nil || Receive([]byte{0}, true) != nil {

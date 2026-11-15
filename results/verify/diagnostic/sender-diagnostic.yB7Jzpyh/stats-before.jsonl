@@ -1,2 +1,0 @@
-{"BlockIO":"0B / 0B","CPUPerc":"0.00%","Container":"8ea7f9c4b517bd82353407f5cab890587245e79d050f83078642177a9ee31818","ID":"8ea7f9c4b517","MemPerc":"0.40%","MemUsage":"15.61MiB / 3.827GiB","Name":"pedantic_torvalds","NetIO":"0B / 0B","PIDs":"1"}
-{"BlockIO":"665MB / 17.8MB","CPUPerc":"0.94%","Container":"16479141beddf1af7cf2b66e2e1e631fe0cd16b857180fd70804e3486a1057a6","ID":"16479141bedd","MemPerc":"4.14%","MemUsage":"162.3MiB / 3.827GiB","Name":"ai-grepa-qdrant-1","NetIO":"27MB / 4.44MB","PIDs":"25"}

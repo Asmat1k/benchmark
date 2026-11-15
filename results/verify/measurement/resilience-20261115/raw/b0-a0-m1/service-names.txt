@@ -1,3 +1,0 @@
-"/wswt-d3-wswt-measure-lpcgsdqc-browser-1"
-"/wswt-d3-wswt-measure-lpcgsdqc-router-1"
-"/wswt-d3-wswt-measure-lpcgsdqc-server-1"

@@ -1,6 +1,0 @@
-{"schema_version": 1, "event_index": 0, "run_id": "b0-a0-m0", "t_ms": 57.70000001788139, "type": "phase_transition", "id": {"phase": 0, "nonce": "1680115543181516462", "seq": "0"}, "details": {}}
-{"schema_version": 1, "event_index": 1, "run_id": "b0-a0-m0", "t_ms": 58.70000001788139, "type": "first_correct_echo", "id": {"phase": 0, "nonce": "1680115543181516462", "seq": "0"}, "details": {}}
-{"schema_version": 1, "event_index": 2, "run_id": "b0-a0-m0", "t_ms": 112.40000000596046, "type": "phase_transition", "id": {"phase": 1, "nonce": "1680115543181516462", "seq": "0"}, "details": {}}
-{"schema_version": 1, "event_index": 3, "run_id": "b0-a0-m0", "t_ms": 113.5, "type": "first_correct_echo", "id": {"phase": 1, "nonce": "1680115543181516462", "seq": "0"}, "details": {}}
-{"schema_version": 1, "event_index": 4, "run_id": "b0-a0-m0", "t_ms": 160, "type": "first_correct_echo", "id": {"phase": 1, "nonce": "1680115543181516462", "seq": "1"}, "details": {}}
-{"schema_version": 1, "event_index": 5, "run_id": "b0-a0-m0", "t_ms": 208.90000000596046, "type": "first_correct_echo", "id": {"phase": 1, "nonce": "1680115543181516462", "seq": "2"}, "details": {}}

@@ -1,0 +1,284 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "freeze v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "protocol_version": {
+      "const": 1
+    },
+    "frozen_utc": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "release_commit": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "dirty": {
+      "const": false
+    },
+    "bindings": {
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": ["path", "sha256"],
+          "additionalProperties": false
+        },
+        "plan": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": ["path", "sha256"],
+          "additionalProperties": false
+        },
+        "profiles": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": ["path", "sha256"],
+          "additionalProperties": false
+        },
+        "thresholds": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": ["path", "sha256"],
+          "additionalProperties": false
+        },
+        "analysis": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": ["path", "sha256"],
+          "additionalProperties": false
+        },
+        "locks": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": ["path", "sha256"],
+          "additionalProperties": false
+        },
+        "environment": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": ["path", "sha256"],
+          "additionalProperties": false
+        },
+        "leaf_der": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": ["path", "sha256"],
+          "additionalProperties": false
+        },
+        "schedule": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": ["path", "sha256"],
+          "additionalProperties": false
+        },
+        "verify": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": ["path", "sha256"],
+          "additionalProperties": false
+        },
+        "pilot": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": ["path", "sha256"],
+          "additionalProperties": false
+        },
+        "power": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": ["path", "sha256"],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "protocol",
+        "plan",
+        "profiles",
+        "thresholds",
+        "analysis",
+        "locks",
+        "environment",
+        "leaf_der",
+        "schedule",
+        "verify",
+        "pilot",
+        "power"
+      ],
+      "additionalProperties": false
+    },
+    "blocks_per_profile": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "include_wt_d": {
+      "type": "boolean"
+    },
+    "repeat_effect_ms": {
+      "type": "number",
+      "minimum": 0
+    },
+    "repeat_fullness_pp": {
+      "type": "number",
+      "minimum": 0
+    },
+    "kind": {
+      "const": "real"
+    },
+    "source_hashes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      }
+    },
+    "leaf_pem": {
+      "type": "string",
+      "minLength": 1
+    },
+    "series_end_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "aa_shift_algorithm": {
+      "enum": ["paired side2-side1; linear p95 absolute shifts", "fixed prospective 2 ms / 1 pp"]
+    }
+  },
+  "required": [
+    "schema_version",
+    "protocol_version",
+    "frozen_utc",
+    "release_commit",
+    "dirty",
+    "bindings",
+    "blocks_per_profile",
+    "include_wt_d",
+    "repeat_effect_ms",
+    "repeat_fullness_pp",
+    "kind",
+    "source_hashes",
+    "leaf_pem",
+    "series_end_utc",
+    "rationale",
+    "aa_shift_algorithm"
+  ],
+  "additionalProperties": false
+}

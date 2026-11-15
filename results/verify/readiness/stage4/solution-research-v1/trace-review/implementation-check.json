@@ -1,9 +1,0 @@
-{
-  "checked_unix": 1794650573.0649211,
-  "syntax_python": true,
-  "measurements_run": false,
-  "files": {
-    "results/verify/readiness/stage4/solution-research-v1/watchdog-service/tools/timer_check.py": "2ac594e9dbb0da66f2a1b976a51520b346bb6d404dbd99d600f2ebb59bfb3612",
-    "results/verify/readiness/stage4/solution-research-v1/watchdog-service/selftest.sh": "c4c2fc9e7cda104e78047741ab5f58410481df4f6d1f2b973bb816b70b852fc8"
-  }
-}

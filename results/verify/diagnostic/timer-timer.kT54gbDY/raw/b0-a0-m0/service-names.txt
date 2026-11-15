@@ -1,3 +1,0 @@
-"/wswt-d3-wswt-measure-fpv6goyb-browser-1"
-"/wswt-d3-wswt-measure-fpv6goyb-router-1"
-"/wswt-d3-wswt-measure-fpv6goyb-server-1"

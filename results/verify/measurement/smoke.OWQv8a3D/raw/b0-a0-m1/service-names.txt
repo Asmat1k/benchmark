@@ -1,3 +1,0 @@
-"/wswt-d3-wswt-measure-yk5avsxv-browser-1"
-"/wswt-d3-wswt-measure-yk5avsxv-router-1"
-"/wswt-d3-wswt-measure-yk5avsxv-server-1"

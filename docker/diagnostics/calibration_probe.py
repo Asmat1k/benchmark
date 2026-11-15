@@ -15,14 +15,17 @@ MIN_ECHO_GAP_NS = 2_500_000
 MAX_ECHO_WAIT_NS = 0
 
 
+# Compute collection tag.
 def collection_tag(collection_id):
     return hashlib.sha256(collection_id.encode()).digest()[:8]
 
 
+# Compute packet.
 def packet(number, size, tag):
     return struct.pack("!I8s", number, tag) + bytes(size - 12)
 
 
+# Serve requests using the configured listener.
 def serve():
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
         sock.bind(("", PORT))
@@ -33,15 +36,17 @@ def serve():
                 sock.sendto(data, peer)
 
 
+# Compute receive.
 def receive(sock, sent, size, tag):
     data = sock.recv(65535)
     received = time.monotonic_ns()
-    identity, = struct.unpack("!I", data[:4])
+    (identity,) = struct.unpack("!I", data[:4])
     if data != packet(identity, size, tag) or identity >= len(sent):
         raise ValueError("unexpected echo payload")
-    return dict(id=identity, rtt_ms=(received-sent[identity])/1e6)
+    return dict(id=identity, rtt_ms=(received - sent[identity]) / 1e6)
 
 
+# Send the supplied test data.
 def send(peer, saturation, collection_id):
     if not saturation:
         sender_cpu = min(os.sched_getaffinity(0))
@@ -53,14 +58,18 @@ def send(peer, saturation, collection_id):
     sent, replies = [], []
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
         sock.connect((peer, PORT))
-        first_uptime = float(open('/proc/uptime').read().split()[0]) if saturation else None
+        first_uptime = (
+            float(open("/proc/uptime").read().split()[0]) if saturation else None
+        )
         start = time.monotonic_ns()
         for number in range(count):
             due = start + period * number
             if not saturation and sent:
                 due = max(due, sent[-1] + MIN_ECHO_GAP_NS)
             while (remaining := due - time.monotonic_ns()) > 0:
-                timeout_ns = remaining if saturation else min(remaining, MAX_ECHO_WAIT_NS)
+                timeout_ns = (
+                    remaining if saturation else min(remaining, MAX_ECHO_WAIT_NS)
+                )
                 if select.select([sock], [], [], timeout_ns / 1e9)[0]:
                     replies.append(receive(sock, sent, size, tag))
             frame = packet(number, size, tag)
@@ -69,17 +78,44 @@ def send(peer, saturation, collection_id):
             sent.append(timestamp)
         if not saturation:
             until = time.monotonic() + 2
-            while (remaining := until - time.monotonic()) > 0 and select.select([sock], [], [], remaining)[0]:
+            while (remaining := until - time.monotonic()) > 0 and select.select(
+                [sock], [], [], remaining
+            )[0]:
                 replies.append(receive(sock, sent, size, tag))
-        last_uptime = float(open('/proc/uptime').read().split()[0]) if saturation else None
+        last_uptime = (
+            float(open("/proc/uptime").read().split()[0]) if saturation else None
+        )
     if saturation:
-        print(json.dumps(dict(collection_id=collection_id, sent=count, frame_bytes=size, first_ns=sent[0], last_ns=sent[-1],
-                              first_uptime=first_uptime, last_uptime=last_uptime)))
+        print(
+            json.dumps(
+                dict(
+                    collection_id=collection_id,
+                    sent=count,
+                    frame_bytes=size,
+                    first_ns=sent[0],
+                    last_ns=sent[-1],
+                    first_uptime=first_uptime,
+                    last_uptime=last_uptime,
+                )
+            )
+        )
     else:
-        print(json.dumps(dict(collection_id=collection_id, sent=count, frame_bytes=size, frequency_hz=100, reply_records=replies,
-                              rtt_ms=[r['rtt_ms'] for r in replies],
-                              sent_records=[dict(id=i, t_plan_ms=i*10, t_send_ms=(t-start)/1e6)
-                                            for i,t in enumerate(sent)])))
+        print(
+            json.dumps(
+                dict(
+                    collection_id=collection_id,
+                    sent=count,
+                    frame_bytes=size,
+                    frequency_hz=100,
+                    reply_records=replies,
+                    rtt_ms=[r["rtt_ms"] for r in replies],
+                    sent_records=[
+                        dict(id=i, t_plan_ms=i * 10, t_send_ms=(t - start) / 1e6)
+                        for i, t in enumerate(sent)
+                    ],
+                )
+            )
+        )
 
 
 if __name__ == "__main__":

@@ -1,3 +1,0 @@
-{"schema_version":1,"run_id":"b0-a0-m0","role":"browser","sample_index":0,"end_usec":74531360000,"interval_usec":1010000,"cpu_usage_usec":5690,"throttled_usec":0,"memory_current":1966080,"oom":0}
-{"schema_version":1,"run_id":"b0-a0-m0","role":"browser","sample_index":1,"end_usec":74532370000,"interval_usec":1010000,"cpu_usage_usec":8163,"throttled_usec":0,"memory_current":1761280,"oom":0}
-{"schema_version":1,"run_id":"b0-a0-m0","role":"browser","sample_index":2,"end_usec":74533380000,"interval_usec":1010000,"cpu_usage_usec":8417,"throttled_usec":0,"memory_current":2007040,"oom":0}

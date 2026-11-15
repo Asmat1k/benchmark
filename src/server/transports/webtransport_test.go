@@ -11,9 +11,13 @@ import (
 
 type shortWriter struct{ input, output bytes.Buffer }
 
-func (s *shortWriter) Read(p []byte) (int, error)  { return s.input.Read(p) }
+// Read reads bytes from the test input.
+func (s *shortWriter) Read(p []byte) (int, error) { return s.input.Read(p) }
+
+// Write writes one byte to simulate a short write.
 func (s *shortWriter) Write(p []byte) (int, error) { return s.output.Write(p[:1]) }
 
+// TestStream checks stream echo handling of short writes.
 func TestStream(t *testing.T) {
 	frame := make([]byte, protocol.Size)
 	binary.BigEndian.PutUint32(frame, 0x42575431)
@@ -29,6 +33,7 @@ func TestStream(t *testing.T) {
 		{"complete", frame, io.EOF},
 		{"truncated", frame[:255], io.ErrUnexpectedEOF},
 	} {
+		// Check the stream reply and expected termination error.
 		t.Run(tc.name, func(t *testing.T) {
 			stream := new(shortWriter)
 			stream.input.WriteString("READY")

@@ -1,1 +1,0 @@
-Initial launcher exited before preflight/raw/network: tempfile.mkdtemp parent release-v2 absent. No experiment started. Parent creation made explicit before retrying launcher. Tool history retains original traceback.

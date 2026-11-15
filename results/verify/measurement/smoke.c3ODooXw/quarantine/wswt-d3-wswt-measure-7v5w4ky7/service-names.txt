@@ -1,3 +1,0 @@
-"/wswt-d3-wswt-measure-7v5w4ky7-browser-1"
-"/wswt-d3-wswt-measure-7v5w4ky7-router-1"
-"/wswt-d3-wswt-measure-7v5w4ky7-server-1"

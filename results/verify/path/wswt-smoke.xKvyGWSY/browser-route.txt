@@ -1,8 +1,0 @@
-Actual changes:
-tx-generic-segmentation: on [requested off]
-rx-gro: on [requested off]
-tx-tcp-segmentation: on [requested off]
-tx-tcp-ecn-segmentation: on [requested off]
-tx-tcp-mangleid-segmentation: on [requested off]
-tx-tcp6-segmentation: on [requested off]
-tcp-segmentation-offload: on
