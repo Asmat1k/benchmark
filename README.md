@@ -1,5 +1,7 @@
 # benchmark
 
+Полная документация и исторические материалы сохранены в [docs/](docs/). Рабочие машинные контракты находятся в configs/.
+
 Локальный стенд сравнивает **WebSocket (WS)**, **WebTransport stream (WT-S)** и **WebTransport datagram (WT-D)**. Chromium отправляет кадры через Docker router/netem к Go echo-серверу; Playwright управляет браузером, Python готовит расписание и анализирует результаты. Внешние порты не публикуются.
 
 ## Что измеряется

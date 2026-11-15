@@ -1,0 +1,11 @@
+# Short validation of nonblocking echo polling
+
+Decision recorded after fixed ABBA investigations, 14 November 2026 Moscow.
+
+The buffered/immediate capture ABBA failed to remove repeatable RTT phase structure and increased capture CPU; no immediate-mode production change is adopted. Waiting/poll0 ABBA reproducibly reduced send lag and RTT phase structure in both B runs, with explicit cost ~95.5% of one core versus ~2.2%. The selected minimal change is MAX_ECHO_WAIT_NS=0 in UDP echo only. Absolute100Hz grid, all IDs/payload/tag,2.5ms pacing, actual RTT, final2second drain, saturation waits and all acceptance thresholds remain unchanged. No Python/RTT samples are corrected or excluded.
+
+Before any new network validation, run unchanged sender/framing/bandwidth tests with a progressing zero-timeout mock clock, commit the source delta and update release-state. Reuse exact existing images: changed files are host-mounted sender/test, not image inputs. Record new inventory; historical gates/raw remain bound to prior source state.
+
+One fixed composite similar-profile validation: r20p0-check and r80p1-check, each10000echo/100Hz/256bytes/2s drain, forward/reverse seeds20261114/20261115 and20261116/20261117. No periodic samplers; pcap buffered as original calibration, CPU/probe stats before/after, permanent neighbors. Capture drops/ID/tag/directional tc counters must correspond; lossy reply count is not forced to10000. Analyze same current sender v2 and process diagnostics, without bootstrap or scientific gate publication. No further network attempts within this research plan, regardless of result. Expected220–250seconds, whole hard cap270seconds plus10seconds cleanup, below5minutes. This is a diagnostic subset, not the full14+4 calibration or repeated qualification. Rare-pause reliability and final calibration acceptance still require a later new full plan if short validation succeeds.
+
+No changes to Docker CPU/RAM, foreignqdrant, TLS, numerical thresholds or blockbootstrap are authorized by this fix. CPU price applies to extra UDP probe, not the browser generator; browser generator still has its own unchanged formal gate. Research report must disclose this tradeoff, all negative results, integrity and source applicability limitations. No A/A, monitoring, pilot, power, freeze or main here.
