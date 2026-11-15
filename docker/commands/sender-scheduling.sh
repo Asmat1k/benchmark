@@ -64,7 +64,7 @@ exec 9>"$work/lock"
 for attempt in 1 2 3 4 5 6 7 8 9 10; do [ ! -s "$work/status" ] || break; sleep 1; done
 test "$(cat "$work/status")" = locked
 cp "$0" "$run_dir/collector.sh"
-cp docs/readiness/sender-scheduling-plan.md "$run_dir/plan.md"
+cp configs/thresholds.json "$run_dir/plan.json"
 source_snapshot() {
     python3 - "$run_dir/sources-$1.json" <<'PYTHON'
 import hashlib

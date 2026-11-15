@@ -108,7 +108,7 @@ def complete(directory, index, partial):
     write(partial/"security.json",security)
     manifest=dict(schema_version=1,protocol_version=1,series=schedule["series"],series_id=schedule["series_id"],**run,
         started_utc=(partial/"started").read_text().strip(),ended_utc=now(),commit=(partial/"commit").read_text().strip(),
-        dirty=bool((partial/"dirty").read_text().strip()),protocol_sha256=digest(Path("docs/protocol.md")),
+        dirty=bool((partial/"dirty").read_text().strip()),protocol_sha256=digest(Path("configs/contracts/protocol.json")),
         config_sha256=digest(partial/"config.json"),schedule_sha256=digest(partial/"schedule.json"),technical_valid=True,reason=None)
     for key in ("environment","provenance","security","network_before","network_after"):
         manifest[key]=binding(partial/f"{key}.json")

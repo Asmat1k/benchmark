@@ -66,7 +66,7 @@ class QuietCpuTests(unittest.TestCase):
         self.assertEqual(result.returncode,124,result.stderr)
         rows = [json.loads(line) for line in result.stdout.splitlines()]
         self.assertGreaterEqual(len(rows),2)
-        validator = Draft202012Validator(read(Path('docs/schemas/resource.schema.json')))
+        validator = Draft202012Validator(read(Path('configs/schemas/resource.schema.json')))
         for row in rows:
             validator.validate(row)
             self.assertLessEqual(row['cpu_start_lower_usec'],row['end_usec']-row['interval_usec'])

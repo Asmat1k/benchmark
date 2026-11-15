@@ -78,7 +78,7 @@ def validate_series(directory, design="comparison"):
     ledger = read(directory/"ledger.json")
     require(set(schedule) == {"schema_version","series","series_id","master_seed","blocks","runs"} and
             schedule["schema_version"] == 1 and schedule["master_seed"] == 20261108, "schedule version/master seed")
-    Draft202012Validator(read(ROOT/"docs/schemas/ledger.schema.json")).validate(ledger)
+    Draft202012Validator(read(ROOT/"configs/schemas/ledger.schema.json")).validate(ledger)
     require(schedule["series_id"] == ledger["series_id"], "series ledger mismatch")
     require(schedule["series"] != "smoke", "smoke is diagnostic only; comparison analysis forbidden")
     require(schedule["series"] in ("verify", "diagnostic", "pilot", "main"), "unknown series")
@@ -126,7 +126,7 @@ def validate_series(directory, design="comparison"):
                 transaction["replacement"]["replacement_of"] == a["attempt_id"], "audit replacement mismatch")
         replacement = next(b for b in attempts if b["attempt_id"] == transaction["replacement"]["attempt_id"])
         attempt_snapshot(transaction["replacement"],replacement)
-        Draft202012Validator(read(ROOT/"docs/schemas/ledger.schema.json")).validate(transaction["ledger"])
+        Draft202012Validator(read(ROOT/"configs/schemas/ledger.schema.json")).validate(transaction["ledger"])
         require(transaction["ledger"]["series_id"] == ledger["series_id"] and
                 len(transaction["ledger"]["attempts"]) == len(transaction["schedule"]["blocks"]), "audit ledger mismatch")
         for old,current in zip(transaction["ledger"]["attempts"],attempts):

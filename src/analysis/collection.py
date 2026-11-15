@@ -27,10 +27,10 @@ def primary(data):
     from admission import checked
     from jsonschema import Draft202012Validator
     collection=read(checked(data['collection']))
-    Draft202012Validator(read(Path('docs/schemas/collection.schema.json'))).validate(collection)
+    Draft202012Validator(read(Path('configs/schemas/collection.schema.json'))).validate(collection)
     require(all(collection[k]==data[k] for k in ('kind','gate','collection_id','environment','source_hashes')), 'foreign collection provenance')
     payload=read(checked(collection['payload']))
-    Draft202012Validator(read(Path('docs/schemas/primary-payload.schema.json'))).validate(payload)
+    Draft202012Validator(read(Path('configs/schemas/primary-payload.schema.json'))).validate(payload)
     require(payload['collection_id']==data['collection_id'] and payload['gate']==data['gate'], 'foreign primary payload')
     return payload,collection
 

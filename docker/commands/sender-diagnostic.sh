@@ -61,7 +61,7 @@ for attempt in 1 2 3 4 5 6 7 8 9 10; do [ ! -s "$work/status" ] || break; sleep 
 test "$(cat "$work/status")" = locked
 cp "$0" "$run_dir/collector.sh"
 if [ "$probe_script" = sender_qualification_probe.py ]; then
-    cp docs/readiness/sender-quality-v2.md "$run_dir/plan.md"
+    cp configs/thresholds.json "$run_dir/plan.json"
 else
     cp results/verify/readiness/sender-diagnostic/plan.md "$run_dir/plan.md"
 fi

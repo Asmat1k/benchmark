@@ -173,7 +173,7 @@ def observations_source(folder, run, planned, source):
             captured = data['captured_page_ms']
             require(isinstance(captured,(int,float)) and math.isfinite(captured), 'checkpoint clock invalid')
         slots = [s for s in data['slots'] if s['phase'] == 1]
-    validator = Draft202012Validator(read(ROOT/'docs/schemas/slot.schema.json'))
+    validator = Draft202012Validator(read(ROOT/'configs/schemas/slot.schema.json'))
     seen = set()
     rtts = []
     timely = 0

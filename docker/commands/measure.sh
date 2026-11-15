@@ -47,7 +47,7 @@ if [ -z "${SERIES_TLS_DIR:-}" ]; then
 fi
 date -u +%Y-%m-%dT%H:%M:%SZ > "$run_dir/started"
 git rev-parse HEAD > "$run_dir/commit"
-git status --porcelain -- Makefile compose.yaml src docker docs/schemas docs/protocol.md configs/plan.json configs/profiles.json configs/thresholds.json > "$run_dir/dirty"
+git status --porcelain -- Makefile compose.yaml src docker configs/schemas configs/contracts/protocol.json configs/policies configs/plan.json configs/profiles.json configs/thresholds.json > "$run_dir/dirty"
 cp "$BENCH_TLS_DIR/server/good/cert.pem" "$run_dir/leaf.pem"
 uname -a >"$run_dir/host.txt"
 docker info --format '{"kernel":"{{.KernelVersion}}","platform":"{{.Architecture}}","engine":"{{.ServerVersion}}","cpus":{{.NCPU}},"mem":{{.MemTotal}}}' > "$run_dir/vm.json"

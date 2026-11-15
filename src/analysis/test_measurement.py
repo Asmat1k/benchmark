@@ -42,7 +42,7 @@ def fixture(directory):
         write(folder/"config.json", {name:read(Path("configs")/f"{name}.json") for name in ("plan","thresholds","profiles")})
         manifest=read(folder/"manifest.json")
         manifest["config_sha256"]=digest(folder/"config.json")
-        manifest["protocol_sha256"]=digest(Path("docs/protocol.md"))
+        manifest["protocol_sha256"]=digest(Path("configs/contracts/protocol.json"))
         write(folder/"manifest.json",manifest)
         for name in ("network_before", "network_after"):
             snapshot = read(folder / f"{name}.json")

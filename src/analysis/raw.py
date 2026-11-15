@@ -26,6 +26,12 @@ def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def binding_digest(path):
+    if str(path) == "docs/protocol.md":
+        return read(ROOT / "configs/contracts/protocol.json")["legacy_protocol_sha256"]
+    return digest(Path(path))
+
+
 def binding(path):
     return dict(path=path.name, sha256=digest(path))
 
@@ -113,12 +119,13 @@ def validate_raw(folder, schedule_file, config_root=ROOT / "configs"):
     for key in ("provenance", "environment", "network_before", "network_after", "security"):
         ref = manifest[key]
         require(checksums.get(ref["path"]) == ref["sha256"], key)
+    protocol_hashes = {digest(ROOT / "configs/contracts/protocol.json"), binding_digest("docs/protocol.md")}
     require(manifest["config_sha256"] == digest(folder / "config.json") and
-            manifest["protocol_sha256"] == digest(ROOT / "docs/protocol.md"), "protocol/config hash")
+            manifest["protocol_sha256"] in protocol_hashes, "protocol/config hash")
     config = read(folder / "config.json")
     require(config == {p:read(config_root / f"{p}.json") for p in ("plan","thresholds","profiles")}, "config mismatch")
     for name, value in config.items():
-        Draft202012Validator(read(ROOT / "docs/schemas" / f"{name}.schema.json")).validate(value)
+        Draft202012Validator(read(ROOT / "configs/schemas" / f"{name}.schema.json")).validate(value)
     security = read(folder / manifest["security"]["path"])
     require(security["secure_context"] and security["endpoint"] == "https://bench.test:8443/", "security/origin")
     require(not any("ignore-certificate-errors" in arg or "disable-web-security" in arg
@@ -143,7 +150,7 @@ def validate_raw(folder, schedule_file, config_root=ROOT / "configs"):
     groups.update(slot=rows(folder/"warmup.jsonl")+rows(folder/"slots.jsonl"),
                   event=rows(folder/"events.jsonl"),resource=rows(folder/"resources.jsonl"))
     for name, records in groups.items():
-        validator = Draft202012Validator(read(ROOT/"docs/schemas"/f"{name}.schema.json"), format_checker=FormatChecker())
+        validator = Draft202012Validator(read(ROOT/"configs/schemas"/f"{name}.schema.json"), format_checker=FormatChecker())
         for record in records:
             validator.validate(record)
             require(record.get("run_id", run["run_id"]) == run["run_id"], "run ID mismatch")
@@ -262,7 +269,9 @@ def validate_raw(folder, schedule_file, config_root=ROOT / "configs"):
         for ref in check["evidence"]:
             require(checksums.get(ref["path"]) == ref["sha256"], "check evidence hash")
     from series import context_snapshot
-    require(context_snapshot(folder) == read(folder / "context.json") == read(schedule_file.parent / "context.json"), "environment changed: context")
+    context = read(folder / "context.json")
+    protocol_path = "docs/protocol.md" if "docs/protocol.md" in context["bindings"] else "configs/contracts/protocol.json"
+    require(context_snapshot(folder, protocol_path) == context == read(schedule_file.parent / "context.json"), "environment changed: context")
     environment = read(folder / manifest["environment"]["path"])
     provenance = read(folder / manifest["provenance"]["path"])
     image_lock = "docker/config/images.lock.json" if "docker/config/images.lock.json" in provenance["lock_hashes"] else "docker/images.lock.json"

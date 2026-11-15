@@ -51,7 +51,7 @@ class FiniteReadinessTests(unittest.TestCase):
         from collection import PRIMARY_IDS
         from raw import now
         document=dict(schema_version=1,checks=[dict(id=key,mandatory=True,expected=True,actual=True,
-            units='predicate',tolerance=None,status='passed',reason=None,utc=now(),evidence=[ref(Path('docs/protocol.md'))])
+            units='predicate',tolerance=None,status='passed',reason=None,utc=now(),evidence=[ref(Path('configs/contracts/protocol.json'))])
             for key in PRIMARY_IDS['reproduction']])
         report=dict(status='failed',result=dict(document=document,comparison=dict(status='failed')))
         with self.assertRaisesRegex(ValueError,'independent reproduction'):

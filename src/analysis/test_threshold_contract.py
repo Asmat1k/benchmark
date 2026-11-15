@@ -12,7 +12,7 @@ from test_measurement import fixture, rehash
 
 class ThresholdContractTest(unittest.TestCase):
     def test_boolean_states_preserve_numeric_contract(self):
-        validator = Draft202012Validator(read(Path('docs/schemas/thresholds.schema.json')))
+        validator = Draft202012Validator(read(Path('configs/schemas/thresholds.schema.json')))
         original = read(Path('configs/thresholds.json'))
         for state in (True, False):
             value = dict(original, preliminary=state)

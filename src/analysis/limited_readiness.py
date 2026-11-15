@@ -8,7 +8,7 @@ VERSION = 'finite-browser-study-v1'
 _HISTORICAL_APPROVED = {}
 SOURCE_CHANGES = ADMISSION_SOURCE_CHANGES | {'src/analysis/acceptance.py', 'src/analysis/admission.py',
     'src/analysis/experiments.py', 'src/analysis/limited_readiness.py', 'src/analysis/test_limited_readiness.py',
-    'docs/schemas/freeze.schema.json'}
+    'configs/schemas/freeze.schema.json'}
 DESIGN = dict(control_pairs_per_cell=1, pilot_blocks_per_profile=5, main_blocks_per_profile=20,
               modes=['WS','WT-S','WT-D'], profiles=['r20p0','r20p1','r80p0','r80p1'],
               repeat_effect_ms=2,repeat_fullness_pp=1, sample='fixed-all-planned-outcomes')
@@ -17,7 +17,7 @@ DESIGN = dict(control_pairs_per_cell=1, pilot_blocks_per_profile=5, main_blocks_
 def policy(binding):
     value = read(checked(binding))
     require(value['readiness_version'] == VERSION and value['design'] == DESIGN, 'unsupported finite study design')
-    require(value['protocol'] == ref(Path('docs/protocol.md')) and value['plan'] == ref(Path('configs/plan.json')),
+    require(value['protocol'] == ref(Path('configs/contracts/protocol.json')) and value['plan'] == ref(Path('configs/plan.json')),
             'finite study policy protocol/plan mismatch')
     checked(value['rationale'])
     require(read(Path('configs/plan.json')).get('execution_policy') == VERSION, 'finite execution policy required')
@@ -37,8 +37,8 @@ def historical_report(binding, context, recalculate=True):
     require({k:v for k,v in old_plan.items() if k != 'execution_policy'} ==
             {k:v for k,v in plan.items() if k != 'execution_policy'}, 'historical plan bridge changed measurement')
     old_bindings, bindings = old_context['bindings'], context['bindings']
-    require({k:v for k,v in old_bindings.items() if k != 'docs/protocol.md'} ==
-            {k:v for k,v in bindings.items() if k != 'docs/protocol.md'}, 'historical lock bindings changed')
+    require({k:v for k,v in old_bindings.items() if k != 'configs/contracts/protocol.json'} ==
+            {k:v for k,v in bindings.items() if k != 'configs/contracts/protocol.json'}, 'historical lock bindings changed')
     receipt = read(checked(binding['replay']))
     require(receipt['schema_version'] == 1 and receipt['validation'] == 'validate-gate-exact-source-v1' and
             receipt['report'] == binding['report'] and receipt['environment'] == report['environment'] and

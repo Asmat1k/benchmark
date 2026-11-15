@@ -11,7 +11,7 @@ from schedule import make_schedule
 
 VERSION = 'exploratory-browser-study-v2'
 LIMITS = dict(run_timeout_seconds=360, cleanup_timeout_seconds=30, series_budget_seconds=54000)
-POLICY = Path('docs/readiness/exploratory-browser-study-v2.md')
+POLICY = Path('configs/policies/exploratory.json')
 HISTORY = {
     'calibration': Path('results/verify/readiness/stage4/practical-v1/full-calibration/calibration-sFWOAzbo-report.json'),
     'generator': Path('results/verify/diagnostic/generator-100.StWlCPFN-report/report.json'),
@@ -82,8 +82,8 @@ def prepare(directory, environment_path, tls):
     write(snapshot/'schedule.json', schedule)
     write(directory/'ledger.json', dict(schema_version=1, series_id=directory.name, attempts=schedule['blocks']))
     shutil.copyfile(environment_path, snapshot/'environment.json')
-    shutil.copyfile(POLICY, snapshot/'policy.md')
-    write(snapshot/'policy.json', dict(execution_policy=VERSION, document=ref(snapshot/'policy.md')))
+    shutil.copyfile(POLICY, snapshot/'policy-definition.json')
+    write(snapshot/'policy.json', dict(execution_policy=VERSION, document=ref(snapshot/'policy-definition.json')))
     inventory = sources()
     for name in inventory:
         destination = snapshot/'source'/name

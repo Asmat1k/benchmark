@@ -511,7 +511,7 @@ class AcceptanceTests(unittest.TestCase):
         with self.assertRaises(ValueError): freeze(dict(kind='synthetic'),self.root/'forbidden-freeze.json')
         self.assertFalse((self.root/'forbidden-freeze.json').exists())
         from jsonschema import Draft202012Validator
-        schema=read(Path('docs/schemas/freeze.schema.json'))
+        schema=read(Path('configs/schemas/freeze.schema.json'))
         for value in ({},{'kind':'synthetic'},{'dirty':True},{'extra':'field'}):
             self.assertFalse(Draft202012Validator(schema).is_valid(value))
 

@@ -3,14 +3,14 @@ from pathlib import Path
 
 from admission import check_integrity, checked, ref, sources
 from collection import environment
-from raw import digest, now, read, require, write
+from raw import binding_digest, digest, now, read, require, write
 
 POLICY = dict(sample="fixed-planned-sample-all-outcomes", violations="report-n-minus-i-and-i-without-exclusion",
               missing="unknown-no-rtt-imputation", lag="observed-no-subtraction",
               scope="diagnostic-generator-only-no-main-admission")
 ADMISSION_SOURCE_CHANGES = {"src/analysis/browser_admission.py", "src/analysis/test_browser_admission.py",
-                            "docker/commands/collect-diagnostic.sh", "docs/protocol.md", "configs/plan.json",
-                            "docs/schemas/plan.schema.json", "docker/commands/measure.sh", "docker/commands/experiment.sh",
+                            "docker/commands/collect-diagnostic.sh", "configs/contracts/protocol.json", "configs/plan.json",
+                            "configs/schemas/plan.schema.json", "docker/commands/measure.sh", "docker/commands/experiment.sh",
                             "src/analysis/raw.py", "src/analysis/record.py", "src/analysis/test_stabilization_cpu.py",
                             "src/analysis/test_diagnostic_input.py"}
 LIMITATIONS = ["historical-udp-calibration-failed", "vm-2vcpu-4109484032-bytes",
@@ -19,7 +19,7 @@ LIMITATIONS = ["historical-udp-calibration-failed", "vm-2vcpu-4109484032-bytes",
 
 def current_environment(path):
     context = environment(path)
-    require(all(digest(Path(name)) == sha for name, sha in context["bindings"].items()),
+    require(all(binding_digest(name) == sha for name, sha in context["bindings"].items()),
             "browser admission stale environment bindings")
     require(context["config"] == {name: read(Path("configs") / f"{name}.json")
                                   for name in ("plan", "thresholds", "profiles")},

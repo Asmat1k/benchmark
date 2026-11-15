@@ -15,7 +15,7 @@ MIN_COMPLETE_SAMPLES = 2
 
 
 def quiet_summary(records, marker):
-    validator = Draft202012Validator(read(ROOT/'docs/schemas/resource.schema.json'))
+    validator = Draft202012Validator(read(ROOT/'configs/schemas/resource.schema.json'))
     for row in records:
         validator.validate(row)
     require(len({row['run_id'] for row in records}) == 1, 'mixed quiet CPU run identity')

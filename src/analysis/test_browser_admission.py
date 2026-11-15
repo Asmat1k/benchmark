@@ -12,7 +12,7 @@ class BrowserAdmissionTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             context = dict(host="host", vm=dict(cpus=2, mem=4109484032), leaf="leaf", services=[dict(role=role) for role in ("browser", "server", "router")],
-                           bindings={"docs/protocol.md": digest(Path("docs/protocol.md"))}, config={name:read(Path("configs")/f"{name}.json")
+                           bindings={"configs/contracts/protocol.json": digest(Path("configs/contracts/protocol.json"))}, config={name:read(Path("configs")/f"{name}.json")
                                                 for name in ("plan", "thresholds", "profiles")})
             env, historical, policy, decision = [root/name for name in ("env.json", "failed.json", "policy.md", "decision.json")]
             write(env, context)

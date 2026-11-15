@@ -37,7 +37,7 @@ def controller_session(directory, kind='real'):
 
 
 GATES = ('build','tls','path','timer','raw','analysis','calibration','generator','aa','monitoring')
-TRACKED = ('docs/protocol.md','configs/plan.json','configs/profiles.json','configs/thresholds.json',
+TRACKED = ('configs/contracts/protocol.json','configs/plan.json','configs/profiles.json','configs/thresholds.json',
            'docker/config/images.lock.json','src/client/package-lock.json','src/runner/package-lock.json',
            'src/server/go.sum','src/analysis/requirements.txt')
 
@@ -54,15 +54,15 @@ def checked(ref_value):
 
 def sources():
     paths = list(TRACKED)
-    for root in ('src','docker','docs/schemas'):
+    for root in ('src','docker','configs/schemas'):
         paths.extend(str(p) for p in Path(root).rglob('*') if p.is_file() and
                      'node_modules' not in p.parts and '__pycache__' not in p.parts and 'dist' not in p.parts)
-    paths.extend(['Makefile','compose.yaml'])
+    paths.extend(['Makefile','compose.yaml','configs/policies/exploratory.json'])
     return {p:digest(Path(p)) for p in sorted(set(paths))}
 
 
 def validate_checks(document):
-    Draft202012Validator(read(Path('docs/schemas/checks.schema.json')),format_checker=FormatChecker()).validate(document)
+    Draft202012Validator(read(Path('configs/schemas/checks.schema.json')),format_checker=FormatChecker()).validate(document)
     ids = [r['id'] for r in document['checks']]
     require(len(set(ids)) == len(ids), 'duplicate check ID')
     for row in document['checks']:
@@ -192,7 +192,7 @@ def release():
     snapshot=read(Path('build/release-state.json'))
     current=sources()
     require(all(snapshot['files'].get(path)==sha for path,sha in current.items()), 'release source dirty or untracked')
-    require({p for p in snapshot['files'] if p.startswith(('src/','docker/','docs/schemas/'))} <= set(current), 'release source deleted')
+    require({p for p in snapshot['files'] if p.startswith(('src/','docker/','configs/schemas/'))} <= set(current), 'release source deleted')
     require(len(snapshot['commit'])==40, 'invalid release commit')
     return snapshot['commit']
 
@@ -242,7 +242,7 @@ def separate_frozen_schedule(original,directory):
 
 
 def validate_freeze(value, remaining=None, recalculate=True):
-    schema=read(Path('docs/schemas/freeze.schema.json'))
+    schema=read(Path('configs/schemas/freeze.schema.json'))
     Draft202012Validator(schema,format_checker=FormatChecker()).validate(value)
     require(value['kind']=='real', 'synthetic freeze forbidden')
     environment=checked(value['bindings']['environment'])
@@ -259,7 +259,7 @@ def validate_freeze(value, remaining=None, recalculate=True):
     leaf_hash=leaf_covers(Path(value['leaf_pem']),value['series_end_utc'],minimum_runs*80)
     require(digest(checked(value['bindings']['leaf_der']))==leaf_hash, 'leaf DER binding mismatch')
     require(read(Path('configs/thresholds.json'))['preliminary'] is False, 'final thresholds required')
-    canonical={'protocol':'docs/protocol.md','plan':'configs/plan.json','profiles':'configs/profiles.json','thresholds':'configs/thresholds.json'}
+    canonical={'protocol':'configs/contracts/protocol.json','plan':'configs/plan.json','profiles':'configs/profiles.json','thresholds':'configs/thresholds.json'}
     require(all(value['bindings'][key]==ref(Path(path)) for key,path in canonical.items()), 'canonical config/protocol bindings')
     schedule=read(checked(value['bindings']['schedule']))
     from schedule import block_runs, PROFILES
@@ -329,7 +329,7 @@ def execution_state(directory, original, current, validate_completion=True):
     import copy
     from schedule import replace_block
     ledger=read(directory/'ledger.json')
-    Draft202012Validator(read(Path('docs/schemas/ledger.schema.json'))).validate(ledger)
+    Draft202012Validator(read(Path('configs/schemas/ledger.schema.json'))).validate(ledger)
     require(ledger['series_id']==current['series_id'] and len(ledger['attempts'])==len(current['blocks']), 'execution ledger identity')
     for attempt in ledger['attempts']:
         if attempt['status']=='quarantined':
@@ -366,7 +366,7 @@ def execution_state(directory, original, current, validate_completion=True):
         from raw import validate_hashes
         inventory=validate_hashes(folder)
         require({'manifest.json','completion.json','slots.jsonl','events.jsonl','resources.jsonl','warmup.jsonl','config.json','context.json','schedule.json','server.json','checks.json','security.json','provenance.json','leaf.pem','resource-window.json'}<=set(inventory), 'published raw files incomplete')
-        Draft202012Validator(read(Path('docs/schemas/manifest.schema.json'))).validate(manifest)
+        Draft202012Validator(read(Path('configs/schemas/manifest.schema.json'))).validate(manifest)
         with (folder/'slots.jsonl').open() as slots:
             slot_count=sum(1 for _ in slots)
         require(manifest['technical_valid'] and slot_count==1200, 'published slot completeness')
@@ -453,7 +453,7 @@ def admit(directory, kind=None, validate_completion=True, initial=False):
         remaining=sum(r['attempt_id'] in active and r['run_id'] not in published for r in schedule['runs'])
         frozen = validate_freeze(read(checked(admission['freeze'])),remaining,recalculate=recalculate)
         require(frozen['kind']=='real' and frozen['release_commit']==release() and frozen['source_hashes']==sources(), 'frozen release mismatch')
-        schema=read(Path('docs/schemas/freeze.schema.json'))
+        schema=read(Path('configs/schemas/freeze.schema.json'))
         Draft202012Validator(schema,format_checker=FormatChecker()).validate(frozen)
         for value in frozen['bindings'].values(): checked(value)
         separate_frozen_schedule(checked(admission['schedule']),directory)

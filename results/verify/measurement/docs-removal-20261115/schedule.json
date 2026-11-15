@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "series": "smoke",
+  "series_id": "docs-removal-20261115",
+  "master_seed": 20261108,
+  "blocks": [
+    {
+      "block_id": "b0",
+      "session_id": "s0",
+      "attempt_id": "b0-a0",
+      "profile": "baseline",
+      "order_index": 0,
+      "modes": [
+        "WS",
+        "WT-S"
+      ],
+      "seed": 4149435467156679395,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "b0-a0-m0",
+      "mode": "WS",
+      "nonce": "2544892330170000988",
+      "forward_seed": 9097230479716628274,
+      "reverse_seed": 13203209317438429927,
+      "block_id": "b0",
+      "session_id": "s0",
+      "attempt_id": "b0-a0",
+      "profile": "baseline",
+      "order_index": 0,
+      "replacement_of": null
+    },
+    {
+      "run_id": "b0-a0-m1",
+      "mode": "WT-S",
+      "nonce": "10534075109216431153",
+      "forward_seed": 15622952728196081649,
+      "reverse_seed": 1806001434386505678,
+      "block_id": "b0",
+      "session_id": "s0",
+      "attempt_id": "b0-a0",
+      "profile": "baseline",
+      "order_index": 0,
+      "replacement_of": null
+    }
+  ]
+}

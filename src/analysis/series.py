@@ -4,7 +4,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-from raw import digest, read, require, write
+from raw import binding_digest, read, require, write
 
 
 def queue(directory):
@@ -48,9 +48,9 @@ def measurement_lock():
                 fcntl.flock(handle, fcntl.LOCK_UN)
 
 
-def context_snapshot(partial):
+def context_snapshot(partial, protocol_path="configs/contracts/protocol.json"):
     names = ("plan", "thresholds", "profiles")
-    context = dict(bindings={p:digest(Path(p)) for p in ("docs/protocol.md", "src/client/package-lock.json", "src/runner/package-lock.json", "src/server/go.sum", "src/analysis/requirements.txt")}, host=(partial / "host.txt").read_text(), vm=read(partial / "vm.json"),
+    context = dict(bindings={p:binding_digest(p) for p in (protocol_path, "src/client/package-lock.json", "src/runner/package-lock.json", "src/server/go.sum", "src/analysis/requirements.txt")}, host=(partial / "host.txt").read_text(), vm=read(partial / "vm.json"),
                    leaf=(partial / "leaf.pem").read_text(),
                    config={n: read(Path("configs") / f"{n}.json") for n in names},
                    services=sorted([dict(role=r["role"].rsplit("-", 2)[-2],
