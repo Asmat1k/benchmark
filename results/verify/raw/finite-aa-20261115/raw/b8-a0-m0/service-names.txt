@@ -1,0 +1,3 @@
+"/wswt-d3-wswt-measure-hfr93khc-browser-1"
+"/wswt-d3-wswt-measure-hfr93khc-router-1"
+"/wswt-d3-wswt-measure-hfr93khc-server-1"

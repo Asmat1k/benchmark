@@ -1,0 +1,361 @@
+{
+  "gate": "tls",
+  "collection_id": "primary-real-v4-tls",
+  "document": {
+    "schema_version": 1,
+    "checks": [
+      {
+        "id": "ws-secure",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "real browser TLS and exact echo",
+        "utc": "2026-11-13T20:07:47.765053Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/tls/ws-secure.json",
+            "sha256": "fcbb5a5855afea35cea9630888c0592eaf0567d46440ea048ccf963c2d2e68b2"
+          }
+        ]
+      },
+      {
+        "id": "wts-secure",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "real browser TLS and exact echo",
+        "utc": "2026-11-13T20:07:47.770079Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/tls/wts-secure.json",
+            "sha256": "d1e6ba5092ed14fb3070f6540704e24fefb20bd6d941c1f4b9b2007b5a9e9752"
+          }
+        ]
+      },
+      {
+        "id": "https-wrong-ca",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "real negative TLS probe with specific certificate error",
+        "utc": "2026-11-13T20:07:47.774438Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/tls/https-wrong-ca.json",
+            "sha256": "e12ec1ae958ad853216c6bdd93537241a93d2e8660087bbf58392be1eefa6101"
+          }
+        ]
+      },
+      {
+        "id": "ws-wrong-ca",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "real negative TLS probe with specific certificate error",
+        "utc": "2026-11-13T20:07:47.778839Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/tls/ws-wrong-ca.json",
+            "sha256": "051c3e5fa9ba6d4719df46e1d83b1b45e8031fd845233a00fee9e6cf4569a7a9"
+          }
+        ]
+      },
+      {
+        "id": "https-wrong-san",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "real negative TLS probe with specific certificate error",
+        "utc": "2026-11-13T20:07:47.783064Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/tls/https-wrong-san.json",
+            "sha256": "2e192e2bc465f90fafc3a2f9180d24e1bd433079914707fbf6eadddd2ae7da48"
+          }
+        ]
+      },
+      {
+        "id": "ws-wrong-san",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "real negative TLS probe with specific certificate error",
+        "utc": "2026-11-13T20:07:47.787369Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/tls/ws-wrong-san.json",
+            "sha256": "3f251ffcb56c18880273489c13417f8e3b89550d8d49a14f0a249f841eb9bb09"
+          }
+        ]
+      },
+      {
+        "id": "https-expired",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "real negative TLS probe with specific certificate error",
+        "utc": "2026-11-13T20:07:47.792573Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/tls/https-expired.json",
+            "sha256": "18c11b865741719f863eb82b20b22831a96f78a98e0e46c1de4aabf5ebcb5513"
+          }
+        ]
+      },
+      {
+        "id": "ws-expired",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "real negative TLS probe with specific certificate error",
+        "utc": "2026-11-13T20:07:47.801379Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/tls/ws-expired.json",
+            "sha256": "03c1e9e8fccead888cdebee2276583784f96df227d9d8ee06e2db92db9ed2a18"
+          }
+        ]
+      },
+      {
+        "id": "wt-wrong-pin",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "real WebTransport negative TLS probe",
+        "utc": "2026-11-13T20:07:47.803801Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/tls/wt-wrong-pin.json",
+            "sha256": "65be79d4f145fa01f8b9f6dfac08595e16352e5b8059ac352118fb2e4f3cb12d"
+          }
+        ]
+      },
+      {
+        "id": "wt-expired",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "real WebTransport negative TLS probe",
+        "utc": "2026-11-13T20:07:47.805996Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/tls/wt-expired.json",
+            "sha256": "ad83467b8cefb2032dffc43e9c162c8018f0d08b3961e2038dc6ef8d3980e321"
+          }
+        ]
+      }
+    ]
+  },
+  "observations": {
+    "ws-secure": {
+      "collection_id": "primary-real-v4-tls",
+      "id": "ws-secure",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "real browser TLS and exact echo",
+      "utc": "2026-11-13T20:07:47.765053Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/tls/ws-secure.json",
+          "sha256": "fcbb5a5855afea35cea9630888c0592eaf0567d46440ea048ccf963c2d2e68b2"
+        }
+      ]
+    },
+    "wts-secure": {
+      "collection_id": "primary-real-v4-tls",
+      "id": "wts-secure",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "real browser TLS and exact echo",
+      "utc": "2026-11-13T20:07:47.770079Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/tls/wts-secure.json",
+          "sha256": "d1e6ba5092ed14fb3070f6540704e24fefb20bd6d941c1f4b9b2007b5a9e9752"
+        }
+      ]
+    },
+    "https-wrong-ca": {
+      "collection_id": "primary-real-v4-tls",
+      "id": "https-wrong-ca",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "real negative TLS probe with specific certificate error",
+      "utc": "2026-11-13T20:07:47.774438Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/tls/https-wrong-ca.json",
+          "sha256": "e12ec1ae958ad853216c6bdd93537241a93d2e8660087bbf58392be1eefa6101"
+        }
+      ]
+    },
+    "ws-wrong-ca": {
+      "collection_id": "primary-real-v4-tls",
+      "id": "ws-wrong-ca",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "real negative TLS probe with specific certificate error",
+      "utc": "2026-11-13T20:07:47.778839Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/tls/ws-wrong-ca.json",
+          "sha256": "051c3e5fa9ba6d4719df46e1d83b1b45e8031fd845233a00fee9e6cf4569a7a9"
+        }
+      ]
+    },
+    "https-wrong-san": {
+      "collection_id": "primary-real-v4-tls",
+      "id": "https-wrong-san",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "real negative TLS probe with specific certificate error",
+      "utc": "2026-11-13T20:07:47.783064Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/tls/https-wrong-san.json",
+          "sha256": "2e192e2bc465f90fafc3a2f9180d24e1bd433079914707fbf6eadddd2ae7da48"
+        }
+      ]
+    },
+    "ws-wrong-san": {
+      "collection_id": "primary-real-v4-tls",
+      "id": "ws-wrong-san",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "real negative TLS probe with specific certificate error",
+      "utc": "2026-11-13T20:07:47.787369Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/tls/ws-wrong-san.json",
+          "sha256": "3f251ffcb56c18880273489c13417f8e3b89550d8d49a14f0a249f841eb9bb09"
+        }
+      ]
+    },
+    "https-expired": {
+      "collection_id": "primary-real-v4-tls",
+      "id": "https-expired",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "real negative TLS probe with specific certificate error",
+      "utc": "2026-11-13T20:07:47.792573Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/tls/https-expired.json",
+          "sha256": "18c11b865741719f863eb82b20b22831a96f78a98e0e46c1de4aabf5ebcb5513"
+        }
+      ]
+    },
+    "ws-expired": {
+      "collection_id": "primary-real-v4-tls",
+      "id": "ws-expired",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "real negative TLS probe with specific certificate error",
+      "utc": "2026-11-13T20:07:47.801379Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/tls/ws-expired.json",
+          "sha256": "03c1e9e8fccead888cdebee2276583784f96df227d9d8ee06e2db92db9ed2a18"
+        }
+      ]
+    },
+    "wt-wrong-pin": {
+      "collection_id": "primary-real-v4-tls",
+      "id": "wt-wrong-pin",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "real WebTransport negative TLS probe",
+      "utc": "2026-11-13T20:07:47.803801Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/tls/wt-wrong-pin.json",
+          "sha256": "65be79d4f145fa01f8b9f6dfac08595e16352e5b8059ac352118fb2e4f3cb12d"
+        }
+      ]
+    },
+    "wt-expired": {
+      "collection_id": "primary-real-v4-tls",
+      "id": "wt-expired",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "real WebTransport negative TLS probe",
+      "utc": "2026-11-13T20:07:47.805996Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/tls/wt-expired.json",
+          "sha256": "ad83467b8cefb2032dffc43e9c162c8018f0d08b3961e2038dc6ef8d3980e321"
+        }
+      ]
+    }
+  }
+}

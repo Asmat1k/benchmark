@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "series_id": "browser-bandwidth-v4.9r51339s",
+  "attempts": [
+    {
+      "block_id": "b0",
+      "session_id": "s0",
+      "attempt_id": "b0-a0",
+      "profile": "baseline",
+      "order_index": 0,
+      "modes": [
+        "WS",
+        "WT-D",
+        "WT-S"
+      ],
+      "seed": 7945651613095297726,
+      "status": "complete",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    }
+  ]
+}

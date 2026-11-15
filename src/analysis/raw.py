@@ -49,12 +49,12 @@ def validate_hashes(folder):
     return checksums
 
 
-def validate_stabilization(folder, plan):
+def validate_stabilization(folder, plan, exploratory=False):
     stabilization = read(folder/"stabilization.json")
     require(stabilization["empty_queue_window_ms"] >= 1000 and stabilization["wait_limit_s"] <= 30,
             "stabilization bounds")
     queues = [q for q in read(folder/"qdisc-stable.json") if q["kind"] == "netem"]
-    require(len(queues) == 2 and all(q["backlog"] == 0 and q["qlen"] == 0 for q in queues), "queues not empty")
+    require(len(queues) == 2 and (exploratory or all(q["backlog"] == 0 and q["qlen"] == 0 for q in queues)), "queues not empty")
     if plan.get("execution_policy") != "finite-browser-study-v1":
         require(stabilization["stable"], "stabilization")
         return
@@ -70,12 +70,19 @@ def validate_stabilization(folder, plan):
     comparison = compare(*summaries)
     require(comparison == read(folder/f"stabilization-{attempt}-comparison.json"), "stabilization comparison correspondence")
     recovered = comparison["status"] == "passed"
-    require(stabilization["stable"] is recovered and stabilization["cpu_recovered"] is recovered,
-            "stabilization CPU observation mismatch")
     snapshots = rows(folder/f"stabilization-{attempt}-queues.jsonl")
-    require(len(snapshots) == 11 and all(len([q for q in snapshot if q["kind"] == "netem"]) == 2 and
+    empty_window = len(snapshots) == 11 and all(len([q for q in snapshot if q["kind"] == "netem"]) == 2 and
             all(q["backlog"] == q["qlen"] == 0 for q in snapshot if q["kind"] == "netem")
-            for snapshot in snapshots), "stabilization empty queue window")
+            for snapshot in snapshots)
+    if exploratory:
+        require(snapshots and all(len([q for q in snapshot if q["kind"] == "netem"]) == 2
+                                 for snapshot in snapshots), "stabilization queue observations missing")
+        require(stabilization["stable"] is (recovered and empty_window) and
+                stabilization["cpu_recovered"] is recovered, "stabilization CPU observation mismatch")
+    else:
+        require(stabilization["stable"] is recovered and stabilization["cpu_recovered"] is recovered,
+                "stabilization CPU observation mismatch")
+        require(empty_window, "stabilization empty queue window")
 
 
 def diagnostic_interval(schedule, default):
@@ -213,7 +220,22 @@ def validate_raw(folder, schedule_file, config_root=ROOT / "configs"):
     require(counters["active"] == 0, "server not idle")
     require(all(groups["server"][0][p] == counters[p] for p in ("warmup", "measurement")), "schema/server snapshot")
     if (folder / "schedule.json").exists():
-        validate_stabilization(folder, config["plan"])
+        exploratory = False
+        if (folder/'execution-policy.json').exists():
+            from execution import VERSION, is_exploratory
+            require(is_exploratory(schedule_file.parent), 'exploratory raw requires explicit series admission')
+            from admission import checked, sources
+            admission = read(schedule_file.parent/'admission.json')
+            require(admission['source_hashes'] == sources(), 'exploratory raw source changed')
+            require(read(schedule_file) == read(checked(admission['schedule'])), 'exploratory raw schedule changed')
+            admitted_policy = admission['policy']
+            policy = read(checked(admitted_policy))
+            require(policy['execution_policy'] == VERSION, 'exploratory raw policy scope')
+            checked(policy['document'])
+            require(read(folder/'execution-policy.json') == dict(execution_policy=VERSION,policy=admitted_policy),
+                    'raw execution policy mismatch')
+            exploratory = True
+        validate_stabilization(folder, config["plan"], exploratory)
     from resources import validate_resources
     validate_resources(groups["resource"], read(folder / "resource-window.json"))
     if run.get("monitoring") == "off":

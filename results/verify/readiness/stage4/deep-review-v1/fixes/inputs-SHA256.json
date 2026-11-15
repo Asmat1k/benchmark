@@ -1,0 +1,11 @@
+{
+  "AGENTS.md": "9ab52434a7a82d98096f68814aeb34ec94bf78fd33c5041fdde39f5272022f08",
+  "docker/calibration_probe.py": "98facb5564f5d414c3f6a8bf6b73a4402e5751451e217cb76f4103429a2cbd8a",
+  "docker/calibration.sh": "d6b45e260cb81ec8e9b994a9a88da1b48b28da027154c43d3471e9cc8234261e",
+  "docker/sender-diagnostic.sh": "6fc052a4d34c6a4c30617a462c89a761c1d23802ce8355961fe1b856da1cf4a7",
+  "docker/Dockerfile.router": "76cf8be1edb9a931f020a02b6364dd13bf450b5aedb3fa4b46e13d50d98795a6",
+  "results/verify/readiness/stage4/cause-diagnostic-v1/wait-comparison.json": "fc96510c153ea3fe4f9d52232c5aa7ccec43872c73651e5b4e1eada46b138118",
+  "results/verify/readiness/stage4/deep-review-v1/fixes/tcpdump-version.txt": "4e44488d58db01fd32e863b7081121459a190e5101119029be3c92fc31f972cf",
+  "results/verify/readiness/stage4/deep-review-v1/fixes/tcpdump-help.txt": "fdb73802cffb442f2cd1fa966209f4f7c4d4c6fb193634af891eb86faf21f11b",
+  "results/verify/readiness/stage4/deep-review-v1/fixes/research.md": "e7558789b1cf46555c8ee19f9086b24fb33536a5f56b68f339e20da369231147"
+}

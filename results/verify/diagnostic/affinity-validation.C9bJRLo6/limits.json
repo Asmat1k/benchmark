@@ -1,0 +1,7 @@
+[
+{"id":"sha256:356b2e1af8773aaf688f3c4e03bbfa73b2c835d88be0a76278030cf55d1c1641","role":"/wswt-affinity-validation-c9bjrlo6-browser-1","cpu":2000000000,"memory":3221225472,"shm":1073741824}
+,
+{"id":"sha256:d78a80d31724881c1adaa57005fae37f4f23e0013945dac759d7ee1f76b6b74d","role":"/wswt-affinity-validation-c9bjrlo6-router-1","cpu":1000000000,"memory":536870912,"shm":67108864}
+,
+{"id":"sha256:c2c60585a64d04e8dd7dd6a674625c0aec44cdc385561c8864dab734fbf19c44","role":"/wswt-affinity-validation-c9bjrlo6-server-1","cpu":2000000000,"memory":1073741824,"shm":67108864}
+]

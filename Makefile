@@ -21,7 +21,11 @@ measure:
 
 .PHONY: analyze analysis-test
 analyze:
-	sh docker/analyze.sh "$(SERIES)"
+	sh docker/analyze.sh "$(SERIES)" $(ARGS)
+
+.PHONY: exploratory-prepare
+exploratory-prepare:
+	docker run --rm --network none -e PYTHONDONTWRITEBYTECODE=1 -e BENCH_RELEASE_COMMIT="$$(git rev-parse HEAD)" -v "$(CURDIR):/bench" -v "$(CURDIR):$(CURDIR)" -w /bench wswt-bench-analyzer:dev python -B src/analysis/exploratory.py prepare "$(SERIES_DIR)" --environment "$(ENVIRONMENT)" --tls "$(SERIES_TLS_DIR)"
 
 analysis-test:
 	docker run --rm --network none -e PYTHONDONTWRITEBYTECODE=1 -e MPLCONFIGDIR=/tmp/matplotlib -v "$(CURDIR):/bench" -w /bench wswt-bench-analyzer:dev python -m unittest discover -s src/analysis -p 'test_analysis*.py' -v

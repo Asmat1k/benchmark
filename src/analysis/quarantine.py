@@ -5,6 +5,9 @@ from raw import read, write
 
 
 def quarantine(directory, index, project):
+    from execution import is_exploratory
+    if is_exploratory(directory):
+        return
     (directory / "STOP").write_text(f"incomplete_log/OOM/orchestration: {project}\n")
     schedule = read(directory/"schedule.json")
     failed = schedule["runs"][index]

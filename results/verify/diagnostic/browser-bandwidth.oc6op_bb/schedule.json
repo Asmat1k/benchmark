@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "series": "diagnostic",
+  "series_id": "browser-bandwidth.oc6op_bb",
+  "master_seed": 20261108,
+  "blocks": [
+    {
+      "block_id": "b0",
+      "session_id": "s0",
+      "attempt_id": "b0-a0",
+      "profile": "baseline",
+      "order_index": 0,
+      "modes": [
+        "WT-S",
+        "WT-D",
+        "WS"
+      ],
+      "seed": 2783496018234422077,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "b0-a0-m0",
+      "mode": "WT-S",
+      "nonce": "1739914823457055607",
+      "forward_seed": 6587347984053701732,
+      "reverse_seed": 16335026347968058317,
+      "block_id": "b0",
+      "session_id": "s0",
+      "attempt_id": "b0-a0",
+      "profile": "baseline",
+      "order_index": 0,
+      "replacement_of": null
+    },
+    {
+      "run_id": "b0-a0-m1",
+      "mode": "WT-D",
+      "nonce": "689164061528827051",
+      "forward_seed": 551767867548804151,
+      "reverse_seed": 1965089972112899922,
+      "block_id": "b0",
+      "session_id": "s0",
+      "attempt_id": "b0-a0",
+      "profile": "baseline",
+      "order_index": 0,
+      "replacement_of": null
+    },
+    {
+      "run_id": "b0-a0-m2",
+      "mode": "WS",
+      "nonce": "13365282798959223532",
+      "forward_seed": 5710310841365506353,
+      "reverse_seed": 10313425026250938030,
+      "block_id": "b0",
+      "session_id": "s0",
+      "attempt_id": "b0-a0",
+      "profile": "baseline",
+      "order_index": 0,
+      "replacement_of": null
+    }
+  ],
+  "generator_hz": 20
+}

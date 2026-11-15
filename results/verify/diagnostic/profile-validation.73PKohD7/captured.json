@@ -1,0 +1,178 @@
+[
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/browser-neighbors.json",
+    "sha256": "1848a38ed421ab1ba8238951db4f59d1c550000e3b77270fd0ae3956f1c837cb"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/browser-route.txt",
+    "sha256": "4ef09f4c3a50ebfc0b899ea7b4f88917f8f4997e14f22543b50c1fe30fb61813"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/collector.sh",
+    "sha256": "57a723266fbbb89c512f2df4c0baa84c3ebbb8d5d43678b46bcf6cd22acda788"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/commit",
+    "sha256": "0d5a3531671115ac5657db7cc4340ad5f0dbb60991b84d86a2c05b8a9d9931ff"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/ended",
+    "sha256": "f0bf2ee28e7997de7a79efdf909b6afbcc3203f450d4be1fe4c7b06f2fa36fb7"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/exit",
+    "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/inspect.json",
+    "sha256": "f4cbbeec7b4d2088d9c7be5d4ab1e419013a3d6225a1a28ecd0d361e9980ffce"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/plan.md",
+    "sha256": "0879f7b7e988663f7a4b0c513b575499ce2e76097aa5227b20ed57f5c59d987f"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/r20p0-check/browser.log",
+    "sha256": "3e8ad83bde78ae2f24eef6d665b0a26db6cb17c077892904ba5d651fc68f3546"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/r20p0-check/browser.pcap",
+    "sha256": "55c492d093e7916cbe667d88cfff773830289634b984f3285e38443e2b2252f1"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/r20p0-check/capture-option",
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/r20p0-check/cpu-after.txt",
+    "sha256": "1f3a6836be6b0ee23d90fd8325c225bead4bdd12a46066665e6ece2908145dbc"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/r20p0-check/cpu-before.txt",
+    "sha256": "2208774a7dc20587c81dd2d743b86dd4d999a20c69a0936ff91d255e92981b99"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/r20p0-check/probe.json",
+    "sha256": "1c30ebdf209b70660601f181421a8dc9e0cec4367ba54c71af00f2504da18b01"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/r20p0-check/profile.txt",
+    "sha256": "82a72a270b44858f6d15dce6ecb66b0661fb4debf49966da0c36877d78a94d1e"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/r20p0-check/qdisc-after.json",
+    "sha256": "bce906e1de1b7ab044c67a66dca65afd052ff147fc778e38806fee697adf4010"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/r20p0-check/qdisc-before.json",
+    "sha256": "46f33173b00e2474df6b56063b5d6d8a83471cc60d9a63e6e1ffb80d0dd6a85b"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/r20p0-check/sender-cpu-after.txt",
+    "sha256": "416516e47379e558fe3c8e9a2a9edcb29908177407c09e55f63b0fda7f4bad82"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/r20p0-check/sender-cpu-before.txt",
+    "sha256": "eb124295572746633a12f8c7043da5ce6e83f2a3b8d38e7949e5c6fea5bc6705"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/r20p0-check/server.log",
+    "sha256": "a2a6a4f7c461b097996df80bb375862cdc9c4ee2198bf5df4a8c6136eedd8c06"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/r20p0-check/server.pcap",
+    "sha256": "af1fb37cc8bf01a0f61063db855ba8c8b07e9b21d0339c8c963f542a2555a8ac"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/r80p1-check/browser.log",
+    "sha256": "7a6f5d18d4b8c9f6a9381de35f1273d9b3dcc29edee8e7da91979ab7226e1386"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/r80p1-check/browser.pcap",
+    "sha256": "b5ebaaeaeda0ad57a78c4142a839ca646d5ba22ad6c15fcd3dc8ec388fbfb245"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/r80p1-check/capture-option",
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/r80p1-check/cpu-after.txt",
+    "sha256": "0bff6aaea775bbb668b54a68974d14d82468ac0ed28934b7225d07155ff33100"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/r80p1-check/cpu-before.txt",
+    "sha256": "8e219e05beb7591f6da696cca6b9a48381b8838289f8e64379fa3f6026e2570c"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/r80p1-check/probe.json",
+    "sha256": "2ca6fe6a5576ed1a0cfea3c245a8ca69a635b4ce83c5e7c0f00ccfdd126edd8a"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/r80p1-check/profile.txt",
+    "sha256": "d7b5f12908dc014985c82cc027a11504a7ca19a169afcc809978bbe816546717"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/r80p1-check/qdisc-after.json",
+    "sha256": "1238f81145af67083e131cc6a46b590b1ce7933f31270e37c125959b40703dc5"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/r80p1-check/qdisc-before.json",
+    "sha256": "289ab2955e36be346a6d89ccaccd75d885623eb95c34771ff88ac73c02782cd2"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/r80p1-check/sender-cpu-after.txt",
+    "sha256": "18b9eeda0e645716c23a04068261c52eb5d6eeff81a95b0d415859c8e521ffad"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/r80p1-check/sender-cpu-before.txt",
+    "sha256": "807ec38f92858a676e806ff949c7dd5993ae9393ee20ebd77a2b0ed918b6fcf9"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/r80p1-check/server.log",
+    "sha256": "460762a33d8cd3b7eb21a64cdada42ec70d15ec3629b38f5878c567ac757ea32"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/r80p1-check/server.pcap",
+    "sha256": "5df780a79de33dbdeb864ed87cf226266905dd2bab981c33a4a6608726c07fc3"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/router-browser-neighbors.json",
+    "sha256": "98c64b01d5561d8ffa37c6aa0984d9479fe9c9892e43beffccd464b353630934"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/router-links.txt",
+    "sha256": "439f74e7d789d85516b539b2fd8771d01ec789199eaeb7ba9aee3fb964b28f0b"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/router-server-neighbors.json",
+    "sha256": "e8bb5c39492955ac0134e5d0ecb590ec9fe7ef5fc82188106abc9c2d45026015"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/server-neighbors.json",
+    "sha256": "9048ea04ffb1a934e17bde3720ba15a4910a1d73d2f35ee22e3fe2135f47ab2b"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/server-route.txt",
+    "sha256": "472456cbab08d9d07afb0887d82644eaa54b5f1a17bf3c8c1f90f95cd70b969b"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/sources-after.json",
+    "sha256": "6fbb2df45336cb7e38483a4fe506ef42cca059346b9c95fa98b2eb313e773d54"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/sources-before.json",
+    "sha256": "6fbb2df45336cb7e38483a4fe506ef42cca059346b9c95fa98b2eb313e773d54"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/started",
+    "sha256": "2a21bcf191685bb0c948924939eeeaf1c4117717c9b0baa153e66e5cf793302b"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/tools/calibration_probe.py",
+    "sha256": "2181eb3c9fef144ce8369809cd5fa2b84c84944330cf74ead26dc5214b8d6639"
+  },
+  {
+    "path": "results/verify/diagnostic/profile-validation.73PKohD7/tools/probe.py",
+    "sha256": "9599182f614c016dc807ff1651d56c7d468e15c32f85facb4e69abf8a80fa88d"
+  }
+]

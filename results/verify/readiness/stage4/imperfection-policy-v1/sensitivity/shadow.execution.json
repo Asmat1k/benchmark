@@ -1,0 +1,9 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "results/verify/readiness/stage4/imperfection-policy-v1/sensitivity/shadow.py"
+  ],
+  "elapsed_s": 0.9016299247741699,
+  "exit": 0
+}

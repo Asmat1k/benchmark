@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "command": ["python3", "-B", "-m", "unittest", "-v", "observer_only_test"],
+  "cwd": "results/verify/readiness/stage4/practical-v1/timer-diagnostic",
+  "tests": 2,
+  "exit": 0,
+  "scope": "synthetic interval bracketing, boundary spikes retained in raw, no mutation, missing/reordered sample rejection; no network diagnostic executed"
+}

@@ -1,0 +1,12 @@
+{
+  "status": "practical_calibration_role_selected_draft_and_sensitivity_ready",
+  "user_selected_scope": "observed-period practical calibration; statistical protocol comparisons remain in mainexperiment",
+  "draft": "docs/readiness/practical-calibration-v1-draft.md",
+  "synthetic_scenarios": 57600,
+  "official_metric_crosschecks": 144,
+  "raw_changed": false,
+  "gate_code_changed": false,
+  "numeric_proposal_live": false,
+  "new_measurement_started": false,
+  "stage4_complete": false
+}

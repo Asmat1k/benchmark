@@ -1,0 +1,657 @@
+{
+  "status": "passed",
+  "reviewer": "Codex, actual primary evidence review; no independent reviewer claimed",
+  "review_preparation": "First local assertions corrected endpoint/router neighbor MAC direction and persistent namespace cumulative UDP/qdisc baselines; no collector/raw change or rerun",
+  "utc": "2026-11-13T19:52:49.154939+00:00",
+  "run": "results/verify/diagnostic/sender-diagnostic.Mbdvg8v6",
+  "execution": "results/verify/readiness/stage4/release-v3/qualification-execution.QnNt51TQ",
+  "sealed_files": 79,
+  "seal_sha256": "9eb76c92d42755db0b0d5150deb5c1eb5391d1787a03a1a80d2f898597b64a4c",
+  "source_snapshot_count": 13,
+  "source_inventory_count": 134,
+  "source_ENV_TLS_release_stable": true,
+  "neighbors": {
+    "browser-neighbors": {
+      "dst": "172.28.10.2",
+      "lladdr": "ce:a1:7f:80:ed:a5",
+      "state": [
+        "PERMANENT"
+      ]
+    },
+    "router-browser-neighbors": {
+      "dst": "172.28.10.10",
+      "lladdr": "e6:ec:80:42:a9:04",
+      "state": [
+        "PERMANENT"
+      ]
+    },
+    "server-neighbors": {
+      "dst": "172.28.20.2",
+      "lladdr": "fe:33:f9:45:38:ac",
+      "state": [
+        "PERMANENT"
+      ]
+    },
+    "router-server-neighbors": {
+      "dst": "172.28.20.10",
+      "lladdr": "d2:b5:7b:11:18:5b",
+      "state": [
+        "PERMANENT"
+      ]
+    }
+  },
+  "probes": [
+    {
+      "name": "baseline-q1",
+      "quality": {
+        "criteria_version": "udp-sender-v2",
+        "preliminary": true,
+        "status": "passed",
+        "reasons": [],
+        "limits": {
+          "version": "udp-sender-v2",
+          "max_late_pct": 1,
+          "max_lag_ms": 50,
+          "burst_window_ms": 10,
+          "max_burst_packets": 4
+        },
+        "historical_every_slot_pass": false,
+        "metrics": {
+          "count": 10000,
+          "late_slots": 19,
+          "late_pct": 0.19,
+          "lag_ms": {
+            "p50": 0.27407600000151433,
+            "p99": 1.7431389999983367,
+            "max": 32.67749299999559
+          },
+          "gap_ms": {
+            "min": 2.6175419999999576,
+            "p50": 9.999540999997407,
+            "p99": 10.988084000000526,
+            "max": 42.38829099999566
+          },
+          "late_groups": [
+            [
+              1063
+            ],
+            [
+              2901
+            ],
+            [
+              4241,
+              4242
+            ],
+            [
+              5748,
+              5749
+            ],
+            [
+              7555,
+              7556,
+              7557,
+              7558
+            ],
+            [
+              7814,
+              7815,
+              7816,
+              7817,
+              7818,
+              7819,
+              7820
+            ],
+            [
+              9065,
+              9066
+            ]
+          ],
+          "late_group_count": 7,
+          "peak_packets_1ms": 1,
+          "peak_packets_window": 4,
+          "observed_hz": 99.99976509806154
+        }
+      },
+      "captures": {
+        "browser": {
+          "types": {
+            "0800": 10000
+          },
+          "macs": [
+            [
+              "e6:ec:80:42:a9:04",
+              "ce:a1:7f:80:ed:a5"
+            ]
+          ],
+          "kernel_drops": 0
+        },
+        "server": {
+          "types": {
+            "0800": 10000
+          },
+          "macs": [
+            [
+              "d2:b5:7b:11:18:5b",
+              "fe:33:f9:45:38:ac"
+            ]
+          ],
+          "kernel_drops": 0
+        }
+      },
+      "resources": {
+        "browser": {
+          "samples": 105,
+          "duration_s": 104.421509298,
+          "udp_delta": {
+            "InDatagrams": 10000,
+            "NoPorts": 0,
+            "InErrors": 0,
+            "OutDatagrams": 10000,
+            "RcvbufErrors": 0,
+            "SndbufErrors": 0,
+            "InCsumErrors": 0,
+            "IgnoredMulti": 0,
+            "MemErrors": 0
+          },
+          "cpu_usage_usec": 4300740,
+          "throttle_usec": 0,
+          "oom": 0,
+          "cpu_max": "max 100000",
+          "udp_first": {
+            "InDatagrams": 0,
+            "NoPorts": 0,
+            "InErrors": 0,
+            "OutDatagrams": 0,
+            "RcvbufErrors": 0,
+            "SndbufErrors": 0,
+            "InCsumErrors": 0,
+            "IgnoredMulti": 0,
+            "MemErrors": 0
+          },
+          "udp_last": {
+            "InDatagrams": 10000,
+            "NoPorts": 0,
+            "InErrors": 0,
+            "OutDatagrams": 10000,
+            "RcvbufErrors": 0,
+            "SndbufErrors": 0,
+            "InCsumErrors": 0,
+            "IgnoredMulti": 0,
+            "MemErrors": 0
+          },
+          "coverage": "cumulative UDP counters bracket baseline to baseline+10000; exact absolute sender start not recorded"
+        },
+        "server": {
+          "samples": 105,
+          "duration_s": 104.486722214,
+          "udp_delta": {
+            "InDatagrams": 10000,
+            "NoPorts": 0,
+            "InErrors": 0,
+            "OutDatagrams": 10000,
+            "RcvbufErrors": 0,
+            "SndbufErrors": 0,
+            "InCsumErrors": 0,
+            "IgnoredMulti": 0,
+            "MemErrors": 0
+          },
+          "cpu_usage_usec": 1371071,
+          "throttle_usec": 0,
+          "oom": 0,
+          "cpu_max": "max 100000",
+          "udp_first": {
+            "InDatagrams": 0,
+            "NoPorts": 0,
+            "InErrors": 0,
+            "OutDatagrams": 0,
+            "RcvbufErrors": 0,
+            "SndbufErrors": 0,
+            "InCsumErrors": 0,
+            "IgnoredMulti": 0,
+            "MemErrors": 0
+          },
+          "udp_last": {
+            "InDatagrams": 10000,
+            "NoPorts": 0,
+            "InErrors": 0,
+            "OutDatagrams": 10000,
+            "RcvbufErrors": 0,
+            "SndbufErrors": 0,
+            "InCsumErrors": 0,
+            "IgnoredMulti": 0,
+            "MemErrors": 0
+          },
+          "coverage": "cumulative UDP counters bracket baseline to baseline+10000; exact absolute sender start not recorded"
+        },
+        "router": {
+          "samples": 105,
+          "first_uptime": 108790.46,
+          "last_uptime": 108895.29,
+          "coverage": "cumulative qdisc counters bracket baseline to baseline+10000; all samples retained"
+        }
+      },
+      "qdisc": {
+        "to_browser": {
+          "bytes": 2980000,
+          "packets": 10000,
+          "drops": 0
+        },
+        "to_server": {
+          "bytes": 2980000,
+          "packets": 10000,
+          "drops": 0
+        }
+      }
+    },
+    {
+      "name": "baseline-q2",
+      "quality": {
+        "criteria_version": "udp-sender-v2",
+        "preliminary": true,
+        "status": "passed",
+        "reasons": [],
+        "limits": {
+          "version": "udp-sender-v2",
+          "max_late_pct": 1,
+          "max_lag_ms": 50,
+          "burst_window_ms": 10,
+          "max_burst_packets": 4
+        },
+        "historical_every_slot_pass": false,
+        "metrics": {
+          "count": 10000,
+          "late_slots": 22,
+          "late_pct": 0.22,
+          "lag_ms": {
+            "p50": 0.2788109999964945,
+            "p99": 2.1430430000000342,
+            "max": 27.954759000000195
+          },
+          "gap_ms": {
+            "min": 2.543499999999767,
+            "p50": 10.000541000001249,
+            "p99": 11.40662500000326,
+            "max": 37.64583399999901
+          },
+          "late_groups": [
+            [
+              1587
+            ],
+            [
+              1797,
+              1798,
+              1799
+            ],
+            [
+              2245
+            ],
+            [
+              3299,
+              3300
+            ],
+            [
+              3503,
+              3504
+            ],
+            [
+              4541
+            ],
+            [
+              5047
+            ],
+            [
+              5271
+            ],
+            [
+              5514,
+              5515,
+              5516
+            ],
+            [
+              6722,
+              6723,
+              6724
+            ],
+            [
+              6872
+            ],
+            [
+              8373
+            ],
+            [
+              9583,
+              9584
+            ]
+          ],
+          "late_group_count": 13,
+          "peak_packets_1ms": 1,
+          "peak_packets_window": 4,
+          "observed_hz": 99.99975905548604
+        }
+      },
+      "captures": {
+        "browser": {
+          "types": {
+            "0800": 10000
+          },
+          "macs": [
+            [
+              "e6:ec:80:42:a9:04",
+              "ce:a1:7f:80:ed:a5"
+            ]
+          ],
+          "kernel_drops": 0
+        },
+        "server": {
+          "types": {
+            "0800": 10000
+          },
+          "macs": [
+            [
+              "d2:b5:7b:11:18:5b",
+              "fe:33:f9:45:38:ac"
+            ]
+          ],
+          "kernel_drops": 0
+        }
+      },
+      "resources": {
+        "browser": {
+          "samples": 105,
+          "duration_s": 104.437169506,
+          "udp_delta": {
+            "InDatagrams": 10000,
+            "NoPorts": 0,
+            "InErrors": 0,
+            "OutDatagrams": 10000,
+            "RcvbufErrors": 0,
+            "SndbufErrors": 0,
+            "InCsumErrors": 0,
+            "IgnoredMulti": 0,
+            "MemErrors": 0
+          },
+          "cpu_usage_usec": 4370039,
+          "throttle_usec": 0,
+          "oom": 0,
+          "cpu_max": "max 100000",
+          "udp_first": {
+            "InDatagrams": 10000,
+            "NoPorts": 0,
+            "InErrors": 0,
+            "OutDatagrams": 10000,
+            "RcvbufErrors": 0,
+            "SndbufErrors": 0,
+            "InCsumErrors": 0,
+            "IgnoredMulti": 0,
+            "MemErrors": 0
+          },
+          "udp_last": {
+            "InDatagrams": 20000,
+            "NoPorts": 0,
+            "InErrors": 0,
+            "OutDatagrams": 20000,
+            "RcvbufErrors": 0,
+            "SndbufErrors": 0,
+            "InCsumErrors": 0,
+            "IgnoredMulti": 0,
+            "MemErrors": 0
+          },
+          "coverage": "cumulative UDP counters bracket baseline to baseline+10000; exact absolute sender start not recorded"
+        },
+        "server": {
+          "samples": 105,
+          "duration_s": 104.477446881,
+          "udp_delta": {
+            "InDatagrams": 10000,
+            "NoPorts": 0,
+            "InErrors": 0,
+            "OutDatagrams": 10000,
+            "RcvbufErrors": 0,
+            "SndbufErrors": 0,
+            "InCsumErrors": 0,
+            "IgnoredMulti": 0,
+            "MemErrors": 0
+          },
+          "cpu_usage_usec": 1196735,
+          "throttle_usec": 0,
+          "oom": 0,
+          "cpu_max": "max 100000",
+          "udp_first": {
+            "InDatagrams": 10000,
+            "NoPorts": 0,
+            "InErrors": 0,
+            "OutDatagrams": 10000,
+            "RcvbufErrors": 0,
+            "SndbufErrors": 0,
+            "InCsumErrors": 0,
+            "IgnoredMulti": 0,
+            "MemErrors": 0
+          },
+          "udp_last": {
+            "InDatagrams": 20000,
+            "NoPorts": 0,
+            "InErrors": 0,
+            "OutDatagrams": 20000,
+            "RcvbufErrors": 0,
+            "SndbufErrors": 0,
+            "InCsumErrors": 0,
+            "IgnoredMulti": 0,
+            "MemErrors": 0
+          },
+          "coverage": "cumulative UDP counters bracket baseline to baseline+10000; exact absolute sender start not recorded"
+        },
+        "router": {
+          "samples": 105,
+          "first_uptime": 108898.39,
+          "last_uptime": 109003.28,
+          "coverage": "cumulative qdisc counters bracket baseline to baseline+10000; all samples retained"
+        }
+      },
+      "qdisc": {
+        "to_browser": {
+          "bytes": 2980000,
+          "packets": 10000,
+          "drops": 0
+        },
+        "to_server": {
+          "bytes": 2980000,
+          "packets": 10000,
+          "drops": 0
+        }
+      }
+    },
+    {
+      "name": "baseline-q3",
+      "quality": {
+        "criteria_version": "udp-sender-v2",
+        "preliminary": true,
+        "status": "passed",
+        "reasons": [],
+        "limits": {
+          "version": "udp-sender-v2",
+          "max_late_pct": 1,
+          "max_lag_ms": 50,
+          "burst_window_ms": 10,
+          "max_burst_packets": 4
+        },
+        "historical_every_slot_pass": false,
+        "metrics": {
+          "count": 10000,
+          "late_slots": 7,
+          "late_pct": 0.07,
+          "lag_ms": {
+            "p50": 0.2814040000012028,
+            "p99": 1.4831469999990077,
+            "max": 20.55299599999853
+          },
+          "gap_ms": {
+            "min": 2.631041999993613,
+            "p50": 10.001333000000159,
+            "p99": 11.177208000000064,
+            "max": 28.349749999993946
+          },
+          "late_groups": [
+            [
+              1844,
+              1845
+            ],
+            [
+              6153
+            ],
+            [
+              6778
+            ],
+            [
+              6781
+            ],
+            [
+              8187,
+              8188
+            ]
+          ],
+          "late_group_count": 5,
+          "peak_packets_1ms": 1,
+          "peak_packets_window": 3,
+          "observed_hz": 99.99969134108672
+        }
+      },
+      "captures": {
+        "browser": {
+          "types": {
+            "0800": 10000
+          },
+          "macs": [
+            [
+              "e6:ec:80:42:a9:04",
+              "ce:a1:7f:80:ed:a5"
+            ]
+          ],
+          "kernel_drops": 0
+        },
+        "server": {
+          "types": {
+            "0800": 10000
+          },
+          "macs": [
+            [
+              "d2:b5:7b:11:18:5b",
+              "fe:33:f9:45:38:ac"
+            ]
+          ],
+          "kernel_drops": 0
+        }
+      },
+      "resources": {
+        "browser": {
+          "samples": 105,
+          "duration_s": 104.429163172,
+          "udp_delta": {
+            "InDatagrams": 10000,
+            "NoPorts": 0,
+            "InErrors": 0,
+            "OutDatagrams": 10000,
+            "RcvbufErrors": 0,
+            "SndbufErrors": 0,
+            "InCsumErrors": 0,
+            "IgnoredMulti": 0,
+            "MemErrors": 0
+          },
+          "cpu_usage_usec": 4606536,
+          "throttle_usec": 0,
+          "oom": 0,
+          "cpu_max": "max 100000",
+          "udp_first": {
+            "InDatagrams": 20000,
+            "NoPorts": 0,
+            "InErrors": 0,
+            "OutDatagrams": 20000,
+            "RcvbufErrors": 0,
+            "SndbufErrors": 0,
+            "InCsumErrors": 0,
+            "IgnoredMulti": 0,
+            "MemErrors": 0
+          },
+          "udp_last": {
+            "InDatagrams": 30000,
+            "NoPorts": 0,
+            "InErrors": 0,
+            "OutDatagrams": 30000,
+            "RcvbufErrors": 0,
+            "SndbufErrors": 0,
+            "InCsumErrors": 0,
+            "IgnoredMulti": 0,
+            "MemErrors": 0
+          },
+          "coverage": "cumulative UDP counters bracket baseline to baseline+10000; exact absolute sender start not recorded"
+        },
+        "server": {
+          "samples": 105,
+          "duration_s": 104.507550797,
+          "udp_delta": {
+            "InDatagrams": 10000,
+            "NoPorts": 0,
+            "InErrors": 0,
+            "OutDatagrams": 10000,
+            "RcvbufErrors": 0,
+            "SndbufErrors": 0,
+            "InCsumErrors": 0,
+            "IgnoredMulti": 0,
+            "MemErrors": 0
+          },
+          "cpu_usage_usec": 1256110,
+          "throttle_usec": 0,
+          "oom": 0,
+          "cpu_max": "max 100000",
+          "udp_first": {
+            "InDatagrams": 20000,
+            "NoPorts": 0,
+            "InErrors": 0,
+            "OutDatagrams": 20000,
+            "RcvbufErrors": 0,
+            "SndbufErrors": 0,
+            "InCsumErrors": 0,
+            "IgnoredMulti": 0,
+            "MemErrors": 0
+          },
+          "udp_last": {
+            "InDatagrams": 30000,
+            "NoPorts": 0,
+            "InErrors": 0,
+            "OutDatagrams": 30000,
+            "RcvbufErrors": 0,
+            "SndbufErrors": 0,
+            "InCsumErrors": 0,
+            "IgnoredMulti": 0,
+            "MemErrors": 0
+          },
+          "coverage": "cumulative UDP counters bracket baseline to baseline+10000; exact absolute sender start not recorded"
+        },
+        "router": {
+          "samples": 105,
+          "first_uptime": 109006.31,
+          "last_uptime": 109111.19,
+          "coverage": "cumulative qdisc counters bracket baseline to baseline+10000; all samples retained"
+        }
+      },
+      "qdisc": {
+        "to_browser": {
+          "bytes": 2980000,
+          "packets": 10000,
+          "drops": 0
+        },
+        "to_server": {
+          "bytes": 2980000,
+          "packets": 10000,
+          "drops": 0
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Pcap snaplen96 proves full IDs/tag/header/accounting, not all256payload bytes; successful receive validates every full echoed payload",
+    "Collector has no qualification context.json; actual info/inspect/routes and unchanged external ENV/TLS references checked",
+    "No recorded absolute sender start; coverage demonstrated by complete endpoint/router counter brackets",
+    "Standalone sender-quality preliminary=true is descriptive hardcoded output; configs preliminary remains false",
+    "Qualification does not replace calibration or formal browser generator gate"
+  ]
+}

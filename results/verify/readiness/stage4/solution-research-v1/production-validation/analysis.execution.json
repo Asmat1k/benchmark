@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "-v",
+    "/Users/dobrov/Desktop/Code/ITMO/benchmark:/bench",
+    "-w",
+    "/bench",
+    "wswt-bench-analyzer:dev",
+    "python",
+    "-B",
+    "results/verify/readiness/stage4/solution-research-v1/production-validation/analyze.py",
+    "results/verify/diagnostic/affinity-validation.83SwishH",
+    "results/verify/readiness/stage4/solution-research-v1/production-validation/analysis.json"
+  ],
+  "elapsed_s": 1.0511140823364258,
+  "exit": 0
+}

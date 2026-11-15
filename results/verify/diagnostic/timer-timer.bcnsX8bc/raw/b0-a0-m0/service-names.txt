@@ -1,0 +1,3 @@
+"/wswt-d3-wswt-measure-ix69cmco-browser-1"
+"/wswt-d3-wswt-measure-ix69cmco-router-1"
+"/wswt-d3-wswt-measure-ix69cmco-server-1"

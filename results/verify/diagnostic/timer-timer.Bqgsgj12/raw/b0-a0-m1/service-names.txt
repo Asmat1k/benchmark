@@ -1,0 +1,3 @@
+"/wswt-d3-wswt-measure-lhdeln4j-browser-1"
+"/wswt-d3-wswt-measure-lhdeln4j-router-1"
+"/wswt-d3-wswt-measure-lhdeln4j-server-1"

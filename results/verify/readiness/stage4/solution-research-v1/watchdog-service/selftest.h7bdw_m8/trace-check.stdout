@@ -1,0 +1,1 @@
+{"status": "passed", "records": 20, "counts": {"recvfrom": {"entries": 20, "exits": 20, "success": 20, "terminal_outstanding": 0}, "sendto": {"entries": 20, "exits": 20, "success": 20, "terminal_outstanding": 0}}, "mode": "selftest", "zero_trace_loss": true, "pid_clock_brackets_valid": true}

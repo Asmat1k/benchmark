@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "scope": "Source-bound3x10000senderqualification, not scientificcalibration or generator",
+  "head": "d66559066b704fde567b6c9f92f57e2dcde22698",
+  "evidence": [
+    {
+      "path": "results/verify/readiness/stage4/solution-research-v1/qualification/review/primary-review.json",
+      "sha256": "16c365dd8005ad74961db42d459a401787eb7375ee484ab905979cbc701a0649"
+    },
+    {
+      "path": "results/verify/diagnostic/sender-diagnostic.6uYg6iiy/captured.json",
+      "sha256": "0789291e12ffcc9140d3a26220af6dde65b29aeaa8cfbaa452a140a37fbe0e4f"
+    },
+    {
+      "path": "results/verify/readiness/stage4/solution-research-v1/qualification/execution.meibnxq1/identity-after.json",
+      "sha256": "25ee850dbef55a1cfa54bb80c92b288d7268ca0237f5039a1616db788e3a8ab9"
+    },
+    {
+      "path": "results/verify/readiness/stage4/solution-research-v1/qualification/execution.meibnxq1/exit",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "results/verify/readiness/stage4/solution-research-v1/qualification/execution.meibnxq1/quality-summary.json",
+      "sha256": "29854795a6412b786780c2b0d7f37a21c49c18abb1b8c0fc987c4ff1c523d7cb"
+    }
+  ]
+}

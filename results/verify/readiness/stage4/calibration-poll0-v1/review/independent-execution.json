@@ -1,0 +1,15 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "results/verify/readiness/stage4/calibration-poll0-v1/review/independent.py"
+  ],
+  "cwd": "/Users/dobrov/Desktop/Code/ITMO/benchmark",
+  "started": "2026-11-14T09:51:05.051315+00:00",
+  "ended": "2026-11-14T09:51:05.825102+00:00",
+  "elapsed_s": 0.7738002499972936,
+  "exit": 0,
+  "stdout": "results/verify/readiness/stage4/calibration-poll0-v1/review/independent.json",
+  "stderr": "results/verify/readiness/stage4/calibration-poll0-v1/review/independent.stderr.log",
+  "purpose": "Persist deterministic read-only output of completed independent analysis; no new data collection"
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "run_id": "b2-a0-m0",
+  "status": "complete",
+  "warmup_rows": 200,
+  "measurement_rows": 1200,
+  "reason": null
+}

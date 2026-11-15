@@ -117,7 +117,9 @@ fi
 stage=browser
 timer=no
 if [ -f "$run_dir/collect-timer" ]; then timer=yes; fi
-compose exec -T -e BENCH_TIMER="$timer" -e BENCH_TIMEOUT="$run_timeout" browser sh /usr/local/bin/bench-browser measure
+checkpoint=no
+if [ -f "$run_dir/exploratory-execution" ]; then checkpoint=yes; fi
+compose exec -T -e BENCH_TIMER="$timer" -e BENCH_TIMEOUT="$run_timeout" -e BENCH_CHECKPOINT="$checkpoint" browser sh /usr/local/bin/bench-browser measure
 if [ "$timer" = yes ]; then compose cp browser:/tmp/clock-samples.json "$run_dir/clock-samples.json"; fi
 compose cp browser:/tmp/page.json "$run_dir/page.json"
 compose cp browser:/tmp/security.json "$run_dir/security.json"
@@ -147,12 +149,14 @@ while [ "$(date +%s)" -lt "$deadline" ]; do
     stable=1
     queues_empty=1
     cpu_recovered=true
-    compose exec -T router sh -c 'for i in 0 1 2 3 4 5 6 7 8 9 10; do
+    compose exec -T router sh -c 'queue_invalid=0
+    for i in 0 1 2 3 4 5 6 7 8 9 10; do
       snapshot=$(tc -s -j qdisc show)
       printf "%s\n" "$snapshot"
-      printf "%s\n" "$snapshot" | jq -e "[.[] | select(.kind==\"netem\")] | length==2 and all(.[]; .backlog==0 and .qlen==0)" >/dev/null || exit 1
+      printf "%s\n" "$snapshot" | jq -e "[.[] | select(.kind==\"netem\")] | length==2 and all(.[]; .backlog==0 and .qlen==0)" >/dev/null || { queue_invalid=1; [ "$1" = yes ] || exit 1; }
       [ "$i" = 10 ] || sleep .1
-    done' > "$run_dir/stabilization-$attempt-queues.jsonl" || { stable=0; queues_empty=0; }
+    done
+    exit "$queue_invalid"' sh "$checkpoint" > "$run_dir/stabilization-$attempt-queues.jsonl" || { stable=0; queues_empty=0; }
     if [ -f "$run_dir/observe-cpu-recovery" ]; then
         quiet_cpu "stabilization-$attempt"
     else
@@ -161,10 +165,13 @@ while [ "$(date +%s)" -lt "$deadline" ]; do
     analyze src/analysis/stabilization_cpu.py "$run_dir" baseline "stabilization-$attempt" > "$run_dir/stabilization-$attempt-comparison.json" || { stable=0; cpu_recovered=false; }
     [ "$(date +%s)" -le "$deadline" ] || stable=0
     test "$stable" != 1 || break
+    if [ "$checkpoint" = yes ]; then break; fi
     if [ -f "$run_dir/observe-cpu-recovery" ] && [ "$queues_empty" = 1 ]; then break; fi
 done
 test "$(date +%s)" -le "$deadline"
-if [ -f "$run_dir/observe-cpu-recovery" ]; then
+if [ "$checkpoint" = yes ]; then
+    :
+elif [ -f "$run_dir/observe-cpu-recovery" ]; then
     test "$queues_empty" = 1
 else
     test "$stable" = 1

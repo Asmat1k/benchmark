@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "-v",
+    "/Users/dobrov/Desktop/Code/ITMO/benchmark:/bench",
+    "-w",
+    "/bench",
+    "wswt-bench-analyzer:dev",
+    "python",
+    "-B",
+    "results/verify/readiness/stage4/calibration-poll0-v1/review/primary.py"
+  ],
+  "start": 1794649780.587497,
+  "elapsed_s": 2.021934986114502,
+  "exit": 0
+}

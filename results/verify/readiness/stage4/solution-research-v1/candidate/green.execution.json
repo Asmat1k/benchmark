@@ -1,0 +1,28 @@
+{
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "-e",
+    "PYTHONPATH=docker:src/analysis",
+    "-v",
+    "/Users/dobrov/Desktop/Code/ITMO/benchmark:/bench",
+    "-w",
+    "/bench",
+    "wswt-bench-analyzer:dev",
+    "python",
+    "-B",
+    "-m",
+    "unittest",
+    "-v",
+    "calibration_probe_test",
+    "calibration_test",
+    "calibration_neighbors_test",
+    "browser_bandwidth_test",
+    "sender_scheduling_check_test"
+  ],
+  "elapsed_s": 7.428816795349121,
+  "exit": 0
+}

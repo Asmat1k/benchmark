@@ -1,0 +1,51 @@
+{
+  "platform": "linux/arm64",
+  "bases": {
+    "golang:1.24.6-bookworm": {
+      "index": "sha256:ab1d1823abb55a9504d2e3e003b75b36dbeb1cbcc4c92593d85a84ee46becc6c",
+      "platform_manifest": "sha256:97b2dc9975299f62ff2d1f262b6b5aad2f35da43471ec379fdf164a7e0110e59"
+    },
+    "node:22.18.0-bookworm": {
+      "index": "sha256:3266bc9e8bee1acc8a77386eefaf574987d2729b8c5ec35b0dbd6ddbc40b0ce2",
+      "platform_manifest": "sha256:05a8ca7db7ad22dff0ba1a78d108658c0f4c788e583bd7809ab8d7a32d8cbc86"
+    },
+    "mcr.microsoft.com/playwright:v1.55.0-noble": {
+      "index": "sha256:b27e719ecbfef153e13fd24e8341736733bf2658b229677eb21ff57ff5d7fb29",
+      "platform_manifest": "sha256:7e20a8225950eb93a9d306a917b05d822a68a67333973e254f1b0cd86c0f3742"
+    },
+    "debian:bookworm-slim": {
+      "index": "sha256:734a72b3d6142a71993b4bc580ca01d8ca687f77a2c422d96a961d3376b179bc",
+      "platform_manifest": "sha256:ec8534cda2cb30f29f44f23e135297af7a1496f2990fd8e4e84aa36b081a757a"
+    },
+    "python:3.12.11-slim-bookworm": {
+      "index": "sha256:519591d6871b7bc437060736b9f7456b8731f1499a57e22e6c285135ae657bf7",
+      "platform_manifest": "sha256:9bb659dc6d5218917236f3711e866a5634bb4c2f208de9d4533aa4863f57c1d3"
+    }
+  },
+  "built": [
+    {
+      "tag": "wswt-bench-server:dev",
+      "image_id": "sha256:1679f0a0160b7069c0b950628cb65355b68dc08fa3187e24ce8a580bbad5bc32",
+      "os": "linux",
+      "architecture": "arm64"
+    },
+    {
+      "tag": "wswt-bench-browser:dev",
+      "image_id": "sha256:12dda1840cc60c292b164bee9f6887e9f015cedb8ea32803fd04a8321ac4fd34",
+      "os": "linux",
+      "architecture": "arm64"
+    },
+    {
+      "tag": "wswt-bench-router:dev",
+      "image_id": "sha256:650e675a6be98457766cd3cd682720d875ab16c0770972ddde35e609d7018239",
+      "os": "linux",
+      "architecture": "arm64"
+    },
+    {
+      "tag": "wswt-bench-analyzer:dev",
+      "image_id": "sha256:2abc19c5fa5ab8554e2b1ccb2985ba91e16f77c67309f93d689f729a5d6ff6d7",
+      "os": "linux",
+      "architecture": "arm64"
+    }
+  ]
+}

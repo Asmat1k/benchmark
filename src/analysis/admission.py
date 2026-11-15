@@ -412,6 +412,9 @@ def validate_reproduction_outcome(report, finite=False):
 
 
 def admit(directory, kind=None, validate_completion=True, initial=False):
+    if (directory/'admission.json').is_file() and read(directory/'admission.json').get('execution_policy') == 'exploratory-browser-study-v2':
+        from exploratory import validate
+        return validate(directory, kind=kind or 'real', initial=initial)
     kind=kind or (_CONTROLLER[1] if _CONTROLLER is not None and _CONTROLLER[0]==directory.resolve() else "real")
     trusted=_CONTROLLER is not None and _CONTROLLER[0]==directory.resolve() and _CONTROLLER[1]==kind
     require(trusted or initial or _DEEP>0, 'trusted controller admission or full initial validation required')

@@ -1,0 +1,6 @@
+{"schema_version": 1, "event_index": 0, "run_id": "b0-a0-m0", "t_ms": 556, "type": "phase_transition", "id": {"phase": 0, "nonce": "17327053889213832616", "seq": "0"}, "details": {}}
+{"schema_version": 1, "event_index": 1, "run_id": "b0-a0-m0", "t_ms": 557, "type": "first_correct_echo", "id": {"phase": 0, "nonce": "17327053889213832616", "seq": "0"}, "details": {}}
+{"schema_version": 1, "event_index": 2, "run_id": "b0-a0-m0", "t_ms": 605.7999999821186, "type": "phase_transition", "id": {"phase": 1, "nonce": "17327053889213832616", "seq": "0"}, "details": {}}
+{"schema_version": 1, "event_index": 3, "run_id": "b0-a0-m0", "t_ms": 606.9000000059605, "type": "first_correct_echo", "id": {"phase": 1, "nonce": "17327053889213832616", "seq": "0"}, "details": {}}
+{"schema_version": 1, "event_index": 4, "run_id": "b0-a0-m0", "t_ms": 657.7999999821186, "type": "first_correct_echo", "id": {"phase": 1, "nonce": "17327053889213832616", "seq": "1"}, "details": {}}
+{"schema_version": 1, "event_index": 5, "run_id": "b0-a0-m0", "t_ms": 709.2999999821186, "type": "first_correct_echo", "id": {"phase": 1, "nonce": "17327053889213832616", "seq": "2"}, "details": {}}

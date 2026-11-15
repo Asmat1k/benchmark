@@ -1,0 +1,3 @@
+"/wswt-d3-wswt-measure-yugngalq-browser-1"
+"/wswt-d3-wswt-measure-yugngalq-router-1"
+"/wswt-d3-wswt-measure-yugngalq-server-1"

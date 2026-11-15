@@ -1,0 +1,2 @@
+172.28.10.0/24 dev bench0 proto kernel scope link src 172.28.10.10 
+172.28.20.10 via 172.28.10.2 dev bench0 

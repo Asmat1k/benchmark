@@ -1,0 +1,4 @@
+{
+  "cpu1": "entries: 167910\noverrun: 0\ncommit overrun: 0\nbytes: 8987156\noldest event ts: 130598.042997\nnow ts: 130700.383338\ndropped events: 0\nread events: 0\n",
+  "cpu0": "entries: 133685\noverrun: 0\ncommit overrun: 0\nbytes: 7106192\noldest event ts: 130598.035232\nnow ts: 130700.383382\ndropped events: 0\nread events: 0\n"
+}

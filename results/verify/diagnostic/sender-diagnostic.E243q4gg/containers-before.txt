@@ -1,0 +1,3 @@
+CONTAINER ID                                                       IMAGE                     COMMAND                                   CREATED         STATUS                    PORTS                                         NAMES
+055a18b9e8108702ec2e3436e111420e2ae84c84feb8b9a9049e66a490a4cdfa   wswt-bench-analyzer:dev   "python -B src/analysis/series.py hold"   2 seconds ago   Up 1 second                                                             quizzical_pare
+16479141beddf1af7cf2b66e2e1e631fe0cd16b857180fd70804e3486a1057a6   qdrant/qdrant:v1.18.3     "./entrypoint.sh"                         3 months ago    Up 32 hours (unhealthy)   0.0.0.0:6333->6333/tcp, [::]:6333->6333/tcp   ai-grepa-qdrant-1

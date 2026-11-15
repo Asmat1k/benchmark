@@ -1,0 +1,56 @@
+{
+  "collection_id": "primary-real-v3-build",
+  "gate": "build",
+  "id": "native-platform",
+  "actual": true,
+  "scope": "actual host, Docker and unchanged release images",
+  "command": "uname -m; docker info; docker image inspect",
+  "observations": [
+    {
+      "tag": "wswt-bench-server:dev",
+      "image_id": "sha256:c2c60585a64d04e8dd7dd6a674625c0aec44cdc385561c8864dab734fbf19c44",
+      "os": "linux",
+      "architecture": "arm64"
+    },
+    {
+      "tag": "wswt-bench-browser:dev",
+      "image_id": "sha256:356b2e1af8773aaf688f3c4e03bbfa73b2c835d88be0a76278030cf55d1c1641",
+      "os": "linux",
+      "architecture": "arm64"
+    },
+    {
+      "tag": "wswt-bench-router:dev",
+      "image_id": "sha256:d78a80d31724881c1adaa57005fae37f4f23e0013945dac759d7ee1f76b6b74d",
+      "os": "linux",
+      "architecture": "arm64"
+    },
+    {
+      "tag": "wswt-bench-analyzer:dev",
+      "image_id": "sha256:9e263785dc135db52a216bc358c38218cf3d98f178a9981a365ca79cda7cbd62",
+      "os": "linux",
+      "architecture": "arm64"
+    }
+  ],
+  "files": [
+    {
+      "path": "results/verify/readiness/stage4/release-v3/environment-preflight.json",
+      "sha256": "e75129cd872d9b0a349cd28d7c292ca5aac7cc735e6551325d50a240aa2e79df"
+    },
+    {
+      "path": "results/verify/readiness/stage2-preflight/release-evidence.json",
+      "sha256": "e60858a2951fa0126aec68170064257e1a9cf8cbe44999a8b2b8dd005b1a2ad6"
+    }
+  ],
+  "preparer": {
+    "path": "/bench/docs/readiness/stage4-primary-v3.py",
+    "sha256": "d381d8cb8633a2100a6600f2bd331d4a50287c3d292b6f7429b76ac0c447d033"
+  },
+  "source_inventory": {
+    "path": "results/verify/readiness/stage4/release-v3/source-inventory.json",
+    "sha256": "f1a20fb6d0891da7cbf9acd755cd3e87274ed7748fcba61e39564806f5e8c795"
+  },
+  "applicability": {
+    "path": "results/verify/readiness/stage4/release-v3/release.json",
+    "sha256": "5f52be9506c654108d497bb45cfd46cf72e2ac86f33f0c68f9b852fe751d0a87"
+  }
+}

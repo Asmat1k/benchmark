@@ -1,0 +1,47 @@
+{
+  "collection_id": "calibration.sFWOAzbo",
+  "reviewer": "Codex root integration with separate internal integrity and numeric reviewers; not external review",
+  "rationale": "146sealedfiles and all14echo+4saturation checked. Setup enforces MTU1500; offload readbacks preserved, complete echo pcap header/ID/prefix parsing found no fragmentation. Echo dropped IDs exactly match netem counters; saturation overflow is deliberate offered>capacity and disclosed separately. RTT uses every returned packet, missing loss1 timing remains unknown; no sender-lag subtraction. Observed medians/proxy only, no CI/stationarity claim. Sender r80p1-after fails fixed late and shadow budgets; no repeat, exclusion or threshold change.",
+  "trace_review": {
+    "independent_units": false,
+    "observed_period_reviewed": true,
+    "mtu_1500": true,
+    "no_fragmentation": true,
+    "no_unexpected_overflow": true,
+    "headers_accounted": true,
+    "survivor_bias_reviewed": true,
+    "reverse_denominator_reviewed": true,
+    "independent_direction_seeds": true,
+    "backlog_reviewed": true,
+    "main_bandwidth_fraction": 0.008380318905658764
+  },
+  "evidence": [
+    {
+      "path": "results/verify/readiness/stage4/practical-v1/full-calibration/review/integrity-independent-with-neighbors.json",
+      "sha256": "6613384feb3bb6a3ba49b5ed4670466deb840783a5574b0607a4ae5097756387"
+    },
+    {
+      "path": "results/verify/readiness/stage4/practical-v1/full-calibration/review/integrity-independent.md",
+      "sha256": "ca0ca687b1f513a779d34060a8b044ca5807ace0201412d88b9e3303bed2162e"
+    },
+    {
+      "path": "results/verify/readiness/stage4/practical-v1/full-calibration/review/method-results.json",
+      "sha256": "993054ab09e049f452ddea27d02a5c5a676a290f8bf75048ec0d43a7b7216d43"
+    },
+    {
+      "path": "results/verify/readiness/stage4/practical-v1/full-calibration/review/method-results.md",
+      "sha256": "ff8665dcf142fccb46c3ddce5e12851e242520df5d70d17057d8daacf8813684"
+    },
+    {
+      "path": "results/verify/readiness/stage4/practical-v1/full-calibration/review/bandwidth-new-capacity.json",
+      "sha256": "e311e2fd74f840bc12416264d83d264e7af886fe078ec33065364e048c47a924"
+    }
+  ],
+  "limitations": [
+    "MTU verified by successful exact setup assertions, not separately saved numeric readback",
+    "Pcap snaplen96 does not retain complete payload; returned-payload checks are in sender",
+    "No endpoint resource or UDP-error counters exist in full calibration collector; causal scheduler attribution not claimed",
+    "Saturation intentionally overdrives rate and drops packets; no_unexpected_overflow is echo accounting assessment",
+    "ACF/drift retained descriptively; missing loss1 replies are not timely observations"
+  ]
+}

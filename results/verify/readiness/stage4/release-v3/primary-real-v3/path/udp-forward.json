@@ -1,0 +1,50 @@
+{
+  "collection_id": "primary-real-v3-path",
+  "gate": "path",
+  "id": "udp-forward",
+  "actual": true,
+  "scope": "real router packet capture on both interfaces",
+  "command": "smoke tcpdump -i any; iptables counters",
+  "observations": {
+    "hops": [
+      [
+        "to_browser",
+        "In"
+      ],
+      [
+        "to_server",
+        "Out"
+      ]
+    ],
+    "first_matches": [
+      [
+        "19:37:38.540029 to_browser In  IP 172.28.10.10.55911 > 172.28.20.10.8443: UDP, length 1250"
+      ],
+      [
+        "19:37:38.540034 to_server Out IP 172.28.10.10.55911 > 172.28.20.10.8443: UDP, length 1250"
+      ]
+    ]
+  },
+  "files": [
+    {
+      "path": "results/verify/path/wswt-smoke.vMSax84H/trace.txt",
+      "sha256": "1c1ea25b4258d7c5a05b466d87ef047d936b3b67283c4fd5beea342808fed74b"
+    },
+    {
+      "path": "results/verify/path/wswt-smoke.vMSax84H/counters.txt",
+      "sha256": "1889f0d1738d4d83f2ced51b1a0498ba3059a7642a0507c73a0969e55810765f"
+    }
+  ],
+  "preparer": {
+    "path": "/bench/docs/readiness/stage4-primary-v3.py",
+    "sha256": "d381d8cb8633a2100a6600f2bd331d4a50287c3d292b6f7429b76ac0c447d033"
+  },
+  "source_inventory": {
+    "path": "results/verify/readiness/stage4/release-v3/source-inventory.json",
+    "sha256": "f1a20fb6d0891da7cbf9acd755cd3e87274ed7748fcba61e39564806f5e8c795"
+  },
+  "applicability": {
+    "path": "results/verify/readiness/stage4/release-v3/release.json",
+    "sha256": "5f52be9506c654108d497bb45cfd46cf72e2ac86f33f0c68f9b852fe751d0a87"
+  }
+}

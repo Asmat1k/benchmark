@@ -1,0 +1,75 @@
+# Independent critique of the practical observed-calibration draft
+
+14 November 2026. Codex transition_review. The user has selected practical calibration of observed runs, without a separate probabilistic interval model for the environment; main WS/WT statistics stay unchanged. This review respects that change of objective. No threshold adoption, production edit, network measurement, bootstrap or approval flag was performed.
+
+The draft can form an explicitly empirical engineering admission contract. It must be described as a new policy, with its actual blind spots, rather than a proof that sender defects cannot affect browser Q/S/U or that the environment is stationary. Several ingredients have sound existing design anchors. Reusing a number from another scope is a new choice, however, and removing the old maximum-lag rejection after observing a failure is a substantive post-observation policy change even if its replacement values are chosen for principled reasons.
+
+## Integrity and scope are appropriately retained
+
+Keep all 14 echo and four saturation collections, all IDs and actual-send RTTs, grid/framing/tags, finite and monotonic records, 2.5 ms minimum spacing, half-open 10 ms burst windows, actual reverse entering-ID denominators, direction seeds, path/MTU/no-fragmentation checks, empty boundary queues, capture drops and unexpected overflow rules. Preserve source/ENV/TLS bindings and immutable raw/seals. No p99 partition or outlier deletion changes these populations.
+
+The six latency-assessment series and eight dedicated before/after loss series must remain explicit, with all other collections still fully included in integrity and sender checks. Mean/p99/max/ACF/tail summaries stay visible. Keep saturation 9–11 Mbit/s with the original byte accounting. A practical method does not justify epoch-to-monotonic joins; use each clock within its established domain.
+
+## Sender late fraction and bursts do not bound causal impact
+
+Retaining late<=1%, burst<=4/10 ms and spacing/grid invariants preserves established controls on schedule distortion. Making maximum lag diagnostic changes the admissible set substantially. It must be a deliberate acceptance of an unbounded-by-that-rule individual lag, not a claim that a rare pause has no practical effect.
+
+The count of late sender calls is not the full affected outcome set. A pause may delay already outstanding replies and change queueing or browser planned-deadline outcomes. Actual-send RTT does not include send lag directly. The proposed rules are therefore conditional load-shape criteria, not a 5 ms Q or 1 percentage point S/U guarantee. This limitation is consistent with the user's chosen engineering objective if stated clearly.
+
+A design-based counterexample shows the distinction. Construct 10000 planned UDP sends at 10 ms; send normally until ID5000, delay that send by 500 ms, then apply exactly the existing max(plan,previous_actual+2.5 ms) catch-up rule. The result has late=.66%, burst=4/10 ms, minimum spacing=2.5 ms and overall observed rate=100 Hz, but maximum lag=500 ms and an initial inter-send gap=510 ms. It passes the draft's numerical sender criteria after removing maxlag, while the existing rule fails solely on maxlag. This is a mathematical synthetic example, not measured data, a proposed new threshold or a scenario selected from the latest 69 ms observation. The existing evaluator confirmed it in a bounded local computation, exit0,0.046s.
+
+## Overall 100±.1 Hz: useful endpoint check, new scope
+
+Using (N-1)*1000/(last_actual-first_actual) is a clear endpoint rate convention already exposed by sender_quality. It can reject a long net extension through the last send; it does not detect a recovered interior interruption, as the counterexample demonstrates. It also does not observe time before the first send or after the last send; those boundaries need the existing collection/drain and record contracts rather than a misleading global-rate claim.
+
+For 10000 sends, the ideal first-to-last duration is 99.99 s. Rate 99.9–100.1 Hz permits approximately +100.090/−99.890 ms endpoint-duration error. That is an intelligible global load-fidelity guard, not a maximum pause duration.
+
+The existing acceptance implementation applies ±.1 Hz to the 20 Hz browser check only. At 20 Hz it is a .5% relative tolerance; at 100 Hz the same absolute value is .1%. Therefore extending frequency_margin_hz to 100 Hz UDP is not an unchanged inherited test or a derivation from the 5 ms effect/fullness targets. It can be adopted as an explicit, separately justified absolute-rate engineering target, but its new scope must be named and its endpoint-only interpretation retained. This review does not recommend an alternative number to admit any particular raw run.
+
+## Six-series window envelope: defensible empirical target fidelity
+
+Using all 20 consecutive 500-planned-slot windows preserves the existing 5 s diagnostic resolution and avoids post hoc tail selection or block-length tuning. Define each window median among its actual returned RTTs without imputation. Report planned/returned counts and fail an empty window rather than supplying a zero or an interpolated median.
+
+The envelope comparison must be unambiguous. For each profile, let Pmin/Pmax be the minimum/maximum of its 20 window medians. For each baseline separately, let Bmin/Bmax be its analogous limits. Require the full difference envelope [Pmin-Bmax, Pmax-Bmin] to lie inside target±2 ms, with the existing 20/80 ms RTT targets. This checks every profile-window versus every baseline-window combination. Pairing only same-index windows would impose an unjustified temporal match between sequentially collected runs and could hide opposing drift.
+
+The existing 2 ms calibration margin gives a genuine design anchor. The envelope is an observed range over these fixed coarse windows, not a confidence interval, future coverage statement or within-window maximum. Rare or short disturbances may have little influence on medians. Passing would mean observed typical-delay fidelity at this resolution; it would not demonstrate stationarity or bound all browser bias. The existing main WS/WT inference stays unchanged and should not be described as validated by an environment confidence interval that this new method intentionally does not compute.
+
+Moving ACF flags to diagnostics is coherent with dropping the stationary environmental-bootstrap objective. It is not coherent to keep claiming the old circular-block-medians-v1 assumptions or mark their review flags true by absence/reinterpretation. Use a separate named/versioned empirical method and preserve the old failed/inconclusive reports. No hidden replacement of an old CI by an empirical range under the same field name.
+
+## Directional loss ±.5 percentage points: composition arithmetic is sound
+
+Let f be forward drops / all entered forward IDs and r be reverse drops / actual forward survivors. The empirical end-to-end loss is f+(1-f)*r, an exact accounting identity requiring no Bernoulli or direction-independence assumption. At nominal f=r=.01, it is .0199. If both empirical directional losses lie in [.005,.015], the combined empirical loss lies in [.009975,.029775]: deviation from nominal is −.9925/+ .9875 percentage points, within 1 percentage point. This provides a concrete engineering rationale for allocating .5 percentage points per direction from a combined 1 percentage point target-deviation scale.
+
+The derivation concerns observed loss fidelity relative to nominal bilateral loss. It is not a confidence interval for an unknown loss probability, a guarantee for future profiles, or a bound on browser deadline S/U. Conditional RTT survivor composition can still change; retain the survivor-bias disclosure. The existing 1 percentage point fullness tolerance originally concerns browser comparisons, so borrowing its magnitude for network target fidelity must be explicitly acknowledged as a new allocation choice, not a theorem that the two notions are equal.
+
+For nominal 0%, requiring zero drops is clear and preserves strict loss0 behavior. For 1%, use percentage points rather than relative percent, inclusive boundaries and exact integer/rational comparisons where possible. Publish all eight dedicated collection pairs and actual forward/reverse denominators. The extra latency-series loss counts remain visible without quietly expanding or selecting the formal family. A probability-free empirical rule needs no confidence-family claim; do not retain old binomial confidence labels or interpret nominal inclusion as a statistical coverage test.
+
+## Post-observation change and applicability
+
+The user has authorized a different practical objective. It is still necessary to say candidly that this draft was devised after examining existing failures, including the 69 ms event and small residual process shift. Existing source-bound failures remain historical facts. Applying the new method to old data is a retrospective practical reassessment under a new policy; it is not an untouched prospective success or an independent validation of the policy's chosen operating characteristics.
+
+Before adoption, record the complete rule/version, its engineering rationale and limitations together, then keep the rule fixed for any future collections. Distinguish the collection's source revision from a later analysis-method revision. A source-bound new report may present both old-contract status and new empirical assessment side by side; it must not rewrite old seals/reports, carry unsupported scientific-review booleans forward, or imply main WS/WT analysis changed.
+
+## Assessment
+
+The window-envelope and empirical conditional-loss arithmetic are coherent with the user-selected observed-calibration objective when named accurately. The principal unresolved justification is the overall-rate guard's extension from 20 Hz to 100 Hz: it is a new absolute-rate target, and it cannot replace a maximum pause bound in causal meaning. Removing the latter may be an explicit practical tradeoff, but the resulting sender acceptance must disclose that even a much larger recovered interior pause can satisfy its aggregate criteria.
+
+No numerical rule is endorsed merely because it admits the current raw. With these distinctions made explicit, the draft can be reviewed as a practical conditional contract. It cannot be presented as a bounded-impact guarantee for sender interruptions, the old stationary environmental inference, a probabilistic loss statement, or completion of the remaining generator/main readiness requirements.
+
+## Follow-up: five interleaved observed 20 Hz proxy streams
+
+The parent revised the draft after the critique above. Maximum lag and overall endpoint frequency are no longer proposed as a substitute causal bound. The new candidate retains integrity/late/burst/spacing controls and adds an observed loss0 proxy based on the main design. It can be a modest engineering guard, provided its name and conclusions remain explicitly conditional.
+
+For each loss0 collection, form five streams by original ID mod5, preserving each point's actual send and returned RTT. Each has 2000 planned points at50 ms spacing over a100 s planned horizon. Define a proxy-bad point when its original UDP send lag is >=50 ms, its echo is missing, or original t_send+RTT is strictly beyond t_plan+100 ms. The first condition means the UDP timestamp would be expired under the main slot-timing rule; it does not prove the real browser would have skipped that slot under a different load and scheduling history.
+
+Test every1200consecutive points within each stream:801windows perphase,4005total. A1200slot planned window represents60 s even though its first-to-last planned timestamp span is59.95 s. Keep every phase and all overlapping windows. Report the maximum bad count, witness phase/start/end IDs, reason counts and distinct-bad union. Do not sum multiple reasons on one ID, pool the five phases, replace the maximum with an average, treat4005overlappingwindows as independent trials, or claim temporal/future probabilistic coverage. Check completeness before this calculation rather than shortening streams to returned echoes.
+
+The candidate threshold12/1200=.01 uses the main design's1percentagepoint outcome scale in an intelligible finite observed proxy. It controls that defined bad fraction in these observed loss0 UDP sequences. It does not certify actual browser S/U degradation<=1pp, either mode's Q displacement<=5ms, or comparative-mode bias. Actual20Hz browser sends remove80%of UDP offered traffic and have different timer, transport and queue dynamics; the proxy cannot replay that counterfactual. UDP echoes and browser completion deadlines also have separate collection horizons and loss semantics.
+
+The guard catches the previous exact500ms synthetic example: with normal0.6ms RTTs and2.5msUDPcatch-up, there are61expired proxy points; phase0has13badpoints, theotherfourphases12each. Their worst1200slot windows therefore reject theexample. A499msconstructedexample produces60expired points,12ineachphase, and passes. Both were evaluated with the formula above in0.037s,exit0,withoutmeasurement. This boundary is the expected consequence of the count budget, not evidence to tune it or to advertise a maximum tolerated pause. The candidate still permits some large recovered pauses; that is an explicit residual risk rather than a proof of harmlessness.
+
+The loss0 restriction is reasonable for keeping intentionally injected loss from consuming a deadline-proxy budget, but limits scope: it does not independently constrain a defect that occurs only under loss1%, including the collection containing the latest69msfailure. All14sender checks and explicit percollection diagnostic maxlag/lateclusters must remain visible. Do not describe the added proxy as complete14profile timing protection. If stronger lossy-profile protection is later desired, define its estimand and treatment of injectedloss separately, without subtracting observed loss in a way that hides timing effects.
+
+Use monotonic send+RTT from the same probe; no pcap epoch joining is necessary. Threshold inclusivity must remain exact:lag>=50msisbad;echoatplanned+100msisontime. Arithmetic should respect the recorded timestamp precision, without an undocumented empirical epsilon near the boundary. Persist which eligibility/rule version produced each bad-ID set and enforce the same definition on future collections.
+
+This revised candidate has a clearer connection to the main planned-slot timescale than aggregate frequency alone. It is suitable for consideration as an **observed load-and-deadline proxy guard**, together with the empirical window target-fidelity rules already reviewed. It remains a new post-observation practical policy, not retrospective validation of itself or an actual protocol impact bound. True browser generator checks, unchanged main Q/S/U statistics and their required A/A/repeatability checks remain necessary; no approval or production implementation is supplied by this review.

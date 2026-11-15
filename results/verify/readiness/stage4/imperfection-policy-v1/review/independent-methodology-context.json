@@ -1,0 +1,18 @@
+{
+  "utc": "2026-11-14T18:47:23.421528+00:00",
+  "scope": "Read-only local methodology review with derived notes; no numerical gate selection or code changes",
+  "sources": [
+    "configs/thresholds.json",
+    "docs/metrics.md",
+    "src/analysis/metrics.py",
+    "src/analysis/acceptance.py",
+    "src/analysis/calibration_blocks.py",
+    "docs/readiness/sender-quality-v2.md"
+  ],
+  "measurements": 0,
+  "bootstrap_runs": 0,
+  "executable_changes": 0,
+  "approval_flags_set": false,
+  "authorization_basis": "Parent-provided user steering: justified imperfections and transparent ordinary/outlier analysis",
+  "numeric_gate_status": "undecided"
+}

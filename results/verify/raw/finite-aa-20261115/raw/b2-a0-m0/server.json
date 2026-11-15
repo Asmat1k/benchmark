@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "run_id": "b2-a0-m0",
+  "measurement": {
+    "echoed": 1199,
+    "errors": 0,
+    "invalid": 0,
+    "received": 1199,
+    "write_attempted": 1199
+  },
+  "warmup": {
+    "echoed": 200,
+    "errors": 0,
+    "invalid": 0,
+    "received": 200,
+    "write_attempted": 200
+  }
+}

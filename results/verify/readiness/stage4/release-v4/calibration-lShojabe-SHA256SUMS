@@ -1,0 +1,6 @@
+7b70de4aa931c2a8de0a39e5b09adb8b23a433abcec40c5535fa8696a9f224a4  results/verify/readiness/stage4/release-v4/calibration-lShojabe-raw-review.json
+19f75c493a938198bb023705819801ef62c3c6f9509d2d937649cd3833d1f6b1  results/verify/readiness/stage4/release-v4/review-calibration-lShojabe.py
+c6a6ed0586f85f67103e7ac4c3f02c983ef7d89f49f0af63b8d492220c35db6a  results/verify/readiness/stage4/release-v4/browser-bandwidth-lShojabe.json
+f590fd631c44ee916f9b31bbe5eb1c3fb1426b3b737c957878a83d3a92feb325  results/verify/readiness/stage4/release-v4/STOP-calibration-lShojabe.json
+c432a3f47f22c62f609dfede0335963bb7a8659b936df0126ba3cc16ab86175f  results/verify/diagnostic/calibration.lShojabe/captured.json
+7a17dbad44056de9c501f066241fb2aee8f71191e79c92456e58819d1ec9dc15  results/verify/diagnostic/calibration.lShojabe/collection-plan.json

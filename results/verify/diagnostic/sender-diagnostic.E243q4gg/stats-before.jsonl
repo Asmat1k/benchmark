@@ -1,0 +1,2 @@
+{"BlockIO":"0B / 0B","CPUPerc":"0.00%","Container":"055a18b9e8108702ec2e3436e111420e2ae84c84feb8b9a9049e66a490a4cdfa","ID":"055a18b9e810","MemPerc":"0.40%","MemUsage":"15.62MiB / 3.827GiB","Name":"quizzical_pare","NetIO":"0B / 0B","PIDs":"1"}
+{"BlockIO":"666MB / 28MB","CPUPerc":"0.12%","Container":"16479141beddf1af7cf2b66e2e1e631fe0cd16b857180fd70804e3486a1057a6","ID":"16479141bedd","MemPerc":"4.07%","MemUsage":"159.5MiB / 3.827GiB","Name":"ai-grepa-qdrant-1","NetIO":"27MB / 4.48MB","PIDs":"25"}

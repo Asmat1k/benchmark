@@ -1,0 +1,55 @@
+{
+  "collection_id": "primary-tls",
+  "gate": "tls",
+  "id": "ws-secure",
+  "actual": true,
+  "scope": "real browser TLS and exact echo",
+  "command": "caffeinate -ims sh docker/smoke.sh: main.js",
+  "observations": {
+    "runtime": {
+      "utc": "2026-11-14T19:29:33.545Z",
+      "version": "140.0.7339.16",
+      "node": "v22.18.0",
+      "npm": "10.9.3",
+      "typescript": "5.9.2",
+      "typesNode": "22.18.0",
+      "playwright": "1.55.0",
+      "executable": "/ms-playwright/chromium-1187/chrome-linux/chrome",
+      "secureContext": true,
+      "leaf": "fc2a5f4d7bc0fce861baee9207c82ff86bf502fda419cf45c73e3559d1a56d18",
+      "ca": "df8a2418fc75515f8ca5e9ce8d242f1ab93c77e4fe5412b62c8d8a2653dfce27"
+    },
+    "echo": {
+      "mode": "WS",
+      "exactFrames": 3
+    },
+    "wt_d": {
+      "mode": "WT-D",
+      "supported": true,
+      "exactFrames": 3,
+      "maximum": 1024
+    }
+  },
+  "files": [
+    {
+      "path": "results/verify/path/wswt-smoke.b0jcKRCt/browser.txt",
+      "sha256": "efacbf4e390d57ac12f1c30981f69efdbd57bb8b9a607405008dbeb14b79acbd"
+    },
+    {
+      "path": "results/verify/path/wswt-smoke.b0jcKRCt/server.txt",
+      "sha256": "96bd2abb95074d8d81434cc56f3c758816f891ba62c96488410ea2c6ebe22712"
+    }
+  ],
+  "preparer": {
+    "path": "/bench/docs/readiness/practical-early.py",
+    "sha256": "f49f09d9f984c90f5ee94c39bf461120370e0cf443629599f580957e80ad9964"
+  },
+  "source_inventory": {
+    "path": "results/verify/readiness/stage4/practical-v1/release-v2/source-inventory.json",
+    "sha256": "0f05a3987cb0c387ec76d9350e3f1837c8f583cfa8241798aab68da71d171f06"
+  },
+  "applicability": {
+    "path": "results/verify/readiness/stage4/practical-v1/release-v2/release.json",
+    "sha256": "b154faea85adad05167252d640239bde8662abeadee243ca2356e20b6c12dda8"
+  }
+}

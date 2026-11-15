@@ -1,0 +1,8 @@
+{
+  "build": "results/verify/readiness/stage3/reports/build.json",
+  "tls": "results/verify/readiness/stage3/reports/tls.json",
+  "path": "results/verify/readiness/stage3/reports/path.json",
+  "raw": "results/verify/readiness/stage3/reports/raw.json",
+  "analysis": "results/verify/readiness/stage3/reports/analysis.json",
+  "timer": "results/verify/diagnostic/timer-timer.2ST8NYBU-report/report.json"
+}

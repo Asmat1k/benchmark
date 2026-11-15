@@ -1,0 +1,11 @@
+server-1  | 2026/11/13 19:37:25 failed to sufficiently increase receive buffer size (was: 208 kiB, wanted: 7168 kiB, got: 416 kiB). See https://github.com/quic-go/quic-go/wiki/UDP-Buffer-Sizes for details.
+server-1  | 2026/11/13 19:37:30 WSS upgrade=101 http=HTTP/1.1 alpn=http/1.1 tls=304 resumed=false
+server-1  | 2026/11/13 19:37:30 peer HTTP/3 SETTINGS=&{EnableDatagrams:true EnableExtendedConnect:false Other:map[1:65536 6:16384 7:100 16765559:1 727725890:1 91877528659:4124652071]} server additional SETTINGS=map[727725890:1]
+server-1  | 2026/11/13 19:37:30 WT request=CONNECT http=webtransport alpn=h3 quic=v1 datagrams=true draft-response=draft02
+server-1  | 2026/11/13 19:37:30 peer HTTP/3 SETTINGS=&{EnableDatagrams:true EnableExtendedConnect:false Other:map[1:65536 6:16384 7:100 16765559:1 727725890:1 22613274696:3346563368]} server additional SETTINGS=map[727725890:1]
+server-1  | 2026/11/13 19:37:30 WT request=CONNECT http=webtransport alpn=h3 quic=v1 datagrams=true draft-response=draft02
+server-1  | 2026/11/13 19:37:38 WSS upgrade=101 http=HTTP/1.1 alpn=http/1.1 tls=304 resumed=false
+server-1  | 2026/11/13 19:37:38 peer HTTP/3 SETTINGS=&{EnableDatagrams:true EnableExtendedConnect:false Other:map[1:65536 6:16384 7:100 16765559:1 727725890:1 11271242851:2565051014]} server additional SETTINGS=map[727725890:1]
+server-1  | 2026/11/13 19:37:38 WT request=CONNECT http=webtransport alpn=h3 quic=v1 datagrams=true draft-response=draft02
+server-1  | 2026/11/13 19:37:38 peer HTTP/3 SETTINGS=&{EnableDatagrams:true EnableExtendedConnect:false Other:map[1:65536 6:16384 7:100 16765559:1 727725890:1 49416709898:3140217050]} server additional SETTINGS=map[727725890:1]
+server-1  | 2026/11/13 19:37:38 WT request=CONNECT http=webtransport alpn=h3 quic=v1 datagrams=true draft-response=draft02

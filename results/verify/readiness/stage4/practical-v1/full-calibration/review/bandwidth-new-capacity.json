@@ -1,0 +1,86 @@
+{
+  "accounting_level": "router netem dequeued skb bytes including Ethernet header; excludes FCS/preamble/IFG",
+  "main_bandwidth_fraction": 0.008380318905658764,
+  "status": "passed",
+  "ratios": [
+    {
+      "mode": "WS",
+      "direction": "forward",
+      "capacity_mbit_s": 10.00030804522385,
+      "fraction": 0.00802239287401913
+    },
+    {
+      "mode": "WS",
+      "direction": "reverse",
+      "capacity_mbit_s": 9.99915806029177,
+      "fraction": 0.00686452461825209
+    },
+    {
+      "mode": "WT-D",
+      "direction": "forward",
+      "capacity_mbit_s": 10.00030804522385,
+      "fraction": 0.007667830462811532
+    },
+    {
+      "mode": "WT-D",
+      "direction": "reverse",
+      "capacity_mbit_s": 9.99915806029177,
+      "fraction": 0.008380318905658764
+    },
+    {
+      "mode": "WT-S",
+      "direction": "forward",
+      "capacity_mbit_s": 10.00030804522385,
+      "fraction": 0.007595806014823584
+    },
+    {
+      "mode": "WT-S",
+      "direction": "reverse",
+      "capacity_mbit_s": 9.99915806029177,
+      "fraction": 0.006511388219629781
+    }
+  ],
+  "limitation": "Conservative bound: all setup/warmup/measurement/drain bytes divided by 60 s; baseline only",
+  "dependency_bridge": {
+    "path": "results/verify/readiness/stage4/practical-v1/applicability/qualification-and-bw-bridge-v2.json",
+    "sha256": "a74ca393221616a622fd4cbc495897e7330e6f624d71619e01618d14ee02315b"
+  },
+  "capacity": [
+    {
+      "direction": "forward",
+      "loss": 0.0,
+      "duration_s": 61.03000000002794,
+      "accounting_level": "router netem dequeued skb bytes including Ethernet header; offered veth ingress rx_bytes",
+      "offered_bytes": 94753422,
+      "forwarded_bytes": 76293576,
+      "mbit_s": 10.000796460752426
+    },
+    {
+      "direction": "reverse",
+      "loss": 0.0,
+      "duration_s": 61.029999999998836,
+      "accounting_level": "router netem dequeued skb bytes including Ethernet header; offered veth ingress rx_bytes",
+      "offered_bytes": 94754664,
+      "forwarded_bytes": 76292334,
+      "mbit_s": 10.000633655579414
+    },
+    {
+      "direction": "forward",
+      "loss": 0.01,
+      "duration_s": 61.029999999998836,
+      "accounting_level": "router netem dequeued skb bytes including Ethernet header; offered veth ingress rx_bytes",
+      "offered_bytes": 94752180,
+      "forwarded_bytes": 76289850,
+      "mbit_s": 10.00030804522385
+    },
+    {
+      "direction": "reverse",
+      "loss": 0.01,
+      "duration_s": 61.039999999979045,
+      "accounting_level": "router netem dequeued skb bytes including Ethernet header; offered veth ingress rx_bytes",
+      "offered_bytes": 94754664,
+      "forwarded_bytes": 76293576,
+      "mbit_s": 9.99915806029177
+    }
+  ]
+}

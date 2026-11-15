@@ -1,0 +1,22 @@
+{
+  "docs/readiness/stage4-deep-investigation.md": "baef390dcee3c5ebd3b6976578b5d3b0c11c9f7f9d3092b21f8dfee4fc626e38",
+  "docs/readiness/stage4-next-agent-prompt.md": "0a5d2943c92260ef9be44cefdc5d2fd4f27c1227d76e5ffbaf83d01c0d22e3bd",
+  "results/verify/readiness/stage4/calibration-poll0-v1/plan.md": "1d2922095322a7e8c34bb275f0385ee471aab324f6d987811e3dd6789dd6a3ab",
+  "results/verify/readiness/stage4/calibration-poll0-v1/preflight.ig5gs287/collection-plan.expected.json": "7a17dbad44056de9c501f066241fb2aee8f71191e79c92456e58819d1ec9dc15",
+  "results/verify/readiness/stage4/calibration-poll0-v1/preflight.ig5gs287/collector.sh": "d6b45e260cb81ec8e9b994a9a88da1b48b28da027154c43d3471e9cc8234261e",
+  "results/verify/readiness/stage4/calibration-poll0-v1/preflight.ig5gs287/command.json": "59afc4aeb4694e089f8e7e557f3f0762c29341d40e738dd6ad6b44268df2d813",
+  "results/verify/readiness/stage4/calibration-poll0-v1/preflight.ig5gs287/ended": "95ecdb32097cdaa9a043c787fef2dc79be6de98d377957ae22bde2650bac4eb7",
+  "results/verify/readiness/stage4/calibration-poll0-v1/preflight.ig5gs287/existing-calibration-directories.json": "4961aebd0c21175b8f985c74c5f0c57b271adc739312711e5dfb2843fb506ecf",
+  "results/verify/readiness/stage4/calibration-poll0-v1/preflight.ig5gs287/exit": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+  "results/verify/readiness/stage4/calibration-poll0-v1/preflight.ig5gs287/identity-after.json": "015fbc381384686dbd58f08093b515b6f9ad09397aaa0590810f26c10f68fa18",
+  "results/verify/readiness/stage4/calibration-poll0-v1/preflight.ig5gs287/identity-before.json": "015fbc381384686dbd58f08093b515b6f9ad09397aaa0590810f26c10f68fa18",
+  "results/verify/readiness/stage4/calibration-poll0-v1/preflight.ig5gs287/new-calibration-directories.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+  "results/verify/readiness/stage4/calibration-poll0-v1/preflight.ig5gs287/preflight-commands.jsonl": "9567afce78f32d879153f4786b1c7327ba157c911007bcbc26122f290e7fb79a",
+  "results/verify/readiness/stage4/calibration-poll0-v1/preflight.ig5gs287/preflight.json": "b9cc2db21a34558376238fe7780a4b3b8c7bfc5a3083430ce6faec25fc793bed",
+  "results/verify/readiness/stage4/calibration-poll0-v1/preflight.ig5gs287/started": "d6bfd7dbe18ee47e952f0ebd70b51c1cb1c96641ec85bc99d955b4ff336f9669",
+  "results/verify/readiness/stage4/calibration-poll0-v1/preflight.ig5gs287/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "results/verify/readiness/stage4/calibration-poll0-v1/preflight.ig5gs287/stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "results/verify/readiness/stage4/calibration-poll0-v1/previous-next-agent-prompt.md": "af0e9954182a03ed1f19953d8ef6b5c85233ac5cc0b82a93adf2a0883adee66b",
+  "results/verify/readiness/stage4/calibration-poll0-v1/run.py": "c44e2a78f21371d47bb62699b06382d39134957322b95bb7244333aafa6e2b6d",
+  "results/verify/readiness/stage4/calibration-poll0-v1/summary.json": "a9c2514e10ee33825c2d426017f82e2b8bebc42ca77c24db7117e8b577674319"
+}

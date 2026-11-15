@@ -1,0 +1,112 @@
+{
+  "affinity": [
+    {
+      "id": 0,
+      "cpu": 0,
+      "mask": [
+        0
+      ],
+      "mono_ns": 130710338773893
+    }
+  ],
+  "phases": [
+    {
+      "ids": [
+        0,
+        10000
+      ],
+      "requested_cpu": 0,
+      "start_ns": 130710338773893,
+      "end_ns": 130810338835000,
+      "sender_lag_ms": {
+        "n": 10000,
+        "min": 0.0003400000005058246,
+        "median": 0.0011709999998856802,
+        "p99": 0.01547500000015134,
+        "max": 25.876875
+      },
+      "sender_residence_ms": {
+        "0": 99955.517107,
+        "1": 0.0
+      },
+      "directions": {
+        "to_server": {
+          "callback_lateness_ms": {
+            "n": 9917,
+            "min": 0.002112,
+            "median": 0.003118,
+            "p99": 0.011033,
+            "max": 24.005624
+          },
+          "sampled_now_lateness_ms": {
+            "n": 9917,
+            "min": 0.000141,
+            "median": 0.00285,
+            "p99": 0.009892,
+            "max": 23.976808
+          },
+          "dequeue_after_callback_ms": {
+            "n": 9917,
+            "min": 0.001,
+            "median": 0.002,
+            "p99": 0.006,
+            "max": 0.168
+          },
+          "callback_cpus": {
+            "0": 9917,
+            "1": 0
+          },
+          "queue_to_xmit_ms": {
+            "n": 9925,
+            "min": 40.243,
+            "median": 40.244,
+            "p99": 40.257,
+            "max": 64.364
+          },
+          "queue_cpus": {
+            "0": 10000,
+            "1": 0
+          }
+        },
+        "to_browser": {
+          "callback_lateness_ms": {
+            "n": 9794,
+            "min": 0.001609,
+            "median": 0.06749,
+            "p99": 0.198539,
+            "max": 19.525385
+          },
+          "sampled_now_lateness_ms": {
+            "n": 9794,
+            "min": 0.000266,
+            "median": 0.066725,
+            "p99": 0.1981,
+            "max": 19.524184
+          },
+          "dequeue_after_callback_ms": {
+            "n": 9794,
+            "min": 0.002,
+            "median": 0.003,
+            "p99": 0.008,
+            "max": 0.148
+          },
+          "callback_cpus": {
+            "0": 0,
+            "1": 9794
+          },
+          "queue_to_xmit_ms": {
+            "n": 9806,
+            "min": 40.243,
+            "median": 40.31,
+            "p99": 40.592,
+            "max": 59.784
+          },
+          "queue_cpus": {
+            "0": 12,
+            "1": 9909
+          }
+        }
+      }
+    }
+  ]
+}

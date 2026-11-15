@@ -1,0 +1,79 @@
+{
+  "collection_id": "primary-build",
+  "gate": "build",
+  "id": "archive-hashes",
+  "actual": true,
+  "scope": "unchanged historical image archive bytes/sidecar and applicable stage2 image-archive content validation; historical source HEAD is not current source release",
+  "command": "shasum -a 256 -c sidecar; hashlib.file_digest",
+  "observations": {
+    "path": "results/archives/images-05a30d9c5e341462c167a548a5942bc377e5c48de2aee0badb5db3301203a11e.tar",
+    "actual_sha256": "05a30d9c5e341462c167a548a5942bc377e5c48de2aee0badb5db3301203a11e",
+    "bytes": 1202140160,
+    "image_ids": [
+      {
+        "tag": "wswt-bench-server:dev",
+        "image_id": "sha256:c2c60585a64d04e8dd7dd6a674625c0aec44cdc385561c8864dab734fbf19c44",
+        "os": "linux",
+        "architecture": "arm64"
+      },
+      {
+        "tag": "wswt-bench-browser:dev",
+        "image_id": "sha256:356b2e1af8773aaf688f3c4e03bbfa73b2c835d88be0a76278030cf55d1c1641",
+        "os": "linux",
+        "architecture": "arm64"
+      },
+      {
+        "tag": "wswt-bench-router:dev",
+        "image_id": "sha256:d78a80d31724881c1adaa57005fae37f4f23e0013945dac759d7ee1f76b6b74d",
+        "os": "linux",
+        "architecture": "arm64"
+      },
+      {
+        "tag": "wswt-bench-analyzer:dev",
+        "image_id": "sha256:9e263785dc135db52a216bc358c38218cf3d98f178a9981a365ca79cda7cbd62",
+        "os": "linux",
+        "architecture": "arm64"
+      }
+    ],
+    "historical_archive_record": {
+      "path": "results/archives/images-05a30d9c5e341462c167a548a5942bc377e5c48de2aee0badb5db3301203a11e.tar",
+      "sha256": "05a30d9c5e341462c167a548a5942bc377e5c48de2aee0badb5db3301203a11e",
+      "size": 1202140160
+    },
+    "current_sources": {
+      "path": "results/verify/readiness/stage4/practical-v1/release-v2/source-inventory.json",
+      "sha256": "0f05a3987cb0c387ec76d9350e3f1837c8f583cfa8241798aab68da71d171f06"
+    },
+    "scope": "images reused; current host-mounted source files separately bound"
+  },
+  "files": [
+    {
+      "path": "results/archives/images-05a30d9c5e341462c167a548a5942bc377e5c48de2aee0badb5db3301203a11e.tar",
+      "sha256": "05a30d9c5e341462c167a548a5942bc377e5c48de2aee0badb5db3301203a11e"
+    },
+    {
+      "path": "results/verify/readiness/stage4/practical-v1/release-v2/source-archive-preflight.json",
+      "sha256": "9aa740a269846114fc3fee7e23ece85647f858ac79e4eebdb870268793e90f72"
+    },
+    {
+      "path": "results/archives/images-05a30d9c5e341462c167a548a5942bc377e5c48de2aee0badb5db3301203a11e.tar.sha256",
+      "sha256": "3c45028eba5e2fc9f6714dc331d4973de56c90254b352b269d9612405f19f36d"
+    },
+    {
+      "path": "results/verify/readiness/stage2-preflight/archive-verified.json",
+      "sha256": "1fe614ceddfbdaa3b619e398c6ec5153fea179cca7c4d529be56d2ec2781ccaa"
+    }
+  ],
+  "preparer": {
+    "path": "/bench/docs/readiness/practical-early.py",
+    "sha256": "f49f09d9f984c90f5ee94c39bf461120370e0cf443629599f580957e80ad9964"
+  },
+  "source_inventory": {
+    "path": "results/verify/readiness/stage4/practical-v1/release-v2/source-inventory.json",
+    "sha256": "0f05a3987cb0c387ec76d9350e3f1837c8f583cfa8241798aab68da71d171f06"
+  },
+  "applicability": {
+    "path": "results/verify/readiness/stage4/practical-v1/release-v2/release.json",
+    "sha256": "b154faea85adad05167252d640239bde8662abeadee243ca2356e20b6c12dda8"
+  }
+}

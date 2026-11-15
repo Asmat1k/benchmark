@@ -1,0 +1,326 @@
+{
+  "gate": "path",
+  "collection_id": "primary-real-v4-path",
+  "document": {
+    "schema_version": 1,
+    "checks": [
+      {
+        "id": "routes",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "real route readbacks",
+        "utc": "2026-11-13T20:07:47.809673Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/path/routes.json",
+            "sha256": "8dff412d5ac5c9914eccc07d74ff33ea95355f6f8f6c290fb2309cd3fb914572"
+          }
+        ]
+      },
+      {
+        "id": "tcp-forward",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "real router packet capture on both interfaces",
+        "utc": "2026-11-13T20:07:47.814297Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/path/tcp-forward.json",
+            "sha256": "db105297e46c0520e2ea94f2d1039b8ae2e8ff4717cc0355bb7fd805b7f64d30"
+          }
+        ]
+      },
+      {
+        "id": "tcp-reverse",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "real router packet capture on both interfaces",
+        "utc": "2026-11-13T20:07:47.818437Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/path/tcp-reverse.json",
+            "sha256": "202f716407c0d6bfa57e2c510e4b7e73d06b65ccd268c1eb0baca1b3e676fa9c"
+          }
+        ]
+      },
+      {
+        "id": "udp-forward",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "real router packet capture on both interfaces",
+        "utc": "2026-11-13T20:07:47.821870Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/path/udp-forward.json",
+            "sha256": "6014aac7723543a5e47b8a35711c87817e75b63d9e586b0c80664e52979e4b8a"
+          }
+        ]
+      },
+      {
+        "id": "udp-reverse",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "real router packet capture on both interfaces",
+        "utc": "2026-11-13T20:07:47.825246Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/path/udp-reverse.json",
+            "sha256": "57360bddbac2513109ba6ba575aa7486e83f4436b904aad61ac02d7b80c5e513"
+          }
+        ]
+      },
+      {
+        "id": "forwarding-off-ws",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "real forwarding-off probe",
+        "utc": "2026-11-13T20:07:47.828440Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/path/forwarding-off-ws.json",
+            "sha256": "a4d85bd6a039febdcd2d5820750b77aaad4fc406887abe483c101e9751821478"
+          }
+        ]
+      },
+      {
+        "id": "forwarding-off-wts",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "real forwarding-off probe",
+        "utc": "2026-11-13T20:07:47.830128Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/path/forwarding-off-wts.json",
+            "sha256": "ebd67258174fd28694ca9413d9933d0b0df476ae2f558c501c00e540078ea36c"
+          }
+        ]
+      },
+      {
+        "id": "offload-mtu",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "real D3 before/after endpoint and router readbacks; validate_raw also checks",
+        "utc": "2026-11-13T20:07:47.837548Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/path/offload-mtu.json",
+            "sha256": "509dedb060ab0d983ed6aca83b656038661466520618fff1489c0dbba4826b31"
+          }
+        ]
+      },
+      {
+        "id": "profile-readback",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "real four-profile tc readbacks; no bandwidth/calibration claim",
+        "utc": "2026-11-13T20:07:47.848186Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/path/profile-readback.json",
+            "sha256": "2c58c08556bfbca9f89b347f3ea7f77052bac7eb4a38ce9510fa58cb2e8700a2"
+          }
+        ]
+      }
+    ]
+  },
+  "observations": {
+    "routes": {
+      "collection_id": "primary-real-v4-path",
+      "id": "routes",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "real route readbacks",
+      "utc": "2026-11-13T20:07:47.809673Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/path/routes.json",
+          "sha256": "8dff412d5ac5c9914eccc07d74ff33ea95355f6f8f6c290fb2309cd3fb914572"
+        }
+      ]
+    },
+    "tcp-forward": {
+      "collection_id": "primary-real-v4-path",
+      "id": "tcp-forward",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "real router packet capture on both interfaces",
+      "utc": "2026-11-13T20:07:47.814297Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/path/tcp-forward.json",
+          "sha256": "db105297e46c0520e2ea94f2d1039b8ae2e8ff4717cc0355bb7fd805b7f64d30"
+        }
+      ]
+    },
+    "tcp-reverse": {
+      "collection_id": "primary-real-v4-path",
+      "id": "tcp-reverse",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "real router packet capture on both interfaces",
+      "utc": "2026-11-13T20:07:47.818437Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/path/tcp-reverse.json",
+          "sha256": "202f716407c0d6bfa57e2c510e4b7e73d06b65ccd268c1eb0baca1b3e676fa9c"
+        }
+      ]
+    },
+    "udp-forward": {
+      "collection_id": "primary-real-v4-path",
+      "id": "udp-forward",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "real router packet capture on both interfaces",
+      "utc": "2026-11-13T20:07:47.821870Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/path/udp-forward.json",
+          "sha256": "6014aac7723543a5e47b8a35711c87817e75b63d9e586b0c80664e52979e4b8a"
+        }
+      ]
+    },
+    "udp-reverse": {
+      "collection_id": "primary-real-v4-path",
+      "id": "udp-reverse",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "real router packet capture on both interfaces",
+      "utc": "2026-11-13T20:07:47.825246Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/path/udp-reverse.json",
+          "sha256": "57360bddbac2513109ba6ba575aa7486e83f4436b904aad61ac02d7b80c5e513"
+        }
+      ]
+    },
+    "forwarding-off-ws": {
+      "collection_id": "primary-real-v4-path",
+      "id": "forwarding-off-ws",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "real forwarding-off probe",
+      "utc": "2026-11-13T20:07:47.828440Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/path/forwarding-off-ws.json",
+          "sha256": "a4d85bd6a039febdcd2d5820750b77aaad4fc406887abe483c101e9751821478"
+        }
+      ]
+    },
+    "forwarding-off-wts": {
+      "collection_id": "primary-real-v4-path",
+      "id": "forwarding-off-wts",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "real forwarding-off probe",
+      "utc": "2026-11-13T20:07:47.830128Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/path/forwarding-off-wts.json",
+          "sha256": "ebd67258174fd28694ca9413d9933d0b0df476ae2f558c501c00e540078ea36c"
+        }
+      ]
+    },
+    "offload-mtu": {
+      "collection_id": "primary-real-v4-path",
+      "id": "offload-mtu",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "real D3 before/after endpoint and router readbacks; validate_raw also checks",
+      "utc": "2026-11-13T20:07:47.837548Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/path/offload-mtu.json",
+          "sha256": "509dedb060ab0d983ed6aca83b656038661466520618fff1489c0dbba4826b31"
+        }
+      ]
+    },
+    "profile-readback": {
+      "collection_id": "primary-real-v4-path",
+      "id": "profile-readback",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "real four-profile tc readbacks; no bandwidth/calibration claim",
+      "utc": "2026-11-13T20:07:47.848186Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/path/profile-readback.json",
+          "sha256": "2c58c08556bfbca9f89b347f3ea7f77052bac7eb4a38ce9510fa58cb2e8700a2"
+        }
+      ]
+    }
+  }
+}

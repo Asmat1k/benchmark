@@ -1,0 +1,25 @@
+# STOP: полная калибровка не принята
+
+Сбор пользователя завершён успешно: `results/verify/diagnostic/calibration.lShojabe`,29мин22с,exit0. Все14echo/4saturation,146sealedfiles,план/134source hashes/ENV/TLS проверены. Первичная приёмка не пройдена, генератор не запускается.
+
+|Подсерия|max lag|Порог|
+|---|---:|---:|
+|r20p0-after|129.224986мс|≤50мс|
+|r20p1-after|53.692504мс|≤50мс|
+
+12остальныхsenderподсерийpassed. Для двухотказавшихlate/burstпроходятсвоипороги,ноmaxlagfailureнеотменяют. Приr20p0-afterпервыймаксимальнопозднийID5928,приr20p1-afterID891. Полныйsend grid,ID/tag/replyRTT,pcap/directionalnetemdrops/readbackseeds/queuesнаграницах/capturelossпроверены. НельзявыкинутьэтиIDилиподсерии. Конкретныйscheduler/CPU/hostмеханизмэтихпаузнеизвестен:такойtraceколлекторнесохранял.
+
+Отдельноprocess_diagnosticsотметиладлительнуюRTTзависимостьbaseline-beforeиr20p0-latency:rho1000=.051714/.044615пригранице3.5/sqrt9000≈.036893;baseline-beforeтакжеrho500=.037819. Малыйдрейфмедиан5-секундныхоконнеустраняетэтифлаги. Пофиксированномуконтрактуэтоinconclusiveдляблочногопроцессноговыводадажеприsenderpassed. Автоматическиеstationarity/short-memorytrueневозможны;нельзяменятьблоки,пороги,объёмилиисключатьхвостыдляпрохождения. Bernoulli-модельlossподдерживаетсяreadbackrandomnetem,separate directional seeds иполнымID/dropaccounting,ноодногопопаданияноминалавCIнедостаточнодлядоказательствасерийнезависимости. Полныйassumptionreviewдляпубликациинеутверждён.
+
+Что прошло:четыреcapacity9.99949–10.00128Мбит/с;штатныйbrowser_bandwidth.pyподтвердилвсетримодальности/обанаправления,maxfraction=.008380037347(0.838%)<.1. Этоотдельныйpassedрасчётполосы,неcalibrationpassed. Всеформальныеbefore/afterdirectionallossпроверкипопадаютвпредусмотренные99.875%ClopperPearsonинтервалы;reverseзнаменателивзятыизреальнодоставленныхforwardID.
+
+Путидоказательствв `results/verify/readiness/stage4/release-v4/`:
+
+- `calibration-lShojabe-raw-review.json`:все14timing/loss/quantile/diagnosticрезультатов,4saturation,происхождение/ограничения.
+- `browser-bandwidth-lShojabe.json`:штатныйpassedрасчётполосы,беззаменыбайтовначастоту×payload.
+- `STOP-calibration-lShojabe.json`:остановказависимыхшагов,сохранённаявнеsealedraw.
+- `calibration-lShojabe-SHA256SUMS`:контрольныесуммы.
+
+Полныйbootstrapиофициальнаяпубликацияcalibrationreportне выполнялись:обязательныеусловияпервичнойприёмкиужеfailed. Это не заменяетсяурезаннымрасчётом. Полныйфиксированныйbootstrapсодержит6×3×20000×10000=3.6млрдресэмплированныхэлементов;длительностьможетпревысить5минут,поэтомуеслиофициальныйнаучныйотчётпотребуетсядляаудита,егозапускдолженвыполнитьпользователь. ДляустановленногоSTOPэтотдорогойрасчётнеизменитрешение.
+
+Исходники,пороги,ресурсы,images,сертификат,sealedrawне менялись. Новогоповтораилидоборанет. Calibrationshellcleanupподтверждён,lockсвободен,qdrantнетронут. Этап4не завершён;шестьраннихgatesиqualificationисторическиpassed,новыхcalibration/generatorpassedнет. Дальше нуженразбордлинныхпауз/зависимостииновоезаранеезафиксированноерешение,прежнююкомандуповторятьнельзя.

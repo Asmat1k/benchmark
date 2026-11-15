@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "results/verify/readiness/stage4/solution-research-v1/qualification/review/primary.py"
+  ],
+  "start": 1794678662.746092,
+  "elapsed_s": 0.6106228828430176,
+  "exit": 0
+}

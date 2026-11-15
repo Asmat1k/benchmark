@@ -1,0 +1,1 @@
+PASS: Battery Power rejected before any Docker command; one pmset read only.

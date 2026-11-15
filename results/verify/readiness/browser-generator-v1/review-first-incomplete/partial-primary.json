@@ -1,0 +1,202 @@
+{
+  "scope": "descriptive-unsealed-partial-not-official-run",
+  "mode": "WT-S",
+  "frequency_hz": 20,
+  "planned_outcomes_original": 6,
+  "started": 1,
+  "officially_complete": 0,
+  "other_planned": 5,
+  "measurement_slots": 1200,
+  "sent": 1200,
+  "states": {
+    "sent": 1200
+  },
+  "completed": 1200,
+  "timely": 1200,
+  "late": 0,
+  "missing": 0,
+  "rtt_p50_ms": 2.800000011920929,
+  "rtt_p99_ms": 9.0,
+  "lag_p99_ms": 7.700000017881393,
+  "lag_max_ms": 22.700000017881393,
+  "cpu_attempts": [
+    {
+      "status": "failed",
+      "roles": {
+        "browser": {
+          "baseline_ceil_pct": 1,
+          "idle_ceil_pct": 1,
+          "passed": true
+        },
+        "server": {
+          "baseline_ceil_pct": 1,
+          "idle_ceil_pct": 1,
+          "passed": true
+        },
+        "router": {
+          "baseline_ceil_pct": 6,
+          "idle_ceil_pct": 7,
+          "passed": false
+        }
+      }
+    },
+    {
+      "status": "failed",
+      "roles": {
+        "browser": {
+          "baseline_ceil_pct": 1,
+          "idle_ceil_pct": 2,
+          "passed": false
+        },
+        "server": {
+          "baseline_ceil_pct": 1,
+          "idle_ceil_pct": 2,
+          "passed": false
+        },
+        "router": {
+          "baseline_ceil_pct": 6,
+          "idle_ceil_pct": 6,
+          "passed": true
+        }
+      }
+    },
+    {
+      "status": "failed",
+      "roles": {
+        "browser": {
+          "baseline_ceil_pct": 1,
+          "idle_ceil_pct": 2,
+          "passed": false
+        },
+        "server": {
+          "baseline_ceil_pct": 1,
+          "idle_ceil_pct": 2,
+          "passed": false
+        },
+        "router": {
+          "baseline_ceil_pct": 6,
+          "idle_ceil_pct": 6,
+          "passed": true
+        }
+      }
+    },
+    {
+      "status": "failed",
+      "roles": {
+        "browser": {
+          "baseline_ceil_pct": 1,
+          "idle_ceil_pct": 2,
+          "passed": false
+        },
+        "server": {
+          "baseline_ceil_pct": 1,
+          "idle_ceil_pct": 2,
+          "passed": false
+        },
+        "router": {
+          "baseline_ceil_pct": 6,
+          "idle_ceil_pct": 6,
+          "passed": true
+        }
+      }
+    }
+  ],
+  "primary_hashes": {
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/router-final.jsonl": "9cf6a2c6d32539ad556e6836cf1d149d5fecdd75edfa547c3380b9c2a381c8b4",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/commit": "7b49f945661aaafc388558834d20a0d6e088d1adafb0279e0c1293b52aea9f0e",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/server-build.txt": "d8ee6803ee5e679533057180cc27f1dc9ff7362a727e40ec9924e3753213e183",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/browser-route-after.txt": "2f8f80793d2a5ee26780c9954a23f656f97075260fb1ac7d881d535c006d9db9",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/baseline-browser.jsonl": "e756b1743b97c8cc602565994de51717ed97ed6195d46824674400bd5e3634b3",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/browser-route-before.txt": "2f8f80793d2a5ee26780c9954a23f656f97075260fb1ac7d881d535c006d9db9",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-2-comparison.json": "12cdedeb49ddb416178357ef425f9d4b5124074ae5a638c4878767568f529471",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/baseline-marker": "f3ec366c623e0ad93df709051a1844c13ed1e9ca51346b124539eb8a36f4a78e",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-1-browser.jsonl": "b5994bea280fe7035f822c663ca6c3f0c69ec5d823283a0baaecb5e15122c8f2",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/collect-backlog": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/collection-sources.json": "2023853a1299c92c7a30f6693077de66e7102592e66d30254e34478f97bbc134",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-3-router.jsonl": "fd0fef720a265ff5203c9ae71e49b6ece2b7346613b589407f309a49524d9133",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-1-queues.jsonl": "70fb03c7d5b6d5d30c15852552b370b0c201f1d37546879e44fa1a87930eded1",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-4-router.jsonl": "064c17e729613d807ef7c97adcf56bcc33a5a1bc6dee2b3ce7d11e91f9267bc4",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/started": "c5d78f058bded23d1f21d2dc9f5200cf36d3c57aa6b064f121c1fc7ba28c3f49",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-3-selector.exit": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/server-settings-after.txt": "c66a248393c260db014a041ff3654753b38298895723601eb13a54efaf120989",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-4-selector.exit": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-2-browser.jsonl": "80d88c767e3048d85b0b8f1673ddd6837e1d015da238865163c076a26081706c",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/forward-before": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-2-cpu.json": "fcc573215610cf439158df2b4ed374b2adf0b91cc92d38dd78ee09af658501b1",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-3-cpu.json": "337b92550b23bccd2d6c4c9ad2bb57e19e860f5804d5248333910a2288f4c4d4",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/browser-settings-before.txt": "031f77f615fd199c29390cd74ef2d5e6f7b348f00b99ad4fe104cc57983280c5",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/server-route-before.txt": "7d7e55ebdc28a3483171c6af092fd042a3087f9831350365af2149c76400f2bc",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/forward-after": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-1-server.jsonl": "82068cf71d4ea7ff3f8da3e82f2dc7e1dc4416dd0fb45452f3984bc9f08e33bc",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/server-route-after.txt": "7d7e55ebdc28a3483171c6af092fd042a3087f9831350365af2149c76400f2bc",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/router-sampler-error.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/baseline-selector.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-2-router.jsonl": "a007c978d1acfd0639d3b9d8acef51b8073ef0c8c900837c7eb2e5adc8ffa20b",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-1-marker": "342fcef322458876ab4e1b21e221340d9edb6f3335aeae5a4737175d76da9e92",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-1-selector.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/browser-settings-after.txt": "031f77f615fd199c29390cd74ef2d5e6f7b348f00b99ad4fe104cc57983280c5",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/baseline-cpu.json": "abbaf7496c32a09d1ddb0dedde5528dd5e96abb78a27a91e841990ef97448830",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-4-comparison.json": "12cdedeb49ddb416178357ef425f9d4b5124074ae5a638c4878767568f529471",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-4-cpu.json": "3b806b5c601888dbe4e0c60f0a84205fdc6a5b901a29f5fa23ddf92c27962f7a",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/server-log.txt": "cdc1078d34f20f41d224a17b672a96fed9c3014a17aafe70e81cb5749f9e6698",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/resource-start": "264237e58901841eb345bc2a9c771fd382e735df03d7d6b8faa8115ad2bdd60d",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-3-selector.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/limits.json": "4e95e5fb5b861d31b38f3d5f7bb9080cdb816002f39c64501b5427bfc3677842",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/vm.json": "cac9c4f38f8941b1fac366d29ab7414bfe18aee77d48255feb4a0f03eab54d85",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-2-selector.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/baseline-router.jsonl": "7d283a493fa3a0bc4678aa1a9ab3649a7380d10216a9f93b8f37f2cd27597d88",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/monitoring-mode": "b8d31e852725afb1e26d53bab6095b2bff1749c9275be13ed1c05a56ed31ec09",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/security.json": "6cdcd3dd0940108776df998a86a7546bb0b82e34d3a2ccbf0b9ff0ecb5f71a4a",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-4-selector.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/images.json": "4e95e5fb5b861d31b38f3d5f7bb9080cdb816002f39c64501b5427bfc3677842",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/server-final.jsonl": "6d33fc6bf2974bd19a3aa740087d8ac182c9bc2e81a16811b5bcf3042767ed50",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/router-links.txt": "439f74e7d789d85516b539b2fd8771d01ec789199eaeb7ba9aee3fb964b28f0b",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-3-comparison.json": "12cdedeb49ddb416178357ef425f9d4b5124074ae5a638c4878767568f529471",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-3-marker": "3b97a9404e084180e3d0249d5f8dade5c4516b5fec0b77811b78677cc9849d11",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/host.txt": "edeff736ee5a6d1043ddc6c5d9b35550cd89b702733520c9f252dcc90a191a34",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/baseline-server.jsonl": "1d6b3329c59be60f75cf444f9018562c66109447e4d75cba803b6956d217d527",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/service-names.txt": "623795ac212576a2ecff21a3eafdfd3c3ebbcbc0fc4bd8250d70eceb6411a3e3",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-1-cpu.json": "b3acb135c92b5d4a4c24e96d4f94a0848ed3e5471d8f2c706b75d80076404710",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/server-route.txt": "472456cbab08d9d07afb0887d82644eaa54b5f1a17bf3c8c1f90f95cd70b969b",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/browser-route.txt": "4ef09f4c3a50ebfc0b899ea7b4f88917f8f4997e14f22543b50c1fe30fb61813",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/leaf.pem": "ff69b4145dbd13f610506b4c5324ed515b5d58dd5556c81ff087cf845a0933b9",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/context.json": "fe5465178b05e5dc76e35fe8bd73e4ee5e8c7188f4ad9c97e04fe05ce892ff0a",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/router-links-after.txt": "7ed64257890a46e0fefc5b5e28cb12065ed1cb3e4ef5d29be43a93203d0862c4",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-4-marker": "3cc9db612b0ec09851fe0110c2ed23f630254c5fadf3cac985212242f8426c93",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/browser-sampler-error.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/dirty": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/schedule.json": "7d62af23ee4a0356038e566717aea97df880d5283f83637d1c90a1b6b7dca753",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/counters.json": "c4a1cff3bb634892df8cb1202e96a3bcc4cdba54b4203bdbaac03708ee1de89b",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-1-comparison.json": "0fbfca275cdd96100e00b7077adfc18ba5aae8eb17169d63930ad5adb67a435a",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/qdisc-after.json": "3942a6f2acfddc812762ed8ffac92575e0ca6bec894fc36df1d9b6770fc59ab7",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-1-selector.exit": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/browser-final.jsonl": "cdc0b60ad438dfad3370b59b17cc2a41490074c9fb9da2ff2568b6a4c627fcfb",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-3-server.jsonl": "ece6f2a0c04bf824e3a1af8c8985c91339fef4afee535b9cfa53c490b24fa6d3",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/server-sampler-error.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-4-server.jsonl": "b474f72226fd96525cfec36647e68ad06f42cd1e62c5cd2ff66f386b356f3678",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-3-browser.jsonl": "2dcf688f0cbd52b42e54be0e46097204cdbc60f02b1807108f74bdea93cce04d",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/server-settings-before.txt": "c66a248393c260db014a041ff3654753b38298895723601eb13a54efaf120989",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/limits.txt": "f28c05b6c7a1ebb42e7b8b970483d9e2b3d1b526c9cbf636434fb2b36bf8762a",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/baseline-selector.exit": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-2-queues.jsonl": "713d4185fa9f4cdffc28459072c9e4b7ab045e4f8ab6ecf2ff122d9eadb28e83",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-2-server.jsonl": "7a9324aec5f247b84242a4ad9a4b200b10832dd5088e2de402a883b3ccb92f0f",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/run.json": "9650fc97fdbaff4741a2fbf62604bdd95246f59fa64f0e93184fc26513c2868b",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/router-links-before.txt": "7ed64257890a46e0fefc5b5e28cb12065ed1cb3e4ef5d29be43a93203d0862c4",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-2-marker": "c9005bf1d3a2dbc47de691d46d3419c13212819ec85e10f90705f20da32e5f81",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/page.json": "7c0a39216ca269e88dce787e2fa2f258841feb0f9f0cd078bf770207f282f650",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-4-queues.jsonl": "4101b932018cb8d3b89c3d159d3cf40fdeafe57bfd4cc73171115fe9ae938839",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-1-router.jsonl": "535df7715b57e5b7b2364ddb53175e1a9e398abe0cae66340f8bd9218ed7dff9",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-3-queues.jsonl": "52f681294a9fbeaf4c0d701e23e3a66405cb065904864c0bff1d52f52a6a2d38",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-4-browser.jsonl": "ffeeb30c10f813f683136f70cb49cc07abb851cec6c8b4352703872c224239ad",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/stabilization-2-selector.exit": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/profile.txt": "802661abecf116eb420b2931b6ec487f55c620ab93fe8f08a8e9881b88e1dd75",
+    "results/verify/diagnostic/generator-20.PDOSDsWY/quarantine/wswt-d3-wswt-measure-mams169i/qdisc-before.json": "23c69c63667e7d3bdf656703e7bd7707f504d4bba049a9ab1d8c20129f2ea4cb"
+  },
+  "missing_official": [
+    "SHA256SUMS",
+    "resource-window.json",
+    "backlog.jsonl",
+    "manifest.json"
+  ],
+  "interpretation": "CPU recovery criterion failed; collection stopped after complete page slots but before mandatory final resource/backlog/sealed publication. RTT descriptive only. No evidence of corrupted page; completeness of official run unknown. Preserve original six planned outcomes; any fixed collection under corrected orchestration is a new explicitly registered version."
+}

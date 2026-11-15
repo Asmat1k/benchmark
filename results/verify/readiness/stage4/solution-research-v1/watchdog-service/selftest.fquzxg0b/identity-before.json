@@ -1,0 +1,12 @@
+{
+  "results/verify/readiness/stage4/solution-research-v1/watchdog-service/tools/calibration_probe.py": "2181eb3c9fef144ce8369809cd5fa2b84c84944330cf74ead26dc5214b8d6639",
+  "results/verify/readiness/stage4/solution-research-v1/watchdog-service/tools/check.py": "cf2ce15ade0dd0688b8415132165db5d146df642add11ed750040e7129dd87c1",
+  "results/verify/readiness/stage4/solution-research-v1/watchdog-service/tools/sender.py": "12a9c0e8bf9b5530cfc59730d7fed1e1591f6977c0369bf7e1d0065cee5518b1",
+  "results/verify/readiness/stage4/solution-research-v1/watchdog-service/tools/server.py": "b50b120cbf501bba8887754cf38973e35a75472b6ca79caa3f171db2a25686f0",
+  "results/verify/readiness/stage4/solution-research-v1/watchdog-service/tools/timer_check.py": "2ac594e9dbb0da66f2a1b976a51520b346bb6d404dbd99d600f2ebb59bfb3612",
+  "results/verify/readiness/stage4/solution-research-v1/watchdog-service/tools/trace.py": "103fa360946688ae29da71852fbb577e792029b87b221a6efc307ef7bdcfef61",
+  "results/verify/readiness/stage4/solution-research-v1/watchdog-service/network.sh": "a717ea0844a1c80f213490bc61694eabeed5f40098668e0ede69eab0b55c1b55",
+  "results/verify/readiness/stage4/solution-research-v1/watchdog-service/selftest.sh": "6617af894858866cf0941caaf6108715e9947540249c70a8890c8a3fe2cad923",
+  "results/verify/readiness/stage4/solution-research-v1/watchdog-service/plan.md": "59305c817d079311782b0c53911cc6437c250df4a83f7f18b19b911169aef6a7",
+  "results/verify/readiness/stage4/solution-research-v1/watchdog-service/run.py": "cb0f2423b16e9b5b941db28a08db7353325b6a09d07278f126e5ec90cf645dee"
+}

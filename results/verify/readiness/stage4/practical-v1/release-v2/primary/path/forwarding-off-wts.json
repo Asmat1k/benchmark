@@ -1,0 +1,35 @@
+{
+  "collection_id": "primary-path",
+  "gate": "path",
+  "id": "forwarding-off-wts",
+  "actual": true,
+  "scope": "real forwarding-off probe",
+  "command": "smoke router ip_forward=0; path.js",
+  "observations": {
+    "forwarding": 0,
+    "ws": "timed_out",
+    "wt": "timed_out"
+  },
+  "files": [
+    {
+      "path": "results/verify/path/wswt-smoke.b0jcKRCt/forwarding-disabled.txt",
+      "sha256": "ada62ed3f57979fc4f599fa4f40cc72b9a76fd37cc98bfde7bc725a7fb76806a"
+    },
+    {
+      "path": "results/verify/path/wswt-smoke.b0jcKRCt/forwarding-enabled.txt",
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    }
+  ],
+  "preparer": {
+    "path": "/bench/docs/readiness/practical-early.py",
+    "sha256": "f49f09d9f984c90f5ee94c39bf461120370e0cf443629599f580957e80ad9964"
+  },
+  "source_inventory": {
+    "path": "results/verify/readiness/stage4/practical-v1/release-v2/source-inventory.json",
+    "sha256": "0f05a3987cb0c387ec76d9350e3f1837c8f583cfa8241798aab68da71d171f06"
+  },
+  "applicability": {
+    "path": "results/verify/readiness/stage4/practical-v1/release-v2/release.json",
+    "sha256": "b154faea85adad05167252d640239bde8662abeadee243ca2356e20b6c12dda8"
+  }
+}

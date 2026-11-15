@@ -1,0 +1,5 @@
+# Launch review notes
+
+Independent code and methodology subagents identified expected internal-review status mismatch before network. Prerequisites now require exact passed_internal_independent_raw_review plus actualcollection/fullsourcecommit/reportpath+SHA, preserving originalreview. A second code finding: default SIGALRM would kill without finally. Preflight now raises TimeoutError and restores handler; offline injected signal verifies STOP/exit2/ended and handler restoration. Run wrapper records failed/new raw directories in finally, preserves exit0 as collected_pending_independent_review, checks fullsourceHEAD and frozen input hashes, and handles SIGTERM through interruption cleanup. No network was started by these tests. Prerequisite-only canonical check passed: six gates,138sourcefiles, expectedverify2.
+
+Final independent launch audits ended at account subagent usage limit; no final all-clear from those agents is claimed. Root reviewed fixes and resulting runnable script and performed bounded offline checks. Earlier independent implementation/method/results reviews and actualtimerrawreview completed successfully; this distinction is retained.

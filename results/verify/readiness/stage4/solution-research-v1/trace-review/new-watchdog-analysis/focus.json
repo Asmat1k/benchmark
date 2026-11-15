@@ -1,0 +1,399 @@
+{
+  "null_anchors": [
+    {
+      "start_ns": 130125217215000,
+      "cpu": 0,
+      "timer": "00000000f3257659",
+      "following_dequeue_ns": 130125217216000,
+      "fields": {
+        "ifindex": "14",
+        "handle": "0x806C0000",
+        "parent": "0xFFFFFFFF",
+        "txq_state": "0x0",
+        "packets": "0",
+        "skbaddr": "0000000000000000"
+      }
+    },
+    {
+      "start_ns": 130125257609000,
+      "cpu": 1,
+      "timer": "000000003b2a1ee1",
+      "following_dequeue_ns": 130125257609000,
+      "fields": {
+        "ifindex": "13",
+        "handle": "0x806D0000",
+        "parent": "0xFFFFFFFF",
+        "txq_state": "0x0",
+        "packets": "0",
+        "skbaddr": "0000000000000000"
+      }
+    },
+    {
+      "start_ns": 130126933523000,
+      "cpu": 1,
+      "timer": "000000003b2a1ee1",
+      "following_dequeue_ns": 130126933523000,
+      "fields": {
+        "ifindex": "13",
+        "handle": "0x806D0000",
+        "parent": "0xFFFFFFFF",
+        "txq_state": "0x0",
+        "packets": "0",
+        "skbaddr": "0000000000000000"
+      }
+    }
+  ],
+  "windows": [
+    {
+      "second": 21,
+      "sender_lag_max_ms": 0.013717999998334562,
+      "sender_lag_median_ms": 0.0008009999983187299,
+      "timers": {
+        "000000003b2a1ee1": {
+          "n": 100,
+          "callback_lateness_median_ms": 0.066984,
+          "sampled_now_lateness_median_ms": 0.0661415,
+          "callback_minus_now_median_us": 0.759
+        },
+        "00000000f3257659": {
+          "n": 100,
+          "callback_lateness_median_ms": 0.002922,
+          "sampled_now_lateness_median_ms": 0.00285,
+          "callback_minus_now_median_us": 0.071
+        }
+      },
+      "net_dev_queue": {
+        "to_server": {
+          "0": 100,
+          "1": 0
+        },
+        "to_browser": {
+          "0": 0,
+          "1": 100
+        }
+      },
+      "net_dev_start_xmit": {
+        "to_server": {
+          "0": 100,
+          "1": 0
+        },
+        "to_browser": {
+          "0": 0,
+          "1": 100
+        }
+      }
+    },
+    {
+      "second": 22,
+      "sender_lag_max_ms": 0.007802000000083353,
+      "sender_lag_median_ms": 0.0008019999986572657,
+      "timers": {
+        "000000003b2a1ee1": {
+          "n": 96,
+          "callback_lateness_median_ms": 0.0673585,
+          "sampled_now_lateness_median_ms": 0.066329,
+          "callback_minus_now_median_us": 0.8
+        },
+        "00000000f3257659": {
+          "n": 99,
+          "callback_lateness_median_ms": 0.002963,
+          "sampled_now_lateness_median_ms": 0.002809,
+          "callback_minus_now_median_us": 0.113
+        }
+      },
+      "net_dev_queue": {
+        "to_server": {
+          "0": 100,
+          "1": 0
+        },
+        "to_browser": {
+          "0": 0,
+          "1": 99
+        }
+      },
+      "net_dev_start_xmit": {
+        "to_server": {
+          "0": 99,
+          "1": 0
+        },
+        "to_browser": {
+          "0": 0,
+          "1": 96
+        }
+      }
+    },
+    {
+      "second": 23,
+      "sender_lag_max_ms": 0.895302000000811,
+      "sender_lag_median_ms": 0.000906000001123175,
+      "timers": {
+        "000000003b2a1ee1": {
+          "n": 98,
+          "callback_lateness_median_ms": 0.0047535,
+          "sampled_now_lateness_median_ms": 0.0028085,
+          "callback_minus_now_median_us": 0.487
+        },
+        "00000000f3257659": {
+          "n": 99,
+          "callback_lateness_median_ms": 0.10017,
+          "sampled_now_lateness_median_ms": 0.099016,
+          "callback_minus_now_median_us": 0.487
+        }
+      },
+      "net_dev_queue": {
+        "to_server": {
+          "0": 45,
+          "1": 55
+        },
+        "to_browser": {
+          "0": 52,
+          "1": 47
+        }
+      },
+      "net_dev_start_xmit": {
+        "to_server": {
+          "0": 99,
+          "1": 0
+        },
+        "to_browser": {
+          "0": 0,
+          "1": 98
+        }
+      }
+    },
+    {
+      "second": 24,
+      "sender_lag_max_ms": 0.12259400000039022,
+      "sender_lag_median_ms": 0.0010734999996202532,
+      "timers": {
+        "000000003b2a1ee1": {
+          "n": 97,
+          "callback_lateness_median_ms": 0.002754,
+          "sampled_now_lateness_median_ms": 0.002475,
+          "callback_minus_now_median_us": 0.278
+        },
+        "00000000f3257659": {
+          "n": 99,
+          "callback_lateness_median_ms": 1.883087,
+          "sampled_now_lateness_median_ms": 1.882059,
+          "callback_minus_now_median_us": 0.862
+        }
+      },
+      "net_dev_queue": {
+        "to_server": {
+          "0": 0,
+          "1": 100
+        },
+        "to_browser": {
+          "0": 99,
+          "1": 0
+        }
+      },
+      "net_dev_start_xmit": {
+        "to_server": {
+          "0": 99,
+          "1": 0
+        },
+        "to_browser": {
+          "0": 0,
+          "1": 97
+        }
+      }
+    },
+    {
+      "second": 25,
+      "sender_lag_max_ms": 0.12371999999959371,
+      "sender_lag_median_ms": 0.0011359999989508651,
+      "timers": {
+        "000000003b2a1ee1": {
+          "n": 95,
+          "callback_lateness_median_ms": 0.002753,
+          "sampled_now_lateness_median_ms": 0.002475,
+          "callback_minus_now_median_us": 0.236
+        },
+        "00000000f3257659": {
+          "n": 99,
+          "callback_lateness_median_ms": 1.957961,
+          "sampled_now_lateness_median_ms": 1.957058,
+          "callback_minus_now_median_us": 0.819
+        }
+      },
+      "net_dev_queue": {
+        "to_server": {
+          "0": 0,
+          "1": 100
+        },
+        "to_browser": {
+          "0": 99,
+          "1": 0
+        }
+      },
+      "net_dev_start_xmit": {
+        "to_server": {
+          "0": 99,
+          "1": 0
+        },
+        "to_browser": {
+          "0": 0,
+          "1": 95
+        }
+      }
+    },
+    {
+      "second": 26,
+      "sender_lag_max_ms": 0.008845000000292202,
+      "sender_lag_median_ms": 0.0010535000001254957,
+      "timers": {
+        "000000003b2a1ee1": {
+          "n": 99,
+          "callback_lateness_median_ms": 0.002877,
+          "sampled_now_lateness_median_ms": 0.002475,
+          "callback_minus_now_median_us": 0.361
+        },
+        "00000000f3257659": {
+          "n": 99,
+          "callback_lateness_median_ms": 1.623586,
+          "sampled_now_lateness_median_ms": 1.622642,
+          "callback_minus_now_median_us": 0.694
+        }
+      },
+      "net_dev_queue": {
+        "to_server": {
+          "0": 15,
+          "1": 85
+        },
+        "to_browser": {
+          "0": 85,
+          "1": 14
+        }
+      },
+      "net_dev_start_xmit": {
+        "to_server": {
+          "0": 99,
+          "1": 0
+        },
+        "to_browser": {
+          "0": 0,
+          "1": 99
+        }
+      }
+    },
+    {
+      "second": 27,
+      "sender_lag_max_ms": 0.006303999998635845,
+      "sender_lag_median_ms": 0.000908500000150525,
+      "timers": {
+        "000000003b2a1ee1": {
+          "n": 98,
+          "callback_lateness_median_ms": 0.0674395,
+          "sampled_now_lateness_median_ms": 0.0666835,
+          "callback_minus_now_median_us": 0.819
+        },
+        "00000000f3257659": {
+          "n": 98,
+          "callback_lateness_median_ms": 0.003044,
+          "sampled_now_lateness_median_ms": 0.00285,
+          "callback_minus_now_median_us": 0.152
+        }
+      },
+      "net_dev_queue": {
+        "to_server": {
+          "0": 100,
+          "1": 0
+        },
+        "to_browser": {
+          "0": 0,
+          "1": 98
+        }
+      },
+      "net_dev_start_xmit": {
+        "to_server": {
+          "0": 98,
+          "1": 0
+        },
+        "to_browser": {
+          "0": 0,
+          "1": 98
+        }
+      }
+    },
+    {
+      "second": 28,
+      "sender_lag_max_ms": 0.009595999999874039,
+      "sender_lag_median_ms": 0.0009710000013001263,
+      "timers": {
+        "000000003b2a1ee1": {
+          "n": 100,
+          "callback_lateness_median_ms": 0.0682305,
+          "sampled_now_lateness_median_ms": 0.067308,
+          "callback_minus_now_median_us": 0.818
+        },
+        "00000000f3257659": {
+          "n": 100,
+          "callback_lateness_median_ms": 0.003189,
+          "sampled_now_lateness_median_ms": 0.00285,
+          "callback_minus_now_median_us": 0.277
+        }
+      },
+      "net_dev_queue": {
+        "to_server": {
+          "0": 100,
+          "1": 0
+        },
+        "to_browser": {
+          "0": 0,
+          "1": 100
+        }
+      },
+      "net_dev_start_xmit": {
+        "to_server": {
+          "0": 100,
+          "1": 0
+        },
+        "to_browser": {
+          "0": 0,
+          "1": 100
+        }
+      }
+    },
+    {
+      "second": 29,
+      "sender_lag_max_ms": 0.0076379999991331715,
+      "sender_lag_median_ms": 0.0008049999996728729,
+      "timers": {
+        "000000003b2a1ee1": {
+          "n": 98,
+          "callback_lateness_median_ms": 0.0674175,
+          "sampled_now_lateness_median_ms": 0.0668295,
+          "callback_minus_now_median_us": 0.7345
+        },
+        "00000000f3257659": {
+          "n": 100,
+          "callback_lateness_median_ms": 0.003001,
+          "sampled_now_lateness_median_ms": 0.00285,
+          "callback_minus_now_median_us": 0.109
+        }
+      },
+      "net_dev_queue": {
+        "to_server": {
+          "0": 100,
+          "1": 0
+        },
+        "to_browser": {
+          "0": 1,
+          "1": 99
+        }
+      },
+      "net_dev_start_xmit": {
+        "to_server": {
+          "0": 100,
+          "1": 0
+        },
+        "to_browser": {
+          "0": 0,
+          "1": 98
+        }
+      }
+    }
+  ]
+}

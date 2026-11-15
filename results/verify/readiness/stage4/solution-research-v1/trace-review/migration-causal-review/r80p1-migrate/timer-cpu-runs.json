@@ -1,0 +1,26 @@
+[
+  {
+    "cpu": 0,
+    "start_s": 0.040258,
+    "last_s": 36.142639,
+    "n": 3582,
+    "median_late_ms": 0.002796,
+    "max_late_ms": 24.16934
+  },
+  {
+    "cpu": 1,
+    "start_s": 36.166246,
+    "last_s": 68.65211,
+    "n": 3221,
+    "median_late_ms": 0.002942,
+    "max_late_ms": 25.682615
+  },
+  {
+    "cpu": 0,
+    "start_s": 68.67016,
+    "last_s": 100.032115,
+    "n": 3113,
+    "median_late_ms": 0.00264,
+    "max_late_ms": 3.19256
+  }
+]

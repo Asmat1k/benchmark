@@ -1,0 +1,5 @@
+{
+  "path": "results/verify/diagnostic/migration-causal.6itZemcx/r80p1-migrate/trace.txt",
+  "sha256": "30a4a4524cceb66dc412a99e206f9a5edd3300b9a4d6bef5e274882412666781",
+  "scope": "Read-only exact rebase event inspection; no measurement or raw modifications"
+}

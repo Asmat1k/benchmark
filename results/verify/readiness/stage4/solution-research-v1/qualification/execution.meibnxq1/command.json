@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "sh",
+    "docker/sender-diagnostic.sh",
+    "qualification"
+  ],
+  "head": "d66559066b704fde567b6c9f92f57e2dcde22698",
+  "TLS": "/Users/dobrov/Desktop/Code/ITMO/benchmark/build/series-tls-stage2._n__udb0",
+  "deadline_s": 600
+}

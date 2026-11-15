@@ -1,0 +1,182 @@
+[
+  {
+    "second": 36,
+    "network_median_ms": 40.294,
+    "network_p5_ms": 40.289,
+    "network_p95_ms": 40.299,
+    "remaining_median_ms": 40.372541999999996,
+    "max_send_lag_ms": 0.010973999997077044,
+    "replies": 95
+  },
+  {
+    "second": 37,
+    "network_median_ms": 40.294,
+    "network_p5_ms": 40.2909,
+    "network_p95_ms": 40.298,
+    "remaining_median_ms": 40.3715,
+    "max_send_lag_ms": 0.001141000000643544,
+    "replies": 99
+  },
+  {
+    "second": 38,
+    "network_median_ms": 40.294,
+    "network_p5_ms": 40.29,
+    "network_p95_ms": 40.2993,
+    "remaining_median_ms": 40.372333,
+    "max_send_lag_ms": 0.017267000002902932,
+    "replies": 98
+  },
+  {
+    "second": 39,
+    "network_median_ms": 40.293,
+    "network_p5_ms": 40.2898,
+    "network_p95_ms": 40.297,
+    "remaining_median_ms": 40.371874999999996,
+    "max_send_lag_ms": 0.0020589999985531904,
+    "replies": 97
+  },
+  {
+    "second": 40,
+    "network_median_ms": 40.294,
+    "network_p5_ms": 40.28995,
+    "network_p95_ms": 40.30605,
+    "remaining_median_ms": 40.37218750000001,
+    "max_send_lag_ms": 0.0065590000012889504,
+    "replies": 100
+  },
+  {
+    "second": 41,
+    "network_median_ms": 40.295,
+    "network_p5_ms": 40.29,
+    "network_p95_ms": 44.3725,
+    "remaining_median_ms": 40.369333,
+    "max_send_lag_ms": 0.007768000003125053,
+    "replies": 98
+  },
+  {
+    "second": 42,
+    "network_median_ms": 43.194,
+    "network_p5_ms": 40.8474,
+    "network_p95_ms": 44.938300000000005,
+    "remaining_median_ms": 40.247375000000005,
+    "max_send_lag_ms": 0.009894000002532266,
+    "replies": 99
+  },
+  {
+    "second": 43,
+    "network_median_ms": 43.043,
+    "network_p5_ms": 40.376,
+    "network_p95_ms": 45.177699999999994,
+    "remaining_median_ms": 40.247271,
+    "max_send_lag_ms": 0.016976999999315012,
+    "replies": 98
+  },
+  {
+    "second": 44,
+    "network_median_ms": 43.195,
+    "network_p5_ms": 40.83175,
+    "network_p95_ms": 44.889250000000004,
+    "remaining_median_ms": 40.247333000000005,
+    "max_send_lag_ms": 0.00493599999754224,
+    "replies": 96
+  },
+  {
+    "second": 45,
+    "network_median_ms": 43.1805,
+    "network_p5_ms": 40.810750000000006,
+    "network_p95_ms": 44.9467,
+    "remaining_median_ms": 40.24725000000001,
+    "max_send_lag_ms": 0.004102999999304302,
+    "replies": 98
+  },
+  {
+    "second": 46,
+    "network_median_ms": 43.287,
+    "network_p5_ms": 40.8829,
+    "network_p95_ms": 44.941,
+    "remaining_median_ms": 40.24704200000001,
+    "max_send_lag_ms": 0.001145000001997687,
+    "replies": 99
+  },
+  {
+    "second": 47,
+    "network_median_ms": 43.197,
+    "network_p5_ms": 40.86145,
+    "network_p95_ms": 44.9413,
+    "remaining_median_ms": 40.247167000000005,
+    "max_send_lag_ms": 0.0025210000021615997,
+    "replies": 98
+  },
+  {
+    "second": 48,
+    "network_median_ms": 43.283,
+    "network_p5_ms": 41.0088,
+    "network_p95_ms": 44.8766,
+    "remaining_median_ms": 40.247333,
+    "max_send_lag_ms": 0.0020220000005792826,
+    "replies": 99
+  },
+  {
+    "second": 49,
+    "network_median_ms": 40.299,
+    "network_p5_ms": 40.292,
+    "network_p95_ms": 44.2084,
+    "remaining_median_ms": 40.24783300000001,
+    "max_send_lag_ms": 0.7823550000030082,
+    "replies": 99
+  },
+  {
+    "second": 50,
+    "network_median_ms": 40.295,
+    "network_p5_ms": 40.2908,
+    "network_p95_ms": 40.2982,
+    "remaining_median_ms": 40.247709,
+    "max_send_lag_ms": 0.006105000000388827,
+    "replies": 97
+  },
+  {
+    "second": 51,
+    "network_median_ms": 40.294,
+    "network_p5_ms": 40.2899,
+    "network_p95_ms": 40.302099999999996,
+    "remaining_median_ms": 40.247708,
+    "max_send_lag_ms": 0.010023000002547633,
+    "replies": 99
+  },
+  {
+    "second": 52,
+    "network_median_ms": 40.294,
+    "network_p5_ms": 40.29,
+    "network_p95_ms": 40.298,
+    "remaining_median_ms": 40.247749999999996,
+    "max_send_lag_ms": 0.17185700000118231,
+    "replies": 99
+  },
+  {
+    "second": 53,
+    "network_median_ms": 40.293,
+    "network_p5_ms": 40.289,
+    "network_p95_ms": 40.31975,
+    "remaining_median_ms": 40.2478125,
+    "max_send_lag_ms": 0.010899000000790693,
+    "replies": 98
+  },
+  {
+    "second": 54,
+    "network_median_ms": 40.293,
+    "network_p5_ms": 40.29,
+    "network_p95_ms": 40.327,
+    "remaining_median_ms": 40.247625,
+    "max_send_lag_ms": 0.07644099999743048,
+    "replies": 99
+  },
+  {
+    "second": 55,
+    "network_median_ms": 40.291,
+    "network_p5_ms": 40.288,
+    "network_p95_ms": 40.3134,
+    "remaining_median_ms": 40.24816700000001,
+    "max_send_lag_ms": 0.011608000000705943,
+    "replies": 97
+  }
+]

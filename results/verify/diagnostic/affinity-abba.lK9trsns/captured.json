@@ -1,0 +1,330 @@
+[
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/browser-neighbors.json",
+    "sha256": "74ccac08794c335bf55f5ef9ac129d7a91f7e009c812662204b184b8e88fe2f6"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/browser-route.txt",
+    "sha256": "4ef09f4c3a50ebfc0b899ea7b4f88917f8f4997e14f22543b50c1fe30fb61813"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/collector.sh",
+    "sha256": "67c463ec38861cc71a0433ff66474fbf43a54a205a98f06eecdc593c912893ac"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/commit",
+    "sha256": "0d5a3531671115ac5657db7cc4340ad5f0dbb60991b84d86a2c05b8a9d9931ff"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/ended",
+    "sha256": "efd6621f2a1a65c60659969a55d66bdcada189ef4dd9ecf55d3bbfb86c50299d"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/exit",
+    "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/inspect.json",
+    "sha256": "e0e01b95f9d8d9b2c83b738424defb347a9dc2f5574806433ca2c5c05686814e"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B1/browser-status.txt",
+    "sha256": "2b4980b330f1f06bf61aad71d71259e0ec59c0c0701f71f488933cdd70c9e10b"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B1/browser.log",
+    "sha256": "195cae540213e439336f94433e159ef041be6c147aab09d1ee1af2cc99c0e085"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B1/browser.pcap",
+    "sha256": "0000bb6666cfe3307c8f53b96198a809d68a4d50062b63cbfa2cf0a371191a04"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B1/capture-option",
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B1/cpu-after.txt",
+    "sha256": "975dea0ba5a907c993edde3caf7e8157dc1635a712628558962640d0dcae00fb"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B1/cpu-before.txt",
+    "sha256": "12c468b78231af9e937bdb6fcd5dfb0e4d71d3b88aad6fc1d7641e5cd518cee9"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B1/probe-inspect.json",
+    "sha256": "f7ed9699990ee331caa5563c830f1fa8a75359ead40465961b6344eee9bb180d"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B1/probe.json",
+    "sha256": "a2011cbffa321d6c1fa0557ef41a4d38e74fc38733159868c9e1106d0e62dcf8"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B1/profile.txt",
+    "sha256": "93b8b62c9cf74d2b859505d9b29ebd23aaf0cb1fae34df937c107ccabd519c3d"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B1/qdisc-after.json",
+    "sha256": "1b42a28227e152ce4953f14ddc86f12e4e911f2fa05f02b9743d4a73c1fb9fc1"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B1/qdisc-before.json",
+    "sha256": "6136b7510e9de9e3df06f60546d8634c2dda7d01a7217b88002964b444fda5f9"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B1/sender-cpu-after.txt",
+    "sha256": "0c7e0868cfe2c3bd59750b011d2d3c1620da0fd5a5deb5f816536b5dd5c3e5d3"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B1/sender-cpu-before.txt",
+    "sha256": "daa6892402897291fbbd0439001d07b49670bb8b7649251bf48f1a556a0e8e4b"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B1/server-status.txt",
+    "sha256": "2d39f0fdaf25a5a44f43f1c3d11d9dff921b5cb9ef81cc8fba60d397ffd95b40"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B1/server.log",
+    "sha256": "c656943ca0ae41a660adab289ea96a330adf1e4ae929b8d0af5fc4c2793929d3"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B1/server.pcap",
+    "sha256": "b03e07a732051cd00add2481719a41a45a50593c8f811ff949988946787ad0c5"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B2/browser-status.txt",
+    "sha256": "2b4980b330f1f06bf61aad71d71259e0ec59c0c0701f71f488933cdd70c9e10b"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B2/browser.log",
+    "sha256": "195cae540213e439336f94433e159ef041be6c147aab09d1ee1af2cc99c0e085"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B2/browser.pcap",
+    "sha256": "0a565e681b630c4902de59d512ce93cad8394e741b262fe02c72db614a738c52"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B2/capture-option",
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B2/cpu-after.txt",
+    "sha256": "fdbf2b8c6ed80c0d9dc0561fd48da4178b3da30f664b2014fd6d15db7a4b7a16"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B2/cpu-before.txt",
+    "sha256": "19128cf84fbc4ba24ad9e00b4174826f453c3ab78857c1f7cabcdf7fda973bfb"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B2/probe-inspect.json",
+    "sha256": "f7ed9699990ee331caa5563c830f1fa8a75359ead40465961b6344eee9bb180d"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B2/probe.json",
+    "sha256": "ad52dca4b2aafb172ba20ebe71edab481fc632837aae5ec0415cbf8586f728db"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B2/profile.txt",
+    "sha256": "1c80feec8a9cbc40c43bfebd786a632a648a9779172bf024c37bc42b1bab0fe7"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B2/qdisc-after.json",
+    "sha256": "27deca3104fa4e41e2d982c774a352433cb37cfd08f498d37a5de81e56f66066"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B2/qdisc-before.json",
+    "sha256": "1b42a28227e152ce4953f14ddc86f12e4e911f2fa05f02b9743d4a73c1fb9fc1"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B2/sender-cpu-after.txt",
+    "sha256": "841a986a05dfd537f44661e8f9ffc35aefd6ab476cfb10433807355a6f670327"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B2/sender-cpu-before.txt",
+    "sha256": "b0397795f6206ae45201416d7c719919c13ac002fd51ba7b2a9c2d84163499fd"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B2/server-status.txt",
+    "sha256": "10e2fd47d5cfa75e12be395ce34d831bdcac0d53d7d8a45e7bec7e08b749fa70"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B2/server.log",
+    "sha256": "c656943ca0ae41a660adab289ea96a330adf1e4ae929b8d0af5fc4c2793929d3"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/pinned-B2/server.pcap",
+    "sha256": "ca580f8572c74c4061c95a346a9e0dbc46559fc904050dc000d1a9c7e1b74ec5"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/plan.md",
+    "sha256": "7b3004d5e80e7cae0d6ece83f91b879bddd1557dfd4ec28db05f8ab7c6219db2"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/router-browser-neighbors.json",
+    "sha256": "d56ebb13a4b53e6dc0709178db1a0a0b57165022563c34061cef8eb319ee3eaf"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/router-links.txt",
+    "sha256": "439f74e7d789d85516b539b2fd8771d01ec789199eaeb7ba9aee3fb964b28f0b"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/router-server-neighbors.json",
+    "sha256": "07f037d2e4be6dac83a3047450b5cf13c7b14e99a09634c576195e087d6783dd"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/server-neighbors.json",
+    "sha256": "8cd53b3beae081e634301b6df2550a989ab894ce879946b44948015d5ce36b37"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/server-route.txt",
+    "sha256": "472456cbab08d9d07afb0887d82644eaa54b5f1a17bf3c8c1f90f95cd70b969b"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A1/browser-status.txt",
+    "sha256": "dfc9120e0d042995e2f4a18319ba488ba2e9ea627dad47999f90d43af718519a"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A1/browser.log",
+    "sha256": "195cae540213e439336f94433e159ef041be6c147aab09d1ee1af2cc99c0e085"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A1/browser.pcap",
+    "sha256": "e845f44e66dbd54ba4ead1979a9c8f81ca44f9b7d95e4fdbf633e725fb540151"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A1/capture-option",
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A1/cpu-after.txt",
+    "sha256": "7a2deeb12727185671864d0537960bff3a6c11086f608a6e169696a2da152031"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A1/cpu-before.txt",
+    "sha256": "731c2dbeb105101db57e65fe1814f35ad7aa8d71032be426cc72949517e355cd"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A1/probe-inspect.json",
+    "sha256": "40d90db4ae8372c41db941f70fe6b8087e5c790c869c802c2b0dbc009e8d26aa"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A1/probe.json",
+    "sha256": "68b4eb9141bc144bca22f83304a2dbcbb26acaa5baf04fd5865276235b2a8c6b"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A1/profile.txt",
+    "sha256": "84ff57ffb9705c80907f4d0c553e3415bce0785c864a23299473f71f2b44e0b4"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A1/qdisc-after.json",
+    "sha256": "6136b7510e9de9e3df06f60546d8634c2dda7d01a7217b88002964b444fda5f9"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A1/qdisc-before.json",
+    "sha256": "0f8451e67fce77b8fa8ff5040622387f779ea52d272b0c3b2a38dc3ff11a111b"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A1/sender-cpu-after.txt",
+    "sha256": "c6afa8fa9de8aebfbf462b6f1227e8808407e1f15d574ca9acab1ee0e4e70516"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A1/sender-cpu-before.txt",
+    "sha256": "b62cdba2ab786232422ac3e37b21ebdbfd4b0808011af37b3051c144d2a92c00"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A1/server-status.txt",
+    "sha256": "8022555b66c37d5a8b6d0cac379fe654d27f647c5ed89c665fb9fe3d73c3105e"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A1/server.log",
+    "sha256": "c656943ca0ae41a660adab289ea96a330adf1e4ae929b8d0af5fc4c2793929d3"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A1/server.pcap",
+    "sha256": "3eddb52ed394f5301e23f2925d608b4096e0640ecdc66d8995c93bee5e499df4"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A2/browser-status.txt",
+    "sha256": "dfc9120e0d042995e2f4a18319ba488ba2e9ea627dad47999f90d43af718519a"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A2/browser.log",
+    "sha256": "195cae540213e439336f94433e159ef041be6c147aab09d1ee1af2cc99c0e085"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A2/browser.pcap",
+    "sha256": "60235f746ce502e27981b2f21cfaf4a0e87ff918645d5c4ec9ef5b46cf828496"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A2/capture-option",
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A2/cpu-after.txt",
+    "sha256": "0af225ed019ee32ac8e6d17c0ce1867ee99fda258d7b10cb30d0975bc0c121ae"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A2/cpu-before.txt",
+    "sha256": "61635f44cfeea7a526f4a36c3ae69264294f7ded2455850c56cda6db331c0949"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A2/probe-inspect.json",
+    "sha256": "40d90db4ae8372c41db941f70fe6b8087e5c790c869c802c2b0dbc009e8d26aa"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A2/probe.json",
+    "sha256": "92645de7ac9abc64bce7c6c5554f751775829ee42eaeedefc732bec98b19c95b"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A2/profile.txt",
+    "sha256": "914eab1f17ac194e7850dc18b0bfc9463339a613c5e3658f05d2eb1f55700a68"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A2/qdisc-after.json",
+    "sha256": "f2023218f9c36d272c730919a667a337cb84e16c1011a14fa09ace2e07abe57d"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A2/qdisc-before.json",
+    "sha256": "27deca3104fa4e41e2d982c774a352433cb37cfd08f498d37a5de81e56f66066"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A2/sender-cpu-after.txt",
+    "sha256": "4abb2b6b855d6b8262832496805c903a6b3f00bcbcbdc4487f31c8921956584c"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A2/sender-cpu-before.txt",
+    "sha256": "17a8f7f42570e4cf1c738198228c4135d83a60a17d7eff944163da02278a35e5"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A2/server-status.txt",
+    "sha256": "dce05c2f7d7308f944b08594b130ed46eb0795c3a8cf50798dcd746ccca1dab0"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A2/server.log",
+    "sha256": "c656943ca0ae41a660adab289ea96a330adf1e4ae929b8d0af5fc4c2793929d3"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/shared-A2/server.pcap",
+    "sha256": "557e5a4f10f2da6b2a3826468ab71ee312ded1383808f484990becaa0cc1ed6c"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/sources-after.json",
+    "sha256": "6fbb2df45336cb7e38483a4fe506ef42cca059346b9c95fa98b2eb313e773d54"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/sources-before.json",
+    "sha256": "6fbb2df45336cb7e38483a4fe506ef42cca059346b9c95fa98b2eb313e773d54"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/started",
+    "sha256": "598b1a5e7cdaf77094701a31336eff027c7a97aff8e2120efc429a3eb7194682"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/tools/calibration_probe.py",
+    "sha256": "2181eb3c9fef144ce8369809cd5fa2b84c84944330cf74ead26dc5214b8d6639"
+  },
+  {
+    "path": "results/verify/diagnostic/affinity-abba.lK9trsns/tools/probe.py",
+    "sha256": "85fa8df3985907c00abedb2f31e3c7996e593eb2d8435e9d5084626de512799a"
+  }
+]

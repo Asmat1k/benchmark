@@ -286,13 +286,22 @@ def compute(directory, output):
     figures(output,runs,rtt_records,profiles,thresholds)
 
 
-def analyze(directory):
+def analyze(directory, all_outcomes=False, destination=None):
     directory = directory.resolve()
-    with measurement_lock(), tempfile.TemporaryDirectory(prefix=".analysis-",dir=directory) as temporary:
+    admission = read(directory/'admission.json') if not all_outcomes and (directory/'admission.json').exists() else {}
+    all_outcomes = all_outcomes or admission.get('execution_policy') == 'exploratory-browser-study-v2'
+    require(destination is None or all_outcomes, 'custom output requires all-outcomes mode')
+    destination = Path(destination).resolve() if destination is not None else directory/'derived'
+    require(destination != directory and not directory.is_relative_to(destination), 'unsafe analysis destination')
+    require(not destination.exists() or destination == directory/'derived', 'custom analysis destination exists')
+    with measurement_lock(), tempfile.TemporaryDirectory(prefix=".analysis-",dir=destination.parent) as temporary:
         output = Path(temporary)
-        compute(directory,output)
+        if all_outcomes:
+            from outcomes import compute_outcomes
+            compute_outcomes(directory,output)
+        else:
+            compute(directory,output)
         (output/"SHA256SUMS").write_text("".join(f"{digest(p)}  {p.relative_to(output)}\n" for p in sorted(output.rglob("*")) if p.is_file()))
-        destination = directory/"derived"
         if destination.exists():
             shutil.rmtree(destination)
         output.rename(destination)
@@ -302,5 +311,7 @@ def analyze(directory):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("series",type=Path)
+    parser.add_argument('--all-outcomes',action='store_true')
+    parser.add_argument('--output',type=Path)
     args = parser.parse_args()
-    print(analyze(args.series))
+    print(analyze(args.series,args.all_outcomes,args.output))

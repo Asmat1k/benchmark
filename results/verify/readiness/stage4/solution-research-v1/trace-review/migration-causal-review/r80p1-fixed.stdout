@@ -1,0 +1,95 @@
+{
+  "timer_map": {
+    "000000008f3e1738": "to_browser",
+    "0000000077469ddf": "to_server"
+  },
+  "timer_map_counts": {
+    "000000008f3e1738": {
+      "to_browser": 9802
+    },
+    "0000000077469ddf": {
+      "to_server": 9921
+    }
+  },
+  "start_to_next_dequeue_ns": {
+    "n": 19723,
+    "min": 0,
+    "median": 0,
+    "p99": 1000,
+    "max": 51000
+  },
+  "following_dequeue_packets": {
+    "1": 19713,
+    "2": 5,
+    "3": 2,
+    "4": 1,
+    "0": 2
+  },
+  "sender_switch_ins_per_cpu": {
+    "1": 13,
+    "0": 1302
+  },
+  "elapsed_s": 2.0205177500029095,
+  "limitations": [
+    "same-CPU next-dequeue direction association is evidence, not direct timer-to-qdisc pointer recording; bulk lookahead can rearm before positive dequeue",
+    "next-positive dequeue interval is temporal association, not callback causal ownership",
+    "sender active means task current in sched trace, not uninterrupted host-vCPU execution",
+    "trace text precision approximately one microsecond"
+  ]
+}
+{
+  "to_server": {
+    "callback_lateness_ms": {
+      "n": 9921,
+      "min": 0.002112,
+      "median": 0.003118,
+      "p99": 0.011131,
+      "max": 24.005624
+    },
+    "callback_to_next_positive_dequeue_ms": {
+      "n": 9921,
+      "min": 0.001,
+      "median": 0.002,
+      "p99": 0.006,
+      "max": 0.168
+    },
+    "queue_to_xmit_ms": {
+      "n": 9925,
+      "min": 40.243,
+      "median": 40.244,
+      "p99": 40.257,
+      "max": 64.364
+    },
+    "callback_cpus": {
+      "0": 9921
+    },
+    "callbacks_on_sender_cpu": 9914
+  },
+  "to_browser": {
+    "callback_lateness_ms": {
+      "n": 9802,
+      "min": 0.001609,
+      "median": 0.067495,
+      "p99": 0.229314,
+      "max": 19.525385
+    },
+    "callback_to_next_positive_dequeue_ms": {
+      "n": 9802,
+      "min": 0.002,
+      "median": 0.003,
+      "p99": 0.008,
+      "max": 0.148
+    },
+    "queue_to_xmit_ms": {
+      "n": 9810,
+      "min": 40.243,
+      "median": 40.31,
+      "p99": 40.619,
+      "max": 59.784
+    },
+    "callback_cpus": {
+      "1": 9802
+    },
+    "callbacks_on_sender_cpu": 0
+  }
+}

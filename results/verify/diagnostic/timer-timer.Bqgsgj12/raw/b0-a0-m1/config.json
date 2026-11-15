@@ -1,0 +1,97 @@
+{
+  "plan": {
+    "schema_version": 1,
+    "protocol_version": 1,
+    "master_seed": 20261108,
+    "required_modes": [
+      "WS",
+      "WT-S"
+    ],
+    "optional_mode": "WT-D",
+    "frame_bytes": 256,
+    "interval_ms": 50,
+    "warmup_slots": 200,
+    "measurement_slots": 1200,
+    "min_pause_ms": 5000,
+    "empty_queue_ms": 1000,
+    "stabilization_timeout_ms": 30000,
+    "queue_limit_bytes": 1048576,
+    "preliminary_blocks_per_profile": 20,
+    "sessions": 4,
+    "pilot_min_blocks_per_profile": 5,
+    "bootstrap_replicates": 10000,
+    "include_wt_d": true,
+    "calibration": {
+      "method": "circular-block-medians-v1",
+      "block_slots": [
+        100,
+        200,
+        500
+      ],
+      "replicates": 20000,
+      "latency_alpha": 0.04,
+      "loss_alpha": 0.01,
+      "seed": 20261113
+    },
+    "main_budget_seconds": 54000
+  },
+  "thresholds": {
+    "schema_version": 1,
+    "preliminary": false,
+    "deadline_ms": 100,
+    "horizon_ms": 5000,
+    "practical_ms": 5,
+    "fullness_tolerance_pp": 1,
+    "max_uncompleted_pct": 1,
+    "aa_q_margin_ms": 2,
+    "aa_s_margin_pp": 1,
+    "calibration_margin_ms": 2,
+    "rate_min_mbit_s": 9,
+    "rate_max_mbit_s": 11,
+    "max_timer_step_ms": 0.1,
+    "max_timer_p99_ms": 0.1,
+    "max_lag_p99_ms": 5,
+    "max_cpu_pct_exclusive": 70,
+    "max_throttling_pct_exclusive": 1,
+    "frequency_hz": 20,
+    "frequency_margin_hz": 0.1,
+    "reserve_hz": 100,
+    "udp_sender": {
+      "version": "udp-sender-v2",
+      "max_late_pct": 1,
+      "max_lag_ms": 50,
+      "burst_window_ms": 10,
+      "max_burst_packets": 4
+    }
+  },
+  "profiles": {
+    "schema_version": 1,
+    "mtu": 1500,
+    "rate_mbit_s": 10,
+    "limit_packets": 1000,
+    "jitter_ms": 0,
+    "correlation_pct": 0,
+    "profiles": [
+      {
+        "id": "r20p0",
+        "egress_delay_ms": 10,
+        "egress_loss_pct": 0
+      },
+      {
+        "id": "r20p1",
+        "egress_delay_ms": 10,
+        "egress_loss_pct": 1
+      },
+      {
+        "id": "r80p0",
+        "egress_delay_ms": 40,
+        "egress_loss_pct": 0
+      },
+      {
+        "id": "r80p1",
+        "egress_delay_ms": 40,
+        "egress_loss_pct": 1
+      }
+    ]
+  }
+}

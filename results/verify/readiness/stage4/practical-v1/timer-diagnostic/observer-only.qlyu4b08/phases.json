@@ -1,0 +1,458 @@
+[
+  {
+    "index": 0,
+    "queue": 0,
+    "readback": 0,
+    "start_usec": 146110960000.0,
+    "actions": [
+      {
+        "start": "2026-11-14T19:36:40.868433+00:00",
+        "offset_s": 1,
+        "end": "2026-11-14T19:36:44.059269+00:00"
+      },
+      {
+        "start": "2026-11-14T19:36:46.868440+00:00",
+        "offset_s": 7,
+        "end": "2026-11-14T19:36:50.090985+00:00"
+      }
+    ],
+    "end_usec": 146122970000.0
+  },
+  {
+    "index": 1,
+    "queue": 1,
+    "readback": 0,
+    "start_usec": 146123170000.0,
+    "actions": [
+      {
+        "start": "2026-11-14T19:36:52.971378+00:00",
+        "offset_s": 1,
+        "end": "2026-11-14T19:36:56.498027+00:00"
+      },
+      {
+        "start": "2026-11-14T19:36:58.972104+00:00",
+        "offset_s": 7,
+        "end": "2026-11-14T19:37:02.526361+00:00"
+      }
+    ],
+    "end_usec": 146135070000.0
+  },
+  {
+    "index": 2,
+    "queue": 1,
+    "readback": 1,
+    "start_usec": 146135160000.0,
+    "actions": [
+      {
+        "start": "2026-11-14T19:37:05.075473+00:00",
+        "offset_s": 1,
+        "readbacks": {
+          "browser": {
+            "schema_version": 1,
+            "run_id": "observer-only",
+            "role": "browser",
+            "sample_index": 34,
+            "end_usec": 146139540000,
+            "interval_usec": 1010000,
+            "cpu_usage_usec": 7840,
+            "throttled_usec": 0,
+            "memory_current": 1757184,
+            "oom": 0
+          },
+          "server": {
+            "schema_version": 1,
+            "run_id": "observer-only",
+            "role": "server",
+            "sample_index": 34,
+            "end_usec": 146139730000,
+            "interval_usec": 1010000,
+            "cpu_usage_usec": 4407,
+            "throttled_usec": 0,
+            "memory_current": 4243456,
+            "oom": 0
+          },
+          "router": {
+            "schema_version": 1,
+            "run_id": "observer-only",
+            "role": "router",
+            "sample_index": 33,
+            "end_usec": 146138990000,
+            "interval_usec": 1010000,
+            "cpu_usage_usec": 6219,
+            "throttled_usec": 0,
+            "memory_current": 1740800,
+            "oom": 0
+          }
+        },
+        "end": "2026-11-14T19:37:08.902702+00:00"
+      },
+      {
+        "start": "2026-11-14T19:37:11.076104+00:00",
+        "offset_s": 7,
+        "readbacks": {
+          "browser": {
+            "schema_version": 1,
+            "run_id": "observer-only",
+            "role": "browser",
+            "sample_index": 40,
+            "end_usec": 146145590000,
+            "interval_usec": 1010000,
+            "cpu_usage_usec": 7844,
+            "throttled_usec": 0,
+            "memory_current": 1761280,
+            "oom": 0
+          },
+          "server": {
+            "schema_version": 1,
+            "run_id": "observer-only",
+            "role": "server",
+            "sample_index": 40,
+            "end_usec": 146145770000,
+            "interval_usec": 1000000,
+            "cpu_usage_usec": 5682,
+            "throttled_usec": 0,
+            "memory_current": 4247552,
+            "oom": 0
+          },
+          "router": {
+            "schema_version": 1,
+            "run_id": "observer-only",
+            "role": "router",
+            "sample_index": 39,
+            "end_usec": 146145050000,
+            "interval_usec": 1010000,
+            "cpu_usage_usec": 6204,
+            "throttled_usec": 0,
+            "memory_current": 1765376,
+            "oom": 0
+          }
+        },
+        "end": "2026-11-14T19:37:14.922343+00:00"
+      }
+    ],
+    "end_usec": 146147180000.0
+  },
+  {
+    "index": 3,
+    "queue": 0,
+    "readback": 1,
+    "start_usec": 146147280000.0,
+    "actions": [
+      {
+        "start": "2026-11-14T19:37:17.185150+00:00",
+        "offset_s": 1,
+        "readbacks": {
+          "browser": {
+            "schema_version": 1,
+            "run_id": "observer-only",
+            "role": "browser",
+            "sample_index": 45,
+            "end_usec": 146150650000,
+            "interval_usec": 1010000,
+            "cpu_usage_usec": 12745,
+            "throttled_usec": 0,
+            "memory_current": 1622016,
+            "oom": 0
+          },
+          "server": {
+            "schema_version": 1,
+            "run_id": "observer-only",
+            "role": "server",
+            "sample_index": 45,
+            "end_usec": 146150830000,
+            "interval_usec": 1010000,
+            "cpu_usage_usec": 10103,
+            "throttled_usec": 0,
+            "memory_current": 4468736,
+            "oom": 0
+          },
+          "router": {
+            "schema_version": 1,
+            "run_id": "observer-only",
+            "role": "router",
+            "sample_index": 45,
+            "end_usec": 146151100000,
+            "interval_usec": 1010000,
+            "cpu_usage_usec": 6129,
+            "throttled_usec": 0,
+            "memory_current": 1785856,
+            "oom": 0
+          }
+        },
+        "end": "2026-11-14T19:37:20.665590+00:00"
+      },
+      {
+        "start": "2026-11-14T19:37:23.183534+00:00",
+        "offset_s": 7,
+        "readbacks": {
+          "browser": {
+            "schema_version": 1,
+            "run_id": "observer-only",
+            "role": "browser",
+            "sample_index": 51,
+            "end_usec": 146156710000,
+            "interval_usec": 1010000,
+            "cpu_usage_usec": 5912,
+            "throttled_usec": 0,
+            "memory_current": 1720320,
+            "oom": 0
+          },
+          "server": {
+            "schema_version": 1,
+            "run_id": "observer-only",
+            "role": "server",
+            "sample_index": 51,
+            "end_usec": 146156890000,
+            "interval_usec": 1020000,
+            "cpu_usage_usec": 19750,
+            "throttled_usec": 0,
+            "memory_current": 4280320,
+            "oom": 0
+          },
+          "router": {
+            "schema_version": 1,
+            "run_id": "observer-only",
+            "role": "router",
+            "sample_index": 51,
+            "end_usec": 146157160000,
+            "interval_usec": 1000000,
+            "cpu_usage_usec": 6176,
+            "throttled_usec": 0,
+            "memory_current": 1773568,
+            "oom": 0
+          }
+        },
+        "end": "2026-11-14T19:37:26.649565+00:00"
+      }
+    ],
+    "end_usec": 146159290000.0
+  },
+  {
+    "index": 4,
+    "queue": 0,
+    "readback": 1,
+    "start_usec": 146159380000.0,
+    "actions": [
+      {
+        "start": "2026-11-14T19:37:29.288256+00:00",
+        "offset_s": 1,
+        "readbacks": {
+          "browser": {
+            "schema_version": 1,
+            "run_id": "observer-only",
+            "role": "browser",
+            "sample_index": 57,
+            "end_usec": 146162790000,
+            "interval_usec": 1020000,
+            "cpu_usage_usec": 6852,
+            "throttled_usec": 0,
+            "memory_current": 1761280,
+            "oom": 0
+          },
+          "server": {
+            "schema_version": 1,
+            "run_id": "observer-only",
+            "role": "server",
+            "sample_index": 57,
+            "end_usec": 146162940000,
+            "interval_usec": 1010000,
+            "cpu_usage_usec": 5443,
+            "throttled_usec": 0,
+            "memory_current": 4247552,
+            "oom": 0
+          },
+          "router": {
+            "schema_version": 1,
+            "run_id": "observer-only",
+            "role": "router",
+            "sample_index": 57,
+            "end_usec": 146163220000,
+            "interval_usec": 1000000,
+            "cpu_usage_usec": 5593,
+            "throttled_usec": 0,
+            "memory_current": 1769472,
+            "oom": 0
+          }
+        },
+        "end": "2026-11-14T19:37:32.792226+00:00"
+      },
+      {
+        "start": "2026-11-14T19:37:35.288290+00:00",
+        "offset_s": 7,
+        "readbacks": {
+          "browser": {
+            "schema_version": 1,
+            "run_id": "observer-only",
+            "role": "browser",
+            "sample_index": 63,
+            "end_usec": 146168840000,
+            "interval_usec": 1010000,
+            "cpu_usage_usec": 8457,
+            "throttled_usec": 0,
+            "memory_current": 1732608,
+            "oom": 0
+          },
+          "server": {
+            "schema_version": 1,
+            "run_id": "observer-only",
+            "role": "server",
+            "sample_index": 63,
+            "end_usec": 146168980000,
+            "interval_usec": 1010000,
+            "cpu_usage_usec": 6378,
+            "throttled_usec": 0,
+            "memory_current": 4251648,
+            "oom": 0
+          },
+          "router": {
+            "schema_version": 1,
+            "run_id": "observer-only",
+            "role": "router",
+            "sample_index": 63,
+            "end_usec": 146169280000,
+            "interval_usec": 1010000,
+            "cpu_usage_usec": 6672,
+            "throttled_usec": 0,
+            "memory_current": 1732608,
+            "oom": 0
+          }
+        },
+        "end": "2026-11-14T19:37:38.790748+00:00"
+      }
+    ],
+    "end_usec": 146171390000.0
+  },
+  {
+    "index": 5,
+    "queue": 1,
+    "readback": 1,
+    "start_usec": 146171490000.0,
+    "actions": [
+      {
+        "start": "2026-11-14T19:37:41.391465+00:00",
+        "offset_s": 1,
+        "readbacks": {
+          "browser": {
+            "schema_version": 1,
+            "run_id": "observer-only",
+            "role": "browser",
+            "sample_index": 70,
+            "end_usec": 146175900000,
+            "interval_usec": 1010000,
+            "cpu_usage_usec": 7689,
+            "throttled_usec": 0,
+            "memory_current": 1724416,
+            "oom": 0
+          },
+          "server": {
+            "schema_version": 1,
+            "run_id": "observer-only",
+            "role": "server",
+            "sample_index": 70,
+            "end_usec": 146176050000,
+            "interval_usec": 1000000,
+            "cpu_usage_usec": 4451,
+            "throttled_usec": 0,
+            "memory_current": 4263936,
+            "oom": 0
+          },
+          "router": {
+            "schema_version": 1,
+            "run_id": "observer-only",
+            "role": "router",
+            "sample_index": 69,
+            "end_usec": 146175320000,
+            "interval_usec": 1010000,
+            "cpu_usage_usec": 6694,
+            "throttled_usec": 0,
+            "memory_current": 2048000,
+            "oom": 0
+          }
+        },
+        "end": "2026-11-14T19:37:45.260657+00:00"
+      },
+      {
+        "start": "2026-11-14T19:37:47.389737+00:00",
+        "offset_s": 7,
+        "readbacks": {
+          "browser": {
+            "schema_version": 1,
+            "run_id": "observer-only",
+            "role": "browser",
+            "sample_index": 76,
+            "end_usec": 146181950000,
+            "interval_usec": 1010000,
+            "cpu_usage_usec": 9202,
+            "throttled_usec": 0,
+            "memory_current": 1724416,
+            "oom": 0
+          },
+          "server": {
+            "schema_version": 1,
+            "run_id": "observer-only",
+            "role": "server",
+            "sample_index": 76,
+            "end_usec": 146182090000,
+            "interval_usec": 1000000,
+            "cpu_usage_usec": 5872,
+            "throttled_usec": 0,
+            "memory_current": 4255744,
+            "oom": 0
+          },
+          "router": {
+            "schema_version": 1,
+            "run_id": "observer-only",
+            "role": "router",
+            "sample_index": 75,
+            "end_usec": 146181370000,
+            "interval_usec": 1010000,
+            "cpu_usage_usec": 6514,
+            "throttled_usec": 0,
+            "memory_current": 2002944,
+            "oom": 0
+          }
+        },
+        "end": "2026-11-14T19:37:51.232571+00:00"
+      }
+    ],
+    "end_usec": 146183500000.0
+  },
+  {
+    "index": 6,
+    "queue": 1,
+    "readback": 0,
+    "start_usec": 146183590000.0,
+    "actions": [
+      {
+        "start": "2026-11-14T19:37:53.501001+00:00",
+        "offset_s": 1,
+        "end": "2026-11-14T19:37:57.024320+00:00"
+      },
+      {
+        "start": "2026-11-14T19:37:59.500915+00:00",
+        "offset_s": 7,
+        "end": "2026-11-14T19:38:03.069838+00:00"
+      }
+    ],
+    "end_usec": 146195610000.0
+  },
+  {
+    "index": 7,
+    "queue": 0,
+    "readback": 0,
+    "start_usec": 146195700000.0,
+    "actions": [
+      {
+        "start": "2026-11-14T19:38:05.614390+00:00",
+        "offset_s": 1,
+        "end": "2026-11-14T19:38:08.813068+00:00"
+      },
+      {
+        "start": "2026-11-14T19:38:11.614261+00:00",
+        "offset_s": 7,
+        "end": "2026-11-14T19:38:14.818355+00:00"
+      }
+    ],
+    "end_usec": 146207710000.0
+  }
+]

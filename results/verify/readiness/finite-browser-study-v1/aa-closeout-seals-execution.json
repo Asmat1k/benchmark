@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "-v",
+    "/Users/dobrov/Desktop/Code/ITMO/benchmark:/bench:ro",
+    "-v",
+    "/Users/dobrov/Desktop/Code/ITMO/benchmark:/Users/dobrov/Desktop/Code/ITMO/benchmark:ro",
+    "-w",
+    "/bench",
+    "wswt-bench-analyzer:dev",
+    "python",
+    "-B",
+    "-c",
+    "import sys,json\nfrom pathlib import Path\nsys.path.insert(0,\"src/analysis\")\nfrom admission import sources,ref\nfrom raw import read,validate_hashes,require\np=Path(\"results/verify/raw/finite-aa-20261115\")\nrequire(sources()==read(p/\"admission.json\")[\"source_hashes\"],\"closeout source mismatch\")\nvalidated={str(folder):len(validate_hashes(folder)) for folder in sorted((p/\"raw\").iterdir())}\nquarantine={str(folder):len(validate_hashes(folder)) for folder in sorted((p/\"quarantine\").iterdir())}\nprint(json.dumps(dict(source_hashes=sources(),published_seals=validated,rejected_seals=quarantine,schedule=ref(p/\"schedule.json\"),stop=(p/\"STOP\").read_text()),indent=2))\n"
+  ],
+  "started_utc": "2026-11-15T08:56:39.401759+00:00",
+  "exit": 0,
+  "ended_utc": "2026-11-15T08:56:40.348323+00:00"
+}

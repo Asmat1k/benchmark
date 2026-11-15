@@ -1,0 +1,440 @@
+{
+  "scope": "Exploratory packet timestamp discontinuity check; offset-step candidate threshold diagnostic only, no admission or correction",
+  "run": "results/verify/diagnostic/calibration.gIdWLx7o",
+  "results": [
+    {
+      "label": "baseline-after",
+      "forward_ids_record_order_strict": true,
+      "reverse_ids_record_order_strict": true,
+      "negative_epoch_steps": [],
+      "offset_jumps_over_half_ms": [
+        {
+          "id": 148,
+          "delta_ms": 2.808125000000018,
+          "before": -0.0038750000001073204,
+          "after": 2.804249999999911
+        },
+        {
+          "id": 149,
+          "delta_ms": -2.7991250000000036,
+          "before": 2.804249999999911,
+          "after": 0.0051249999999072315
+        }
+      ]
+    },
+    {
+      "label": "baseline-before",
+      "forward_ids_record_order_strict": true,
+      "reverse_ids_record_order_strict": true,
+      "negative_epoch_steps": [],
+      "offset_jumps_over_half_ms": [
+        {
+          "id": 1467,
+          "delta_ms": 1.3809590000000753,
+          "before": -0.007881999999881373,
+          "after": 1.373077000000194
+        }
+      ]
+    },
+    {
+      "label": "r20p0-after",
+      "forward_ids_record_order_strict": true,
+      "reverse_ids_record_order_strict": true,
+      "negative_epoch_steps": [],
+      "offset_jumps_over_half_ms": []
+    },
+    {
+      "label": "r20p0-before",
+      "forward_ids_record_order_strict": true,
+      "reverse_ids_record_order_strict": true,
+      "negative_epoch_steps": [],
+      "offset_jumps_over_half_ms": []
+    },
+    {
+      "label": "r20p0-latency",
+      "forward_ids_record_order_strict": true,
+      "reverse_ids_record_order_strict": true,
+      "negative_epoch_steps": [],
+      "offset_jumps_over_half_ms": [
+        {
+          "id": 62,
+          "delta_ms": 0.9882499999999936,
+          "before": -0.0061249999999972715,
+          "after": 0.9821249999999964
+        },
+        {
+          "id": 63,
+          "delta_ms": -0.9873750000000427,
+          "before": 0.9821249999999964,
+          "after": -0.005250000000046384
+        },
+        {
+          "id": 7501,
+          "delta_ms": 0.5853750000096625,
+          "before": 0.4364239999995334,
+          "after": 1.0217990000091959
+        },
+        {
+          "id": 7502,
+          "delta_ms": -0.5842500000144355,
+          "before": 1.0217990000091959,
+          "after": 0.4375489999947604
+        }
+      ]
+    },
+    {
+      "label": "r20p1-after",
+      "forward_ids_record_order_strict": true,
+      "reverse_ids_record_order_strict": true,
+      "negative_epoch_steps": [],
+      "offset_jumps_over_half_ms": []
+    },
+    {
+      "label": "r20p1-before",
+      "forward_ids_record_order_strict": true,
+      "reverse_ids_record_order_strict": true,
+      "negative_epoch_steps": [],
+      "offset_jumps_over_half_ms": [
+        {
+          "id": 149,
+          "delta_ms": 2.725541000000021,
+          "before": -0.0107500000001437,
+          "after": 2.7147909999998774
+        },
+        {
+          "id": 150,
+          "delta_ms": -2.692790999999943,
+          "before": 2.7147909999998774,
+          "after": 0.021999999999934516
+        },
+        {
+          "id": 8393,
+          "delta_ms": 6.999915999986115,
+          "before": 0.8154199999989942,
+          "after": 7.815335999985109
+        },
+        {
+          "id": 8394,
+          "delta_ms": -7.069999999977881,
+          "before": 7.815335999985109,
+          "after": 0.745336000007228
+        }
+      ]
+    },
+    {
+      "label": "r20p1-latency",
+      "forward_ids_record_order_strict": true,
+      "reverse_ids_record_order_strict": true,
+      "negative_epoch_steps": [],
+      "offset_jumps_over_half_ms": [
+        {
+          "id": 2130,
+          "delta_ms": 0.5700840000026801,
+          "before": -0.01780200000212062,
+          "after": 0.5522820000005595
+        }
+      ]
+    },
+    {
+      "label": "r80p0-after",
+      "forward_ids_record_order_strict": true,
+      "reverse_ids_record_order_strict": true,
+      "negative_epoch_steps": [],
+      "offset_jumps_over_half_ms": []
+    },
+    {
+      "label": "r80p0-before",
+      "forward_ids_record_order_strict": true,
+      "reverse_ids_record_order_strict": true,
+      "negative_epoch_steps": [],
+      "offset_jumps_over_half_ms": []
+    },
+    {
+      "label": "r80p0-latency",
+      "forward_ids_record_order_strict": true,
+      "reverse_ids_record_order_strict": true,
+      "negative_epoch_steps": [
+        {
+          "role": "forward",
+          "before": {
+            "record": 9742,
+            "id": 9742,
+            "epoch_us": 1794648751582625,
+            "tag": "ae8cf2602997c11e"
+          },
+          "after": {
+            "record": 9743,
+            "id": 9743,
+            "epoch_us": 1794648751574860,
+            "tag": "ae8cf2602997c11e"
+          },
+          "delta_ms": -7.765,
+          "context": [
+            {
+              "id": 9740,
+              "forward_record": 9740,
+              "forward_epoch_us": 1794648751562617,
+              "sender_ms": 97400.000419,
+              "relative_offset_ms": 0.48383099999045953,
+              "reverse_record": 9740,
+              "reverse_epoch_us": 1794648751587038,
+              "span_ms": 24.421
+            },
+            {
+              "id": 9741,
+              "forward_record": 9741,
+              "forward_epoch_us": 1794648751572617,
+              "sender_ms": 97410.00046,
+              "relative_offset_ms": 0.48378999999840744,
+              "reverse_record": 9741,
+              "reverse_epoch_us": 1794648751595894,
+              "span_ms": 23.277
+            },
+            {
+              "id": 9742,
+              "forward_record": 9742,
+              "forward_epoch_us": 1794648751582625,
+              "sender_ms": 97420.004752,
+              "relative_offset_ms": 0.4874980000022333,
+              "reverse_record": 9742,
+              "reverse_epoch_us": 1794648751606984,
+              "span_ms": 24.359
+            },
+            {
+              "id": 9743,
+              "forward_record": 9743,
+              "forward_epoch_us": 1794648751574860,
+              "sender_ms": 97430.00071,
+              "relative_offset_ms": -17.273459999996703,
+              "reverse_record": 9743,
+              "reverse_epoch_us": 1794648751617155,
+              "span_ms": 42.295
+            },
+            {
+              "id": 9744,
+              "forward_record": 9744,
+              "forward_epoch_us": 1794648751584857,
+              "sender_ms": 97440.000668,
+              "relative_offset_ms": -17.27641799999401,
+              "reverse_record": 9744,
+              "reverse_epoch_us": 1794648751625610,
+              "span_ms": 40.753
+            },
+            {
+              "id": 9745,
+              "forward_record": 9745,
+              "forward_epoch_us": 1794648751594857,
+              "sender_ms": 97450.000793,
+              "relative_offset_ms": -17.276542999999947,
+              "reverse_record": 9745,
+              "reverse_epoch_us": 1794648751636971,
+              "span_ms": 42.114
+            },
+            {
+              "id": 9746,
+              "forward_record": 9746,
+              "forward_epoch_us": 1794648751604857,
+              "sender_ms": 97460.000543,
+              "relative_offset_ms": -17.276293000002624,
+              "reverse_record": 9746,
+              "reverse_epoch_us": 1794648751647149,
+              "span_ms": 42.292
+            },
+            {
+              "id": 9747,
+              "forward_record": 9747,
+              "forward_epoch_us": 1794648751614857,
+              "sender_ms": 97470.001001,
+              "relative_offset_ms": -17.276750999997603,
+              "reverse_record": 9747,
+              "reverse_epoch_us": 1794648751656147,
+              "span_ms": 41.29
+            },
+            {
+              "id": 9748,
+              "forward_record": 9748,
+              "forward_epoch_us": 1794648751624857,
+              "sender_ms": 97480.00071,
+              "relative_offset_ms": -17.276459999993676,
+              "reverse_record": 9748,
+              "reverse_epoch_us": 1794648751666626,
+              "span_ms": 41.769
+            },
+            {
+              "id": 9749,
+              "forward_record": 9749,
+              "forward_epoch_us": 1794648751634858,
+              "sender_ms": 97490.001335,
+              "relative_offset_ms": -17.276084999990417,
+              "reverse_record": 9749,
+              "reverse_epoch_us": 1794648751676115,
+              "span_ms": 41.257
+            }
+          ]
+        },
+        {
+          "role": "reverse",
+          "before": {
+            "record": 9738,
+            "id": 9738,
+            "epoch_us": 1794648751582885,
+            "tag": "ae8cf2602997c11e"
+          },
+          "after": {
+            "record": 9739,
+            "id": 9739,
+            "epoch_us": 1794648751575576,
+            "tag": "ae8cf2602997c11e"
+          },
+          "delta_ms": -7.309,
+          "context": [
+            {
+              "id": 9736,
+              "forward_record": 9736,
+              "forward_epoch_us": 1794648751522617,
+              "sender_ms": 97360.000419,
+              "relative_offset_ms": 0.48383099999045953,
+              "reverse_record": 9736,
+              "reverse_epoch_us": 1794648751564920,
+              "span_ms": 42.303
+            },
+            {
+              "id": 9737,
+              "forward_record": 9737,
+              "forward_epoch_us": 1794648751532617,
+              "sender_ms": 97370.000419,
+              "relative_offset_ms": 0.48383099999045953,
+              "reverse_record": 9737,
+              "reverse_epoch_us": 1794648751574848,
+              "span_ms": 42.231
+            },
+            {
+              "id": 9738,
+              "forward_record": 9738,
+              "forward_epoch_us": 1794648751542617,
+              "sender_ms": 97380.000877,
+              "relative_offset_ms": 0.4833729999954812,
+              "reverse_record": 9738,
+              "reverse_epoch_us": 1794648751582885,
+              "span_ms": 40.268
+            },
+            {
+              "id": 9739,
+              "forward_record": 9739,
+              "forward_epoch_us": 1794648751552617,
+              "sender_ms": 97390.000502,
+              "relative_offset_ms": 0.48374799999874085,
+              "reverse_record": 9739,
+              "reverse_epoch_us": 1794648751575576,
+              "span_ms": 22.959
+            },
+            {
+              "id": 9740,
+              "forward_record": 9740,
+              "forward_epoch_us": 1794648751562617,
+              "sender_ms": 97400.000419,
+              "relative_offset_ms": 0.48383099999045953,
+              "reverse_record": 9740,
+              "reverse_epoch_us": 1794648751587038,
+              "span_ms": 24.421
+            },
+            {
+              "id": 9741,
+              "forward_record": 9741,
+              "forward_epoch_us": 1794648751572617,
+              "sender_ms": 97410.00046,
+              "relative_offset_ms": 0.48378999999840744,
+              "reverse_record": 9741,
+              "reverse_epoch_us": 1794648751595894,
+              "span_ms": 23.277
+            },
+            {
+              "id": 9742,
+              "forward_record": 9742,
+              "forward_epoch_us": 1794648751582625,
+              "sender_ms": 97420.004752,
+              "relative_offset_ms": 0.4874980000022333,
+              "reverse_record": 9742,
+              "reverse_epoch_us": 1794648751606984,
+              "span_ms": 24.359
+            },
+            {
+              "id": 9743,
+              "forward_record": 9743,
+              "forward_epoch_us": 1794648751574860,
+              "sender_ms": 97430.00071,
+              "relative_offset_ms": -17.273459999996703,
+              "reverse_record": 9743,
+              "reverse_epoch_us": 1794648751617155,
+              "span_ms": 42.295
+            },
+            {
+              "id": 9744,
+              "forward_record": 9744,
+              "forward_epoch_us": 1794648751584857,
+              "sender_ms": 97440.000668,
+              "relative_offset_ms": -17.27641799999401,
+              "reverse_record": 9744,
+              "reverse_epoch_us": 1794648751625610,
+              "span_ms": 40.753
+            },
+            {
+              "id": 9745,
+              "forward_record": 9745,
+              "forward_epoch_us": 1794648751594857,
+              "sender_ms": 97450.000793,
+              "relative_offset_ms": -17.276542999999947,
+              "reverse_record": 9745,
+              "reverse_epoch_us": 1794648751636971,
+              "span_ms": 42.114
+            }
+          ]
+        }
+      ],
+      "offset_jumps_over_half_ms": [
+        {
+          "id": 9743,
+          "delta_ms": -17.760957999998936,
+          "before": 0.4874980000022333,
+          "after": -17.273459999996703
+        }
+      ]
+    },
+    {
+      "label": "r80p1-after",
+      "forward_ids_record_order_strict": true,
+      "reverse_ids_record_order_strict": true,
+      "negative_epoch_steps": [],
+      "offset_jumps_over_half_ms": [
+        {
+          "id": 2814,
+          "delta_ms": 0.8727080000026035,
+          "before": -0.012888000001112232,
+          "after": 0.8598200000014913
+        }
+      ]
+    },
+    {
+      "label": "r80p1-before",
+      "forward_ids_record_order_strict": true,
+      "reverse_ids_record_order_strict": true,
+      "negative_epoch_steps": [],
+      "offset_jumps_over_half_ms": []
+    },
+    {
+      "label": "r80p1-latency",
+      "forward_ids_record_order_strict": true,
+      "reverse_ids_record_order_strict": true,
+      "negative_epoch_steps": [],
+      "offset_jumps_over_half_ms": [
+        {
+          "id": 2358,
+          "delta_ms": -4.448540999997931,
+          "before": -0.019011000003956724,
+          "after": -4.467552000001888
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 0.48084441598621197
+}

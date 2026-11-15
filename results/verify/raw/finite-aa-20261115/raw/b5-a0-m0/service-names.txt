@@ -1,0 +1,3 @@
+"/wswt-d3-wswt-measure-jrvmmrxp-browser-1"
+"/wswt-d3-wswt-measure-jrvmmrxp-router-1"
+"/wswt-d3-wswt-measure-jrvmmrxp-server-1"

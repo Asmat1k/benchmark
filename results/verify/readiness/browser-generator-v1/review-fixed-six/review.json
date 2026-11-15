@@ -1,0 +1,507 @@
+{
+  "utc": "2026-11-14T21:36:16.812414Z",
+  "reviewer": "internal-independent-subagent",
+  "execution": {
+    "path": "results/verify/readiness/browser-generator-v1/execution.vwb474p9/execution.json",
+    "sha256": "fe1d252a418f251587ce5db555bf5ca619dd946fc2d9f741386af9046311f497"
+  },
+  "execution_exit": 1,
+  "schedules": [
+    {
+      "path": "results/verify/diagnostic/generator-20.4jR0hWdp/schedule.json",
+      "sha256": "009b5cc9431b29491b726652f9b2e4bb37938d6ab5052d8c72eb10be5f0b60b5"
+    },
+    {
+      "path": "results/verify/diagnostic/generator-100.StWlCPFN/schedule.json",
+      "sha256": "c675ce7fd41a5163ad8fb246ecd11e9398ad6a3e89d62a24bffbafb4877163fa"
+    }
+  ],
+  "expected_runs": 6,
+  "scheduled_runs": 6,
+  "retained_runs": 6,
+  "sealed_validated": 6,
+  "technical_unknown": 0,
+  "runs": [
+    {
+      "mode": "WT-D",
+      "frequency_hz": 20,
+      "run_id": "b0-a0-m0",
+      "raw": "results/verify/diagnostic/generator-20.4jR0hWdp/raw/b0-a0-m0",
+      "status": "sealed-validated",
+      "unknown": false,
+      "seal": {
+        "path": "results/verify/diagnostic/generator-20.4jR0hWdp/raw/b0-a0-m0/SHA256SUMS",
+        "sha256": "3be4a8b276c188b3adb9a1a3f182ab8b0fa2fd6ed939ed3905d5110637d240c1"
+      },
+      "source_exact": true,
+      "environment": {
+        "path": "results/verify/diagnostic/generator-20.4jR0hWdp/raw/b0-a0-m0/context.json",
+        "sha256": "816122392c24d59203559d0a44a4fe0764da8324246cac81956e3eb4a85b12f8"
+      },
+      "started": "2026-11-14T21:26:45Z",
+      "ended": "2026-11-14T21:28:36.208191Z",
+      "slots": 1200,
+      "sent": 1200,
+      "states": {
+        "sent": 1200
+      },
+      "completed": 1200,
+      "timely_100ms": 1200,
+      "late_within_5000ms": 0,
+      "missing_within_5000ms": 0,
+      "events": {
+        "phase_transition": 2,
+        "first_correct_echo": 1400
+      },
+      "rtt_ms": {
+        "n": 1200,
+        "p50": 1.4000000059604645,
+        "p95": 1.899999976158142,
+        "p99": 2.699999988079071,
+        "max": 5.199999988079071
+      },
+      "lag_ms": {
+        "p99": 9.5,
+        "max": 11.0
+      },
+      "grid_exact": true,
+      "observed_hz": 19.997331465359085,
+      "resource_window": {
+        "start_usec": 152730250000,
+        "end_usec": 152823660000
+      },
+      "resource_samples": 303,
+      "router": {
+        "coverage": true,
+        "peak_backlog_bytes": 0,
+        "max_drops": 0,
+        "queues_with_full_limit": 0
+      },
+      "resources": {
+        "browser": {
+          "cpu_limit_cores": 2.0,
+          "peak_cpu_pct_limit": 39.15237623762376,
+          "throttling_pct": 0.0,
+          "oom": 0,
+          "peak_memory_bytes": 198664192
+        },
+        "server": {
+          "cpu_limit_cores": 2.0,
+          "peak_cpu_pct_limit": 1.1889108910891089,
+          "throttling_pct": 0.0,
+          "oom": 0,
+          "peak_memory_bytes": 9129984
+        },
+        "router": {
+          "cpu_limit_cores": 1.0,
+          "peak_cpu_pct_limit": 21.031881188118813,
+          "throttling_pct": 0.0,
+          "oom": 0,
+          "peak_memory_bytes": 3567616
+        }
+      }
+    },
+    {
+      "mode": "WS",
+      "frequency_hz": 20,
+      "run_id": "b0-a0-m1",
+      "raw": "results/verify/diagnostic/generator-20.4jR0hWdp/raw/b0-a0-m1",
+      "status": "sealed-validated",
+      "unknown": false,
+      "seal": {
+        "path": "results/verify/diagnostic/generator-20.4jR0hWdp/raw/b0-a0-m1/SHA256SUMS",
+        "sha256": "aeec35583e79ddbec58ba0bb4f8608cee0b01a8adca6a46d23a7a65ccf87ccaa"
+      },
+      "source_exact": true,
+      "environment": {
+        "path": "results/verify/diagnostic/generator-20.4jR0hWdp/raw/b0-a0-m1/context.json",
+        "sha256": "816122392c24d59203559d0a44a4fe0764da8324246cac81956e3eb4a85b12f8"
+      },
+      "started": "2026-11-14T21:28:38Z",
+      "ended": "2026-11-14T21:30:29.636242Z",
+      "slots": 1200,
+      "sent": 1200,
+      "states": {
+        "sent": 1200
+      },
+      "completed": 1200,
+      "timely_100ms": 1200,
+      "late_within_5000ms": 0,
+      "missing_within_5000ms": 0,
+      "events": {
+        "phase_transition": 2,
+        "first_correct_echo": 1400
+      },
+      "rtt_ms": {
+        "n": 1200,
+        "p50": 1.4000000059604645,
+        "p95": 2.399999976158142,
+        "p99": 3.7999999821186066,
+        "max": 16.599999994039536
+      },
+      "lag_ms": {
+        "p99": 8.5,
+        "max": 11.900000005960464
+      },
+      "grid_exact": true,
+      "observed_hz": 20.001034248641393,
+      "resource_window": {
+        "start_usec": 152843540000,
+        "end_usec": 152937070000
+      },
+      "resource_samples": 303,
+      "router": {
+        "coverage": true,
+        "peak_backlog_bytes": 0,
+        "max_drops": 0,
+        "queues_with_full_limit": 0
+      },
+      "resources": {
+        "browser": {
+          "cpu_limit_cores": 2.0,
+          "peak_cpu_pct_limit": 46.90470297029703,
+          "throttling_pct": 0.0,
+          "oom": 0,
+          "peak_memory_bytes": 172580864
+        },
+        "server": {
+          "cpu_limit_cores": 2.0,
+          "peak_cpu_pct_limit": 0.9793069306930693,
+          "throttling_pct": 0.0,
+          "oom": 0,
+          "peak_memory_bytes": 6905856
+        },
+        "router": {
+          "cpu_limit_cores": 1.0,
+          "peak_cpu_pct_limit": 24.613762376237624,
+          "throttling_pct": 0.0,
+          "oom": 0,
+          "peak_memory_bytes": 3178496
+        }
+      }
+    },
+    {
+      "mode": "WT-S",
+      "frequency_hz": 20,
+      "run_id": "b0-a0-m2",
+      "raw": "results/verify/diagnostic/generator-20.4jR0hWdp/raw/b0-a0-m2",
+      "status": "sealed-validated",
+      "unknown": false,
+      "seal": {
+        "path": "results/verify/diagnostic/generator-20.4jR0hWdp/raw/b0-a0-m2/SHA256SUMS",
+        "sha256": "9db02311dbb6bf965e0722518fe5e7c7e9a289e383be06dfa7e520226c5a1923"
+      },
+      "source_exact": true,
+      "environment": {
+        "path": "results/verify/diagnostic/generator-20.4jR0hWdp/raw/b0-a0-m2/context.json",
+        "sha256": "816122392c24d59203559d0a44a4fe0764da8324246cac81956e3eb4a85b12f8"
+      },
+      "started": "2026-11-14T21:30:32Z",
+      "ended": "2026-11-14T21:32:23.950682Z",
+      "slots": 1200,
+      "sent": 1200,
+      "states": {
+        "sent": 1200
+      },
+      "completed": 1200,
+      "timely_100ms": 1200,
+      "late_within_5000ms": 0,
+      "missing_within_5000ms": 0,
+      "events": {
+        "phase_transition": 2,
+        "first_correct_echo": 1400
+      },
+      "rtt_ms": {
+        "n": 1200,
+        "p50": 1.5999999940395355,
+        "p95": 2.699999988079071,
+        "p99": 5.0,
+        "max": 20.69999998807907
+      },
+      "lag_ms": {
+        "p99": 9.900000005960464,
+        "max": 31.400000005960464
+      },
+      "grid_exact": true,
+      "observed_hz": 20.000467066789202,
+      "resource_window": {
+        "start_usec": 152957210000,
+        "end_usec": 153051350000
+      },
+      "resource_samples": 304,
+      "router": {
+        "coverage": true,
+        "peak_backlog_bytes": 0,
+        "max_drops": 0,
+        "queues_with_full_limit": 0
+      },
+      "resources": {
+        "browser": {
+          "cpu_limit_cores": 2.0,
+          "peak_cpu_pct_limit": 44.9170297029703,
+          "throttling_pct": 0.0,
+          "oom": 0,
+          "peak_memory_bytes": 171917312
+        },
+        "server": {
+          "cpu_limit_cores": 2.0,
+          "peak_cpu_pct_limit": 1.8937254901960785,
+          "throttling_pct": 0.0,
+          "oom": 0,
+          "peak_memory_bytes": 5595136
+        },
+        "router": {
+          "cpu_limit_cores": 1.0,
+          "peak_cpu_pct_limit": 25.394257425742573,
+          "throttling_pct": 0.0,
+          "oom": 0,
+          "peak_memory_bytes": 3661824
+        }
+      }
+    },
+    {
+      "mode": "WS",
+      "frequency_hz": 100,
+      "run_id": "b0-a0-m0",
+      "raw": "results/verify/diagnostic/generator-100.StWlCPFN/raw/b0-a0-m0",
+      "status": "sealed-validated",
+      "unknown": false,
+      "seal": {
+        "path": "results/verify/diagnostic/generator-100.StWlCPFN/raw/b0-a0-m0/SHA256SUMS",
+        "sha256": "fa54117f7e37692cbde98a3e98268375013fe5afa49b6779103447b7c761dc9a"
+      },
+      "source_exact": true,
+      "environment": {
+        "path": "results/verify/diagnostic/generator-100.StWlCPFN/raw/b0-a0-m0/context.json",
+        "sha256": "816122392c24d59203559d0a44a4fe0764da8324246cac81956e3eb4a85b12f8"
+      },
+      "started": "2026-11-14T21:32:26Z",
+      "ended": "2026-11-14T21:33:20.774032Z",
+      "slots": 1200,
+      "sent": 1200,
+      "states": {
+        "sent": 1200
+      },
+      "completed": 1200,
+      "timely_100ms": 1200,
+      "late_within_5000ms": 0,
+      "missing_within_5000ms": 0,
+      "events": {
+        "phase_transition": 2,
+        "first_correct_echo": 1398
+      },
+      "rtt_ms": {
+        "n": 1200,
+        "p50": 1.2000000178813934,
+        "p95": 2.0999999940395355,
+        "p99": 3.199999988079071,
+        "max": 7.299999982118607
+      },
+      "lag_ms": {
+        "p99": 6,
+        "max": 7.4000000059604645
+      },
+      "grid_exact": true,
+      "observed_hz": 99.99916597840017,
+      "resource_window": {
+        "start_usec": 153071490000,
+        "end_usec": 153109240000
+      },
+      "resource_samples": 135,
+      "router": {
+        "coverage": true,
+        "peak_backlog_bytes": 352,
+        "max_drops": 0,
+        "queues_with_full_limit": 0
+      },
+      "resources": {
+        "browser": {
+          "cpu_limit_cores": 2.0,
+          "peak_cpu_pct_limit": 44.361930693069304,
+          "throttling_pct": 0.0,
+          "oom": 0,
+          "peak_memory_bytes": 178663424
+        },
+        "server": {
+          "cpu_limit_cores": 2.0,
+          "peak_cpu_pct_limit": 0.891930693069307,
+          "throttling_pct": 0.0,
+          "oom": 0,
+          "peak_memory_bytes": 6737920
+        },
+        "router": {
+          "cpu_limit_cores": 1.0,
+          "peak_cpu_pct_limit": 22.63,
+          "throttling_pct": 0.0,
+          "oom": 0,
+          "peak_memory_bytes": 3719168
+        }
+      }
+    },
+    {
+      "mode": "WT-S",
+      "frequency_hz": 100,
+      "run_id": "b0-a0-m1",
+      "raw": "results/verify/diagnostic/generator-100.StWlCPFN/raw/b0-a0-m1",
+      "status": "sealed-validated",
+      "unknown": false,
+      "seal": {
+        "path": "results/verify/diagnostic/generator-100.StWlCPFN/raw/b0-a0-m1/SHA256SUMS",
+        "sha256": "f2bc5681f880997a2b6795225d932db2f80941b45db00329fb826910200aae98"
+      },
+      "source_exact": true,
+      "environment": {
+        "path": "results/verify/diagnostic/generator-100.StWlCPFN/raw/b0-a0-m1/context.json",
+        "sha256": "816122392c24d59203559d0a44a4fe0764da8324246cac81956e3eb4a85b12f8"
+      },
+      "started": "2026-11-14T21:33:23Z",
+      "ended": "2026-11-14T21:34:18.137108Z",
+      "slots": 1200,
+      "sent": 1200,
+      "states": {
+        "sent": 1200
+      },
+      "completed": 1200,
+      "timely_100ms": 1200,
+      "late_within_5000ms": 0,
+      "missing_within_5000ms": 0,
+      "events": {
+        "phase_transition": 2,
+        "first_correct_echo": 1400
+      },
+      "rtt_ms": {
+        "n": 1200,
+        "p50": 1.300000011920929,
+        "p95": 1.9000000059604645,
+        "p99": 3.4000000059604645,
+        "max": 14.599999994039536
+      },
+      "lag_ms": {
+        "p99": 6.0,
+        "max": 8.0
+      },
+      "grid_exact": true,
+      "observed_hz": 100.00500442052179,
+      "resource_window": {
+        "start_usec": 153128040000,
+        "end_usec": 153165540000
+      },
+      "resource_samples": 135,
+      "router": {
+        "coverage": true,
+        "peak_backlog_bytes": 326,
+        "max_drops": 0,
+        "queues_with_full_limit": 0
+      },
+      "resources": {
+        "browser": {
+          "cpu_limit_cores": 2.0,
+          "peak_cpu_pct_limit": 47.2589,
+          "throttling_pct": 0.0,
+          "oom": 0,
+          "peak_memory_bytes": 175747072
+        },
+        "server": {
+          "cpu_limit_cores": 2.0,
+          "peak_cpu_pct_limit": 2.0762,
+          "throttling_pct": 0.0,
+          "oom": 0,
+          "peak_memory_bytes": 5496832
+        },
+        "router": {
+          "cpu_limit_cores": 1.0,
+          "peak_cpu_pct_limit": 22.09811881188119,
+          "throttling_pct": 0.0,
+          "oom": 0,
+          "peak_memory_bytes": 3203072
+        }
+      }
+    },
+    {
+      "mode": "WT-D",
+      "frequency_hz": 100,
+      "run_id": "b0-a0-m2",
+      "raw": "results/verify/diagnostic/generator-100.StWlCPFN/raw/b0-a0-m2",
+      "status": "sealed-validated",
+      "unknown": false,
+      "seal": {
+        "path": "results/verify/diagnostic/generator-100.StWlCPFN/raw/b0-a0-m2/SHA256SUMS",
+        "sha256": "ca358138a2848c1de092208c740f92ef7aaa0c304b76e2581cc2a565ffb2f6f8"
+      },
+      "source_exact": true,
+      "environment": {
+        "path": "results/verify/diagnostic/generator-100.StWlCPFN/raw/b0-a0-m2/context.json",
+        "sha256": "816122392c24d59203559d0a44a4fe0764da8324246cac81956e3eb4a85b12f8"
+      },
+      "started": "2026-11-14T21:34:20Z",
+      "ended": "2026-11-14T21:35:15.162733Z",
+      "slots": 1200,
+      "sent": 1199,
+      "states": {
+        "sent": 1199,
+        "scheduler_miss": 1
+      },
+      "completed": 1199,
+      "timely_100ms": 1199,
+      "late_within_5000ms": 0,
+      "missing_within_5000ms": 1,
+      "events": {
+        "phase_transition": 2,
+        "first_correct_echo": 1399
+      },
+      "rtt_ms": {
+        "n": 1199,
+        "p50": 1.199999988079071,
+        "p95": 1.7000000178813934,
+        "p99": 3.0,
+        "max": 8.099999994039536
+      },
+      "lag_ms": {
+        "p99": 6,
+        "max": 9.299999982118607
+      },
+      "grid_exact": true,
+      "observed_hz": 99.92909871960629,
+      "resource_window": {
+        "start_usec": 153185280000,
+        "end_usec": 153222640000
+      },
+      "resource_samples": 135,
+      "router": {
+        "coverage": true,
+        "peak_backlog_bytes": 0,
+        "max_drops": 0,
+        "queues_with_full_limit": 0
+      },
+      "resources": {
+        "browser": {
+          "cpu_limit_cores": 2.0,
+          "peak_cpu_pct_limit": 40.66009900990099,
+          "throttling_pct": 0.0,
+          "oom": 0,
+          "peak_memory_bytes": 174514176
+        },
+        "server": {
+          "cpu_limit_cores": 2.0,
+          "peak_cpu_pct_limit": 1.906039603960396,
+          "throttling_pct": 0.0,
+          "oom": 0,
+          "peak_memory_bytes": 8970240
+        },
+        "router": {
+          "cpu_limit_cores": 1.0,
+          "peak_cpu_pct_limit": 23.12138613861386,
+          "throttling_pct": 0.0,
+          "oom": 0,
+          "peak_memory_bytes": 3444736
+        }
+      }
+    }
+  ],
+  "official_report": {
+    "path": "results/verify/diagnostic/generator-100.StWlCPFN-report/report.json",
+    "sha256": "13054644c027519beceec8643528bac491a93d3c683ccc627287f738fbe0ae15"
+  },
+  "official_status": "failed",
+  "interpretation": "All scheduled outcomes retained. 100 Hz is reserve only; failed performance does not imply invalid data. No RTT imputation or lag subtraction."
+}

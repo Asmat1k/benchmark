@@ -1,0 +1,324 @@
+{
+  "affinity": [
+    {
+      "id": 0,
+      "cpu": 0,
+      "mask": [
+        0
+      ],
+      "mono_ns": 130598145043801
+    },
+    {
+      "id": 3000,
+      "cpu": 1,
+      "mask": [
+        1
+      ],
+      "mono_ns": 130628135054523
+    },
+    {
+      "id": 6000,
+      "cpu": 0,
+      "mask": [
+        0
+      ],
+      "mono_ns": 130658135056245
+    }
+  ],
+  "phases": [
+    {
+      "ids": [
+        0,
+        3000
+      ],
+      "requested_cpu": 0,
+      "start_ns": 130598145043801,
+      "end_ns": 130628135054523,
+      "sender_lag_ms": {
+        "n": 3000,
+        "min": 0.0003409999990253709,
+        "median": 0.0013804999998683343,
+        "p99": 0.032136999998328974,
+        "max": 40.72220900000002
+      },
+      "sender_residence_ms": {
+        "0": 29981.199199,
+        "1": 0.009523
+      },
+      "directions": {
+        "to_server": {
+          "callback_lateness_ms": {
+            "n": 2969,
+            "min": 0.002002,
+            "median": 0.002704,
+            "p99": 0.015921,
+            "max": 24.16934
+          },
+          "sampled_now_lateness_ms": {
+            "n": 2969,
+            "min": 0.002309,
+            "median": 0.002475,
+            "p99": 0.013558,
+            "max": 24.134975
+          },
+          "dequeue_after_callback_ms": {
+            "n": 2969,
+            "min": 0.001,
+            "median": 0.002,
+            "p99": 0.007,
+            "max": 0.576
+          },
+          "callback_cpus": {
+            "0": 2969,
+            "1": 0
+          },
+          "queue_to_xmit_ms": {
+            "n": 2977,
+            "min": 40.242,
+            "median": 40.244,
+            "p99": 40.274,
+            "max": 64.437
+          },
+          "queue_cpus": {
+            "0": 3000,
+            "1": 0
+          }
+        },
+        "to_browser": {
+          "callback_lateness_ms": {
+            "n": 2928,
+            "min": 0.00263,
+            "median": 0.0691235,
+            "p99": 0.97854,
+            "max": 29.43034
+          },
+          "sampled_now_lateness_ms": {
+            "n": 2928,
+            "min": 0.002016,
+            "median": 0.068308,
+            "p99": 0.977516,
+            "max": 29.428767
+          },
+          "dequeue_after_callback_ms": {
+            "n": 2928,
+            "min": 0.002,
+            "median": 0.003,
+            "p99": 0.014,
+            "max": 0.171
+          },
+          "callback_cpus": {
+            "0": 0,
+            "1": 2928
+          },
+          "queue_to_xmit_ms": {
+            "n": 2937,
+            "min": 40.245,
+            "median": 40.312,
+            "p99": 41.628,
+            "max": 69.693
+          },
+          "queue_cpus": {
+            "0": 13,
+            "1": 2959
+          }
+        }
+      }
+    },
+    {
+      "ids": [
+        3000,
+        6000
+      ],
+      "requested_cpu": 1,
+      "start_ns": 130628135054523,
+      "end_ns": 130658135056245,
+      "sender_lag_ms": {
+        "n": 3000,
+        "min": 0.0003569999971659854,
+        "median": 0.0018535000017436687,
+        "p99": 0.08905899999808753,
+        "max": 50.53193399999873
+      },
+      "sender_residence_ms": {
+        "0": 0.009245,
+        "1": 29966.591477
+      },
+      "directions": {
+        "to_server": {
+          "callback_lateness_ms": {
+            "n": 2976,
+            "min": 0.001982,
+            "median": 0.002864,
+            "p99": 4.679326,
+            "max": 25.682615
+          },
+          "sampled_now_lateness_ms": {
+            "n": 2976,
+            "min": 0.00235,
+            "median": 0.002558,
+            "p99": 4.678225,
+            "max": 25.649308
+          },
+          "dequeue_after_callback_ms": {
+            "n": 2976,
+            "min": 0.001,
+            "median": 0.002,
+            "p99": 0.014,
+            "max": 1.16
+          },
+          "callback_cpus": {
+            "0": 613,
+            "1": 2363
+          },
+          "queue_to_xmit_ms": {
+            "n": 2981,
+            "min": 40.242,
+            "median": 40.246,
+            "p99": 44.93,
+            "max": 65.944
+          },
+          "queue_cpus": {
+            "0": 0,
+            "1": 3000
+          }
+        },
+        "to_browser": {
+          "callback_lateness_ms": {
+            "n": 2942,
+            "min": 0.001993,
+            "median": 0.0664235,
+            "p99": 0.568073,
+            "max": 16.076532
+          },
+          "sampled_now_lateness_ms": {
+            "n": 2942,
+            "min": 0.002142,
+            "median": 0.065683,
+            "p99": 0.565558,
+            "max": 15.964892
+          },
+          "dequeue_after_callback_ms": {
+            "n": 2942,
+            "min": 0.001,
+            "median": 0.003,
+            "p99": 0.013,
+            "max": 0.608
+          },
+          "callback_cpus": {
+            "0": 2325,
+            "1": 617
+          },
+          "queue_to_xmit_ms": {
+            "n": 2949,
+            "min": 40.243,
+            "median": 40.309,
+            "p99": 41.191,
+            "max": 56.33
+          },
+          "queue_cpus": {
+            "0": 2981,
+            "1": 0
+          }
+        }
+      }
+    },
+    {
+      "ids": [
+        6000,
+        10000
+      ],
+      "requested_cpu": 0,
+      "start_ns": 130658135056245,
+      "end_ns": 130698145095000,
+      "sender_lag_ms": {
+        "n": 4000,
+        "min": 0.0003730000025825575,
+        "median": 0.0011180000001331791,
+        "p99": 0.012585999997099862,
+        "max": 3.501738999999361
+      },
+      "sender_residence_ms": {
+        "0": 39975.063755,
+        "1": 0.0
+      },
+      "directions": {
+        "to_server": {
+          "callback_lateness_ms": {
+            "n": 3967,
+            "min": 0.002009,
+            "median": 0.002797,
+            "p99": 2.24106,
+            "max": 3.19256
+          },
+          "sampled_now_lateness_ms": {
+            "n": 3967,
+            "min": 0.00235,
+            "median": 0.002475,
+            "p99": 2.2406,
+            "max": 3.185017
+          },
+          "dequeue_after_callback_ms": {
+            "n": 3967,
+            "min": 0.001,
+            "median": 0.002,
+            "p99": 0.009,
+            "max": 0.056
+          },
+          "callback_cpus": {
+            "0": 3109,
+            "1": 858
+          },
+          "queue_to_xmit_ms": {
+            "n": 3967,
+            "min": 40.242,
+            "median": 40.245,
+            "p99": 42.477,
+            "max": 43.441
+          },
+          "queue_cpus": {
+            "0": 4000,
+            "1": 0
+          }
+        },
+        "to_browser": {
+          "callback_lateness_ms": {
+            "n": 3919,
+            "min": 0.000936,
+            "median": 0.06863,
+            "p99": 1.611895,
+            "max": 2.90231
+          },
+          "sampled_now_lateness_ms": {
+            "n": 3919,
+            "min": 0.000725,
+            "median": 0.06785,
+            "p99": 1.608892,
+            "max": 2.89985
+          },
+          "dequeue_after_callback_ms": {
+            "n": 3919,
+            "min": 0.001,
+            "median": 0.003,
+            "p99": 0.012,
+            "max": 0.162
+          },
+          "callback_cpus": {
+            "0": 81,
+            "1": 3838
+          },
+          "queue_to_xmit_ms": {
+            "n": 3920,
+            "min": 40.24,
+            "median": 40.311,
+            "p99": 41.87,
+            "max": 43.156
+          },
+          "queue_cpus": {
+            "0": 0,
+            "1": 3968
+          }
+        }
+      }
+    }
+  ]
+}

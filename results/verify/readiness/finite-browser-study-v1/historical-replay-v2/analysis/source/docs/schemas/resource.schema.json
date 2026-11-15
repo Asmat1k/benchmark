@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "resource v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "role": {
+      "enum": [
+        "browser",
+        "server",
+        "router"
+      ]
+    },
+    "interval_usec": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "cpu_usage_usec": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "throttled_usec": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "memory_current": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "oom": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "sample_index": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "end_usec": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "cpu_start_lower_usec": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "cpu_end_upper_usec": {
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "required": [
+    "schema_version",
+    "run_id",
+    "role",
+    "interval_usec",
+    "cpu_usage_usec",
+    "throttled_usec",
+    "memory_current",
+    "oom",
+    "sample_index",
+    "end_usec"
+  ],
+  "additionalProperties": false,
+  "dependentRequired": {
+    "cpu_start_lower_usec": [
+      "cpu_end_upper_usec"
+    ],
+    "cpu_end_upper_usec": [
+      "cpu_start_lower_usec"
+    ]
+  }
+}

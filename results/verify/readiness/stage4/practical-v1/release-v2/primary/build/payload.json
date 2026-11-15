@@ -1,0 +1,151 @@
+{
+  "gate": "build",
+  "collection_id": "primary-build",
+  "document": {
+    "schema_version": 1,
+    "checks": [
+      {
+        "id": "locked-install",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "v3 locked install and exact admitted images reused; new analysis modules executed from host mount; dependency delta explicitly disclosed in release capsule",
+        "utc": "2026-11-14T19:50:08.176008Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/practical-v1/release-v2/primary/build/locked-install.json",
+            "sha256": "bd38279fd15a7fd8ab627224e89cb5bbe59f01f743ac3e8c117d061530b657b9"
+          }
+        ]
+      },
+      {
+        "id": "native-platform",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "actual host, Docker and unchanged release images",
+        "utc": "2026-11-14T19:50:08.179416Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/practical-v1/release-v2/primary/build/native-platform.json",
+            "sha256": "124da264a940e3220e2c10786b8db0e0144860d57bd60dff7fada9220d3b9f4a"
+          }
+        ]
+      },
+      {
+        "id": "versions",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "current browser runtime plus unchanged image package inventory",
+        "utc": "2026-11-14T19:50:08.185056Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/practical-v1/release-v2/primary/build/versions.json",
+            "sha256": "8a2355b270c7015f1bbee6b02e56a9b36a344857dbd522305f8db26d3ea76f2f"
+          }
+        ]
+      },
+      {
+        "id": "archive-hashes",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "unchanged historical image archive bytes/sidecar and applicable stage2 image-archive content validation; historical source HEAD is not current source release",
+        "utc": "2026-11-14T19:50:11.313771Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/practical-v1/release-v2/primary/build/archive-hashes.json",
+            "sha256": "04dc08979cd096383823c85e34e75bee9162f23d351e353372ebc95584e836cc"
+          }
+        ]
+      }
+    ]
+  },
+  "observations": {
+    "locked-install": {
+      "collection_id": "primary-build",
+      "id": "locked-install",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "v3 locked install and exact admitted images reused; new analysis modules executed from host mount; dependency delta explicitly disclosed in release capsule",
+      "utc": "2026-11-14T19:50:08.176008Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/practical-v1/release-v2/primary/build/locked-install.json",
+          "sha256": "bd38279fd15a7fd8ab627224e89cb5bbe59f01f743ac3e8c117d061530b657b9"
+        }
+      ]
+    },
+    "native-platform": {
+      "collection_id": "primary-build",
+      "id": "native-platform",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "actual host, Docker and unchanged release images",
+      "utc": "2026-11-14T19:50:08.179416Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/practical-v1/release-v2/primary/build/native-platform.json",
+          "sha256": "124da264a940e3220e2c10786b8db0e0144860d57bd60dff7fada9220d3b9f4a"
+        }
+      ]
+    },
+    "versions": {
+      "collection_id": "primary-build",
+      "id": "versions",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "current browser runtime plus unchanged image package inventory",
+      "utc": "2026-11-14T19:50:08.185056Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/practical-v1/release-v2/primary/build/versions.json",
+          "sha256": "8a2355b270c7015f1bbee6b02e56a9b36a344857dbd522305f8db26d3ea76f2f"
+        }
+      ]
+    },
+    "archive-hashes": {
+      "collection_id": "primary-build",
+      "id": "archive-hashes",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "unchanged historical image archive bytes/sidecar and applicable stage2 image-archive content validation; historical source HEAD is not current source release",
+      "utc": "2026-11-14T19:50:11.313771Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/practical-v1/release-v2/primary/build/archive-hashes.json",
+          "sha256": "04dc08979cd096383823c85e34e75bee9162f23d351e353372ebc95584e836cc"
+        }
+      ]
+    }
+  }
+}

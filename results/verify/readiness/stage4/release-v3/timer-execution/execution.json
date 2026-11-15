@@ -1,0 +1,30 @@
+[
+  {
+    "name": "smoke",
+    "command": [
+      "sh",
+      "docker/smoke.sh"
+    ],
+    "start": "2026-11-13T19:37:25.380977+00:00",
+    "elapsed_s": 16.27825324999867,
+    "exit": 0,
+    "new_paths": [
+      "results/verify/path/wswt-smoke.vMSax84H"
+    ]
+  },
+  {
+    "name": "timer",
+    "command": [
+      "sh",
+      "docker/collect-diagnostic.sh",
+      "timer"
+    ],
+    "start": "2026-11-13T19:37:41.660522+00:00",
+    "elapsed_s": 67.38534224999603,
+    "exit": 0,
+    "new_paths": [
+      "results/verify/diagnostic/timer-timer.Bqgsgj12",
+      "results/verify/diagnostic/timer-timer.Bqgsgj12-report"
+    ]
+  }
+]

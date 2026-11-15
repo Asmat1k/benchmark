@@ -1,0 +1,52 @@
+{
+  "start": 1794678846.521931,
+  "elapsed_s": 0.3543660640716553,
+  "commands": [
+    {
+      "argv": [
+        "docker",
+        "ps",
+        "--format",
+        "{{.Names}} {{.Status}}"
+      ],
+      "exit": 0,
+      "stdout": "ai-grepa-qdrant-1 Up 2 days (unhealthy)\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "docker",
+        "network",
+        "ls"
+      ],
+      "exit": 0,
+      "stdout": "NETWORK ID     NAME                    DRIVER    SCOPE\n19502ad00bbf   ai-grepa_ai-grepa       bridge    local\n8d97a7b2c963   bridge                  bridge    local\n569815353d03   host                    host      local\n0cdc48c7195e   kind                    bridge    local\ncf90586b975d   mkd2-astra182_default   bridge    local\ne7d6880bc241   none                    null      local\n42c7ab4fa5c7   transport-lab_back      bridge    local\nbd27d1e8f911   transport-lab_front     bridge    local\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "docker",
+        "run",
+        "--rm",
+        "-i",
+        "--network",
+        "none",
+        "-v",
+        "/Users/dobrov/Desktop/Code/ITMO/benchmark:/bench",
+        "-w",
+        "/bench",
+        "wswt-bench-analyzer:dev",
+        "python",
+        "-B",
+        "src/analysis/series.py",
+        "hold"
+      ],
+      "exit": 0,
+      "stdout": "locked\n",
+      "stderr": ""
+    }
+  ],
+  "own_projects_absent": true,
+  "lock_free": true,
+  "foreign_qdrant_unchanged": true
+}

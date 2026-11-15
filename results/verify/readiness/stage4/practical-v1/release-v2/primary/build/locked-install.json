@@ -1,0 +1,94 @@
+{
+  "collection_id": "primary-build",
+  "gate": "build",
+  "id": "locked-install",
+  "actual": true,
+  "scope": "v3 locked install and exact admitted images reused; new analysis modules executed from host mount; dependency delta explicitly disclosed in release capsule",
+  "command": "v3 docker/build.sh and content comparison; current image IDs and unchanged build dependencies; new D3 context",
+  "observations": {
+    "installation_contracts": [
+      "npm ci",
+      "go test -mod=readonly",
+      "--require-hashes",
+      "pip check"
+    ],
+    "image_dependencies_equal": true,
+    "actual_image_ids": [
+      {
+        "role": "browser",
+        "id": "sha256:356b2e1af8773aaf688f3c4e03bbfa73b2c835d88be0a76278030cf55d1c1641",
+        "cpu": 2000000000,
+        "memory": 3221225472,
+        "shm": 1073741824
+      },
+      {
+        "role": "router",
+        "id": "sha256:d78a80d31724881c1adaa57005fae37f4f23e0013945dac759d7ee1f76b6b74d",
+        "cpu": 1000000000,
+        "memory": 536870912,
+        "shm": 67108864
+      },
+      {
+        "role": "server",
+        "id": "sha256:c2c60585a64d04e8dd7dd6a674625c0aec44cdc385561c8864dab734fbf19c44",
+        "cpu": 2000000000,
+        "memory": 1073741824,
+        "shm": 67108864
+      }
+    ]
+  },
+  "files": [
+    {
+      "path": "results/verify/readiness/stage4/release-v3/build.stdout.log",
+      "sha256": "b705a7062baa83f09a942409ed45d0529a9d5210ee1fc5d1a7168431e3f89199"
+    },
+    {
+      "path": "results/verify/readiness/stage4/release-v3/build.stderr.log",
+      "sha256": "f226fc3f8246ca41f8fd96d7eaf5272c8a231182f20f54d27f51cbb6cda0add3"
+    },
+    {
+      "path": "results/verify/readiness/stage4/release-v3/image-comparison.json",
+      "sha256": "5e2df715882bf909c48b1edf10a7d179333a5ef914dc11e16bc6b557c733b93a"
+    },
+    {
+      "path": "results/verify/readiness/stage4/release-v3/analyzer-content-comparison.json",
+      "sha256": "c397d433c9910d71020e0e8d717c17287192568895fbdeb431653a8f0bfd8a3b"
+    },
+    {
+      "path": "results/verify/readiness/stage4/practical-v1/release-v2/release.json",
+      "sha256": "b154faea85adad05167252d640239bde8662abeadee243ca2356e20b6c12dda8"
+    },
+    {
+      "path": "results/verify/readiness/stage2-preflight/release-build-archive.json",
+      "sha256": "5b7c5ee907cb45ebfd7a3c707a58c978f8608de82ef71f7854e99628318ebf88"
+    },
+    {
+      "path": "results/verify/readiness/stage2-preflight/release-evidence.json",
+      "sha256": "e60858a2951fa0126aec68170064257e1a9cf8cbe44999a8b2b8dd005b1a2ad6"
+    },
+    {
+      "path": "docker/Dockerfile.server",
+      "sha256": "8e8036189ffe938585b5ce8cf69feb0dd11fdc44554b3448f541550244f664a5"
+    },
+    {
+      "path": "docker/Dockerfile.browser",
+      "sha256": "473f8ff26ab6c755b869ad982d08dbdd7e0ce6bab57d84629cfb4c5b54662827"
+    },
+    {
+      "path": "docker/Dockerfile.analyzer",
+      "sha256": "57bfbee24b43c9daac8c891666dcd2bda08c5a40f213c8f6756f7a6b37ee61e4"
+    }
+  ],
+  "preparer": {
+    "path": "/bench/docs/readiness/practical-early.py",
+    "sha256": "f49f09d9f984c90f5ee94c39bf461120370e0cf443629599f580957e80ad9964"
+  },
+  "source_inventory": {
+    "path": "results/verify/readiness/stage4/practical-v1/release-v2/source-inventory.json",
+    "sha256": "0f05a3987cb0c387ec76d9350e3f1837c8f583cfa8241798aab68da71d171f06"
+  },
+  "applicability": {
+    "path": "results/verify/readiness/stage4/practical-v1/release-v2/release.json",
+    "sha256": "b154faea85adad05167252d640239bde8662abeadee243ca2356e20b6c12dda8"
+  }
+}

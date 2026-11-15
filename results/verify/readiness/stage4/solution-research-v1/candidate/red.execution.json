@@ -1,0 +1,25 @@
+{
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "-e",
+    "PYTHONPATH=results/verify/readiness/stage4/solution-research-v1/candidate:docker:src/analysis",
+    "-v",
+    "/Users/dobrov/Desktop/Code/ITMO/benchmark:/bench",
+    "-w",
+    "/bench",
+    "wswt-bench-analyzer:dev",
+    "python",
+    "-B",
+    "-m",
+    "unittest",
+    "-v",
+    "calibration_probe_test.PacingTest.test_echo_pins_lowest_allowed_cpu_before_timeline",
+    "calibration_probe_test.PacingTest.test_saturation_retains_cpu_affinity"
+  ],
+  "elapsed_s": 0.5573840141296387,
+  "exit": 1
+}

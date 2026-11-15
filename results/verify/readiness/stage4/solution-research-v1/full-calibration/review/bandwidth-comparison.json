@@ -1,0 +1,52 @@
+{
+  "scope": "Historical validated browser byte counts with new capacity; applicability comparison, not new source-bound generator/bandwidth gate",
+  "historical_BW_RUN": "results/verify/diagnostic/browser-bandwidth-v4.9r51339s",
+  "current_CAL_RUN": "results/verify/diagnostic/calibration.ew2u0ceD",
+  "source_delta": [
+    "docker/calibration_probe.py",
+    "docker/calibration_probe_test.py"
+  ],
+  "reason": "Only auxiliary UDP calibration sender and its test changed; browser source, measurement collector and byte counters unchanged. Historical raw/review retain original hashes.",
+  "accounting_level": "router netem dequeued skb bytes including Ethernet header; excludes FCS/preamble/IFG",
+  "main_bandwidth_fraction": 0.008379773240933912,
+  "status": "passed",
+  "ratios": [
+    {
+      "mode": "WS",
+      "direction": "forward",
+      "capacity_mbit_s": 9.999320838792897,
+      "fraction": 0.008023184903594393
+    },
+    {
+      "mode": "WS",
+      "direction": "reverse",
+      "capacity_mbit_s": 9.999809174310592,
+      "fraction": 0.006864077650901655
+    },
+    {
+      "mode": "WT-D",
+      "direction": "forward",
+      "capacity_mbit_s": 9.999320838792897,
+      "fraction": 0.007668587487380137
+    },
+    {
+      "mode": "WT-D",
+      "direction": "reverse",
+      "capacity_mbit_s": 9.999809174310592,
+      "fraction": 0.008379773240933912
+    },
+    {
+      "mode": "WT-S",
+      "direction": "forward",
+      "capacity_mbit_s": 9.999320838792897,
+      "fraction": 0.007596555928609429
+    },
+    {
+      "mode": "WT-S",
+      "direction": "reverse",
+      "capacity_mbit_s": 9.999809174310592,
+      "fraction": 0.006510964245924094
+    }
+  ],
+  "limitation": "Conservative bound: all setup/warmup/measurement/drain bytes divided by 60 s; baseline only"
+}

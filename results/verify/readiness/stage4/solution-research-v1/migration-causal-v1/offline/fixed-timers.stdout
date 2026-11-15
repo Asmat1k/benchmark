@@ -1,0 +1,25 @@
+{
+  "timer_mapping": {
+    "0000000077469ddf": "to_server",
+    "000000008f3e1738": "to_browser"
+  },
+  "association_counts": {
+    "0000000077469ddf": {
+      "to_server": 9921
+    },
+    "000000008f3e1738": {
+      "to_browser": 9802
+    }
+  },
+  "queue_identity": {
+    "('14', '0x806E0000')": "to_server",
+    "('13', '0x806F0000')": "to_browser"
+  },
+  "elapsed_s": 1.7261637920018984,
+  "limitations": [
+    "Direction inferred from same-CPU start then next qdisc dequeue (positive bulk-lookahead or null); inconsistent associations remain unknown",
+    "No per-skb programmedtime_to_send; callback pairing is per timer, not one callback per packet",
+    "No cancels or host scheduler; sender-active state does not establish global CPU availability"
+  ]
+}
+{'to_server': {'callback_lateness_ms': {'n': 9921, 'median': 0.003118, 'p95': 0.006359, 'p99': 0.011131, 'max': 24.005624, 'min': 0.002112}, 'sampled_now_lateness_ms': {'n': 9921, 'median': 0.00285, 'p95': 0.005934, 'p99': 0.010017, 'max': 23.976808, 'min': 0.000141}, 'callback_minus_sampled_now_ms': {'n': 9921, 'median': 0.000182, 'p95': 0.000658, 'p99': 0.002051, 'max': 0.059353, 'min': -0.000374}, 'start_cpus': {0: 9921}, 'callback_cpus': {0: 9921}, 'callback_on_sender_active_cpu': 9914}, 'to_browser': {'callback_lateness_ms': {'n': 9802, 'median': 0.067495, 'p95': 0.091506, 'p99': 0.229314, 'max': 19.525385, 'min': 0.001609}, 'sampled_now_lateness_ms': {'n': 9802, 'median': 0.066725, 'p95': 0.090517, 'p99': 0.228142, 'max': 19.524184, 'min': 0.000266}, 'callback_minus_sampled_now_ms': {'n': 9802, 'median': 0.00077, 'p95': 0.001265, 'p99': 0.002865, 'max': 0.043739, 'min': -0.000323}, 'start_cpus': {1: 9802}, 'callback_cpus': {1: 9802}, 'callback_on_sender_active_cpu': 0}}

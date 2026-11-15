@@ -1,0 +1,10 @@
+{
+  "archive": {
+    "path": "results/archives/images-05a30d9c5e341462c167a548a5942bc377e5c48de2aee0badb5db3301203a11e.tar",
+    "sha256": "05a30d9c5e341462c167a548a5942bc377e5c48de2aee0badb5db3301203a11e",
+    "size": 1202140160
+  },
+  "source_count": 134,
+  "head": "3605994e8359a70443621517e11dd2383a726f48",
+  "reused_archive_for_identical_image_ids": true
+}

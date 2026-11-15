@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "-v",
+    "/Users/dobrov/Desktop/Code/ITMO/benchmark:/bench",
+    "-w",
+    "/bench",
+    "wswt-bench-analyzer:dev",
+    "python",
+    "-B",
+    "results/verify/readiness/stage4/imperfection-policy-v1/sensitivity/analyze.py"
+  ],
+  "start": 1794682600.37685,
+  "elapsed_s": 4.302459239959717,
+  "exit": 0
+}

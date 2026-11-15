@@ -1,0 +1,16 @@
+{
+  "release_commit": "3605994e8359a70443621517e11dd2383a726f48",
+  "source_delta": [
+    "docker/calibration_probe.py",
+    "docker/calibration_probe_test.py"
+  ],
+  "source_count": 134,
+  "admitted_image_ids_restored": true,
+  "rebuild": "cached current build; image IDs differed; original exact images restored after Config/RootFS checks (analyzer difference only existing cpython315 cache); host-mounted sender is current committed source",
+  "environment_content_equal": true,
+  "environment_original": "results/verify/diagnostic/timer-timer.2ST8NYBU/context.json",
+  "environment_actual": "results/verify/diagnostic/timer-timer.Bqgsgj12/context.json",
+  "archive_reuse": "archive contains exact restored admitted imageIDs; no claim of source equality",
+  "tls_der": "fc2a5f4d7bc0fce861baee9207c82ff86bf502fda419cf45c73e3559d1a56d18",
+  "notAfter": "Nov 26 16:22:37 2026 GMT"
+}

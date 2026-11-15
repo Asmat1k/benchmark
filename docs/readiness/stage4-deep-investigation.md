@@ -113,3 +113,27 @@ Raw `profile-validation.73PKohD7`: два профиля по 10000 пакето
 Повторять 30-минутную калибровку просто ради удачного результата нельзя. Следующее исследование должно различить netem/echo-server/guest service в самом переходе, записав соответствующие Linux scheduler/syscall/queue свидетельства и привязку часов. Это диагностика причины, а не новая mandatory macOS trace. Если нужный эпизод не появится на малом объёме, итог остаётся inconclusive, без бесконечных повторов.
 
 После обоснованного решения нужны актуальные source-bound ранние gates, qualification, browser bandwidth и один новый полный заранее заданный calibration plan. Текущие исторические passed отчёты нельзя перепривязать заменой hashes: sender изменён. Final generator, A/A, monitoring, pilot/power, freeze и main не запускались.
+
+## Продолжение: целевая Linux-трасса
+
+14 ноября2026 выполнен один заранее заданный r80p1 опыт119.157с, exit0, после network-none selftest. Исходный многосекундный переход не повторился: итог его локализации **inconclusive**, без нового productionfix и без допуска полной calibration. Новая трасса отдельно выявила delayed forward/reverse dequeue и runnablewait echo-server; точная host/guest причина неизвестна. Полный результат, команды, SHA и ограничения: [stage4-transition-trace.md](stage4-transition-trace.md). Материалы: `results/verify/readiness/stage4/transition-trace-v1/`; raw `results/verify/diagnostic/transition-trace.jNq2hqdS`. Прежняя версия данного отчёта сохранена там побайтно для исторического SHA. Этап4 не завершён.
+
+## Следующее действие по указанию пользователя
+
+Пользователь остановил дополнительную watchdog диагностику и запросил первую полную calibration после poll0. Подготовлены план/обёртка `results/verify/readiness/stage4/calibration-poll0-v1/`; preflight `preflight.ig5gs287` exit0. Полный запуск30–35мин передан пользователю, ещё не выполнен. Новых productionfix нет; watchdog selftest/network не запускались. Не запускать параллельные исследования, ждать полного результата14+4. Исторические отказы сохраняются; shell0 не означает принятую научную calibration.
+
+## Результат полного объёма после poll0
+
+Пользователь завершил calibration.gIdWLx7o29мин22.578с/exit0. Все146seals и14+4подсерий проверены. Sender14/14passed,maxlag35.468мс; но formalprocess3/6suspect и длительныеRTTпереходывоспроизвелись. Первичныйитогinconclusive; bootstrap/generator/новыесетевыеопыты не запускались. Подробности икоманды: [stage4-calibration-poll0-result.md](stage4-calibration-poll0-result.md); материалы `results/verify/readiness/stage4/calibration-poll0-v1/review/`. Poll0помогsender,но не устранилRTTprocessпроблему. Этап4незавершён.
+
+## Исправление после причинной локализации миграции
+
+Новыйресерчс3сабагентами: late netemwatchdogостаетсянапрежнемCPUпослемиграцииsender; прямойконтрольподтвердилзависимостьсучётомпозднегоперебазирования. Минимальнаяправкаd665590: pinтолькоecho senderкminallowedCPUдоtimeline,безновогоядра.16unit/regressionи2неинструментированных10000-пакетныхпрофиляr80p0/r80p1прошли. Этап4ещёнезавершён; переданаоднапользовательскаякоманда3xqualification~6–7мин. Подробности: [stage4-sender-affinity-result.md](stage4-sender-affinity-result.md); планы/негативныеисходы/rawpaths/команды/SHAв`solution-research-v1/`.
+
+## Qualification после affinity пройдена
+
+14ноября2026пользовательскаяsender-diagnostic.6uYg6iiyпроверена:3/3senderpassed,79seals,полноересурсноепокрытие,overflow/throttle/OOM0. Maxlag33.468/9.164/27.204мс. Подготовленаследующаяоднаполная14+4calibration`solution-research-v1/full-calibration/run.py`,preflightexit0;запускаетпользователь30–35мин. Ещёнеисполнена,этап4незавершён. См.[полныйрезультат](stage4-sender-affinity-result.md).
+
+## Полный объём после affinity: два оставшихся отказа
+
+Calibration.ew2u0ceDexit0/rawцелые,ноsender13/14passed(69.794мсlagвr20p1-before),formalprocess5/6clear(остаточнаяступень~.134мсвr80p1). Старыхмногомиллисекундныхforwardрежимовнет. Bootstrap/генератор/повторнеисполнялись. Пользовательподнялвопрособисключениипревышенийиобоснованностидопусков;никакихизмененийданных/пороговнет. См.[полныйразбор](stage4-affinity-full-calibration-result.md).

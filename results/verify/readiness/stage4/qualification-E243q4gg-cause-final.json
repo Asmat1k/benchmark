@@ -1,0 +1,626 @@
+{
+  "run": "results/verify/diagnostic/sender-diagnostic.E243q4gg",
+  "inputs": {
+    "results/verify/diagnostic/sender-diagnostic.E243q4gg/baseline-q1/probe.json": "7422431f4446338f6d16bb12700d51e8baff0587db44149f904285580b8101d8",
+    "results/verify/diagnostic/sender-diagnostic.E243q4gg/baseline-q1/browser.pcap": "0842861e3e942f4ccae699da636eb9264057e612aa43df56d9572a5e7718c7e0",
+    "results/verify/diagnostic/sender-diagnostic.E243q4gg/baseline-q1/server.pcap": "1fdb2054d6677c6b0308fda300a31044b6dadf48e7380d74e4c0e6a09916bbf7",
+    "results/verify/diagnostic/sender-diagnostic.E243q4gg/baseline-q1/browser-resources.jsonl": "3e34ff0655063ee65648d036ca3b668b9d021658739aa041d92e863218329879",
+    "results/verify/diagnostic/sender-diagnostic.E243q4gg/baseline-q1/server-resources.jsonl": "a14816b75e19efb311991fb983f293da604d4641c82f32409732466b5aedd77a",
+    "results/verify/diagnostic/sender-diagnostic.E243q4gg/baseline-q1/router-resources.txt": "4c885313813bb3e6dfdb641217d5557ae587f98d74ef94165ce80b767666119a",
+    "results/verify/diagnostic/sender-diagnostic.E243q4gg/captured.json": "0b0218ae9d1faf96867e521c50c17349a30c66e339dbd44f4d2bf6ed3d293ab4"
+  },
+  "resources": {
+    "browser": {
+      "max_sample_gap_s": 1.020413417,
+      "max_vm_busy_pct": 10.152284263959391,
+      "max_probe_cpu_core_pct": 6.961943419946083,
+      "around_failure": [
+        {
+          "first_sent_count": 9016,
+          "last_sent_count": 9116,
+          "sample_gap_s": 1.004273458,
+          "vm_busy_pct": 2.030456852791878,
+          "vm_steal_jiffies": 0,
+          "probe_cpu_core_pct": 2.3453771293435897,
+          "vm_cpu_pressure_ms": 7.9,
+          "probe_throttled_us": 0,
+          "oom": 0
+        },
+        {
+          "first_sent_count": 9116,
+          "last_sent_count": 9216,
+          "sample_gap_s": 1.005158251,
+          "vm_busy_pct": 5.154639175257732,
+          "vm_steal_jiffies": 0,
+          "probe_cpu_core_pct": 6.24140526505015,
+          "vm_cpu_pressure_ms": 22.199,
+          "probe_throttled_us": 0,
+          "oom": 0
+        }
+      ]
+    },
+    "server": {
+      "max_sample_gap_s": 1.010871792,
+      "max_vm_busy_pct": 9.090909090909092,
+      "max_probe_cpu_core_pct": 4.48545193109209,
+      "around_failure": [
+        {
+          "first_sent_count": 9090,
+          "last_sent_count": 9190,
+          "sample_gap_s": 1.005034792,
+          "vm_busy_pct": 4.1450777202072535,
+          "vm_steal_jiffies": 0,
+          "probe_cpu_core_pct": 1.5176589030959637,
+          "vm_cpu_pressure_ms": 18.199,
+          "probe_throttled_us": 0,
+          "oom": 0
+        },
+        {
+          "first_sent_count": 9190,
+          "last_sent_count": 9290,
+          "sample_gap_s": 1.001039917,
+          "vm_busy_pct": 3.58974358974359,
+          "vm_steal_jiffies": 0,
+          "probe_cpu_core_pct": 1.389754770388442,
+          "vm_cpu_pressure_ms": 10.084,
+          "probe_throttled_us": 0,
+          "oom": 0
+        }
+      ]
+    }
+  },
+  "events": [
+    {
+      "first_late_id": 2298,
+      "records": [
+        {
+          "id": 2295,
+          "plan_ms": 22950,
+          "lag_ms": 0.30680199999915203,
+          "send_gap_ms": 9.929124999998749,
+          "forward_ingress_gap_ms": 9.928,
+          "reverse_ingress_gap_ms": 9.903,
+          "router_round_path_ms": 0.383,
+          "rtt_ms": 0.76725,
+          "previous_reply_received_to_this_send_ms": 9.194499999997788
+        },
+        {
+          "id": 2296,
+          "plan_ms": 22960,
+          "lag_ms": 0.5699270000004617,
+          "send_gap_ms": 10.26312500000131,
+          "forward_ingress_gap_ms": 10.267,
+          "reverse_ingress_gap_ms": 10.293,
+          "router_round_path_ms": 0.409,
+          "rtt_ms": 0.81325,
+          "previous_reply_received_to_this_send_ms": 9.495875000000524
+        },
+        {
+          "id": 2297,
+          "plan_ms": 22970,
+          "lag_ms": 0.9576769999985117,
+          "send_gap_ms": 10.38774999999805,
+          "forward_ingress_gap_ms": 10.535,
+          "reverse_ingress_gap_ms": 10.903,
+          "router_round_path_ms": 0.777,
+          "rtt_ms": 1.349125,
+          "previous_reply_received_to_this_send_ms": 9.574499999998807
+        },
+        {
+          "id": 2298,
+          "plan_ms": 22980,
+          "lag_ms": 42.17001000000164,
+          "send_gap_ms": 51.21233300000313,
+          "forward_ingress_gap_ms": 51.179,
+          "reverse_ingress_gap_ms": 50.998,
+          "router_round_path_ms": 0.596,
+          "rtt_ms": 1.1295,
+          "previous_reply_received_to_this_send_ms": 49.86320800000249
+        },
+        {
+          "id": 2299,
+          "plan_ms": 22990,
+          "lag_ms": 35.2025939999985,
+          "send_gap_ms": 3.0325839999968593,
+          "forward_ingress_gap_ms": 2.936,
+          "reverse_ingress_gap_ms": 2.733,
+          "router_round_path_ms": 0.393,
+          "rtt_ms": 0.757916,
+          "previous_reply_received_to_this_send_ms": 1.9030839999977616
+        },
+        {
+          "id": 2300,
+          "plan_ms": 23000,
+          "lag_ms": 28.225718999998207,
+          "send_gap_ms": 3.023124999999709,
+          "forward_ingress_gap_ms": 2.998,
+          "reverse_ingress_gap_ms": 2.949,
+          "router_round_path_ms": 0.344,
+          "rtt_ms": 0.687208,
+          "previous_reply_received_to_this_send_ms": 2.2652090000010503
+        },
+        {
+          "id": 2301,
+          "plan_ms": 23010,
+          "lag_ms": 21.265426999998454,
+          "send_gap_ms": 3.039708000000246,
+          "forward_ingress_gap_ms": 3.039,
+          "reverse_ingress_gap_ms": 3.041,
+          "router_round_path_ms": 0.346,
+          "rtt_ms": 0.687208,
+          "previous_reply_received_to_this_send_ms": 2.352500000000873
+        },
+        {
+          "id": 2302,
+          "plan_ms": 23020,
+          "lag_ms": 14.3051349999987,
+          "send_gap_ms": 3.039708000000246,
+          "forward_ingress_gap_ms": 3.04,
+          "reverse_ingress_gap_ms": 3.038,
+          "router_round_path_ms": 0.344,
+          "rtt_ms": 0.685792,
+          "previous_reply_received_to_this_send_ms": 2.352500000000873
+        },
+        {
+          "id": 2303,
+          "plan_ms": 23030,
+          "lag_ms": 7.343884999998409,
+          "send_gap_ms": 3.038749999999709,
+          "forward_ingress_gap_ms": 3.039,
+          "reverse_ingress_gap_ms": 3.036,
+          "router_round_path_ms": 0.341,
+          "rtt_ms": 0.685584,
+          "previous_reply_received_to_this_send_ms": 2.3529579999994894
+        },
+        {
+          "id": 2304,
+          "plan_ms": 23040,
+          "lag_ms": 0.5785519999990356,
+          "send_gap_ms": 3.234667000000627,
+          "forward_ingress_gap_ms": 3.234,
+          "reverse_ingress_gap_ms": 3.234,
+          "router_round_path_ms": 0.341,
+          "rtt_ms": 0.688042,
+          "previous_reply_received_to_this_send_ms": 2.5490830000017013
+        },
+        {
+          "id": 2305,
+          "plan_ms": 23050,
+          "lag_ms": 0.8448439999992843,
+          "send_gap_ms": 10.266292000000249,
+          "forward_ingress_gap_ms": 10.268,
+          "reverse_ingress_gap_ms": 10.278,
+          "router_round_path_ms": 0.351,
+          "rtt_ms": 0.70075,
+          "previous_reply_received_to_this_send_ms": 9.578249999998661
+        },
+        {
+          "id": 2306,
+          "plan_ms": 23060,
+          "lag_ms": 2.257884999999078,
+          "send_gap_ms": 11.413040999999794,
+          "forward_ingress_gap_ms": 11.413,
+          "reverse_ingress_gap_ms": 11.41,
+          "router_round_path_ms": 0.348,
+          "rtt_ms": 0.699375,
+          "previous_reply_received_to_this_send_ms": 10.712290999999823
+        },
+        {
+          "id": 2307,
+          "plan_ms": 23070,
+          "lag_ms": 2.0460520000015094,
+          "send_gap_ms": 9.788167000002431,
+          "forward_ingress_gap_ms": 9.788,
+          "reverse_ingress_gap_ms": 9.82,
+          "router_round_path_ms": 0.38,
+          "rtt_ms": 0.770209,
+          "previous_reply_received_to_this_send_ms": 9.088792000002286
+        },
+        {
+          "id": 2308,
+          "plan_ms": 23080,
+          "lag_ms": 23.069135999998252,
+          "send_gap_ms": 31.023083999996743,
+          "forward_ingress_gap_ms": 31.206,
+          "reverse_ingress_gap_ms": 31.364,
+          "router_round_path_ms": 0.538,
+          "rtt_ms": 1.416541,
+          "previous_reply_received_to_this_send_ms": 30.252874999998312
+        },
+        {
+          "id": 2309,
+          "plan_ms": 23090,
+          "lag_ms": 15.927135999998427,
+          "send_gap_ms": 2.8580000000001746,
+          "forward_ingress_gap_ms": 2.676,
+          "reverse_ingress_gap_ms": 2.495,
+          "router_round_path_ms": 0.357,
+          "rtt_ms": 0.7025,
+          "previous_reply_received_to_this_send_ms": 1.4414590000014869
+        },
+        {
+          "id": 2310,
+          "plan_ms": 23100,
+          "lag_ms": 8.963051999999152,
+          "send_gap_ms": 3.035916000000725,
+          "forward_ingress_gap_ms": 3.034,
+          "reverse_ingress_gap_ms": 3.02,
+          "router_round_path_ms": 0.343,
+          "rtt_ms": 0.68575,
+          "previous_reply_received_to_this_send_ms": 2.333416000001307
+        }
+      ]
+    },
+    {
+      "first_late_id": 7870,
+      "records": [
+        {
+          "id": 7867,
+          "plan_ms": 78670,
+          "lag_ms": 1.984826999992947,
+          "send_gap_ms": 11.185416999986046,
+          "forward_ingress_gap_ms": 11.219,
+          "reverse_ingress_gap_ms": 11.292,
+          "router_round_path_ms": 0.457,
+          "rtt_ms": 0.908333,
+          "previous_reply_received_to_this_send_ms": 10.432749999992666
+        },
+        {
+          "id": 7868,
+          "plan_ms": 78680,
+          "lag_ms": 1.9079939999937778,
+          "send_gap_ms": 9.92316700000083,
+          "forward_ingress_gap_ms": 9.918,
+          "reverse_ingress_gap_ms": 9.988,
+          "router_round_path_ms": 0.527,
+          "rtt_ms": 0.974958,
+          "previous_reply_received_to_this_send_ms": 9.014834000001429
+        },
+        {
+          "id": 7869,
+          "plan_ms": 78690,
+          "lag_ms": 0.9543689999991329,
+          "send_gap_ms": 9.046375000005355,
+          "forward_ingress_gap_ms": 9.022,
+          "reverse_ingress_gap_ms": 9.751,
+          "router_round_path_ms": 1.256,
+          "rtt_ms": 1.636416,
+          "previous_reply_received_to_this_send_ms": 8.071416999999201
+        },
+        {
+          "id": 7870,
+          "plan_ms": 78700,
+          "lag_ms": 30.707452000002377,
+          "send_gap_ms": 39.753083000003244,
+          "forward_ingress_gap_ms": 39.908,
+          "reverse_ingress_gap_ms": 39.121,
+          "router_round_path_ms": 0.469,
+          "rtt_ms": 1.263167,
+          "previous_reply_received_to_this_send_ms": 38.11666700000933
+        },
+        {
+          "id": 7871,
+          "plan_ms": 78710,
+          "lag_ms": 23.8314939999982,
+          "send_gap_ms": 3.124041999995825,
+          "forward_ingress_gap_ms": 2.954,
+          "reverse_ingress_gap_ms": 2.847,
+          "router_round_path_ms": 0.362,
+          "rtt_ms": 0.70825,
+          "previous_reply_received_to_this_send_ms": 1.8608749999984866
+        },
+        {
+          "id": 7872,
+          "plan_ms": 78720,
+          "lag_ms": 19.107118999992963,
+          "send_gap_ms": 5.275624999994761,
+          "forward_ingress_gap_ms": 5.282,
+          "reverse_ingress_gap_ms": 5.327,
+          "router_round_path_ms": 0.407,
+          "rtt_ms": 0.990625,
+          "previous_reply_received_to_this_send_ms": 4.567374999998719
+        },
+        {
+          "id": 7873,
+          "plan_ms": 78730,
+          "lag_ms": 12.160868999999366,
+          "send_gap_ms": 3.053750000006403,
+          "forward_ingress_gap_ms": 3.045,
+          "reverse_ingress_gap_ms": 7.951,
+          "router_round_path_ms": 5.313,
+          "rtt_ms": 6.462666,
+          "previous_reply_received_to_this_send_ms": 2.063125000000582
+        },
+        {
+          "id": 7874,
+          "plan_ms": 78740,
+          "lag_ms": 7.289160000000265,
+          "send_gap_ms": 5.1282910000009,
+          "forward_ingress_gap_ms": 5.132,
+          "reverse_ingress_gap_ms": 1.097,
+          "router_round_path_ms": 1.278,
+          "rtt_ms": 4.27025,
+          "previous_reply_received_to_this_send_ms": -1.3343750000058208
+        },
+        {
+          "id": 7875,
+          "plan_ms": 78750,
+          "lag_ms": 1.4832440000027418,
+          "send_gap_ms": 4.194084000002476,
+          "forward_ingress_gap_ms": 4.19,
+          "reverse_ingress_gap_ms": 6.96,
+          "router_round_path_ms": 4.048,
+          "rtt_ms": 5.344958,
+          "previous_reply_received_to_this_send_ms": -0.0761659999989206
+        },
+        {
+          "id": 7876,
+          "plan_ms": 78760,
+          "lag_ms": 3.0039099999994505,
+          "send_gap_ms": 11.520665999996709,
+          "forward_ingress_gap_ms": 11.535,
+          "reverse_ingress_gap_ms": 8.058,
+          "router_round_path_ms": 0.571,
+          "rtt_ms": 1.13325,
+          "previous_reply_received_to_this_send_ms": 6.175707999995211
+        },
+        {
+          "id": 7877,
+          "plan_ms": 78770,
+          "lag_ms": 0.7414520000020275,
+          "send_gap_ms": 7.737542000002577,
+          "forward_ingress_gap_ms": 7.738,
+          "reverse_ingress_gap_ms": 7.638,
+          "router_round_path_ms": 0.471,
+          "rtt_ms": 1.118125,
+          "previous_reply_received_to_this_send_ms": 6.604292000003625
+        },
+        {
+          "id": 7878,
+          "plan_ms": 78780,
+          "lag_ms": 2.6492440000001807,
+          "send_gap_ms": 11.907791999998153,
+          "forward_ingress_gap_ms": 11.913,
+          "reverse_ingress_gap_ms": 15.16,
+          "router_round_path_ms": 3.718,
+          "rtt_ms": 4.798375,
+          "previous_reply_received_to_this_send_ms": 10.789667000004556
+        },
+        {
+          "id": 7879,
+          "plan_ms": 78790,
+          "lag_ms": 2.2057020000065677,
+          "send_gap_ms": 9.556458000006387,
+          "forward_ingress_gap_ms": 9.792,
+          "reverse_ingress_gap_ms": 6.488,
+          "router_round_path_ms": 0.414,
+          "rtt_ms": 1.0945,
+          "previous_reply_received_to_this_send_ms": 4.7580830000079
+        },
+        {
+          "id": 7880,
+          "plan_ms": 78800,
+          "lag_ms": 2.2912019999930635,
+          "send_gap_ms": 10.085499999986496,
+          "forward_ingress_gap_ms": 9.846,
+          "reverse_ingress_gap_ms": 10.887,
+          "router_round_path_ms": 1.455,
+          "rtt_ms": 1.840083,
+          "previous_reply_received_to_this_send_ms": 8.990999999979977
+        },
+        {
+          "id": 7881,
+          "plan_ms": 78810,
+          "lag_ms": 1.9028269999980694,
+          "send_gap_ms": 9.611625000005006,
+          "forward_ingress_gap_ms": 9.63,
+          "reverse_ingress_gap_ms": 8.643,
+          "router_round_path_ms": 0.468,
+          "rtt_ms": 0.890625,
+          "previous_reply_received_to_this_send_ms": 7.771542000002228
+        },
+        {
+          "id": 7882,
+          "plan_ms": 78820,
+          "lag_ms": 1.2622019999980694,
+          "send_gap_ms": 9.359375,
+          "forward_ingress_gap_ms": 9.363,
+          "reverse_ingress_gap_ms": 9.467,
+          "router_round_path_ms": 0.572,
+          "rtt_ms": 1.005125,
+          "previous_reply_received_to_this_send_ms": 8.46875
+        }
+      ]
+    },
+    {
+      "first_late_id": 9151,
+      "records": [
+        {
+          "id": 9148,
+          "plan_ms": 91480,
+          "lag_ms": 2.010999999998603,
+          "send_gap_ms": 10.290750000000116,
+          "forward_ingress_gap_ms": 10.291,
+          "reverse_ingress_gap_ms": 10.299,
+          "router_round_path_ms": 0.396,
+          "rtt_ms": 0.788417,
+          "previous_reply_received_to_this_send_ms": 9.516957999992883
+        },
+        {
+          "id": 9149,
+          "plan_ms": 91490,
+          "lag_ms": 0.6072920000005979,
+          "send_gap_ms": 8.596292000001995,
+          "forward_ingress_gap_ms": 8.637,
+          "reverse_ingress_gap_ms": 8.644,
+          "router_round_path_ms": 0.403,
+          "rtt_ms": 0.802958,
+          "previous_reply_received_to_this_send_ms": 7.807874999998603
+        },
+        {
+          "id": 9150,
+          "plan_ms": 91500,
+          "lag_ms": 1.9474999999947613,
+          "send_gap_ms": 11.340207999994163,
+          "forward_ingress_gap_ms": 11.331,
+          "reverse_ingress_gap_ms": 11.588,
+          "router_round_path_ms": 0.66,
+          "rtt_ms": 34.404708,
+          "previous_reply_received_to_this_send_ms": 10.537249999993946
+        },
+        {
+          "id": 9151,
+          "plan_ms": 91510,
+          "lag_ms": 57.235249999997905,
+          "send_gap_ms": 65.28775000000314,
+          "forward_ingress_gap_ms": 65.276,
+          "reverse_ingress_gap_ms": 65.095,
+          "router_round_path_ms": 0.479,
+          "rtt_ms": 3.554875,
+          "previous_reply_received_to_this_send_ms": 30.883042000001296
+        },
+        {
+          "id": 9152,
+          "plan_ms": 91520,
+          "lag_ms": 50.803083000006154,
+          "send_gap_ms": 3.5678330000082497,
+          "forward_ingress_gap_ms": 3.541,
+          "reverse_ingress_gap_ms": 3.531,
+          "router_round_path_ms": 0.469,
+          "rtt_ms": 0.800167,
+          "previous_reply_received_to_this_send_ms": 0.01295800000661984
+        },
+        {
+          "id": 9153,
+          "plan_ms": 91530,
+          "lag_ms": 46.097083000000566,
+          "send_gap_ms": 5.293999999994412,
+          "forward_ingress_gap_ms": 5.309,
+          "reverse_ingress_gap_ms": 15.106,
+          "router_round_path_ms": 10.266,
+          "rtt_ms": 10.592209,
+          "previous_reply_received_to_this_send_ms": 4.49383300000045
+        },
+        {
+          "id": 9154,
+          "plan_ms": 91540,
+          "lag_ms": 39.052999999999884,
+          "send_gap_ms": 2.9559169999993173,
+          "forward_ingress_gap_ms": 2.943,
+          "reverse_ingress_gap_ms": 0.014,
+          "router_round_path_ms": 7.337,
+          "rtt_ms": 7.8585,
+          "previous_reply_received_to_this_send_ms": -7.636291999995592
+        },
+        {
+          "id": 9155,
+          "plan_ms": 91550,
+          "lag_ms": 36.19383299999754,
+          "send_gap_ms": 7.140832999997656,
+          "forward_ingress_gap_ms": 7.227,
+          "reverse_ingress_gap_ms": 0.359,
+          "router_round_path_ms": 0.469,
+          "rtt_ms": 1.257584,
+          "previous_reply_received_to_this_send_ms": -0.7176670000044396
+        },
+        {
+          "id": 9156,
+          "plan_ms": 91560,
+          "lag_ms": 28.972833000007086,
+          "send_gap_ms": 2.779000000009546,
+          "forward_ingress_gap_ms": 2.694,
+          "reverse_ingress_gap_ms": 2.596,
+          "router_round_path_ms": 0.371,
+          "rtt_ms": 14.200834,
+          "previous_reply_received_to_this_send_ms": 1.521416000003228
+        },
+        {
+          "id": 9157,
+          "plan_ms": 91570,
+          "lag_ms": 33.1943750000064,
+          "send_gap_ms": 14.221541999999317,
+          "forward_ingress_gap_ms": 14.231,
+          "reverse_ingress_gap_ms": 14.445,
+          "router_round_path_ms": 0.585,
+          "rtt_ms": 1.073708,
+          "previous_reply_received_to_this_send_ms": 0.020707999996375293
+        },
+        {
+          "id": 9158,
+          "plan_ms": 91580,
+          "lag_ms": 26.397458000006736,
+          "send_gap_ms": 3.2030830000003334,
+          "forward_ingress_gap_ms": 3.207,
+          "reverse_ingress_gap_ms": 2.989,
+          "router_round_path_ms": 0.367,
+          "rtt_ms": 2.211459,
+          "previous_reply_received_to_this_send_ms": 2.1293750000040745
+        },
+        {
+          "id": 9159,
+          "plan_ms": 91590,
+          "lag_ms": 19.275125000000116,
+          "send_gap_ms": 2.87766699999338,
+          "forward_ingress_gap_ms": 2.887,
+          "reverse_ingress_gap_ms": 3.22,
+          "router_round_path_ms": 0.7,
+          "rtt_ms": 1.059625,
+          "previous_reply_received_to_this_send_ms": 0.6662079999950947
+        },
+        {
+          "id": 9160,
+          "plan_ms": 91600,
+          "lag_ms": 11.995666999995592,
+          "send_gap_ms": 2.7205419999954756,
+          "forward_ingress_gap_ms": 2.703,
+          "reverse_ingress_gap_ms": 2.442,
+          "router_round_path_ms": 0.439,
+          "rtt_ms": 0.767125,
+          "previous_reply_received_to_this_send_ms": 1.6609170000010636
+        },
+        {
+          "id": 9161,
+          "plan_ms": 91610,
+          "lag_ms": 4.702791999996407,
+          "send_gap_ms": 2.707125000000815,
+          "forward_ingress_gap_ms": 2.706,
+          "reverse_ingress_gap_ms": 2.723,
+          "router_round_path_ms": 0.456,
+          "rtt_ms": 0.878375,
+          "previous_reply_received_to_this_send_ms": 1.9400000000023283
+        },
+        {
+          "id": 9162,
+          "plan_ms": 91620,
+          "lag_ms": 0.46758300000510644,
+          "send_gap_ms": 5.7647910000086995,
+          "forward_ingress_gap_ms": 5.778,
+          "reverse_ingress_gap_ms": 6.133,
+          "router_round_path_ms": 0.811,
+          "rtt_ms": 1.370375,
+          "previous_reply_received_to_this_send_ms": 4.886416000008467
+        },
+        {
+          "id": 9163,
+          "plan_ms": 91630,
+          "lag_ms": 1.9180000000051223,
+          "send_gap_ms": 11.450417000000016,
+          "forward_ingress_gap_ms": 11.452,
+          "reverse_ingress_gap_ms": 11.086,
+          "router_round_path_ms": 0.445,
+          "rtt_ms": 1.470917,
+          "previous_reply_received_to_this_send_ms": 10.080042000001413
+        }
+      ]
+    }
+  ],
+  "network_round_ms": {
+    "median": 0.447,
+    "max": 35.491
+  },
+  "rtt_ms": {
+    "median": 0.891708,
+    "max": 40.677708
+  },
+  "send_vs_pcap_gap_difference_max_ms": 4.163208000000392
+}

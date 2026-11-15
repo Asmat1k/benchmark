@@ -1,0 +1,23 @@
+{
+  "results/verify/readiness/stage4/solution-research-v1/trace-review/migration-causal-review/analyze.py": "06afac04d50e48965a0ad334c2b786264f45b6a316f659fac62c04ea8fe71db7",
+  "results/verify/readiness/stage4/solution-research-v1/trace-review/migration-causal-review/findings.md": "5a796a4d7a3974d26f18dd3c7af80e9e10601362e9b7a88f1ae4da8cced74dcc",
+  "results/verify/readiness/stage4/solution-research-v1/trace-review/migration-causal-review/phases.py": "31966b5da7f705812a5d25839c59708f9f76ff406c0db5b8622d1d57e5889e5b",
+  "results/verify/readiness/stage4/solution-research-v1/trace-review/migration-causal-review/r80p1-fixed/phase-summary.json": "e5778835e4b82bcee4cb7c8fa8df73d74f363f8eb040e75b23e22943919e00e0",
+  "results/verify/readiness/stage4/solution-research-v1/trace-review/migration-causal-review/r80p1-fixed/result.json": "a130d9e787b747229991b6089e766e25364723e9a342c33a18e0b50548562994",
+  "results/verify/readiness/stage4/solution-research-v1/trace-review/migration-causal-review/r80p1-fixed.execution.json": "61672867af58b533d3173fb4dfd57f07237746c437e23e1de4ffa9d888440407",
+  "results/verify/readiness/stage4/solution-research-v1/trace-review/migration-causal-review/r80p1-fixed.phase-parser.stdout": "8d341ef47c16d9b89afa5e823f7499350f870f1eaf4aff5a36775e2ad12314f2",
+  "results/verify/readiness/stage4/solution-research-v1/trace-review/migration-causal-review/r80p1-fixed.phases.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "results/verify/readiness/stage4/solution-research-v1/trace-review/migration-causal-review/r80p1-fixed.phases.stdout": "e5778835e4b82bcee4cb7c8fa8df73d74f363f8eb040e75b23e22943919e00e0",
+  "results/verify/readiness/stage4/solution-research-v1/trace-review/migration-causal-review/r80p1-fixed.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "results/verify/readiness/stage4/solution-research-v1/trace-review/migration-causal-review/r80p1-fixed.stdout": "40a2c9af694f8c6084763602a761fa4aafbb664f6c69e085bcd194fb485f217f",
+  "results/verify/readiness/stage4/solution-research-v1/trace-review/migration-causal-review/r80p1-migrate/colocation.json": "f83e3608af10f1c36baf616615c2f4dde25e6189b416c68201ce5221603f7814",
+  "results/verify/readiness/stage4/solution-research-v1/trace-review/migration-causal-review/r80p1-migrate/phase-summary.json": "9f20eab4eaa6dbb9c6f86d00d533ba0ae41fa0996682f1cd2513ae5a6397694e",
+  "results/verify/readiness/stage4/solution-research-v1/trace-review/migration-causal-review/r80p1-migrate/result.json": "baceb5bc24cdce946fc751445bea1a577863288a2d2fee60e6121897b43895aa",
+  "results/verify/readiness/stage4/solution-research-v1/trace-review/migration-causal-review/r80p1-migrate/timer-cpu-runs.json": "4b04a6830fb227e106c2e9122663e0a26a639fcb25f467c65d6e695db9dfa660",
+  "results/verify/readiness/stage4/solution-research-v1/trace-review/migration-causal-review/r80p1-migrate.execution.json": "9a0401aeca72dcce7525a8644f4b0833ad94f3ae2513f300fbf28c01d0ab47ab",
+  "results/verify/readiness/stage4/solution-research-v1/trace-review/migration-causal-review/r80p1-migrate.phase-parser.stdout": "b4bcfd0eb477793f64362f2d1a2b47128302ce0163dc500be8a60bf81ba60343",
+  "results/verify/readiness/stage4/solution-research-v1/trace-review/migration-causal-review/r80p1-migrate.phases.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "results/verify/readiness/stage4/solution-research-v1/trace-review/migration-causal-review/r80p1-migrate.phases.stdout": "9f20eab4eaa6dbb9c6f86d00d533ba0ae41fa0996682f1cd2513ae5a6397694e",
+  "results/verify/readiness/stage4/solution-research-v1/trace-review/migration-causal-review/r80p1-migrate.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "results/verify/readiness/stage4/solution-research-v1/trace-review/migration-causal-review/r80p1-migrate.stdout": "d2c2f2bb18cf5a7e9f922fb63c07577ffbb942530e0b3863911c437d1b102e23"
+}

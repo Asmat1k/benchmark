@@ -1,0 +1,257 @@
+{
+  "scope": "fixed two-profile similar diagnostic; not full calibration acceptance",
+  "run": "results/verify/diagnostic/affinity-validation.83SwishH",
+  "commit": "d66559066b704fde567b6c9f92f57e2dcde22698",
+  "sealed_files": 50,
+  "results": [
+    {
+      "name": "r80p0-check",
+      "quality": {
+        "criteria_version": "udp-sender-v2",
+        "preliminary": true,
+        "status": "passed",
+        "reasons": [],
+        "limits": {
+          "version": "udp-sender-v2",
+          "max_late_pct": 1,
+          "max_lag_ms": 50,
+          "burst_window_ms": 10,
+          "max_burst_packets": 4
+        },
+        "historical_every_slot_pass": false,
+        "metrics": {
+          "count": 10000,
+          "late_slots": 15,
+          "late_pct": 0.15,
+          "lag_ms": {
+            "p50": 0.0018580000032670796,
+            "p99": 0.018911999999545515,
+            "max": 35.367857999997796
+          },
+          "gap_ms": {
+            "min": 2.500958000004175,
+            "p50": 10.000041999999667,
+            "p99": 10.014125000001513,
+            "max": 45.35883299999841
+          },
+          "late_groups": [
+            [
+              182
+            ],
+            [
+              185,
+              186,
+              187,
+              188,
+              189
+            ],
+            [
+              5375,
+              5376,
+              5377,
+              5378
+            ],
+            [
+              9784,
+              9785,
+              9786,
+              9787,
+              9788
+            ]
+          ],
+          "late_group_count": 4,
+          "peak_packets_1ms": 1,
+          "peak_packets_window": 4,
+          "observed_hz": 100.00000341434155
+        }
+      },
+      "replies": 10000,
+      "rtt_quantiles": [
+        80.511125,
+        80.5780146,
+        81.35246049999999,
+        115.57975
+      ],
+      "process_diagnostics": {
+        "survival": {
+          "long_lag": {
+            "500": 0.0,
+            "1000": 0.0,
+            "2000": 0.0
+          },
+          "suspect": false
+        },
+        "rtt": {
+          "long_lag": {
+            "500": 0.0014746029452209594,
+            "1000": -0.002720108651929452,
+            "2000": -0.0024767700692039808
+          },
+          "suspect": false
+        },
+        "chunk_medians_ms": [
+          80.51125,
+          80.51220799999999,
+          80.5112505,
+          80.5126245,
+          80.511,
+          80.510187,
+          80.51022900000001,
+          80.5137915,
+          80.513604,
+          80.510729,
+          80.5093545,
+          80.50995800000001,
+          80.5153335,
+          80.51306199999999,
+          80.5096455,
+          80.501937,
+          80.511375,
+          80.50814600000001,
+          80.51052100000001,
+          80.51622900000001
+        ],
+        "fitted_drift_ms": -0.00123181428576041,
+        "suspect": false,
+        "limitation": "Diagnostics can reject assumptions; absence of flags does not establish stationarity or short memory"
+      },
+      "loss": [
+        {
+          "direction": "forward",
+          "count": 10000,
+          "drops": 0,
+          "interval": [
+            0.0,
+            0.0007375038011081074
+          ]
+        },
+        {
+          "direction": "reverse",
+          "count": 10000,
+          "drops": 0,
+          "interval": [
+            0.0,
+            0.0007375038011081074
+          ]
+        }
+      ],
+      "sender_core_pct": 97.59779406019307
+    },
+    {
+      "name": "r80p1-check",
+      "quality": {
+        "criteria_version": "udp-sender-v2",
+        "preliminary": true,
+        "status": "passed",
+        "reasons": [],
+        "limits": {
+          "version": "udp-sender-v2",
+          "max_late_pct": 1,
+          "max_lag_ms": 50,
+          "burst_window_ms": 10,
+          "max_burst_packets": 4
+        },
+        "historical_every_slot_pass": false,
+        "metrics": {
+          "count": 10000,
+          "late_slots": 2,
+          "late_pct": 0.02,
+          "lag_ms": {
+            "p50": 0.0008479999996779952,
+            "p99": 0.009787999995751306,
+            "max": 12.990372000000207
+          },
+          "gap_ms": {
+            "min": 2.5021669999987353,
+            "p50": 10.0,
+            "p99": 10.006875000000946,
+            "max": 20.48916699999245
+          },
+          "late_groups": [
+            [
+              8548
+            ],
+            [
+              8551
+            ]
+          ],
+          "late_group_count": 2,
+          "peak_packets_1ms": 1,
+          "peak_packets_window": 3,
+          "observed_hz": 100.00000316331644
+        }
+      },
+      "replies": 9810,
+      "rtt_quantiles": [
+        80.496167,
+        80.5318561,
+        80.59895053,
+        93.216959
+      ],
+      "process_diagnostics": {
+        "survival": {
+          "long_lag": {
+            "500": -0.007567466065775991,
+            "1000": -0.007006813670261176,
+            "2000": 0.011433016792746727
+          },
+          "suspect": false
+        },
+        "rtt": {
+          "long_lag": {
+            "500": -0.0020561681710523257,
+            "1000": -0.0018690637683165055,
+            "2000": -0.00026374116574109864
+          },
+          "suspect": false
+        },
+        "chunk_medians_ms": [
+          80.497833,
+          80.496166,
+          80.49627100000001,
+          80.4960625,
+          80.4960835,
+          80.495875,
+          80.495792,
+          80.49625,
+          80.496083,
+          80.495792,
+          80.495917,
+          80.496458,
+          80.496125,
+          80.496083,
+          80.496,
+          80.4961045,
+          80.497042,
+          80.49752050000001,
+          80.496042,
+          80.496917
+        ],
+        "fitted_drift_ms": 0.00022831428570522198,
+        "suspect": false,
+        "limitation": "Diagnostics can reject assumptions; absence of flags does not establish stationarity or short memory"
+      },
+      "loss": [
+        {
+          "direction": "forward",
+          "count": 10000,
+          "drops": 75,
+          "interval": [
+            0.005020768050505721,
+            0.01071284054506363
+          ]
+        },
+        {
+          "direction": "reverse",
+          "count": 9925,
+          "drops": 115,
+          "interval": [
+            0.008425812985118967,
+            0.015477965653701686
+          ]
+        }
+      ],
+      "sender_core_pct": 97.69448016416202
+    }
+  ]
+}

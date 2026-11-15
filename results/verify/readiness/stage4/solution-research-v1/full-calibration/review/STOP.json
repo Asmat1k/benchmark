@@ -1,0 +1,12 @@
+{
+  "status": "failed_primary_conditions",
+  "failed_sender": [
+    "r20p1-before"
+  ],
+  "formal_process_flags": [
+    "r80p1-latency"
+  ],
+  "bootstrap_started": false,
+  "rerun_started": false,
+  "stage4_complete": false
+}

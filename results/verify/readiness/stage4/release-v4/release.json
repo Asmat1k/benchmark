@@ -1,0 +1,39 @@
+{
+  "release_commit": "494e1a99bf9c92bd2a26af7dce6a8752af23d448",
+  "source_delta_from_v3": [
+    "docker/browser_bandwidth_test.py",
+    "docker/measure.sh"
+  ],
+  "source_count": 134,
+  "image_inputs_unchanged": true,
+  "images_reused": [
+    {
+      "tag": "wswt-bench-server:dev",
+      "image_id": "sha256:c2c60585a64d04e8dd7dd6a674625c0aec44cdc385561c8864dab734fbf19c44",
+      "os": "linux",
+      "architecture": "arm64"
+    },
+    {
+      "tag": "wswt-bench-browser:dev",
+      "image_id": "sha256:356b2e1af8773aaf688f3c4e03bbfa73b2c835d88be0a76278030cf55d1c1641",
+      "os": "linux",
+      "architecture": "arm64"
+    },
+    {
+      "tag": "wswt-bench-router:dev",
+      "image_id": "sha256:d78a80d31724881c1adaa57005fae37f4f23e0013945dac759d7ee1f76b6b74d",
+      "os": "linux",
+      "architecture": "arm64"
+    },
+    {
+      "tag": "wswt-bench-analyzer:dev",
+      "image_id": "sha256:9e263785dc135db52a216bc358c38218cf3d98f178a9981a365ca79cda7cbd62",
+      "os": "linux",
+      "architecture": "arm64"
+    }
+  ],
+  "environment_original": "results/verify/diagnostic/timer-timer.2ST8NYBU/context.json",
+  "environment_actual": "results/verify/diagnostic/timer-timer.kT54gbDY/context.json",
+  "environment_bytes_equal": true,
+  "build": "v3 cached build reused after unchanged image dependencies; collector/test are host-mounted; no new build/archive"
+}

@@ -1,0 +1,20 @@
+--- a/docker/calibration_probe.py
++++ b/docker/calibration_probe.py
+@@ -11,6 +11,7 @@
+ PERIOD_NS = 10_000_000
+ COUNT = 10_000
+ MIN_ECHO_GAP_NS = 2_500_000
++MAX_ECHO_WAIT_NS = 1_000_000
+ 
+ 
+ def collection_tag(collection_id):
+@@ -55,7 +56,8 @@
+             if not saturation and sent:
+                 due = max(due, sent[-1] + MIN_ECHO_GAP_NS)
+             while (remaining := due - time.monotonic_ns()) > 0:
+-                if select.select([sock], [], [], remaining / 1e9)[0]:
++                timeout_ns = remaining if saturation else min(remaining, MAX_ECHO_WAIT_NS)
++                if select.select([sock], [], [], timeout_ns / 1e9)[0]:
+                     replies.append(receive(sock, sent, size, tag))
+             frame = packet(number, size, tag)
+             timestamp = time.monotonic_ns()

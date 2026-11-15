@@ -5,6 +5,9 @@ test "$allow" = yes || { echo 'Explicit ALLOW_REAL_EXPERIMENTS=yes required' >&2
 case "$series_dir" in results/verify/raw/*|results/pilot/*|results/main/*) ;; *) exit 2 ;; esac
 case "$series_dir" in *..*|*[!A-Za-z0-9_./-]*) exit 2 ;; esac
 test -n "${SERIES_TLS_DIR:-}" || { echo 'Persistent SERIES_TLS_DIR required' >&2; exit 2; }
+if python3 -c 'import json,sys;sys.exit(json.load(open(sys.argv[1])).get("execution_policy") != "exploratory-browser-study-v2")' "$series_dir/admission.json"; then
+    exec python3 src/analysis/execution.py run "$series_dir"
+fi
 sh docker/release-state.sh
 controller_work=$(mktemp -d "${TMPDIR:-/tmp}/wswt-controller.XXXXXXXX")
 mkfifo "$controller_work/input"

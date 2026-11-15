@@ -1,0 +1,7 @@
+# Cause diagnostic v1, fixed before collection
+
+One baseline loss0 series, exactly10000 IDs at100Hz and256bytes, using the unchanged production calibration_probe.send, permanent stage2 TLS and existing service images/resources. No qualification retries or acceptance claim. First failed qualification E243q4gg remains failed.
+
+Goal: distinguish scheduling/sleeping/kernel waits and Python running intervals, and test GC overlap. Original per-call Python usage/rusage/schedstat wrappers are absent. Only first monotonic timestamp capture and preallocated GC event callback are added. GC start/stop wall/process CPU marks retained. Both guest syscall and scheduler events use existing tested ftrace filters and mono clock;8192KiB/CPU, overwrite0, no streaming read. Validate target PID/TID, syscall mapping, trace coverage and zero loss offline. Instrumentation overhead remains unquantified, and a diagnostic passed does not establish production acceptance.
+
+All raw, route/neighbor/pcap/qdisc/resource records retained. Endpoint/router samplers cap180seconds but stop once the102second probe finishes. Tracer cap180seconds. Expected2–4minutes from previous124seconds qualification and37seconds old trace; outer timeout240seconds, TERM then15second KILL. No retries. Missing episode means inconclusive for its cause, not proof of absence. macOS trace is optional. Source inventories before/after plus saved diagnostic tools must match; actual outputs/seal reviewed before conclusions. Any source/ENV mismatch or data loss blocks causal conclusion.

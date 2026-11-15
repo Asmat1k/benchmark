@@ -1,0 +1,456 @@
+[
+    {
+        "Id": "sha256:c2c60585a64d04e8dd7dd6a674625c0aec44cdc385561c8864dab734fbf19c44",
+        "RepoTags": [],
+        "RepoDigests": [],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-12T19:29:47.871446963Z",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Entrypoint": [
+                "bench"
+            ],
+            "Labels": {
+                "com.docker.compose.project": "benchmark",
+                "com.docker.compose.service": "server",
+                "com.docker.compose.version": "5.3.1"
+            }
+        },
+        "Architecture": "arm64",
+        "Os": "linux",
+        "Size": 36880016,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:c96c411090da09187c55ab267826b3903b542b5c03f1cafa912d60e060e7850c",
+                "sha256:cd7a9a407ee300a8098b06e7785f60b5c14d770f7490f17bc07aee00e5642da3",
+                "sha256:33981dc40ad989747328d44adcb08e92c1db4f6bed23265e7f6b99b735d0c728",
+                "sha256:205770ec021a847a591757964190d09c0d2fd5908444b4a66063e5ced19360f7"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-13T16:24:53.1449998Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:c2c60585a64d04e8dd7dd6a674625c0aec44cdc385561c8864dab734fbf19c44",
+            "size": 856
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "mouwo0fbx4ql5bq6szokrqlgl",
+                    "CreatedAt": "2026-11-13T16:23:11.745352086Z"
+                }
+            ]
+        }
+    },
+    {
+        "Id": "sha256:356b2e1af8773aaf688f3c4e03bbfa73b2c835d88be0a76278030cf55d1c1641",
+        "RepoTags": [],
+        "RepoDigests": [],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-12T19:35:38.150727375Z",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "LC_ALL=C.UTF-8",
+                "PLAYWRIGHT_BROWSERS_PATH=/ms-playwright"
+            ],
+            "Entrypoint": [
+                "sh",
+                "/usr/local/bin/bench-browser"
+            ],
+            "WorkingDir": "/runner",
+            "Labels": {
+                "com.docker.compose.project": "benchmark",
+                "com.docker.compose.service": "browser",
+                "com.docker.compose.version": "5.3.1",
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "Architecture": "arm64",
+        "Os": "linux",
+        "Size": 911959421,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:9c15b6bd680f4a96c4bef1053356e5b8c571567bb4f7d62c7c135efa18a4cfcc",
+                "sha256:3d6c61ab8d3b5f1a4f66e70aee9269f298504ccf9c4ea02487c7724720c97d4c",
+                "sha256:e47932731b7464a273d20e0221f47ab61d35833449ca4497bb616d6541890d9a",
+                "sha256:b942048381fdbf4b672c9c09c4711581347036de8990f2cb08f556e6b8427f23",
+                "sha256:819e780786afab192e1fda41deed7f61477f34a36d04b7351e92847022d6f5fc",
+                "sha256:c38e9c142c796065150bd3dde9f4d94ee9757c25b1079378e5370379c9146881",
+                "sha256:21a5030452486e19cfb67bec32f7f1fa5dd1ffdfd3a86fa0eaaf17711f811954",
+                "sha256:a3ad29f057584929be1b3e120e246f47b0d2d48a168959ace1677bd1d886cf07",
+                "sha256:5e6379152e521626742ccd7bc3b34707f9020971f065b88ab19552f92b17058e",
+                "sha256:ee58e7d59f945c2e2bd404659d872ad8e9378c01d6a5b7d8f6595c5f0ba5b4bf",
+                "sha256:7b86f7f91b17e2139865bd0977a2354ed41971a9234b5a3690ece75d60705425"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-13T16:24:53.145662633Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:356b2e1af8773aaf688f3c4e03bbfa73b2c835d88be0a76278030cf55d1c1641",
+            "size": 856
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "cvax4uuxdbnngkmp7s7z2zqpr",
+                    "CreatedAt": "2026-11-13T16:23:11.730262628Z"
+                }
+            ]
+        }
+    },
+    {
+        "Id": "sha256:d78a80d31724881c1adaa57005fae37f4f23e0013945dac759d7ee1f76b6b74d",
+        "RepoTags": [],
+        "RepoDigests": [],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-12T19:30:00.879572636Z",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Entrypoint": [
+                "sh",
+                "/usr/local/bin/network"
+            ],
+            "Labels": {
+                "com.docker.compose.project": "benchmark",
+                "com.docker.compose.service": "router",
+                "com.docker.compose.version": "5.3.1"
+            }
+        },
+        "Architecture": "arm64",
+        "Os": "linux",
+        "Size": 33280296,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:c96c411090da09187c55ab267826b3903b542b5c03f1cafa912d60e060e7850c",
+                "sha256:666dbe40e6c0ecfab1ba1f3cac2600502ae7ebd60606b241558189d4ab3f9e1b",
+                "sha256:b839e53312240b4e936ef815d8c9065f12c04201849e755a69330973a952f337",
+                "sha256:7da07daf45dbbbf22e4ebc7d5ade47d3060008eb97a705f9ff329bdfdaf201d0",
+                "sha256:48a440b4a76241201862fa31b6488d145ab9127e104981e9caf3800b28e4fa35"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-13T16:24:53.146225842Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:d78a80d31724881c1adaa57005fae37f4f23e0013945dac759d7ee1f76b6b74d",
+            "size": 856
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "j9xyqd5hi8sr55rj0vxwmm71u",
+                    "CreatedAt": "2026-11-13T16:23:11.548297586Z"
+                }
+            ]
+        }
+    },
+    {
+        "Id": "sha256:9e263785dc135db52a216bc358c38218cf3d98f178a9981a365ca79cda7cbd62",
+        "RepoTags": [],
+        "RepoDigests": [],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-13T16:23:11.684543544Z",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+                "PYTHON_VERSION=3.12.11",
+                "PYTHON_SHA256=c30bb24b7f1e9a19b11b55a546434f74e739bb4c271a3e3a80ff4380d49f7adb",
+                "MPLBACKEND=Agg"
+            ],
+            "Cmd": [
+                "python3"
+            ],
+            "WorkingDir": "/analysis",
+            "Labels": {
+                "com.docker.compose.project": "benchmark",
+                "com.docker.compose.service": "analyzer",
+                "com.docker.compose.version": "5.3.1"
+            }
+        },
+        "Architecture": "arm64",
+        "Os": "linux",
+        "Size": 248104301,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:3e5d01a55aea2c9ea64c3cfef2bb870df4b01c7e206103a970d4c3dc6caed96b",
+                "sha256:62750a0d4afa47971eda307d875c99fc4a7292beb47970df9c18647609d86e88",
+                "sha256:3603fa54c00d0cb83e3070b70cd08bc24ca60844986408ade6c1b80ef7b0f532",
+                "sha256:4882eb1c66d54726bda0140b368f4388ceca8351cdcc6d10fe29bdcddb0b6f59",
+                "sha256:4930f74d1c65da56a61b481f0a62700cc2528c9730b44656c54d69557d453538",
+                "sha256:cb29ccba673ee090a11a8c1dd568cfcfb29a1c821ceb96add661df38fdc84a19",
+                "sha256:721caacdb8f52f6529a98a972ce9d8456e26c3753ca7bf3627f2b020bad613ca",
+                "sha256:5ad3dbab08193e60ecd39856a2535ad988da75f8f9513ba874f81a4af492d9cf",
+                "sha256:9022815a9f7acb591ddc3a57dba670f6bce7b97b12247c73f45b52c40903513b"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-13T16:24:53.146744717Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:9e263785dc135db52a216bc358c38218cf3d98f178a9981a365ca79cda7cbd62",
+            "size": 856
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "enii2w3te2mhpj01dv7b8mj0e",
+                    "CreatedAt": "2026-11-13T16:23:11.832018044Z"
+                }
+            ]
+        }
+    },
+    {
+        "Id": "sha256:ddb5cbfd8b54b28abd1a97670ad31529b71679d6f522a0da523e5608c267b594",
+        "RepoTags": [
+            "wswt-bench-server:dev"
+        ],
+        "RepoDigests": [
+            "wswt-bench-server@sha256:ddb5cbfd8b54b28abd1a97670ad31529b71679d6f522a0da523e5608c267b594"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-12T19:29:47.871446963Z",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Entrypoint": [
+                "bench"
+            ],
+            "Labels": {
+                "com.docker.compose.project": "benchmark",
+                "com.docker.compose.service": "server",
+                "com.docker.compose.version": "5.3.1"
+            }
+        },
+        "Architecture": "arm64",
+        "Os": "linux",
+        "Size": 36880016,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:c96c411090da09187c55ab267826b3903b542b5c03f1cafa912d60e060e7850c",
+                "sha256:cd7a9a407ee300a8098b06e7785f60b5c14d770f7490f17bc07aee00e5642da3",
+                "sha256:33981dc40ad989747328d44adcb08e92c1db4f6bed23265e7f6b99b735d0c728",
+                "sha256:205770ec021a847a591757964190d09c0d2fd5908444b4a66063e5ced19360f7"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-13T19:35:22.39432484Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:ddb5cbfd8b54b28abd1a97670ad31529b71679d6f522a0da523e5608c267b594",
+            "size": 856
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "s0z6unu03y9pgfhhvtlthrtsf",
+                    "CreatedAt": "2026-11-13T19:35:22.402539882Z"
+                }
+            ]
+        }
+    },
+    {
+        "Id": "sha256:0caf7d1489b7214a3e8d9e1d412165204d0fb8d41eab64e6f25a0011b78e6352",
+        "RepoTags": [
+            "wswt-bench-browser:dev"
+        ],
+        "RepoDigests": [
+            "wswt-bench-browser@sha256:0caf7d1489b7214a3e8d9e1d412165204d0fb8d41eab64e6f25a0011b78e6352"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-12T19:35:38.150727375Z",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "LC_ALL=C.UTF-8",
+                "PLAYWRIGHT_BROWSERS_PATH=/ms-playwright"
+            ],
+            "Entrypoint": [
+                "sh",
+                "/usr/local/bin/bench-browser"
+            ],
+            "WorkingDir": "/runner",
+            "Labels": {
+                "com.docker.compose.project": "benchmark",
+                "com.docker.compose.service": "browser",
+                "com.docker.compose.version": "5.3.1",
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "Architecture": "arm64",
+        "Os": "linux",
+        "Size": 911959421,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:9c15b6bd680f4a96c4bef1053356e5b8c571567bb4f7d62c7c135efa18a4cfcc",
+                "sha256:3d6c61ab8d3b5f1a4f66e70aee9269f298504ccf9c4ea02487c7724720c97d4c",
+                "sha256:e47932731b7464a273d20e0221f47ab61d35833449ca4497bb616d6541890d9a",
+                "sha256:b942048381fdbf4b672c9c09c4711581347036de8990f2cb08f556e6b8427f23",
+                "sha256:819e780786afab192e1fda41deed7f61477f34a36d04b7351e92847022d6f5fc",
+                "sha256:c38e9c142c796065150bd3dde9f4d94ee9757c25b1079378e5370379c9146881",
+                "sha256:21a5030452486e19cfb67bec32f7f1fa5dd1ffdfd3a86fa0eaaf17711f811954",
+                "sha256:a3ad29f057584929be1b3e120e246f47b0d2d48a168959ace1677bd1d886cf07",
+                "sha256:5e6379152e521626742ccd7bc3b34707f9020971f065b88ab19552f92b17058e",
+                "sha256:ee58e7d59f945c2e2bd404659d872ad8e9378c01d6a5b7d8f6595c5f0ba5b4bf",
+                "sha256:7b86f7f91b17e2139865bd0977a2354ed41971a9234b5a3690ece75d60705425"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-13T19:35:21.623016007Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:0caf7d1489b7214a3e8d9e1d412165204d0fb8d41eab64e6f25a0011b78e6352",
+            "size": 856
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "qy0vrw45918riuhv6xz6hsf69",
+                    "CreatedAt": "2026-11-13T19:35:21.630914923Z"
+                }
+            ]
+        }
+    },
+    {
+        "Id": "sha256:f7e84205c1fcbec1f661040c1fd4394a98179e6559b4e78d5b0a8859b115d2bc",
+        "RepoTags": [
+            "wswt-bench-router:dev"
+        ],
+        "RepoDigests": [
+            "wswt-bench-router@sha256:f7e84205c1fcbec1f661040c1fd4394a98179e6559b4e78d5b0a8859b115d2bc"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-12T19:30:00.879572636Z",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Entrypoint": [
+                "sh",
+                "/usr/local/bin/network"
+            ],
+            "Labels": {
+                "com.docker.compose.project": "benchmark",
+                "com.docker.compose.service": "router",
+                "com.docker.compose.version": "5.3.1"
+            }
+        },
+        "Architecture": "arm64",
+        "Os": "linux",
+        "Size": 33280296,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:c96c411090da09187c55ab267826b3903b542b5c03f1cafa912d60e060e7850c",
+                "sha256:666dbe40e6c0ecfab1ba1f3cac2600502ae7ebd60606b241558189d4ab3f9e1b",
+                "sha256:b839e53312240b4e936ef815d8c9065f12c04201849e755a69330973a952f337",
+                "sha256:7da07daf45dbbbf22e4ebc7d5ade47d3060008eb97a705f9ff329bdfdaf201d0",
+                "sha256:48a440b4a76241201862fa31b6488d145ab9127e104981e9caf3800b28e4fa35"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-13T19:35:22.270791007Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:f7e84205c1fcbec1f661040c1fd4394a98179e6559b4e78d5b0a8859b115d2bc",
+            "size": 856
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "2eti3sya3assgeqlkfrwvcxnu",
+                    "CreatedAt": "2026-11-13T19:35:22.281228174Z"
+                }
+            ]
+        }
+    },
+    {
+        "Id": "sha256:2b1c0bfda6d1706a4fbd98510acff54c7d9342ab64f4f42c457ac492400ff168",
+        "RepoTags": [
+            "wswt-bench-analyzer:dev"
+        ],
+        "RepoDigests": [
+            "wswt-bench-analyzer@sha256:2b1c0bfda6d1706a4fbd98510acff54c7d9342ab64f4f42c457ac492400ff168"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-13T19:35:22.261773549Z",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+                "PYTHON_VERSION=3.12.11",
+                "PYTHON_SHA256=c30bb24b7f1e9a19b11b55a546434f74e739bb4c271a3e3a80ff4380d49f7adb",
+                "MPLBACKEND=Agg"
+            ],
+            "Cmd": [
+                "python3"
+            ],
+            "WorkingDir": "/analysis",
+            "Labels": {
+                "com.docker.compose.project": "benchmark",
+                "com.docker.compose.service": "analyzer",
+                "com.docker.compose.version": "5.3.1"
+            }
+        },
+        "Architecture": "arm64",
+        "Os": "linux",
+        "Size": 248104445,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:3e5d01a55aea2c9ea64c3cfef2bb870df4b01c7e206103a970d4c3dc6caed96b",
+                "sha256:62750a0d4afa47971eda307d875c99fc4a7292beb47970df9c18647609d86e88",
+                "sha256:3603fa54c00d0cb83e3070b70cd08bc24ca60844986408ade6c1b80ef7b0f532",
+                "sha256:4882eb1c66d54726bda0140b368f4388ceca8351cdcc6d10fe29bdcddb0b6f59",
+                "sha256:4930f74d1c65da56a61b481f0a62700cc2528c9730b44656c54d69557d453538",
+                "sha256:cb29ccba673ee090a11a8c1dd568cfcfb29a1c821ceb96add661df38fdc84a19",
+                "sha256:721caacdb8f52f6529a98a972ce9d8456e26c3753ca7bf3627f2b020bad613ca",
+                "sha256:5ad3dbab08193e60ecd39856a2535ad988da75f8f9513ba874f81a4af492d9cf",
+                "sha256:54a945f426d6fc6be0d2164c49eec5b815982d2166cab3053fb281aafebd2f43"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-13T19:35:22.355258924Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:2b1c0bfda6d1706a4fbd98510acff54c7d9342ab64f4f42c457ac492400ff168",
+            "size": 856
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "ehcnd6kuabxoj8h9arxys7epd",
+                    "CreatedAt": "2026-11-13T19:35:22.399385049Z"
+                }
+            ]
+        }
+    }
+]

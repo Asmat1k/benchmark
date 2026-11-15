@@ -1,0 +1,71 @@
+{
+  "status": "partial_fix_verified_remaining_process_failure",
+  "production_commit": "12ba5e5e5740c2f0acf61e6bd4849026ef136c26",
+  "applied": "UDP echo MAX_ECHO_WAIT_NS=0; mock zero-timeout clock progresses",
+  "tests": {
+    "count": 11,
+    "elapsed_s": 7.352,
+    "status": "passed"
+  },
+  "rejected": [
+    "tcpdump immediate-mode: no phase improvement, higher CPU",
+    "helper CPU affinity: inconclusive, control also clear"
+  ],
+  "tradeoff": "95.5\u201397.8% of one virtual CPU for UDP probe",
+  "remaining": "r80p1 transient/long-lag process flag in one10000sample short validation; causal layer unresolved",
+  "formal_calibration": "not_run for new release; old lShojabe failed preserved",
+  "stage4_complete": false,
+  "experiments": [
+    {
+      "name": "capture-abba",
+      "execution": "results/verify/readiness/stage4/deep-review-v1/capture-abba/execution.lrzy3_rk",
+      "raw": "results/verify/diagnostic/capture-abba.MaDtfSFh",
+      "start_utc": "2026-11-13T21:13:51.794478+00:00",
+      "end_utc": "2026-11-13T21:17:34.849194+00:00",
+      "elapsed_s": 223.054716,
+      "exit": 0,
+      "seal_count": 62
+    },
+    {
+      "name": "wake-abba",
+      "execution": "results/verify/readiness/stage4/deep-review-v1/wake-abba/execution.u3djou3c",
+      "raw": "results/verify/diagnostic/wake-abba.uMz2xu7i",
+      "start_utc": "2026-11-13T21:20:24.135007+00:00",
+      "end_utc": "2026-11-13T21:24:07.436349+00:00",
+      "elapsed_s": 223.301342,
+      "exit": 0,
+      "seal_count": 70
+    },
+    {
+      "name": "profile-validation",
+      "execution": "results/verify/readiness/stage4/deep-review-v1/profile-validation/execution.0zxomcrt",
+      "raw": "results/verify/diagnostic/profile-validation.73PKohD7",
+      "start_utc": "2026-11-13T21:28:14.349285+00:00",
+      "end_utc": "2026-11-13T21:31:48.717938+00:00",
+      "elapsed_s": 214.368653,
+      "exit": 0,
+      "seal_count": 44
+    },
+    {
+      "name": "affinity-abba",
+      "execution": "results/verify/readiness/stage4/deep-review-v1/affinity-abba/execution.co049x2j",
+      "raw": "results/verify/diagnostic/affinity-abba.lK9trsns",
+      "start_utc": "2026-11-14T08:26:55.415628+00:00",
+      "end_utc": "2026-11-14T08:30:41.151839+00:00",
+      "elapsed_s": 225.736211,
+      "exit": 0,
+      "seal_count": 82
+    }
+  ],
+  "documentation_commit": "d4cf0f82f330af1cd188febfa5f3757a5cf37799",
+  "release_state_sha256": "448ff2a44eebf00f6129462424c9c5b636c77b0289f084b29963779177ae7bae",
+  "report": {
+    "path": "docs/readiness/stage4-deep-investigation.md",
+    "sha256": "d82244719c2612269d82385f9901f323a7e4a9a01a06c67be287c433e4bf8fa1"
+  },
+  "cleanup": {
+    "measurement_containers_networks_removed": true,
+    "measurement_lock_released": true,
+    "foreign_qdrant_unchanged": true
+  }
+}

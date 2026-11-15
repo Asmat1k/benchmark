@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "results/verify/readiness/stage4/practical-v1/full-calibration/review/method-results.py"
+  ],
+  "cwd": "/Users/dobrov/Desktop/Code/ITMO/benchmark",
+  "start_utc": "2026-11-14T20:32:14.952263+00:00",
+  "end_utc": "2026-11-14T20:32:16.321992+00:00",
+  "elapsed_s": 1.3691678750037681,
+  "exit": 1,
+  "timeout_s": 120,
+  "network": false
+}

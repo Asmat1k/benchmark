@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "-v",
+    "/Users/dobrov/Desktop/Code/ITMO/benchmark:/bench",
+    "-v",
+    "/Users/dobrov/Desktop/Code/ITMO/benchmark:/Users/dobrov/Desktop/Code/ITMO/benchmark",
+    "-w",
+    "/bench",
+    "wswt-bench-analyzer:dev",
+    "timeout",
+    "120",
+    "python",
+    "-B",
+    "docs/readiness/finite-control-review.py",
+    "results/verify/raw/finite-aa-20261115",
+    "results/verify/readiness/finite-browser-study-v1/review-aa-partial-final-v2"
+  ],
+  "start": "2026-11-15T08:57:07.240913+00:00",
+  "end": "2026-11-15T08:57:16.847001+00:00",
+  "exit": 0,
+  "output": "results/verify/readiness/finite-browser-study-v1/review-aa-partial-final-v2"
+}

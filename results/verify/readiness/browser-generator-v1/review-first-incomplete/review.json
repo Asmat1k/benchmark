@@ -1,0 +1,49 @@
+{
+  "utc": "2026-11-14T21:19:54.242660Z",
+  "reviewer": "internal-independent-subagent",
+  "execution": {
+    "path": "results/verify/readiness/browser-generator-v1/execution.k0tpnz1w/execution.json",
+    "sha256": "5a57866b812435000c45c424d5b58bb5c8b7bcd69378ab23e299fd671d675d0b"
+  },
+  "execution_exit": 1,
+  "schedules": [
+    {
+      "path": "results/verify/diagnostic/generator-20.PDOSDsWY/schedule.json",
+      "sha256": "7d62af23ee4a0356038e566717aea97df880d5283f83637d1c90a1b6b7dca753"
+    }
+  ],
+  "expected_runs": 6,
+  "scheduled_runs": 3,
+  "retained_runs": 3,
+  "sealed_validated": 0,
+  "technical_unknown": 3,
+  "runs": [
+    {
+      "mode": "WT-S",
+      "frequency_hz": 20,
+      "run_id": "b0-a0-m0",
+      "raw": "results/verify/diagnostic/generator-20.PDOSDsWY/raw/b0-a0-m0",
+      "status": "raw-missing",
+      "unknown": true
+    },
+    {
+      "mode": "WT-D",
+      "frequency_hz": 20,
+      "run_id": "b0-a0-m1",
+      "raw": "results/verify/diagnostic/generator-20.PDOSDsWY/raw/b0-a0-m1",
+      "status": "raw-missing",
+      "unknown": true
+    },
+    {
+      "mode": "WS",
+      "frequency_hz": 20,
+      "run_id": "b0-a0-m2",
+      "raw": "results/verify/diagnostic/generator-20.PDOSDsWY/raw/b0-a0-m2",
+      "status": "raw-missing",
+      "unknown": true
+    }
+  ],
+  "official_report": null,
+  "official_status": "not-published",
+  "interpretation": "All scheduled outcomes retained. 100 Hz is reserve only; failed performance does not imply invalid data. No RTT imputation or lag subtraction."
+}

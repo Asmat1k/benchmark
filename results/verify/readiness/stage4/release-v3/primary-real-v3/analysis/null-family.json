@@ -1,0 +1,38 @@
+{
+  "collection_id": "primary-real-v3-analysis",
+  "gate": "analysis",
+  "id": "null-family",
+  "actual": true,
+  "scope": "historical synthetic null fixture reused: analysis/protocol/context unchanged by sender-only delta; original failures retained",
+  "command": "python -B docs/readiness/stage3-null-fixture.py",
+  "observations": {
+    "test": "SeriesTests.test_null_profiles_and_mixed_release_are_not_silently_removed",
+    "result": "ok"
+  },
+  "files": [
+    {
+      "path": "results/verify/readiness/stage3/null-family-current-context.txt",
+      "sha256": "bb097487affdac1633feee10d24a88d1875ac786a5067399ee481c63f4ee0348"
+    },
+    {
+      "path": "docs/readiness/stage3-null-fixture.py",
+      "sha256": "a26d9686751fe70234a9127a8a782ef05af16f38953d0c9c2b56d38af0b27080"
+    },
+    {
+      "path": "src/analysis/test_analysis.py",
+      "sha256": "271d3bb21f5b6d4dc035c6f33dbbb0ba9c965cd48640487bae59ece83817733e"
+    }
+  ],
+  "preparer": {
+    "path": "/bench/docs/readiness/stage4-primary-v3.py",
+    "sha256": "d381d8cb8633a2100a6600f2bd331d4a50287c3d292b6f7429b76ac0c447d033"
+  },
+  "source_inventory": {
+    "path": "results/verify/readiness/stage4/release-v3/source-inventory.json",
+    "sha256": "f1a20fb6d0891da7cbf9acd755cd3e87274ed7748fcba61e39564806f5e8c795"
+  },
+  "applicability": {
+    "path": "results/verify/readiness/stage4/release-v3/release.json",
+    "sha256": "5f52be9506c654108d497bb45cfd46cf72e2ac86f33f0c68f9b852fe751d0a87"
+  }
+}

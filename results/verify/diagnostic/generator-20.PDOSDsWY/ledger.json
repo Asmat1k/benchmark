@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "series_id": "generator-20.PDOSDsWY",
+  "attempts": [
+    {
+      "block_id": "b0",
+      "session_id": "s0",
+      "attempt_id": "b0-a0",
+      "profile": "baseline",
+      "order_index": 0,
+      "modes": [
+        "WT-S",
+        "WT-D",
+        "WS"
+      ],
+      "seed": 13691934516998781012,
+      "status": "stopped",
+      "reason": "incomplete_log: quarantine/wswt-d3-wswt-measure-mams169i",
+      "replacement_of": null,
+      "design": "comparison"
+    }
+  ]
+}

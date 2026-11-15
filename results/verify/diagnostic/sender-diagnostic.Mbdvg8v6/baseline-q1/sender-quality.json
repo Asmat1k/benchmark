@@ -1,0 +1,69 @@
+{
+  "criteria_version": "udp-sender-v2",
+  "preliminary": true,
+  "status": "passed",
+  "reasons": [],
+  "limits": {
+    "version": "udp-sender-v2",
+    "max_late_pct": 1,
+    "max_lag_ms": 50,
+    "burst_window_ms": 10,
+    "max_burst_packets": 4
+  },
+  "historical_every_slot_pass": false,
+  "metrics": {
+    "count": 10000,
+    "late_slots": 19,
+    "late_pct": 0.19,
+    "lag_ms": {
+      "p50": 0.27407600000151433,
+      "p99": 1.7431389999983367,
+      "max": 32.67749299999559
+    },
+    "gap_ms": {
+      "min": 2.6175419999999576,
+      "p50": 9.999540999997407,
+      "p99": 10.988084000000526,
+      "max": 42.38829099999566
+    },
+    "late_groups": [
+      [
+        1063
+      ],
+      [
+        2901
+      ],
+      [
+        4241,
+        4242
+      ],
+      [
+        5748,
+        5749
+      ],
+      [
+        7555,
+        7556,
+        7557,
+        7558
+      ],
+      [
+        7814,
+        7815,
+        7816,
+        7817,
+        7818,
+        7819,
+        7820
+      ],
+      [
+        9065,
+        9066
+      ]
+    ],
+    "late_group_count": 7,
+    "peak_packets_1ms": 1,
+    "peak_packets_window": 4,
+    "observed_hz": 99.99976509806154
+  }
+}

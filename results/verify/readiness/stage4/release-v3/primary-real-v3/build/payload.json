@@ -1,0 +1,151 @@
+{
+  "gate": "build",
+  "collection_id": "primary-real-v3-build",
+  "document": {
+    "schema_version": 1,
+    "checks": [
+      {
+        "id": "locked-install",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "current cached rebuild checked; exact admitted images restored after content comparison; sender-only delta is host-mounted, not image code",
+        "utc": "2026-11-13T19:39:55.286631Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v3/primary-real-v3/build/locked-install.json",
+            "sha256": "cfe35069dbffc813aaa9fdc891c381cb1642f17225981297f003561da4b15f02"
+          }
+        ]
+      },
+      {
+        "id": "native-platform",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "actual host, Docker and unchanged release images",
+        "utc": "2026-11-13T19:39:55.290081Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v3/primary-real-v3/build/native-platform.json",
+            "sha256": "c714fb21d8947f62da0800e7ad83b961c4873f4e6dedc491f7b10605d71bb410"
+          }
+        ]
+      },
+      {
+        "id": "versions",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "current browser runtime plus unchanged image package inventory",
+        "utc": "2026-11-13T19:39:55.295696Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v3/primary-real-v3/build/versions.json",
+            "sha256": "e702293ebe3596b7aa05dea209d8486916e88b385e878bdc85bf231b07170d95"
+          }
+        ]
+      },
+      {
+        "id": "archive-hashes",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "current archive bytes/sidecar and applicable stage2 archive content validation",
+        "utc": "2026-11-13T19:39:58.610237Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v3/primary-real-v3/build/archive-hashes.json",
+            "sha256": "872810eac5029cc18c957ba608bb1eb29eed3f29845c07c45e40099adc0d5751"
+          }
+        ]
+      }
+    ]
+  },
+  "observations": {
+    "locked-install": {
+      "collection_id": "primary-real-v3-build",
+      "id": "locked-install",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "current cached rebuild checked; exact admitted images restored after content comparison; sender-only delta is host-mounted, not image code",
+      "utc": "2026-11-13T19:39:55.286631Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v3/primary-real-v3/build/locked-install.json",
+          "sha256": "cfe35069dbffc813aaa9fdc891c381cb1642f17225981297f003561da4b15f02"
+        }
+      ]
+    },
+    "native-platform": {
+      "collection_id": "primary-real-v3-build",
+      "id": "native-platform",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "actual host, Docker and unchanged release images",
+      "utc": "2026-11-13T19:39:55.290081Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v3/primary-real-v3/build/native-platform.json",
+          "sha256": "c714fb21d8947f62da0800e7ad83b961c4873f4e6dedc491f7b10605d71bb410"
+        }
+      ]
+    },
+    "versions": {
+      "collection_id": "primary-real-v3-build",
+      "id": "versions",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "current browser runtime plus unchanged image package inventory",
+      "utc": "2026-11-13T19:39:55.295696Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v3/primary-real-v3/build/versions.json",
+          "sha256": "e702293ebe3596b7aa05dea209d8486916e88b385e878bdc85bf231b07170d95"
+        }
+      ]
+    },
+    "archive-hashes": {
+      "collection_id": "primary-real-v3-build",
+      "id": "archive-hashes",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "current archive bytes/sidecar and applicable stage2 archive content validation",
+      "utc": "2026-11-13T19:39:58.610237Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v3/primary-real-v3/build/archive-hashes.json",
+          "sha256": "872810eac5029cc18c957ba608bb1eb29eed3f29845c07c45e40099adc0d5751"
+        }
+      ]
+    }
+  }
+}

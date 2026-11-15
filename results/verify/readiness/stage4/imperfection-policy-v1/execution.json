@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "results/verify/readiness/stage4/imperfection-policy-v1/analyze.py",
+    "results/verify/readiness/stage4/imperfection-policy-v1/analysis.json"
+  ],
+  "start": 1794682028.571157,
+  "elapsed_s": 2.245732069015503,
+  "exit": 0
+}

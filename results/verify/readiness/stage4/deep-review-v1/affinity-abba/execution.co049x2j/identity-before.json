@@ -1,0 +1,8 @@
+{
+  "results/verify/readiness/stage4/deep-review-v1/affinity-abba/tools/probe.py": "85fa8df3985907c00abedb2f31e3c7996e593eb2d8435e9d5084626de512799a",
+  "results/verify/readiness/stage4/deep-review-v1/affinity-abba/tools/calibration_probe.py": "2181eb3c9fef144ce8369809cd5fa2b84c84944330cf74ead26dc5214b8d6639",
+  "results/verify/readiness/stage4/deep-review-v1/affinity-abba/collect.sh": "67c463ec38861cc71a0433ff66474fbf43a54a205a98f06eecdc593c912893ac",
+  "results/verify/readiness/stage4/deep-review-v1/affinity-abba/plan.md": "7b3004d5e80e7cae0d6ece83f91b879bddd1557dfd4ec28db05f8ab7c6219db2",
+  "results/verify/diagnostic/timer-timer.2ST8NYBU/context.json": "231ae4819874cf877f8e2234b4331171309906cb4c259b847c7ff8fc403039da",
+  "build/series-tls-stage2._n__udb0/server/good/cert.pem": "ff69b4145dbd13f610506b4c5324ed515b5d58dd5556c81ff087cf845a0933b9"
+}

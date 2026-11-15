@@ -18,6 +18,12 @@ def runnable_run(directory, index, partial):
         from admission import admit
         admit(directory)
     require(directory.name == schedule["series_id"], "directory mismatch")
+    from execution import is_exploratory, load_outcomes
+    if is_exploratory(directory):
+        outcomes = load_outcomes(directory)
+        pending = next((r['index'] for r in outcomes['runs'] if r['status'] in ('planned','running')),None)
+        require(index == pending, "run outside exploratory schedule order")
+        return schedule, run
     require(not (directory/"STOP").exists(), "series stopped")
     attempt = next(a for a in read(directory/"ledger.json")["attempts"] if a["attempt_id"] == run["attempt_id"])
     require(attempt["status"] == "planned", "attempt not runnable")
@@ -53,6 +59,11 @@ def run_spec(directory, index, partial):
           dict(warmup_slots=1 if smoke else plan["warmup_slots"],
                measurement_slots=3 if smoke else plan["measurement_slots"],interval_ms=diagnostic_interval(schedule, plan["interval_ms"]),
                queue_limit_bytes=plan["queue_limit_bytes"],deadline_ms=thresholds["deadline_ms"],horizon_ms=thresholds["horizon_ms"]))
+    from execution import is_exploratory
+    if is_exploratory(directory):
+        (partial/'exploratory-execution').touch()
+        write(partial/'execution-policy.json',dict(execution_policy='exploratory-browser-study-v2',
+              policy=read(directory/'admission.json')['policy']))
     if smoke and schedule.get("collect_timer") and index == 0:
         (partial/"collect-timer").touch()
     if schedule.get("generator_hz"):
@@ -111,13 +122,18 @@ def complete(directory, index, partial):
     try:
         publish(partial,raw/run["run_id"],schedule_file)
     except Exception:
+        from execution import is_exploratory
+        if is_exploratory(directory):
+            raise
         from violation import diagnose
         evidence = directory / "violations" / f"{run['run_id']}.json"
         if diagnose(partial, schedule_file, evidence, directory / "quarantine" / partial.name.removesuffix(".partial")):
             (directory / "PENDING_REPLACEMENT").write_text(run["attempt_id"])
             raise SystemExit(3)
         raise
-    advance(directory, schedule, run)
+    from execution import is_exploratory
+    if not is_exploratory(directory):
+        advance(directory, schedule, run)
 
 
 if __name__ == "__main__":

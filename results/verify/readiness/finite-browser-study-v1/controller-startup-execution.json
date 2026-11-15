@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "-i",
+    "--network",
+    "none",
+    "-v",
+    "/Users/dobrov/Desktop/Code/ITMO/benchmark:/bench",
+    "-v",
+    "/Users/dobrov/Desktop/Code/ITMO/benchmark:/Users/dobrov/Desktop/Code/ITMO/benchmark",
+    "-w",
+    "/bench",
+    "wswt-bench-analyzer:dev",
+    "python",
+    "-B",
+    "src/analysis/controller.py",
+    "results/verify/raw/finite-aa-20261115"
+  ],
+  "started_utc": "2026-11-15T08:13:42.014768+00:00",
+  "request": {
+    "action": "next"
+  },
+  "exit": 0,
+  "ended_utc": "2026-11-15T08:13:52.247636+00:00"
+}

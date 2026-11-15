@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "sh",
+    "docker/calibration.sh"
+  ],
+  "head": "acce5946499b7471bc35965919f3cdc910a7922c",
+  "network_limit_s": 2400,
+  "TLS": "/Users/dobrov/Desktop/Code/ITMO/benchmark/build/series-tls-stage2._n__udb0",
+  "acceptance": "collection exit0 is pending independent raw/observed gate review"
+}

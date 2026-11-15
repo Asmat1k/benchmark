@@ -1,0 +1,256 @@
+{
+  "gate": "raw",
+  "collection_id": "primary-real-v3-raw",
+  "document": {
+    "schema_version": 1,
+    "checks": [
+      {
+        "id": "framing",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "real three-mode smoke and short raw; framing edge cases use synthetic client transport",
+        "utc": "2026-11-13T19:39:58.785452Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v3/primary-real-v3/raw/framing.json",
+            "sha256": "b90b96c1b61bfc3ba1cf682d6660cc45a996ee16e05412fffecc2aa795db2a1e"
+          }
+        ]
+      },
+      {
+        "id": "clock-boundaries",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "real raw clock invariants; exact deadline/late edges use injected fixture clocks",
+        "utc": "2026-11-13T19:39:58.789888Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v3/primary-real-v3/raw/clock-boundaries.json",
+            "sha256": "bfa2df1878fb8cfa5fed91e041605e1d79b823d908536cc60afff7ae934e04ef"
+          }
+        ]
+      },
+      {
+        "id": "slot-accounting",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "real short slots/events/counters; missed wakes/loss/late/disconnect use fixtures",
+        "utc": "2026-11-13T19:39:58.799291Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v3/primary-real-v3/raw/slot-accounting.json",
+            "sha256": "4c9430328b90bf8897ff071c2f96de8be2dcba69de191d64691af51bd86bc8c5"
+          }
+        ]
+      },
+      {
+        "id": "hash-integrity",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "real full raw hash validation plus tampered temporary copy rejected",
+        "utc": "2026-11-13T19:39:58.804377Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v3/primary-real-v3/raw/hash-integrity.json",
+            "sha256": "985d0b0789de4c4055aef41d5053703d5894722403554ac70aa4183fef7570fc"
+          }
+        ]
+      },
+      {
+        "id": "log-completeness",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "real completion/events/server logs; missing-journal STOP uses fixture",
+        "utc": "2026-11-13T19:39:58.806302Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v3/primary-real-v3/raw/log-completeness.json",
+            "sha256": "de23cd16bb23ac8a9a236d37f4a98eea4c700b873f34a4c0ccd16499f06d1696"
+          }
+        ]
+      },
+      {
+        "id": "resource-coverage",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "real three-role resource windows; missing intervals use fixtures",
+        "utc": "2026-11-13T19:39:58.808075Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v3/primary-real-v3/raw/resource-coverage.json",
+            "sha256": "03d2083d872f732ef6382d75f3a7d3d8e558132f3e9cab0a5a20573040b2c233"
+          }
+        ]
+      },
+      {
+        "id": "replacement-recovery",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "fixture behavior only: replacement, lock and recovery; no successful real series claimed",
+        "utc": "2026-11-13T19:39:58.809804Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v3/primary-real-v3/raw/replacement-recovery.json",
+            "sha256": "50286f9adfb53cc8ae9a10edd59055759347083ea73e882c43e96cfbb9520b70"
+          }
+        ]
+      }
+    ]
+  },
+  "observations": {
+    "framing": {
+      "collection_id": "primary-real-v3-raw",
+      "id": "framing",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "real three-mode smoke and short raw; framing edge cases use synthetic client transport",
+      "utc": "2026-11-13T19:39:58.785452Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v3/primary-real-v3/raw/framing.json",
+          "sha256": "b90b96c1b61bfc3ba1cf682d6660cc45a996ee16e05412fffecc2aa795db2a1e"
+        }
+      ]
+    },
+    "clock-boundaries": {
+      "collection_id": "primary-real-v3-raw",
+      "id": "clock-boundaries",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "real raw clock invariants; exact deadline/late edges use injected fixture clocks",
+      "utc": "2026-11-13T19:39:58.789888Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v3/primary-real-v3/raw/clock-boundaries.json",
+          "sha256": "bfa2df1878fb8cfa5fed91e041605e1d79b823d908536cc60afff7ae934e04ef"
+        }
+      ]
+    },
+    "slot-accounting": {
+      "collection_id": "primary-real-v3-raw",
+      "id": "slot-accounting",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "real short slots/events/counters; missed wakes/loss/late/disconnect use fixtures",
+      "utc": "2026-11-13T19:39:58.799291Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v3/primary-real-v3/raw/slot-accounting.json",
+          "sha256": "4c9430328b90bf8897ff071c2f96de8be2dcba69de191d64691af51bd86bc8c5"
+        }
+      ]
+    },
+    "hash-integrity": {
+      "collection_id": "primary-real-v3-raw",
+      "id": "hash-integrity",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "real full raw hash validation plus tampered temporary copy rejected",
+      "utc": "2026-11-13T19:39:58.804377Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v3/primary-real-v3/raw/hash-integrity.json",
+          "sha256": "985d0b0789de4c4055aef41d5053703d5894722403554ac70aa4183fef7570fc"
+        }
+      ]
+    },
+    "log-completeness": {
+      "collection_id": "primary-real-v3-raw",
+      "id": "log-completeness",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "real completion/events/server logs; missing-journal STOP uses fixture",
+      "utc": "2026-11-13T19:39:58.806302Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v3/primary-real-v3/raw/log-completeness.json",
+          "sha256": "de23cd16bb23ac8a9a236d37f4a98eea4c700b873f34a4c0ccd16499f06d1696"
+        }
+      ]
+    },
+    "resource-coverage": {
+      "collection_id": "primary-real-v3-raw",
+      "id": "resource-coverage",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "real three-role resource windows; missing intervals use fixtures",
+      "utc": "2026-11-13T19:39:58.808075Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v3/primary-real-v3/raw/resource-coverage.json",
+          "sha256": "03d2083d872f732ef6382d75f3a7d3d8e558132f3e9cab0a5a20573040b2c233"
+        }
+      ]
+    },
+    "replacement-recovery": {
+      "collection_id": "primary-real-v3-raw",
+      "id": "replacement-recovery",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "fixture behavior only: replacement, lock and recovery; no successful real series claimed",
+      "utc": "2026-11-13T19:39:58.809804Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v3/primary-real-v3/raw/replacement-recovery.json",
+          "sha256": "50286f9adfb53cc8ae9a10edd59055759347083ea73e882c43e96cfbb9520b70"
+        }
+      ]
+    }
+  }
+}

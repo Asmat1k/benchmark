@@ -1,0 +1,26 @@
+{
+  "utc": "2026-11-13T19:42:50.549115+00:00",
+  "release_commit": "3605994e8359a70443621517e11dd2383a726f48",
+  "source_count": 134,
+  "release_state_sha256": "83bec37fbd801d044eb7feb835e63b88a0f08a0627d75478736f99376acc40a3",
+  "gate_statuses": {
+    "build": "passed",
+    "tls": "passed",
+    "path": "passed",
+    "raw": "passed",
+    "analysis": "passed",
+    "timer": "passed"
+  },
+  "qualification": "not_run for new release; historical E243q4gg failed preserved",
+  "expected_verify_exit": 2,
+  "final": false,
+  "environment_sha256": "231ae4819874cf877f8e2234b4331171309906cb4c259b847c7ff8fc403039da",
+  "cleanup": {
+    "lab_subnets_free": true,
+    "measurement_lock_acquired_released": true,
+    "measurement_projects_absent": true,
+    "qdrant_left_running": true,
+    "AC_power": true,
+    "battery_pct": 100
+  }
+}

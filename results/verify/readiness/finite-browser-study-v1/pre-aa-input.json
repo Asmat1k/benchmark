@@ -1,0 +1,94 @@
+{
+  "policy": {
+    "path": "results/verify/readiness/finite-browser-study-v1/policy.json",
+    "sha256": "220699600c5c8d4f42a328770055b870f3370a9dad22636ce3cd3b729ae3b061"
+  },
+  "gates": {
+    "analysis": {
+      "report": {
+        "path": "results/verify/readiness/stage4/practical-v1/release-v2/analysis-report.json",
+        "sha256": "d32a16ac3fab8f1d4ea9bae1ab2793d5d0ad96233b40d1da703e497f1ef1c4f0"
+      },
+      "replay": {
+        "path": "results/verify/readiness/finite-browser-study-v1/historical-replay-v2/analysis/receipt.json",
+        "sha256": "5b38b41cb95cbce546d875f3de78376e2697e0849b891e292680c5f736315c54"
+      }
+    },
+    "calibration": {
+      "report": {
+        "path": "results/verify/readiness/stage4/practical-v1/full-calibration/calibration-sFWOAzbo-report.json",
+        "sha256": "440afc94e532071c65c8402a5cd1ac04d7803d43d4ff78e2ebb9d46af67a5732"
+      },
+      "replay": {
+        "path": "results/verify/readiness/finite-browser-study-v1/historical-replay-v2/calibration/receipt.json",
+        "sha256": "b52b92a95e225c970d6fbd5a5af7241b8606f900ba3485358aecac30341999e3"
+      }
+    },
+    "path": {
+      "report": {
+        "path": "results/verify/readiness/stage4/practical-v1/release-v2/path-report.json",
+        "sha256": "e1a47bb86add2c68042cb00227477f7810333826ec84464f744e8ac60295119e"
+      },
+      "replay": {
+        "path": "results/verify/readiness/finite-browser-study-v1/historical-replay-v2/path/receipt.json",
+        "sha256": "851a45de90de2b28cd17bbedaa44a9e3acb73cf1dd0fb8107d511b2eaa57a031"
+      }
+    },
+    "timer": {
+      "report": {
+        "path": "results/verify/diagnostic/timer-timer.bcnsX8bc-report/report.json",
+        "sha256": "e197685a4aae3a7d35d8d8c9b91ebc776feb26b330f9c56dfcf2867574f96629"
+      },
+      "replay": {
+        "path": "results/verify/readiness/finite-browser-study-v1/historical-replay-v2/timer/receipt.json",
+        "sha256": "3451670fb13d26573c3ad2d22ab52381a659b0222c94cc8112096e45473c0c7c"
+      }
+    },
+    "generator": {
+      "report": {
+        "path": "results/verify/diagnostic/generator-100.StWlCPFN-report/report.json",
+        "sha256": "13054644c027519beceec8643528bac491a93d3c683ccc627287f738fbe0ae15"
+      },
+      "replay": {
+        "path": "results/verify/readiness/finite-browser-study-v1/historical-replay-v2/generator/receipt.json",
+        "sha256": "14e85669a98901f283776f6b20e22e6f7b19d04badd53b659e1ec2911a4b1590"
+      }
+    },
+    "tls": {
+      "report": {
+        "path": "results/verify/readiness/stage4/practical-v1/release-v2/tls-report.json",
+        "sha256": "309e5844532ceb5610c179aab0191bbc94c563583c25940ce6cadc01cb8d66f9"
+      },
+      "replay": {
+        "path": "results/verify/readiness/finite-browser-study-v1/historical-replay-v2/tls/receipt.json",
+        "sha256": "253955363c026cb501ce3be62fe1c04db86c414978cbf7a6de2bfbc5181b9862"
+      }
+    },
+    "build": {
+      "report": {
+        "path": "results/verify/readiness/stage4/practical-v1/release-v2/build-report.json",
+        "sha256": "fd0b3fa158e100e967762966256460cda912853ccaf7af0c56c72510e8ca8c9f"
+      },
+      "replay": {
+        "path": "results/verify/readiness/finite-browser-study-v1/historical-replay-v2/build/receipt.json",
+        "sha256": "fcf16bd92b969bce583f52a2254dad0b8da003a0ef75356548bff77464adfe5d"
+      }
+    },
+    "raw": {
+      "report": {
+        "path": "results/verify/readiness/stage4/practical-v1/release-v2/raw-report.json",
+        "sha256": "8823664d4b8e61ba183d38c46424a0da642a1826c604ed2a237e24f4f0833978"
+      },
+      "replay": {
+        "path": "results/verify/readiness/finite-browser-study-v1/historical-replay-v2/raw/receipt.json",
+        "sha256": "88acc3990a03cbbdc82eeccc725bd38b7af482d7c422a639ca9b4c70ad98ee73"
+      }
+    }
+  },
+  "prior_outcomes": [
+    {
+      "path": "results/verify/readiness/browser-generator-v1/review-first-incomplete/partial-primary.json",
+      "sha256": "95d056b257c2d562681f15dd72fd3091f94ce842030988fe793e9dbb73d10d17"
+    }
+  ]
+}

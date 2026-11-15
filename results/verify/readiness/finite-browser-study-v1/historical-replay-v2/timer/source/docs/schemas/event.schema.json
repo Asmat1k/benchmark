@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "event v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "event_index": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "t_ms": {
+      "type": "number",
+      "minimum": 0
+    },
+    "type": {
+      "enum": [
+        "api_error",
+        "write_rejection",
+        "disconnect",
+        "invalid_frame",
+        "unknown_ID",
+        "duplicate",
+        "first_correct_echo",
+        "late_before_horizon",
+        "late_after_horizon",
+        "buffer_sample",
+        "phase_transition",
+        "framing_error"
+      ]
+    },
+    "id": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "phase": {
+              "enum": [
+                0,
+                1
+              ]
+            },
+            "nonce": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]{0,19})$",
+              "description": "Canonical decimal uint64; readers must also check the upper bound 18446744073709551615."
+            },
+            "seq": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]{0,19})$",
+              "description": "Canonical decimal uint64; readers must also check the upper bound 18446744073709551615."
+            }
+          },
+          "required": [
+            "phase",
+            "nonce",
+            "seq"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "details": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "event_index",
+    "run_id",
+    "t_ms",
+    "type",
+    "id",
+    "details"
+  ],
+  "additionalProperties": false
+}

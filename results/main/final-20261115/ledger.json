@@ -1,0 +1,1366 @@
+{
+  "schema_version": 1,
+  "series_id": "final-20261115",
+  "attempts": [
+    {
+      "block_id": "b0",
+      "session_id": "s0",
+      "attempt_id": "b0-a0",
+      "profile": "r80p0",
+      "order_index": 0,
+      "modes": [
+        "WS",
+        "WT-D",
+        "WT-S"
+      ],
+      "seed": 1123089184958960211,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b1",
+      "session_id": "s0",
+      "attempt_id": "b1-a0",
+      "profile": "r20p1",
+      "order_index": 1,
+      "modes": [
+        "WT-D",
+        "WT-S",
+        "WS"
+      ],
+      "seed": 17965781241964635585,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b2",
+      "session_id": "s0",
+      "attempt_id": "b2-a0",
+      "profile": "r20p1",
+      "order_index": 2,
+      "modes": [
+        "WT-S",
+        "WT-D",
+        "WS"
+      ],
+      "seed": 4704551557307409050,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b3",
+      "session_id": "s0",
+      "attempt_id": "b3-a0",
+      "profile": "r20p1",
+      "order_index": 3,
+      "modes": [
+        "WS",
+        "WT-D",
+        "WT-S"
+      ],
+      "seed": 1337223281163597018,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b4",
+      "session_id": "s0",
+      "attempt_id": "b4-a0",
+      "profile": "r20p0",
+      "order_index": 4,
+      "modes": [
+        "WT-D",
+        "WT-S",
+        "WS"
+      ],
+      "seed": 4200462413361778783,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b5",
+      "session_id": "s0",
+      "attempt_id": "b5-a0",
+      "profile": "r80p0",
+      "order_index": 5,
+      "modes": [
+        "WS",
+        "WT-D",
+        "WT-S"
+      ],
+      "seed": 3220967766409814157,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b6",
+      "session_id": "s0",
+      "attempt_id": "b6-a0",
+      "profile": "r20p0",
+      "order_index": 6,
+      "modes": [
+        "WT-D",
+        "WT-S",
+        "WS"
+      ],
+      "seed": 16170970145624498687,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b7",
+      "session_id": "s0",
+      "attempt_id": "b7-a0",
+      "profile": "r20p1",
+      "order_index": 7,
+      "modes": [
+        "WS",
+        "WT-D",
+        "WT-S"
+      ],
+      "seed": 16543123242015517533,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b8",
+      "session_id": "s0",
+      "attempt_id": "b8-a0",
+      "profile": "r80p1",
+      "order_index": 8,
+      "modes": [
+        "WT-S",
+        "WT-D",
+        "WS"
+      ],
+      "seed": 12526986273428841774,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b9",
+      "session_id": "s0",
+      "attempt_id": "b9-a0",
+      "profile": "r20p0",
+      "order_index": 9,
+      "modes": [
+        "WS",
+        "WT-S",
+        "WT-D"
+      ],
+      "seed": 17365711278875993654,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b10",
+      "session_id": "s0",
+      "attempt_id": "b10-a0",
+      "profile": "r80p1",
+      "order_index": 10,
+      "modes": [
+        "WT-S",
+        "WS",
+        "WT-D"
+      ],
+      "seed": 13567222365788844637,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b11",
+      "session_id": "s0",
+      "attempt_id": "b11-a0",
+      "profile": "r80p0",
+      "order_index": 11,
+      "modes": [
+        "WT-S",
+        "WS",
+        "WT-D"
+      ],
+      "seed": 5891432679553091032,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b12",
+      "session_id": "s0",
+      "attempt_id": "b12-a0",
+      "profile": "r80p0",
+      "order_index": 12,
+      "modes": [
+        "WT-D",
+        "WS",
+        "WT-S"
+      ],
+      "seed": 17504913474840760833,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b13",
+      "session_id": "s0",
+      "attempt_id": "b13-a0",
+      "profile": "r20p1",
+      "order_index": 13,
+      "modes": [
+        "WT-D",
+        "WT-S",
+        "WS"
+      ],
+      "seed": 5885090572479461307,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b14",
+      "session_id": "s0",
+      "attempt_id": "b14-a0",
+      "profile": "r80p1",
+      "order_index": 14,
+      "modes": [
+        "WS",
+        "WT-S",
+        "WT-D"
+      ],
+      "seed": 9115968804416895774,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b15",
+      "session_id": "s0",
+      "attempt_id": "b15-a0",
+      "profile": "r80p0",
+      "order_index": 15,
+      "modes": [
+        "WT-D",
+        "WT-S",
+        "WS"
+      ],
+      "seed": 9225994945727136596,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b16",
+      "session_id": "s0",
+      "attempt_id": "b16-a0",
+      "profile": "r80p1",
+      "order_index": 16,
+      "modes": [
+        "WT-S",
+        "WS",
+        "WT-D"
+      ],
+      "seed": 13345908887229013327,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b17",
+      "session_id": "s0",
+      "attempt_id": "b17-a0",
+      "profile": "r20p0",
+      "order_index": 17,
+      "modes": [
+        "WT-S",
+        "WT-D",
+        "WS"
+      ],
+      "seed": 5981675418473224151,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b18",
+      "session_id": "s0",
+      "attempt_id": "b18-a0",
+      "profile": "r80p1",
+      "order_index": 18,
+      "modes": [
+        "WS",
+        "WT-D",
+        "WT-S"
+      ],
+      "seed": 827314683269145243,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b19",
+      "session_id": "s0",
+      "attempt_id": "b19-a0",
+      "profile": "r20p0",
+      "order_index": 19,
+      "modes": [
+        "WS",
+        "WT-D",
+        "WT-S"
+      ],
+      "seed": 815613312101008734,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b20",
+      "session_id": "s1",
+      "attempt_id": "b20-a0",
+      "profile": "r20p0",
+      "order_index": 20,
+      "modes": [
+        "WT-D",
+        "WS",
+        "WT-S"
+      ],
+      "seed": 9326238554045212184,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b21",
+      "session_id": "s1",
+      "attempt_id": "b21-a0",
+      "profile": "r20p1",
+      "order_index": 21,
+      "modes": [
+        "WS",
+        "WT-D",
+        "WT-S"
+      ],
+      "seed": 14927186999035088028,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b22",
+      "session_id": "s1",
+      "attempt_id": "b22-a0",
+      "profile": "r20p0",
+      "order_index": 22,
+      "modes": [
+        "WT-S",
+        "WT-D",
+        "WS"
+      ],
+      "seed": 15308885183897117489,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b23",
+      "session_id": "s1",
+      "attempt_id": "b23-a0",
+      "profile": "r80p0",
+      "order_index": 23,
+      "modes": [
+        "WT-S",
+        "WT-D",
+        "WS"
+      ],
+      "seed": 14079150420349670829,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b24",
+      "session_id": "s1",
+      "attempt_id": "b24-a0",
+      "profile": "r80p1",
+      "order_index": 24,
+      "modes": [
+        "WT-D",
+        "WS",
+        "WT-S"
+      ],
+      "seed": 10625551087077731957,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b25",
+      "session_id": "s1",
+      "attempt_id": "b25-a0",
+      "profile": "r80p1",
+      "order_index": 25,
+      "modes": [
+        "WS",
+        "WT-D",
+        "WT-S"
+      ],
+      "seed": 7557789129103611401,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b26",
+      "session_id": "s1",
+      "attempt_id": "b26-a0",
+      "profile": "r80p0",
+      "order_index": 26,
+      "modes": [
+        "WT-S",
+        "WS",
+        "WT-D"
+      ],
+      "seed": 17248686223940458809,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b27",
+      "session_id": "s1",
+      "attempt_id": "b27-a0",
+      "profile": "r20p1",
+      "order_index": 27,
+      "modes": [
+        "WT-D",
+        "WS",
+        "WT-S"
+      ],
+      "seed": 14993440712734763796,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b28",
+      "session_id": "s1",
+      "attempt_id": "b28-a0",
+      "profile": "r20p1",
+      "order_index": 28,
+      "modes": [
+        "WS",
+        "WT-D",
+        "WT-S"
+      ],
+      "seed": 16552243923208994990,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b29",
+      "session_id": "s1",
+      "attempt_id": "b29-a0",
+      "profile": "r20p0",
+      "order_index": 29,
+      "modes": [
+        "WT-D",
+        "WT-S",
+        "WS"
+      ],
+      "seed": 9292842350552142535,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b30",
+      "session_id": "s1",
+      "attempt_id": "b30-a0",
+      "profile": "r20p0",
+      "order_index": 30,
+      "modes": [
+        "WT-S",
+        "WS",
+        "WT-D"
+      ],
+      "seed": 13910752568271057448,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b31",
+      "session_id": "s1",
+      "attempt_id": "b31-a0",
+      "profile": "r80p1",
+      "order_index": 31,
+      "modes": [
+        "WS",
+        "WT-S",
+        "WT-D"
+      ],
+      "seed": 15067345042044725328,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b32",
+      "session_id": "s1",
+      "attempt_id": "b32-a0",
+      "profile": "r80p0",
+      "order_index": 32,
+      "modes": [
+        "WT-D",
+        "WT-S",
+        "WS"
+      ],
+      "seed": 9727919914614350260,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b33",
+      "session_id": "s1",
+      "attempt_id": "b33-a0",
+      "profile": "r80p0",
+      "order_index": 33,
+      "modes": [
+        "WT-D",
+        "WT-S",
+        "WS"
+      ],
+      "seed": 263574337931726983,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b34",
+      "session_id": "s1",
+      "attempt_id": "b34-a0",
+      "profile": "r80p0",
+      "order_index": 34,
+      "modes": [
+        "WT-S",
+        "WT-D",
+        "WS"
+      ],
+      "seed": 2503101920811373670,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b35",
+      "session_id": "s1",
+      "attempt_id": "b35-a0",
+      "profile": "r20p1",
+      "order_index": 35,
+      "modes": [
+        "WS",
+        "WT-D",
+        "WT-S"
+      ],
+      "seed": 17403126716456880121,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b36",
+      "session_id": "s1",
+      "attempt_id": "b36-a0",
+      "profile": "r20p0",
+      "order_index": 36,
+      "modes": [
+        "WS",
+        "WT-D",
+        "WT-S"
+      ],
+      "seed": 8976636001103350586,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b37",
+      "session_id": "s1",
+      "attempt_id": "b37-a0",
+      "profile": "r80p1",
+      "order_index": 37,
+      "modes": [
+        "WT-D",
+        "WS",
+        "WT-S"
+      ],
+      "seed": 8262460014325122271,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b38",
+      "session_id": "s1",
+      "attempt_id": "b38-a0",
+      "profile": "r80p1",
+      "order_index": 38,
+      "modes": [
+        "WS",
+        "WT-S",
+        "WT-D"
+      ],
+      "seed": 12430357970425100432,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b39",
+      "session_id": "s1",
+      "attempt_id": "b39-a0",
+      "profile": "r20p1",
+      "order_index": 39,
+      "modes": [
+        "WT-S",
+        "WS",
+        "WT-D"
+      ],
+      "seed": 4242936698994896041,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b40",
+      "session_id": "s2",
+      "attempt_id": "b40-a0",
+      "profile": "r20p0",
+      "order_index": 40,
+      "modes": [
+        "WT-D",
+        "WT-S",
+        "WS"
+      ],
+      "seed": 14851313478310646238,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b41",
+      "session_id": "s2",
+      "attempt_id": "b41-a0",
+      "profile": "r80p1",
+      "order_index": 41,
+      "modes": [
+        "WT-D",
+        "WS",
+        "WT-S"
+      ],
+      "seed": 8339499355919622120,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b42",
+      "session_id": "s2",
+      "attempt_id": "b42-a0",
+      "profile": "r20p1",
+      "order_index": 42,
+      "modes": [
+        "WS",
+        "WT-S",
+        "WT-D"
+      ],
+      "seed": 10596650576022615235,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b43",
+      "session_id": "s2",
+      "attempt_id": "b43-a0",
+      "profile": "r20p0",
+      "order_index": 43,
+      "modes": [
+        "WT-D",
+        "WS",
+        "WT-S"
+      ],
+      "seed": 6358856445670537270,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b44",
+      "session_id": "s2",
+      "attempt_id": "b44-a0",
+      "profile": "r80p0",
+      "order_index": 44,
+      "modes": [
+        "WT-S",
+        "WT-D",
+        "WS"
+      ],
+      "seed": 2885829727162839175,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b45",
+      "session_id": "s2",
+      "attempt_id": "b45-a0",
+      "profile": "r80p0",
+      "order_index": 45,
+      "modes": [
+        "WT-S",
+        "WS",
+        "WT-D"
+      ],
+      "seed": 8203582097230878158,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b46",
+      "session_id": "s2",
+      "attempt_id": "b46-a0",
+      "profile": "r80p0",
+      "order_index": 46,
+      "modes": [
+        "WS",
+        "WT-D",
+        "WT-S"
+      ],
+      "seed": 14847568733397563338,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b47",
+      "session_id": "s2",
+      "attempt_id": "b47-a0",
+      "profile": "r80p0",
+      "order_index": 47,
+      "modes": [
+        "WT-D",
+        "WS",
+        "WT-S"
+      ],
+      "seed": 15461421733989769297,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b48",
+      "session_id": "s2",
+      "attempt_id": "b48-a0",
+      "profile": "r80p1",
+      "order_index": 48,
+      "modes": [
+        "WS",
+        "WT-S",
+        "WT-D"
+      ],
+      "seed": 727064734537091148,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b49",
+      "session_id": "s2",
+      "attempt_id": "b49-a0",
+      "profile": "r20p0",
+      "order_index": 49,
+      "modes": [
+        "WS",
+        "WT-S",
+        "WT-D"
+      ],
+      "seed": 16814379474016123999,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b50",
+      "session_id": "s2",
+      "attempt_id": "b50-a0",
+      "profile": "r20p1",
+      "order_index": 50,
+      "modes": [
+        "WT-D",
+        "WS",
+        "WT-S"
+      ],
+      "seed": 7675150201961883771,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b51",
+      "session_id": "s2",
+      "attempt_id": "b51-a0",
+      "profile": "r20p1",
+      "order_index": 51,
+      "modes": [
+        "WT-S",
+        "WS",
+        "WT-D"
+      ],
+      "seed": 4975796258151722583,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b52",
+      "session_id": "s2",
+      "attempt_id": "b52-a0",
+      "profile": "r80p1",
+      "order_index": 52,
+      "modes": [
+        "WT-S",
+        "WT-D",
+        "WS"
+      ],
+      "seed": 4383062393286482348,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b53",
+      "session_id": "s2",
+      "attempt_id": "b53-a0",
+      "profile": "r20p1",
+      "order_index": 53,
+      "modes": [
+        "WT-S",
+        "WT-D",
+        "WS"
+      ],
+      "seed": 11791098141283329865,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b54",
+      "session_id": "s2",
+      "attempt_id": "b54-a0",
+      "profile": "r80p1",
+      "order_index": 54,
+      "modes": [
+        "WS",
+        "WT-D",
+        "WT-S"
+      ],
+      "seed": 9828213930970653397,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b55",
+      "session_id": "s2",
+      "attempt_id": "b55-a0",
+      "profile": "r20p0",
+      "order_index": 55,
+      "modes": [
+        "WT-D",
+        "WS",
+        "WT-S"
+      ],
+      "seed": 5992222702469779291,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b56",
+      "session_id": "s2",
+      "attempt_id": "b56-a0",
+      "profile": "r80p1",
+      "order_index": 56,
+      "modes": [
+        "WS",
+        "WT-S",
+        "WT-D"
+      ],
+      "seed": 4121811843053206023,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b57",
+      "session_id": "s2",
+      "attempt_id": "b57-a0",
+      "profile": "r80p0",
+      "order_index": 57,
+      "modes": [
+        "WT-D",
+        "WS",
+        "WT-S"
+      ],
+      "seed": 7623495545224162755,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b58",
+      "session_id": "s2",
+      "attempt_id": "b58-a0",
+      "profile": "r20p0",
+      "order_index": 58,
+      "modes": [
+        "WS",
+        "WT-S",
+        "WT-D"
+      ],
+      "seed": 4068716707148143516,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b59",
+      "session_id": "s2",
+      "attempt_id": "b59-a0",
+      "profile": "r20p1",
+      "order_index": 59,
+      "modes": [
+        "WT-S",
+        "WT-D",
+        "WS"
+      ],
+      "seed": 18278971215414395309,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b60",
+      "session_id": "s3",
+      "attempt_id": "b60-a0",
+      "profile": "r80p1",
+      "order_index": 60,
+      "modes": [
+        "WT-D",
+        "WT-S",
+        "WS"
+      ],
+      "seed": 11170674202698668887,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b61",
+      "session_id": "s3",
+      "attempt_id": "b61-a0",
+      "profile": "r20p1",
+      "order_index": 61,
+      "modes": [
+        "WT-D",
+        "WT-S",
+        "WS"
+      ],
+      "seed": 8997840411456795058,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b62",
+      "session_id": "s3",
+      "attempt_id": "b62-a0",
+      "profile": "r20p0",
+      "order_index": 62,
+      "modes": [
+        "WT-S",
+        "WT-D",
+        "WS"
+      ],
+      "seed": 11465699798430802739,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b63",
+      "session_id": "s3",
+      "attempt_id": "b63-a0",
+      "profile": "r20p1",
+      "order_index": 63,
+      "modes": [
+        "WS",
+        "WT-S",
+        "WT-D"
+      ],
+      "seed": 1697007798340844692,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b64",
+      "session_id": "s3",
+      "attempt_id": "b64-a0",
+      "profile": "r80p0",
+      "order_index": 64,
+      "modes": [
+        "WS",
+        "WT-S",
+        "WT-D"
+      ],
+      "seed": 16733136544274708128,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b65",
+      "session_id": "s3",
+      "attempt_id": "b65-a0",
+      "profile": "r20p1",
+      "order_index": 65,
+      "modes": [
+        "WS",
+        "WT-S",
+        "WT-D"
+      ],
+      "seed": 17416336493167444064,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b66",
+      "session_id": "s3",
+      "attempt_id": "b66-a0",
+      "profile": "r20p0",
+      "order_index": 66,
+      "modes": [
+        "WT-D",
+        "WS",
+        "WT-S"
+      ],
+      "seed": 12195355418211420012,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b67",
+      "session_id": "s3",
+      "attempt_id": "b67-a0",
+      "profile": "r20p0",
+      "order_index": 67,
+      "modes": [
+        "WT-D",
+        "WS",
+        "WT-S"
+      ],
+      "seed": 12118703527334408602,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b68",
+      "session_id": "s3",
+      "attempt_id": "b68-a0",
+      "profile": "r80p0",
+      "order_index": 68,
+      "modes": [
+        "WS",
+        "WT-D",
+        "WT-S"
+      ],
+      "seed": 1183447091079354096,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b69",
+      "session_id": "s3",
+      "attempt_id": "b69-a0",
+      "profile": "r20p1",
+      "order_index": 69,
+      "modes": [
+        "WT-S",
+        "WS",
+        "WT-D"
+      ],
+      "seed": 13031527067396923969,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b70",
+      "session_id": "s3",
+      "attempt_id": "b70-a0",
+      "profile": "r80p1",
+      "order_index": 70,
+      "modes": [
+        "WT-S",
+        "WT-D",
+        "WS"
+      ],
+      "seed": 10326693842456096775,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b71",
+      "session_id": "s3",
+      "attempt_id": "b71-a0",
+      "profile": "r80p1",
+      "order_index": 71,
+      "modes": [
+        "WS",
+        "WT-S",
+        "WT-D"
+      ],
+      "seed": 11883541584537769684,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b72",
+      "session_id": "s3",
+      "attempt_id": "b72-a0",
+      "profile": "r80p0",
+      "order_index": 72,
+      "modes": [
+        "WT-S",
+        "WS",
+        "WT-D"
+      ],
+      "seed": 2691991997645258871,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b73",
+      "session_id": "s3",
+      "attempt_id": "b73-a0",
+      "profile": "r80p0",
+      "order_index": 73,
+      "modes": [
+        "WT-S",
+        "WS",
+        "WT-D"
+      ],
+      "seed": 887599088217637420,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b74",
+      "session_id": "s3",
+      "attempt_id": "b74-a0",
+      "profile": "r80p0",
+      "order_index": 74,
+      "modes": [
+        "WT-S",
+        "WS",
+        "WT-D"
+      ],
+      "seed": 17302524812063289659,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b75",
+      "session_id": "s3",
+      "attempt_id": "b75-a0",
+      "profile": "r80p1",
+      "order_index": 75,
+      "modes": [
+        "WT-D",
+        "WS",
+        "WT-S"
+      ],
+      "seed": 14139915978572131453,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b76",
+      "session_id": "s3",
+      "attempt_id": "b76-a0",
+      "profile": "r80p1",
+      "order_index": 76,
+      "modes": [
+        "WS",
+        "WT-D",
+        "WT-S"
+      ],
+      "seed": 6932343816166697506,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b77",
+      "session_id": "s3",
+      "attempt_id": "b77-a0",
+      "profile": "r20p1",
+      "order_index": 77,
+      "modes": [
+        "WT-D",
+        "WT-S",
+        "WS"
+      ],
+      "seed": 3564613656127756101,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b78",
+      "session_id": "s3",
+      "attempt_id": "b78-a0",
+      "profile": "r20p0",
+      "order_index": 78,
+      "modes": [
+        "WS",
+        "WT-D",
+        "WT-S"
+      ],
+      "seed": 6192471882004733094,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    },
+    {
+      "block_id": "b79",
+      "session_id": "s3",
+      "attempt_id": "b79-a0",
+      "profile": "r20p0",
+      "order_index": 79,
+      "modes": [
+        "WT-D",
+        "WT-S",
+        "WS"
+      ],
+      "seed": 845641259558842889,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    }
+  ]
+}

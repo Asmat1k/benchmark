@@ -1,0 +1,171 @@
+{
+  "run_id": "b9-a0-m1",
+  "window": {
+    "start_usec": 157915930000,
+    "end_usec": 157920440000
+  },
+  "roles": {
+    "browser": {
+      "selected": [
+        {
+          "schema_version": 1,
+          "run_id": "b9-a0-m1",
+          "role": "browser",
+          "sample_index": 1,
+          "end_usec": 157917260000,
+          "interval_usec": 1010000,
+          "cpu_start_lower_usec": 157916250000,
+          "cpu_end_upper_usec": 157917270000,
+          "cpu_usage_usec": 5817,
+          "throttled_usec": 0,
+          "memory_current": 4153344,
+          "oom": 0
+        },
+        {
+          "schema_version": 1,
+          "run_id": "b9-a0-m1",
+          "role": "browser",
+          "sample_index": 2,
+          "end_usec": 157918270000,
+          "interval_usec": 1010000,
+          "cpu_start_lower_usec": 157917250000,
+          "cpu_end_upper_usec": 157918280000,
+          "cpu_usage_usec": 7060,
+          "throttled_usec": 0,
+          "memory_current": 4096000,
+          "oom": 0
+        },
+        {
+          "schema_version": 1,
+          "run_id": "b9-a0-m1",
+          "role": "browser",
+          "sample_index": 3,
+          "end_usec": 157919280000,
+          "interval_usec": 1010000,
+          "cpu_start_lower_usec": 157918260000,
+          "cpu_end_upper_usec": 157919290000,
+          "cpu_usage_usec": 7797,
+          "throttled_usec": 0,
+          "memory_current": 4149248,
+          "oom": 0
+        },
+        {
+          "schema_version": 1,
+          "run_id": "b9-a0-m1",
+          "role": "browser",
+          "sample_index": 4,
+          "end_usec": 157920290000,
+          "interval_usec": 1010000,
+          "cpu_start_lower_usec": 157919280000,
+          "cpu_end_upper_usec": 157920300000,
+          "cpu_usage_usec": 9271,
+          "throttled_usec": 0,
+          "memory_current": 4149248,
+          "oom": 0
+        }
+      ],
+      "count": 4,
+      "total_interval_usec": 4040000,
+      "peak_ceil_pct": 1
+    },
+    "server": {
+      "selected": [
+        {
+          "schema_version": 1,
+          "run_id": "b9-a0-m1",
+          "role": "server",
+          "sample_index": 1,
+          "end_usec": 157917490000,
+          "interval_usec": 1010000,
+          "cpu_start_lower_usec": 157916480000,
+          "cpu_end_upper_usec": 157917500000,
+          "cpu_usage_usec": 5839,
+          "throttled_usec": 0,
+          "memory_current": 4907008,
+          "oom": 0
+        },
+        {
+          "schema_version": 1,
+          "run_id": "b9-a0-m1",
+          "role": "server",
+          "sample_index": 2,
+          "end_usec": 157918500000,
+          "interval_usec": 1010000,
+          "cpu_start_lower_usec": 157917490000,
+          "cpu_end_upper_usec": 157918510000,
+          "cpu_usage_usec": 7760,
+          "throttled_usec": 0,
+          "memory_current": 4857856,
+          "oom": 0
+        },
+        {
+          "schema_version": 1,
+          "run_id": "b9-a0-m1",
+          "role": "server",
+          "sample_index": 3,
+          "end_usec": 157919510000,
+          "interval_usec": 1010000,
+          "cpu_start_lower_usec": 157918490000,
+          "cpu_end_upper_usec": 157919520000,
+          "cpu_usage_usec": 9119,
+          "throttled_usec": 0,
+          "memory_current": 4849664,
+          "oom": 0
+        }
+      ],
+      "count": 3,
+      "total_interval_usec": 3030000,
+      "peak_ceil_pct": 1
+    },
+    "router": {
+      "selected": [
+        {
+          "schema_version": 1,
+          "run_id": "b9-a0-m1",
+          "role": "router",
+          "sample_index": 1,
+          "end_usec": 157917720000,
+          "interval_usec": 1020000,
+          "cpu_start_lower_usec": 157916700000,
+          "cpu_end_upper_usec": 157917730000,
+          "cpu_usage_usec": 7426,
+          "throttled_usec": 0,
+          "memory_current": 7032832,
+          "oom": 0
+        },
+        {
+          "schema_version": 1,
+          "run_id": "b9-a0-m1",
+          "role": "router",
+          "sample_index": 2,
+          "end_usec": 157918730000,
+          "interval_usec": 1010000,
+          "cpu_start_lower_usec": 157917710000,
+          "cpu_end_upper_usec": 157918740000,
+          "cpu_usage_usec": 9236,
+          "throttled_usec": 0,
+          "memory_current": 7016448,
+          "oom": 0
+        },
+        {
+          "schema_version": 1,
+          "run_id": "b9-a0-m1",
+          "role": "router",
+          "sample_index": 3,
+          "end_usec": 157919740000,
+          "interval_usec": 1010000,
+          "cpu_start_lower_usec": 157918720000,
+          "cpu_end_upper_usec": 157919750000,
+          "cpu_usage_usec": 9306,
+          "throttled_usec": 0,
+          "memory_current": 7086080,
+          "oom": 0
+        }
+      ],
+      "count": 3,
+      "total_interval_usec": 3040000,
+      "peak_ceil_pct": 1
+    }
+  },
+  "limitation": "CPU counter reads bracketed by quantized VM uptime; CPU percentage uses existing sampler elapsed denominator; external marker still adds VM scheduling load"
+}

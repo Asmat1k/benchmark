@@ -1,0 +1,137 @@
+[
+  {
+    "second": 21,
+    "sender_residence_ms": {
+      "0": 999.925,
+      "1": 0.0
+    },
+    "to_server": {
+      "residence_ms": 40.244,
+      "callback_lateness_ms": 0.002922
+    },
+    "to_browser": {
+      "residence_ms": 40.309,
+      "callback_lateness_ms": 0.066984
+    }
+  },
+  {
+    "second": 22,
+    "sender_residence_ms": {
+      "0": 999.511,
+      "1": 0.0
+    },
+    "to_server": {
+      "residence_ms": 40.244,
+      "callback_lateness_ms": 0.002963
+    },
+    "to_browser": {
+      "residence_ms": 40.309,
+      "callback_lateness_ms": 0.067358
+    }
+  },
+  {
+    "second": 23,
+    "sender_residence_ms": {
+      "0": 452.688,
+      "1": 538.999
+    },
+    "to_server": {
+      "residence_ms": 40.863,
+      "callback_lateness_ms": 0.10017
+    },
+    "to_browser": {
+      "residence_ms": 40.248,
+      "callback_lateness_ms": 0.004753
+    }
+  },
+  {
+    "second": 24,
+    "sender_residence_ms": {
+      "0": 0.0,
+      "1": 999.864
+    },
+    "to_server": {
+      "residence_ms": 42.125,
+      "callback_lateness_ms": 1.883087
+    },
+    "to_browser": {
+      "residence_ms": 40.244,
+      "callback_lateness_ms": 0.002754
+    }
+  },
+  {
+    "second": 25,
+    "sender_residence_ms": {
+      "0": 0.0,
+      "1": 997.661
+    },
+    "to_server": {
+      "residence_ms": 42.173,
+      "callback_lateness_ms": 1.957961
+    },
+    "to_browser": {
+      "residence_ms": 40.244,
+      "callback_lateness_ms": 0.002753
+    }
+  },
+  {
+    "second": 26,
+    "sender_residence_ms": {
+      "0": 145.984,
+      "1": 852.607
+    },
+    "to_server": {
+      "residence_ms": 41.85,
+      "callback_lateness_ms": 1.623586
+    },
+    "to_browser": {
+      "residence_ms": 40.246,
+      "callback_lateness_ms": 0.002877
+    }
+  },
+  {
+    "second": 27,
+    "sender_residence_ms": {
+      "0": 999.939,
+      "1": 0.0
+    },
+    "to_server": {
+      "residence_ms": 40.244,
+      "callback_lateness_ms": 0.003044
+    },
+    "to_browser": {
+      "residence_ms": 40.31,
+      "callback_lateness_ms": 0.06744
+    }
+  },
+  {
+    "second": 28,
+    "sender_residence_ms": {
+      "0": 999.939,
+      "1": 0.0
+    },
+    "to_server": {
+      "residence_ms": 40.244,
+      "callback_lateness_ms": 0.003189
+    },
+    "to_browser": {
+      "residence_ms": 40.3105,
+      "callback_lateness_ms": 0.06823
+    }
+  },
+  {
+    "second": 29,
+    "sender_residence_ms": {
+      "0": 999.876,
+      "1": 0.0
+    },
+    "to_server": {
+      "residence_ms": 40.244,
+      "callback_lateness_ms": 0.003001
+    },
+    "to_browser": {
+      "residence_ms": 40.31,
+      "callback_lateness_ms": 0.067418
+    }
+  }
+]

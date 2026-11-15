@@ -1,0 +1,38 @@
+{
+  "collection_id": "primary-real-v3-analysis",
+  "gate": "analysis",
+  "id": "metrics-boundaries",
+  "actual": true,
+  "scope": "historical known-answer checks reused after exact unchanged analysis/client/schema/config dependencies; no network performance claim",
+  "command": "python -B -m unittest -v test_analysis.StatisticalTests",
+  "observations": {
+    "test": "test_metrics_deadlines_penalty_and_diagnostics",
+    "result": "ok"
+  },
+  "files": [
+    {
+      "path": "results/verify/readiness/stage3/offline-tests.txt",
+      "sha256": "f38015a7ce9a7fb38a443d854d7705dba8e301df9b34af04b809f38b67081c86"
+    },
+    {
+      "path": "src/analysis/test_analysis.py",
+      "sha256": "271d3bb21f5b6d4dc035c6f33dbbb0ba9c965cd48640487bae59ece83817733e"
+    },
+    {
+      "path": "src/analysis/fixtures/references.json",
+      "sha256": "10c12a4d0f43bd91887acdb77d9d2fd4a46d19b11a6e57a18dbd1c32e9e6b981"
+    }
+  ],
+  "preparer": {
+    "path": "/bench/docs/readiness/stage4-primary-v3.py",
+    "sha256": "d381d8cb8633a2100a6600f2bd331d4a50287c3d292b6f7429b76ac0c447d033"
+  },
+  "source_inventory": {
+    "path": "results/verify/readiness/stage4/release-v3/source-inventory.json",
+    "sha256": "f1a20fb6d0891da7cbf9acd755cd3e87274ed7748fcba61e39564806f5e8c795"
+  },
+  "applicability": {
+    "path": "results/verify/readiness/stage4/release-v3/release.json",
+    "sha256": "5f52be9506c654108d497bb45cfd46cf72e2ac86f33f0c68f9b852fe751d0a87"
+  }
+}

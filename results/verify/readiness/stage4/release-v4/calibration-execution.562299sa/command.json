@@ -1,0 +1,9 @@
+{
+  "command": [
+    "sh",
+    "docker/calibration.sh"
+  ],
+  "release_commit": "494e1a99bf9c92bd2a26af7dce6a8752af23d448",
+  "TLS": "/Users/dobrov/Desktop/Code/ITMO/benchmark/build/series-tls-stage2._n__udb0",
+  "BW_RUN": "results/verify/diagnostic/browser-bandwidth-v4.9r51339s"
+}

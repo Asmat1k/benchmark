@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "protocol_version": 1,
+  "master_seed": 20261108,
+  "required_modes": [
+    "WS",
+    "WT-S"
+  ],
+  "optional_mode": "WT-D",
+  "frame_bytes": 256,
+  "interval_ms": 50,
+  "warmup_slots": 200,
+  "measurement_slots": 1200,
+  "min_pause_ms": 5000,
+  "empty_queue_ms": 1000,
+  "stabilization_timeout_ms": 30000,
+  "queue_limit_bytes": 1048576,
+  "preliminary_blocks_per_profile": 20,
+  "sessions": 4,
+  "pilot_min_blocks_per_profile": 5,
+  "bootstrap_replicates": 10000,
+  "include_wt_d": true,
+  "calibration": {
+    "method": "observed-profile-check-v1",
+    "window_slots": 500,
+    "loss_tolerance_pp": 0.5,
+    "shadow_phases": 5,
+    "shadow_window_slots": 1200,
+    "shadow_max_marked": 12,
+    "sender_overdue_ms": 50,
+    "deadline_ms": 100
+  },
+  "main_budget_seconds": 54000
+}

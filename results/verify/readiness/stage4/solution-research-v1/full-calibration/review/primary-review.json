@@ -1,0 +1,2950 @@
+{
+  "status": "failed",
+  "reason": "Full fixed post-affinity primary review; no bootstrap or automatic process assumption approval",
+  "flagged_formal_process_series": [
+    "r80p1-latency"
+  ],
+  "loss_check_failures": [],
+  "capacity_failures": [],
+  "reviewer": "Codex; full primary integrity/network/timing review, no independent reviewer claimed",
+  "utc": "2026-11-14T18:34:00.931451+00:00",
+  "CAL_RUN": "results/verify/diagnostic/calibration.ew2u0ceD",
+  "execution": "results/verify/readiness/stage4/solution-research-v1/full-calibration/execution.munhh077",
+  "sealed_files_verified": 146,
+  "source_count": 134,
+  "source_ENV_release_plan_unchanged": true,
+  "failed_sender_subseries": [
+    "r20p1-before"
+  ],
+  "echo": [
+    {
+      "name": "baseline-before",
+      "quality": {
+        "criteria_version": "udp-sender-v2",
+        "preliminary": true,
+        "status": "passed",
+        "reasons": [],
+        "limits": {
+          "version": "udp-sender-v2",
+          "max_late_pct": 1,
+          "max_lag_ms": 50,
+          "burst_window_ms": 10,
+          "max_burst_packets": 4
+        },
+        "historical_every_slot_pass": false,
+        "metrics": {
+          "count": 10000,
+          "late_slots": 8,
+          "late_pct": 0.08,
+          "lag_ms": {
+            "p50": 0.0008509999970556237,
+            "p99": 0.011467000000266125,
+            "max": 44.3126740000007
+          },
+          "gap_ms": {
+            "min": 2.500625000000582,
+            "p50": 10.0,
+            "p99": 10.008499999999913,
+            "max": 54.31145900000047
+          },
+          "late_groups": [
+            [
+              1574,
+              1575,
+              1576,
+              1577,
+              1578
+            ],
+            [
+              5154,
+              5155
+            ],
+            [
+              5220
+            ]
+          ],
+          "late_group_count": 3,
+          "peak_packets_1ms": 1,
+          "peak_packets_window": 4,
+          "observed_hz": 100.00000307930803
+        }
+      },
+      "replies": 10000,
+      "loss": [
+        {
+          "direction": "forward",
+          "entered": 10000,
+          "drops": 0,
+          "interval": [
+            0.0,
+            0.0007375038011081074
+          ],
+          "nominal_in_interval": true
+        },
+        {
+          "direction": "reverse",
+          "entered": 10000,
+          "drops": 0,
+          "interval": [
+            0.0,
+            0.0007375038011081074
+          ],
+          "nominal_in_interval": true
+        }
+      ],
+      "captures": {
+        "browser": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10000 packets captured\n20000 packets received by filter\n0 packets dropped by kernel\n"
+        },
+        "server": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10000 packets captured\n20000 packets received by filter\n0 packets dropped by kernel\n"
+        }
+      },
+      "qdisc": {
+        "to_server": {
+          "options": {
+            "limit": 1000,
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261110,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2980000,
+            "packets": 10000,
+            "drops": 0
+          }
+        },
+        "to_browser": {
+          "options": {
+            "limit": 1000,
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261111,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2980000,
+            "packets": 10000,
+            "drops": 0
+          }
+        }
+      },
+      "quantiles": {
+        "p5": 0.60041395,
+        "p25": 0.605,
+        "median": 0.60675,
+        "p75": 0.610542,
+        "p95": 0.688875,
+        "p99": 0.7964226700000001
+      },
+      "dependence": {
+        "lag1": 0.7514590757236812,
+        "linear_trend_per_unit": -1.4446896980335053e-05,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "largest_lag_records": [
+        {
+          "id": 1574,
+          "t_plan_ms": 15740,
+          "t_send_ms": 15784.312674
+        },
+        {
+          "id": 1575,
+          "t_plan_ms": 15750,
+          "t_send_ms": 15786.814507
+        },
+        {
+          "id": 1576,
+          "t_plan_ms": 15760,
+          "t_send_ms": 15789.315257
+        }
+      ],
+      "process_diagnostics": {
+        "survival": {
+          "long_lag": {
+            "500": 0.0,
+            "1000": 0.0,
+            "2000": 0.0
+          },
+          "suspect": false
+        },
+        "rtt": {
+          "long_lag": {
+            "500": 0.0007517384803444136,
+            "1000": 0.0007994203471808802,
+            "2000": -0.0003148624365344043
+          },
+          "suspect": false
+        },
+        "chunk_medians_ms": [
+          0.6074375000000001,
+          0.606416,
+          0.610417,
+          0.6104375,
+          0.6073335,
+          0.6372705,
+          0.6142084999999999,
+          0.608875,
+          0.6067914999999999,
+          0.60625,
+          0.6079375,
+          0.6065834999999999,
+          0.60625,
+          0.605917,
+          0.60625,
+          0.606292,
+          0.606208,
+          0.60625,
+          0.606125,
+          0.605833
+        ],
+        "fitted_drift_ms": -0.0073380571428568585,
+        "suspect": false,
+        "limitation": "Diagnostics can reject assumptions; absence of flags does not establish stationarity or short memory"
+      },
+      "formal_process_series": true
+    },
+    {
+      "name": "r20p0-before",
+      "quality": {
+        "criteria_version": "udp-sender-v2",
+        "preliminary": true,
+        "status": "passed",
+        "reasons": [],
+        "limits": {
+          "version": "udp-sender-v2",
+          "max_late_pct": 1,
+          "max_lag_ms": 50,
+          "burst_window_ms": 10,
+          "max_burst_packets": 4
+        },
+        "historical_every_slot_pass": false,
+        "metrics": {
+          "count": 10000,
+          "late_slots": 3,
+          "late_pct": 0.03,
+          "lag_ms": {
+            "p50": 0.0007640000003448222,
+            "p99": 0.006052000000636326,
+            "max": 25.450417000000016
+          },
+          "gap_ms": {
+            "min": 2.5014169999999467,
+            "p50": 10.0,
+            "p99": 10.00366699999995,
+            "max": 35.44879199999991
+          },
+          "late_groups": [
+            [
+              145,
+              146,
+              147
+            ]
+          ],
+          "late_group_count": 1,
+          "peak_packets_1ms": 1,
+          "peak_packets_window": 3,
+          "observed_hz": 100.00000320432055
+        }
+      },
+      "replies": 10000,
+      "loss": [
+        {
+          "direction": "forward",
+          "entered": 10000,
+          "drops": 0,
+          "interval": [
+            0.0,
+            0.0007375038011081074
+          ],
+          "nominal_in_interval": true
+        },
+        {
+          "direction": "reverse",
+          "entered": 10000,
+          "drops": 0,
+          "interval": [
+            0.0,
+            0.0007375038011081074
+          ],
+          "nominal_in_interval": true
+        }
+      ],
+      "captures": {
+        "browser": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10000 packets captured\n20000 packets received by filter\n0 packets dropped by kernel\n"
+        },
+        "server": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10000 packets captured\n20000 packets received by filter\n0 packets dropped by kernel\n"
+        }
+      },
+      "qdisc": {
+        "to_server": {
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.01,
+              "jitter": 0,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261112,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2980000,
+            "packets": 10000,
+            "drops": 0
+          }
+        },
+        "to_browser": {
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.01,
+              "jitter": 0,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261113,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2980000,
+            "packets": 10000,
+            "drops": 0
+          }
+        }
+      },
+      "quantiles": {
+        "p5": 20.598458,
+        "p25": 20.60475,
+        "median": 20.606792,
+        "p75": 20.609417,
+        "p95": 20.6160431,
+        "p99": 20.679008749999998
+      },
+      "dependence": {
+        "lag1": 0.45874182256984813,
+        "linear_trend_per_unit": -5.050037701414072e-06,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "largest_lag_records": [
+        {
+          "id": 145,
+          "t_plan_ms": 1450,
+          "t_send_ms": 1475.450417
+        },
+        {
+          "id": 146,
+          "t_plan_ms": 1460,
+          "t_send_ms": 1477.957625
+        },
+        {
+          "id": 147,
+          "t_plan_ms": 1470,
+          "t_send_ms": 1485.431542
+        }
+      ],
+      "process_diagnostics": {
+        "survival": {
+          "long_lag": {
+            "500": 0.0,
+            "1000": 0.0,
+            "2000": 0.0
+          },
+          "suspect": false
+        },
+        "rtt": {
+          "long_lag": {
+            "500": -0.00015533020422435392,
+            "1000": -0.0003622759873978214,
+            "2000": -0.0004210213956797267
+          },
+          "suspect": false
+        },
+        "chunk_medians_ms": [
+          20.609,
+          20.606958499999998,
+          20.6070415,
+          20.6069375,
+          20.606917,
+          20.606583,
+          20.606875,
+          20.606667,
+          20.607083,
+          20.6069375,
+          20.6054165,
+          20.6066455,
+          20.606583,
+          20.608312499999997,
+          20.606458,
+          20.60675,
+          20.606584,
+          20.606375,
+          20.606625,
+          20.606375
+        ],
+        "fitted_drift_ms": -0.0009470071428581341,
+        "suspect": false,
+        "limitation": "Diagnostics can reject assumptions; absence of flags does not establish stationarity or short memory"
+      },
+      "formal_process_series": false
+    },
+    {
+      "name": "r20p1-before",
+      "quality": {
+        "criteria_version": "udp-sender-v2",
+        "preliminary": true,
+        "status": "failed",
+        "reasons": [
+          "maximum lag 69.7943 ms > 50 ms"
+        ],
+        "limits": {
+          "version": "udp-sender-v2",
+          "max_late_pct": 1,
+          "max_lag_ms": 50,
+          "burst_window_ms": 10,
+          "max_burst_packets": 4
+        },
+        "historical_every_slot_pass": false,
+        "metrics": {
+          "count": 10000,
+          "late_slots": 17,
+          "late_pct": 0.17,
+          "lag_ms": {
+            "p50": 0.0007579999983136076,
+            "p99": 0.0072539999964646995,
+            "max": 69.79431199999817
+          },
+          "gap_ms": {
+            "min": 2.5009160000045085,
+            "p50": 10.0,
+            "p99": 10.00408299999981,
+            "max": 79.7933750000011
+          },
+          "late_groups": [
+            [
+              145,
+              146,
+              147,
+              148,
+              149
+            ],
+            [
+              2958,
+              2959
+            ],
+            [
+              4525,
+              4526,
+              4527,
+              4528,
+              4529,
+              4530,
+              4531,
+              4532,
+              4533,
+              4534
+            ]
+          ],
+          "late_group_count": 3,
+          "peak_packets_1ms": 1,
+          "peak_packets_window": 4,
+          "observed_hz": 100.00000270527059
+        }
+      },
+      "replies": 9809,
+      "loss": [
+        {
+          "direction": "forward",
+          "entered": 10000,
+          "drops": 104,
+          "interval": [
+            0.007429944800985579,
+            0.014096980524041774
+          ],
+          "nominal_in_interval": true
+        },
+        {
+          "direction": "reverse",
+          "entered": 9896,
+          "drops": 87,
+          "interval": [
+            0.006070867489404662,
+            0.01225023814275624
+          ],
+          "nominal_in_interval": true
+        }
+      ],
+      "captures": {
+        "browser": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10000 packets captured\n19809 packets received by filter\n0 packets dropped by kernel\n"
+        },
+        "server": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n9896 packets captured\n19792 packets received by filter\n0 packets dropped by kernel\n"
+        }
+      },
+      "qdisc": {
+        "to_server": {
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.01,
+              "jitter": 0,
+              "correlation": 0
+            },
+            "loss-random": {
+              "loss": 0.01,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261114,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2949008,
+            "packets": 9896,
+            "drops": 104
+          }
+        },
+        "to_browser": {
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.01,
+              "jitter": 0,
+              "correlation": 0
+            },
+            "loss-random": {
+              "loss": 0.01,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261115,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2923082,
+            "packets": 9809,
+            "drops": 87
+          }
+        }
+      },
+      "quantiles": {
+        "p5": 20.5988084,
+        "p25": 20.604833,
+        "median": 20.607042,
+        "p75": 20.610083,
+        "p95": 20.625959,
+        "p99": 22.30041472
+      },
+      "dependence": {
+        "lag1": 0.585121834127072,
+        "linear_trend_per_unit": -1.5036298054455326e-05,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "largest_lag_records": [
+        {
+          "id": 4525,
+          "t_plan_ms": 45250,
+          "t_send_ms": 45319.794312
+        },
+        {
+          "id": 4526,
+          "t_plan_ms": 45260,
+          "t_send_ms": 45322.295229
+        },
+        {
+          "id": 4527,
+          "t_plan_ms": 45270,
+          "t_send_ms": 45324.797354
+        }
+      ],
+      "process_diagnostics": {
+        "survival": {
+          "long_lag": {
+            "500": 0.008587022602919782,
+            "1000": -0.0016344109667422839,
+            "2000": 0.0053240986613959165
+          },
+          "suspect": false
+        },
+        "rtt": {
+          "long_lag": {
+            "500": -0.0015981634180866448,
+            "1000": -0.0008487436307575326,
+            "2000": -0.0012198665028719006
+          },
+          "suspect": false
+        },
+        "chunk_medians_ms": [
+          20.609292,
+          20.607,
+          20.606667,
+          20.606667,
+          20.607166499999998,
+          20.607125,
+          20.607458,
+          20.607,
+          20.606958,
+          20.607333500000003,
+          20.606770500000003,
+          20.607917,
+          20.606916499999997,
+          20.607125,
+          20.607062499999998,
+          20.60675,
+          20.606667,
+          20.606916,
+          20.607458,
+          20.607292
+        ],
+        "fitted_drift_ms": -0.0004579642857133506,
+        "suspect": false,
+        "limitation": "Diagnostics can reject assumptions; absence of flags does not establish stationarity or short memory"
+      },
+      "formal_process_series": false
+    },
+    {
+      "name": "r80p0-before",
+      "quality": {
+        "criteria_version": "udp-sender-v2",
+        "preliminary": true,
+        "status": "passed",
+        "reasons": [],
+        "limits": {
+          "version": "udp-sender-v2",
+          "max_late_pct": 1,
+          "max_lag_ms": 50,
+          "burst_window_ms": 10,
+          "max_burst_packets": 4
+        },
+        "historical_every_slot_pass": false,
+        "metrics": {
+          "count": 10000,
+          "late_slots": 5,
+          "late_pct": 0.05,
+          "lag_ms": {
+            "p50": 0.000822000001790002,
+            "p99": 0.009583999999904336,
+            "max": 32.26562600000011
+          },
+          "gap_ms": {
+            "min": 2.5014999999984866,
+            "p50": 10.0,
+            "p99": 10.005749999996624,
+            "max": 42.261625000000095
+          },
+          "late_groups": [
+            [
+              143,
+              144,
+              145,
+              146
+            ],
+            [
+              3753
+            ]
+          ],
+          "late_group_count": 2,
+          "peak_packets_1ms": 1,
+          "peak_packets_window": 4,
+          "observed_hz": 100.0000027462747
+        }
+      },
+      "replies": 10000,
+      "loss": [
+        {
+          "direction": "forward",
+          "entered": 10000,
+          "drops": 0,
+          "interval": [
+            0.0,
+            0.0007375038011081074
+          ],
+          "nominal_in_interval": true
+        },
+        {
+          "direction": "reverse",
+          "entered": 10000,
+          "drops": 0,
+          "interval": [
+            0.0,
+            0.0007375038011081074
+          ],
+          "nominal_in_interval": true
+        }
+      ],
+      "captures": {
+        "browser": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10000 packets captured\n20000 packets received by filter\n0 packets dropped by kernel\n"
+        },
+        "server": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10000 packets captured\n20000 packets received by filter\n0 packets dropped by kernel\n"
+        }
+      },
+      "qdisc": {
+        "to_server": {
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.04,
+              "jitter": 0,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261116,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2980000,
+            "packets": 10000,
+            "drops": 0
+          }
+        },
+        "to_browser": {
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.04,
+              "jitter": 0,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261117,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2980000,
+            "packets": 10000,
+            "drops": 0
+          }
+        }
+      },
+      "quantiles": {
+        "p5": 80.59845594999999,
+        "p25": 80.605041,
+        "median": 80.60725,
+        "p75": 80.610958,
+        "p95": 80.69195805,
+        "p99": 81.00231434
+      },
+      "dependence": {
+        "lag1": 0.5419408364619189,
+        "linear_trend_per_unit": -1.4770118831756598e-05,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "largest_lag_records": [
+        {
+          "id": 143,
+          "t_plan_ms": 1430,
+          "t_send_ms": 1462.265626
+        },
+        {
+          "id": 144,
+          "t_plan_ms": 1440,
+          "t_send_ms": 1464.773793
+        },
+        {
+          "id": 145,
+          "t_plan_ms": 1450,
+          "t_send_ms": 1473.373001
+        }
+      ],
+      "process_diagnostics": {
+        "survival": {
+          "long_lag": {
+            "500": 0.0,
+            "1000": 0.0,
+            "2000": 0.0
+          },
+          "suspect": false
+        },
+        "rtt": {
+          "long_lag": {
+            "500": 0.0012180298633253108,
+            "1000": -0.002662413157057562,
+            "2000": -0.0015145680144204854
+          },
+          "suspect": false
+        },
+        "chunk_medians_ms": [
+          80.60968700000001,
+          80.606708,
+          80.607375,
+          80.6072705,
+          80.6065,
+          80.611396,
+          80.68047899999999,
+          80.611271,
+          80.6066455,
+          80.606542,
+          80.606875,
+          80.606792,
+          80.606625,
+          80.607625,
+          80.606583,
+          80.60677050000001,
+          80.606708,
+          80.606417,
+          80.607459,
+          80.606459
+        ],
+        "fitted_drift_ms": -0.00918606428573223,
+        "suspect": false,
+        "limitation": "Diagnostics can reject assumptions; absence of flags does not establish stationarity or short memory"
+      },
+      "formal_process_series": false
+    },
+    {
+      "name": "r80p1-before",
+      "quality": {
+        "criteria_version": "udp-sender-v2",
+        "preliminary": true,
+        "status": "passed",
+        "reasons": [],
+        "limits": {
+          "version": "udp-sender-v2",
+          "max_late_pct": 1,
+          "max_lag_ms": 50,
+          "burst_window_ms": 10,
+          "max_burst_packets": 4
+        },
+        "historical_every_slot_pass": false,
+        "metrics": {
+          "count": 10000,
+          "late_slots": 6,
+          "late_pct": 0.06,
+          "lag_ms": {
+            "p50": 0.0007509999995818362,
+            "p99": 0.006090000000767759,
+            "max": 33.1485009999999
+          },
+          "gap_ms": {
+            "min": 2.505625000000009,
+            "p50": 10.0,
+            "p99": 10.003750000003492,
+            "max": 43.13120799999979
+          },
+          "late_groups": [
+            [
+              145,
+              146,
+              147,
+              148,
+              149,
+              150
+            ]
+          ],
+          "late_group_count": 1,
+          "peak_packets_1ms": 1,
+          "peak_packets_window": 4,
+          "observed_hz": 100.00000362136228
+        }
+      },
+      "replies": 9776,
+      "loss": [
+        {
+          "direction": "forward",
+          "entered": 10000,
+          "drops": 114,
+          "interval": [
+            0.008277392907767172,
+            0.015247442146439645
+          ],
+          "nominal_in_interval": true
+        },
+        {
+          "direction": "reverse",
+          "entered": 9886,
+          "drops": 110,
+          "interval": [
+            0.008029225761382482,
+            0.01495830343187106
+          ],
+          "nominal_in_interval": true
+        }
+      ],
+      "captures": {
+        "browser": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10000 packets captured\n19776 packets received by filter\n0 packets dropped by kernel\n"
+        },
+        "server": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n9886 packets captured\n19772 packets received by filter\n0 packets dropped by kernel\n"
+        }
+      },
+      "qdisc": {
+        "to_server": {
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.04,
+              "jitter": 0,
+              "correlation": 0
+            },
+            "loss-random": {
+              "loss": 0.01,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261118,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2946028,
+            "packets": 9886,
+            "drops": 114
+          }
+        },
+        "to_browser": {
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.04,
+              "jitter": 0,
+              "correlation": 0
+            },
+            "loss-random": {
+              "loss": 0.01,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261119,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2913248,
+            "packets": 9776,
+            "drops": 110
+          }
+        }
+      },
+      "quantiles": {
+        "p5": 80.59898975,
+        "p25": 80.60525,
+        "median": 80.607292,
+        "p75": 80.610042,
+        "p95": 80.62058325,
+        "p99": 82.4709585
+      },
+      "dependence": {
+        "lag1": 0.711880184072827,
+        "linear_trend_per_unit": -1.7169771536011695e-05,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "largest_lag_records": [
+        {
+          "id": 145,
+          "t_plan_ms": 1450,
+          "t_send_ms": 1483.148501
+        },
+        {
+          "id": 146,
+          "t_plan_ms": 1460,
+          "t_send_ms": 1485.809668
+        },
+        {
+          "id": 148,
+          "t_plan_ms": 1480,
+          "t_send_ms": 1505.037751
+        }
+      ],
+      "process_diagnostics": {
+        "survival": {
+          "long_lag": {
+            "500": 0.014519523030161446,
+            "1000": -0.003562660743511787,
+            "2000": 0.007779985971475417
+          },
+          "suspect": false
+        },
+        "rtt": {
+          "long_lag": {
+            "500": -0.0017766526556404036,
+            "1000": 0.001256364483651261,
+            "2000": -0.0009840228306344945
+          },
+          "suspect": false
+        },
+        "chunk_medians_ms": [
+          80.610209,
+          80.607375,
+          80.607209,
+          80.60725,
+          80.607209,
+          80.607125,
+          80.607209,
+          80.6073125,
+          80.607208,
+          80.607042,
+          80.607125,
+          80.607084,
+          80.6075,
+          80.607416,
+          80.607041,
+          80.608125,
+          80.607167,
+          80.6071255,
+          80.607083,
+          80.607208
+        ],
+        "fitted_drift_ms": -0.0007556714285600564,
+        "suspect": false,
+        "limitation": "Diagnostics can reject assumptions; absence of flags does not establish stationarity or short memory"
+      },
+      "formal_process_series": false
+    },
+    {
+      "name": "r20p0-latency",
+      "quality": {
+        "criteria_version": "udp-sender-v2",
+        "preliminary": true,
+        "status": "passed",
+        "reasons": [],
+        "limits": {
+          "version": "udp-sender-v2",
+          "max_late_pct": 1,
+          "max_lag_ms": 50,
+          "burst_window_ms": 10,
+          "max_burst_packets": 4
+        },
+        "historical_every_slot_pass": false,
+        "metrics": {
+          "count": 10000,
+          "late_slots": 1,
+          "late_pct": 0.01,
+          "lag_ms": {
+            "p50": 0.0007719999994151294,
+            "p99": 0.006999999999948159,
+            "max": 10.299792000000025
+          },
+          "gap_ms": {
+            "min": 2.5040839999999207,
+            "p50": 10.0,
+            "p99": 10.004541000000017,
+            "max": 15.386125000000902
+          },
+          "late_groups": [
+            [
+              148
+            ]
+          ],
+          "late_group_count": 1,
+          "peak_packets_1ms": 1,
+          "peak_packets_window": 2,
+          "observed_hz": 100.00000357935807
+        }
+      },
+      "replies": 10000,
+      "loss": [
+        {
+          "direction": "forward",
+          "entered": 10000,
+          "drops": 0,
+          "interval": [
+            0.0,
+            0.0007375038011081074
+          ],
+          "nominal_in_interval": true
+        },
+        {
+          "direction": "reverse",
+          "entered": 10000,
+          "drops": 0,
+          "interval": [
+            0.0,
+            0.0007375038011081074
+          ],
+          "nominal_in_interval": true
+        }
+      ],
+      "captures": {
+        "browser": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10000 packets captured\n20000 packets received by filter\n0 packets dropped by kernel\n"
+        },
+        "server": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10000 packets captured\n20000 packets received by filter\n0 packets dropped by kernel\n"
+        }
+      },
+      "qdisc": {
+        "to_server": {
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.01,
+              "jitter": 0,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261120,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2980000,
+            "packets": 10000,
+            "drops": 0
+          }
+        },
+        "to_browser": {
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.01,
+              "jitter": 0,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261121,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2980000,
+            "packets": 10000,
+            "drops": 0
+          }
+        }
+      },
+      "quantiles": {
+        "p5": 20.599330950000002,
+        "p25": 20.606667,
+        "median": 20.609542,
+        "p75": 20.612833,
+        "p95": 20.619708,
+        "p99": 20.70388625
+      },
+      "dependence": {
+        "lag1": 0.6706221068304321,
+        "linear_trend_per_unit": -1.1955037246136932e-05,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "largest_lag_records": [
+        {
+          "id": 148,
+          "t_plan_ms": 1480,
+          "t_send_ms": 1490.299792
+        },
+        {
+          "id": 147,
+          "t_plan_ms": 1470,
+          "t_send_ms": 1476.329626
+        },
+        {
+          "id": 962,
+          "t_plan_ms": 9620,
+          "t_send_ms": 9625.398171
+        }
+      ],
+      "process_diagnostics": {
+        "survival": {
+          "long_lag": {
+            "500": 0.0,
+            "1000": 0.0,
+            "2000": 0.0
+          },
+          "suspect": false
+        },
+        "rtt": {
+          "long_lag": {
+            "500": -0.0007111886956391557,
+            "1000": -0.0006912144518272818,
+            "2000": -0.0006545344723878182
+          },
+          "suspect": false
+        },
+        "chunk_medians_ms": [
+          20.6110835,
+          20.6096455,
+          20.610187500000002,
+          20.6097085,
+          20.609542,
+          20.6098955,
+          20.6091045,
+          20.6095,
+          20.609541,
+          20.609833,
+          20.6095,
+          20.609792,
+          20.6089165,
+          20.607021,
+          20.608875,
+          20.6094795,
+          20.609604,
+          20.6095415,
+          20.609792,
+          20.609458
+        ],
+        "fitted_drift_ms": -0.0009485214285771544,
+        "suspect": false,
+        "limitation": "Diagnostics can reject assumptions; absence of flags does not establish stationarity or short memory"
+      },
+      "formal_process_series": true
+    },
+    {
+      "name": "r20p1-latency",
+      "quality": {
+        "criteria_version": "udp-sender-v2",
+        "preliminary": true,
+        "status": "passed",
+        "reasons": [],
+        "limits": {
+          "version": "udp-sender-v2",
+          "max_late_pct": 1,
+          "max_lag_ms": 50,
+          "burst_window_ms": 10,
+          "max_burst_packets": 4
+        },
+        "historical_every_slot_pass": false,
+        "metrics": {
+          "count": 10000,
+          "late_slots": 3,
+          "late_pct": 0.03,
+          "lag_ms": {
+            "p50": 0.0016459999969811179,
+            "p99": 0.015688999999838416,
+            "max": 19.157459000000017
+          },
+          "gap_ms": {
+            "min": 2.5022500000000036,
+            "p50": 9.999958000000333,
+            "p99": 10.013000000006286,
+            "max": 26.010917000000063
+          },
+          "late_groups": [
+            [
+              148,
+              149,
+              150
+            ]
+          ],
+          "late_group_count": 1,
+          "peak_packets_1ms": 1,
+          "peak_packets_window": 3,
+          "observed_hz": 100.00000174617465
+        }
+      },
+      "replies": 9751,
+      "loss": [
+        {
+          "direction": "forward",
+          "entered": 10000,
+          "drops": 138,
+          "interval": [
+            0.010337265930338381,
+            0.017982829572638484
+          ],
+          "nominal_in_interval": false
+        },
+        {
+          "direction": "reverse",
+          "entered": 9862,
+          "drops": 111,
+          "interval": [
+            0.00813484069950252,
+            0.015111175325856336
+          ],
+          "nominal_in_interval": true
+        }
+      ],
+      "captures": {
+        "browser": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10000 packets captured\n19751 packets received by filter\n0 packets dropped by kernel\n"
+        },
+        "server": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n9862 packets captured\n19724 packets received by filter\n0 packets dropped by kernel\n"
+        }
+      },
+      "qdisc": {
+        "to_server": {
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.01,
+              "jitter": 0,
+              "correlation": 0
+            },
+            "loss-random": {
+              "loss": 0.01,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261122,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2938876,
+            "packets": 9862,
+            "drops": 138
+          }
+        },
+        "to_browser": {
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.01,
+              "jitter": 0,
+              "correlation": 0
+            },
+            "loss-random": {
+              "loss": 0.01,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261123,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2905798,
+            "packets": 9751,
+            "drops": 111
+          }
+        }
+      },
+      "quantiles": {
+        "p5": 20.602375,
+        "p25": 20.620438,
+        "median": 20.675333,
+        "p75": 20.7018955,
+        "p95": 20.744166,
+        "p99": 23.030250000000002
+      },
+      "dependence": {
+        "lag1": 0.4314231229008135,
+        "linear_trend_per_unit": 4.643305304860646e-06,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "largest_lag_records": [
+        {
+          "id": 148,
+          "t_plan_ms": 1480,
+          "t_send_ms": 1499.157459
+        },
+        {
+          "id": 149,
+          "t_plan_ms": 1490,
+          "t_send_ms": 1501.663709
+        },
+        {
+          "id": 150,
+          "t_plan_ms": 1500,
+          "t_send_ms": 1510.939334
+        }
+      ],
+      "process_diagnostics": {
+        "survival": {
+          "long_lag": {
+            "500": 0.004273869140802849,
+            "1000": -0.007512811990449663,
+            "2000": -0.009262442035602086
+          },
+          "suspect": false
+        },
+        "rtt": {
+          "long_lag": {
+            "500": 0.003685125887608916,
+            "1000": -0.0043584873683158295,
+            "2000": -0.0014267181768785801
+          },
+          "suspect": false
+        },
+        "chunk_medians_ms": [
+          20.609292,
+          20.607292,
+          20.607041,
+          20.606417,
+          20.606958,
+          20.6915,
+          20.684917,
+          20.685416500000002,
+          20.688603999999998,
+          20.687458,
+          20.685958,
+          20.688166,
+          20.6860005,
+          20.689208,
+          20.6877085,
+          20.686604,
+          20.685313,
+          20.6871875,
+          20.687458,
+          20.689667
+        ],
+        "fitted_drift_ms": 0.08557025714286075,
+        "suspect": false,
+        "limitation": "Diagnostics can reject assumptions; absence of flags does not establish stationarity or short memory"
+      },
+      "formal_process_series": true
+    },
+    {
+      "name": "r80p0-latency",
+      "quality": {
+        "criteria_version": "udp-sender-v2",
+        "preliminary": true,
+        "status": "passed",
+        "reasons": [],
+        "limits": {
+          "version": "udp-sender-v2",
+          "max_late_pct": 1,
+          "max_lag_ms": 50,
+          "burst_window_ms": 10,
+          "max_burst_packets": 4
+        },
+        "historical_every_slot_pass": true,
+        "metrics": {
+          "count": 10000,
+          "late_slots": 0,
+          "late_pct": 0.0,
+          "lag_ms": {
+            "p50": 0.0017660000012256205,
+            "p99": 0.01566699999989396,
+            "max": 2.8274820000006002
+          },
+          "gap_ms": {
+            "min": 7.176874999997381,
+            "p50": 9.999917000008281,
+            "p99": 10.013208000000304,
+            "max": 12.825624999997672
+          },
+          "late_groups": [],
+          "late_group_count": 0,
+          "peak_packets_1ms": 1,
+          "peak_packets_window": 2,
+          "observed_hz": 99.99999787178723
+        }
+      },
+      "replies": 10000,
+      "loss": [
+        {
+          "direction": "forward",
+          "entered": 10000,
+          "drops": 0,
+          "interval": [
+            0.0,
+            0.0007375038011081074
+          ],
+          "nominal_in_interval": true
+        },
+        {
+          "direction": "reverse",
+          "entered": 10000,
+          "drops": 0,
+          "interval": [
+            0.0,
+            0.0007375038011081074
+          ],
+          "nominal_in_interval": true
+        }
+      ],
+      "captures": {
+        "browser": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10000 packets captured\n20000 packets received by filter\n0 packets dropped by kernel\n"
+        },
+        "server": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10000 packets captured\n20000 packets received by filter\n0 packets dropped by kernel\n"
+        }
+      },
+      "qdisc": {
+        "to_server": {
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.04,
+              "jitter": 0,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261124,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2980000,
+            "packets": 10000,
+            "drops": 0
+          }
+        },
+        "to_browser": {
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.04,
+              "jitter": 0,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261125,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2980000,
+            "packets": 10000,
+            "drops": 0
+          }
+        }
+      },
+      "quantiles": {
+        "p5": 80.644833,
+        "p25": 80.666584,
+        "median": 80.686459,
+        "p75": 80.708333,
+        "p95": 80.73925,
+        "p99": 80.78041825
+      },
+      "dependence": {
+        "lag1": 0.3147060225816354,
+        "linear_trend_per_unit": 2.6502024177501513e-06,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "largest_lag_records": [
+        {
+          "id": 5226,
+          "t_plan_ms": 52260,
+          "t_send_ms": 52262.827482
+        },
+        {
+          "id": 5151,
+          "t_plan_ms": 51510,
+          "t_send_ms": 51510.102065
+        },
+        {
+          "id": 3164,
+          "t_plan_ms": 31640,
+          "t_send_ms": 31640.085972
+        }
+      ],
+      "process_diagnostics": {
+        "survival": {
+          "long_lag": {
+            "500": 0.0,
+            "1000": 0.0,
+            "2000": 0.0
+          },
+          "suspect": false
+        },
+        "rtt": {
+          "long_lag": {
+            "500": -0.000977456868906623,
+            "1000": -0.0008938787345138715,
+            "2000": 0.0006215536467144186
+          },
+          "suspect": false
+        },
+        "chunk_medians_ms": [
+          80.688646,
+          80.688312,
+          80.684417,
+          80.6868335,
+          80.6838745,
+          80.6882295,
+          80.6875205,
+          80.68564649999999,
+          80.6856875,
+          80.6863125,
+          80.689334,
+          80.687208,
+          80.6888335,
+          80.68602100000001,
+          80.68825,
+          80.68187499999999,
+          80.687042,
+          80.6881245,
+          80.6852915,
+          80.684979
+        ],
+        "fitted_drift_ms": -0.001021242857156529,
+        "suspect": false,
+        "limitation": "Diagnostics can reject assumptions; absence of flags does not establish stationarity or short memory"
+      },
+      "formal_process_series": true
+    },
+    {
+      "name": "r80p1-latency",
+      "quality": {
+        "criteria_version": "udp-sender-v2",
+        "preliminary": true,
+        "status": "passed",
+        "reasons": [],
+        "limits": {
+          "version": "udp-sender-v2",
+          "max_late_pct": 1,
+          "max_lag_ms": 50,
+          "burst_window_ms": 10,
+          "max_burst_packets": 4
+        },
+        "historical_every_slot_pass": true,
+        "metrics": {
+          "count": 10000,
+          "late_slots": 0,
+          "late_pct": 0.0,
+          "lag_ms": {
+            "p50": 0.001816000003600493,
+            "p99": 0.017131000000517815,
+            "max": 2.8104549999989104
+          },
+          "gap_ms": {
+            "min": 7.194541999997455,
+            "p50": 9.999916999999186,
+            "p99": 10.014417000000321,
+            "max": 12.809624999994412
+          },
+          "late_groups": [],
+          "late_group_count": 0,
+          "peak_packets_1ms": 1,
+          "peak_packets_window": 2,
+          "observed_hz": 100.00000320432055
+        }
+      },
+      "replies": 9791,
+      "loss": [
+        {
+          "direction": "forward",
+          "entered": 10000,
+          "drops": 107,
+          "interval": [
+            0.007683418155141958,
+            0.014442871334459251
+          ],
+          "nominal_in_interval": true
+        },
+        {
+          "direction": "reverse",
+          "entered": 9893,
+          "drops": 102,
+          "interval": [
+            0.00733999600652475,
+            0.014015698156468796
+          ],
+          "nominal_in_interval": true
+        }
+      ],
+      "captures": {
+        "browser": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10000 packets captured\n19791 packets received by filter\n0 packets dropped by kernel\n"
+        },
+        "server": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n9893 packets captured\n19786 packets received by filter\n0 packets dropped by kernel\n"
+        }
+      },
+      "qdisc": {
+        "to_server": {
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.04,
+              "jitter": 0,
+              "correlation": 0
+            },
+            "loss-random": {
+              "loss": 0.01,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261126,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2948114,
+            "packets": 9893,
+            "drops": 107
+          }
+        },
+        "to_browser": {
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.04,
+              "jitter": 0,
+              "correlation": 0
+            },
+            "loss-random": {
+              "loss": 0.01,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261127,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2917718,
+            "packets": 9791,
+            "drops": 102
+          }
+        }
+      },
+      "quantiles": {
+        "p5": 80.534833,
+        "p25": 80.55068750000001,
+        "median": 80.571459,
+        "p75": 80.67614549999999,
+        "p95": 80.7270415,
+        "p99": 80.8269619
+      },
+      "dependence": {
+        "lag1": 0.282737245073539,
+        "linear_trend_per_unit": -2.302696226739249e-05,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "largest_lag_records": [
+        {
+          "id": 8329,
+          "t_plan_ms": 83290,
+          "t_send_ms": 83292.810455
+        },
+        {
+          "id": 157,
+          "t_plan_ms": 1570,
+          "t_send_ms": 1572.403918
+        },
+        {
+          "id": 159,
+          "t_plan_ms": 1590,
+          "t_send_ms": 1591.832585
+        }
+      ],
+      "process_diagnostics": {
+        "survival": {
+          "long_lag": {
+            "500": 0.00966513529904166,
+            "1000": -0.00900890819075604,
+            "2000": -0.0021713134657891657
+          },
+          "suspect": false
+        },
+        "rtt": {
+          "long_lag": {
+            "500": 0.056683685783390385,
+            "1000": 0.037997508443649894,
+            "2000": 0.02823538470833433
+          },
+          "suspect": true
+        },
+        "chunk_medians_ms": [
+          80.699583,
+          80.68810450000001,
+          80.685542,
+          80.690125,
+          80.689458,
+          80.6866045,
+          80.6845835,
+          80.657104,
+          80.555208,
+          80.5550625,
+          80.554125,
+          80.5568335,
+          80.552042,
+          80.55514600000001,
+          80.55506299999999,
+          80.557125,
+          80.5575415,
+          80.55875,
+          80.555625,
+          80.557667
+        ],
+        "fitted_drift_ms": -0.18058558571430872,
+        "suspect": true,
+        "limitation": "Diagnostics can reject assumptions; absence of flags does not establish stationarity or short memory"
+      },
+      "formal_process_series": true
+    },
+    {
+      "name": "r20p0-after",
+      "quality": {
+        "criteria_version": "udp-sender-v2",
+        "preliminary": true,
+        "status": "passed",
+        "reasons": [],
+        "limits": {
+          "version": "udp-sender-v2",
+          "max_late_pct": 1,
+          "max_lag_ms": 50,
+          "burst_window_ms": 10,
+          "max_burst_packets": 4
+        },
+        "historical_every_slot_pass": true,
+        "metrics": {
+          "count": 10000,
+          "late_slots": 0,
+          "late_pct": 0.0,
+          "lag_ms": {
+            "p50": 0.001799999998183921,
+            "p99": 0.016571999993175268,
+            "max": 0.8609549999964656
+          },
+          "gap_ms": {
+            "min": 9.141625000003842,
+            "p50": 9.999917000001005,
+            "p99": 10.014000000000124,
+            "max": 10.737832999991952
+          },
+          "late_groups": [],
+          "late_group_count": 0,
+          "peak_packets_1ms": 1,
+          "peak_packets_window": 2,
+          "observed_hz": 100.00000353835397
+        }
+      },
+      "replies": 10000,
+      "loss": [
+        {
+          "direction": "forward",
+          "entered": 10000,
+          "drops": 0,
+          "interval": [
+            0.0,
+            0.0007375038011081074
+          ],
+          "nominal_in_interval": true
+        },
+        {
+          "direction": "reverse",
+          "entered": 10000,
+          "drops": 0,
+          "interval": [
+            0.0,
+            0.0007375038011081074
+          ],
+          "nominal_in_interval": true
+        }
+      ],
+      "captures": {
+        "browser": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10000 packets captured\n20000 packets received by filter\n0 packets dropped by kernel\n"
+        },
+        "server": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10000 packets captured\n20000 packets received by filter\n0 packets dropped by kernel\n"
+        }
+      },
+      "qdisc": {
+        "to_server": {
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.01,
+              "jitter": 0,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261128,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2980000,
+            "packets": 10000,
+            "drops": 0
+          }
+        },
+        "to_browser": {
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.01,
+              "jitter": 0,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261129,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2980000,
+            "packets": 10000,
+            "drops": 0
+          }
+        }
+      },
+      "quantiles": {
+        "p5": 20.64733395,
+        "p25": 20.66903075,
+        "median": 20.687209,
+        "p75": 20.708583,
+        "p95": 20.747419049999998,
+        "p99": 20.81129976
+      },
+      "dependence": {
+        "lag1": 0.15720628315429608,
+        "linear_trend_per_unit": 1.6291049921040579e-06,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "largest_lag_records": [
+        {
+          "id": 8463,
+          "t_plan_ms": 84630,
+          "t_send_ms": 84630.860955
+        },
+        {
+          "id": 437,
+          "t_plan_ms": 4370,
+          "t_send_ms": 4370.187502
+        },
+        {
+          "id": 8534,
+          "t_plan_ms": 85340,
+          "t_send_ms": 85340.129289
+        }
+      ],
+      "process_diagnostics": {
+        "survival": {
+          "long_lag": {
+            "500": 0.0,
+            "1000": 0.0,
+            "2000": 0.0
+          },
+          "suspect": false
+        },
+        "rtt": {
+          "long_lag": {
+            "500": 0.0007303125407553369,
+            "1000": -0.0006128251471187548,
+            "2000": -0.003970461137048599
+          },
+          "suspect": false
+        },
+        "chunk_medians_ms": [
+          20.6888965,
+          20.685416500000002,
+          20.691375,
+          20.685167,
+          20.6884375,
+          20.691042,
+          20.684375,
+          20.685854499999998,
+          20.686396000000002,
+          20.687188,
+          20.683771,
+          20.683896,
+          20.691771,
+          20.682916499999997,
+          20.6870625,
+          20.685416500000002,
+          20.7032915,
+          20.6930835,
+          20.684208499999997,
+          20.682312500000002
+        ],
+        "fitted_drift_ms": 0.0007860500000003156,
+        "suspect": false,
+        "limitation": "Diagnostics can reject assumptions; absence of flags does not establish stationarity or short memory"
+      },
+      "formal_process_series": false
+    },
+    {
+      "name": "r20p1-after",
+      "quality": {
+        "criteria_version": "udp-sender-v2",
+        "preliminary": true,
+        "status": "passed",
+        "reasons": [],
+        "limits": {
+          "version": "udp-sender-v2",
+          "max_late_pct": 1,
+          "max_lag_ms": 50,
+          "burst_window_ms": 10,
+          "max_burst_packets": 4
+        },
+        "historical_every_slot_pass": true,
+        "metrics": {
+          "count": 10000,
+          "late_slots": 0,
+          "late_pct": 0.0,
+          "lag_ms": {
+            "p50": 0.0018810000001394656,
+            "p99": 0.017925000000104774,
+            "max": 4.996595000000525
+          },
+          "gap_ms": {
+            "min": 7.29766699999891,
+            "p50": 9.999958000000333,
+            "p99": 10.014915999999971,
+            "max": 14.98725000000195
+          },
+          "late_groups": [],
+          "late_group_count": 0,
+          "peak_packets_1ms": 1,
+          "peak_packets_window": 2,
+          "observed_hz": 99.99999728672874
+        }
+      },
+      "replies": 9791,
+      "loss": [
+        {
+          "direction": "forward",
+          "entered": 10000,
+          "drops": 124,
+          "interval": [
+            0.00913157425419752,
+            0.01639124461288138
+          ],
+          "nominal_in_interval": true
+        },
+        {
+          "direction": "reverse",
+          "entered": 9876,
+          "drops": 85,
+          "interval": [
+            0.005915525582660409,
+            0.012038110577482644
+          ],
+          "nominal_in_interval": true
+        }
+      ],
+      "captures": {
+        "browser": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10000 packets captured\n19791 packets received by filter\n0 packets dropped by kernel\n"
+        },
+        "server": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n9876 packets captured\n19752 packets received by filter\n0 packets dropped by kernel\n"
+        }
+      },
+      "qdisc": {
+        "to_server": {
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.01,
+              "jitter": 0,
+              "correlation": 0
+            },
+            "loss-random": {
+              "loss": 0.01,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261130,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2943048,
+            "packets": 9876,
+            "drops": 124
+          }
+        },
+        "to_browser": {
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.01,
+              "jitter": 0,
+              "correlation": 0
+            },
+            "loss-random": {
+              "loss": 0.01,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261131,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2917718,
+            "packets": 9791,
+            "drops": 85
+          }
+        }
+      },
+      "quantiles": {
+        "p5": 20.647333500000002,
+        "p25": 20.6689375,
+        "median": 20.6875,
+        "p75": 20.7049375,
+        "p95": 20.755187499999998,
+        "p99": 22.719433400000007
+      },
+      "dependence": {
+        "lag1": 0.02819870995159319,
+        "linear_trend_per_unit": 8.09904316467544e-07,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "largest_lag_records": [
+        {
+          "id": 2497,
+          "t_plan_ms": 24970,
+          "t_send_ms": 24974.996595
+        },
+        {
+          "id": 2504,
+          "t_plan_ms": 25040,
+          "t_send_ms": 25042.520887
+        },
+        {
+          "id": 2498,
+          "t_plan_ms": 24980,
+          "t_send_ms": 24982.294262
+        }
+      ],
+      "process_diagnostics": {
+        "survival": {
+          "long_lag": {
+            "500": -0.005914547047649805,
+            "1000": -0.00473489226264332,
+            "2000": 0.007398064524641517
+          },
+          "suspect": false
+        },
+        "rtt": {
+          "long_lag": {
+            "500": 0.0021580924417252787,
+            "1000": -0.008462015357547752,
+            "2000": 0.014067874048610486
+          },
+          "suspect": false
+        },
+        "chunk_medians_ms": [
+          20.69,
+          20.6865,
+          20.683458,
+          20.687,
+          20.703042,
+          20.690687,
+          20.687208,
+          20.690417,
+          20.6936875,
+          20.6864375,
+          20.687833,
+          20.686875,
+          20.686187500000003,
+          20.686166,
+          20.6840625,
+          20.687125,
+          20.687667,
+          20.685083,
+          20.686875,
+          20.684208
+        ],
+        "fitted_drift_ms": -0.005040257142850065,
+        "suspect": false,
+        "limitation": "Diagnostics can reject assumptions; absence of flags does not establish stationarity or short memory"
+      },
+      "formal_process_series": false
+    },
+    {
+      "name": "r80p0-after",
+      "quality": {
+        "criteria_version": "udp-sender-v2",
+        "preliminary": true,
+        "status": "passed",
+        "reasons": [],
+        "limits": {
+          "version": "udp-sender-v2",
+          "max_late_pct": 1,
+          "max_lag_ms": 50,
+          "burst_window_ms": 10,
+          "max_burst_packets": 4
+        },
+        "historical_every_slot_pass": true,
+        "metrics": {
+          "count": 10000,
+          "late_slots": 0,
+          "late_pct": 0.0,
+          "lag_ms": {
+            "p50": 0.001750999999785563,
+            "p99": 0.015222000001813285,
+            "max": 5.413416999999981
+          },
+          "gap_ms": {
+            "min": 6.755957999999964,
+            "p50": 9.999917000001005,
+            "p99": 10.012833000000683,
+            "max": 15.393749999999955
+          },
+          "late_groups": [],
+          "late_group_count": 0,
+          "peak_packets_1ms": 1,
+          "peak_packets_window": 2,
+          "observed_hz": 100.00000166416646
+        }
+      },
+      "replies": 10000,
+      "loss": [
+        {
+          "direction": "forward",
+          "entered": 10000,
+          "drops": 0,
+          "interval": [
+            0.0,
+            0.0007375038011081074
+          ],
+          "nominal_in_interval": true
+        },
+        {
+          "direction": "reverse",
+          "entered": 10000,
+          "drops": 0,
+          "interval": [
+            0.0,
+            0.0007375038011081074
+          ],
+          "nominal_in_interval": true
+        }
+      ],
+      "captures": {
+        "browser": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10000 packets captured\n20000 packets received by filter\n0 packets dropped by kernel\n"
+        },
+        "server": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10000 packets captured\n20000 packets received by filter\n0 packets dropped by kernel\n"
+        }
+      },
+      "qdisc": {
+        "to_server": {
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.04,
+              "jitter": 0,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261132,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2980000,
+            "packets": 10000,
+            "drops": 0
+          }
+        },
+        "to_browser": {
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.04,
+              "jitter": 0,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261133,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2980000,
+            "packets": 10000,
+            "drops": 0
+          }
+        }
+      },
+      "quantiles": {
+        "p5": 80.64683095,
+        "p25": 80.668042,
+        "median": 80.685459,
+        "p75": 80.704834,
+        "p95": 80.736875,
+        "p99": 80.78796425
+      },
+      "dependence": {
+        "lag1": 0.2793704920943237,
+        "linear_trend_per_unit": -3.328752881537987e-08,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "largest_lag_records": [
+        {
+          "id": 157,
+          "t_plan_ms": 1570,
+          "t_send_ms": 1575.413417
+        },
+        {
+          "id": 158,
+          "t_plan_ms": 1580,
+          "t_send_ms": 1583.253709
+        },
+        {
+          "id": 7746,
+          "t_plan_ms": 77460,
+          "t_send_ms": 77460.214493
+        }
+      ],
+      "process_diagnostics": {
+        "survival": {
+          "long_lag": {
+            "500": 0.0,
+            "1000": 0.0,
+            "2000": 0.0
+          },
+          "suspect": false
+        },
+        "rtt": {
+          "long_lag": {
+            "500": 0.0033967370321802705,
+            "1000": -0.001674527882049663,
+            "2000": -0.0006034620978161971
+          },
+          "suspect": false
+        },
+        "chunk_medians_ms": [
+          80.694229,
+          80.6844165,
+          80.683625,
+          80.682917,
+          80.6854375,
+          80.6817495,
+          80.6827705,
+          80.68377100000001,
+          80.68158349999999,
+          80.684687,
+          80.6880835,
+          80.6880835,
+          80.6840205,
+          80.68697900000001,
+          80.6875,
+          80.6865005,
+          80.687229,
+          80.68587450000001,
+          80.687,
+          80.688896
+        ],
+        "fitted_drift_ms": 0.0021348857142612448,
+        "suspect": false,
+        "limitation": "Diagnostics can reject assumptions; absence of flags does not establish stationarity or short memory"
+      },
+      "formal_process_series": false
+    },
+    {
+      "name": "r80p1-after",
+      "quality": {
+        "criteria_version": "udp-sender-v2",
+        "preliminary": true,
+        "status": "passed",
+        "reasons": [],
+        "limits": {
+          "version": "udp-sender-v2",
+          "max_late_pct": 1,
+          "max_lag_ms": 50,
+          "burst_window_ms": 10,
+          "max_burst_packets": 4
+        },
+        "historical_every_slot_pass": true,
+        "metrics": {
+          "count": 10000,
+          "late_slots": 0,
+          "late_pct": 0.0,
+          "lag_ms": {
+            "p50": 0.0017189999998663552,
+            "p99": 0.016418000000157917,
+            "max": 0.7314370000021881
+          },
+          "gap_ms": {
+            "min": 9.27274999999645,
+            "p50": 9.999917000008281,
+            "p99": 10.013917000003858,
+            "max": 10.729584000000614
+          },
+          "late_groups": [],
+          "late_group_count": 0,
+          "peak_packets_1ms": 1,
+          "peak_packets_window": 2,
+          "observed_hz": 99.99998599460143
+        }
+      },
+      "replies": 9817,
+      "loss": [
+        {
+          "direction": "forward",
+          "entered": 10000,
+          "drops": 92,
+          "interval": [
+            0.0064232967888482135,
+            0.01270626081033001
+          ],
+          "nominal_in_interval": true
+        },
+        {
+          "direction": "reverse",
+          "entered": 9908,
+          "drops": 91,
+          "interval": [
+            0.0063989254288537925,
+            0.012706501627024991
+          ],
+          "nominal_in_interval": true
+        }
+      ],
+      "captures": {
+        "browser": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10000 packets captured\n19817 packets received by filter\n0 packets dropped by kernel\n"
+        },
+        "server": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n9908 packets captured\n19816 packets received by filter\n0 packets dropped by kernel\n"
+        }
+      },
+      "qdisc": {
+        "to_server": {
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.04,
+              "jitter": 0,
+              "correlation": 0
+            },
+            "loss-random": {
+              "loss": 0.01,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261134,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2952584,
+            "packets": 9908,
+            "drops": 92
+          }
+        },
+        "to_browser": {
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.04,
+              "jitter": 0,
+              "correlation": 0
+            },
+            "loss-random": {
+              "loss": 0.01,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261135,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2925466,
+            "packets": 9817,
+            "drops": 91
+          }
+        }
+      },
+      "quantiles": {
+        "p5": 80.644916,
+        "p25": 80.667208,
+        "median": 80.686625,
+        "p75": 80.708708,
+        "p95": 80.7488422,
+        "p99": 81.45884644000002
+      },
+      "dependence": {
+        "lag1": 0.09346407391646558,
+        "linear_trend_per_unit": 7.378735089792319e-07,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "largest_lag_records": [
+        {
+          "id": 4382,
+          "t_plan_ms": 43820,
+          "t_send_ms": 43820.731437
+        },
+        {
+          "id": 4380,
+          "t_plan_ms": 43800,
+          "t_send_ms": 43800.437395
+        },
+        {
+          "id": 8576,
+          "t_plan_ms": 85760,
+          "t_send_ms": 85760.06058
+        }
+      ],
+      "process_diagnostics": {
+        "survival": {
+          "long_lag": {
+            "500": -0.017535907099928603,
+            "1000": 0.0006758099449432746,
+            "2000": -0.00885761345185194
+          },
+          "suspect": false
+        },
+        "rtt": {
+          "long_lag": {
+            "500": -0.007548920158899641,
+            "1000": -0.008491954998487351,
+            "2000": -0.0072235641640497495
+          },
+          "suspect": false
+        },
+        "chunk_medians_ms": [
+          80.696083,
+          80.68689599999999,
+          80.6860835,
+          80.68525,
+          80.691625,
+          80.684833,
+          80.688417,
+          80.68618749999999,
+          80.684334,
+          80.685291,
+          80.68452049999999,
+          80.6858125,
+          80.6895625,
+          80.687292,
+          80.68377100000001,
+          80.685396,
+          80.68675,
+          80.6866665,
+          80.685875,
+          80.687292
+        ],
+        "fitted_drift_ms": -0.003165042857186898,
+        "suspect": false,
+        "limitation": "Diagnostics can reject assumptions; absence of flags does not establish stationarity or short memory"
+      },
+      "formal_process_series": false
+    },
+    {
+      "name": "baseline-after",
+      "quality": {
+        "criteria_version": "udp-sender-v2",
+        "preliminary": true,
+        "status": "passed",
+        "reasons": [],
+        "limits": {
+          "version": "udp-sender-v2",
+          "max_late_pct": 1,
+          "max_lag_ms": 50,
+          "burst_window_ms": 10,
+          "max_burst_packets": 4
+        },
+        "historical_every_slot_pass": false,
+        "metrics": {
+          "count": 10000,
+          "late_slots": 7,
+          "late_pct": 0.07,
+          "lag_ms": {
+            "p50": 0.0010349999938625842,
+            "p99": 0.015043000000105167,
+            "max": 24.05472500000178
+          },
+          "gap_ms": {
+            "min": 2.501040999995894,
+            "p50": 10.0,
+            "p99": 10.011375000000044,
+            "max": 30.036125000005995
+          },
+          "late_groups": [
+            [
+              3805,
+              3806
+            ],
+            [
+              3835,
+              3836,
+              3837
+            ],
+            [
+              5188,
+              5189
+            ]
+          ],
+          "late_group_count": 3,
+          "peak_packets_1ms": 1,
+          "peak_packets_window": 4,
+          "observed_hz": 100.0000025802581
+        }
+      },
+      "replies": 10000,
+      "loss": [
+        {
+          "direction": "forward",
+          "entered": 10000,
+          "drops": 0,
+          "interval": [
+            0.0,
+            0.0007375038011081074
+          ],
+          "nominal_in_interval": true
+        },
+        {
+          "direction": "reverse",
+          "entered": 10000,
+          "drops": 0,
+          "interval": [
+            0.0,
+            0.0007375038011081074
+          ],
+          "nominal_in_interval": true
+        }
+      ],
+      "captures": {
+        "browser": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_browser, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10000 packets captured\n20000 packets received by filter\n0 packets dropped by kernel\n"
+        },
+        "server": {
+          "kernel_drops": 0,
+          "log": "tcpdump: listening on to_server, link-type EN10MB (Ethernet), snapshot length 96 bytes\n10000 packets captured\n20000 packets received by filter\n0 packets dropped by kernel\n"
+        }
+      },
+      "qdisc": {
+        "to_server": {
+          "options": {
+            "limit": 1000,
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261136,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2980000,
+            "packets": 10000,
+            "drops": 0
+          }
+        },
+        "to_browser": {
+          "options": {
+            "limit": 1000,
+            "rate": {
+              "rate": 1250000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "seed": 20261137,
+            "ecn": false,
+            "gap": 0
+          },
+          "delta": {
+            "bytes": 2980000,
+            "packets": 10000,
+            "drops": 0
+          }
+        }
+      },
+      "quantiles": {
+        "p5": 0.602625,
+        "p25": 0.608041,
+        "median": 0.612917,
+        "p75": 0.6827605,
+        "p95": 0.72058605,
+        "p99": 0.7784253300000002
+      },
+      "dependence": {
+        "lag1": 0.3960415303933381,
+        "linear_trend_per_unit": -1.3611605676450152e-05,
+        "suspect": true,
+        "limitation": "diagnostic cannot establish independence; inspect traces and independent units"
+      },
+      "largest_lag_records": [
+        {
+          "id": 3836,
+          "t_plan_ms": 38360,
+          "t_send_ms": 38384.054725
+        },
+        {
+          "id": 5188,
+          "t_plan_ms": 51880,
+          "t_send_ms": 51900.037148
+        },
+        {
+          "id": 3837,
+          "t_plan_ms": 38370,
+          "t_send_ms": 38386.562516
+        }
+      ],
+      "process_diagnostics": {
+        "survival": {
+          "long_lag": {
+            "500": 0.0,
+            "1000": 0.0,
+            "2000": 0.0
+          },
+          "suspect": false
+        },
+        "rtt": {
+          "long_lag": {
+            "500": 0.0011259272625779746,
+            "1000": 0.0026848024935137134,
+            "2000": 0.0009318544022949343
+          },
+          "suspect": false
+        },
+        "chunk_medians_ms": [
+          0.6960835000000001,
+          0.6925835,
+          0.6884170000000001,
+          0.6915,
+          0.690771,
+          0.6891875000000001,
+          0.6887295,
+          0.6797500000000001,
+          0.6106665,
+          0.6083545,
+          0.6068125,
+          0.6047914999999999,
+          0.60875,
+          0.60875,
+          0.609417,
+          0.6083545,
+          0.6087914999999999,
+          0.609292,
+          0.609417,
+          0.6090625000000001
+        ],
+        "fitted_drift_ms": -0.11268363571428608,
+        "suspect": false,
+        "limitation": "Diagnostics can reject assumptions; absence of flags does not establish stationarity or short memory"
+      },
+      "formal_process_series": true
+    }
+  ],
+  "saturation": [
+    {
+      "direction": "forward",
+      "loss": 0.0,
+      "duration_s": 61.04000000000815,
+      "accounting_level": "router netem dequeued skb bytes including Ethernet header; offered veth ingress rx_bytes",
+      "offered_bytes": 94757148,
+      "forwarded_bytes": 76294818,
+      "name": "saturation-0-forward",
+      "mbit_s": 9.999320838792897
+    },
+    {
+      "direction": "reverse",
+      "loss": 0.0,
+      "duration_s": 61.029999999998836,
+      "accounting_level": "router netem dequeued skb bytes including Ethernet header; offered veth ingress rx_bytes",
+      "offered_bytes": 94757148,
+      "forwarded_bytes": 76297302,
+      "name": "saturation-0-reverse",
+      "mbit_s": 10.001284876290539
+    },
+    {
+      "direction": "forward",
+      "loss": 0.01,
+      "duration_s": 61.04000000000815,
+      "accounting_level": "router netem dequeued skb bytes including Ethernet header; offered veth ingress rx_bytes",
+      "offered_bytes": 94758390,
+      "forwarded_bytes": 76298544,
+      "name": "saturation-1-forward",
+      "mbit_s": 9.999809174310592
+    },
+    {
+      "direction": "reverse",
+      "loss": 0.01,
+      "duration_s": 61.04000000000815,
+      "accounting_level": "router netem dequeued skb bytes including Ethernet header; offered veth ingress rx_bytes",
+      "offered_bytes": 94757148,
+      "forwarded_bytes": 76298544,
+      "name": "saturation-1-reverse",
+      "mbit_s": 9.999809174310592
+    }
+  ],
+  "evidence": [
+    {
+      "path": "results/verify/diagnostic/calibration.ew2u0ceD/captured.json",
+      "sha256": "5e912c51f8c3a938972bac1d028ce5d861e3aa1d6d95e843b782cd1c6e17ae82"
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ew2u0ceD/collection-plan.json",
+      "sha256": "7a17dbad44056de9c501f066241fb2aee8f71191e79c92456e58819d1ec9dc15"
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ew2u0ceD/context-before.json",
+      "sha256": "231ae4819874cf877f8e2234b4331171309906cb4c259b847c7ff8fc403039da"
+    },
+    {
+      "path": "results/verify/diagnostic/calibration.ew2u0ceD/context-after.json",
+      "sha256": "231ae4819874cf877f8e2234b4331171309906cb4c259b847c7ff8fc403039da"
+    }
+  ],
+  "limitations": [
+    "No circular-block bootstrap executed; no official calibration report published yet",
+    "No retrospective CPU/scheduler trace; primary integrity and process checks do not identify physical causes",
+    "Pcap snaplen96 covers headers/ID/tag/accounting, not complete256byte wire payload; receiver validates all returned payload bytes",
+    "No mandatory macOS trace added; no raw/seal modification or repeat",
+    "process_diagnostics are rejection heuristics, not automatic assumption approval"
+  ]
+}

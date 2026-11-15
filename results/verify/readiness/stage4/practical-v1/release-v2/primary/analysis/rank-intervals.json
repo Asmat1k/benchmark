@@ -1,0 +1,38 @@
+{
+  "collection_id": "primary-analysis",
+  "gate": "analysis",
+  "id": "rank-intervals",
+  "actual": true,
+  "scope": "current known-answer checks; no network performance claim",
+  "command": "python -B -m unittest -v test_analysis.StatisticalTests",
+  "observations": {
+    "test": "test_exact_sign_enumeration_and_rank_coverage",
+    "result": "ok"
+  },
+  "files": [
+    {
+      "path": "results/verify/readiness/stage4/practical-v1/early-offline-v2/offline.stderr.log",
+      "sha256": "747d07cbaece76339a382604e910d6df3de559566ccab687dd71fdfd4939b60d"
+    },
+    {
+      "path": "src/analysis/test_analysis.py",
+      "sha256": "271d3bb21f5b6d4dc035c6f33dbbb0ba9c965cd48640487bae59ece83817733e"
+    },
+    {
+      "path": "src/analysis/fixtures/references.json",
+      "sha256": "10c12a4d0f43bd91887acdb77d9d2fd4a46d19b11a6e57a18dbd1c32e9e6b981"
+    }
+  ],
+  "preparer": {
+    "path": "/bench/docs/readiness/practical-early.py",
+    "sha256": "f49f09d9f984c90f5ee94c39bf461120370e0cf443629599f580957e80ad9964"
+  },
+  "source_inventory": {
+    "path": "results/verify/readiness/stage4/practical-v1/release-v2/source-inventory.json",
+    "sha256": "0f05a3987cb0c387ec76d9350e3f1837c8f583cfa8241798aab68da71d171f06"
+  },
+  "applicability": {
+    "path": "results/verify/readiness/stage4/practical-v1/release-v2/release.json",
+    "sha256": "b154faea85adad05167252d640239bde8662abeadee243ca2356e20b6c12dda8"
+  }
+}

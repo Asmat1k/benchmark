@@ -1,0 +1,47 @@
+[
+  {
+    "phase": 0,
+    "requested_cpu": 0,
+    "timer_on_sender_cpu": true,
+    "n": 2969,
+    "median_lateness_ms": 0.002704,
+    "median_samplednow_lateness_ms": 0.002475,
+    "p99_lateness_ms": 0.015921
+  },
+  {
+    "phase": 1,
+    "requested_cpu": 1,
+    "timer_on_sender_cpu": true,
+    "n": 2363,
+    "median_lateness_ms": 0.002735,
+    "median_samplednow_lateness_ms": 0.002475,
+    "p99_lateness_ms": 0.037074
+  },
+  {
+    "phase": 1,
+    "requested_cpu": 1,
+    "timer_on_sender_cpu": false,
+    "n": 613,
+    "median_lateness_ms": 2.806741,
+    "median_samplednow_lateness_ms": 2.805891,
+    "p99_lateness_ms": 4.805075
+  },
+  {
+    "phase": 2,
+    "requested_cpu": 0,
+    "timer_on_sender_cpu": true,
+    "n": 3113,
+    "median_lateness_ms": 0.00264,
+    "median_samplednow_lateness_ms": 0.002475,
+    "p99_lateness_ms": 0.009725
+  },
+  {
+    "phase": 2,
+    "requested_cpu": 0,
+    "timer_on_sender_cpu": false,
+    "n": 858,
+    "median_lateness_ms": 1.87206,
+    "median_samplednow_lateness_ms": 1.870975,
+    "p99_lateness_ms": 2.368522
+  }
+]

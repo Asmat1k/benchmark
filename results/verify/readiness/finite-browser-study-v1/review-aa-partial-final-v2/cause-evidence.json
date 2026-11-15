@@ -1,0 +1,225 @@
+{
+  "utc": "2026-11-15T08:58:09.158628+00:00",
+  "review": {
+    "path": "results/verify/readiness/finite-browser-study-v1/review-aa-partial-final-v2/unit-review.json",
+    "sha256": "6fc5ffb39784fd31c74e22a924320660f5b135bf073f5539f1a9463185afdc1d"
+  },
+  "source_script": {
+    "path": "docker/measure.sh",
+    "sha256": "6e6d2e60eedd88584aa08a5c595ddfc243280a4ade5145f4312c3b37591a87b9"
+  },
+  "raw_validator": {
+    "path": "src/analysis/raw.py",
+    "sha256": "758695f00c893bc3d6076a7c104c9f7f495ecd304431287f22152920deff7a9f"
+  },
+  "collection_status": "failed-incomplete-no-retry",
+  "run_id": "b7-a0-m0",
+  "mode": "WT-S",
+  "profile": "r20p1",
+  "published_valid": 14,
+  "quarantined_rejected": 1,
+  "not_started": 9,
+  "planned": 24,
+  "failure": "queues not empty",
+  "empty_window_snapshots": 11,
+  "all_empty_window": true,
+  "empty_window_first": [
+    {
+      "dev": "to_browser",
+      "bytes": 495557,
+      "packets": 1525,
+      "drops": 20,
+      "backlog": 0,
+      "qlen": 0
+    },
+    {
+      "dev": "to_server",
+      "bytes": 571303,
+      "packets": 2838,
+      "drops": 27,
+      "backlog": 0,
+      "qlen": 0
+    }
+  ],
+  "empty_window_last": [
+    {
+      "dev": "to_browser",
+      "bytes": 495599,
+      "packets": 1526,
+      "drops": 20,
+      "backlog": 0,
+      "qlen": 0
+    },
+    {
+      "dev": "to_server",
+      "bytes": 571303,
+      "packets": 2838,
+      "drops": 27,
+      "backlog": 0,
+      "qlen": 0
+    }
+  ],
+  "later_snapshot": [
+    {
+      "dev": "to_browser",
+      "bytes": 495725,
+      "packets": 1528,
+      "drops": 20,
+      "backlog": 0,
+      "qlen": 0
+    },
+    {
+      "dev": "to_server",
+      "bytes": 571303,
+      "packets": 2838,
+      "drops": 27,
+      "backlog": 182,
+      "qlen": 2
+    }
+  ],
+  "source_order": [
+    "11 empty queue snapshots over 1000 ms",
+    "quiet_cpu external VM marker, then sleep 6s, selection and comparison",
+    "separate later qdisc-stable snapshot",
+    "resource-end marker and final samplers",
+    "compose down",
+    "publication validation rejects later nonempty queue"
+  ],
+  "cpu_marker_usec": 159905970000,
+  "resource_window": {
+    "start_usec": 159808290000,
+    "end_usec": 159913730000
+  },
+  "cpu_comparison": {
+    "status": "passed",
+    "roles": {
+      "browser": {
+        "baseline_ceil_pct": 2,
+        "idle_ceil_pct": 1,
+        "passed": true
+      },
+      "server": {
+        "baseline_ceil_pct": 1,
+        "idle_ceil_pct": 1,
+        "passed": true
+      },
+      "router": {
+        "baseline_ceil_pct": 2,
+        "idle_ceil_pct": 1,
+        "passed": true
+      }
+    }
+  },
+  "stabilization_record": {
+    "stable": true,
+    "cpu_recovered": true,
+    "attempts": 1,
+    "empty_queue_window_ms": 1000,
+    "cpu_baseline_comparison": "matched_quiet_bracketed_per_role_ceil_percent",
+    "wait_limit_s": 30
+  },
+  "primary_files": [
+    {
+      "path": "results/verify/raw/finite-aa-20261115/quarantine/wswt-d3-wswt-measure-v703qzkf/SHA256SUMS",
+      "sha256": "d2550de8b8159f2b70d4c4366db1e3fa79ffe59b9acb1aec81535a8faabc0da8"
+    },
+    {
+      "path": "results/verify/raw/finite-aa-20261115/quarantine/wswt-d3-wswt-measure-v703qzkf/run.json",
+      "sha256": "9d8c8f8d93bfcbdea60fc50e4d90bf0bf26c5e796976e63c4814a25ed58a064a"
+    },
+    {
+      "path": "results/verify/raw/finite-aa-20261115/quarantine/wswt-d3-wswt-measure-v703qzkf/manifest.json",
+      "sha256": "49145170bf485641337e1daa5c16eb6acdd5abfbad65fc96c287a789cd325e81"
+    },
+    {
+      "path": "results/verify/raw/finite-aa-20261115/quarantine/wswt-d3-wswt-measure-v703qzkf/completion.json",
+      "sha256": "ffa2fb204b24d956650f92782637e2b63a3acd58bae855acf52d88d2259f65d2"
+    },
+    {
+      "path": "results/verify/raw/finite-aa-20261115/quarantine/wswt-d3-wswt-measure-v703qzkf/slots.jsonl",
+      "sha256": "117ce6c035acaf64a28b488acfa9a47509569fbd6497bf4abcda1896e0864839"
+    },
+    {
+      "path": "results/verify/raw/finite-aa-20261115/quarantine/wswt-d3-wswt-measure-v703qzkf/events.jsonl",
+      "sha256": "0200909dde5472e82a4f088c469ef49cfb6337f5ef5607aa9a9c1513c2e6681c"
+    },
+    {
+      "path": "results/verify/raw/finite-aa-20261115/quarantine/wswt-d3-wswt-measure-v703qzkf/counters.json",
+      "sha256": "96940e8b83bd894ec5304b0244108a5243043d3e2072e673b43c24cf43634d3a"
+    },
+    {
+      "path": "results/verify/raw/finite-aa-20261115/quarantine/wswt-d3-wswt-measure-v703qzkf/server.json",
+      "sha256": "5346aa4d1f1ad53b157de8c9d79b4d1674537bca2ad3e1112146a57dfe7153c0"
+    },
+    {
+      "path": "results/verify/raw/finite-aa-20261115/quarantine/wswt-d3-wswt-measure-v703qzkf/checks.json",
+      "sha256": "eca582aa583caf1ddfe043af9b3c45ce0a6c1ea3d7a90cabc3c3ee8a7e560e5d"
+    },
+    {
+      "path": "results/verify/raw/finite-aa-20261115/quarantine/wswt-d3-wswt-measure-v703qzkf/stabilization.json",
+      "sha256": "42dc02a5dbd4e8fe585ed6a6ab7e860373cf691cd14bfc8c1aa7aa81ac2d0b56"
+    },
+    {
+      "path": "results/verify/raw/finite-aa-20261115/quarantine/wswt-d3-wswt-measure-v703qzkf/qdisc-stable.json",
+      "sha256": "16d27af82c7f31c628c5854e4271866e1c991e82d87b067259a705b7edfcae01"
+    },
+    {
+      "path": "results/verify/raw/finite-aa-20261115/quarantine/wswt-d3-wswt-measure-v703qzkf/stabilization-1-queues.jsonl",
+      "sha256": "0c46c3dcf4cdeb24256a8339a5e2afa7b851b6cc805b23c99802bf5832dff384"
+    },
+    {
+      "path": "results/verify/raw/finite-aa-20261115/quarantine/wswt-d3-wswt-measure-v703qzkf/stabilization-1-marker",
+      "sha256": "91b7fed41921098ec9d749ddb546aeb9679ec94ee671c750f34846aa2b1a86b0"
+    },
+    {
+      "path": "results/verify/raw/finite-aa-20261115/quarantine/wswt-d3-wswt-measure-v703qzkf/stabilization-1-cpu.json",
+      "sha256": "05fb52b4cf24c22c90d78dc848d278468f1f82e40ff0c6488e6eea598b3f459c"
+    },
+    {
+      "path": "results/verify/raw/finite-aa-20261115/quarantine/wswt-d3-wswt-measure-v703qzkf/stabilization-1-comparison.json",
+      "sha256": "94f4b2cfefc05b1f589b3ea63b49838d5448a3384050bbb80732e7619e8bc62a"
+    },
+    {
+      "path": "results/verify/raw/finite-aa-20261115/quarantine/wswt-d3-wswt-measure-v703qzkf/resources.jsonl",
+      "sha256": "e49c619d6b759a47ec7085f29f9483ac1229afdf13ff4e3dfeccc892d202df2a"
+    },
+    {
+      "path": "results/verify/raw/finite-aa-20261115/quarantine/wswt-d3-wswt-measure-v703qzkf/resource-window.json",
+      "sha256": "2b065f7526868ef38adfcb5e58d29b8da393bc2bada8f0794af2ef2dee06ea9f"
+    },
+    {
+      "path": "results/verify/raw/finite-aa-20261115/quarantine/wswt-d3-wswt-measure-v703qzkf/context.json",
+      "sha256": "816122392c24d59203559d0a44a4fe0764da8324246cac81956e3eb4a85b12f8"
+    },
+    {
+      "path": "results/verify/raw/finite-aa-20261115/quarantine/wswt-d3-wswt-measure-v703qzkf/config.json",
+      "sha256": "2a889421e010de7b8af3bce888fdc1506f4bf4e5dd04f9522a5bf7f2dab2a35c"
+    }
+  ],
+  "partial_descriptive": {
+    "slots": 1200,
+    "completed": 1199,
+    "missing": 1,
+    "states": {
+      "sent": 1199,
+      "scheduler_miss": 1
+    },
+    "Q_ms": 41.0,
+    "S_pct": 98.33333333333333,
+    "U_pct": 0.08333333333333333
+  },
+  "official_rtt_partition_totals": {
+    "planned_valid": 16800,
+    "returned": 16697,
+    "missing": 103,
+    "body": 16540,
+    "tail": 157
+  },
+  "interpretation": "Established temporal mismatch: the mandatory one-second empty window precedes quiet CPU observation, while a later independent snapshot has 182 bytes / 2 packets queued to_server. This does not prove measurement-period RTT corruption or packet type. Current admission rejects it; quarantined metrics remain descriptive only. No data, statuses, snapshots or seals were changed; no source repair or additional network run was performed.",
+  "limits": [
+    "No packet capture for this AA run; queued packet identity and cause are unknown.",
+    "The final qdisc snapshot has no own monotonic timestamp; ordering follows the executed frozen shell source.",
+    "Counters active=0 concerns application activity and does not establish a packet-free transport connection.",
+    "14 valid outcomes do not complete fixed n=24; seven complete pairs do not establish equivalence."
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "status": "prepared_not_run",
+  "BW_RUN": "results/verify/diagnostic/browser-bandwidth-v4.9r51339s",
+  "schedule_sha256": "c0e30b877be258a4c2541159888649d0852005b605b858319a9d93e89c30ba3f",
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "-e",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "-v",
+    "/Users/dobrov/Desktop/Code/ITMO/benchmark:/bench",
+    "-w",
+    "/bench",
+    "wswt-bench-analyzer:dev",
+    "python",
+    "-B",
+    "src/analysis/schedule.py",
+    "diagnostic",
+    "results/verify/diagnostic/browser-bandwidth-v4.9r51339s",
+    "--blocks",
+    "1",
+    "--sessions",
+    "1",
+    "--baseline",
+    "--datagrams",
+    "--generator-hz",
+    "20"
+  ],
+  "measure_indexes": [
+    0,
+    1,
+    2
+  ],
+  "mode_order": [
+    "WS",
+    "WT-D",
+    "WT-S"
+  ],
+  "frequency_hz": 20,
+  "frame_bytes": 256,
+  "warmup_slots": 200,
+  "measurement_slots": 1200,
+  "profile": "baseline",
+  "environment": "results/verify/diagnostic/timer-timer.2ST8NYBU/context.json",
+  "qualification_review": {
+    "path": "results/verify/readiness/stage4/release-v4/qualification-applicability.json",
+    "sha256": "fece357fd87d1468eaeac6006ad711686c95dd1c3931b72a54b4121f415cdef7"
+  },
+  "release_commit": "494e1a99bf9c92bd2a26af7dce6a8752af23d448"
+}

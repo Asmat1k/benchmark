@@ -1,0 +1,20 @@
+{
+  "status": "failed",
+  "collection": "calibration.sFWOAzbo",
+  "source_commit": "acce5946499b7471bc35965919f3cdc910a7922c",
+  "reason": "r80p1-after late242/10000=2.42%>1%; all4005lagproxywindows fail12countbudget",
+  "report": {
+    "path": "results/verify/readiness/stage4/practical-v1/full-calibration/calibration-sFWOAzbo-report.json",
+    "sha256": "440afc94e532071c65c8402a5cd1ac04d7803d43d4ff78e2ebb9d46af67a5732"
+  },
+  "verification": {
+    "path": "results/verify/readiness/stage4/practical-v1/full-calibration/verify-failed-sFWOAzbo.json",
+    "sha256": "e4896ac89290e09709730d6c96c7ae9ba7096fcbe5da6b7be94541104b57be22"
+  },
+  "generator": "not_run",
+  "stage4_complete": false,
+  "new_network_repeat_authorized_by_this_record": false,
+  "criteria_changed": false,
+  "raw_excluded": false,
+  "next_step": "Specific causal evidence review; no unchanged full repeat or downstream prerequisite bypass"
+}

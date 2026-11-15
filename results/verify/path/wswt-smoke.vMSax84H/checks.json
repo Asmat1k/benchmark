@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "checks": [{
+    "id": "development-interop-smoke",
+    "mandatory": true,
+    "expected": 0,
+    "actual": 0,
+    "units": "runner exit code",
+    "tolerance": 0,
+    "status": "passed",
+    "reason": null,
+    "utc": "2026-11-13T19:37:40Z",
+    "evidence": [
+      {"path": "browser.txt", "sha256": "94199fad9996a1102148a1414ee73285149d072ae671d135b5908829697f1203"},
+      {"path": "server.txt", "sha256": "484969635c3014d24ce1370bedb68875586a73580375acb327e7102cc36ec9ac"},
+      {"path": "build.txt", "sha256": "fc6381a140f692b4845dfb52c98b28e793c4d98794b67ee1c1f46648387c3c6a"}
+    ]
+  }]
+}

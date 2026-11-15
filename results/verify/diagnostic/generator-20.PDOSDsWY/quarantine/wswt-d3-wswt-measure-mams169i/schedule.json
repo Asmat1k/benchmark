@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "series": "diagnostic",
+  "series_id": "generator-20.PDOSDsWY",
+  "master_seed": 20261108,
+  "blocks": [
+    {
+      "block_id": "b0",
+      "session_id": "s0",
+      "attempt_id": "b0-a0",
+      "profile": "baseline",
+      "order_index": 0,
+      "modes": [
+        "WT-S",
+        "WT-D",
+        "WS"
+      ],
+      "seed": 13691934516998781012,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "b0-a0-m0",
+      "mode": "WT-S",
+      "nonce": "10225741972307490806",
+      "forward_seed": 2261905832977492037,
+      "reverse_seed": 16198627954972182059,
+      "block_id": "b0",
+      "session_id": "s0",
+      "attempt_id": "b0-a0",
+      "profile": "baseline",
+      "order_index": 0,
+      "replacement_of": null
+    },
+    {
+      "run_id": "b0-a0-m1",
+      "mode": "WT-D",
+      "nonce": "5409421432360018829",
+      "forward_seed": 18768594933901054,
+      "reverse_seed": 10447553401696507005,
+      "block_id": "b0",
+      "session_id": "s0",
+      "attempt_id": "b0-a0",
+      "profile": "baseline",
+      "order_index": 0,
+      "replacement_of": null
+    },
+    {
+      "run_id": "b0-a0-m2",
+      "mode": "WS",
+      "nonce": "8175558923837098633",
+      "forward_seed": 428885856330114903,
+      "reverse_seed": 8550376059075817179,
+      "block_id": "b0",
+      "session_id": "s0",
+      "attempt_id": "b0-a0",
+      "profile": "baseline",
+      "order_index": 0,
+      "replacement_of": null
+    }
+  ],
+  "generator_hz": 20
+}

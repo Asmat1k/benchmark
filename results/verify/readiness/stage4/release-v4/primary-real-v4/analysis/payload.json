@@ -1,0 +1,256 @@
+{
+  "gate": "analysis",
+  "collection_id": "primary-real-v4-analysis",
+  "document": {
+    "schema_version": 1,
+    "checks": [
+      {
+        "id": "metrics-boundaries",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "historical known-answer checks reused after exact unchanged analysis/client/schema/config dependencies; no network performance claim",
+        "utc": "2026-11-13T20:07:47.923408Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/analysis/metrics-boundaries.json",
+            "sha256": "48c923fc6e5d1ff225cb29f09aec40402f6109cdcf2cd083e2392e6c630a9383"
+          }
+        ]
+      },
+      {
+        "id": "full-n-sign",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "historical known-answer checks reused after exact unchanged analysis/client/schema/config dependencies; no network performance claim",
+        "utc": "2026-11-13T20:07:47.925824Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/analysis/full-n-sign.json",
+            "sha256": "fad768b3b72b20815d45c864a1b267b028828fcbbe2359d1db8da27a9f8feeed"
+          }
+        ]
+      },
+      {
+        "id": "holm4",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "historical known-answer checks reused after exact unchanged analysis/client/schema/config dependencies; no network performance claim",
+        "utc": "2026-11-13T20:07:47.928028Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/analysis/holm4.json",
+            "sha256": "94ec22ee6f4ad323412b8332af3f6bef2afca60afc2e9c98ac4b6d4a11d47ff0"
+          }
+        ]
+      },
+      {
+        "id": "rank-intervals",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "historical known-answer checks reused after exact unchanged analysis/client/schema/config dependencies; no network performance claim",
+        "utc": "2026-11-13T20:07:47.930226Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/analysis/rank-intervals.json",
+            "sha256": "7ceea7ac088fadc3bdfd6be65d800884438e162cf95b5dc869c057dac7ee12d4"
+          }
+        ]
+      },
+      {
+        "id": "paired-bootstrap",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "historical known-answer checks reused after exact unchanged analysis/client/schema/config dependencies; no network performance claim",
+        "utc": "2026-11-13T20:07:47.932755Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/analysis/paired-bootstrap.json",
+            "sha256": "692571cf33adacbd171f0b5ef0af54b5faecdb2c2376532cdfafe27146cc7fdf"
+          }
+        ]
+      },
+      {
+        "id": "offline-reference",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "historical known-answer checks reused after exact unchanged analysis/client/schema/config dependencies; no network performance claim",
+        "utc": "2026-11-13T20:07:47.935286Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/analysis/offline-reference.json",
+            "sha256": "9afcfc30de776f71be23aeb5ee4ac6ca388c29fda933011a55bc8de3d2358376"
+          }
+        ]
+      },
+      {
+        "id": "null-family",
+        "mandatory": true,
+        "expected": true,
+        "actual": true,
+        "units": "predicate",
+        "tolerance": null,
+        "status": "passed",
+        "reason": "historical synthetic null fixture reused: analysis/protocol/context unchanged by sender and observer-order delta; original failures retained",
+        "utc": "2026-11-13T20:07:47.937555Z",
+        "evidence": [
+          {
+            "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/analysis/null-family.json",
+            "sha256": "fca3fb01d3ef6a3f6fb3433576567e556babf3b2ed1a35bef698b72901063988"
+          }
+        ]
+      }
+    ]
+  },
+  "observations": {
+    "metrics-boundaries": {
+      "collection_id": "primary-real-v4-analysis",
+      "id": "metrics-boundaries",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "historical known-answer checks reused after exact unchanged analysis/client/schema/config dependencies; no network performance claim",
+      "utc": "2026-11-13T20:07:47.923408Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/analysis/metrics-boundaries.json",
+          "sha256": "48c923fc6e5d1ff225cb29f09aec40402f6109cdcf2cd083e2392e6c630a9383"
+        }
+      ]
+    },
+    "full-n-sign": {
+      "collection_id": "primary-real-v4-analysis",
+      "id": "full-n-sign",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "historical known-answer checks reused after exact unchanged analysis/client/schema/config dependencies; no network performance claim",
+      "utc": "2026-11-13T20:07:47.925824Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/analysis/full-n-sign.json",
+          "sha256": "fad768b3b72b20815d45c864a1b267b028828fcbbe2359d1db8da27a9f8feeed"
+        }
+      ]
+    },
+    "holm4": {
+      "collection_id": "primary-real-v4-analysis",
+      "id": "holm4",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "historical known-answer checks reused after exact unchanged analysis/client/schema/config dependencies; no network performance claim",
+      "utc": "2026-11-13T20:07:47.928028Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/analysis/holm4.json",
+          "sha256": "94ec22ee6f4ad323412b8332af3f6bef2afca60afc2e9c98ac4b6d4a11d47ff0"
+        }
+      ]
+    },
+    "rank-intervals": {
+      "collection_id": "primary-real-v4-analysis",
+      "id": "rank-intervals",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "historical known-answer checks reused after exact unchanged analysis/client/schema/config dependencies; no network performance claim",
+      "utc": "2026-11-13T20:07:47.930226Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/analysis/rank-intervals.json",
+          "sha256": "7ceea7ac088fadc3bdfd6be65d800884438e162cf95b5dc869c057dac7ee12d4"
+        }
+      ]
+    },
+    "paired-bootstrap": {
+      "collection_id": "primary-real-v4-analysis",
+      "id": "paired-bootstrap",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "historical known-answer checks reused after exact unchanged analysis/client/schema/config dependencies; no network performance claim",
+      "utc": "2026-11-13T20:07:47.932755Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/analysis/paired-bootstrap.json",
+          "sha256": "692571cf33adacbd171f0b5ef0af54b5faecdb2c2376532cdfafe27146cc7fdf"
+        }
+      ]
+    },
+    "offline-reference": {
+      "collection_id": "primary-real-v4-analysis",
+      "id": "offline-reference",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "historical known-answer checks reused after exact unchanged analysis/client/schema/config dependencies; no network performance claim",
+      "utc": "2026-11-13T20:07:47.935286Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/analysis/offline-reference.json",
+          "sha256": "9afcfc30de776f71be23aeb5ee4ac6ca388c29fda933011a55bc8de3d2358376"
+        }
+      ]
+    },
+    "null-family": {
+      "collection_id": "primary-real-v4-analysis",
+      "id": "null-family",
+      "mandatory": true,
+      "expected": true,
+      "actual": true,
+      "units": "predicate",
+      "tolerance": null,
+      "status": "passed",
+      "reason": "historical synthetic null fixture reused: analysis/protocol/context unchanged by sender and observer-order delta; original failures retained",
+      "utc": "2026-11-13T20:07:47.937555Z",
+      "evidence": [
+        {
+          "path": "results/verify/readiness/stage4/release-v4/primary-real-v4/analysis/null-family.json",
+          "sha256": "fca3fb01d3ef6a3f6fb3433576567e556babf3b2ed1a35bef698b72901063988"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,304 @@
+{
+  "collection_id": "primary-real-v3-path",
+  "gate": "path",
+  "id": "profile-readback",
+  "actual": true,
+  "scope": "real four-profile tc readbacks; no bandwidth/calibration claim",
+  "command": "smoke network profile for r20p0/r20p1/r80p0/r80p1",
+  "observations": {
+    "r20p0": [
+      {
+        "kind": "netem",
+        "handle": "8043:",
+        "root": true,
+        "refcnt": 3,
+        "options": {
+          "limit": 1000,
+          "delay": {
+            "delay": 0.01,
+            "jitter": 0,
+            "correlation": 0
+          },
+          "rate": {
+            "rate": 1250000,
+            "packetoverhead": 0,
+            "cellsize": 0,
+            "celloverhead": 0
+          },
+          "seed": 20261108,
+          "ecn": false,
+          "gap": 0
+        },
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      },
+      {
+        "kind": "netem",
+        "handle": "8044:",
+        "root": true,
+        "refcnt": 3,
+        "options": {
+          "limit": 1000,
+          "delay": {
+            "delay": 0.01,
+            "jitter": 0,
+            "correlation": 0
+          },
+          "rate": {
+            "rate": 1250000,
+            "packetoverhead": 0,
+            "cellsize": 0,
+            "celloverhead": 0
+          },
+          "seed": 20261109,
+          "ecn": false,
+          "gap": 0
+        },
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "r20p1": [
+      {
+        "kind": "netem",
+        "handle": "8043:",
+        "root": true,
+        "refcnt": 3,
+        "options": {
+          "limit": 1000,
+          "delay": {
+            "delay": 0.01,
+            "jitter": 0,
+            "correlation": 0
+          },
+          "loss-random": {
+            "loss": 0.01,
+            "correlation": 0
+          },
+          "rate": {
+            "rate": 1250000,
+            "packetoverhead": 0,
+            "cellsize": 0,
+            "celloverhead": 0
+          },
+          "seed": 20261108,
+          "ecn": false,
+          "gap": 0
+        },
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      },
+      {
+        "kind": "netem",
+        "handle": "8044:",
+        "root": true,
+        "refcnt": 3,
+        "options": {
+          "limit": 1000,
+          "delay": {
+            "delay": 0.01,
+            "jitter": 0,
+            "correlation": 0
+          },
+          "loss-random": {
+            "loss": 0.01,
+            "correlation": 0
+          },
+          "rate": {
+            "rate": 1250000,
+            "packetoverhead": 0,
+            "cellsize": 0,
+            "celloverhead": 0
+          },
+          "seed": 20261109,
+          "ecn": false,
+          "gap": 0
+        },
+        "bytes": 0,
+        "packets": 0,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "r80p0": [
+      {
+        "kind": "netem",
+        "handle": "8043:",
+        "root": true,
+        "refcnt": 3,
+        "options": {
+          "limit": 1000,
+          "delay": {
+            "delay": 0.04,
+            "jitter": 0,
+            "correlation": 0
+          },
+          "rate": {
+            "rate": 1250000,
+            "packetoverhead": 0,
+            "cellsize": 0,
+            "celloverhead": 0
+          },
+          "seed": 20261108,
+          "ecn": false,
+          "gap": 0
+        },
+        "bytes": 132,
+        "packets": 2,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      },
+      {
+        "kind": "netem",
+        "handle": "8044:",
+        "root": true,
+        "refcnt": 3,
+        "options": {
+          "limit": 1000,
+          "delay": {
+            "delay": 0.04,
+            "jitter": 0,
+            "correlation": 0
+          },
+          "rate": {
+            "rate": 1250000,
+            "packetoverhead": 0,
+            "cellsize": 0,
+            "celloverhead": 0
+          },
+          "seed": 20261109,
+          "ecn": false,
+          "gap": 0
+        },
+        "bytes": 312,
+        "packets": 4,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 0,
+        "qlen": 0
+      }
+    ],
+    "r80p1": [
+      {
+        "kind": "netem",
+        "handle": "8043:",
+        "root": true,
+        "refcnt": 3,
+        "options": {
+          "limit": 1000,
+          "delay": {
+            "delay": 0.04,
+            "jitter": 0,
+            "correlation": 0
+          },
+          "loss-random": {
+            "loss": 0.01,
+            "correlation": 0
+          },
+          "rate": {
+            "rate": 1250000,
+            "packetoverhead": 0,
+            "cellsize": 0,
+            "celloverhead": 0
+          },
+          "seed": 20261108,
+          "ecn": false,
+          "gap": 0
+        },
+        "bytes": 537,
+        "packets": 8,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 174,
+        "qlen": 3
+      },
+      {
+        "kind": "netem",
+        "handle": "8044:",
+        "root": true,
+        "refcnt": 3,
+        "options": {
+          "limit": 1000,
+          "delay": {
+            "delay": 0.04,
+            "jitter": 0,
+            "correlation": 0
+          },
+          "loss-random": {
+            "loss": 0.01,
+            "correlation": 0
+          },
+          "rate": {
+            "rate": 1250000,
+            "packetoverhead": 0,
+            "cellsize": 0,
+            "celloverhead": 0
+          },
+          "seed": 20261109,
+          "ecn": false,
+          "gap": 0
+        },
+        "bytes": 724,
+        "packets": 9,
+        "drops": 0,
+        "overlimits": 0,
+        "requeues": 0,
+        "backlog": 156,
+        "qlen": 2
+      }
+    ]
+  },
+  "files": [
+    {
+      "path": "results/verify/path/wswt-smoke.vMSax84H/r20p0.txt",
+      "sha256": "617bd855a10b713d3a7ed7708598f3df0fb12b2edacf297fa0a4f81b62d56a99"
+    },
+    {
+      "path": "results/verify/path/wswt-smoke.vMSax84H/r20p1.txt",
+      "sha256": "e52468ae0ad89117bd1520b9e19f35707fd1a9eb881900241c423e39964b78a1"
+    },
+    {
+      "path": "results/verify/path/wswt-smoke.vMSax84H/r80p0.txt",
+      "sha256": "afc97f843009482a2fa02873f7bda04d952592a5a8468da8a8e557e779ddd9bf"
+    },
+    {
+      "path": "results/verify/path/wswt-smoke.vMSax84H/r80p1.txt",
+      "sha256": "3d85558803212f557cbad4dd251c2b15644dc31404e9c0d0821f95b5fc4ee937"
+    }
+  ],
+  "preparer": {
+    "path": "/bench/docs/readiness/stage4-primary-v3.py",
+    "sha256": "d381d8cb8633a2100a6600f2bd331d4a50287c3d292b6f7429b76ac0c447d033"
+  },
+  "source_inventory": {
+    "path": "results/verify/readiness/stage4/release-v3/source-inventory.json",
+    "sha256": "f1a20fb6d0891da7cbf9acd755cd3e87274ed7748fcba61e39564806f5e8c795"
+  },
+  "applicability": {
+    "path": "results/verify/readiness/stage4/release-v3/release.json",
+    "sha256": "5f52be9506c654108d497bb45cfd46cf72e2ac86f33f0c68f9b852fe751d0a87"
+  }
+}

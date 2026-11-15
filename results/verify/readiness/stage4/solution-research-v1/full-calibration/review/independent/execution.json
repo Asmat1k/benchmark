@@ -1,0 +1,12 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "results/verify/readiness/stage4/solution-research-v1/full-calibration/review/independent/review.py"
+  ],
+  "cwd": "/Users/dobrov/Desktop/Code/ITMO/benchmark",
+  "started": "2026-11-14T18:34:27.670901+00:00",
+  "ended": "2026-11-14T18:34:28.934695+00:00",
+  "elapsed_s": 1.2633770829997957,
+  "exit": 0
+}

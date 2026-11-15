@@ -1,0 +1,32 @@
+{
+  "collection_id": "primary-real-v3-tls",
+  "gate": "tls",
+  "id": "ws-wrong-ca",
+  "actual": true,
+  "scope": "real negative TLS probe with specific certificate error",
+  "command": "smoke main.js: assert navigation rejection / WebSocket console certificate error",
+  "observations": {
+    "name": "unknown-ca",
+    "port": 8446,
+    "https": "CERT_AUTHORITY_INVALID",
+    "wss": "rejected"
+  },
+  "files": [
+    {
+      "path": "results/verify/path/wswt-smoke.vMSax84H/browser.txt",
+      "sha256": "94199fad9996a1102148a1414ee73285149d072ae671d135b5908829697f1203"
+    }
+  ],
+  "preparer": {
+    "path": "/bench/docs/readiness/stage4-primary-v3.py",
+    "sha256": "d381d8cb8633a2100a6600f2bd331d4a50287c3d292b6f7429b76ac0c447d033"
+  },
+  "source_inventory": {
+    "path": "results/verify/readiness/stage4/release-v3/source-inventory.json",
+    "sha256": "f1a20fb6d0891da7cbf9acd755cd3e87274ed7748fcba61e39564806f5e8c795"
+  },
+  "applicability": {
+    "path": "results/verify/readiness/stage4/release-v3/release.json",
+    "sha256": "5f52be9506c654108d497bb45cfd46cf72e2ac86f33f0c68f9b852fe751d0a87"
+  }
+}

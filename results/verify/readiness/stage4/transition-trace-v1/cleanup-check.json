@@ -1,0 +1,68 @@
+{
+  "start": 1794647293.940709,
+  "elapsed_s": 0.3968777656555176,
+  "commands": [
+    {
+      "argv": [
+        "docker",
+        "ps",
+        "--format",
+        "{{.Names}} {{.Status}}"
+      ],
+      "exit": 0,
+      "stdout": "ai-grepa-qdrant-1 Up 47 hours (unhealthy)\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "docker",
+        "network",
+        "ls"
+      ],
+      "exit": 0,
+      "stdout": "NETWORK ID     NAME                    DRIVER    SCOPE\n19502ad00bbf   ai-grepa_ai-grepa       bridge    local\n8d97a7b2c963   bridge                  bridge    local\n569815353d03   host                    host      local\n0cdc48c7195e   kind                    bridge    local\ncf90586b975d   mkd2-astra182_default   bridge    local\ne7d6880bc241   none                    null      local\n42c7ab4fa5c7   transport-lab_back      bridge    local\nbd27d1e8f911   transport-lab_front     bridge    local\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "docker",
+        "run",
+        "--rm",
+        "-i",
+        "--network",
+        "none",
+        "-v",
+        "/Users/dobrov/Desktop/Code/ITMO/benchmark:/bench",
+        "-w",
+        "/bench",
+        "wswt-bench-analyzer:dev",
+        "python",
+        "-B",
+        "src/analysis/series.py",
+        "hold"
+      ],
+      "exit": 0,
+      "stdout": "locked\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "docker",
+        "image",
+        "inspect",
+        "wswt-bench-analyzer:dev",
+        "wswt-bench-router:dev",
+        "wswt-bench-server:dev",
+        "wswt-bench-browser:dev",
+        "--format",
+        "{{.RepoTags}} {{.Id}}"
+      ],
+      "exit": 0,
+      "stdout": "[wswt-bench-analyzer:dev] sha256:9e263785dc135db52a216bc358c38218cf3d98f178a9981a365ca79cda7cbd62\n[wswt-bench-router:dev] sha256:d78a80d31724881c1adaa57005fae37f4f23e0013945dac759d7ee1f76b6b74d\n[wswt-bench-server:dev] sha256:c2c60585a64d04e8dd7dd6a674625c0aec44cdc385561c8864dab734fbf19c44\n[wswt-bench-browser:dev] sha256:356b2e1af8773aaf688f3c4e03bbfa73b2c835d88be0a76278030cf55d1c1641\n",
+      "stderr": ""
+    }
+  ],
+  "task_containers_networks_absent": true,
+  "lock_released": true,
+  "foreign_qdrant_unchanged": true
+}

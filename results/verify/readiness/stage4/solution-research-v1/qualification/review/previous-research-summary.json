@@ -1,0 +1,46 @@
+{
+  "status": "minimal_fix_verified_short_qualification_pending",
+  "production_commit": "d66559066b704fde567b6c9f92f57e2dcde22698",
+  "fix": "Echo sender minallowedCPU affinity before timeline; saturation unchanged",
+  "added_busy_cores": 0,
+  "thresholds_changed": false,
+  "unit_tests": {
+    "passed": 16,
+    "total": 16,
+    "unittest_elapsed_s": 5.548
+  },
+  "production_validation": {
+    "run": "results/verify/diagnostic/affinity-validation.83SwishH",
+    "execution": "results/verify/readiness/stage4/solution-research-v1/production-validation/execution.da9vk1_q",
+    "source_count": 134,
+    "seals": 50,
+    "profiles": [
+      {
+        "name": "r80p0-check",
+        "sender": "passed",
+        "process_suspect": false,
+        "max_lag_ms": 35.367857999997796
+      },
+      {
+        "name": "r80p1-check",
+        "sender": "passed",
+        "process_suspect": false,
+        "max_lag_ms": 12.990372000000207
+      }
+    ]
+  },
+  "controlled_migration": {
+    "run": "results/verify/diagnostic/migration-causal.6itZemcx",
+    "simple_immediate_return_prediction": "incomplete; dynamic watchdog rebase documented",
+    "forced_control_sender": "failed",
+    "forced_control_process": "suspect",
+    "fixed_candidate_sender": "passed",
+    "fixed_candidate_process": "clear"
+  },
+  "invalid_battery_run": "results/verify/diagnostic/affinity-validation.C9bJRLo6",
+  "qualification_started": false,
+  "next_user_command": "caffeinate -ims python3 -B results/verify/readiness/stage4/solution-research-v1/qualification/run.py",
+  "stage4_complete": false,
+  "report": "docs/readiness/stage4-sender-affinity-result.md",
+  "updated_utc": "2026-11-14T13:37:44.095556+00:00"
+}

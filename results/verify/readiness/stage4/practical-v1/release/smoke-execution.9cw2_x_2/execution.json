@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "sh",
+    "docker/smoke.sh"
+  ],
+  "limit_s": 90,
+  "start": "2026-11-14T19:29:19.456731+00:00",
+  "preflight": "/Users/dobrov/Desktop/Code/ITMO/benchmark/results/verify/readiness/stage4/practical-v1/release/preflight.69tvjati",
+  "end": "2026-11-14T19:29:36.762974+00:00",
+  "exit": 0
+}

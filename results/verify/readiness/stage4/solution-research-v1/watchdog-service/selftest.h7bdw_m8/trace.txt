@@ -1,0 +1,836 @@
+# tracer: nop
+#
+# entries-in-buffer/entries-written: 824/824   #P:2
+#
+#                                _-----=> irqs-off/BH-disabled
+#                               / _----=> need-resched
+#                              | / _---=> hardirq/softirq
+#                              || / _--=> preempt-depth
+#                              ||| / _-=> migrate-disable
+#                              |||| /     delay
+#           TASK-PID     CPU#  |||||  TIMESTAMP  FUNCTION
+#              | |         |   |||||     |         |
+          python-41015   [000] ..... 130090.803814: tracing_mark_write: transition-trace-ready
+          <idle>-0       [001] d.h.. 130090.810805: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130090.810808: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130090.810811: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] d.... 130090.810882: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130090.810914: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130090.810927: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130090.810930: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] d.... 130090.810952: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 130090.813918: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 130090.813922: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 130090.813925: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] d.... 130090.813974: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130090.814003: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] d.... 130090.814004: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] d.... 130090.814004: sched_switch: prev_comm=kworker/0:3 prev_pid=39139 prev_prio=120 prev_state=I ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] d.... 130090.814018: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [001] d.h.. 130090.821023: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130090.821025: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130090.821028: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] d.... 130090.821084: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130090.821161: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130090.821176: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+       rcu_sched-17      [001] d.... 130090.821180: sched_switch: prev_comm=rcu_sched prev_pid=17 prev_prio=120 prev_state=I ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] d.... 130090.821198: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 130090.824813: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 130090.824817: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 130090.824822: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] d.... 130090.824897: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130090.824929: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] d.... 130090.824930: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] d.... 130090.824931: sched_switch: prev_comm=kworker/0:3 prev_pid=39139 prev_prio=120 prev_state=I ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] d.... 130090.824950: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [001] d.h.. 130090.831552: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130090.831555: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130090.831559: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] d.... 130090.831659: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130090.831781: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130090.831803: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130090.831806: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] d.... 130090.831828: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [000] dNh.. 130090.835308: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 130090.835312: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+         rcuog/0-18      [000] d.... 130090.835326: sched_switch: prev_comm=rcuog/0 prev_pid=18 prev_prio=120 prev_state=S ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] d.... 130090.835387: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=R+ ==> next_comm=rcuog/0 next_pid=18 next_prio=120
+         rcuog/0-18      [000] d.... 130090.835393: sched_switch: prev_comm=rcuog/0 prev_pid=18 prev_prio=120 prev_state=S ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] d.... 130090.835404: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130090.835457: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] d.... 130090.835459: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] d.... 130090.835460: sched_switch: prev_comm=kworker/0:3 prev_pid=39139 prev_prio=120 prev_state=I ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] d.... 130090.835483: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [001] d.h.. 130090.842402: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130090.842405: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130090.842408: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] d.... 130090.842470: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130090.842509: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130090.842529: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130090.842532: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] d.... 130090.842550: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 130090.846141: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 130090.846147: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 130090.846151: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] d.... 130090.846230: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130090.846287: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] d.... 130090.846289: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] d.... 130090.846290: sched_switch: prev_comm=kworker/0:3 prev_pid=39139 prev_prio=120 prev_state=I ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] d.... 130090.846309: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [001] d.h.. 130090.852927: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130090.852931: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130090.852936: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] d.... 130090.853029: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130090.853076: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130090.853093: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130090.853096: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] d.... 130090.853116: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 130090.856753: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 130090.856758: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 130090.856768: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] d.... 130090.856858: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130090.857437: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] d.... 130090.857441: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] d.... 130090.857442: sched_switch: prev_comm=kworker/0:3 prev_pid=39139 prev_prio=120 prev_state=I ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] d.... 130090.857533: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130090.857631: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] d.... 130090.857633: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] d.... 130090.857635: sched_switch: prev_comm=kworker/0:3 prev_pid=39139 prev_prio=120 prev_state=I ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] d.... 130090.857703: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130090.857748: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] d.... 130090.857750: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] d.... 130090.857751: sched_switch: prev_comm=kworker/0:3 prev_pid=39139 prev_prio=120 prev_state=I ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] d.... 130090.857760: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130090.858289: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] d.... 130090.858291: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] d.... 130090.858292: sched_switch: prev_comm=kworker/0:3 prev_pid=39139 prev_prio=120 prev_state=I ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] d.... 130090.858367: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130090.858411: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] d.... 130090.858413: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] d.... 130090.858413: sched_switch: prev_comm=kworker/0:3 prev_pid=39139 prev_prio=120 prev_state=I ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] b.... 130090.859066: net_dev_queue: dev=lo skbaddr=00000000aec33be9 len=298
+          python-40956   [000] b.... 130090.859069: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=00000000aec33be9
+          python-40956   [000] D.... 130090.859070: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130090869305845 softexpires=130090869305845 mode=ABS|PINNED
+          python-40956   [000] b.... 130090.859070: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40956   [000] d.... 130090.859097: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [001] d.h.. 130090.863577: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130090.863580: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130090.863584: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] d.... 130090.863659: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130090.864741: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130090.864756: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130090.864760: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] d.... 130090.864790: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130090.864860: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130090.864875: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130090.864878: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] ..... 130090.864910: sys_recvfrom(fd: 3, ubuf: aaaae1788570, size: ffff, flags: 0, addr: ffffdbc09b18, addr_len: ffffdbc09ae4)
+          python-40888   [001] d.... 130090.864914: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 130090.869332: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130090869330570
+          <idle>-0       [000] .Ns.. 130090.869337: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=00000000aec33be9
+          <idle>-0       [000] .Ns.. 130090.869340: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=00000000aec33be9 vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [000] .Ns.. 130090.869343: net_dev_xmit: dev=lo skbaddr=00000000aec33be9 len=298 rc=0
+          <idle>-0       [000] .Ns.. 130090.869344: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+     ksoftirqd/0-16      [000] ..s.. 130090.869349: netif_receive_skb: dev=lo skbaddr=00000000aec33be9 len=284
+     ksoftirqd/0-16      [000] d.s.. 130090.869356: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130090.869377: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130090.869380: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] ..... 130090.869385: sys_recvfrom -> 0x100
+          python-40888   [001] ..... 130090.869412: sys_sendto(fd: 3, buff: aaaae1788570, len: 100, flags: 0, addr: ffffdbc09b98, addr_len: 10)
+          python-40888   [001] b.... 130090.869420: net_dev_queue: dev=lo skbaddr=00000000e1de1016 len=298
+          python-40888   [001] b.... 130090.869421: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=00000000e1de1016
+          python-40888   [001] D.... 130090.869421: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130090879658636 softexpires=130090879658636 mode=ABS|PINNED
+          python-40888   [001] b.... 130090.869421: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40888   [001] ..... 130090.869422: sys_sendto -> 0x100
+          python-40888   [001] ..... 130090.869437: sys_recvfrom(fd: 3, ubuf: aaaae17886a0, size: ffff, flags: 0, addr: ffffdbc09b18, addr_len: ffffdbc09ae4)
+          python-40888   [001] d.... 130090.869443: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [001] d.H.. 130090.880747: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130090880744820
+          <idle>-0       [001] ..s.. 130090.880755: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=00000000e1de1016
+          <idle>-0       [001] ..s.. 130090.880757: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=00000000e1de1016 vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [001] ..s.. 130090.880758: net_dev_xmit: dev=lo skbaddr=00000000e1de1016 len=298 rc=0
+          <idle>-0       [001] ..s.. 130090.880758: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [001] ..s.. 130090.880764: netif_receive_skb: dev=lo skbaddr=00000000e1de1016 len=284
+          <idle>-0       [001] d.s.. 130090.880771: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 130090.880796: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 130090.880800: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] b.... 130090.880861: net_dev_queue: dev=lo skbaddr=00000000a0fbf450 len=298
+          python-40956   [000] b.... 130090.880863: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=00000000a0fbf450
+          python-40956   [000] D.... 130090.880863: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130090891100428 softexpires=130090891100428 mode=ABS|PINNED
+          python-40956   [000] b.... 130090.880863: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40956   [000] d.... 130090.880868: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 130090.893704: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130090893695278
+          <idle>-0       [000] ..s.. 130090.893710: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=00000000a0fbf450
+          <idle>-0       [000] ..s.. 130090.893714: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=00000000a0fbf450 vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [000] ..s.. 130090.893716: net_dev_xmit: dev=lo skbaddr=00000000a0fbf450 len=298 rc=0
+          <idle>-0       [000] ..s.. 130090.893717: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [000] ..s.. 130090.893719: netif_receive_skb: dev=lo skbaddr=00000000a0fbf450 len=284
+          <idle>-0       [000] d.s.. 130090.893729: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130090.893763: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130090.893772: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] ..... 130090.893786: sys_recvfrom -> 0x100
+          python-40888   [001] ..... 130090.893845: sys_sendto(fd: 3, buff: aaaae17886a0, len: 100, flags: 0, addr: ffffdbc09b98, addr_len: 10)
+          python-40888   [001] b.... 130090.893864: net_dev_queue: dev=lo skbaddr=00000000f7323458 len=298
+          python-40888   [001] b.... 130090.893866: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=00000000f7323458
+          python-40888   [001] D.... 130090.893866: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130090904103428 softexpires=130090904103428 mode=ABS|PINNED
+          python-40888   [001] b.... 130090.893867: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40888   [001] ..... 130090.893867: sys_sendto -> 0x100
+          python-40888   [001] ..... 130090.893880: sys_recvfrom(fd: 3, ubuf: aaaae17887d0, size: ffff, flags: 0, addr: ffffdbc09b18, addr_len: ffffdbc09ae4)
+          python-40888   [001] d.... 130090.893888: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [001] d.h.. 130090.904759: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130090904753361
+          <idle>-0       [001] ..s.. 130090.904765: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=00000000f7323458
+          <idle>-0       [001] ..s.. 130090.904768: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=00000000f7323458 vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [001] ..s.. 130090.904770: net_dev_xmit: dev=lo skbaddr=00000000f7323458 len=298 rc=0
+          <idle>-0       [001] ..s.. 130090.904770: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [001] ..s.. 130090.904772: netif_receive_skb: dev=lo skbaddr=00000000f7323458 len=284
+          <idle>-0       [001] d.s.. 130090.904779: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 130090.904816: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 130090.904823: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] b.... 130090.904887: net_dev_queue: dev=lo skbaddr=0000000068b55e7b len=298
+          python-40956   [000] b.... 130090.904888: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=0000000068b55e7b
+          python-40956   [000] D.... 130090.904888: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130090915125636 softexpires=130090915125636 mode=ABS|PINNED
+          python-40956   [000] b.... 130090.904889: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40956   [000] d.... 130090.904894: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 130090.917716: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130090917712861
+          <idle>-0       [000] ..s.. 130090.917721: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=0000000068b55e7b
+          <idle>-0       [000] ..s.. 130090.917723: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=0000000068b55e7b vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [000] ..s.. 130090.917724: net_dev_xmit: dev=lo skbaddr=0000000068b55e7b len=298 rc=0
+          <idle>-0       [000] ..s.. 130090.917724: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [000] ..s.. 130090.917726: netif_receive_skb: dev=lo skbaddr=0000000068b55e7b len=284
+          <idle>-0       [000] d.s.. 130090.917731: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130090.917760: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130090.917766: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] ..... 130090.917772: sys_recvfrom -> 0x100
+          python-40888   [001] ..... 130090.917809: sys_sendto(fd: 3, buff: aaaae17887d0, len: 100, flags: 0, addr: ffffdbc09b98, addr_len: 10)
+          python-40888   [001] b.... 130090.917820: net_dev_queue: dev=lo skbaddr=0000000016ecfd1d len=298
+          python-40888   [001] b.... 130090.917821: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=0000000016ecfd1d
+          python-40888   [001] D.... 130090.917822: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130090928059053 softexpires=130090928059053 mode=ABS|PINNED
+          python-40888   [001] b.... 130090.917822: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40888   [001] ..... 130090.917822: sys_sendto -> 0x100
+          python-40888   [001] ..... 130090.917840: sys_recvfrom(fd: 3, ubuf: aaaae1788900, size: ffff, flags: 0, addr: ffffdbc09b18, addr_len: ffffdbc09ae4)
+          python-40888   [001] d.... 130090.917843: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [001] d.h.. 130090.929333: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130090929325945
+          <idle>-0       [001] ..s.. 130090.929340: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=0000000016ecfd1d
+          <idle>-0       [001] ..s.. 130090.929343: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=0000000016ecfd1d vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [001] ..s.. 130090.929344: net_dev_xmit: dev=lo skbaddr=0000000016ecfd1d len=298 rc=0
+          <idle>-0       [001] ..s.. 130090.929345: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [001] ..s.. 130090.929347: netif_receive_skb: dev=lo skbaddr=0000000016ecfd1d len=284
+          <idle>-0       [001] d.s.. 130090.929356: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 130090.929389: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 130090.929396: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] b.... 130090.929462: net_dev_queue: dev=lo skbaddr=00000000f808d819 len=298
+          python-40956   [000] b.... 130090.929464: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=00000000f808d819
+          python-40956   [000] D.... 130090.929464: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130090939701345 softexpires=130090939701345 mode=ABS|PINNED
+          python-40956   [000] b.... 130090.929464: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40956   [000] d.... 130090.929469: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 130090.942288: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130090942283070
+          <idle>-0       [000] ..s.. 130090.942292: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=00000000f808d819
+          <idle>-0       [000] ..s.. 130090.942295: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=00000000f808d819 vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [000] ..s.. 130090.942296: net_dev_xmit: dev=lo skbaddr=00000000f808d819 len=298 rc=0
+          <idle>-0       [000] ..s.. 130090.942296: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [000] ..s.. 130090.942297: netif_receive_skb: dev=lo skbaddr=00000000f808d819 len=284
+          <idle>-0       [000] d.s.. 130090.942303: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130090.942330: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130090.942336: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] ..... 130090.942342: sys_recvfrom -> 0x100
+          python-40888   [001] ..... 130090.942379: sys_sendto(fd: 3, buff: aaaae1788900, len: 100, flags: 0, addr: ffffdbc09b98, addr_len: 10)
+          python-40888   [001] b.... 130090.942389: net_dev_queue: dev=lo skbaddr=00000000796b63ae len=298
+          python-40888   [001] b.... 130090.942390: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=00000000796b63ae
+          python-40888   [001] D.... 130090.942390: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130090952627678 softexpires=130090952627678 mode=ABS|PINNED
+          python-40888   [001] b.... 130090.942390: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40888   [001] ..... 130090.942391: sys_sendto -> 0x100
+          python-40888   [001] ..... 130090.942400: sys_recvfrom(fd: 3, ubuf: aaaae1788a30, size: ffff, flags: 0, addr: ffffdbc09b18, addr_len: ffffdbc09ae4)
+          python-40888   [001] d.... 130090.942403: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [001] d.h.. 130090.955223: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130090955216528
+          <idle>-0       [001] ..s.. 130090.955229: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=00000000796b63ae
+          <idle>-0       [001] ..s.. 130090.955232: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=00000000796b63ae vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [001] ..s.. 130090.955234: net_dev_xmit: dev=lo skbaddr=00000000796b63ae len=298 rc=0
+          <idle>-0       [001] ..s.. 130090.955234: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [001] ..s.. 130090.955236: netif_receive_skb: dev=lo skbaddr=00000000796b63ae len=284
+          <idle>-0       [001] d.s.. 130090.955242: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 130090.955296: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 130090.955304: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] b.... 130090.955378: net_dev_queue: dev=lo skbaddr=00000000abd4f66e len=298
+          python-40956   [000] b.... 130090.955379: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=00000000abd4f66e
+          python-40956   [000] D.... 130090.955380: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130090965616970 softexpires=130090965616970 mode=ABS|PINNED
+          python-40956   [000] b.... 130090.955380: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40956   [000] d.... 130090.955389: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 130090.968209: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130090968203861
+          <idle>-0       [000] ..s.. 130090.968214: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=00000000abd4f66e
+          <idle>-0       [000] ..s.. 130090.968217: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=00000000abd4f66e vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [000] ..s.. 130090.968219: net_dev_xmit: dev=lo skbaddr=00000000abd4f66e len=298 rc=0
+          <idle>-0       [000] ..s.. 130090.968219: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [000] ..s.. 130090.968220: netif_receive_skb: dev=lo skbaddr=00000000abd4f66e len=284
+          <idle>-0       [000] d.s.. 130090.968228: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130090.968254: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130090.968261: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] ..... 130090.968268: sys_recvfrom -> 0x100
+          python-40888   [001] ..... 130090.968383: sys_sendto(fd: 3, buff: aaaae1788a30, len: 100, flags: 0, addr: ffffdbc09b98, addr_len: 10)
+          python-40888   [001] b.... 130090.968403: net_dev_queue: dev=lo skbaddr=000000006a103afe len=298
+          python-40888   [001] b.... 130090.968405: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=000000006a103afe
+          python-40888   [001] D.... 130090.968407: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130090978642553 softexpires=130090978642553 mode=ABS|PINNED
+          python-40888   [001] b.... 130090.968409: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40888   [001] ..... 130090.968410: sys_sendto -> 0x100
+          python-40888   [001] ..... 130090.968425: sys_recvfrom(fd: 3, ubuf: aaaae1788b60, size: ffff, flags: 0, addr: ffffdbc09b18, addr_len: ffffdbc09ae4)
+          python-40888   [001] d.... 130090.968444: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [001] d.h.. 130090.978831: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130090978829320
+          <idle>-0       [001] ..s.. 130090.978834: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=000000006a103afe
+          <idle>-0       [001] ..s.. 130090.978836: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=000000006a103afe vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [001] ..s.. 130090.978837: net_dev_xmit: dev=lo skbaddr=000000006a103afe len=298 rc=0
+          <idle>-0       [001] ..s.. 130090.978837: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [001] ..s.. 130090.978837: netif_receive_skb: dev=lo skbaddr=000000006a103afe len=284
+          <idle>-0       [001] d.s.. 130090.978841: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 130090.978861: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 130090.978871: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] b.... 130090.978952: net_dev_queue: dev=lo skbaddr=0000000036eee425 len=298
+          python-40956   [000] b.... 130090.978953: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=0000000036eee425
+          python-40956   [000] D.... 130090.978953: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130090989190678 softexpires=130090989190678 mode=ABS|PINNED
+          python-40956   [000] b.... 130090.978954: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40956   [000] d.... 130090.978959: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 130090.991759: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130090991754862
+          <idle>-0       [000] ..s.. 130090.991764: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=0000000036eee425
+          <idle>-0       [000] ..s.. 130090.991767: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=0000000036eee425 vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [000] ..s.. 130090.991768: net_dev_xmit: dev=lo skbaddr=0000000036eee425 len=298 rc=0
+          <idle>-0       [000] ..s.. 130090.991768: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [000] ..s.. 130090.991769: netif_receive_skb: dev=lo skbaddr=0000000036eee425 len=284
+          <idle>-0       [000] d.s.. 130090.991776: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130090.991851: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130090.991860: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] ..... 130090.991866: sys_recvfrom -> 0x100
+          python-40888   [001] ..... 130090.991901: sys_sendto(fd: 3, buff: aaaae1788b60, len: 100, flags: 0, addr: ffffdbc09b98, addr_len: 10)
+          python-40888   [001] b.... 130090.991908: net_dev_queue: dev=lo skbaddr=0000000078716418 len=298
+          python-40888   [001] b.... 130090.991910: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=0000000078716418
+          python-40888   [001] D.... 130090.991911: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091002147803 softexpires=130091002147803 mode=ABS|PINNED
+          python-40888   [001] b.... 130090.991912: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40888   [001] ..... 130090.991912: sys_sendto -> 0x100
+          python-40888   [001] ..... 130090.991922: sys_recvfrom(fd: 3, ubuf: aaaae1788c90, size: ffff, flags: 0, addr: ffffdbc09b18, addr_len: ffffdbc09ae4)
+          python-40888   [001] d.... 130090.991925: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [001] d.h.. 130091.004730: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091004727445
+          <idle>-0       [001] ..s.. 130091.004733: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=0000000078716418
+          <idle>-0       [001] ..s.. 130091.004734: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=0000000078716418 vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [001] ..s.. 130091.004735: net_dev_xmit: dev=lo skbaddr=0000000078716418 len=298 rc=0
+          <idle>-0       [001] ..s.. 130091.004735: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [001] ..s.. 130091.004736: netif_receive_skb: dev=lo skbaddr=0000000078716418 len=284
+          <idle>-0       [001] d.s.. 130091.004740: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 130091.004761: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 130091.004767: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] b.... 130091.004824: net_dev_queue: dev=lo skbaddr=000000000c85a542 len=298
+          python-40956   [000] b.... 130091.004826: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=000000000c85a542
+          python-40956   [000] D.... 130091.004826: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091015063470 softexpires=130091015063470 mode=ABS|PINNED
+          python-40956   [000] b.... 130091.004826: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40956   [000] d.... 130091.004831: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 130091.017652: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091017647487
+          <idle>-0       [000] ..s.. 130091.017657: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=000000000c85a542
+          <idle>-0       [000] ..s.. 130091.017659: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=000000000c85a542 vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [000] ..s.. 130091.017660: net_dev_xmit: dev=lo skbaddr=000000000c85a542 len=298 rc=0
+          <idle>-0       [000] ..s.. 130091.017660: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [000] ..s.. 130091.017661: netif_receive_skb: dev=lo skbaddr=000000000c85a542 len=284
+          <idle>-0       [000] d.s.. 130091.017666: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130091.017692: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130091.017697: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] ..... 130091.017703: sys_recvfrom -> 0x100
+          python-40888   [001] ..... 130091.017737: sys_sendto(fd: 3, buff: aaaae1788c90, len: 100, flags: 0, addr: ffffdbc09b98, addr_len: 10)
+          python-40888   [001] b.... 130091.017746: net_dev_queue: dev=lo skbaddr=0000000078716418 len=298
+          python-40888   [001] b.... 130091.017746: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=0000000078716418
+          python-40888   [001] D.... 130091.017747: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091027984262 softexpires=130091027984262 mode=ABS|PINNED
+          python-40888   [001] b.... 130091.017747: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40888   [001] ..... 130091.017747: sys_sendto -> 0x100
+          python-40888   [001] ..... 130091.017756: sys_recvfrom(fd: 3, ubuf: aaaae1788dc0, size: ffff, flags: 0, addr: ffffdbc09b18, addr_len: ffffdbc09ae4)
+          python-40888   [001] d.... 130091.017759: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [001] d.h.. 130091.029877: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091029866237
+          <idle>-0       [001] ..s.. 130091.029891: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=0000000078716418
+          <idle>-0       [001] ..s.. 130091.029896: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=0000000078716418 vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [001] ..s.. 130091.029900: net_dev_xmit: dev=lo skbaddr=0000000078716418 len=298 rc=0
+          <idle>-0       [001] ..s.. 130091.029900: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [001] ..s.. 130091.029904: netif_receive_skb: dev=lo skbaddr=0000000078716418 len=284
+          <idle>-0       [001] d.s.. 130091.029919: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 130091.029976: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 130091.029987: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] b.... 130091.030132: net_dev_queue: dev=lo skbaddr=000000007be9e813 len=298
+          python-40956   [000] b.... 130091.030134: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=000000007be9e813
+          python-40956   [000] D.... 130091.030135: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091040371637 softexpires=130091040371637 mode=ABS|PINNED
+          python-40956   [000] b.... 130091.030136: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40956   [000] d.... 130091.030146: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 130091.040505: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091040495278
+          <idle>-0       [000] .Ns.. 130091.040530: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=000000007be9e813
+          <idle>-0       [000] .Ns.. 130091.040532: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=000000007be9e813 vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [000] .Ns.. 130091.040535: net_dev_xmit: dev=lo skbaddr=000000007be9e813 len=298 rc=0
+          <idle>-0       [000] .Ns.. 130091.040535: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+     ksoftirqd/0-16      [000] ..s.. 130091.040555: netif_receive_skb: dev=lo skbaddr=000000007be9e813 len=284
+     ksoftirqd/0-16      [000] d.s.. 130091.040563: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130091.040633: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130091.040661: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] ..... 130091.040670: sys_recvfrom -> 0x100
+          python-40888   [001] ..... 130091.040737: sys_sendto(fd: 3, buff: aaaae1788dc0, len: 100, flags: 0, addr: ffffdbc09b98, addr_len: 10)
+          python-40888   [001] b.... 130091.040753: net_dev_queue: dev=lo skbaddr=000000006a103afe len=298
+          python-40888   [001] b.... 130091.040754: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=000000006a103afe
+          python-40888   [001] D.... 130091.040755: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091050991845 softexpires=130091050991845 mode=ABS|PINNED
+          python-40888   [001] b.... 130091.040755: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40888   [001] ..... 130091.040756: sys_sendto -> 0x100
+          python-40888   [001] ..... 130091.040779: sys_recvfrom(fd: 3, ubuf: aaaae1788ef0, size: ffff, flags: 0, addr: ffffdbc09b18, addr_len: ffffdbc09ae4)
+          python-40888   [001] d.... 130091.040790: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [001] d.h.. 130091.052401: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091052366612
+          <idle>-0       [001] ..s.. 130091.052411: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=000000006a103afe
+          <idle>-0       [001] ..s.. 130091.052415: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=000000006a103afe vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [001] ..s.. 130091.052419: net_dev_xmit: dev=lo skbaddr=000000006a103afe len=298 rc=0
+          <idle>-0       [001] ..s.. 130091.052419: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [001] ..s.. 130091.052422: netif_receive_skb: dev=lo skbaddr=000000006a103afe len=284
+          <idle>-0       [001] d.s.. 130091.052433: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 130091.052651: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 130091.052660: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] b.... 130091.052767: net_dev_queue: dev=lo skbaddr=00000000ceb44989 len=298
+          python-40956   [000] b.... 130091.052769: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=00000000ceb44989
+          python-40956   [000] D.... 130091.052770: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091063006178 softexpires=130091063006178 mode=ABS|PINNED
+          python-40956   [000] b.... 130091.052770: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40956   [000] d.... 130091.052780: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 130091.064334: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091064324903
+          <idle>-0       [000] ..s.. 130091.064355: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=00000000ceb44989
+          <idle>-0       [000] ..s.. 130091.064360: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=00000000ceb44989 vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [000] ..s.. 130091.064364: net_dev_xmit: dev=lo skbaddr=00000000ceb44989 len=298 rc=0
+          <idle>-0       [000] ..s.. 130091.064364: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [000] ..s.. 130091.064367: netif_receive_skb: dev=lo skbaddr=00000000ceb44989 len=284
+          <idle>-0       [000] d.s.. 130091.064383: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130091.064747: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130091.064759: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] ..... 130091.064775: sys_recvfrom -> 0x100
+          python-40888   [001] ..... 130091.064863: sys_sendto(fd: 3, buff: aaaae1788ef0, len: 100, flags: 0, addr: ffffdbc09b98, addr_len: 10)
+          python-40888   [001] b.... 130091.064889: net_dev_queue: dev=lo skbaddr=00000000796b63ae len=298
+          python-40888   [001] b.... 130091.064892: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=00000000796b63ae
+          python-40888   [001] D.... 130091.064896: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091075129137 softexpires=130091075129137 mode=ABS|PINNED
+          python-40888   [001] b.... 130091.064897: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40888   [001] ..... 130091.064898: sys_sendto -> 0x100
+          python-40888   [001] ..... 130091.064937: sys_recvfrom(fd: 3, ubuf: aaaae1789020, size: ffff, flags: 0, addr: ffffdbc09b18, addr_len: ffffdbc09ae4)
+          python-40888   [001] d.... 130091.065068: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [001] d.h.. 130091.077655: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091077651403
+          <idle>-0       [001] ..s.. 130091.077665: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=00000000796b63ae
+          <idle>-0       [001] ..s.. 130091.077670: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=00000000796b63ae vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [001] ..s.. 130091.077673: net_dev_xmit: dev=lo skbaddr=00000000796b63ae len=298 rc=0
+          <idle>-0       [001] ..s.. 130091.077673: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [001] ..s.. 130091.077676: netif_receive_skb: dev=lo skbaddr=00000000796b63ae len=284
+          <idle>-0       [001] d.s.. 130091.077687: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 130091.077723: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 130091.077734: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] b.... 130091.077858: net_dev_queue: dev=lo skbaddr=00000000cb0dbeac len=298
+          python-40956   [000] b.... 130091.077860: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=00000000cb0dbeac
+          python-40956   [000] D.... 130091.077861: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091088097303 softexpires=130091088097303 mode=ABS|PINNED
+          python-40956   [000] b.... 130091.077862: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40956   [000] d.... 130091.077871: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 130091.090498: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091090488237
+          <idle>-0       [000] ..s.. 130091.090534: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=00000000cb0dbeac
+          <idle>-0       [000] ..s.. 130091.090540: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=00000000cb0dbeac vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [000] ..s.. 130091.090544: net_dev_xmit: dev=lo skbaddr=00000000cb0dbeac len=298 rc=0
+          <idle>-0       [000] ..s.. 130091.090545: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [000] ..s.. 130091.090548: netif_receive_skb: dev=lo skbaddr=00000000cb0dbeac len=284
+          <idle>-0       [000] d.s.. 130091.090561: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130091.090612: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130091.090624: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] ..... 130091.090637: sys_recvfrom -> 0x100
+          python-40888   [001] ..... 130091.090835: sys_sendto(fd: 3, buff: aaaae1789020, len: 100, flags: 0, addr: ffffdbc09b98, addr_len: 10)
+          python-40888   [001] b.... 130091.090899: net_dev_queue: dev=lo skbaddr=0000000016ecfd1d len=298
+          python-40888   [001] b.... 130091.090902: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=0000000016ecfd1d
+          python-40888   [001] D.... 130091.090903: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091101138678 softexpires=130091101138678 mode=ABS|PINNED
+          python-40888   [001] b.... 130091.090904: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40888   [001] ..... 130091.090905: sys_sendto -> 0x100
+          python-40888   [001] ..... 130091.090931: sys_recvfrom(fd: 3, ubuf: aaaae1789150, size: ffff, flags: 0, addr: ffffdbc09b18, addr_len: ffffdbc09ae4)
+          python-40888   [001] d.... 130091.090945: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [001] dNh.. 130091.101789: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091101766570
+          <idle>-0       [001] .Ns.. 130091.101799: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=0000000016ecfd1d
+          <idle>-0       [001] .Ns.. 130091.101803: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=0000000016ecfd1d vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [001] .Ns.. 130091.101807: net_dev_xmit: dev=lo skbaddr=0000000016ecfd1d len=298 rc=0
+          <idle>-0       [001] .Ns.. 130091.101807: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+     ksoftirqd/1-26      [001] ..s.. 130091.101820: netif_receive_skb: dev=lo skbaddr=0000000016ecfd1d len=284
+     ksoftirqd/1-26      [001] d.s.. 130091.102037: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+     ksoftirqd/1-26      [001] d.s.. 130091.102043: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+      containerd-205     [000] d.... 130091.102046: sched_switch: prev_comm=containerd prev_pid=205 prev_prio=120 prev_state=S ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] d.... 130091.102123: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=R ==> next_comm=containerd next_pid=205 next_prio=120
+      containerd-205     [000] d.... 130091.102127: sched_switch: prev_comm=containerd prev_pid=205 prev_prio=120 prev_state=S ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] b.... 130091.102173: net_dev_queue: dev=lo skbaddr=00000000bb48453f len=298
+          python-40956   [000] b.... 130091.102175: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=00000000bb48453f
+          python-40956   [000] D.... 130091.102176: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091112412512 softexpires=130091112412512 mode=ABS|PINNED
+          python-40956   [000] b.... 130091.102176: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40956   [000] d.... 130091.102186: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 130091.112970: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091112963820
+          <idle>-0       [000] ..s.. 130091.112979: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=00000000bb48453f
+          <idle>-0       [000] ..s.. 130091.112985: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=00000000bb48453f vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [000] ..s.. 130091.112989: net_dev_xmit: dev=lo skbaddr=00000000bb48453f len=298 rc=0
+          <idle>-0       [000] ..s.. 130091.112990: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [000] ..s.. 130091.112993: netif_receive_skb: dev=lo skbaddr=00000000bb48453f len=284
+          <idle>-0       [000] d.s.. 130091.113006: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130091.113066: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130091.113079: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] ..... 130091.113093: sys_recvfrom -> 0x100
+          python-40888   [001] ..... 130091.113547: sys_sendto(fd: 3, buff: aaaae1789150, len: 100, flags: 0, addr: ffffdbc09b98, addr_len: 10)
+          python-40888   [001] b.... 130091.113581: net_dev_queue: dev=lo skbaddr=00000000f7323458 len=298
+          python-40888   [001] b.... 130091.113585: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=00000000f7323458
+          python-40888   [001] D.... 130091.113587: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091123821345 softexpires=130091123821345 mode=ABS|PINNED
+          python-40888   [001] b.... 130091.113587: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40888   [001] ..... 130091.113589: sys_sendto -> 0x100
+          python-40888   [001] ..... 130091.113612: sys_recvfrom(fd: 3, ubuf: aaaae1789280, size: ffff, flags: 0, addr: ffffdbc09b18, addr_len: ffffdbc09ae4)
+          python-40888   [001] d.... 130091.113626: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [001] d.h.. 130091.125202: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091125194570
+          <idle>-0       [001] ..s.. 130091.125212: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=00000000f7323458
+          <idle>-0       [001] ..s.. 130091.125217: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=00000000f7323458 vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [001] ..s.. 130091.125220: net_dev_xmit: dev=lo skbaddr=00000000f7323458 len=298 rc=0
+          <idle>-0       [001] ..s.. 130091.125221: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [001] ..s.. 130091.125223: netif_receive_skb: dev=lo skbaddr=00000000f7323458 len=284
+          <idle>-0       [001] d.s.. 130091.125234: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 130091.125296: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 130091.125306: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] b.... 130091.125921: net_dev_queue: dev=lo skbaddr=00000000568a8b2e len=298
+          python-40956   [000] b.... 130091.125924: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=00000000568a8b2e
+          python-40956   [000] D.... 130091.125924: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091136160845 softexpires=130091136160845 mode=ABS|PINNED
+          python-40956   [000] b.... 130091.125925: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40956   [000] d.... 130091.125945: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 130091.136874: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091136867112
+          <idle>-0       [000] ..s.. 130091.136884: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=00000000568a8b2e
+          <idle>-0       [000] ..s.. 130091.136889: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=00000000568a8b2e vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [000] ..s.. 130091.136892: net_dev_xmit: dev=lo skbaddr=00000000568a8b2e len=298 rc=0
+          <idle>-0       [000] ..s.. 130091.136892: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [000] ..s.. 130091.136898: netif_receive_skb: dev=lo skbaddr=00000000568a8b2e len=284
+          <idle>-0       [000] d.s.. 130091.136909: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130091.136959: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130091.136971: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] ..... 130091.136983: sys_recvfrom -> 0x100
+          python-40888   [001] ..... 130091.137123: sys_sendto(fd: 3, buff: aaaae1789280, len: 100, flags: 0, addr: ffffdbc09b98, addr_len: 10)
+          python-40888   [001] b.... 130091.137142: net_dev_queue: dev=lo skbaddr=00000000e1de1016 len=298
+          python-40888   [001] b.... 130091.137144: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=00000000e1de1016
+          python-40888   [001] D.... 130091.137145: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091147381887 softexpires=130091147381887 mode=ABS|PINNED
+          python-40888   [001] b.... 130091.137146: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40888   [001] ..... 130091.137146: sys_sendto -> 0x100
+          python-40888   [001] ..... 130091.137168: sys_recvfrom(fd: 3, ubuf: aaaae17893b0, size: ffff, flags: 0, addr: ffffdbc09b18, addr_len: ffffdbc09ae4)
+          python-40888   [001] d.... 130091.137174: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [001] d.h.. 130091.147566: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091147562778
+          <idle>-0       [001] ..s.. 130091.147573: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=00000000e1de1016
+          <idle>-0       [001] ..s.. 130091.147577: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=00000000e1de1016 vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [001] ..s.. 130091.147580: net_dev_xmit: dev=lo skbaddr=00000000e1de1016 len=298 rc=0
+          <idle>-0       [001] ..s.. 130091.147580: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [001] ..s.. 130091.147582: netif_receive_skb: dev=lo skbaddr=00000000e1de1016 len=284
+          <idle>-0       [001] d.s.. 130091.147591: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 130091.147632: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 130091.147767: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] b.... 130091.147860: net_dev_queue: dev=lo skbaddr=00000000494ac5f6 len=298
+          python-40956   [000] b.... 130091.147862: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=00000000494ac5f6
+          python-40956   [000] D.... 130091.147863: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091158099595 softexpires=130091158099595 mode=ABS|PINNED
+          python-40956   [000] b.... 130091.147863: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40956   [000] d.... 130091.147872: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 130091.158206: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091158203445
+          <idle>-0       [000] ..s.. 130091.158213: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=00000000494ac5f6
+          <idle>-0       [000] ..s.. 130091.158217: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=00000000494ac5f6 vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [000] ..s.. 130091.158219: net_dev_xmit: dev=lo skbaddr=00000000494ac5f6 len=298 rc=0
+          <idle>-0       [000] ..s.. 130091.158220: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [000] ..s.. 130091.158222: netif_receive_skb: dev=lo skbaddr=00000000494ac5f6 len=284
+          <idle>-0       [000] d.s.. 130091.158231: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130091.158272: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130091.158281: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] ..... 130091.158291: sys_recvfrom -> 0x100
+          python-40888   [001] ..... 130091.158358: sys_sendto(fd: 3, buff: aaaae17893b0, len: 100, flags: 0, addr: ffffdbc09b98, addr_len: 10)
+          python-40888   [001] b.... 130091.158375: net_dev_queue: dev=lo skbaddr=00000000e50d8674 len=298
+          python-40888   [001] b.... 130091.158377: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=00000000e50d8674
+          python-40888   [001] D.... 130091.158378: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091168614178 softexpires=130091168614178 mode=ABS|PINNED
+          python-40888   [001] b.... 130091.158378: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40888   [001] ..... 130091.158379: sys_sendto -> 0x100
+          python-40888   [001] ..... 130091.158412: sys_recvfrom(fd: 3, ubuf: aaaae17894e0, size: ffff, flags: 0, addr: ffffdbc09b18, addr_len: ffffdbc09ae4)
+          python-40888   [001] d.... 130091.158423: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [001] d.h.. 130091.170234: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091170220153
+          <idle>-0       [001] .Ns.. 130091.170263: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=00000000e50d8674
+          <idle>-0       [001] .Ns.. 130091.170267: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=00000000e50d8674 vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [001] .Ns.. 130091.170270: net_dev_xmit: dev=lo skbaddr=00000000e50d8674 len=298 rc=0
+          <idle>-0       [001] .Ns.. 130091.170270: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+     ksoftirqd/1-26      [001] ..s.. 130091.170463: netif_receive_skb: dev=lo skbaddr=00000000e50d8674 len=284
+     ksoftirqd/1-26      [001] d.s.. 130091.170475: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 130091.170520: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 130091.170529: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] b.... 130091.170650: net_dev_queue: dev=lo skbaddr=000000001d93a750 len=298
+          python-40956   [000] b.... 130091.170652: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=000000001d93a750
+          python-40956   [000] D.... 130091.170653: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091180889387 softexpires=130091180889387 mode=ABS|PINNED
+          python-40956   [000] b.... 130091.170654: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40956   [000] d.... 130091.170678: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 130091.181567: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091181564903
+          <idle>-0       [000] ..s.. 130091.181575: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=000000001d93a750
+          <idle>-0       [000] ..s.. 130091.181579: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=000000001d93a750 vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [000] ..s.. 130091.181581: net_dev_xmit: dev=lo skbaddr=000000001d93a750 len=298 rc=0
+          <idle>-0       [000] ..s.. 130091.181582: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [000] ..s.. 130091.181584: netif_receive_skb: dev=lo skbaddr=000000001d93a750 len=284
+          <idle>-0       [000] d.s.. 130091.181602: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130091.181748: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130091.181759: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] ..... 130091.181768: sys_recvfrom -> 0x100
+          python-40888   [001] ..... 130091.181892: sys_sendto(fd: 3, buff: aaaae17894e0, len: 100, flags: 0, addr: ffffdbc09b98, addr_len: 10)
+          python-40888   [001] b.... 130091.181908: net_dev_queue: dev=lo skbaddr=000000004736e15a len=298
+          python-40888   [001] b.... 130091.181910: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=000000004736e15a
+          python-40888   [001] D.... 130091.181912: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091192147678 softexpires=130091192147678 mode=ABS|PINNED
+          python-40888   [001] b.... 130091.181913: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40888   [001] ..... 130091.181914: sys_sendto -> 0x100
+          python-40888   [001] ..... 130091.181939: sys_recvfrom(fd: 3, ubuf: aaaae1789610, size: ffff, flags: 0, addr: ffffdbc09b18, addr_len: ffffdbc09ae4)
+          python-40888   [001] d.... 130091.182272: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [001] d.h.. 130091.192162: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091192160653
+          <idle>-0       [001] .Ns.. 130091.192168: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=000000004736e15a
+          <idle>-0       [001] .Ns.. 130091.192170: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=000000004736e15a vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [001] .Ns.. 130091.192171: net_dev_xmit: dev=lo skbaddr=000000004736e15a len=298 rc=0
+          <idle>-0       [001] .Ns.. 130091.192171: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+     ksoftirqd/1-26      [001] ..s.. 130091.192176: netif_receive_skb: dev=lo skbaddr=000000004736e15a len=284
+     ksoftirqd/1-26      [001] d.s.. 130091.192182: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 130091.192196: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 130091.192199: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] b.... 130091.192256: net_dev_queue: dev=lo skbaddr=000000002c5a5377 len=298
+          python-40956   [000] b.... 130091.192257: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=000000002c5a5377
+          python-40956   [000] D.... 130091.192258: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091202495053 softexpires=130091202495053 mode=ABS|PINNED
+          python-40956   [000] b.... 130091.192258: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40956   [000] d.... 130091.192261: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 130091.203779: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091203777820
+          <idle>-0       [000] ..s.. 130091.203781: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=000000002c5a5377
+          <idle>-0       [000] ..s.. 130091.203782: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=000000002c5a5377 vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [000] ..s.. 130091.203782: net_dev_xmit: dev=lo skbaddr=000000002c5a5377 len=298 rc=0
+          <idle>-0       [000] ..s.. 130091.203782: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [000] ..s.. 130091.203783: netif_receive_skb: dev=lo skbaddr=000000002c5a5377 len=284
+          <idle>-0       [000] d.s.. 130091.203785: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130091.203797: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130091.203800: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] ..... 130091.203804: sys_recvfrom -> 0x100
+          python-40888   [001] ..... 130091.203829: sys_sendto(fd: 3, buff: aaaae1789610, len: 100, flags: 0, addr: ffffdbc09b98, addr_len: 10)
+          python-40888   [001] b.... 130091.203833: net_dev_queue: dev=lo skbaddr=0000000018b3d3a7 len=298
+          python-40888   [001] b.... 130091.203834: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=0000000018b3d3a7
+          python-40888   [001] D.... 130091.203834: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091214072012 softexpires=130091214072012 mode=ABS|PINNED
+          python-40888   [001] b.... 130091.203834: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40888   [001] ..... 130091.203834: sys_sendto -> 0x100
+          python-40888   [001] ..... 130091.203842: sys_recvfrom(fd: 3, ubuf: aaaae1789740, size: ffff, flags: 0, addr: ffffdbc09b18, addr_len: ffffdbc09ae4)
+          python-40888   [001] d.... 130091.203845: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [001] d.h.. 130091.216855: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091216846028
+          <idle>-0       [001] ..s.. 130091.216868: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=0000000018b3d3a7
+          <idle>-0       [001] ..s.. 130091.216872: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=0000000018b3d3a7 vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [001] ..s.. 130091.216876: net_dev_xmit: dev=lo skbaddr=0000000018b3d3a7 len=298 rc=0
+          <idle>-0       [001] ..s.. 130091.216877: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [001] ..s.. 130091.216880: netif_receive_skb: dev=lo skbaddr=0000000018b3d3a7 len=284
+          <idle>-0       [001] d.s.. 130091.216891: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 130091.216975: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 130091.216988: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] b.... 130091.217170: net_dev_queue: dev=lo skbaddr=00000000258fd587 len=298
+          python-40956   [000] b.... 130091.217173: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=00000000258fd587
+          python-40956   [000] D.... 130091.217218: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091227409845 softexpires=130091227409845 mode=ABS|PINNED
+          python-40956   [000] b.... 130091.217219: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40956   [000] d.... 130091.217238: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 130091.228673: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091228669403
+          <idle>-0       [000] ..s.. 130091.228689: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=00000000258fd587
+          <idle>-0       [000] ..s.. 130091.228695: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=00000000258fd587 vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [000] ..s.. 130091.228699: net_dev_xmit: dev=lo skbaddr=00000000258fd587 len=298 rc=0
+          <idle>-0       [000] ..s.. 130091.228700: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [000] ..s.. 130091.228703: netif_receive_skb: dev=lo skbaddr=00000000258fd587 len=284
+          <idle>-0       [000] d.s.. 130091.228722: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130091.228780: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130091.228820: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] ..... 130091.228835: sys_recvfrom -> 0x100
+          python-40888   [001] ..... 130091.228998: sys_sendto(fd: 3, buff: aaaae1789740, len: 100, flags: 0, addr: ffffdbc09b98, addr_len: 10)
+          python-40888   [001] b.... 130091.229055: net_dev_queue: dev=lo skbaddr=00000000cf526740 len=298
+          python-40888   [001] b.... 130091.229057: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=00000000cf526740
+          python-40888   [001] D.... 130091.229058: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091239294345 softexpires=130091239294345 mode=ABS|PINNED
+          python-40888   [001] b.... 130091.229058: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40888   [001] ..... 130091.229060: sys_sendto -> 0x100
+          python-40888   [001] ..... 130091.229114: sys_recvfrom(fd: 3, ubuf: aaaae1789870, size: ffff, flags: 0, addr: ffffdbc09b18, addr_len: ffffdbc09ae4)
+          python-40888   [001] d.... 130091.229126: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [001] d.h.. 130091.241241: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091241238695
+          <idle>-0       [001] ..s.. 130091.241249: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=00000000cf526740
+          <idle>-0       [001] ..s.. 130091.241251: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=00000000cf526740 vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [001] ..s.. 130091.241254: net_dev_xmit: dev=lo skbaddr=00000000cf526740 len=298 rc=0
+          <idle>-0       [001] ..s.. 130091.241254: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [001] ..s.. 130091.241256: netif_receive_skb: dev=lo skbaddr=00000000cf526740 len=284
+          <idle>-0       [001] d.s.. 130091.241262: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 130091.241304: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 130091.241313: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] b.... 130091.241405: net_dev_queue: dev=lo skbaddr=000000002414cd1b len=298
+          python-40956   [000] b.... 130091.241406: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=000000002414cd1b
+          python-40956   [000] D.... 130091.241407: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091251643845 softexpires=130091251643845 mode=ABS|PINNED
+          python-40956   [000] b.... 130091.241408: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40956   [000] d.... 130091.241422: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 130091.252234: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091252230153
+          <idle>-0       [000] ..s.. 130091.252243: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=000000002414cd1b
+          <idle>-0       [000] ..s.. 130091.252246: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=000000002414cd1b vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [000] ..s.. 130091.252248: net_dev_xmit: dev=lo skbaddr=000000002414cd1b len=298 rc=0
+          <idle>-0       [000] ..s.. 130091.252248: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [000] ..s.. 130091.252250: netif_receive_skb: dev=lo skbaddr=000000002414cd1b len=284
+          <idle>-0       [000] d.s.. 130091.252257: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130091.252307: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130091.252315: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] ..... 130091.252323: sys_recvfrom -> 0x100
+          python-40888   [001] ..... 130091.252367: sys_sendto(fd: 3, buff: aaaae1789870, len: 100, flags: 0, addr: ffffdbc09b98, addr_len: 10)
+          python-40888   [001] b.... 130091.252380: net_dev_queue: dev=lo skbaddr=000000004e95bc4f len=298
+          python-40888   [001] b.... 130091.252381: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=000000004e95bc4f
+          python-40888   [001] D.... 130091.252382: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091262619012 softexpires=130091262619012 mode=ABS|PINNED
+          python-40888   [001] b.... 130091.252382: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40888   [001] ..... 130091.252383: sys_sendto -> 0x100
+          python-40888   [001] ..... 130091.252401: sys_recvfrom(fd: 3, ubuf: aaaae17899a0, size: ffff, flags: 0, addr: ffffdbc09b18, addr_len: ffffdbc09ae4)
+          python-40888   [001] d.... 130091.252409: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [001] d.h.. 130091.264824: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091264815653
+          <idle>-0       [001] ..s.. 130091.264837: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=000000004e95bc4f
+          <idle>-0       [001] ..s.. 130091.264842: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=000000004e95bc4f vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [001] ..s.. 130091.264857: net_dev_xmit: dev=lo skbaddr=000000004e95bc4f len=298 rc=0
+          <idle>-0       [001] ..s.. 130091.264857: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [001] ..s.. 130091.264860: netif_receive_skb: dev=lo skbaddr=000000004e95bc4f len=284
+          <idle>-0       [001] d.s.. 130091.264874: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 130091.264937: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 130091.264950: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] b.... 130091.265112: net_dev_queue: dev=lo skbaddr=000000006ce4237a len=298
+          python-40956   [000] b.... 130091.265115: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=000000006ce4237a
+          python-40956   [000] D.... 130091.265116: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091275351845 softexpires=130091275351845 mode=ABS|PINNED
+          python-40956   [000] b.... 130091.265116: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40956   [000] d.... 130091.265131: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 130091.276794: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091276791737
+          <idle>-0       [000] ..s.. 130091.276801: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=000000006ce4237a
+          <idle>-0       [000] ..s.. 130091.276803: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=000000006ce4237a vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [000] ..s.. 130091.276805: net_dev_xmit: dev=lo skbaddr=000000006ce4237a len=298 rc=0
+          <idle>-0       [000] ..s.. 130091.276806: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [000] ..s.. 130091.276807: netif_receive_skb: dev=lo skbaddr=000000006ce4237a len=284
+          <idle>-0       [000] d.s.. 130091.276813: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130091.276861: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130091.276872: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] ..... 130091.276880: sys_recvfrom -> 0x100
+          python-40888   [001] ..... 130091.276952: sys_sendto(fd: 3, buff: aaaae17899a0, len: 100, flags: 0, addr: ffffdbc09b98, addr_len: 10)
+          python-40888   [001] b.... 130091.276963: net_dev_queue: dev=lo skbaddr=00000000a9a3073d len=298
+          python-40888   [001] b.... 130091.276964: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=00000000a9a3073d
+          python-40888   [001] D.... 130091.276965: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091287202220 softexpires=130091287202220 mode=ABS|PINNED
+          python-40888   [001] b.... 130091.276966: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40888   [001] ..... 130091.276967: sys_sendto -> 0x100
+          python-40888   [001] ..... 130091.276987: sys_recvfrom(fd: 3, ubuf: aaaae1789ad0, size: ffff, flags: 0, addr: ffffdbc09b18, addr_len: ffffdbc09ae4)
+          python-40888   [001] d.... 130091.276998: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [001] d.h.. 130091.289273: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091289264362
+          <idle>-0       [001] ..s.. 130091.289286: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=00000000a9a3073d
+          <idle>-0       [001] ..s.. 130091.289291: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=00000000a9a3073d vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [001] ..s.. 130091.289295: net_dev_xmit: dev=lo skbaddr=00000000a9a3073d len=298 rc=0
+          <idle>-0       [001] ..s.. 130091.289296: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [001] ..s.. 130091.289299: netif_receive_skb: dev=lo skbaddr=00000000a9a3073d len=284
+          <idle>-0       [001] d.s.. 130091.289312: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 130091.289369: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 130091.289381: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] b.... 130091.289528: net_dev_queue: dev=lo skbaddr=00000000d4612a47 len=298
+          python-40956   [000] b.... 130091.289530: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=00000000d4612a47
+          python-40956   [000] D.... 130091.289531: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091299767595 softexpires=130091299767595 mode=ABS|PINNED
+          python-40956   [000] b.... 130091.289532: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40956   [000] d.... 130091.289552: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 130091.301942: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091301939153
+          <idle>-0       [000] ..s.. 130091.301982: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=00000000d4612a47
+          <idle>-0       [000] ..s.. 130091.301985: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=00000000d4612a47 vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [000] ..s.. 130091.302143: net_dev_xmit: dev=lo skbaddr=00000000d4612a47 len=298 rc=0
+          <idle>-0       [000] ..s.. 130091.302206: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [000] ..s.. 130091.302208: netif_receive_skb: dev=lo skbaddr=00000000d4612a47 len=284
+          <idle>-0       [000] d.s.. 130091.302463: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130091.303052: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130091.303074: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] ..... 130091.303088: sys_recvfrom -> 0x100
+          python-40888   [001] ..... 130091.303974: sys_sendto(fd: 3, buff: aaaae1789ad0, len: 100, flags: 0, addr: ffffdbc09b98, addr_len: 10)
+          python-40888   [001] b.... 130091.303991: net_dev_queue: dev=lo skbaddr=000000003ac88117 len=298
+          python-40888   [001] b.... 130091.303993: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=000000003ac88117
+          python-40888   [001] D.... 130091.303994: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091314230387 softexpires=130091314230387 mode=ABS|PINNED
+          python-40888   [001] b.... 130091.303995: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40888   [001] ..... 130091.303996: sys_sendto -> 0x100
+          python-40888   [001] ..... 130091.304061: sys_recvfrom(fd: 3, ubuf: aaaae1789c00, size: ffff, flags: 0, addr: ffffdbc09b18, addr_len: ffffdbc09ae4)
+          python-40888   [001] d.... 130091.304067: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [001] d.h.. 130091.315636: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091315633362
+          <idle>-0       [001] ..s.. 130091.315644: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=000000003ac88117
+          <idle>-0       [001] ..s.. 130091.315646: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=000000003ac88117 vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [001] ..s.. 130091.315648: net_dev_xmit: dev=lo skbaddr=000000003ac88117 len=298 rc=0
+          <idle>-0       [001] ..s.. 130091.315649: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [001] ..s.. 130091.315651: netif_receive_skb: dev=lo skbaddr=000000003ac88117 len=284
+          <idle>-0       [001] d.s.. 130091.315658: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 130091.315833: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 130091.315843: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] b.... 130091.315912: net_dev_queue: dev=lo skbaddr=0000000091ebc487 len=298
+          python-40956   [000] b.... 130091.315913: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=0000000091ebc487
+          python-40956   [000] D.... 130091.315914: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091326150845 softexpires=130091326150845 mode=ABS|PINNED
+          python-40956   [000] b.... 130091.315914: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40956   [000] d.... 130091.315927: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [000] d.h.. 130091.326792: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091326783112
+          <idle>-0       [000] ..s.. 130091.326804: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=0000000091ebc487
+          <idle>-0       [000] ..s.. 130091.326809: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=0000000091ebc487 vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [000] ..s.. 130091.326813: net_dev_xmit: dev=lo skbaddr=0000000091ebc487 len=298 rc=0
+          <idle>-0       [000] ..s.. 130091.326814: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [000] ..s.. 130091.326817: netif_receive_skb: dev=lo skbaddr=0000000091ebc487 len=284
+          <idle>-0       [000] d.s.. 130091.326830: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130091.326892: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130091.326904: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] ..... 130091.326919: sys_recvfrom -> 0x100
+          python-40888   [001] ..... 130091.327230: sys_sendto(fd: 3, buff: aaaae1789c00, len: 100, flags: 0, addr: ffffdbc09b98, addr_len: 10)
+          python-40888   [001] b.... 130091.327257: net_dev_queue: dev=lo skbaddr=00000000944a24f6 len=298
+          python-40888   [001] b.... 130091.327259: qdisc_enqueue: enqueue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF skbaddr=00000000944a24f6
+          python-40888   [001] D.... 130091.327260: hrtimer_start: hrtimer=00000000084ff57e function=qdisc_watchdog expires=130091337496137 softexpires=130091337496137 mode=ABS|PINNED
+          python-40888   [001] b.... 130091.327261: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          python-40888   [001] ..... 130091.327262: sys_sendto -> 0x100
+          python-40888   [001] d.... 130091.327661: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130091.327813: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130091.327844: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130091.327851: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] d.... 130091.327873: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130091.329479: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130091.329521: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130091.329528: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] d.... 130091.329814: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130091.330028: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130091.330078: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130091.330094: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [001] d.... 130091.330241: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130091.331073: sched_waking: comm=python pid=40888 prio=120 target_cpu=001
+     kworker/0:3-39139   [000] d.... 130091.331080: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] d.... 130091.331082: sched_switch: prev_comm=kworker/0:3 prev_pid=39139 prev_prio=120 prev_state=I ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [000] d.... 130091.331483: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130091.331511: sched_waking: comm=python pid=40888 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] d.... 130091.331513: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] d.... 130091.331514: sched_switch: prev_comm=kworker/0:3 prev_pid=39139 prev_prio=120 prev_state=I ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [000] d.... 130091.331528: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130091.331600: sched_waking: comm=python pid=40888 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] d.... 130091.331602: sched_wakeup: comm=python pid=40888 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] d.... 130091.331603: sched_switch: prev_comm=kworker/0:3 prev_pid=39139 prev_prio=120 prev_state=I ==> next_comm=python next_pid=40888 next_prio=120
+          python-40888   [000] d.... 130091.331643: sched_switch: prev_comm=python prev_pid=40888 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [001] d.h.. 130091.339284: hrtimer_expire_entry: hrtimer=00000000084ff57e function=qdisc_watchdog now=130091339280070
+          <idle>-0       [001] ..s.. 130091.339293: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=1 skbaddr=00000000944a24f6
+          <idle>-0       [001] ..s.. 130091.339297: net_dev_start_xmit: dev=lo queue_mapping=0 skbaddr=00000000944a24f6 vlan_tagged=0 vlan_proto=0x0000 vlan_tci=0x0000 protocol=0x0800 ip_summed=3 len=298 data_len=0 network_offset=14 transport_offset_valid=1 transport_offset=34 tx_flags=0 gso_size=0 gso_segs=0 gso_type=0x0
+          <idle>-0       [001] ..s.. 130091.339631: net_dev_xmit: dev=lo skbaddr=00000000944a24f6 len=298 rc=0
+          <idle>-0       [001] ..s.. 130091.339632: qdisc_dequeue: dequeue ifindex=1 qdisc handle=0x806B0000 parent=0xFFFFFFFF txq_state=0x0 packets=0 skbaddr=0000000000000000
+          <idle>-0       [001] ..s.. 130091.339635: netif_receive_skb: dev=lo skbaddr=00000000944a24f6 len=284
+          <idle>-0       [001] d.s.. 130091.339644: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] dNh.. 130091.339722: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [000] d.... 130091.339753: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] d.... 130091.340121: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130091.340376: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+          <idle>-0       [001] dNh.. 130091.340424: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130091.340431: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [001] d.... 130091.340451: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130091.341033: sched_waking: comm=python pid=40956 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130091.341510: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130091.341517: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [001] d.... 130091.341781: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130091.342034: sched_waking: comm=python pid=40956 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130091.342061: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130091.342067: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [001] d.... 130091.342085: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130091.343332: sched_waking: comm=python pid=40956 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130091.343388: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130091.343394: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [001] d.... 130091.343561: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130091.343629: sched_waking: comm=python pid=40956 prio=120 target_cpu=001
+          <idle>-0       [001] dNh.. 130091.343791: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=001
+          <idle>-0       [001] d.... 130091.343797: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [001] d.... 130091.344034: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130091.344487: sched_waking: comm=python pid=40956 prio=120 target_cpu=001
+     kworker/0:3-39139   [000] d.... 130091.344491: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] d.... 130091.344493: sched_switch: prev_comm=kworker/0:3 prev_pid=39139 prev_prio=120 prev_state=I ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] d.... 130091.344523: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+     kworker/0:3-39139   [000] d.... 130091.344601: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] dN... 130091.344603: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] d.... 130091.344605: sched_switch: prev_comm=kworker/0:3 prev_pid=39139 prev_prio=120 prev_state=R+ ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] d.... 130091.344745: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=S ==> next_comm=kworker/0:3 next_pid=39139 next_prio=120
+     kworker/0:3-39139   [000] d.... 130091.344977: sched_waking: comm=python pid=40956 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] d.... 130091.344979: sched_wakeup: comm=python pid=40956 prio=120 target_cpu=000
+     kworker/0:3-39139   [000] d.... 130091.344981: sched_switch: prev_comm=kworker/0:3 prev_pid=39139 prev_prio=120 prev_state=I ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] d.... 130091.345720: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=R ==> next_comm=kworker/0:3 next_pid=39139 next_prio=120
+     kworker/0:3-39139   [000] d.... 130091.345733: sched_switch: prev_comm=kworker/0:3 prev_pid=39139 prev_prio=120 prev_state=I ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] d.... 130091.345790: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=R ==> next_comm=kworker/0:3 next_pid=39139 next_prio=120
+     kworker/0:3-39139   [000] d.... 130091.345793: sched_switch: prev_comm=kworker/0:3 prev_pid=39139 prev_prio=120 prev_state=I ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] d.... 130091.346170: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=R ==> next_comm=kworker/0:3 next_pid=39139 next_prio=120
+     kworker/0:3-39139   [000] d.... 130091.346182: sched_switch: prev_comm=kworker/0:3 prev_pid=39139 prev_prio=120 prev_state=I ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] d.... 130091.346265: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=R ==> next_comm=kworker/0:3 next_pid=39139 next_prio=120
+     kworker/0:3-39139   [000] d.... 130091.346273: sched_switch: prev_comm=kworker/0:3 prev_pid=39139 prev_prio=120 prev_state=I ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] d.... 130091.346301: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=R ==> next_comm=kworker/0:3 next_pid=39139 next_prio=120
+     kworker/0:3-39139   [000] d.... 130091.346303: sched_switch: prev_comm=kworker/0:3 prev_pid=39139 prev_prio=120 prev_state=I ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] d.... 130091.346462: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=R ==> next_comm=kworker/0:3 next_pid=39139 next_prio=120
+     kworker/0:3-39139   [000] d.... 130091.346467: sched_switch: prev_comm=kworker/0:3 prev_pid=39139 prev_prio=120 prev_state=I ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] d.... 130091.349321: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=R+ ==> next_comm=kworker/0:3 next_pid=39139 next_prio=120
+     kworker/0:3-39139   [000] d.... 130091.349355: sched_switch: prev_comm=kworker/0:3 prev_pid=39139 prev_prio=120 prev_state=I ==> next_comm=python next_pid=40956 next_prio=120
+          python-40956   [000] d.... 130091.349836: sched_switch: prev_comm=python prev_pid=40956 prev_prio=120 prev_state=Z ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          python-41015   [001] ..... 130091.385504: tracing_mark_write: transition-trace-stop

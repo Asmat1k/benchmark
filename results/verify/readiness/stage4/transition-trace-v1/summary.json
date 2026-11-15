@@ -1,0 +1,35 @@
+{
+  "status": "inconclusive_original_transition_not_reproduced",
+  "stage4_complete": false,
+  "production_changed": false,
+  "thresholds_changed": false,
+  "head": "d4cf0f82f330af1cd188febfa5f3757a5cf37799",
+  "source_count": 134,
+  "sources_unchanged": true,
+  "report": "docs/readiness/stage4-transition-trace.md",
+  "raw": "results/verify/diagnostic/transition-trace.jNq2hqdS",
+  "raw_sealed_files": 75,
+  "selftest": {
+    "execution": "results/verify/readiness/stage4/transition-trace-v1/selftest.9lc_yiks",
+    "elapsed_s": 1.169816,
+    "exit": 0
+  },
+  "network": {
+    "execution": "results/verify/readiness/stage4/transition-trace-v1/network.hkaiwzm_",
+    "elapsed_s": 119.156591,
+    "exit": 0
+  },
+  "limitations": [
+    "Instrumented observation; no observer-free comparison",
+    "Original multisecond transition absent; no repeated run",
+    "Individual queue-service and server runnable-wait outliers separated; host-vCPU cause unknown",
+    "No new applicable early gates or formal calibration report"
+  ],
+  "verification": {
+    "syntax": true,
+    "shell_syntax": true,
+    "diff_check": true,
+    "identity_before_after_equal": true
+  },
+  "updated_utc": "2026-11-14T09:08:09.895311+00:00"
+}

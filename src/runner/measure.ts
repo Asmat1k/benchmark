@@ -1,6 +1,7 @@
 import { chromium } from "playwright";
 import { readFileSync, writeFileSync } from "node:fs";
 import { X509Certificate } from "node:crypto";
+import { checkpointMeasurement } from "./checkpoint.js";
 
 const run = JSON.parse(readFileSync("/tmp/run.json","utf8"));
 const pins = JSON.parse(readFileSync("/trust/pins.json","utf8"));
@@ -20,8 +21,15 @@ try {
     });
     writeFileSync("/tmp/clock-samples.json", JSON.stringify(samples));
   }
-  const result = await page.evaluate(([spec,pin]) =>
+  const stopCheckpoints = process.env.BENCH_CHECKPOINT === "yes"
+    ? checkpointMeasurement("/tmp/page.partial.json", run.run_id, () => page.evaluate(() =>
+      (globalThis as unknown as {measurementSnapshot?: () => unknown}).measurementSnapshot?.() ?? null))
+    : async () => {};
+  let result;
+  try {
+    result = await page.evaluate(([spec,pin]) =>
     (globalThis as unknown as {measure:(s:unknown,p:string)=>Promise<unknown>}).measure(spec,pin), [run,pins.good]);
+  } finally { await stopCheckpoints(); }
   writeFileSync("/tmp/page.json", JSON.stringify(result));
   const ca = new X509Certificate(readFileSync("/trust/ca.crt"));
   writeFileSync("/tmp/security.json", JSON.stringify({leaf_der_sha256:pins.good,

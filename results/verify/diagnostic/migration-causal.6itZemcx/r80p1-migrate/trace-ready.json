@@ -1,0 +1,7 @@
+{
+  "before_ns": 130598035215967,
+  "after_ns": 130598035235467,
+  "realtime_ns": 1794651263562187718,
+  "tracer_namespace_pid": 47543,
+  "stop_method": "SIGUSR1; blocking sigwait with one alarm160"
+}

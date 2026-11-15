@@ -1,0 +1,10 @@
+{
+  "scope": "saved prior instrumented trace; not full failed run",
+  "packets": 10000,
+  "cpus": {
+    "0": 10000
+  },
+  "sender_queue_cpu_changes": 0,
+  "first_changes": [],
+  "elapsed_s": 0.08682995897834189
+}

@@ -1,0 +1,18 @@
+{
+  "host_tid": 39697,
+  "nspid": [
+    39697,
+    1
+  ],
+  "status": "Name:\tpython\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t39697\nNgid:\t0\nPid:\t39697\nPPid:\t39673\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t0 \nNStgid:\t39697\t1\nNSpid:\t39697\t1\nNSpgid:\t39697\t1\nNSsid:\t39697\t1\nKthread:\t0\nVmPeak:\t   15404 kB\nVmSize:\t   15340 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   11072 kB\nVmRSS:\t   11072 kB\nRssAnon:\t    5304 kB\nRssFile:\t    5768 kB\nRssShmem:\t       0 kB\nVmData:\t    6516 kB\nVmStk:\t     132 kB\nVmExe:\t       4 kB\nVmLib:\t    7028 kB\nVmPTE:\t      72 kB\nVmSwap:\t       0 kB\nHugetlbPages:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffff\nThreads:\t1\nSigQ:\t0/15667\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000001001000\nSigCgt:\t0000000000004002\nCapInh:\t0000000000000000\nCapPrm:\t0000000000000000\nCapEff:\t0000000000000000\nCapBnd:\t0000000000000000\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t2\nSeccomp_filters:\t1\nSpeculation_Store_Bypass:\tvulnerable\nSpeculationIndirectBranch:\tunknown\nCpus_allowed:\t3\nCpus_allowed_list:\t0-1\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t111\nnonvoluntary_ctxt_switches:\t100\n",
+  "cmdline": [
+    "python",
+    "-B",
+    "/diagnostic/server.py",
+    "udp",
+    "watchdog-selftest-selftest.pt3vaoc0-86010",
+    "/out",
+    "20",
+    ""
+  ]
+}

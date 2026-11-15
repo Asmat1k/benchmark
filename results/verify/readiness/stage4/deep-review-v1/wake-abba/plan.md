@@ -1,0 +1,5 @@
+# Fixed waiting-vs-poll0 ABBA diagnostic, 14 November2026 Moscow
+
+A1(current cappedselect1ms),B1(poll0nonblockingselect),B2(poll0),A2(current),5000echo each, baseline100Hz/256bytes/2.5ms spacing/normal2sdrain. Samebufferedpcap, sameimages/resources/routes, no periodic sampling. Exact sender algorithm except wait cap0during twoBsubseries; modulecopy retained. No qualifiers or scientific thresholds change. Poll0tests the need for VM/guest sleeping/idle to explain latewake and phase structure; not a native-code experiment. CPU sender/router measured before/after. This is independently prespecified after capture ABBA rejected immediate-mode; no repeats/adaptiveconditionchanges.
+
+Assess fullID/replies/tag/drop/seals, lag/RTT/phase/rankACF and CPUcost; core100%cost must be disclosed. Rare129msabsence in100secondscondition exposure cannot prove long-run reliability. No correction/removalofRTT, fullcalibrationorbootstrap. Expected230–260seconds,wholecap270s+10scleanup. Stopafteronefixeddiagnostic,evenif resultinconclusive/failed. Not acceptance; historicalfailedrawimmutable.

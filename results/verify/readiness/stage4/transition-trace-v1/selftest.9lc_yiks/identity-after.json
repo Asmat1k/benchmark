@@ -1,0 +1,8 @@
+{
+  "results/verify/readiness/stage4/transition-trace-v1/tools/check.py": "cf2ce15ade0dd0688b8415132165db5d146df642add11ed750040e7129dd87c1",
+  "results/verify/readiness/stage4/transition-trace-v1/tools/server.py": "b50b120cbf501bba8887754cf38973e35a75472b6ca79caa3f171db2a25686f0",
+  "results/verify/readiness/stage4/transition-trace-v1/tools/trace.py": "0ef54d33a13b4816953c72b1cf32476a9e87c242aad88c4de920837525deaacf",
+  "results/verify/readiness/stage4/transition-trace-v1/selftest.sh": "619c61fc06c8bf59f8794d5dd1884c77d237c1bb2af6a140ceb8c2a40e1fdffa",
+  "results/verify/readiness/stage4/transition-trace-v1/plan.md": "6e9bfe44491aae75185461ee84aff28f29393ed1544494a15d7bb26dee2b2877",
+  "results/verify/readiness/stage4/transition-trace-v1/run.py": "2ee2164c6aa986151072cae35d2be73ccd58b934919d2862495daf486dee9125"
+}

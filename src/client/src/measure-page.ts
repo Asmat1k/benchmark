@@ -2,6 +2,14 @@ import { Measurement, type Run } from "./measurement.js";
 import { openSocket, openTransport } from "./smoke.js";
 import { StreamReader, equal } from "./protocol.js";
 
+function measurement(run: Run) {
+  const current = new Measurement(run);
+  Object.assign(globalThis, {measurementSnapshot: () => ({
+    captured_page_ms: performance.now(), slots: current.slots, events: current.events,
+  })});
+  return current;
+}
+
 async function measure(run: Run, pin: string) {
   const ready = new TextEncoder().encode("READY"), ack = new TextEncoder().encode("ACK");
   if (run.mode === "WS") {
@@ -13,7 +21,7 @@ async function measure(run: Run, pin: string) {
       });
       socket.send(ready);
       equal(new Uint8Array(await reply), ack);
-      const m = new Measurement(run);
+      const m = measurement(run);
       socket.onmessage = e => e.data instanceof ArrayBuffer ? m.receive(new Uint8Array(e.data)) : m.event("invalid_frame",null,{type:typeof e.data});
       socket.onclose = e => m.disconnect(String(e.code));
       return await m.execute({queued:() => socket.bufferedAmount, desired:() => null, send:b => socket.send(b)});
@@ -34,7 +42,7 @@ async function measure(run: Run, pin: string) {
     }
     await writer.write(ready);
     equal(await read(ack.length), ack);
-    const m = new Measurement(run);
+    const m = measurement(run);
     let pending = 0;
     let finished = false;
     session.closed.then(() => m.disconnect("closed"), e => m.disconnect(String(e)));
