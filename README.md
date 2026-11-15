@@ -2,6 +2,8 @@
 
 Подготовленный запуск с сохранением всех исходов: [команда запуска и продолжения](docs/readiness/run-today.md). Основной эксперимент запускает пользователь; исторические результаты и статусы не меняются.
 
+Структура Dockerfile, команд и диагностических инструментов описана в [docker/README.md](docker/README.md).
+
 Локальный стенд WS/WT-S с дополнительным WT-D. Закреплённая сборка D2 рассчитана на native linux/arm64, Docker Compose и Make. Полный перечень параметров находится в [контрактах](docs/protocol.md). Состояние разработки и экспериментальных проверок приведено в [матрице](docs/execution-matrix.md).
 
 1. Выполнить `make build`. Команда собирает четыре образа, устанавливает npm/Go-зависимости и 21 Python wheel по locks, устанавливает Python-пакеты с отключённой сетью через --no-index и сохраняет графики в build/figures/. В build/wheelhouse/ находятся 21 оригинальный wheel с именами ABI/platform и SHA256SUMS. Тот же набор доступен в /wheelhouse внутри архивированного analyzer. Для автономной установки на native linux/arm64 с Python 3.12 выполните из корня проекта `python -m pip install --no-index --find-links=build/wheelhouse --only-binary=:all: --require-hashes -r src/analysis/requirements.txt`, затем `python -m pip check`. Актуальные image IDs и списки OS-пакетов появляются в build/. Базовые platform digests и manifest принятой сборки сохранены в docker/. Для проверки на другом процессоре нужна отдельная закреплённая сборка.

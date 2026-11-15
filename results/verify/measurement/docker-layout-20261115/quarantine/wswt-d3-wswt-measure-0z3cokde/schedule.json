@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "series": "smoke",
+  "series_id": "docker-layout-20261115",
+  "master_seed": 20261108,
+  "blocks": [
+    {
+      "block_id": "b0",
+      "session_id": "s0",
+      "attempt_id": "b0-a0",
+      "profile": "baseline",
+      "order_index": 0,
+      "modes": [
+        "WS",
+        "WT-S"
+      ],
+      "seed": 8926080062063780948,
+      "status": "planned",
+      "reason": null,
+      "replacement_of": null,
+      "design": "comparison"
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "b0-a0-m0",
+      "mode": "WS",
+      "nonce": "14281377729299340286",
+      "forward_seed": 2245073660298705240,
+      "reverse_seed": 9063898779068846418,
+      "block_id": "b0",
+      "session_id": "s0",
+      "attempt_id": "b0-a0",
+      "profile": "baseline",
+      "order_index": 0,
+      "replacement_of": null
+    },
+    {
+      "run_id": "b0-a0-m1",
+      "mode": "WT-S",
+      "nonce": "18063380528834039285",
+      "forward_seed": 9248318486561368491,
+      "reverse_seed": 6833165260678811421,
+      "block_id": "b0",
+      "session_id": "s0",
+      "attempt_id": "b0-a0",
+      "profile": "baseline",
+      "order_index": 0,
+      "replacement_of": null
+    }
+  ]
+}

@@ -26,7 +26,7 @@ def prepare(smoke, timer_path, output):
     stage3 = Path('results/verify/readiness/stage4/release-v3')
     historical = Path('results/verify/readiness/stage3')
     previous = read(historical / 'source-inventory.json')
-    require(set(hashes) == set(previous) and {p for p in hashes if hashes[p] != previous[p]} == {'docker/calibration_probe.py', 'docker/calibration_probe_test.py'}, 'bounded sender-only source delta')
+    require(set(hashes) == set(previous) and {p for p in hashes if hashes[p] != previous[p]} == {'docker/diagnostics/calibration_probe.py', 'docker/tests/calibration_probe_test.py'}, 'bounded sender-only source delta')
     require(hashes == read(stage3 / 'source-inventory.json'), 'current inventory correspondence')
     expected_images = read(stage2 / 'release-evidence.json')
     expected_by_role = {i['tag'].split('-')[-1].split(':')[0]: i['image_id'] for i in expected_images}
@@ -69,12 +69,12 @@ def prepare(smoke, timer_path, output):
                                    reason=scope, utc=now(), evidence=[ref(trace_path)]))
 
     build_log = (stage3 / 'build.stdout.log').read_text()
-    dockerfiles = [Path('docker/Dockerfile.' + role) for role in ('server', 'browser', 'analyzer')]
+    dockerfiles = [Path('docker/images/Dockerfile.' + role) for role in ('server', 'browser', 'analyzer')]
     installs = ['npm ci', 'go test -mod=readonly', '--require-hashes', 'pip check']
     source_text = '\n'.join(p.read_text() for p in dockerfiles)
     add('build', 'locked-install', all(s in source_text and s in build_log for s in installs),
         'current cached rebuild checked; exact admitted images restored after content comparison; sender-only delta is host-mounted, not image code',
-        'docker/build.sh current release; image content comparison and exact admitted ID restoration; current D3 context',
+        'docker/commands/build.sh current release; image content comparison and exact admitted ID restoration; current D3 context',
         [stage3 / 'build.stdout.log', stage3 / 'build.stderr.log', stage3 / 'image-comparison.json', stage3 / 'analyzer-content-comparison.json', stage3 / 'release.json', stage2 / 'release-build-archive.json', stage2 / 'release-evidence.json', *dockerfiles],
         dict(installation_contracts=installs, image_dependencies_equal=True, actual_image_ids=environment['services']))
     preflight = read(stage3 / 'environment-preflight.json')
@@ -104,7 +104,7 @@ def prepare(smoke, timer_path, output):
     require(modes.get('WT-D', {}).get('exactFrames') == 3 and modes['WT-D'].get('supported') is True, 'WT-D must actually echo')
     for identity, mode in [('ws-secure', 'WS'), ('wts-secure', 'WT-S')]:
         add('tls', identity, browser_version['secureContext'] and modes.get(mode, {}).get('exactFrames') == 3,
-            'real browser TLS and exact echo', 'caffeinate -ims sh docker/smoke.sh: main.js',
+            'real browser TLS and exact echo', 'caffeinate -ims sh docker/commands/smoke.sh: main.js',
             [smoke / 'browser.txt', smoke / 'server.txt'], dict(runtime=browser_version, echo=modes[mode], wt_d=modes['WT-D']))
     for case, name, error in [('wrong-ca', 'unknown-ca', 'CERT_AUTHORITY_INVALID'), ('wrong-san', 'wrong-san', 'CERT_COMMON_NAME_INVALID'),
                                ('expired', 'expired', 'CERT_DATE_INVALID')]:
@@ -172,7 +172,7 @@ def prepare(smoke, timer_path, output):
             tamper_error = str(error)
     raw_files = [schedule_path, stage3 / 'timer-execution/execution.json']
     raw_observation = dict(validated_runs=[str(p) for p in folders], short_slots=[read(p / 'completion.json') for p in folders],
-                           tampered_copy_error=tamper_error, real_replacement_performed=False, offline_fixture_reuse='stage3 logs; only docker/calibration_probe.py and its test changed, dependencies of analysis/client checks identical')
+                           tampered_copy_error=tamper_error, real_replacement_performed=False, offline_fixture_reuse='stage3 logs; only docker/diagnostics/calibration_probe.py and its test changed, dependencies of analysis/client checks identical')
     raw_specs = {
         'framing': (client_ok, 'real three-mode smoke and short raw; framing edge cases use synthetic client transport', [client, smoke / 'browser.txt']),
         'clock-boundaries': (offline_ok and client_ok, 'real raw clock invariants; exact deadline/late edges use injected fixture clocks', [offline, client]),

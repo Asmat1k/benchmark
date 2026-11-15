@@ -38,7 +38,7 @@ def controller_session(directory, kind='real'):
 
 GATES = ('build','tls','path','timer','raw','analysis','calibration','generator','aa','monitoring')
 TRACKED = ('docs/protocol.md','configs/plan.json','configs/profiles.json','configs/thresholds.json',
-           'docker/images.lock.json','src/client/package-lock.json','src/runner/package-lock.json',
+           'docker/config/images.lock.json','src/client/package-lock.json','src/runner/package-lock.json',
            'src/server/go.sum','src/analysis/requirements.txt')
 
 
@@ -218,7 +218,7 @@ def coverage(verification, modes):
 
 def inventory(binding, category):
     actual=read(checked(binding))
-    expected={p:sha for p,sha in sources().items() if p.startswith('src/analysis/')} if category=='analysis' else {p:sources()[p] for p in (*TRACKED[4:],'src/server/go.mod','docker/os-packages.txt')}
+    expected={p:sha for p,sha in sources().items() if p.startswith('src/analysis/')} if category=='analysis' else {p:sources()[p] for p in (*TRACKED[4:],'src/server/go.mod','docker/config/os-packages.txt')}
     require(actual==dict(files=expected), 'wrong '+category+' inventory')
 
 

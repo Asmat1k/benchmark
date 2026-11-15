@@ -26,7 +26,7 @@ analyze = ['docker', 'run', '--rm', '--network', 'none', '-v', str(ROOT)+':/benc
 with (execution/'stdout.log').open('x') as stdout, (execution/'stderr.log').open('x') as stderr:
     try:
         head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True, timeout=10).strip()
-        subprocess.run(['sh', 'docker/release-state.sh'], check=True, timeout=60, stdout=stdout, stderr=stderr)
+        subprocess.run(['sh', 'docker/lib/release-state.sh'], check=True, timeout=60, stdout=stdout, stderr=stderr)
         spec = importlib.util.spec_from_file_location('preflight', 'docs/readiness/practical-preflight.py')
         preflight = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(preflight)
@@ -37,7 +37,7 @@ with (execution/'stdout.log').open('x') as stdout, (execution/'stderr.log').open
                       environment_sha256=hashlib.sha256(ENV.read_bytes()).hexdigest())
         subprocess.run(analyze+['src/analysis/browser_admission.py', 'create', str(DECISION), str(ENV), str(FAILED), str(POLICY)],
                        check=True, timeout=180, stdout=stdout, stderr=stderr)
-        argv = ['sh', 'docker/collect-diagnostic.sh', 'generator', str(ENV)]
+        argv = ['sh', 'docker/commands/collect-diagnostic.sh', 'generator', str(ENV)]
         record['argv'] = argv
         (execution/'started').write_text(record['start']+'\n')
         (execution/'execution.json').write_text(json.dumps(record, indent=2)+'\n')

@@ -279,7 +279,7 @@ class AcceptanceTests(unittest.TestCase):
             os.chdir(repo)
             self.assertEqual(release(),sha)
             if os.environ.get('RUN_DOCKER_BOUNDARY')=='1':
-                boundary=subprocess.run(['/bin/sh','docker/release-state.sh'],capture_output=True,text=True)
+                boundary=subprocess.run(['/bin/sh','docker/lib/release-state.sh'],capture_output=True,text=True)
                 self.assertEqual(boundary.returncode,0,boundary.stderr)
                 check=subprocess.run(['docker','run','--rm','--network','none','-v',str(repo)+':/bench','-w','/bench','wswt-bench-analyzer:dev','python','-B','-c','import sys;sys.path.insert(0,"src/analysis");from admission import release;print(release())'],capture_output=True,text=True)
                 self.assertEqual(check.returncode,0,check.stderr)

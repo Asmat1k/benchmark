@@ -178,7 +178,7 @@ def collect(directory, executor=None, published=None, cleanup=None):
     run_timeout=limits['run_timeout_seconds']
     cleanup_timeout=limits['cleanup_timeout_seconds']
     budget=limits['series_budget_seconds']
-    executor=executor or (lambda i,out,err: bounded_process(['sh','docker/measure.sh',str(directory),str(i)],
+    executor=executor or (lambda i,out,err: bounded_process(['sh','docker/commands/measure.sh',str(directory),str(i)],
                           run_timeout,cleanup_timeout,dict(os.environ,BENCH_RESILIENT_RUN='1'),out,err))
     published=published or (lambda run_id: validate_published(directory,run_id,cleanup_timeout))
     cleanup=cleanup or (lambda run_id: cleanup_run(directory,run_id,cleanup_timeout))
@@ -287,7 +287,7 @@ def report_after_cleanup(directory):
             print('Analysis deferred: measurement containers remain for '+project,file=sys.stderr)
             return 2
     with (directory/'analysis.stdout.log').open('a') as out,(directory/'analysis.stderr.log').open('a') as err:
-        return bounded_process(['sh','docker/analyze.sh',str(directory),'--all-outcomes'],300,timeout,stdout=out,stderr=err)
+        return bounded_process(['sh','docker/commands/analyze.sh',str(directory),'--all-outcomes'],300,timeout,stdout=out,stderr=err)
 
 
 def run(directory):

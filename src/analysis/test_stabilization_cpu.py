@@ -62,7 +62,7 @@ class QuietCpuTests(unittest.TestCase):
         from pathlib import Path
         from jsonschema import Draft202012Validator
         from raw import read
-        result = subprocess.run(['timeout','4','sh','docker/sample.sh'],env=dict(__import__('os').environ,ROLE='browser',RUN_ID='sample-test'),capture_output=True,text=True)
+        result = subprocess.run(['timeout','4','sh','docker/runtime/sample.sh'],env=dict(__import__('os').environ,ROLE='browser',RUN_ID='sample-test'),capture_output=True,text=True)
         self.assertEqual(result.returncode,124,result.stderr)
         rows = [json.loads(line) for line in result.stdout.splitlines()]
         self.assertGreaterEqual(len(rows),2)

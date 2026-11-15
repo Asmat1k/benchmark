@@ -102,7 +102,7 @@ BENCH_CONTROLLER_PID=$!
 export BENCH_CONTROLLER_PID
 exec 8> "$CONTROLLER_TEST_FIFO"
 while [ ! -s "$BENCH_CONTROLLER_RESPONSE" ]; do kill -0 "$BENCH_CONTROLLER_PID"; sleep .1; done
-. docker/controller-client.sh
+. docker/lib/controller-client.sh
 controller_request '{"action":"next"}'
 exec 8>&-
 wait "$BENCH_CONTROLLER_PID"

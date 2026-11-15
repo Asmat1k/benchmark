@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "mtu": 1500,
+  "rate_mbit_s": 10,
+  "limit_packets": 1000,
+  "jitter_ms": 0,
+  "correlation_pct": 0,
+  "profiles": [
+    {
+      "id": "r20p0",
+      "egress_delay_ms": 10,
+      "egress_loss_pct": 0
+    },
+    {
+      "id": "r20p1",
+      "egress_delay_ms": 10,
+      "egress_loss_pct": 1
+    },
+    {
+      "id": "r80p0",
+      "egress_delay_ms": 40,
+      "egress_loss_pct": 0
+    },
+    {
+      "id": "r80p1",
+      "egress_delay_ms": 40,
+      "egress_loss_pct": 1
+    }
+  ]
+}

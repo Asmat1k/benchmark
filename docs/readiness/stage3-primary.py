@@ -66,7 +66,7 @@ def prepare(smoke, timer_path, output):
                                    reason=scope, utc=now(), evidence=[ref(trace_path)]))
 
     build_log = (stage2 / 'release-build.txt').read_text()
-    dockerfiles = [Path('docker/Dockerfile.' + role) for role in ('server', 'browser', 'analyzer')]
+    dockerfiles = [Path('docker/images/Dockerfile.' + role) for role in ('server', 'browser', 'analyzer')]
     installs = ['npm ci', 'go test -mod=readonly', '--require-hashes', 'pip check']
     source_text = '\n'.join(p.read_text() for p in dockerfiles)
     add('build', 'locked-install', all(s in source_text and s in build_log for s in installs),
@@ -101,7 +101,7 @@ def prepare(smoke, timer_path, output):
     require(modes.get('WT-D', {}).get('exactFrames') == 3 and modes['WT-D'].get('supported') is True, 'WT-D must actually echo')
     for identity, mode in [('ws-secure', 'WS'), ('wts-secure', 'WT-S')]:
         add('tls', identity, browser_version['secureContext'] and modes.get(mode, {}).get('exactFrames') == 3,
-            'real browser TLS and exact echo', 'caffeinate -ims sh docker/smoke.sh: main.js',
+            'real browser TLS and exact echo', 'caffeinate -ims sh docker/commands/smoke.sh: main.js',
             [smoke / 'browser.txt', smoke / 'server.txt'], dict(runtime=browser_version, echo=modes[mode], wt_d=modes['WT-D']))
     for case, name, error in [('wrong-ca', 'unknown-ca', 'CERT_AUTHORITY_INVALID'), ('wrong-san', 'wrong-san', 'CERT_COMMON_NAME_INVALID'),
                                ('expired', 'expired', 'CERT_DATE_INVALID')]:

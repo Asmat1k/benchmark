@@ -17,7 +17,7 @@ assert mode in ('smoke','timer')
 base=Path('results/verify/readiness/stage4/practical-v1/release-v2')
 base.mkdir(parents=True,exist_ok=True)
 execution=Path(tempfile.mkdtemp(prefix=mode+'-execution.',dir=base))
-argv=['sh','docker/smoke.sh'] if mode=='smoke' else ['sh','docker/collect-diagnostic.sh','timer']
+argv=['sh','docker/commands/smoke.sh'] if mode=='smoke' else ['sh','docker/commands/collect-diagnostic.sh','timer']
 limit=90 if mode=='smoke' else 130
 stamp=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat()
 record=dict(argv=argv,limit_s=limit,start=stamp(),preflight=None)

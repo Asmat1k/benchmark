@@ -37,7 +37,7 @@ def check():
     try:
         head = command(['git','rev-parse','HEAD']).strip()
         assert head.startswith(HEAD)
-        command(['sh','docker/check-release.sh',head])
+        command(['sh','docker/lib/check-release.sh',head])
         assert 'AC Power' in command(['pmset','-g','batt'])
         assert '"AppleClamshellState" = No' in command(['ioreg','-r','-k','AppleClamshellState','-d','4'])
         assert shutil.disk_usage(ROOT).free >= 30*1024**3

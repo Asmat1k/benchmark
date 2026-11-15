@@ -27,8 +27,8 @@ def main():
     if "Now drawing from 'AC Power'" not in power:
         raise SystemExit('STOP: connect AC power before smoke')
     head = output('git', 'rev-parse', 'HEAD')
-    subprocess.run(['sh', 'docker/check-release.sh', head], check=True)
-    subprocess.run(['sh', 'docker/release-state.sh'], check=True)
+    subprocess.run(['sh', 'docker/lib/check-release.sh', head], check=True)
+    subprocess.run(['sh', 'docker/lib/release-state.sh'], check=True)
     expected = json.loads(Path('results/verify/readiness/stage2-preflight/release-evidence.json').read_text())
     images = json.loads(output('docker', 'image', 'inspect', *(i['tag'] for i in expected)))
     if any((a['Id'], a['Os'], a['Architecture']) != (e['image_id'], e['os'], e['architecture']) for a, e in zip(images, expected)):
@@ -54,7 +54,7 @@ def main():
     directory.mkdir(parents=True, exist_ok=False)
     before = set(Path('results/verify/path').glob('wswt-smoke.*'))
     leaf_before = digest(certificate)
-    command = ['caffeinate', '-ims', 'sh', 'docker/smoke.sh']
+    command = ['caffeinate', '-ims', 'sh', 'docker/commands/smoke.sh']
     print(f'Journal: {directory}/smoke.txt', flush=True)
     started = time.monotonic()
     with (directory / 'smoke.txt').open('w') as log:

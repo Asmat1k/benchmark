@@ -17,9 +17,9 @@ preflight.HEAD=subprocess.check_output(['git','rev-parse','HEAD'],text=True,time
 base=Path('results/verify/readiness/browser-generator-v1/context-refresh')
 base.mkdir(parents=True,exist_ok=True)
 preflight.BASE=preflight.ROOT/base
-subprocess.run(['sh','docker/release-state.sh'],check=True,timeout=60)
+subprocess.run(['sh','docker/lib/release-state.sh'],check=True,timeout=60)
 execution=Path(tempfile.mkdtemp(prefix=mode+'-execution.',dir=base))
-argv=['sh','docker/smoke.sh'] if mode=='smoke' else ['sh','docker/collect-diagnostic.sh','timer']
+argv=['sh','docker/commands/smoke.sh'] if mode=='smoke' else ['sh','docker/commands/collect-diagnostic.sh','timer']
 limit=240
 stamp=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat()
 record=dict(argv=argv,limit_s=limit,start=stamp(),preflight=None)

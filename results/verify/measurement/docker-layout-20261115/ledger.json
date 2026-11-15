@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "series_id": "docker-layout-20261115",
+  "attempts": [
+    {
+      "block_id": "b0",
+      "session_id": "s0",
+      "attempt_id": "b0-a0",
+      "profile": "baseline",
+      "order_index": 0,
+      "modes": [
+        "WS",
+        "WT-S"
+      ],
+      "seed": 8926080062063780948,
+      "status": "stopped",
+      "reason": "incomplete_log: quarantine/wswt-d3-wswt-measure-0z3cokde",
+      "replacement_of": null,
+      "design": "comparison"
+    }
+  ]
+}

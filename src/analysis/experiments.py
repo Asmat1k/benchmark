@@ -139,7 +139,7 @@ def execute(directory, executor=None):
     admit(directory)
     from series import queue
     require(not (directory/'STOP').exists(), 'series stopped')
-    executor = executor or (lambda d,i: subprocess.run(['sh','docker/measure.sh',str(d),str(i)],check=True))
+    executor = executor or (lambda d,i: subprocess.run(['sh','docker/commands/measure.sh',str(d),str(i)],check=True))
     while True:
         if (directory/'PENDING_REPLACEMENT').exists() or (directory/'replacement.json').exists():
             return 2

@@ -37,7 +37,7 @@ compose() {
     esac
 }
 analyze() { touch "$series_dir/unexpected-analyze"; }
-. "$4/docker/measurement-cleanup.sh"
+. "$4/docker/lib/measurement-cleanup.sh"
 trap cleanup EXIT
 false
 '''

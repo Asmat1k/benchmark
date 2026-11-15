@@ -47,7 +47,7 @@ compose() { return 0; }
 analyze() { "$3" -B "$@"; }
 '''
         script = script.replace('analyze() { "$3" -B "$@"; }', 'analyze() { '+__import__('shlex').quote(sys.executable)+' -B "$@"; }')
-        script += '. docker/measurement-cleanup.sh\ntrap cleanup EXIT\nexit "$3"\n'
+        script += '. docker/lib/measurement-cleanup.sh\ntrap cleanup EXIT\nexit "$3"\n'
         return subprocess.run(["sh","-c",script,"cleanup",str(self.directory),str(partial),str(code)],capture_output=True,text=True)
 
     def test_actual_cleanup_exit3_then_relative_cli(self):

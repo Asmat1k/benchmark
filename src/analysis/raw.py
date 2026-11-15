@@ -265,10 +265,13 @@ def validate_raw(folder, schedule_file, config_root=ROOT / "configs"):
     require(context_snapshot(folder) == read(folder / "context.json") == read(schedule_file.parent / "context.json"), "environment changed: context")
     environment = read(folder / manifest["environment"]["path"])
     provenance = read(folder / manifest["provenance"]["path"])
+    image_lock = "docker/config/images.lock.json" if "docker/config/images.lock.json" in provenance["lock_hashes"] else "docker/images.lock.json"
+    lock_hashes = {p:digest(Path(p)) for p in ("src/client/package-lock.json", "src/runner/package-lock.json", "src/server/go.sum", "src/analysis/requirements.txt")}
+    lock_hashes[image_lock] = digest(ROOT / "docker/config/images.lock.json")
     require(environment == dict(host=(folder/"host.txt").read_text(), vm=read(folder/"vm.json"), limits=read(folder/"limits.json")), "environment publication mismatch")
     require(provenance["images"] == read(folder/"images.json") == read(folder/"limits.json") and
             provenance["build"] == (folder/"server-build.txt").read_text() and
-            provenance["lock_hashes"] == {p:digest(Path(p)) for p in ("docker/images.lock.json", "src/client/package-lock.json", "src/runner/package-lock.json", "src/server/go.sum", "src/analysis/requirements.txt")}, "provenance publication mismatch")
+            provenance["lock_hashes"] == lock_hashes, "provenance publication mismatch")
     for when in ("network_before", "network_after"):
         snapshot = read(folder / manifest[when]["path"])
         require(snapshot["forwarding"] == 1, "path/forwarding")

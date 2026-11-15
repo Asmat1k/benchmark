@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "checks": [
+    {
+      "id": "slot-count",
+      "mandatory": true,
+      "expected": 3,
+      "actual": 3,
+      "units": "slots",
+      "tolerance": 0,
+      "status": "passed",
+      "reason": null,
+      "utc": "2026-11-15T09:42:36.606267Z",
+      "evidence": [
+        {
+          "path": "slots.jsonl",
+          "sha256": "3b0a2c65ff4c799e5925edfdccd0d4106252a3ff5aef3209f452aa3201fda77d"
+        }
+      ]
+    }
+  ]
+}

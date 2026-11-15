@@ -25,7 +25,7 @@ code = 2
 with (execution/'stdout.log').open('x') as stdout,(execution/'stderr.log').open('x') as stderr:
     try:
         head = subprocess.check_output(['git','rev-parse','HEAD'],text=True,timeout=10).strip()
-        subprocess.run(['sh','docker/release-state.sh'],check=True,stdout=stdout,stderr=stderr,timeout=60)
+        subprocess.run(['sh','docker/lib/release-state.sh'],check=True,stdout=stdout,stderr=stderr,timeout=60)
         spec = importlib.util.spec_from_file_location('preflight','docs/readiness/practical-preflight.py')
         preflight = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(preflight)
@@ -33,7 +33,7 @@ with (execution/'stdout.log').open('x') as stdout,(execution/'stderr.log').open(
         record['preflight'] = str(preflight.check())
         snapshot = json.loads((Path(record['preflight'])/'source-inventory.json').read_text())
         record.update(head=head,source_hashes=snapshot,admission_sha256=hashlib.sha256((directory/'admission.json').read_bytes()).hexdigest())
-        argv = ['sh','docker/experiment.sh',str(directory),'yes']
+        argv = ['sh','docker/commands/experiment.sh',str(directory),'yes']
         record['argv'] = argv
         (execution/'execution.json').write_text(json.dumps(record,indent=2)+'\n')
         process = subprocess.Popen(argv,stdout=stdout,stderr=stderr,start_new_session=True,

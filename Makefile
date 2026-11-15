@@ -1,27 +1,31 @@
 .PHONY: build smoke cleanup archive
 build:
-	sh docker/build.sh
+	sh docker/commands/build.sh
 
 smoke:
-	sh docker/smoke.sh
+	sh docker/commands/smoke.sh
 
 archive:
-	sh docker/archive.sh
+	sh docker/commands/archive.sh
 
 cleanup:
-	sh docker/cleanup.sh "$(RUN_DIR)"
+	sh docker/commands/cleanup.sh "$(RUN_DIR)"
+
+.PHONY: docker-test
+docker-test:
+	docker run --rm --network none -e PYTHONDONTWRITEBYTECODE=1 -e PYTHONPATH=src/analysis:docker/diagnostics -v "$(CURDIR):/bench" -w /bench wswt-bench-analyzer:dev python -B -m unittest discover -s docker/tests -p '*_test.py' -v
 
 .PHONY: measurement-smoke
 measurement-smoke:
-	sh docker/measurement-smoke.sh
+	sh docker/commands/measurement-smoke.sh
 
 .PHONY: measure
 measure:
-	sh docker/measure.sh "$(SERIES_DIR)" "$(RUN_INDEX)"
+	sh docker/commands/measure.sh "$(SERIES_DIR)" "$(RUN_INDEX)"
 
 .PHONY: analyze analysis-test
 analyze:
-	sh docker/analyze.sh "$(SERIES)" $(ARGS)
+	sh docker/commands/analyze.sh "$(SERIES)" $(ARGS)
 
 .PHONY: exploratory-prepare
 exploratory-prepare:
@@ -32,10 +36,10 @@ analysis-test:
 
 .PHONY: calibrate generator timer aa monitoring pilot power verify freeze experiment acceptance-test
 calibrate generator timer aa monitoring pilot power verify freeze:
-	sh docker/acceptance.sh $@ $(ARGS)
+	sh docker/commands/acceptance.sh $@ $(ARGS)
 
 experiment:
-	sh docker/experiment.sh "$(SERIES_DIR)" "$(ALLOW_REAL_EXPERIMENTS)"
+	sh docker/commands/experiment.sh "$(SERIES_DIR)" "$(ALLOW_REAL_EXPERIMENTS)"
 
 acceptance-test:
 	docker run --rm --network none -e PYTHONDONTWRITEBYTECODE=1 -v "$(CURDIR):/bench" -w /bench wswt-bench-analyzer:dev python -B -m unittest discover -s src/analysis -p 'test_acceptance.py' -v

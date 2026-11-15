@@ -27,7 +27,7 @@ def prepare(smoke, timer_path, output):
     build_history = Path('results/verify/readiness/stage4/release-v3')
     historical = Path('results/verify/readiness/stage3')
     previous = read(historical / 'source-inventory.json')
-    require(set(hashes) == set(previous) and {p for p in hashes if hashes[p] != previous[p]} == {'docker/calibration_probe.py', 'docker/calibration_probe_test.py', 'docker/measure.sh', 'docker/browser_bandwidth_test.py'}, 'bounded sender and observer-order source delta')
+    require(set(hashes) == set(previous) and {p for p in hashes if hashes[p] != previous[p]} == {'docker/diagnostics/calibration_probe.py', 'docker/tests/calibration_probe_test.py', 'docker/commands/measure.sh', 'docker/tests/browser_bandwidth_test.py'}, 'bounded sender and observer-order source delta')
     require(hashes == read(stage3 / 'source-inventory.json'), 'current inventory correspondence')
     expected_images = read(stage2 / 'release-evidence.json')
     expected_by_role = {i['tag'].split('-')[-1].split(':')[0]: i['image_id'] for i in expected_images}
@@ -70,12 +70,12 @@ def prepare(smoke, timer_path, output):
                                    reason=scope, utc=now(), evidence=[ref(trace_path)]))
 
     build_log = (build_history / 'build.stdout.log').read_text()
-    dockerfiles = [Path('docker/Dockerfile.' + role) for role in ('server', 'browser', 'analyzer')]
+    dockerfiles = [Path('docker/images/Dockerfile.' + role) for role in ('server', 'browser', 'analyzer')]
     installs = ['npm ci', 'go test -mod=readonly', '--require-hashes', 'pip check']
     source_text = '\n'.join(p.read_text() for p in dockerfiles)
     add('build', 'locked-install', all(s in source_text and s in build_log for s in installs),
         'v3 cached build and restored exact admitted images reused; current delta is host-mounted collector/test only, image inputs unchanged',
-        'v3 docker/build.sh and content comparison; current image IDs and unchanged build dependencies; new D3 context',
+        'v3 docker/commands/build.sh and content comparison; current image IDs and unchanged build dependencies; new D3 context',
         [build_history / 'build.stdout.log', build_history / 'build.stderr.log', build_history / 'image-comparison.json', build_history / 'analyzer-content-comparison.json', stage3 / 'release.json', stage2 / 'release-build-archive.json', stage2 / 'release-evidence.json', *dockerfiles],
         dict(installation_contracts=installs, image_dependencies_equal=True, actual_image_ids=environment['services']))
     preflight = read(stage3 / 'environment-preflight.json')
@@ -105,7 +105,7 @@ def prepare(smoke, timer_path, output):
     require(modes.get('WT-D', {}).get('exactFrames') == 3 and modes['WT-D'].get('supported') is True, 'WT-D must actually echo')
     for identity, mode in [('ws-secure', 'WS'), ('wts-secure', 'WT-S')]:
         add('tls', identity, browser_version['secureContext'] and modes.get(mode, {}).get('exactFrames') == 3,
-            'real browser TLS and exact echo', 'caffeinate -ims sh docker/smoke.sh: main.js',
+            'real browser TLS and exact echo', 'caffeinate -ims sh docker/commands/smoke.sh: main.js',
             [smoke / 'browser.txt', smoke / 'server.txt'], dict(runtime=browser_version, echo=modes[mode], wt_d=modes['WT-D']))
     for case, name, error in [('wrong-ca', 'unknown-ca', 'CERT_AUTHORITY_INVALID'), ('wrong-san', 'wrong-san', 'CERT_COMMON_NAME_INVALID'),
                                ('expired', 'expired', 'CERT_DATE_INVALID')]:

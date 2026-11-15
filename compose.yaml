@@ -2,7 +2,7 @@ services:
   server:
     build:
       context: .
-      dockerfile: docker/Dockerfile.server
+      dockerfile: docker/images/Dockerfile.server
     image: wswt-bench-server:dev
     init: true
     sysctls:
@@ -17,7 +17,7 @@ services:
   browser:
     build:
       context: .
-      dockerfile: docker/Dockerfile.browser
+      dockerfile: docker/images/Dockerfile.browser
     image: wswt-bench-browser:dev
     init: true
     sysctls:
@@ -28,7 +28,7 @@ services:
     mem_limit: 3g
     extra_hosts: ["bench.test:172.28.20.10"]
     security_opt:
-      - seccomp=docker/chromium-seccomp.json
+      - seccomp=docker/config/chromium-seccomp.json
     volumes:
       - ${BENCH_TLS_DIR:-./build/tls}/public:/trust:ro
     networks:
@@ -37,7 +37,7 @@ services:
   router:
     build:
       context: .
-      dockerfile: docker/Dockerfile.router
+      dockerfile: docker/images/Dockerfile.router
     image: wswt-bench-router:dev
     init: true
     cpus: 1
@@ -57,7 +57,7 @@ services:
   analyzer:
     build:
       context: .
-      dockerfile: docker/Dockerfile.analyzer
+      dockerfile: docker/images/Dockerfile.analyzer
     image: wswt-bench-analyzer:dev
     network_mode: none
     profiles: [analysis]

@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build locked analyzer
-        run: docker build -f docker/Dockerfile.analyzer -t wswt-bench-analyzer:dev .
+        run: docker build -f docker/images/Dockerfile.analyzer -t wswt-bench-analyzer:dev .
       - name: Validate schemas and fixtures
         run: docker run --rm --network none -v "$PWD:/bench" -w /bench wswt-bench-analyzer:dev python docs/fixtures/synthetic/validate.py
       - name: Verify synthetic statistical references and CLI

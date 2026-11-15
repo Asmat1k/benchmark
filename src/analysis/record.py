@@ -95,7 +95,7 @@ def complete(directory, index, partial):
     write(partial/"server.json",dict(schema_version=1,run_id=run["run_id"],**counter))
     write(partial/"config.json",{p:read(Path("configs")/f"{p}.json") for p in ("plan","thresholds","profiles")})
     write(partial/"provenance.json",dict(images=read(partial/"images.json"),lock_hashes={
-        p:digest(Path(p)) for p in ["docker/images.lock.json","src/client/package-lock.json","src/runner/package-lock.json",
+        p:digest(Path(p)) for p in ["docker/config/images.lock.json","src/client/package-lock.json","src/runner/package-lock.json",
                                     "src/server/go.sum","src/analysis/requirements.txt"]}, build=(partial/"server-build.txt").read_text()))
     write(partial/"environment.json",dict(host=(partial/"host.txt").read_text(),vm=read(partial/"vm.json"),limits=read(partial/"limits.json")))
     for when in ("before","after"):

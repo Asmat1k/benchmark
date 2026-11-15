@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 import sys
 
-sys.path[:0]=['src/analysis','docker']
+sys.path[:0]=['src/analysis','docker/diagnostics']
 from admission import checked, ref, sources
 from raw import read, write
 from sender_quality import evaluate
