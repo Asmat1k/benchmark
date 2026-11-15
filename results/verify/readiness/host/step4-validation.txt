@@ -1,4 +1,0 @@
-certificate_sha256 16a9e168db41e4c9d757bedb1c856b15e281d2d66dde931d6f482736db4ba2da
-timer {'count': 100000, 'monotonic': True, 'step_ms': 0.09999999403953552, 'p99_overhead_ms': 0.0}
-ledger ['complete']
-WS/WT-S raw exact echoes, hashes, schemas and timer passed

@@ -12,11 +12,7 @@ from execution.schedule import make_schedule
 VERSION = 'exploratory-browser-study-v2'
 LIMITS = dict(run_timeout_seconds=360, cleanup_timeout_seconds=30, series_budget_seconds=54000)
 POLICY = Path('configs/policies/exploratory.json')
-HISTORY = {
-    'calibration': Path('results/verify/readiness/stage4/practical-v1/full-calibration/calibration-sFWOAzbo-report.json'),
-    'generator': Path('results/verify/diagnostic/generator-100.StWlCPFN-report/report.json'),
-    'aa': Path('results/verify/readiness/finite-browser-study-v1/review-aa-partial-final-v2/unit-review.json'),
-}
+HISTORY = ('calibration', 'generator', 'aa')
 
 
 def validate(directory, kind='real', initial=False):
@@ -28,7 +24,7 @@ def validate(directory, kind='real', initial=False):
     require(value['source_hashes'] == sources(), 'exploratory source changed')
     policy = read(checked(value['policy']))
     require(policy['execution_policy'] == VERSION, 'exploratory policy binding')
-    checked(policy['document'])
+    definition = read(checked(policy['document']))
     require(value['limits'] == LIMITS, 'exploratory execution bounds changed')
     schedule = read(directory/'schedule.json')
     require(schedule == read(checked(value['schedule'])) == make_schedule('main', directory.name, 20, 4, True),
@@ -37,11 +33,8 @@ def validate(directory, kind='real', initial=False):
     require(read(directory/'ledger.json') == dict(schema_version=1, series_id=directory.name, attempts=schedule['blocks']),
             'exploratory immutable assignment ledger changed')
     environment = current_environment(checked(value['environment']))
-    require(set(value['history']) == set(HISTORY), 'exploratory historical disclosure missing')
-    for gate, binding in value['history'].items():
-        report = read(checked(binding))
-        if gate in ('calibration', 'generator'):
-            require(report['gate'] == gate and report['status'] == 'failed', 'historical failed status changed')
+    require(value['history'] == {gate: definition['historical'][gate] for gate in HISTORY},
+            'exploratory historical disclosure changed')
     require(value['unperformed'] == ['monitoring', 'pilot', 'power', 'reproduction'], 'unperformed stages changed')
     require(value['limitations'] == 'exploratory-observed-system-no-confirmatory-readiness-or-power-claim',
             'exploratory limitations missing')
@@ -72,8 +65,6 @@ def prepare(directory, environment_path, tls):
     require(leaf.read_text() == environment['leaf'], 'actual measured TLS required')
     end = (datetime.now(timezone.utc) + timedelta(hours=24)).isoformat()
     leaf_covers(leaf, end, LIMITS['series_budget_seconds'])
-    for path in HISTORY.values():
-        require(path.is_file(), 'historical outcome missing: '+str(path))
     directory.mkdir(parents=True)
     snapshot = directory/'snapshot'
     snapshot.mkdir()
@@ -93,7 +84,7 @@ def prepare(directory, environment_path, tls):
                  created_utc=now(), release_commit=commit,
                  source_hashes=inventory, environment=ref(snapshot/'environment.json'),
                  schedule=ref(snapshot/'schedule.json'), policy=ref(snapshot/'policy.json'),
-                 history={gate:ref(path) for gate,path in HISTORY.items()},
+                 history={gate:read(POLICY)['historical'][gate] for gate in HISTORY},
                  unperformed=['monitoring','pilot','power','reproduction'], limits=LIMITS,
                  limitations='exploratory-observed-system-no-confirmatory-readiness-or-power-claim',
                  leaf_pem=str(leaf), series_end_utc=end)

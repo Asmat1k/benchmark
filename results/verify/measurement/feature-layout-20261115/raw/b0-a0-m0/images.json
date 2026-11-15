@@ -1,7 +1,0 @@
-[
-{"id":"sha256:617689597ad8d0925047a781eaa84677283b5680a5af6d7021ef86f38f06da65","role":"/wswt-d3-wswt-measure-xlejcrsd-browser-1","cpu":2000000000,"memory":3221225472,"shm":1073741824}
-,
-{"id":"sha256:61a9a7b0e3a8a27c8e4b46f93435127f6de51e910e4faa9fb423ab5845865438","role":"/wswt-d3-wswt-measure-xlejcrsd-router-1","cpu":1000000000,"memory":536870912,"shm":67108864}
-,
-{"id":"sha256:ab503f709e71bd5d7819a4fdde141264078feb03623d56aebf76ec450bcbf4e6","role":"/wswt-d3-wswt-measure-xlejcrsd-server-1","cpu":2000000000,"memory":1073741824,"shm":67108864}
-]

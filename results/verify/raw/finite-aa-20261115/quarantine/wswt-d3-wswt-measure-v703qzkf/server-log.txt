@@ -1,4 +1,0 @@
-server-1  | 2026/11/15 08:48:55 failed to sufficiently increase receive buffer size (was: 208 kiB, wanted: 7168 kiB, got: 416 kiB). See https://github.com/quic-go/quic-go/wiki/UDP-Buffer-Sizes for details.
-server-1  | 2026/11/15 08:49:17 peer HTTP/3 SETTINGS=&{EnableDatagrams:true EnableExtendedConnect:false Other:map[1:65536 6:16384 7:100 16765559:1 727725890:1 101431665481:191292796]} server additional SETTINGS=map[727725890:1]
-server-1  | 2026/11/15 08:49:17 WT request=CONNECT http=webtransport alpn=h3 quic=v1 datagrams=true draft-response=draft02
-server-1  | 2026/11/15 08:50:32 WT stream: stream reset, but failed to convert stream error 386759528: error code outside of expected range

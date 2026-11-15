@@ -1,1 +1,0 @@
-{"status": "passed", "records": 9925, "counts": {"recvfrom": {"entries": 9926, "exits": 9926, "success": 9925, "terminal_outstanding": 0}, "sendto": {"entries": 9925, "exits": 9925, "success": 9925, "terminal_outstanding": 0}}, "mode": "network", "zero_trace_loss": true, "pid_clock_brackets_valid": true}

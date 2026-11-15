@@ -15,4 +15,4 @@
 
 Машинные контракты, политика и JSON-схемы находятся в [configs/](../configs/README.md), синтетические примеры — в [src/analysis/tests/fixtures/](../src/README.md#analysis-tests-fixtures). Они используются программой и не дублируются в документации. Краткий обзор проекта — в [корневом README](../README.md), устройство Docker-каталогов — в [docker/README.md](../docker/README.md).
 
-Текущий сбор исследовательский: исторические calibration/generator failed и A/A partial остаются в results/ без изменения статусов. Полная приёмка и мощность 80% не заявляются. Старые разборы и передачи доступны в истории Git.
+Текущий сбор исследовательский: исторические статусы calibration/generator failed и A/A partial записаны в configs/policies/exploratory.json; старые артефакты доступны в истории Git. Полная приёмка и мощность 80% не заявляются. Старые разборы и передачи доступны в истории Git.

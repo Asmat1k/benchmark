@@ -1,2 +1,0 @@
-ai-grepa-qdrant-1 qdrant/qdrant:v1.18.3
-lock available

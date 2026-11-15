@@ -1,9 +1,0 @@
-FROM mcr.microsoft.com/playwright:v1.55.0-noble@sha256:7e20a8225950eb93a9d306a917b05d822a68a67333973e254f1b0cd86c0f3742
-RUN apt-get update && apt-get install -y --no-install-recommends libnss3-tools && rm -rf /var/lib/apt/lists/*
-WORKDIR /runner
-COPY src/runner/package*.json ./
-RUN npm ci
-COPY src/runner ./
-RUN npm run build
-COPY docker/runtime/browser.sh /usr/local/bin/bench-browser
-ENTRYPOINT ["sh","/usr/local/bin/bench-browser"]

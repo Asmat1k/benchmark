@@ -1,1 +1,0 @@
-{"status": "failed", "roles": {"browser": {"baseline_ceil_pct": 2, "idle_ceil_pct": 2, "passed": true}, "server": {"baseline_ceil_pct": 1, "idle_ceil_pct": 2, "passed": false}, "router": {"baseline_ceil_pct": 2, "idle_ceil_pct": 2, "passed": true}}}

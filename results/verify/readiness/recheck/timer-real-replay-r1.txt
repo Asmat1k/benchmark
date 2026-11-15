@@ -1,3 +1,0 @@
-b0-a0-m0 WT-S 63 files verified
-b0-a0-m1 WS 60 files verified
-{'count': 100000, 'monotonic': True, 'step_ms': 0.09999999776482582, 'p99_overhead_ms': 0.0} 132 receipt file hashes verified

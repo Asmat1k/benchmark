@@ -1,2 +1,0 @@
-{"BlockIO":"0B / 0B","CPUPerc":"0.00%","Container":"b1e5870a5e37149d3af433492ba29e6a48fb9ef9c581da7c010f01cf3406368d","ID":"b1e5870a5e37","MemPerc":"0.40%","MemUsage":"15.64MiB / 3.827GiB","Name":"ecstatic_burnell","NetIO":"0B / 0B","PIDs":"1"}
-{"BlockIO":"667MB / 33.7MB","CPUPerc":"0.07%","Container":"16479141beddf1af7cf2b66e2e1e631fe0cd16b857180fd70804e3486a1057a6","ID":"16479141bedd","MemPerc":"3.19%","MemUsage":"125MiB / 3.827GiB","Name":"ai-grepa-qdrant-1","NetIO":"27.1MB / 4.58MB","PIDs":"25"}

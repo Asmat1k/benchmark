@@ -1,6 +1,0 @@
-148872.11
-49594280
-{"kind":"netem","handle":"8084:","dev":"to_server","root":true,"refcnt":3,"options":{"limit":1000,"delay":{"delay":0.01,"jitter":0,"correlation":0},"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261138,"ecn":false,"gap":0},"bytes":47845648,"packets":144416,"drops":926,"overlimits":0,"requeues":0,"backlog":1240758,"qlen":999}
-148933.14
-144347702
-{"kind":"netem","handle":"8084:","dev":"to_server","root":true,"refcnt":3,"options":{"limit":1000,"delay":{"delay":0.01,"jitter":0,"correlation":0},"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261138,"ecn":false,"gap":0},"bytes":124139224,"packets":205844,"drops":15792,"overlimits":0,"requeues":0,"backlog":1240758,"qlen":999}

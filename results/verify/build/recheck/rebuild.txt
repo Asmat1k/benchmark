@@ -1,5 +1,0 @@
-results/verify/build/images.json: OK
-results/verify/build/python.txt: OK
-results/verify/build/synthetic.pdf: OK
-results/verify/build/synthetic.png: OK
-results/verify/build/synthetic.svg: OK

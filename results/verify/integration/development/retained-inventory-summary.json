@@ -1,7 +1,0 @@
-{
-  "path": "build/d6-retained-inventory.json",
-  "sha256": "e6e08ec726acd8db97a0934596c3ebf330eb80ee86311e509bfbea6e8f33d5e4",
-  "files": 85085,
-  "bytes": 13519741,
-  "purpose": "complete historical retained fixture inventory; local ignored file"
-}

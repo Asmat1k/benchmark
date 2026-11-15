@@ -1,3 +1,0 @@
-"/wswt-d3-wswt-measure-tshbffsp-browser-1"
-"/wswt-d3-wswt-measure-tshbffsp-router-1"
-"/wswt-d3-wswt-measure-tshbffsp-server-1"

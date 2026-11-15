@@ -1,2 +1,0 @@
-sh docker/analyze.sh "build/d4-synthetic-series"
-/series/derived

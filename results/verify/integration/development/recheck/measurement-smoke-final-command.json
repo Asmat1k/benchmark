@@ -1,6 +1,0 @@
-{
-  "command": "make measurement-smoke",
-  "exit": 0,
-  "seconds": 78.74992699999711,
-  "reason": "R1 changed production record/context/complete; repeat only affected short raw smoke; all offline analyzer jobs finished"
-}

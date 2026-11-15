@@ -1,2 +1,0 @@
-{"BlockIO":"0B / 0B","CPUPerc":"0.00%","Container":"093f99647c3f53655583c9dbb1ca992455237683dc8bb5ffbd0a7aec2cff0110","ID":"093f99647c3f","MemPerc":"0.40%","MemUsage":"15.6MiB / 3.827GiB","Name":"eloquent_jackson","NetIO":"0B / 0B","PIDs":"1"}
-{"BlockIO":"665MB / 17.8MB","CPUPerc":"0.13%","Container":"16479141beddf1af7cf2b66e2e1e631fe0cd16b857180fd70804e3486a1057a6","ID":"16479141bedd","MemPerc":"4.14%","MemUsage":"162.3MiB / 3.827GiB","Name":"ai-grepa-qdrant-1","NetIO":"27MB / 4.43MB","PIDs":"25"}

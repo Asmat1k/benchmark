@@ -1,3 +1,0 @@
-"/wswt-d3-wswt-measure-mams169i-browser-1"
-"/wswt-d3-wswt-measure-mams169i-router-1"
-"/wswt-d3-wswt-measure-mams169i-server-1"

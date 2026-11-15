@@ -1,1 +1,0 @@
-Verified 24 runs / 8 pairs / 4 profiles / 28800 slots / 28752 completed, exact golden decisions, infinity strings, bootstrap state replay (10000 x 2), 8 PNG300dpi + 8 SVG + 8 PDF, style hash and all derived checksums.

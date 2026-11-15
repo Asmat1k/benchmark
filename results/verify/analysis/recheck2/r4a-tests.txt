@@ -1,7 +1,0 @@
-test_r4a_hash_corrupted_schedule_diagnose_replace_analyze_cli (test_analysis.SeriesTests.test_r4a_hash_corrupted_schedule_diagnose_replace_analyze_cli) ... ok
-
-----------------------------------------------------------------------
-Ran 1 test in 19.038s
-
-OK
-R4a normal CLI: diagnose hash/hash mismatch -> replace -> analyze accepted; post-proof source/evidence, identity, independent archive, transaction, sibling and rehashed active snapshot mutations rejected without changing derived.

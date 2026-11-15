@@ -1,9 +1,0 @@
-aa saved report and canonical typed dependency graph integrity passed 48.112 seconds 0cfe32ea626a4f3527f52b423927b95b042c3f9a73953be4acd23d9e93c0a4bd
-aa historical source inventory; NOT current admission; current aggregate rejects stale report
-monitoring saved report and canonical typed dependency graph integrity passed 47.527 seconds a46de360825c19a467b2005c5e8e72cdf41118fe142ae1e75ddac50985136dfe
-monitoring historical source inventory; NOT current admission; current aggregate rejects stale report
-pilot saved report and canonical typed dependency graph integrity passed 7.084 seconds 4c1cd266164c0dee579dd1f68ee561c54d9cc1b784abf09e974c46b6bcac4752
-pilot historical source inventory; NOT current admission; current aggregate rejects stale report
-power saved report and canonical typed dependency graph integrity passed 6.305 seconds 3b87af64bdc6e6a21901d02a1a612f5a6226d3ac3220f581f6bbcb86652a6d1e
-power historical source inventory; NOT current admission; current aggregate rejects stale report
-Historical R7 scientific outcomes reused from D5 independent review03, unchanged algorithms; current guards separately exercised by locked-suite. No source hash or evidence rewritten.

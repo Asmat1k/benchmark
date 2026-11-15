@@ -1,2 +1,0 @@
-Verified current exports: 24 ordered runs / 28800 slots / 28752 completed; 24 distinct sequential UTC; queue observations; empty audit with 12 stable columns; runs and plotting order agree.
-All primary profile statistics, descriptive results, 4 bootstrap NPZ and 24 PNG300dpi/SVG/PDF exports are exactly equal to the pre-review known answers. State replay, current source hashes and all derived checksums verified.

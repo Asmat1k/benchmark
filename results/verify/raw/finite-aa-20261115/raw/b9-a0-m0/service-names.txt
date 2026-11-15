@@ -1,3 +1,0 @@
-"/wswt-d3-wswt-measure-vf91ubzc-browser-1"
-"/wswt-d3-wswt-measure-vf91ubzc-router-1"
-"/wswt-d3-wswt-measure-vf91ubzc-server-1"

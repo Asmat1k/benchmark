@@ -1,8 +1,0 @@
-{
-  "timer": "results/verify/diagnostic/timer-timer.JHhehRVV-report/report.json",
-  "build": "results/verify/readiness/stage4/practical-v1/release-v2/build-report.json",
-  "tls": "results/verify/readiness/stage4/practical-v1/release-v2/tls-report.json",
-  "path": "results/verify/readiness/stage4/practical-v1/release-v2/path-report.json",
-  "raw": "results/verify/readiness/stage4/practical-v1/release-v2/raw-report.json",
-  "analysis": "results/verify/readiness/stage4/practical-v1/release-v2/analysis-report.json"
-}

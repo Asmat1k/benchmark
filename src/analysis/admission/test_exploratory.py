@@ -24,15 +24,11 @@ class ExploratoryAdmissionTests(unittest.TestCase):
         write(self.directory/'schedule.json', self.schedule)
         write(self.directory/'frozen-schedule.json', self.schedule)
         write(self.directory/'ledger.json', dict(schema_version=1, series_id=self.directory.name, attempts=self.schedule['blocks']))
-        (self.directory/'policy.md').write_text('fixed exploratory policy')
+        write(self.directory/'policy.md', dict(historical=dict(calibration='failed', generator='failed', aa='partial')))
         write(self.directory/'policy.json', dict(execution_policy=exploratory.VERSION, document=ref(self.directory/'policy.md')))
         write(self.directory/'env.json', {})
         (self.directory/'leaf.pem').write_text('actual-leaf')
-        history = {}
-        for gate in exploratory.HISTORY:
-            path = self.directory/(gate+'.json')
-            write(path, dict(gate=gate, status='failed' if gate != 'aa' else 'partial'))
-            history[gate] = ref(path)
+        history = dict(calibration='failed', generator='failed', aa='partial')
         self.value = dict(schema_version=1, kind='real', phase='main', execution_policy=exploratory.VERSION,
             source_hashes={'actual.py':'actual-sha'}, schedule=ref(self.directory/'frozen-schedule.json'),
             policy=ref(self.directory/'policy.json'), limits=exploratory.LIMITS,
@@ -64,10 +60,26 @@ class ExploratoryAdmissionTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'fixed schedule changed'):
             admit(self.directory)
 
-    def test_historical_report_tamper_rejected(self):
-        write(self.directory/'calibration.json', dict(gate='calibration', status='passed'))
-        with self.assertRaisesRegex(ValueError, 'evidence hash mismatch'):
+    def test_historical_status_tamper_rejected(self):
+        self.value['history']['calibration'] = 'passed'
+        write(self.directory/'admission.json', self.value)
+        with self.assertRaisesRegex(ValueError, 'historical disclosure changed'):
             admit(self.directory)
+
+    def test_prepare_without_historical_results(self):
+        directory = Path('results/main/clean-main')
+        policy = Path('configs/policies/exploratory.json')
+        policy.parent.mkdir(parents=True)
+        write(policy, dict(execution_policy=exploratory.VERSION,
+            historical=dict(calibration='failed', generator='failed', aa='partial')))
+        leaf = Path('build/tls/server/good/cert.pem')
+        leaf.parent.mkdir(parents=True)
+        leaf.write_text('actual-leaf')
+        self.sources.return_value = {str(policy): ref(policy)['sha256']}
+        with patch.dict(os.environ, BENCH_RELEASE_COMMIT='a'*40):
+            exploratory.prepare(directory, self.directory/'env.json', Path('build/tls'))
+        self.assertEqual(read(directory/'admission.json')['history'], self.value['history'])
+        self.assertFalse(Path('results/verify').exists())
 
     def test_measured_environment_leaf_must_match_mounted_leaf(self):
         (self.directory/'leaf.pem').write_text('other-leaf')

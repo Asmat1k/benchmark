@@ -1,3 +1,0 @@
-"/wswt-d3-wswt-measure-fve52mas-browser-1"
-"/wswt-d3-wswt-measure-fve52mas-router-1"
-"/wswt-d3-wswt-measure-fve52mas-server-1"

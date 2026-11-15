@@ -1,8 +1,0 @@
-{
-  "symbol": "ffff800080f2bd88 t qdisc_watchdog",
-  "address": "0xffff800080f2bd88",
-  "scope": "all guest qdisc watchdogs, not namespace filtered",
-  "clock": "netem qdisc_watchdog_init uses CLOCK_MONOTONIC; verify matching starts",
-  "cancellation": "hrtimer_cancel/expire_exit do not carry function; not recorded",
-  "direction_mapping": "requires independent timer pointer to router direction association"
-}

@@ -1,4 +1,5 @@
 set -eu
+mkdir -p results/archives
 cd results/archives
 archive=$(mktemp wswt-images.XXXXXXXX)
 trap 'rm -f "$archive"' EXIT

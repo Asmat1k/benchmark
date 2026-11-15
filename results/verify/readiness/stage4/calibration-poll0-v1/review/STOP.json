@@ -1,7 +1,0 @@
-{
-  "status": "stop_dependent_steps",
-  "reason": "Formal RTT process diagnostics suspect in3of6primaryseries",
-  "no_automatic_retry": true,
-  "no_threshold_change": true,
-  "source": "primary-review-v3.json"
-}

@@ -1,3 +1,0 @@
-{"schema_version":1,"run_id":"b0-a0-m1","role":"router","sample_index":0,"end_usec":84052640000,"interval_usec":1010000,"cpu_usage_usec":5210,"throttled_usec":0,"memory_current":1765376,"oom":0}
-{"schema_version":1,"run_id":"b0-a0-m1","role":"router","sample_index":1,"end_usec":84053650000,"interval_usec":1010000,"cpu_usage_usec":7073,"throttled_usec":0,"memory_current":1728512,"oom":0}
-{"schema_version":1,"run_id":"b0-a0-m1","role":"router","sample_index":2,"end_usec":84054660000,"interval_usec":1010000,"cpu_usage_usec":7618,"throttled_usec":0,"memory_current":2027520,"oom":0}

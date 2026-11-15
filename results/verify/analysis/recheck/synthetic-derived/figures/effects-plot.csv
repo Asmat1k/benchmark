@@ -1,5 +1,0 @@
-profile,n,theta_ms,Q_low_ms,Q_high_ms,mean_delta_S_pp,S_low_pp,S_high_pp
-r20p0,2,-10.0,-inf,inf,-0.5,-0.5,-0.5
-r20p1,2,-10.0,-inf,inf,-0.5,-0.5,-0.5
-r80p0,2,-10.0,-inf,inf,-0.5,-0.5,-0.5
-r80p1,2,-10.0,-inf,inf,-0.5,-0.5,-0.5

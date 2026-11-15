@@ -1,6 +1,0 @@
-86044.56
-161375156
-{"kind":"netem","handle":"8025:","dev":"to_server","root":true,"refcnt":3,"options":{"limit":1000,"delay":{"delay":0.01,"jitter":0,"correlation":0},"loss-random":{"loss":0.01,"correlation":0},"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261142,"ecn":false,"gap":0},"bytes":139075050,"packets":217961,"drops":17478,"overlimits":0,"requeues":0,"backlog":1242000,"qlen":1000}
-86105.61
-256148534
-{"kind":"netem","handle":"8025:","dev":"to_server","root":true,"refcnt":3,"options":{"limit":1000,"delay":{"delay":0.01,"jitter":0,"correlation":0},"loss-random":{"loss":0.01,"correlation":0},"rate":{"rate":1250000,"packetoverhead":0,"cellsize":0,"celloverhead":0},"seed":20261142,"ecn":false,"gap":0},"bytes":215376204,"packets":279398,"drops":31213,"overlimits":0,"requeues":0,"backlog":1242000,"qlen":1000}

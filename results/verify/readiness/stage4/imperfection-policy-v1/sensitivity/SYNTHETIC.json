@@ -1,1 +1,0 @@
-{"kind":"synthetic_counterfactual","real_inputs_retained":true,"allowed_for_real_gate":false,"purpose":"finite-model sensitivity, not protocol replay or new tolerance selection"}

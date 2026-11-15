@@ -1,3 +1,0 @@
-"/wswt-d3-wswt-measure-tjemqalz-browser-1"
-"/wswt-d3-wswt-measure-tjemqalz-router-1"
-"/wswt-d3-wswt-measure-tjemqalz-server-1"

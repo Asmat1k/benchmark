@@ -1,2 +1,0 @@
-{"BlockIO":"0B / 0B","CPUPerc":"0.00%","Container":"f91dcfcc8b000edf87f31b0d1300b6c68f5a69736cb10e886d0e35cffa63762e","ID":"f91dcfcc8b00","MemPerc":"0.40%","MemUsage":"15.61MiB / 3.827GiB","Name":"festive_bhabha","NetIO":"0B / 0B","PIDs":"1"}
-{"BlockIO":"665MB / 17.8MB","CPUPerc":"1.35%","Container":"16479141beddf1af7cf2b66e2e1e631fe0cd16b857180fd70804e3486a1057a6","ID":"16479141bedd","MemPerc":"4.14%","MemUsage":"162.3MiB / 3.827GiB","Name":"ai-grepa-qdrant-1","NetIO":"27MB / 4.44MB","PIDs":"25"}

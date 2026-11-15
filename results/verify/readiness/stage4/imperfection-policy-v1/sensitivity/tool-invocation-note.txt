@@ -1,1 +1,0 @@
-Initial multi-line functions.exec input failed JavaScript parsing before any tool execution. No files, calculation or network were executed by that rejected input. Corrected tool input created the predeclared plan and executed one complete synthetic calculation, exit0. No scenario selection or data retry occurred.

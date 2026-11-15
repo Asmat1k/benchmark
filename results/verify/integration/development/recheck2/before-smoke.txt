@@ -1,1 +1,0 @@
-16479141bedd qdrant/qdrant:v1.18.3 ai-grepa-qdrant-1

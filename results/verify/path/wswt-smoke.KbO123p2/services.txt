@@ -1,9 +1,0 @@
-router-1  | tcp-segmentation-offload: off
-router-1  | generic-segmentation-offload: off
-router-1  | generic-receive-offload: off
-router-1  | large-receive-offload: off [fixed]
-router-1  | tcp-segmentation-offload: off
-router-1  | generic-segmentation-offload: off
-router-1  | generic-receive-offload: off
-router-1  | large-receive-offload: off [fixed]
-server-1  | 2026/11/11 08:39:14 failed to sufficiently increase receive buffer size (was: 208 kiB, wanted: 7168 kiB, got: 416 kiB). See https://github.com/quic-go/quic-go/wiki/UDP-Buffer-Sizes for details.

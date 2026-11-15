@@ -1,8 +1,0 @@
-function nop
-[local] global counter uptime perf mono mono_raw boot tai
-available:sched/sched_switch
-available:sched/sched_wakeup
-available:sched/sched_waking
-available:syscalls/sys_enter_pselect6
-available:syscalls/sys_exit_pselect6
-absent:syscalls/sys_enter_select

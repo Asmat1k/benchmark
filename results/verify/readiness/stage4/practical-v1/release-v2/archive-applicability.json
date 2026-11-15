@@ -1,5 +1,0 @@
-{
-  "scope": "Historical exact image archive, not current source release archive",
-  "current_source_inventory": "results/verify/readiness/stage4/practical-v1/release-v2/source-inventory.json",
-  "basis": "Exact runtime IDs preserved; host-mounted changes separately bound; locked install dependencies and Dockerfiles unchanged"
-}

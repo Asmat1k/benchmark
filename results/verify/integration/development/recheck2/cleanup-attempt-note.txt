@@ -1,1 +1,0 @@
-First lock-probe command had a quoting SyntaxError before executing or acquiring lock. Corrected multiline Python probe returned 0 and reacquired/released the lock. Both --rm/network-none containers terminated. Production code unchanged.

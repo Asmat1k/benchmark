@@ -1,3 +1,0 @@
-"/wswt-d3-wswt-measure-bpymm8eo-browser-1"
-"/wswt-d3-wswt-measure-bpymm8eo-router-1"
-"/wswt-d3-wswt-measure-bpymm8eo-server-1"

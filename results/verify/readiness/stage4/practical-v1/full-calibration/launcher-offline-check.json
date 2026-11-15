@@ -1,9 +1,0 @@
-{
-  "status": "passed",
-  "checks": [
-    "preflight SIGALRM becomes recorded TimeoutError/STOP/exit2/ended",
-    "original signal handler restored",
-    "launcher and prerequisites parse"
-  ],
-  "network_started": false
-}
