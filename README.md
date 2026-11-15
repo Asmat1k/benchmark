@@ -1,6 +1,6 @@
 # benchmark
 
-Полная документация и исторические материалы сохранены в [docs/](docs/). Рабочие машинные контракты находятся в configs/.
+Актуальная документация стенда находится в [docs/](docs/README.md). Рабочие машинные контракты находятся в configs/.
 
 Локальный стенд сравнивает **WebSocket (WS)**, **WebTransport stream (WT-S)** и **WebTransport datagram (WT-D)**. Chromium отправляет кадры через Docker router/netem к Go echo-серверу; Playwright управляет браузером, Python готовит расписание и анализирует результаты. Внешние порты не публикуются.
 
@@ -32,7 +32,7 @@ SERIES=results/main/experiment-001
 mkdir -p "$SERIES_TLS_DIR"
 docker run --rm --network none -v "$SERIES_TLS_DIR:/out" --entrypoint testcert wswt-bench-server:dev /out
 
-docker run --rm --network none -v "$PWD:/bench" -w /bench wswt-bench-analyzer:dev python -B src/analysis/schedule.py smoke "$CHECK" --blocks 1 --sessions 1 --baseline
+docker run --rm --network none -v "$PWD:/bench" -w /bench wswt-bench-analyzer:dev python -B -m execution.schedule smoke "$CHECK" --blocks 1 --sessions 1 --baseline
 make measure SERIES_DIR="$CHECK" RUN_INDEX=0
 make exploratory-prepare SERIES_DIR="$SERIES" ENVIRONMENT="$CHECK/context.json" SERIES_TLS_DIR="$SERIES_TLS_DIR"
 ```
@@ -60,6 +60,6 @@ make analyze SERIES="$SERIES"
 
 ## Где что лежит
 
-`src/` — клиент, сервер, runner и анализ; [docker/](docker/README.md) — сборка и сценарии; `configs/` — параметры, машинный протокол, политика допуска и JSON-схемы; `tests/fixtures/` — синтетические примеры; `results/` — неизменяемые raw, ошибки и отчёты; `build/` — локальные зависимости, сборочные данные и секреты TLS (не входят в Git).
+`src/` — клиент, сервер, runner и анализ; [docker/](docker/README.md) — сборка и сценарии; `configs/` — параметры, машинный протокол, политика допуска и JSON-схемы; [src/analysis/](src/analysis/README.md) — фичи с тестами; src/analysis/tests/ — общие проверки и fixtures; `results/` — неизменяемые raw, ошибки и отчёты; `build/` — локальные зависимости, сборочные данные и секреты TLS (не входят в Git).
 
 Дополнительные проверки: `make analysis-test`, `make acceptance-test`, `make controller-test`. В старом расширенном наборе есть несовместимые fixtures; он целиком не объявляется зелёным. `make cleanup RUN_DIR=...` очищает свой path-smoke проект, `make archive` сохраняет образы и SHA-256 для автономного переноса. Старые разборы и документация доступны в истории Git.

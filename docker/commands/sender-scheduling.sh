@@ -1,4 +1,6 @@
 set -eu
+PYTHONPATH="$PWD/src/analysis${PYTHONPATH:+:$PYTHONPATH}"
+export PYTHONPATH
 collections=baseline-scheduling
 probe_script=sender_scheduling_probe.py
 : "${SERIES_TLS_DIR:?set to the admitted certificate directory}"
@@ -58,7 +60,7 @@ PYTHON
 trap cleanup EXIT
 trap 'exit 130' INT TERM
 mkfifo "$work/lock"
-docker run --rm -i --network none -v "$PWD:/bench" -w /bench wswt-bench-analyzer:dev python -B src/analysis/series.py hold < "$work/lock" > "$work/status" &
+docker run --rm -i --network none -v "$PWD:/bench" -w /bench wswt-bench-analyzer:dev python -B -m execution.series hold < "$work/lock" > "$work/status" &
 lock_pid=$!
 exec 9>"$work/lock"
 for attempt in 1 2 3 4 5 6 7 8 9 10; do [ ! -s "$work/status" ] || break; sleep 1; done
@@ -75,7 +77,7 @@ import sys
 files = ['docker/diagnostics/calibration_probe.py', 'docker/diagnostics/sender_diagnostic_probe.py',
          'docker/diagnostics/sender_diagnostic_plain.py', 'docker/diagnostics/sender_diagnostic_resources.py',
          'docker/commands/sender-diagnostic.sh', 'docker/commands/sender-scheduling.sh',
-         'docker/diagnostics/sender_scheduling_probe.py', 'docker/diagnostics/sender_scheduling_trace.py', 'docker/diagnostics/sender_scheduling_check.py', 'src/analysis/sender_quality.py', 'configs/thresholds.json', 'docker/lib/links.sh', 'docker/lib/calibration-neighbors.sh',
+         'docker/diagnostics/sender_scheduling_probe.py', 'docker/diagnostics/sender_scheduling_trace.py', 'docker/diagnostics/sender_scheduling_check.py', 'src/analysis/calibration/sender_quality.py', 'configs/thresholds.json', 'docker/lib/links.sh', 'docker/lib/calibration-neighbors.sh',
          'docker/runtime/network.sh', 'compose.yaml', 'configs/profiles.json']
 if sys.argv[1].endswith('sources-before.json'):
     destination = Path(sys.argv[1]).parent / 'sources'

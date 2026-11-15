@@ -7,7 +7,7 @@ import unittest
 from unittest.mock import patch
 
 from browser_bandwidth import fractions, load_rates, package
-from schedule import make_schedule
+from execution.schedule import make_schedule
 
 
 class BandwidthTest(unittest.TestCase):

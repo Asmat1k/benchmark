@@ -7,4 +7,4 @@ shift
 docker run --rm --network none --cpus 2 --memory 2g \
   -e PYTHONDONTWRITEBYTECODE=1 -e MPLCONFIGDIR=/tmp/matplotlib \
   -v "$PWD:/bench" -v "$analysis_series_path:/series" -w /bench wswt-bench-analyzer:dev \
-  python src/analysis/analyze.py /series "$@"
+  python -m reporting.analyze /series "$@"

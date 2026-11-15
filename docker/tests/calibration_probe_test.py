@@ -79,7 +79,7 @@ class PacingTest(unittest.TestCase):
         self.assertEqual(result['reply_records'], [dict(id=i, rtt_ms=(t-times[i])/1e6) for t, i in clock.received])
         self.assertTrue(any(times[i] < t < times[i+1] and times[i+1]-times[i] == probe.MIN_ECHO_GAP_NS
                             for t, i in clock.received if i+1 < len(times)))
-        from sender_quality import window_peak
+        from calibration.sender_quality import window_peak
         self.assertLessEqual(window_peak([t/1e6 for t in times], 10), 4)
         self.assertEqual(window_peak([0, 2.5, 5, 7.5, 10], 10), 4)
         self.assertEqual(window_peak([0, 2.5, 5, 7.5, 9.999999], 10), 5)

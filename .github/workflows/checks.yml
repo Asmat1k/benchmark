@@ -8,7 +8,7 @@ jobs:
       - name: Build locked analyzer
         run: docker build -f docker/images/Dockerfile.analyzer -t wswt-bench-analyzer:dev .
       - name: Validate schemas and fixtures
-        run: docker run --rm --network none -v "$PWD:/bench" -w /bench wswt-bench-analyzer:dev python tests/fixtures/synthetic/validate.py
+        run: docker run --rm --network none -v "$PWD:/bench" -w /bench wswt-bench-analyzer:dev python src/analysis/tests/fixtures/synthetic/validate.py
       - name: Verify synthetic statistical references and CLI
         run: make analysis-test
       - name: Record network smoke as not run

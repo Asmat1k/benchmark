@@ -6,11 +6,11 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]/'src/analysis'))
 
-from admission import checked, ref, sources
+from admission.admission import checked, ref, sources
 from calibration_report import rate
-from diagnostic_input import diagnostic_raw
-from raw import read, require, rows
-from schedule import make_schedule
+from measurement.diagnostic_input import diagnostic_raw
+from measurement.raw import read, require, rows
+from execution.schedule import make_schedule
 
 
 ACCOUNTING = 'router netem dequeued skb bytes including Ethernet header; excludes FCS/preamble/IFG'

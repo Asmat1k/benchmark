@@ -90,7 +90,7 @@ def rate(directory, direction, loss):
 
 
 def collection_plan():
-    from raw import read
+    from measurement.raw import read
     names = ['baseline-before'] + [f'{p}-before' for p in PROFILES] + [f'{p}-latency' for p in PROFILES] + [f'{p}-after' for p in PROFILES] + ['baseline-after']
     names += [f'saturation-{loss}-{direction}' for loss in (0,1) for direction in ('forward','reverse')]
     return dict(method=read(Path('configs/plan.json'))['calibration'],
@@ -99,16 +99,16 @@ def collection_plan():
 
 
 def package(directory, review_path, env_path):
-    from admission import ref, sources
-    from raw import read, write
+    from admission.admission import ref, sources
+    from measurement.raw import read, write
     require((directory/'exit').read_text().strip()=='0', 'collection did not finish')
     for entry in read(directory/'captured.json'):
-        from admission import checked
+        from admission.admission import checked
         checked(entry)
     require(read(directory/'collection-plan.json') == collection_plan(), 'calibration preregistered plan mismatch')
     review = read(review_path)
     method = read(directory/'collection-plan.json')['method']['method']
-    from calibration_observed import METHOD as OBSERVED_METHOD
+    from calibration.calibration_observed import METHOD as OBSERVED_METHOD
     if method == OBSERVED_METHOD:
         require(review.get('trace_review', {}).get('observed_period_reviewed') is True, 'explicit observed-period review required')
     else:
@@ -154,18 +154,18 @@ def package(directory, review_path, env_path):
 
 if __name__=='__main__':
     if sys.argv[1]=='plan':
-        from raw import write
+        from measurement.raw import write
         write(Path(sys.argv[2])/'collection-plan.json', collection_plan())
     elif sys.argv[1]=='context':
-        from admission import sources
-        from series import context_snapshot
-        from raw import write
+        from admission.admission import sources
+        from execution.series import context_snapshot
+        from measurement.raw import write
         directory=Path(sys.argv[2])
         write(directory/f'context-{sys.argv[3]}.json',context_snapshot(directory))
         write(directory/f'sources-{sys.argv[3]}.json',sources())
     elif sys.argv[1]=='seal':
-        from admission import ref
-        from raw import write
+        from admission.admission import ref
+        from measurement.raw import write
         directory=Path(sys.argv[2])
         write(directory/'captured.json', [ref(p) for p in sorted(directory.rglob('*')) if p.is_file()])
     elif sys.argv[1]=='package':

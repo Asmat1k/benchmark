@@ -29,10 +29,10 @@ analyze:
 
 .PHONY: exploratory-prepare
 exploratory-prepare:
-	docker run --rm --network none -e PYTHONDONTWRITEBYTECODE=1 -e BENCH_RELEASE_COMMIT="$$(git rev-parse HEAD)" -v "$(CURDIR):/bench" -v "$(CURDIR):$(CURDIR)" -w /bench wswt-bench-analyzer:dev python -B src/analysis/exploratory.py prepare "$(SERIES_DIR)" --environment "$(ENVIRONMENT)" --tls "$(SERIES_TLS_DIR)"
+	docker run --rm --network none -e PYTHONDONTWRITEBYTECODE=1 -e BENCH_RELEASE_COMMIT="$$(git rev-parse HEAD)" -v "$(CURDIR):/bench" -v "$(CURDIR):$(CURDIR)" -w /bench wswt-bench-analyzer:dev python -B -m admission.exploratory prepare "$(SERIES_DIR)" --environment "$(ENVIRONMENT)" --tls "$(SERIES_TLS_DIR)"
 
 analysis-test:
-	docker run --rm --network none -e PYTHONDONTWRITEBYTECODE=1 -e MPLCONFIGDIR=/tmp/matplotlib -v "$(CURDIR):/bench" -w /bench wswt-bench-analyzer:dev python -m unittest discover -s src/analysis -p 'test_analysis*.py' -v
+	docker run --rm --network none -e PYTHONDONTWRITEBYTECODE=1 -e MPLCONFIGDIR=/tmp/matplotlib -e PYTHONPATH=src/analysis -v "$(CURDIR):/bench" -w /bench wswt-bench-analyzer:dev python -m unittest discover -s src/analysis/reporting -t src/analysis -p 'test_analysis*.py' -v
 
 .PHONY: calibrate generator timer aa monitoring pilot power verify freeze experiment acceptance-test
 calibrate generator timer aa monitoring pilot power verify freeze:
@@ -42,8 +42,8 @@ experiment:
 	sh docker/commands/experiment.sh "$(SERIES_DIR)" "$(ALLOW_REAL_EXPERIMENTS)"
 
 acceptance-test:
-	docker run --rm --network none -e PYTHONDONTWRITEBYTECODE=1 -v "$(CURDIR):/bench" -w /bench wswt-bench-analyzer:dev python -B -m unittest discover -s src/analysis -p 'test_acceptance.py' -v
+	docker run --rm --network none -e PYTHONDONTWRITEBYTECODE=1 -e PYTHONPATH=src/analysis -v "$(CURDIR):/bench" -w /bench wswt-bench-analyzer:dev python -B -m unittest admission.test_acceptance -v
 
 .PHONY: controller-test
 controller-test:
-	docker run --rm --network none -e PYTHONDONTWRITEBYTECODE=1 -e PYTHONPATH=src/analysis -v "$(CURDIR):/bench" -w /bench wswt-bench-analyzer:dev python -B -m unittest test_controller -v
+	docker run --rm --network none -e PYTHONDONTWRITEBYTECODE=1 -e PYTHONPATH=src/analysis -v "$(CURDIR):/bench" -w /bench wswt-bench-analyzer:dev python -B -m unittest execution.test_controller -v

@@ -25,7 +25,7 @@ cleanup() {
     fi
     if [ "$code" != 0 ] && [ "$code" != 3 ] && [ "$prepared" = 1 ] && [ "${BENCH_RESILIENT_RUN:-0}" != 1 ]; then
         echo "Incomplete raw or orchestration failure from $project at $stage" > "$series_dir/STOP"
-        analyze src/analysis/quarantine.py "$series_dir" "$index" "$project" || code=1
+        analyze src/analysis/execution/quarantine.py "$series_dir" "$index" "$project" || code=1
     fi
     if [ -n "${lock_pid:-}" ]; then
         exec 9>&-

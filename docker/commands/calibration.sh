@@ -34,7 +34,7 @@ cleanup() {
 trap cleanup EXIT
 trap 'exit 130' INT TERM
 mkfifo "$work/lock"
-docker run --rm -i --network none -v "$PWD:/bench" -w /bench wswt-bench-analyzer:dev python -B src/analysis/series.py hold < "$work/lock" > "$work/status" &
+docker run --rm -i --network none -v "$PWD:/bench" -w /bench wswt-bench-analyzer:dev python -B -m execution.series hold < "$work/lock" > "$work/status" &
 lock_pid=$!
 exec 9>"$work/lock"
 for attempt in 1 2 3 4 5 6 7 8 9 10; do [ ! -s "$work/status" ] || break; sleep 1; done

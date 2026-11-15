@@ -23,7 +23,7 @@ class Calibration(unittest.TestCase):
     def test_observed_package_requires_saved_plan_and_explicit_review(self):
         from unittest.mock import patch
         import calibration_report
-        from calibration_observed import METHOD
+        from calibration.calibration_observed import METHOD
         with tempfile.TemporaryDirectory() as tmp:
             directory = Path(tmp)/'collection'
             directory.mkdir()
@@ -39,8 +39,8 @@ class Calibration(unittest.TestCase):
                 if path.name == 'probe.json': return dict(collection_id=path.parent.name)
                 if path.name.startswith('context-') or path.name in ('ENV.json','sources-before.json','sources-after.json'): return {}
                 raise AssertionError(path)
-            with patch('raw.read',side_effect=read), patch('calibration_report.collection_plan',return_value=plan), \
-                    patch('admission.sources',return_value={}), patch('admission.ref',side_effect=lambda p: dict(path=str(p),sha256='a'*64)), \
+            with patch('measurement.raw.read',side_effect=read), patch('calibration_report.collection_plan',return_value=plan), \
+                    patch('admission.admission.sources',return_value={}), patch('admission.admission.ref',side_effect=lambda p: dict(path=str(p),sha256='a'*64)), \
                     patch('calibration_report.directions',return_value=[dict(direction='forward'),dict(direction='reverse')]), \
                     patch('calibration_report.rate',return_value={}):
                 review['trace_review']['observed_period_reviewed'] = False

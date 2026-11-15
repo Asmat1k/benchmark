@@ -4,7 +4,7 @@ import re
 import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / 'src/analysis'))
-from sender_quality import assess
+from calibration.sender_quality import assess
 
 
 def check(directory):

@@ -1,0 +1,76 @@
+ M Makefile
+ M docker/commands/acceptance.sh
+ M docker/commands/analyze.sh
+ M docker/commands/calibration.sh
+ M docker/commands/collect-diagnostic.sh
+ M docker/commands/experiment.sh
+ M docker/commands/measure.sh
+ M docker/commands/measurement-smoke.sh
+ M docker/commands/sender-diagnostic.sh
+ M docker/commands/sender-scheduling.sh
+ M docker/diagnostics/browser_bandwidth.py
+ M docker/diagnostics/calibration_report.py
+ M docker/diagnostics/sender_scheduling_check.py
+ M docker/images/Dockerfile.analyzer
+ M docker/lib/measurement-cleanup.sh
+ M docker/tests/browser_bandwidth_test.py
+ M docker/tests/calibration_probe_test.py
+ M docker/tests/calibration_test.py
+ D src/analysis/acceptance.py
+ D src/analysis/admission.py
+ D src/analysis/analyze.py
+ D src/analysis/browser_admission.py
+ D src/analysis/calibration_blocks.py
+ D src/analysis/calibration_observed.py
+ D src/analysis/collection.py
+ D src/analysis/controller.py
+ D src/analysis/diagnostic_input.py
+ D src/analysis/execution.py
+ D src/analysis/experiments.py
+ D src/analysis/exploratory.py
+ D src/analysis/fixtures/references.json
+ D src/analysis/inference.py
+ D src/analysis/limited_readiness.py
+ D src/analysis/metrics.py
+ D src/analysis/outcomes.py
+ D src/analysis/plots.py
+ D src/analysis/power.py
+ D src/analysis/quarantine.py
+ D src/analysis/raw.py
+ D src/analysis/record.py
+ D src/analysis/replace.py
+ D src/analysis/resources.py
+ D src/analysis/schedule.py
+ D src/analysis/sender_quality.py
+ D src/analysis/series.py
+ D src/analysis/smoke.py
+ D src/analysis/stabilization_cpu.py
+ D src/analysis/synthetic.py
+ D src/analysis/test_acceptance.py
+ D src/analysis/test_analysis.py
+ D src/analysis/test_browser_admission.py
+ D src/analysis/test_calibration_blocks.py
+ D src/analysis/test_calibration_dependence.py
+ D src/analysis/test_calibration_observed.py
+ D src/analysis/test_checkpoint_cleanup.py
+ D src/analysis/test_controller.py
+ D src/analysis/test_diagnostic_input.py
+ D src/analysis/test_execution.py
+ D src/analysis/test_exploratory.py
+ D src/analysis/test_exploratory_stabilization.py
+ D src/analysis/test_limited_readiness.py
+ D src/analysis/test_measurement.py
+ D src/analysis/test_outcomes.py
+ D src/analysis/test_recovery.py
+ D src/analysis/test_release_guard.py
+ D src/analysis/test_sender_quality.py
+ D src/analysis/test_stabilization_cpu.py
+ D src/analysis/test_threshold_contract.py
+ D src/analysis/violation.py
+?? src/analysis/README.md
+?? src/analysis/admission/
+?? src/analysis/calibration/
+?? src/analysis/execution/
+?? src/analysis/measurement/
+?? src/analysis/reporting/
+?? src/analysis/tests/

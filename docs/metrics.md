@@ -1,15 +1,11 @@
-# Слот и исход
+# Метрики
 
-Страница заранее создаёт все слоты каждой фазы. t_plan[k] = t0 + 50k мс. При wake lag ≥50 мс целиком пропущенные слоты получают scheduler_miss, на текущей позиции возможна одна отправка. WS send и WT write вызываются независимо от ответов и исполнения прежних promises. Рамка подготовлена заранее. При превышении 1 MiB очереди фиксируется local_backpressure_error без вызова. Ошибка API и последующий write_rejection различимы по events.
+Слот планируется каждые 50 мс. RTT — время между вызовом отправки и первым правильным ответом на те же nonce/phase/sequence, измеренное часами страницы. UTC нужен только для порядка запусков.
 
-t_send определяется одним performance.now непосредственно перед вызовом. t_echo фиксируется после сборки и проверки всех байтов первого правильного ответа на известный отправленный ID. События неверных ID, длины, байтов, последующих дубликатов и ответов после горизонта остаются в append-only журнале. Повреждение не закрывает возможность принять следующий корректный ответ. Write fulfillment, callback runner и server write не обозначают t_echo.
+- Q: p95 RTT среди ответов, завершённых до личного горизонта 5000 мс. Если ответов нет, Q=null.
+- S: процент слотов с ответом до t_plan+100 мс.
+- U: процент слотов без ответа до t_plan+5000 мс.
 
-Для каждого measurement слота дедлайн t_plan + 100 мс, горизонт t_plan + 5000 мс. Обе границы включены. Среди завершённых к личному горизонту RTT = t_echo − t_send. Q есть ceil(0.95n)-й упорядоченный RTT с нумерацией от 1. При n=0 Q=null. Аналогично берутся p50 и описательный p99. S = 100 × timely/1200, U = 100 × uncompleted/1200. В знаменатель входят miss, API errors, disconnect. Для штрафного p95 всем незавершённым присваивают +∞, выбирают ранг 1140 из 1200. При 1139 конечных ответах результат +∞, при 1140 — последний конечный. JSON хранит бесконечные границы строками "+inf"/"-inf", отсутствие числа через null.
+Границы включительны. Знаменатель S/U — все 1200 плановых измерительных слотов, включая scheduler miss, ошибки API и disconnect. Лаг отправки не вычитается из RTT. Поздние ответы сохраняются, включая вернувшиеся после горизонта; неизвестные наблюдения оборванного запуска не выдаются за измеренные потери.
 
-## Целостность raw
-
-Сохраняют manifest.json, slots.jsonl (1200 measurement), warmup.jsonl отдельно (200), events.jsonl, resources.jsonl раз в секунду, server.json с раздельными counters, network-before/after.json, checks.json, completion.json и SHA256SUMS. Используются схемы версии 1. Время относительно одного performance.timeOrigin, UTC только для аудита. Все slot/event ID привязаны через run_id к manifest. До анализа проверяют диапазон uint64, монотонность времён, уникальность ID, принадлежность к фазе и scheduled run, hashes и согласованность counts. Суммы sent_invocations+unsent и completed+uncompleted обе равны 1200, timely+late_within равно completed. Буферы/ошибки API проверяют по events, вызов с последующим rejection входит в sent_invocations.
-
-Manifest ссылается по пути и SHA256 на фактические provenance (toolchains/build/image IDs/versions/locks/browser args), environment (host/VM/cgroups/background), сеть до и после (routes, offload, qdisc, seed и counters), security (открытые fingerprints, SAN, validity, переговоры TLS/ALPN/QUIC/WT, trust и secureContext). Серверные attempts, echoes и errors сверяют отдельно. Для ресурсов CPU_pct_core=100Δusage_usec/Δwall_usec, CPU_pct_limit=CPU_pct_core/cpus.
-
-Запись ведут в .partial до flush/fsync и атомарной публикации. Raw неизменяемы, derived пересоздаются. Неполный журнал изолируют. Нарушение hash/config/schema/clock/path либо утрата журнала требует доказательства, сохранения всего блока в audit, нового attempt/seed и замены целого блока в случайном месте расписания. Высокий RTT, очереди, потери и отказы SUT остаются наблюдениями. OOM, смена среды, истечение leaf, неполный лог или систематический сбой останавливают серию.
+Дополнительная разбивка all/body/tail использует наблюдённый p99 внутри запуска: body≤p99, tail>p99. Она не исключает хвост из основных метрик и не относит отсутствующее RTT к хвосту. Источники параметров — configs/plan.json, configs/thresholds.json и configs/profiles.json.

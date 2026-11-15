@@ -1,4 +1,6 @@
 set -eu
+PYTHONPATH="$PWD/src/analysis${PYTHONPATH:+:$PYTHONPATH}"
+export PYTHONPATH
 sample_count=18
 case "${1:-trace}" in
     trace) collections='baseline-before r80p0-response baseline-repeat'; probe_script=sender_diagnostic_probe.py ;;
@@ -54,7 +56,7 @@ PYTHON
 trap cleanup EXIT
 trap 'exit 130' INT TERM
 mkfifo "$work/lock"
-docker run --rm -i --network none -v "$PWD:/bench" -w /bench wswt-bench-analyzer:dev python -B src/analysis/series.py hold < "$work/lock" > "$work/status" &
+docker run --rm -i --network none -v "$PWD:/bench" -w /bench wswt-bench-analyzer:dev python -B -m execution.series hold < "$work/lock" > "$work/status" &
 lock_pid=$!
 exec 9>"$work/lock"
 for attempt in 1 2 3 4 5 6 7 8 9 10; do [ ! -s "$work/status" ] || break; sleep 1; done
@@ -73,7 +75,7 @@ from pathlib import Path
 import sys
 files = ['docker/diagnostics/calibration_probe.py', 'docker/diagnostics/sender_diagnostic_probe.py',
          'docker/diagnostics/sender_diagnostic_plain.py', 'docker/diagnostics/sender_diagnostic_resources.py',
-         'docker/diagnostics/sender_qualification_probe.py', 'src/analysis/sender_quality.py', 'configs/thresholds.json',
+         'docker/diagnostics/sender_qualification_probe.py', 'src/analysis/calibration/sender_quality.py', 'configs/thresholds.json',
          'docker/commands/sender-diagnostic.sh', 'docker/lib/links.sh', 'docker/lib/calibration-neighbors.sh',
          'docker/runtime/network.sh', 'compose.yaml', 'configs/profiles.json']
 Path(sys.argv[1]).write_text(json.dumps({p:hashlib.sha256(Path(p).read_bytes()).hexdigest() for p in files},indent=2)+'\n')
@@ -143,7 +145,7 @@ for collection in $collections; do
     done
     compose exec -T router tc -s -j qdisc show > "$dir/qdisc-after.json"
     if [ "$probe_script" = sender_qualification_probe.py ]; then
-        python3 -B src/analysis/sender_quality.py "$dir/probe.json" --count 10000 > "$dir/sender-quality.json"
+        python3 -B -m calibration.sender_quality "$dir/probe.json" --count 10000 > "$dir/sender-quality.json"
     fi
 done
 for role in browser server; do

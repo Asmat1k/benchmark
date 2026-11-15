@@ -13,18 +13,18 @@ project="wswt-d3-$(basename "$work" | tr '[:upper:].' '[:lower:]-')"
 run_dir="$series_dir/$project.partial"
 compose() { docker compose -p "$project" "$@"; }
 analyze() {
-    if [ -n "${BENCH_CONTROLLER_RESPONSE:-}" ] && [ "$1" = src/analysis/record.py ]; then
+    if [ -n "${BENCH_CONTROLLER_RESPONSE:-}" ] && [ "$1" = execution.record ]; then
         . docker/lib/controller-client.sh
         controller_request "{\"action\":\"$2\",\"index\":$4,\"partial\":\"$5\"}"
         return $?
     fi
-    docker run --rm --network none -v "$PWD:/bench" -v "$PWD:$PWD" -w /bench wswt-bench-analyzer:dev python -B "$@"
+    docker run --rm --network none -v "$PWD:/bench" -v "$PWD:$PWD" -w /bench wswt-bench-analyzer:dev python -B -m "$@"
 }
 . docker/lib/measurement-cleanup.sh
 trap cleanup EXIT
 trap 'exit 130' TERM INT
 mkfifo "$work/lock-input"
-docker run --rm -i --network none -v "$PWD:/bench" -w /bench wswt-bench-analyzer:dev python -B src/analysis/series.py hold < "$work/lock-input" > "$work/lock-status" &
+docker run --rm -i --network none -v "$PWD:/bench" -w /bench wswt-bench-analyzer:dev python -B -m execution.series hold < "$work/lock-input" > "$work/lock-status" &
 lock_pid=$!
 exec 9> "$work/lock-input"
 for attempt in 1 2 3 4 5 6 7 8 9 10; do
@@ -35,7 +35,7 @@ test "$(cat "$work/lock-status")" = locked || { echo "Measurement lock held" >&2
 BENCH_TLS_DIR=$(cd "${SERIES_TLS_DIR:-$work}" && pwd -P)
 export BENCH_TLS_DIR
 mkdir "$run_dir"
-selection=$(analyze src/analysis/record.py prepare "$series_dir" "$index" "$run_dir")
+selection=$(analyze execution.record prepare "$series_dir" "$index" "$run_dir")
 set -- $selection
 profile=$1; forward=$2; reverse=$3; run_id=$4
 prepared=1
@@ -68,7 +68,7 @@ docker inspect --format '{"id":"{{.Image}}","role":{{json .Name}},"cpu":{{.HostC
 cp "$run_dir/limits.json" "$run_dir/images.json"
 compose exec -T server cat /server-build.txt > "$run_dir/server-build.txt"
 stage=context
-analyze src/analysis/record.py context "$series_dir" "$index" "$run_dir"
+analyze execution.record context "$series_dir" "$index" "$run_dir"
 }
 context
 capture() {
@@ -101,7 +101,7 @@ quiet_cpu() {
         compose exec -T "$role" cat /tmp/resources.jsonl > "$run_dir/$quiet_prefix-$role.jsonl" || return 1
     done
     quiet_exit=0
-    analyze src/analysis/stabilization_cpu.py "$run_dir" "$quiet_prefix" 2> "$run_dir/$quiet_prefix-selector.stderr.log" || quiet_exit=$?
+    analyze measurement.stabilization_cpu "$run_dir" "$quiet_prefix" 2> "$run_dir/$quiet_prefix-selector.stderr.log" || quiet_exit=$?
     printf "%s\n" "$quiet_exit" > "$run_dir/$quiet_prefix-selector.exit"
     return "$quiet_exit"
 }
@@ -162,7 +162,7 @@ while [ "$(date +%s)" -lt "$deadline" ]; do
     else
         quiet_cpu "stabilization-$attempt" || stable=0
     fi
-    analyze src/analysis/stabilization_cpu.py "$run_dir" baseline "stabilization-$attempt" > "$run_dir/stabilization-$attempt-comparison.json" || { stable=0; cpu_recovered=false; }
+    analyze measurement.stabilization_cpu "$run_dir" baseline "stabilization-$attempt" > "$run_dir/stabilization-$attempt-comparison.json" || { stable=0; cpu_recovered=false; }
     [ "$(date +%s)" -le "$deadline" ] || stable=0
     test "$stable" != 1 || break
     if [ "$checkpoint" = yes ]; then break; fi
@@ -193,4 +193,4 @@ if [ -f "$run_dir/collect-backlog" ]; then
 fi
 compose down --timeout 2
 stage=publication
-analyze src/analysis/record.py complete "$series_dir" "$index" "$run_dir"
+analyze execution.record complete "$series_dir" "$index" "$run_dir"
