@@ -11,10 +11,7 @@
       "minLength": 1
     },
     "status": {
-      "enum": [
-        "complete",
-        "incomplete"
-      ]
+      "enum": ["complete", "incomplete"]
     },
     "measurement_rows": {
       "type": "integer",
@@ -36,13 +33,6 @@
       ]
     }
   },
-  "required": [
-    "schema_version",
-    "run_id",
-    "status",
-    "measurement_rows",
-    "warmup_rows",
-    "reason"
-  ],
+  "required": ["schema_version", "run_id", "status", "measurement_rows", "warmup_rows", "reason"],
   "additionalProperties": false
 }

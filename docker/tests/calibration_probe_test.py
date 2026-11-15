@@ -9,6 +9,7 @@ import calibration_probe as probe
 
 
 class EchoClock:
+    # Initialize the test helper.
     def __init__(self):
         self.now = 0
         self.sent = []
@@ -18,24 +19,30 @@ class EchoClock:
         self.timeouts = []
         self.poll_cost_ns = probe.MIN_ECHO_GAP_NS // 10
 
+    # Return the context manager resource.
     def __enter__(self):
         return self
 
+    # Release the context manager resource.
     def __exit__(self, *args):
         pass
 
+    # Simulate the test connection.
     def connect(self, peer):
         pass
 
+    # Send the supplied test data.
     def send(self, frame):
         self.sent.append((self.now, frame))
         self.pending.append((self.now + 1_000_000, frame))
 
+    # Return the next simulated response.
     def recv(self, size):
         _, frame = self.pending.pop(0)
-        self.received.append((self.now, struct.unpack('!I', frame[:4])[0]))
+        self.received.append((self.now, struct.unpack("!I", frame[:4])[0]))
         return frame
 
+    # Compute select.
     def select(self, readers, writers, errors, timeout):
         self.timeouts.append((len(self.sent), timeout))
         if timeout == 0:
@@ -53,66 +60,109 @@ class EchoClock:
 
 
 class PacingTest(unittest.TestCase):
+    # Check pauses receives grid ids and actual rtt.
     def test_pauses_receives_grid_ids_and_actual_rtt(self):
         clock = EchoClock()
         output = io.StringIO()
-        with patch.object(probe.socket, 'socket', return_value=clock), \
-                patch.object(probe.time, 'monotonic_ns', side_effect=lambda: clock.now), \
-                patch.object(probe.time, 'monotonic', side_effect=lambda: clock.now/1e9), \
-                patch.object(probe.select, 'select', side_effect=clock.select), \
-                contextlib.redirect_stdout(output):
-            probe.send('unused', False, 'offline-pacing')
+        # Supply the inline callback for this operation.
+        with (
+            patch.object(probe.socket, "socket", return_value=clock),
+            patch.object(probe.time, "monotonic_ns", side_effect=lambda: clock.now),
+            patch.object(probe.time, "monotonic", side_effect=lambda: clock.now / 1e9),
+            patch.object(probe.select, "select", side_effect=clock.select),
+            contextlib.redirect_stdout(output),
+        ):
+            probe.send("unused", False, "offline-pacing")
         result = json.loads(output.getvalue())
-        self.assertTrue(all(timeout <= probe.MAX_ECHO_WAIT_NS / 1e9
-                            for count, timeout in clock.timeouts if count < 10000))
-        rows = result['sent_records']
-        self.assertEqual([r['id'] for r in rows], list(range(10000)))
-        self.assertEqual([r['t_plan_ms'] for r in rows], [i*10 for i in range(10000)])
+        self.assertTrue(
+            all(
+                timeout <= probe.MAX_ECHO_WAIT_NS / 1e9
+                for count, timeout in clock.timeouts
+                if count < 10000
+            )
+        )
+        rows = result["sent_records"]
+        self.assertEqual([r["id"] for r in rows], list(range(10000)))
+        self.assertEqual([r["t_plan_ms"] for r in rows], [i * 10 for i in range(10000)])
         times = [t for t, _ in clock.sent]
-        self.assertTrue(all(b-a >= probe.MIN_ECHO_GAP_NS for a, b in zip(times, times[1:])))
-        self.assertTrue(all(r['t_send_ms'] >= r['t_plan_ms'] for r in rows))
-        self.assertGreater(max(r['t_send_ms']-r['t_plan_ms'] for r in rows), 50)
-        self.assertTrue(any(b-a == probe.MIN_ECHO_GAP_NS for a, b in zip(times, times[1:])))
-        tag = probe.collection_tag('offline-pacing')
-        self.assertEqual([f for _, f in clock.sent], [probe.packet(i, 256, tag) for i in range(10000)])
-        self.assertEqual(len(result['reply_records']), 10000)
-        self.assertEqual(result['reply_records'], [dict(id=i, rtt_ms=(t-times[i])/1e6) for t, i in clock.received])
-        self.assertTrue(any(times[i] < t < times[i+1] and times[i+1]-times[i] == probe.MIN_ECHO_GAP_NS
-                            for t, i in clock.received if i+1 < len(times)))
+        self.assertTrue(
+            all(b - a >= probe.MIN_ECHO_GAP_NS for a, b in zip(times, times[1:]))
+        )
+        self.assertTrue(all(r["t_send_ms"] >= r["t_plan_ms"] for r in rows))
+        self.assertGreater(max(r["t_send_ms"] - r["t_plan_ms"] for r in rows), 50)
+        self.assertTrue(
+            any(b - a == probe.MIN_ECHO_GAP_NS for a, b in zip(times, times[1:]))
+        )
+        tag = probe.collection_tag("offline-pacing")
+        self.assertEqual(
+            [f for _, f in clock.sent],
+            [probe.packet(i, 256, tag) for i in range(10000)],
+        )
+        self.assertEqual(len(result["reply_records"]), 10000)
+        self.assertEqual(
+            result["reply_records"],
+            [dict(id=i, rtt_ms=(t - times[i]) / 1e6) for t, i in clock.received],
+        )
+        self.assertTrue(
+            any(
+                times[i] < t < times[i + 1]
+                and times[i + 1] - times[i] == probe.MIN_ECHO_GAP_NS
+                for t, i in clock.received
+                if i + 1 < len(times)
+            )
+        )
         from calibration.sender_quality import window_peak
-        self.assertLessEqual(window_peak([t/1e6 for t in times], 10), 4)
+
+        self.assertLessEqual(window_peak([t / 1e6 for t in times], 10), 4)
         self.assertEqual(window_peak([0, 2.5, 5, 7.5, 10], 10), 4)
         self.assertEqual(window_peak([0, 2.5, 5, 7.5, 9.999999], 10), 5)
         for offset_ns in (1, 123457, 55123457, 50000123457):
-            times = [(offset_ns+i*probe.MIN_ECHO_GAP_NS)/1e6 for i in range(10)]
+            times = [(offset_ns + i * probe.MIN_ECHO_GAP_NS) / 1e6 for i in range(10)]
             self.assertEqual(window_peak(times, 10), 4)
-            self.assertEqual(window_peak([offset_ns/1e6, (offset_ns+9_999_999)/1e6], 10), 2)
-            self.assertEqual(window_peak([offset_ns/1e6, (offset_ns+10_000_000)/1e6], 10), 1)
+            self.assertEqual(
+                window_peak([offset_ns / 1e6, (offset_ns + 9_999_999) / 1e6], 10), 2
+            )
+            self.assertEqual(
+                window_peak([offset_ns / 1e6, (offset_ns + 10_000_000) / 1e6], 10), 1
+            )
 
-
+    # Check echo pins lowest allowed cpu before timeline.
     def test_echo_pins_lowest_allowed_cpu_before_timeline(self):
         clock = EchoClock()
-        with patch('os.sched_getaffinity', return_value={3, 7}) as allowed, \
-                patch('os.sched_setaffinity') as pin, \
-                patch.object(probe.socket, 'socket', return_value=clock), \
-                patch.object(probe.time, 'monotonic_ns', side_effect=RuntimeError('timeline boundary')):
-            with self.assertRaisesRegex(RuntimeError, 'timeline boundary'):
-                probe.send('unused', False, 'offline-affinity')
+        with (
+            patch("os.sched_getaffinity", return_value={3, 7}) as allowed,
+            patch("os.sched_setaffinity") as pin,
+            patch.object(probe.socket, "socket", return_value=clock),
+            patch.object(
+                probe.time,
+                "monotonic_ns",
+                side_effect=RuntimeError("timeline boundary"),
+            ),
+        ):
+            with self.assertRaisesRegex(RuntimeError, "timeline boundary"):
+                probe.send("unused", False, "offline-affinity")
         allowed.assert_called_once_with(0)
         pin.assert_called_once_with(0, {3})
 
+    # Check saturation retains cpu affinity.
     def test_saturation_retains_cpu_affinity(self):
         clock = EchoClock()
-        with patch('os.sched_getaffinity') as allowed, \
-                patch('os.sched_setaffinity') as pin, \
-                patch.object(probe.socket, 'socket', return_value=clock), \
-                patch('builtins.open', return_value=io.StringIO('1.0 0.0')) , \
-                patch.object(probe.time, 'monotonic_ns', side_effect=RuntimeError('timeline boundary')):
-            with self.assertRaisesRegex(RuntimeError, 'timeline boundary'):
-                probe.send('unused', True, 'offline-saturation-affinity')
+        with (
+            patch("os.sched_getaffinity") as allowed,
+            patch("os.sched_setaffinity") as pin,
+            patch.object(probe.socket, "socket", return_value=clock),
+            patch("builtins.open", return_value=io.StringIO("1.0 0.0")),
+            patch.object(
+                probe.time,
+                "monotonic_ns",
+                side_effect=RuntimeError("timeline boundary"),
+            ),
+        ):
+            with self.assertRaisesRegex(RuntimeError, "timeline boundary"):
+                probe.send("unused", True, "offline-saturation-affinity")
         allowed.assert_not_called()
         pin.assert_not_called()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

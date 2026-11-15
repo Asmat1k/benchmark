@@ -10,11 +10,19 @@ try {
   const { good } = JSON.parse(readFileSync("/trust/pins.json", "utf8"));
   writeFileSync("/tmp/path-ready", "");
   while (!existsSync("/tmp/path-forwarding-disabled")) await sleep(100);
+  /** Resolve the pending operation or reject its connection failure. */
   const outcomes = await page.evaluate(async (pin: string) => {
+    /** Report whether the connection opens successfully. */
     const check = async (connection: Promise<WebSocket | WebTransport>) =>
       Promise.race([
-        connection.then(channel => { channel.close(); return "connected"; }, () => "rejected"),
-        new Promise<string>(resolve => setTimeout(() => resolve("timed_out"), 2500)),
+        connection.then(
+          (channel) => {
+            channel.close();
+            return "connected";
+          },
+          () => "rejected",
+        ),
+        new Promise<string>((resolve) => setTimeout(() => resolve("timed_out"), 2500)),
       ]);
     return Promise.all([
       check(window.bench.openSocket(8443)),

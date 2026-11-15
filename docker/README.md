@@ -90,6 +90,7 @@ Python-инструменты для исследования сети, кали
 | Файл | Назначение |
 |---|---|
 | [Dockerfile.server](images/Dockerfile.server) | Сборка и тесты TypeScript-клиента и Go-сервера, сервер и testcert в итоговом образе |
+| [Dockerfile.tests](images/Dockerfile.tests) | Отдельный образ Python-тестов с Git на базе analyzer; не используется для измерений |
 | [Dockerfile.browser](images/Dockerfile.browser) | Playwright, Chromium, Node.js и собранный runner |
 | [Dockerfile.router](images/Dockerfile.router) | iproute2/tc, сетевые инструменты и настройка netem |
 | [Dockerfile.analyzer](images/Dockerfile.analyzer) | Python, зависимости с хешами, wheelhouse и модули анализа |

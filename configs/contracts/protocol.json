@@ -45,11 +45,7 @@
     "warmup": 0,
     "measurement": 1
   },
-  "transports": [
-    "WS",
-    "WT-S",
-    "WT-D"
-  ],
+  "transports": ["WS", "WT-S", "WT-D"],
   "handshake": {
     "request": "READY",
     "response": "ACK"

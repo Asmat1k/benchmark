@@ -13,10 +13,7 @@
       "const": 20261108
     },
     "required_modes": {
-      "const": [
-        "WS",
-        "WT-S"
-      ]
+      "const": ["WS", "WT-S"]
     },
     "optional_mode": {
       "const": "WT-D"
@@ -64,11 +61,7 @@
       "enum": [
         {
           "method": "circular-block-medians-v1",
-          "block_slots": [
-            100,
-            200,
-            500
-          ],
+          "block_slots": [100, 200, 500],
           "replicates": 20000,
           "latency_alpha": 0.04,
           "loss_alpha": 0.01,

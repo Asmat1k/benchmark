@@ -40,10 +40,7 @@
           "type": "object",
           "properties": {
             "phase": {
-              "enum": [
-                0,
-                1
-              ]
+              "enum": [0, 1]
             },
             "nonce": {
               "type": "string",
@@ -56,11 +53,7 @@
               "description": "Canonical decimal uint64; readers must also check the upper bound 18446744073709551615."
             }
           },
-          "required": [
-            "phase",
-            "nonce",
-            "seq"
-          ],
+          "required": ["phase", "nonce", "seq"],
           "additionalProperties": false
         },
         {
@@ -72,14 +65,6 @@
       "type": "object"
     }
   },
-  "required": [
-    "schema_version",
-    "event_index",
-    "run_id",
-    "t_ms",
-    "type",
-    "id",
-    "details"
-  ],
+  "required": ["schema_version", "event_index", "run_id", "t_ms", "type", "id", "details"],
   "additionalProperties": false
 }

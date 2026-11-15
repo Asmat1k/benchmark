@@ -30,29 +30,13 @@
       "minLength": 1
     },
     "series": {
-      "enum": [
-        "smoke",
-        "verify",
-        "diagnostic",
-        "pilot",
-        "main"
-      ]
+      "enum": ["smoke", "verify", "diagnostic", "pilot", "main"]
     },
     "mode": {
-      "enum": [
-        "WS",
-        "WT-S",
-        "WT-D"
-      ]
+      "enum": ["WS", "WT-S", "WT-D"]
     },
     "profile": {
-      "enum": [
-        "r20p0",
-        "r20p1",
-        "r80p0",
-        "r80p1",
-        "baseline"
-      ]
+      "enum": ["r20p0", "r20p1", "r80p0", "r80p1", "baseline"]
     },
     "nonce": {
       "type": "string",
@@ -123,10 +107,7 @@
           "pattern": "^[a-f0-9]{64}$"
         }
       },
-      "required": [
-        "path",
-        "sha256"
-      ],
+      "required": ["path", "sha256"],
       "additionalProperties": false
     },
     "environment": {
@@ -141,10 +122,7 @@
           "pattern": "^[a-f0-9]{64}$"
         }
       },
-      "required": [
-        "path",
-        "sha256"
-      ],
+      "required": ["path", "sha256"],
       "additionalProperties": false
     },
     "network_before": {
@@ -159,10 +137,7 @@
           "pattern": "^[a-f0-9]{64}$"
         }
       },
-      "required": [
-        "path",
-        "sha256"
-      ],
+      "required": ["path", "sha256"],
       "additionalProperties": false
     },
     "network_after": {
@@ -177,10 +152,7 @@
           "pattern": "^[a-f0-9]{64}$"
         }
       },
-      "required": [
-        "path",
-        "sha256"
-      ],
+      "required": ["path", "sha256"],
       "additionalProperties": false
     },
     "security": {
@@ -195,10 +167,7 @@
           "pattern": "^[a-f0-9]{64}$"
         }
       },
-      "required": [
-        "path",
-        "sha256"
-      ],
+      "required": ["path", "sha256"],
       "additionalProperties": false
     },
     "technical_valid": {
@@ -216,10 +185,7 @@
       ]
     },
     "monitoring": {
-      "enum": [
-        "on",
-        "off"
-      ]
+      "enum": ["on", "off"]
     }
   },
   "required": [
@@ -266,11 +232,7 @@
       "then": {
         "properties": {
           "series": {
-            "enum": [
-              "smoke",
-              "diagnostic",
-              "verify"
-            ]
+            "enum": ["smoke", "diagnostic", "verify"]
           }
         }
       }

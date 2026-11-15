@@ -5,115 +5,183 @@ from measurement.stabilization_cpu import compare, quiet_summary
 
 
 class QuietCpuTests(unittest.TestCase):
+    # Compute records.
     def records(self):
-        return [dict(schema_version=1,run_id="quiet-test",throttled_usec=0,memory_current=1000,role=role,sample_index=i-1,end_usec=i*1500000,interval_usec=1500000,
-                     cpu_usage_usec=5000,oom=0,cpu_start_lower_usec=(i-1)*1500000,
-                     cpu_end_upper_usec=i*1500000+10000)
-                for role in ('browser','server','router') for i in range(1,6)]
+        return [
+            dict(
+                schema_version=1,
+                run_id="quiet-test",
+                throttled_usec=0,
+                memory_current=1000,
+                role=role,
+                sample_index=i - 1,
+                end_usec=i * 1500000,
+                interval_usec=1500000,
+                cpu_usage_usec=5000,
+                oom=0,
+                cpu_start_lower_usec=(i - 1) * 1500000,
+                cpu_end_upper_usec=i * 1500000 + 10000,
+            )
+            for role in ("browser", "server", "router")
+            for i in range(1, 6)
+        ]
 
+    # Check complete brackets exclude observer but retain raw.
     def test_complete_brackets_exclude_observer_but_retain_raw(self):
         rows = self.records()
         for row in rows:
-            if row['sample_index'] in (0,3,4): row['cpu_usage_usec']=250000
+            if row["sample_index"] in (0, 3, 4):
+                row["cpu_usage_usec"] = 250000
         before = copy.deepcopy(rows)
-        result = quiet_summary(rows,1000000)
-        self.assertEqual(rows,before)
-        self.assertTrue(all(r['count']==2 and r['peak_ceil_pct']==1 for r in result['roles'].values()))
-        self.assertEqual([r['sample_index'] for r in result['roles']['router']['selected']],[1,2])
-        self.assertEqual(compare(result,result)['status'],'passed')
+        result = quiet_summary(rows, 1000000)
+        self.assertEqual(rows, before)
+        self.assertTrue(
+            all(
+                r["count"] == 2 and r["peak_ceil_pct"] == 1
+                for r in result["roles"].values()
+            )
+        )
+        self.assertEqual(
+            [r["sample_index"] for r in result["roles"]["router"]["selected"]], [1, 2]
+        )
+        self.assertEqual(compare(result, result)["status"], "passed")
         idle = copy.deepcopy(result)
-        idle['roles']['router']['peak_ceil_pct']=2
-        self.assertEqual(compare(result,idle)['status'],'failed')
+        idle["roles"]["router"]["peak_ceil_pct"] = 2
+        self.assertEqual(compare(result, idle)["status"], "failed")
 
+    # Check cpu read delay and clock boundaries are not selected.
     def test_cpu_read_delay_and_clock_boundaries_are_not_selected(self):
         rows = self.records()
-        rows[1]['cpu_start_lower_usec']=900000
-        with self.assertRaisesRegex(ValueError,'insufficient complete'):
-            quiet_summary(rows,1000000)
+        rows[1]["cpu_start_lower_usec"] = 900000
+        with self.assertRaisesRegex(ValueError, "insufficient complete"):
+            quiet_summary(rows, 1000000)
         rows = self.records()
-        rows[2]['cpu_end_upper_usec']=6500000
-        with self.assertRaisesRegex(ValueError,'insufficient complete'):
-            quiet_summary(rows,1000000)
+        rows[2]["cpu_end_upper_usec"] = 6500000
+        with self.assertRaisesRegex(ValueError, "insufficient complete"):
+            quiet_summary(rows, 1000000)
 
+    # Check missing stale gaps and unbracketed cannot pass.
     def test_missing_stale_gaps_and_unbracketed_cannot_pass(self):
-        for mutation in ('missing','stale','gap','brackets'):
+        for mutation in ("missing", "stale", "gap", "brackets"):
             rows = self.records()
-            if mutation=='missing': rows=[r for r in rows if r['role']!='router']
-            if mutation=='stale': rows=[r for r in rows if r['sample_index']<3]
-            if mutation=='gap': rows.pop(2)
-            if mutation=='brackets': del rows[0]['cpu_start_lower_usec']
+            if mutation == "missing":
+                rows = [r for r in rows if r["role"] != "router"]
+            if mutation == "stale":
+                rows = [r for r in rows if r["sample_index"] < 3]
+            if mutation == "gap":
+                rows.pop(2)
+            if mutation == "brackets":
+                del rows[0]["cpu_start_lower_usec"]
             from jsonschema import ValidationError
-            with self.assertRaises((ValueError,KeyError,ValidationError)):
-                quiet_summary(rows,1000000)
 
+            with self.assertRaises((ValueError, KeyError, ValidationError)):
+                quiet_summary(rows, 1000000)
+
+    # Check invalid cpu and mixed identity never pass.
     def test_invalid_cpu_and_mixed_identity_never_pass(self):
         from jsonschema import ValidationError
-        for value in (-1,float('nan'),True):
-            records = self.records()
-            records[1]['cpu_usage_usec']=value
-            with self.assertRaises(ValidationError): quiet_summary(records,1000000)
-        records = self.records()
-        records[1]['run_id']='another'
-        with self.assertRaisesRegex(ValueError,'identity'): quiet_summary(records,1000000)
 
+        for value in (-1, float("nan"), True):
+            records = self.records()
+            records[1]["cpu_usage_usec"] = value
+            with self.assertRaises(ValidationError):
+                quiet_summary(records, 1000000)
+        records = self.records()
+        records[1]["run_id"] = "another"
+        with self.assertRaisesRegex(ValueError, "identity"):
+            quiet_summary(records, 1000000)
+
+    # Check actual sampler produces compatible bracketed rows.
     def test_actual_sampler_produces_compatible_bracketed_rows(self):
         import json
         import subprocess
         from pathlib import Path
         from jsonschema import Draft202012Validator
         from measurement.raw import read
-        result = subprocess.run(['timeout','4','sh','docker/runtime/sample.sh'],env=dict(__import__('os').environ,ROLE='browser',RUN_ID='sample-test'),capture_output=True,text=True)
-        self.assertEqual(result.returncode,124,result.stderr)
+
+        result = subprocess.run(
+            ["timeout", "4", "sh", "docker/runtime/sample.sh"],
+            env=dict(__import__("os").environ, ROLE="browser", RUN_ID="sample-test"),
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual(result.returncode, 124, result.stderr)
         rows = [json.loads(line) for line in result.stdout.splitlines()]
-        self.assertGreaterEqual(len(rows),2)
-        validator = Draft202012Validator(read(Path('configs/schemas/resource.schema.json')))
+        self.assertGreaterEqual(len(rows), 2)
+        validator = Draft202012Validator(
+            read(Path("configs/schemas/resource.schema.json"))
+        )
         for row in rows:
             validator.validate(row)
-            self.assertLessEqual(row['cpu_start_lower_usec'],row['end_usec']-row['interval_usec'])
-            self.assertEqual(row['cpu_end_upper_usec'],row['end_usec']+10000)
+            self.assertLessEqual(
+                row["cpu_start_lower_usec"], row["end_usec"] - row["interval_usec"]
+            )
+            self.assertEqual(row["cpu_end_upper_usec"], row["end_usec"] + 10000)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
 
+
 class RetainedStabilizationTests(unittest.TestCase):
+    # Check cpu failure is retained only under explicit policy.
     def test_cpu_failure_is_retained_only_under_explicit_policy(self):
         import json
         import tempfile
         from pathlib import Path
         from measurement.raw import read, validate_stabilization, write
+
         with tempfile.TemporaryDirectory() as temporary:
             folder = Path(temporary)
             summaries = []
-            for prefix in ('baseline', 'stabilization-1'):
+            for prefix in ("baseline", "stabilization-1"):
                 records = QuietCpuTests().records()
-                if prefix != 'baseline':
+                if prefix != "baseline":
                     for row in records:
-                        if row['role'] == 'router': row['cpu_usage_usec'] = 25000
-                (folder/f'{prefix}-marker').write_text('1000000')
-                for role in ('browser','server','router'):
-                    (folder/f'{prefix}-{role}.jsonl').write_text(''.join(json.dumps(r)+'\n' for r in records if r['role']==role))
-                summary = quiet_summary(records,1000000)
-                write(folder/f'{prefix}-cpu.json',summary)
+                        if row["role"] == "router":
+                            row["cpu_usage_usec"] = 25000
+                (folder / f"{prefix}-marker").write_text("1000000")
+                for role in ("browser", "server", "router"):
+                    (folder / f"{prefix}-{role}.jsonl").write_text(
+                        "".join(
+                            json.dumps(r) + "\n" for r in records if r["role"] == role
+                        )
+                    )
+                summary = quiet_summary(records, 1000000)
+                write(folder / f"{prefix}-cpu.json", summary)
                 summaries.append(summary)
-            write(folder/'stabilization-1-comparison.json',compare(*summaries))
-            queues = [dict(kind='netem',backlog=0,qlen=0) for _ in range(2)]
-            write(folder/'qdisc-stable.json',queues)
-            (folder/'stabilization-1-queues.jsonl').write_text((json.dumps(queues)+'\n')*11)
-            state = dict(stable=False,cpu_recovered=False,attempts=1,empty_queue_window_ms=1000,wait_limit_s=30)
-            write(folder/'stabilization.json',state)
-            with self.assertRaisesRegex(ValueError,'stabilization'):
-                validate_stabilization(folder,{})
-            policy = dict(execution_policy='finite-browser-study-v1')
-            validate_stabilization(folder,policy)
-            write(folder/'stabilization.json',dict(state,stable=True,cpu_recovered=True))
-            with self.assertRaisesRegex(ValueError,'observation mismatch'):
-                validate_stabilization(folder,policy)
-            write(folder/'stabilization.json',state)
-            write(folder/'qdisc-stable.json',[dict(kind='netem',backlog=256,qlen=1)]*2)
-            with self.assertRaisesRegex(ValueError,'queues not empty'):
-                validate_stabilization(folder,policy)
-            write(folder/'qdisc-stable.json',queues)
-            (folder/'stabilization-1-router.jsonl').write_text('')
-            with self.assertRaisesRegex(ValueError,'incomplete resource roles'):
-                validate_stabilization(folder,policy)
+            write(folder / "stabilization-1-comparison.json", compare(*summaries))
+            queues = [dict(kind="netem", backlog=0, qlen=0) for _ in range(2)]
+            write(folder / "qdisc-stable.json", queues)
+            (folder / "stabilization-1-queues.jsonl").write_text(
+                (json.dumps(queues) + "\n") * 11
+            )
+            state = dict(
+                stable=False,
+                cpu_recovered=False,
+                attempts=1,
+                empty_queue_window_ms=1000,
+                wait_limit_s=30,
+            )
+            write(folder / "stabilization.json", state)
+            with self.assertRaisesRegex(ValueError, "stabilization"):
+                validate_stabilization(folder, {})
+            policy = dict(execution_policy="finite-browser-study-v1")
+            validate_stabilization(folder, policy)
+            write(
+                folder / "stabilization.json",
+                dict(state, stable=True, cpu_recovered=True),
+            )
+            with self.assertRaisesRegex(ValueError, "observation mismatch"):
+                validate_stabilization(folder, policy)
+            write(folder / "stabilization.json", state)
+            write(
+                folder / "qdisc-stable.json",
+                [dict(kind="netem", backlog=256, qlen=1)] * 2,
+            )
+            with self.assertRaisesRegex(ValueError, "queues not empty"):
+                validate_stabilization(folder, policy)
+            write(folder / "qdisc-stable.json", queues)
+            (folder / "stabilization-1-router.jsonl").write_text("")
+            with self.assertRaisesRegex(ValueError, "incomplete resource roles"):
+                validate_stabilization(folder, policy)

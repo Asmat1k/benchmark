@@ -47,3 +47,8 @@ acceptance-test:
 .PHONY: controller-test
 controller-test:
 	docker run --rm --network none -e PYTHONDONTWRITEBYTECODE=1 -e PYTHONPATH=src/analysis -v "$(CURDIR):/bench" -w /bench wswt-bench-analyzer:dev python -B -m unittest execution.test_controller -v
+
+.PHONY: python-test
+python-test:
+	docker build -f docker/images/Dockerfile.tests -t wswt-bench-python-tests:dev .
+	docker run --rm --network none -e PYTHONDONTWRITEBYTECODE=1 -e MPLCONFIGDIR=/tmp/matplotlib -e PYTHONPATH=src/analysis -v "$(CURDIR):/bench" -w /bench wswt-bench-python-tests:dev python -B -m unittest discover -s src/analysis -p 'test*.py' -v

@@ -9,6 +9,7 @@ type phaseCounts struct {
 var counts [2]phaseCounts
 var Active atomic.Int64
 
+// Receive records reception and selects the phase counters.
 func Receive(p []byte, ready bool) *phaseCounts {
 	if !ready || len(p) < 6 || p[5] > 1 {
 		return nil
@@ -18,6 +19,7 @@ func Receive(p []byte, ready bool) *phaseCounts {
 	return c
 }
 
+// Valid checks or records frame validity.
 func (c *phaseCounts) Valid(valid bool) {
 	if c == nil {
 		return
@@ -29,6 +31,7 @@ func (c *phaseCounts) Valid(valid bool) {
 	}
 }
 
+// Written records the outcome of a reply write.
 func (c *phaseCounts) Written(ok bool) {
 	if c == nil {
 		return
@@ -40,6 +43,7 @@ func (c *phaseCounts) Written(ok bool) {
 	}
 }
 
+// Snapshot returns the current connection and phase counters.
 func Snapshot() map[string]any {
 	out := map[string]any{"active": Active.Load()}
 	for i, name := range []string{"warmup", "measurement"} {

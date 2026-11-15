@@ -11,7 +11,9 @@ stage=prepare
 prepared=0
 project="wswt-d3-$(basename "$work" | tr '[:upper:].' '[:lower:]-')"
 run_dir="$series_dir/$project.partial"
+# Run Docker Compose for this project.
 compose() { docker compose -p "$project" "$@"; }
+# Run the analyzer container.
 analyze() {
     if [ -n "${BENCH_CONTROLLER_RESPONSE:-}" ] && [ "$1" = execution.record ]; then
         . docker/lib/controller-client.sh
@@ -59,6 +61,7 @@ compose up -d --no-build router server browser
 . docker/lib/links.sh
 setup_links
 compose exec -T router sh /usr/local/bin/network profile "$profile" "$forward" "$reverse" >"$run_dir/profile.txt"
+# Run context for this command.
 context() {
 uname -a > "$run_dir/host.txt"
 docker info --format '{"kernel":"{{.KernelVersion}}","platform":"{{.Architecture}}","engine":"{{.ServerVersion}}","cpus":{{.NCPU}},"mem":{{.MemTotal}}}' > "$run_dir/vm.json"
@@ -71,6 +74,7 @@ stage=context
 analyze execution.record context "$series_dir" "$index" "$run_dir"
 }
 context
+# Run capture for this command.
 capture() {
     compose exec -T router cat /proc/sys/net/ipv4/ip_forward > "$run_dir/forward-$1"
     compose exec -T router tc -s -j qdisc show > "$run_dir/qdisc-$1.json"
@@ -93,6 +97,7 @@ for role in browser server router; do
     compose exec -d -e ROLE="$role" -e RUN_ID="$run_id" "$role" sh -c 'echo $$ >/tmp/sampler.pid; exec sh /tmp/sample.sh >/tmp/resources.jsonl 2>/tmp/resources-error.txt'
 done
 compose cp "$run_dir/run.json" browser:/tmp/run.json
+# Run quiet cpu for this command.
 quiet_cpu() {
     quiet_prefix=$1
     docker run --rm --network none wswt-bench-analyzer:dev awk '{printf "%.0f\n", $1*1000000}' /proc/uptime > "$run_dir/$quiet_prefix-marker" || return 1

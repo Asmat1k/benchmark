@@ -7,6 +7,7 @@ if [ "$code" -ne 0 ]; then
   status=failed
   reason='"browser scenario failed; inspect traces"'
 fi
+# Run digest for this command.
 digest() { shasum -a 256 "$1" | cut -d' ' -f1; }
 cat >"$run_dir/checks.json" <<JSON
 {

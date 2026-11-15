@@ -38,22 +38,14 @@
       "minProperties": 1
     }
   },
-  "required": [
-    "gate",
-    "collection_id"
-  ],
+  "required": ["gate", "collection_id"],
   "additionalProperties": false,
   "oneOf": [
     {
-      "required": [
-        "document",
-        "observations"
-      ]
+      "required": ["document", "observations"]
     },
     {
-      "required": [
-        "values"
-      ]
+      "required": ["values"]
     }
   ]
 }

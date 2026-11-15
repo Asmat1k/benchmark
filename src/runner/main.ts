@@ -7,10 +7,7 @@ import { createHash } from "node:crypto";
 declare global {
   interface Window {
     bench: {
-      probe(
-        mode: string,
-        hash: string,
-      ): Promise<{ supported?: boolean; exactFrames?: number }>;
+      probe(mode: string, hash: string): Promise<{ supported?: boolean; exactFrames?: number }>;
       openSocket(port: number): Promise<WebSocket>;
       openTransport(port: number, hash: string): Promise<WebTransport>;
     };
@@ -31,6 +28,7 @@ try {
   const page = await browser.newPage();
   const cdp = await page.context().newCDPSession(page);
   await cdp.send("Network.enable");
+  /** Log the WebSocket handshake response. */
   cdp.on("Network.webSocketHandshakeResponseReceived", (e) =>
     console.log(
       JSON.stringify({
@@ -39,39 +37,35 @@ try {
       }),
     ),
   );
+  /** Forward page console errors to stderr. */
   page.on("console", (e) => {
     if (e.type() === "error") console.error(e.text());
   });
   await page.goto("https://bench.test:8443/", { timeout: 6000 });
+  /** Read whether the page has a secure context. */
   assert(await page.evaluate(() => window.isSecureContext && !!window.bench));
   console.log(
     JSON.stringify({
       utc: new Date().toISOString(),
       version,
       node: process.version,
-      npm: require("node:child_process")
-        .execFileSync("npm", ["-v"], { encoding: "utf8" })
-        .trim(),
+      npm: require("node:child_process").execFileSync("npm", ["-v"], { encoding: "utf8" }).trim(),
       typescript: require("typescript/package.json").version,
       typesNode: require("@types/node/package.json").version,
       playwright: require("playwright/package.json").version,
       executable: chromium.executablePath(),
       secureContext: true,
       leaf: pins.good,
-      ca: createHash("sha256")
-        .update(readFileSync("/trust/ca.crt"))
-        .digest("hex"),
+      ca: createHash("sha256").update(readFileSync("/trust/ca.crt")).digest("hex"),
     }),
   );
   for (const mode of ["WS", "WT-S", "WT-D"]) {
+    /** Return the callback result for page.evaluate. */
     const result = await page.evaluate(
       ([mode, hash]) => window.bench.probe(mode, hash),
       [mode, pins.good],
     );
-    assert(
-      result.exactFrames === 3 ||
-        (mode === "WT-D" && result.supported === false),
-    );
+    assert(result.exactFrames === 3 || (mode === "WT-D" && result.supported === false));
     console.log(JSON.stringify(result));
   }
   for (const [name, port, reason] of [
@@ -89,11 +83,12 @@ try {
       await navigation.close();
     }
     const certError = page.waitForEvent("console", {
+      /** Return the callback result for predicate. */
       predicate: (m) =>
-        m.text().includes(`wss://bench.test:${port}/ws`) &&
-        m.text().includes("ERR_" + reason),
+        m.text().includes(`wss://bench.test:${port}/ws`) && m.text().includes("ERR_" + reason),
       timeout: 3000,
     });
+    /** Return the callback result for page.evaluate. */
     assert.equal(
       await page.evaluate(async (port) => {
         try {
@@ -113,11 +108,13 @@ try {
     ["expired", 8445, pins.expired],
   ] as const) {
     const tlsFailure = page.waitForEvent("console", {
+      /** Return the callback result for predicate. */
       predicate: (m) =>
         m.text().includes(`https://bench.test:${port}/wt`) &&
         m.text().includes("CERTIFICATE_VERIFY_FAILED"),
       timeout: 3000,
     });
+    /** Return the callback result for page.evaluate. */
     const outcome = await page.evaluate(
       async ([port, pin]) => {
         try {

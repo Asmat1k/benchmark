@@ -8,6 +8,7 @@ from execution.series import measurement_lock, queue
 from execution.violation import detect
 
 
+# Write JSON through a temporary file and rename it.
 def atomic(path, value):
     temporary = path.with_suffix(".tmp")
     write(temporary, value)
@@ -21,40 +22,79 @@ def atomic(path, value):
         os.close(fd)
 
 
+# Replace the selected block under the series lock.
 def replace(directory, attempt_id, reason, evidence, checkpoint=lambda stage: None):
     directory, evidence = directory.resolve(), evidence.resolve()
     with measurement_lock():
         return replace_locked(directory, attempt_id, reason, evidence, checkpoint)
 
 
+# Publish a replacement block and its schedule state.
 def replace_locked(directory, attempt_id, reason, evidence, checkpoint):
     require(not (directory / "STOP").exists(), "stopped series requires a new version")
     completed = directory / "audit" / attempt_id / "transaction.json"
     if completed.exists():
         transaction = read(completed)
-        require(transaction["evidence_sha256"] == digest(evidence), "different completed replacement")
+        require(
+            transaction["evidence_sha256"] == digest(evidence),
+            "different completed replacement",
+        )
         return transaction["replacement"]
     journal = directory / "replacement.json"
     if journal.exists():
         transaction = read(journal)
-        require(transaction["attempt_id"] == attempt_id and transaction["evidence_sha256"] == digest(evidence), "different replacement pending")
+        require(
+            transaction["attempt_id"] == attempt_id
+            and transaction["evidence_sha256"] == digest(evidence),
+            "different replacement pending",
+        )
     else:
         proof = read(evidence)
-        require(proof["attempt_id"] == attempt_id and proof["reason"] == reason, "foreign evidence")
+        require(
+            proof["attempt_id"] == attempt_id and proof["reason"] == reason,
+            "foreign evidence",
+        )
         source = (directory / proof["folder"]).resolve()
         require(source.is_relative_to(directory.resolve()), "foreign evidence path")
-        require(proof["files"] == {p.name: digest(p) for p in source.iterdir()}, "evidence changed")
-        require(proof["schedule_sha256"] == digest(directory / "schedule.json"), "foreign evidence schedule")
-        require(detect(source, directory / "schedule.json") == (reason, proof["error"]), "violation not reproducible")
+        require(
+            proof["files"] == {p.name: digest(p) for p in source.iterdir()},
+            "evidence changed",
+        )
+        require(
+            proof["schedule_sha256"] == digest(directory / "schedule.json"),
+            "foreign evidence schedule",
+        )
+        require(
+            detect(source, directory / "schedule.json") == (reason, proof["error"]),
+            "violation not reproducible",
+        )
         schedule = read(directory / "schedule.json")
         run = next(r for r in schedule["runs"] if r["run_id"] == proof["run_id"])
         manifest = read(source / "manifest.json")
         archived = read(source / "schedule.json")
-        require(run["attempt_id"] == attempt_id and
-                all(manifest.get(k) == run[k] for k in run) and run in archived["runs"] and
-                manifest["run_id"] == proof["run_id"] and manifest["attempt_id"] == proof["attempt_id"] and
-                proof["identity"] == {k:manifest[k] for k in ("run_id", "attempt_id", "block_id", "session_id", "series_id", "series")} and
-                proof["context_sha256"] == digest(source / "context.json") == digest(directory / "context.json"), "foreign evidence run/context")
+        require(
+            run["attempt_id"] == attempt_id
+            and all(manifest.get(k) == run[k] for k in run)
+            and run in archived["runs"]
+            and manifest["run_id"] == proof["run_id"]
+            and manifest["attempt_id"] == proof["attempt_id"]
+            and proof["identity"]
+            == {
+                k: manifest[k]
+                for k in (
+                    "run_id",
+                    "attempt_id",
+                    "block_id",
+                    "session_id",
+                    "series_id",
+                    "series",
+                )
+            }
+            and proof["context_sha256"]
+            == digest(source / "context.json")
+            == digest(directory / "context.json"),
+            "foreign evidence run/context",
+        )
         ledger = read(directory / "ledger.json")
         old = next(a for a in ledger["attempts"] if a["attempt_id"] == attempt_id)
         require(old["status"] in ("complete", "planned"), "attempt cannot be replaced")
@@ -67,12 +107,30 @@ def replace_locked(directory, attempt_id, reason, evidence, checkpoint):
         moves = []
         for member in schedule["runs"]:
             if member["attempt_id"] == attempt_id:
-                path = source if member["run_id"] == run["run_id"] else directory / "raw" / member["run_id"]
+                path = (
+                    source
+                    if member["run_id"] == run["run_id"]
+                    else directory / "raw" / member["run_id"]
+                )
                 if path.exists():
-                    moves.append([str(path.relative_to(directory)), str((audit / member["run_id"]).relative_to(directory))])
-        transaction = dict(attempt_id=attempt_id, evidence_sha256=digest(evidence), schedule=schedule,
-                           ledger=ledger, queue=remaining, moves=moves, replacement=new)
-        (audit / "schedule.json").write_bytes((directory / "schedule.json").read_bytes())
+                    moves.append(
+                        [
+                            str(path.relative_to(directory)),
+                            str((audit / member["run_id"]).relative_to(directory)),
+                        ]
+                    )
+        transaction = dict(
+            attempt_id=attempt_id,
+            evidence_sha256=digest(evidence),
+            schedule=schedule,
+            ledger=ledger,
+            queue=remaining,
+            moves=moves,
+            replacement=new,
+        )
+        (audit / "schedule.json").write_bytes(
+            (directory / "schedule.json").read_bytes()
+        )
         (audit / "evidence.json").write_bytes(evidence.read_bytes())
         atomic(journal, transaction)
     for index, (before, after) in enumerate(transaction["moves"]):

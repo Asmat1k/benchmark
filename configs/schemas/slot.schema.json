@@ -11,10 +11,7 @@
       "minLength": 1
     },
     "phase": {
-      "enum": [
-        0,
-        1
-      ]
+      "enum": [0, 1]
     },
     "nonce": {
       "type": "string",
@@ -206,11 +203,7 @@
       "if": {
         "properties": {
           "send_state": {
-            "enum": [
-              "scheduler_miss",
-              "local_backpressure_error",
-              "not_sent_after_disconnect"
-            ]
+            "enum": ["scheduler_miss", "local_backpressure_error", "not_sent_after_disconnect"]
           }
         }
       },

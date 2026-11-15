@@ -26,12 +26,7 @@
           },
           "tolerance": {},
           "status": {
-            "enum": [
-              "not_run",
-              "passed",
-              "failed",
-              "inconclusive"
-            ]
+            "enum": ["not_run", "passed", "failed", "inconclusive"]
           },
           "reason": {
             "anyOf": [
@@ -63,10 +58,7 @@
                   "pattern": "^[a-f0-9]{64}$"
                 }
               },
-              "required": [
-                "path",
-                "sha256"
-              ],
+              "required": ["path", "sha256"],
               "additionalProperties": false
             }
           }
@@ -109,10 +101,7 @@
             "if": {
               "properties": {
                 "status": {
-                  "enum": [
-                    "passed",
-                    "failed"
-                  ]
+                  "enum": ["passed", "failed"]
                 }
               }
             },
@@ -134,9 +123,6 @@
       "minItems": 1
     }
   },
-  "required": [
-    "schema_version",
-    "checks"
-  ],
+  "required": ["schema_version", "checks"],
   "additionalProperties": false
 }

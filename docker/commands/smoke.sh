@@ -3,10 +3,12 @@ smoke_work=$(mktemp -d "${TMPDIR:-/tmp}/wswt-smoke.XXXXXXXX")
 BENCH_TLS_DIR=${SERIES_TLS_DIR:-$smoke_work}
 export BENCH_TLS_DIR
 project="wswt-d2-$(basename "$smoke_work" | tr '[:upper:].' '[:lower:]-')"
+# Run Docker Compose for this project.
 compose() { docker compose -p "$project" "$@"; }
 run_dir="results/verify/path/$(basename "$smoke_work")"
 mkdir -p "$run_dir"
-echo "$project" > "$run_dir/project"
+echo "$project" >"$run_dir/project"
+# Clean up resources when the command exits.
 cleanup() {
   for endpoint in server browser; do
     id=$(compose ps -q "$endpoint")
@@ -21,15 +23,15 @@ cleanup() {
 trap cleanup EXIT
 trap 'exit 130' INT TERM
 if [ -z "${SERIES_TLS_DIR:-}" ]; then
-    docker run --rm --network none -v "$BENCH_TLS_DIR:/out" --entrypoint testcert wswt-bench-server:dev /out
+  docker run --rm --network none -v "$BENCH_TLS_DIR:/out" --entrypoint testcert wswt-bench-server:dev /out
 else
-    test -f "$BENCH_TLS_DIR/server/good/cert.pem"
+  test -f "$BENCH_TLS_DIR/server/good/cert.pem"
 fi
 compose up -d --no-build router browser server
 . docker/lib/links.sh
 setup_links
 for role in server browser router; do
-  docker inspect --format '{{.Name}} {{.HostConfig.NanoCpus}} {{.HostConfig.Memory}} {{.HostConfig.ShmSize}} {{.HostConfig.CapAdd}} {{json .NetworkSettings.Networks}}' "$(compose ps -q "$role")" >> "$run_dir/limits.txt"
+  docker inspect --format '{{.Name}} {{.HostConfig.NanoCpus}} {{.HostConfig.Memory}} {{.HostConfig.ShmSize}} {{.HostConfig.CapAdd}} {{json .NetworkSettings.Networks}}' "$(compose ps -q "$role")" >>"$run_dir/limits.txt"
 done
 compose exec -T server cat /server-build.txt >"$run_dir/build.txt"
 docker image inspect --format '{{.Os}}/{{.Architecture}} {{.Id}}' wswt-bench-server:dev wswt-bench-browser:dev >>"$run_dir/build.txt"
@@ -69,4 +71,4 @@ for profile in r20p0 r20p1 r80p0 r80p1; do
   compose exec -T router sh /usr/local/bin/network profile "$profile" 20261108 20261109 >"$run_dir/$profile.txt" 2>&1
 done
 sh docker/lib/interop-result.sh "$run_dir" 0
-(cd "$run_dir" && shasum -a 256 project limits.txt *-route.txt router-links.txt counters.txt trace.txt forwarding-*.txt r[28]*.txt checks.json > SHA256SUMS)
+(cd "$run_dir" && shasum -a 256 project limits.txt *-route.txt router-links.txt counters.txt trace.txt forwarding-*.txt r[28]*.txt checks.json >SHA256SUMS)

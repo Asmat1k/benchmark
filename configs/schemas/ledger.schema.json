@@ -28,13 +28,7 @@
             "minLength": 1
           },
           "profile": {
-            "enum": [
-              "r20p0",
-              "r20p1",
-              "r80p0",
-              "r80p1",
-              "baseline"
-            ]
+            "enum": ["r20p0", "r20p1", "r80p0", "r80p1", "baseline"]
           },
           "order_index": {
             "type": "integer",
@@ -43,11 +37,7 @@
           "modes": {
             "type": "array",
             "items": {
-              "enum": [
-                "WS",
-                "WT-S",
-                "WT-D"
-              ]
+              "enum": ["WS", "WT-S", "WT-D"]
             },
             "minItems": 2,
             "maxItems": 3
@@ -57,12 +47,7 @@
             "minimum": 0
           },
           "status": {
-            "enum": [
-              "planned",
-              "complete",
-              "quarantined",
-              "stopped"
-            ]
+            "enum": ["planned", "complete", "quarantined", "stopped"]
           },
           "reason": {
             "anyOf": [
@@ -87,22 +72,12 @@
             ]
           },
           "design": {
-            "enum": [
-              "comparison",
-              "aa",
-              "monitoring"
-            ]
+            "enum": ["comparison", "aa", "monitoring"]
           },
           "monitoring_order": {
             "enum": [
-              [
-                "on",
-                "off"
-              ],
-              [
-                "off",
-                "on"
-              ]
+              ["on", "off"],
+              ["off", "on"]
             ]
           }
         },
@@ -148,9 +123,7 @@
                 }
               },
               "not": {
-                "required": [
-                  "monitoring_order"
-                ]
+                "required": ["monitoring_order"]
               }
             }
           },
@@ -166,25 +139,14 @@
               "properties": {
                 "modes": {
                   "enum": [
-                    [
-                      "WS",
-                      "WS"
-                    ],
-                    [
-                      "WT-S",
-                      "WT-S"
-                    ],
-                    [
-                      "WT-D",
-                      "WT-D"
-                    ]
+                    ["WS", "WS"],
+                    ["WT-S", "WT-S"],
+                    ["WT-D", "WT-D"]
                   ]
                 }
               },
               "not": {
-                "required": [
-                  "monitoring_order"
-                ]
+                "required": ["monitoring_order"]
               }
             }
           },
@@ -200,34 +162,19 @@
               "properties": {
                 "modes": {
                   "enum": [
-                    [
-                      "WS",
-                      "WS"
-                    ],
-                    [
-                      "WT-S",
-                      "WT-S"
-                    ],
-                    [
-                      "WT-D",
-                      "WT-D"
-                    ]
+                    ["WS", "WS"],
+                    ["WT-S", "WT-S"],
+                    ["WT-D", "WT-D"]
                   ]
                 }
               },
-              "required": [
-                "monitoring_order"
-              ]
+              "required": ["monitoring_order"]
             }
           }
         ]
       }
     }
   },
-  "required": [
-    "schema_version",
-    "series_id",
-    "attempts"
-  ],
+  "required": ["schema_version", "series_id", "attempts"],
   "additionalProperties": false
 }

@@ -4,6 +4,7 @@ import "encoding/binary"
 
 const Size = 256
 
+// Valid checks or records frame validity.
 func Valid(p []byte) bool {
 	if len(p) != Size || binary.BigEndian.Uint32(p) != 0x42575431 || p[4] != 1 || p[5] > 1 || binary.BigEndian.Uint16(p[6:]) != 0 {
 		return false

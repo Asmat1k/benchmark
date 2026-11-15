@@ -68,9 +68,9 @@ networks:
     internal: true
     enable_ipv6: false
     ipam:
-      config: [{subnet: 172.28.10.0/24}]
+      config: [{ subnet: 172.28.10.0/24 }]
   server_net:
     internal: true
     enable_ipv6: false
     ipam:
-      config: [{subnet: 172.28.20.0/24}]
+      config: [{ subnet: 172.28.20.0/24 }]

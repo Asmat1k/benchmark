@@ -5,6 +5,7 @@ import (
 	"errors"
 )
 
+// Reply builds an echo reply for the supplied frame.
 func Reply(p []byte, ready bool) ([]byte, error) {
 	if !ready {
 		if string(p) != "READY" {

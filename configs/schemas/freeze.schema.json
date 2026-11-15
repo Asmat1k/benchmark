@@ -36,10 +36,7 @@
               "pattern": "^[a-f0-9]{64}$"
             }
           },
-          "required": [
-            "path",
-            "sha256"
-          ],
+          "required": ["path", "sha256"],
           "additionalProperties": false
         },
         "plan": {
@@ -54,10 +51,7 @@
               "pattern": "^[a-f0-9]{64}$"
             }
           },
-          "required": [
-            "path",
-            "sha256"
-          ],
+          "required": ["path", "sha256"],
           "additionalProperties": false
         },
         "profiles": {
@@ -72,10 +66,7 @@
               "pattern": "^[a-f0-9]{64}$"
             }
           },
-          "required": [
-            "path",
-            "sha256"
-          ],
+          "required": ["path", "sha256"],
           "additionalProperties": false
         },
         "thresholds": {
@@ -90,10 +81,7 @@
               "pattern": "^[a-f0-9]{64}$"
             }
           },
-          "required": [
-            "path",
-            "sha256"
-          ],
+          "required": ["path", "sha256"],
           "additionalProperties": false
         },
         "analysis": {
@@ -108,10 +96,7 @@
               "pattern": "^[a-f0-9]{64}$"
             }
           },
-          "required": [
-            "path",
-            "sha256"
-          ],
+          "required": ["path", "sha256"],
           "additionalProperties": false
         },
         "locks": {
@@ -126,10 +111,7 @@
               "pattern": "^[a-f0-9]{64}$"
             }
           },
-          "required": [
-            "path",
-            "sha256"
-          ],
+          "required": ["path", "sha256"],
           "additionalProperties": false
         },
         "environment": {
@@ -144,10 +126,7 @@
               "pattern": "^[a-f0-9]{64}$"
             }
           },
-          "required": [
-            "path",
-            "sha256"
-          ],
+          "required": ["path", "sha256"],
           "additionalProperties": false
         },
         "leaf_der": {
@@ -162,10 +141,7 @@
               "pattern": "^[a-f0-9]{64}$"
             }
           },
-          "required": [
-            "path",
-            "sha256"
-          ],
+          "required": ["path", "sha256"],
           "additionalProperties": false
         },
         "schedule": {
@@ -180,10 +156,7 @@
               "pattern": "^[a-f0-9]{64}$"
             }
           },
-          "required": [
-            "path",
-            "sha256"
-          ],
+          "required": ["path", "sha256"],
           "additionalProperties": false
         },
         "verify": {
@@ -198,10 +171,7 @@
               "pattern": "^[a-f0-9]{64}$"
             }
           },
-          "required": [
-            "path",
-            "sha256"
-          ],
+          "required": ["path", "sha256"],
           "additionalProperties": false
         },
         "pilot": {
@@ -216,10 +186,7 @@
               "pattern": "^[a-f0-9]{64}$"
             }
           },
-          "required": [
-            "path",
-            "sha256"
-          ],
+          "required": ["path", "sha256"],
           "additionalProperties": false
         },
         "power": {
@@ -234,10 +201,7 @@
               "pattern": "^[a-f0-9]{64}$"
             }
           },
-          "required": [
-            "path",
-            "sha256"
-          ],
+          "required": ["path", "sha256"],
           "additionalProperties": false
         }
       },
@@ -295,10 +259,7 @@
       "minLength": 1
     },
     "aa_shift_algorithm": {
-      "enum": [
-        "paired side2-side1; linear p95 absolute shifts",
-        "fixed prospective 2 ms / 1 pp"
-      ]
+      "enum": ["paired side2-side1; linear p95 absolute shifts", "fixed prospective 2 ms / 1 pp"]
     }
   },
   "required": [

@@ -1,15 +1,15 @@
 set -eu
 if [ -z "$1" ]; then
-    for run in results/verify/path/wswt-smoke.????????; do
-        [ -f "$run/project" ] || continue
-        project=$(cat "$run/project")
-        active=$(docker ps -aq --filter "label=com.docker.compose.project=$project")
-        if [ -n "$active" ]; then
-            echo "Select the active project with RUN_DIR=$run" >&2
-            exit 2
-        fi
-    done
-    exit 0
+  for run in results/verify/path/wswt-smoke.????????; do
+    [ -f "$run/project" ] || continue
+    project=$(cat "$run/project")
+    active=$(docker ps -aq --filter "label=com.docker.compose.project=$project")
+    if [ -n "$active" ]; then
+      echo "Select the active project with RUN_DIR=$run" >&2
+      exit 2
+    fi
+  done
+  exit 0
 fi
 case "$1" in results/verify/path/wswt-smoke.????????) ;; *) exit 2 ;; esac
 name=$(basename "$1")
@@ -18,8 +18,8 @@ test "$project" = "$(cat "$1/project")"
 docker compose -p "$project" down --timeout 2
 temp_dir="${TMPDIR:-/tmp}/$name"
 if [ -d "$temp_dir" ]; then
-    test ! -L "$temp_dir"
-    rm -rf "$temp_dir"
+  test ! -L "$temp_dir"
+  rm -rf "$temp_dir"
 fi
 containers=$(docker ps -aq --filter "label=com.docker.compose.project=$project")
 networks=$(docker network ls -q --filter "label=com.docker.compose.project=$project")

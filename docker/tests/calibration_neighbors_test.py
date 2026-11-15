@@ -28,45 +28,105 @@ if 'show' in args:
 
 
 class CalibrationNeighbors(unittest.TestCase):
+    # Run neighbors.
     def run_neighbors(self, directory, fail=False):
-        stub=directory/'stub.py'
+        stub = directory / "stub.py"
         stub.write_text(STUB)
-        docker=directory/'docker'
+        docker = directory / "docker"
         docker.write_text('#!/bin/sh\nexec "$TEST_PYTHON" "$TEST_STUB" docker "$@"\n')
         docker.chmod(0o755)
-        calls=directory/'calls.jsonl'
-        result=subprocess.run(['/bin/sh','-ec',
-            'compose() { "$TEST_PYTHON" "$TEST_STUB" compose "$@"; }; . docker/lib/calibration-neighbors.sh'],
-            env=dict(os.environ,PATH=str(directory)+os.pathsep+os.environ['PATH'],
-                     TEST_PYTHON=sys.executable,TEST_STUB=str(stub),CALLS=str(calls),
-                     run_dir=str(directory),FAIL_REPLACE=str(int(fail))),capture_output=True,text=True)
-        return result,[json.loads(line) for line in calls.read_text().splitlines()]
+        calls = directory / "calls.jsonl"
+        result = subprocess.run(
+            [
+                "/bin/sh",
+                "-ec",
+                'compose() { "$TEST_PYTHON" "$TEST_STUB" compose "$@"; }; . docker/lib/calibration-neighbors.sh',
+            ],
+            env=dict(
+                os.environ,
+                PATH=str(directory) + os.pathsep + os.environ["PATH"],
+                TEST_PYTHON=sys.executable,
+                TEST_STUB=str(stub),
+                CALLS=str(calls),
+                run_dir=str(directory),
+                FAIL_REPLACE=str(int(fail)),
+            ),
+            capture_output=True,
+            text=True,
+        )
+        return result, [json.loads(line) for line in calls.read_text().splitlines()]
 
+    # Check permanent mappings use peer mac and namespace.
     def test_permanent_mappings_use_peer_mac_and_namespace(self):
         with tempfile.TemporaryDirectory() as temporary:
-            directory=Path(temporary)
-            result,calls=self.run_neighbors(directory)
-            self.assertEqual(result.returncode,0,result.stderr)
-            changes=[c for c in calls if 'replace' in c]
-            self.assertEqual(len(changes),4)
-            for index,(role,subnet) in enumerate([('browser',10),('server',20)]):
-                router,endpoint=changes[index*2:index*2+2]
-                self.assertEqual(router,['compose','exec','-T','router','ip','neigh','replace',
-                    f'172.28.{subnet}.10','lladdr',f'02:00:00:00:{subnet}:10','nud','permanent','dev',f'to_{role}'])
-                self.assertEqual(endpoint,['docker','run','--rm','--cap-drop','ALL','--cap-add','NET_ADMIN',
-                    '--network',f'container:container-{role}','--entrypoint','ip','wswt-bench-router:dev',
-                    'neigh','replace',f'172.28.{subnet}.2','lladdr',f'02:00:00:00:{subnet}:02',
-                    'nud','permanent','dev','bench0'])
-                for filename in (f'router-{role}-neighbors.json',f'{role}-neighbors.json'):
-                    self.assertEqual(json.loads((directory/filename).read_text()),[])
+            directory = Path(temporary)
+            result, calls = self.run_neighbors(directory)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            changes = [c for c in calls if "replace" in c]
+            self.assertEqual(len(changes), 4)
+            for index, (role, subnet) in enumerate([("browser", 10), ("server", 20)]):
+                router, endpoint = changes[index * 2 : index * 2 + 2]
+                self.assertEqual(
+                    router,
+                    [
+                        "compose",
+                        "exec",
+                        "-T",
+                        "router",
+                        "ip",
+                        "neigh",
+                        "replace",
+                        f"172.28.{subnet}.10",
+                        "lladdr",
+                        f"02:00:00:00:{subnet}:10",
+                        "nud",
+                        "permanent",
+                        "dev",
+                        f"to_{role}",
+                    ],
+                )
+                self.assertEqual(
+                    endpoint,
+                    [
+                        "docker",
+                        "run",
+                        "--rm",
+                        "--cap-drop",
+                        "ALL",
+                        "--cap-add",
+                        "NET_ADMIN",
+                        "--network",
+                        f"container:container-{role}",
+                        "--entrypoint",
+                        "ip",
+                        "wswt-bench-router:dev",
+                        "neigh",
+                        "replace",
+                        f"172.28.{subnet}.2",
+                        "lladdr",
+                        f"02:00:00:00:{subnet}:02",
+                        "nud",
+                        "permanent",
+                        "dev",
+                        "bench0",
+                    ],
+                )
+                for filename in (
+                    f"router-{role}-neighbors.json",
+                    f"{role}-neighbors.json",
+                ):
+                    self.assertEqual(json.loads((directory / filename).read_text()), [])
 
+    # Check mapping failure stops before other endpoint.
     def test_mapping_failure_stops_before_other_endpoint(self):
         with tempfile.TemporaryDirectory() as temporary:
-            result,calls=self.run_neighbors(Path(temporary),fail=True)
-            self.assertEqual(result.returncode,5)
-            self.assertEqual(len([c for c in calls if 'replace' in c]),2)
-            self.assertFalse(any(c[:4]==['compose','exec','-T','server'] for c in calls))
+            result, calls = self.run_neighbors(Path(temporary), fail=True)
+            self.assertEqual(result.returncode, 5)
+            self.assertEqual(len([c for c in calls if "replace" in c]), 2)
+            self.assertFalse(
+                any(c[:4] == ["compose", "exec", "-T", "server"] for c in calls)
+            )
 
 
-if __name__=='__main__':
+if __name__ == "__main__":
     unittest.main()

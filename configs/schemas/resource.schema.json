@@ -11,11 +11,7 @@
       "minLength": 1
     },
     "role": {
-      "enum": [
-        "browser",
-        "server",
-        "router"
-      ]
+      "enum": ["browser", "server", "router"]
     },
     "interval_usec": {
       "type": "integer",
@@ -68,11 +64,7 @@
   ],
   "additionalProperties": false,
   "dependentRequired": {
-    "cpu_start_lower_usec": [
-      "cpu_end_upper_usec"
-    ],
-    "cpu_end_upper_usec": [
-      "cpu_start_lower_usec"
-    ]
+    "cpu_start_lower_usec": ["cpu_end_upper_usec"],
+    "cpu_end_upper_usec": ["cpu_start_lower_usec"]
   }
 }

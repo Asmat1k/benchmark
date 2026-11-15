@@ -4,33 +4,34 @@ mkdir -p "$out"
 token="sender-selftest-$$"
 name="$token-probe"
 trace_name="$token-trace"
+# Clean up resources when the command exits.
 cleanup() {
-    touch "$out/trace-stop"
-    docker rm -f "$name" "$trace_name" >/dev/null 2>&1 || true
+  touch "$out/trace-stop"
+  docker rm -f "$name" "$trace_name" >/dev/null 2>&1 || true
 }
 trap cleanup EXIT
 trap 'exit 130' INT TERM
 docker run -d --rm --name "$name" --network none --cap-drop ALL -v "$PWD/docker/diagnostics:/diagnostic:ro" wswt-bench-analyzer:dev sleep 90 >/dev/null
-docker exec "$name" python -B /diagnostic/sender_diagnostic_resources.py 60 /tmp/resources-ready /tmp/resources-stop > "$out/resources.jsonl" &
+docker exec "$name" python -B /diagnostic/sender_diagnostic_resources.py 60 /tmp/resources-ready /tmp/resources-stop >"$out/resources.jsonl" &
 sampler=$!
 for attempt in $(seq 1 100); do
-    docker exec "$name" test -f /tmp/resources-ready && break
-    sleep .1
+  docker exec "$name" test -f /tmp/resources-ready && break
+  sleep .1
 done
 docker exec "$name" test -f /tmp/resources-ready
-docker exec "$name" python -B /diagnostic/sender_scheduling_probe.py selftest "$token" /tmp/sender-ready /tmp/sender-go > "$out/probe.json" &
+docker exec "$name" python -B /diagnostic/sender_scheduling_probe.py selftest "$token" /tmp/sender-ready /tmp/sender-go >"$out/probe.json" &
 sender=$!
 for attempt in $(seq 1 100); do
-    docker exec "$name" test -f /tmp/sender-ready && break
-    sleep .1
+  docker exec "$name" test -f /tmp/sender-ready && break
+  sleep .1
 done
 docker cp "$name:/tmp/sender-ready" "$out/sender-ready.json"
-docker run --rm --name "$trace_name" --network none --privileged --pid host -v "$PWD/docker/diagnostics:/diagnostic:ro" -v "$out:/out" wswt-bench-analyzer:dev python -B /diagnostic/sender_scheduling_trace.py "$token" /out > "$out/tracer.log" 2>&1 &
+docker run --rm --name "$trace_name" --network none --privileged --pid host -v "$PWD/docker/diagnostics:/diagnostic:ro" -v "$out:/out" wswt-bench-analyzer:dev python -B /diagnostic/sender_scheduling_trace.py "$token" /out >"$out/tracer.log" 2>&1 &
 tracer=$!
 for attempt in $(seq 1 100); do
-    [ ! -f "$out/trace-ready.json" ] || break
-    kill -0 "$tracer"
-    sleep .1
+  [ ! -f "$out/trace-ready.json" ] || break
+  kill -0 "$tracer"
+  sleep .1
 done
 test -f "$out/trace-ready.json"
 docker exec "$name" touch /tmp/sender-go

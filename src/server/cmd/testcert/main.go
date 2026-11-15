@@ -17,19 +17,26 @@ import (
 	"time"
 )
 
+// check stops certificate generation when an error occurs.
 func check(err error) {
 	if err != nil {
 		log.Fatal(err)
 	}
 }
+
+// key generates an ECDSA private key.
 func key() *ecdsa.PrivateKey {
 	k, err := ecdsa.GenerateKey(elliptic.P256(), rand.Reader)
 	check(err)
 	return k
 }
+
+// write writes PEM data with the supplied file mode.
 func write(path, kind string, data []byte, mode os.FileMode) {
 	check(os.WriteFile(path, pem.EncodeToMemory(&pem.Block{Type: kind, Bytes: data}), mode))
 }
+
+// main runs the program entry point.
 func main() {
 	root := os.Args[1]
 	public := filepath.Join(root, "public")
