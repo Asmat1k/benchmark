@@ -1,6 +1,6 @@
 # Проверка стенда
 
-Реализации и тесты фич находятся рядом в [src/analysis/](../src/analysis/README.md); общие проверки и fixtures остаются в src/analysis/tests/. Там же описаны запуск отдельных групп и полный discovery.
+Реализации и тесты фич находятся рядом в [src/analysis/](../src/README.md#analysis); общие проверки и fixtures остаются в src/analysis/tests/. Там же описаны запуск отдельных групп и полный discovery.
 
 - `make build`: сборка четырёх закреплённых native linux/arm64 образов, проверки TypeScript/Go и зависимостей.
 - `make smoke`: короткая проверка TLS и сетевого пути; `make measurement-smoke`: короткая проверка измерителя WS/WT-S.

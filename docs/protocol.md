@@ -1,6 +1,6 @@
 # Протокол обмена
 
-Машинный контракт версии 1 хранится в [configs/contracts/protocol.json](../configs/contracts/protocol.json). Параметры нагрузки, пороги и сетевые профили — в [configs/](../configs/). Текущие правила сбора определены [exploratory-browser-study-v2](../configs/policies/exploratory.json); прежние строгие правила не являются описанием этого режима.
+Машинный контракт версии 1 хранится в [configs/contracts/protocol.json](../configs/contracts/protocol.json). Параметры нагрузки, пороги и сетевые профили — в [configs/](../configs). Текущие правила сбора определены [exploratory-browser-study-v2](../configs/policies/exploratory.json); прежние строгие правила не являются описанием этого режима.
 
 Chromium подключается к `https://bench.test:8443`. Go-сервер обслуживает WebSocket по TCP HTTP/1.1 `/ws` и WebTransport по UDP HTTP/3 `/wt`. Используется TLS 1.3; браузер доверяет CA, WebTransport проверяет SHA-256 DER сертификата. Компрессия WS и переподключение в ходе измерения не используются.
 
