@@ -1,20 +1,7 @@
 # benchmark
 
-Подготовленный запуск с сохранением всех исходов: [команда запуска и продолжения](docs/readiness/run-today.md). Основной эксперимент запускает пользователь; исторические результаты и статусы не меняются.
+Локальный стенд для сравнения WebSocket, WebTransport stream и datagram на Docker VM. Измеряет Chromium; Go-сервер возвращает кадры через router/netem; Python готовит расписание и строит отчёт.
 
-Структура Dockerfile, команд и диагностических инструментов описана в [docker/README.md](docker/README.md).
+Актуальные инструкции: [документация](docs/README.md), [запуск и продолжение](docs/readiness/run-today.md), [правила исследовательского сбора](docs/readiness/exploratory-browser-study-v2.md). Устройство Docker-каталогов — [docker/README.md](docker/README.md).
 
-Локальный стенд WS/WT-S с дополнительным WT-D. Закреплённая сборка D2 рассчитана на native linux/arm64, Docker Compose и Make. Полный перечень параметров находится в [контрактах](docs/protocol.md). Состояние разработки и экспериментальных проверок приведено в [матрице](docs/execution-matrix.md).
-
-1. Выполнить `make build`. Команда собирает четыре образа, устанавливает npm/Go-зависимости и 21 Python wheel по locks, устанавливает Python-пакеты с отключённой сетью через --no-index и сохраняет графики в build/figures/. В build/wheelhouse/ находятся 21 оригинальный wheel с именами ABI/platform и SHA256SUMS. Тот же набор доступен в /wheelhouse внутри архивированного analyzer. Для автономной установки на native linux/arm64 с Python 3.12 выполните из корня проекта `python -m pip install --no-index --find-links=build/wheelhouse --only-binary=:all: --require-hashes -r src/analysis/requirements.txt`, затем `python -m pip check`. Актуальные image IDs и списки OS-пакетов появляются в build/. Базовые platform digests и manifest принятой сборки сохранены в docker/. Для проверки на другом процессоре нужна отдельная закреплённая сборка.
-2. Выполнить `make smoke`. Сценарий создаёт отдельный Compose project, эфемерные ключи и два internal IPv4-сегмента. В каждом из них route-init передаёт адреса Docker IPAM паре veth между endpoint и router и опускает исходные bridge-интерфейсы. На Docker Engine 29 internal bridge отбрасывает пакеты с IP назначения вне локальной подсети до их прихода в router. Передача veth peer использует NET_ADMIN и краткий SYS_PTRACE для открытия сетевого namespace PID 1 только своего endpoint. В рабочих browser/server этих прав нет. Router проверяет MTU, offloads, профили и seeds. Сценарий пишет маршруты, счётчики и trace в results/verify/path/wswt-smoke.*/. Для этого запуска подсети 172.28.10.0/24 и 172.28.20.0/24 должны быть свободны.
-3. После успеха или ошибки smoke завершает собственные контейнеры и удаляет эфемерные ключи. Команда `make cleanup` проверяет наличие незавершённых проектов. После прерывания запустите `make cleanup RUN_DIR=results/verify/path/wswt-smoke.XXXXXXXX` для конкретного каталога.
-4. `make archive` сохраняет четыре конечных образа и SHA-256 в results/archives/. Для автономного запуска сверить архив через `shasum -a 256 -c images-<hash>.tar.sha256` из его каталога, затем выполнить `docker image load -i images-<hash>.tar` и `make smoke` из корня репозитория. Большой tar хранится локально, его контрольная сумма входит в Git.
-
-Калибровка, A/A, monitoring on/off, экспериментальный pilot, freeze и main отложены. Перед экспериментами требуется отдельная приёмка среды, описанная в [объёме разработки](docs/development-scope.md).
-
-После завершения измерений `make analyze SERIES=path/to/series` проверяет целостность и создаёт таблицы, статистический JSON, индексы bootstrap и PNG/SVG/PDF в `SERIES/derived/`. `make analysis-test` проверяет анализ только на синтетических данных. Точные команды воспроизведения, форматы и ограничения приведены в [описании анализа](docs/analysis.md#синтетическое-воспроизведение).
-
-Будущие calibration/A/A/monitoring/pilot/power/verify/freeze/main реализованы в [модулях и интерфейсах D5](docs/experiments.md). `make acceptance-test` проверяет их offline на fixtures и stub executor. Отложенные экспериментальные серии сейчас не запускались; `configs/freeze.json` отсутствует. Проверки синтетики не открывают реальный admission.
-
-Текущий допуск UDP-отправителя: [sender-quality-v2](docs/readiness/sender-quality-v2.md). Исторические sender-отчёты сохраняют прежние заключения; новая ретроспектива не означает полной готовности.
+Текущий режим сохраняет все 240 назначений, включая отказавшие и незапущенные; исторические failed/partial остаются без изменений. Основной эксперимент запускает пользователь. Данные и отчёты хранятся в results/, зависимости и сборочные файлы — в build/.
