@@ -5,7 +5,7 @@ import tempfile
 import subprocess
 from pathlib import Path
 
-from acceptance import calibration, equivalence, generator_gate, paired_schedule, timer_gate
+from acceptance import calibration, control_smoke, equivalence, generator_gate, paired_schedule, timer_gate
 from admission import GATES, admit, aggregate, checked, freeze, ref, sources, verify
 from jsonschema import ValidationError
 
@@ -172,9 +172,16 @@ def evaluate(action, data):
             return equivalence(data['pairs'],action,data['collection_id'],data.get('include_wt_d',False)),[]
         directory=checked(data['schedule']).parent
         pairs,selected=paired_data(directory,data)
-        require(data['independence_reviewed'], 'independent units review required')
-        for pair in pairs: pair['independence_reviewed']=True
-        result=equivalence(pairs,action,directory.name,data.get('include_wt_d',False))
+        finite = read(checked(read(directory/'admission.json')['verify'])).get('readiness_version') == 'finite-browser-study-v1'
+        if finite:
+            require(data['control_design'] == 'control-smoke-v1', 'finite smoke design required')
+            checked(data['unit_review'])
+            result=control_smoke(pairs,action)
+            result['unit_review']=data['unit_review']
+        else:
+            require(data['independence_reviewed'], 'independent units review required')
+            for pair in pairs: pair['independence_reviewed']=True
+            result=equivalence(pairs,action,directory.name,data.get('include_wt_d',False))
         evidence.extend(directory/'raw'/r['run_id']/'SHA256SUMS' for r in selected)
     elif action in ('pilot','power'):
         directory=checked(data['schedule']).parent
@@ -222,6 +229,8 @@ def main():
     parser.add_argument('--freeze',type=Path)
     parser.add_argument('--reproduction',type=Path)
     parser.add_argument('--final',action='store_true')
+    parser.add_argument('--limited-readiness',action='store_true')
+    parser.add_argument('--control-smoke',action='store_true')
     parser.add_argument('--datagrams',action='store_true')
     parser.add_argument('--blocks',type=int,default=20)
     parser.add_argument('--execute-real-experiments',action='store_true')
@@ -249,7 +258,12 @@ def main():
         require(args.phase and args.environment and args.verify, 'phase/environment/verify required')
         require(not args.output.exists() or args.phase=='main' and set(p.name for p in args.output.iterdir()) in ({'schedule.json'},{'schedule.json','ledger.json'}), 'immutable series directory exists')
         required=GATES if args.phase in ('pilot','main') else GATES[:8] if args.phase=='aa' else GATES[:9]
-        verify(args.verify,args.environment,final=args.phase=='main',required=required)
+        verification=verify(args.verify,args.environment,final=args.phase=='main',required=required)
+        finite = verification.get('readiness_version') == 'finite-browser-study-v1'
+        require(not args.control_smoke or finite and args.phase in ('aa','monitoring'), 'control smoke requires scoped readiness')
+        if finite:
+            require(args.control_smoke if args.phase in ('aa','monitoring') else not args.control_smoke, 'finite control design flag')
+            require(args.blocks == (1 if args.control_smoke else 5 if args.phase == 'pilot' else 20), 'finite fixed blocks')
         require(args.kind=='real', 'synthetic evidence cannot admit real series')
         if args.phase=='main':
             require(args.freeze and args.freeze.exists() and args.reproduction, 'main freeze and independent reproduction required')
@@ -259,7 +273,7 @@ def main():
             require(args.blocks>=5, 'pilot minimum five blocks')
             schedule=make_schedule('pilot',args.output.name,args.blocks,4,args.datagrams)
         else:
-            schedule=paired_schedule(args.phase,args.output.name,args.datagrams,args.blocks)
+            schedule=paired_schedule(args.phase,args.output.name,args.datagrams,args.blocks,smoke=args.control_smoke)
         require({r['mode'] for r in schedule['runs']} == {'WS','WT-S','WT-D'}, 'approved modes include WT-D')
         args.output.parent.mkdir(parents=True,exist_ok=True)
         with tempfile.TemporaryDirectory(prefix='.prepare-',dir=args.output.parent) as workspace:
@@ -292,7 +306,12 @@ def main():
         freeze(read(args.input),args.output)
         return 0
     if action=='verify':
-        result,code=aggregate(read(args.input) if args.input else {},args.environment,args.final,args.kind)
+        if args.limited_readiness:
+            from limited_readiness import aggregate_limited
+            require(args.kind == 'real' and args.input, 'finite readiness real input required')
+            result,code=aggregate_limited(read(args.input),args.environment,args.final)
+        else:
+            result,code=aggregate(read(args.input) if args.input else {},args.environment,args.final,args.kind)
         write(args.output,result)
         return code
     require(args.input and args.environment, 'input/environment required')

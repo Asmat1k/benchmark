@@ -194,9 +194,10 @@ def generator_gate(data, include_wt_d=False):
     return dict(status='passed' if passed else 'failed', runs=data)
 
 
-def paired_schedule(kind, identity, datagrams=False, blocks=20):
-    require(kind in ('aa','monitoring') and blocks >= 20, 'fixed minimum 20 pairs')
-    schedule = make_schedule('verify', identity, blocks, 4, datagrams)
+def paired_schedule(kind, identity, datagrams=False, blocks=20, smoke=False):
+    require(kind in ('aa','monitoring') and (blocks == 1 if smoke else blocks >= 20), 'fixed control sample')
+    sessions = 1 if smoke else 4
+    schedule = make_schedule('verify', identity, blocks, sessions, datagrams)
     rng = seeds('verify', identity, 8 if kind == 'aa' else 9)
     old = schedule['blocks']
     schedule['blocks'], schedule['runs'] = [], []
@@ -208,7 +209,7 @@ def paired_schedule(kind, identity, datagrams=False, blocks=20):
             if kind == 'monitoring':
                 block['monitoring_order'] = [str(v) for v in rng.permutation(["on","off"])]
             schedule['blocks'].append(block)
-    schedule['blocks'] = [block for session in range(4) for block in rng.permutation([b for b in schedule['blocks'] if b['session_id']==f's{session}'])]
+    schedule['blocks'] = [block for session in range(sessions) for block in rng.permutation([b for b in schedule['blocks'] if b['session_id']==f's{session}'])]
     for index,block in enumerate(schedule['blocks']):
         block['order_index'] = index
         schedule['runs'].extend(block_runs(schedule,block,index))
@@ -254,3 +255,27 @@ def equivalence(pairs, kind, identity, datagrams=False):
     return dict(status=status,groups=groups,shifts=shifts,
                 repeat_effect_ms=max(2,float(np.percentile([abs(v[0]) for v in shifts],95))) if shifts else None,
                 repeat_fullness_pp=max(1,float(np.percentile([abs(v[1]) for v in shifts],95))) if shifts else None)
+
+
+def control_smoke(pairs, kind):
+    require(kind in ('aa','monitoring'), 'unknown smoke control')
+    expected = {(mode,profile) for mode in MODES for profile in PROFILES}
+    require(len(pairs) == len(expected) and {(p['mode'],p['profile']) for p in pairs} == expected,
+            'one smoke pair per mode/profile required')
+    require(len({p['attempt_id'] for p in pairs}) == len(pairs), 'duplicate smoke pair')
+    groups = []
+    for pair in pairs:
+        require(pair['fresh_processes'], 'smoke fresh processes required')
+        a,b = pair['sides']
+        require(a['run_id'] != b['run_id'] and a['mode'] == b['mode'] == pair['mode'], 'smoke pair sides')
+        require(a['seeds'] == b['seeds'] if kind == 'monitoring' else a['seeds'] != b['seeds'], 'smoke pair seeds')
+        if kind == 'monitoring':
+            require({a['monitoring'],b['monitoring']} == {True,False}, 'smoke on/off coverage')
+            if a['monitoring']: a,b = b,a
+        groups.append(dict(mode=pair['mode'],profile=pair['profile'],n=1,status='inconclusive',
+                           Q_shift_ms=None if a['Q_ms'] is None or b['Q_ms'] is None else b['Q_ms']-a['Q_ms'],
+                           S_shift_pp=b['S_pct']-a['S_pct'],
+                           U_and_disconnects=[(v['U_pct'],v['disconnects']) for v in (a,b)]))
+    return dict(status='inconclusive', design='control-smoke-v1', groups=groups,
+                repeat_effect_ms=2,repeat_fullness_pp=1,
+                limitations=['One pair per cell checks collection behavior; does not establish equivalence or estimate drift.'])

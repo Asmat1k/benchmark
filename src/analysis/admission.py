@@ -166,6 +166,10 @@ def verify(path, environment, final=False, required=GATES, kind="real", recalcul
     from collection import environment as validate_environment
     validate_environment(environment,kind)
     report = read(path)
+    if report.get('readiness_version') == 'finite-browser-study-v1':
+        from limited_readiness import verify_limited
+        require(kind == 'real', 'finite readiness requires real evidence')
+        return verify_limited(report,environment,final,required,recalculate)
     require(report['kind']==kind and (not final or report['final']), 'real final verify required')
     require(report['source_hashes']==sources() and report['environment']==ref(environment), 'verify environment/source mismatch')
     document = report['document']
@@ -269,7 +273,10 @@ def validate_freeze(value, remaining=None, recalculate=True):
     experiment_reports(value['bindings'],modes,value['bindings']['environment'],recalculate=recalculate)
     inventory(value['bindings']['analysis'],'analysis')
     inventory(value['bindings']['locks'],'locks')
-    require(value['rationale'] and value['aa_shift_algorithm']=='paired side2-side1; linear p95 absolute shifts', 'pre-main rationale required')
+    finite = read(checked(value['bindings']['verify'])).get('readiness_version') == 'finite-browser-study-v1'
+    algorithm = 'fixed prospective 2 ms / 1 pp' if finite else 'paired side2-side1; linear p95 absolute shifts'
+    require(value['rationale'] and value['aa_shift_algorithm']==algorithm, 'pre-main rationale required')
+    if finite: require(value['blocks_per_profile'] == 20, 'finite main fixed 20 blocks/profile')
     aa_row=next(r for r in read(checked(value['bindings']['verify']))['document']['checks'] if r['id']=='aa')
     aa=read(checked(aa_row['evidence'][0]))
     verification=read(checked(value['bindings']['verify']))
@@ -375,19 +382,33 @@ def execution_state(directory, original, current, validate_completion=True):
 
 
 
-def accepted_schedule(original, phase):
+def accepted_schedule(original, phase, finite=False):
     from schedule import PROFILES, make_schedule
     from acceptance import paired_schedule
     modes={m for b in original['blocks'] for m in b['modes']}
     datagrams='WT-D' in modes
     if phase in ('aa','monitoring'):
         count=sum(b['profile']==PROFILES[0] and b['modes'][0]=='WS' for b in original['blocks'])
-        expected=paired_schedule(phase,original['series_id'],datagrams,count)
+        expected=paired_schedule(phase,original['series_id'],datagrams,count,smoke=finite)
     else:
         count=sum(b['profile']==PROFILES[0] for b in original['blocks'])
-        require(count>=5 if phase=='pilot' else count in (20,30,40,60), 'official planned block count')
+        require((count == 5 if phase == 'pilot' else count == 20) if finite else
+                (count>=5 if phase=='pilot' else count in (20,30,40,60)), 'official planned block count')
         expected=make_schedule(phase,original['series_id'],count,4,datagrams)
     require(original==expected, 'original accepted schedule changed')
+
+
+def validate_reproduction_outcome(report, finite=False):
+    if not finite:
+        require(report['status'] == 'passed', 'independent reproduction required')
+        return
+    from collection import PRIMARY_IDS
+    document = report['result']['document']
+    require({r['id'] for r in document['checks']} == set(PRIMARY_IDS['reproduction']) and
+            all(r['mandatory'] and r['status'] == 'passed' for r in document['checks']) and
+            validate_checks(document) == 0, 'finite reproduction technical/review predicates required')
+    require(report['status'] in ('passed','failed','inconclusive') and
+            report['result']['comparison']['status'] == report['status'], 'finite reproduction comparison status mismatch')
 
 
 def admit(directory, kind=None, validate_completion=True, initial=False):
@@ -415,7 +436,9 @@ def admit(directory, kind=None, validate_completion=True, initial=False):
     require(schedule['series'] == (phase if phase in ('pilot','main') else 'verify'), 'admitted phase mismatch')
     require(all(b['design']==('comparison' if phase in ('pilot','main') else phase) for b in schedule['blocks']), 'admitted design mismatch')
     if kind=='real':
-        accepted_schedule(original,phase)
+        finite = read(checked(admission['verify'])).get('readiness_version') == 'finite-browser-study-v1'
+        accepted_schedule(original,phase,finite)
+        if finite: require(schedule == original, 'finite study forbids replacement/dobor')
         require({r['mode'] for r in original['runs']} == {'WS','WT-S','WT-D'}, 'approved modes include WT-D')
     required = GATES if phase in ('pilot','main') else GATES[:8] if phase == 'aa' else GATES[:9]
     verification=verify(checked(admission['verify']),env,final=phase=='main',required=required,kind=kind,recalculate=recalculate)
@@ -435,7 +458,8 @@ def admit(directory, kind=None, validate_completion=True, initial=False):
         require(frozen['bindings']['verify']==admission['verify'] and frozen['bindings']['environment']==admission['environment'], 'freeze/verify mismatch')
         leaf_covers(Path(frozen['leaf_pem']),frozen['series_end_utc'])
         reproduction=read(checked(admission['reproduction']))
-        require(reproduction['kind']=='real' and reproduction['gate']=='reproduction' and reproduction['status']=='passed' and reproduction['source_hashes']==sources() and reproduction['environment']==admission['environment'], 'independent reproduction required')
+        require(reproduction['kind']=='real' and reproduction['gate']=='reproduction' and reproduction['source_hashes']==sources() and reproduction['environment']==admission['environment'], 'independent reproduction required')
+        validate_reproduction_outcome(reproduction,verification.get('readiness_version') == 'finite-browser-study-v1')
         require(reproduction['result'].get('freeze')==admission['freeze'], 'reproduction belongs to another freeze')
         validate_gate(reproduction,recalculate=recalculate)
     return admission

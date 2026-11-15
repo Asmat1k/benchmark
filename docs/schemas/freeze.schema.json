@@ -295,7 +295,10 @@
       "minLength": 1
     },
     "aa_shift_algorithm": {
-      "const": "paired side2-side1; linear p95 absolute shifts"
+      "enum": [
+        "paired side2-side1; linear p95 absolute shifts",
+        "fixed prospective 2 ms / 1 pp"
+      ]
     }
   },
   "required": [
