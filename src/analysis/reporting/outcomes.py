@@ -792,4 +792,8 @@ def compute_outcomes(directory, output):
         lines.append(statistics["reason"])
     (output / "report.md").write_text("\n".join(lines) + "\n")
     figures(output, items)
+    from reporting.comparisons import append_report, figures as comparison_figures, lag_samples
+
+    comparison_figures(output, items, packets, lag_samples(directory, items))
+    append_report(output)
     return result

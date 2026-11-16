@@ -35,6 +35,15 @@ measure:
 analyze:
 	sh docker/commands/analyze.sh "$(SERIES)" $(ARGS)
 
+.PHONY: compare comparison-test
+# Дополняет сохранённый отчёт сравнительными графиками в новом каталоге без перезаписи результатов.
+compare:
+	sh scripts/analyze-comparisons.sh "$(SERIES)"
+
+# Проверяет сравнительные графики, состав пар и сохранность исходного отчёта.
+comparison-test:
+	docker run --rm --network none -e PYTHONDONTWRITEBYTECODE=1 -e MPLCONFIGDIR=/tmp/matplotlib -e PYTHONPATH=src/analysis -v "$(CURDIR):/bench" -w /bench wswt-bench-analyzer:dev python -B -m unittest reporting.test_comparisons -v
+
 .PHONY: exploratory-prepare
 # Готовит новую исследовательскую серию с окружением ENVIRONMENT и сертификатами SERIES_TLS_DIR.
 exploratory-prepare:
