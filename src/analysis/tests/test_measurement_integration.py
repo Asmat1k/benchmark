@@ -382,46 +382,12 @@ class MeasurementTests(unittest.TestCase):
 
     # Check r4 two replacements exclude executed blocks.
     def test_r4_two_replacements_exclude_executed_blocks(self):
-        for old, new in zip(self.schedule["runs"][:2], self.schedule["runs"][2:4]):
-            source = self.directory / "raw" / old["run_id"]
-            target = self.directory / "raw" / new["run_id"]
-            shutil.copytree(source, target)
-            replacements = {
-                old[k]: new[k]
-                for k in (
-                    "run_id",
-                    "nonce",
-                    "attempt_id",
-                    "block_id",
-                    "forward_seed",
-                    "reverse_seed",
-                )
-            }
-
-            # Compute rewrite.
-            def rewrite(value):
-                if isinstance(value, dict):
-                    return {k: rewrite(v) for k, v in value.items()}
-                if isinstance(value, list):
-                    return [rewrite(v) for v in value]
-                if isinstance(value, (str, int)):
-                    return replacements.get(value, value)
-                return value
-
-            for path in target.iterdir():
-                if path.suffix == ".json":
-                    write(path, rewrite(read(path)))
-                if path.suffix == ".jsonl":
-                    path.write_text(
-                        "".join(json.dumps(rewrite(r)) + "\n" for r in rows(path))
-                    )
-            manifest = read(target / "manifest.json")
-            manifest.update(new)
-            write(target / "manifest.json", manifest)
-            (target / "schedule.json").write_bytes(
-                (self.directory / "schedule.json").read_bytes()
-            )
-            rehash(target)
+        with tempfile.TemporaryDirectory() as temporary:
+            template = create_template(Path(temporary), self.schedule)
+            for run in self.schedule["runs"][2:4]:
+                target = self.directory / "raw" / run["run_id"]
+                shutil.copytree(template / "raw" / run["run_id"], target)
+                validate_raw(target, self.directory / "schedule.json")
         advance(self.directory, self.schedule, self.schedule["runs"][3])
         first = self.evidence()
         one = replace(self.directory, "b0-a0", "path", first)
@@ -432,6 +398,8 @@ class MeasurementTests(unittest.TestCase):
         rehash(other)
         proof = self.directory / "second.json"
         self.assertTrue(diagnose(other, self.directory / "schedule.json", proof))
+        self.assertEqual(read(proof)["reason"], "path")
+        self.assertEqual(read(proof)["error"], "path/forwarding")
         two = replace(self.directory, "b1-a0", "path", proof)
         remaining = queue(self.directory)
         self.assertEqual(
