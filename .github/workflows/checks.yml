@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-24.04-arm
     steps:
       - uses: actions/checkout@v4
+      - name: Prepare CI output directory
+        run: mkdir -p build/ci
       - name: Build locked analyzer
         run: docker build -f docker/images/Dockerfile.analyzer -t wswt-bench-analyzer:dev .
       - name: Validate schemas and fixtures
